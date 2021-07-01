@@ -2,6 +2,17 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HomeworldSDL", "HomeworldSDL\HomeworldSDL.vcxproj", "{BCA258BC-E284-4E58-98CD-715818273834}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8A98F527-AF6F-4E83-AAB6-103383493C3B} = {8A98F527-AF6F-4E83-AAB6-103383493C3B}
+		{0F8B179A-AD8F-4A65-93C4-0761A5256126} = {0F8B179A-AD8F-4A65-93C4-0761A5256126}
+		{AEFDB29F-85FA-4A14-8D75-A8CD44A16CFA} = {AEFDB29F-85FA-4A14-8D75-A8CD44A16CFA}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jpeg", "jpeg\jpeg.vcxproj", "{0F8B179A-AD8F-4A65-93C4-0761A5256126}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "crc", "crc\crc.vcxproj", "{8A98F527-AF6F-4E83-AAB6-103383493C3B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lzss", "lzss\lzss.vcxproj", "{AEFDB29F-85FA-4A14-8D75-A8CD44A16CFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +24,18 @@ Global
 		{BCA258BC-E284-4E58-98CD-715818273834}.Debug|Win32.Build.0 = Debug|Win32
 		{BCA258BC-E284-4E58-98CD-715818273834}.Release|Win32.ActiveCfg = Release|Win32
 		{BCA258BC-E284-4E58-98CD-715818273834}.Release|Win32.Build.0 = Release|Win32
+		{0F8B179A-AD8F-4A65-93C4-0761A5256126}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0F8B179A-AD8F-4A65-93C4-0761A5256126}.Debug|Win32.Build.0 = Debug|Win32
+		{0F8B179A-AD8F-4A65-93C4-0761A5256126}.Release|Win32.ActiveCfg = Release|Win32
+		{0F8B179A-AD8F-4A65-93C4-0761A5256126}.Release|Win32.Build.0 = Release|Win32
+		{8A98F527-AF6F-4E83-AAB6-103383493C3B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8A98F527-AF6F-4E83-AAB6-103383493C3B}.Debug|Win32.Build.0 = Debug|Win32
+		{8A98F527-AF6F-4E83-AAB6-103383493C3B}.Release|Win32.ActiveCfg = Release|Win32
+		{8A98F527-AF6F-4E83-AAB6-103383493C3B}.Release|Win32.Build.0 = Release|Win32
+		{AEFDB29F-85FA-4A14-8D75-A8CD44A16CFA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AEFDB29F-85FA-4A14-8D75-A8CD44A16CFA}.Debug|Win32.Build.0 = Debug|Win32
+		{AEFDB29F-85FA-4A14-8D75-A8CD44A16CFA}.Release|Win32.ActiveCfg = Release|Win32
+		{AEFDB29F-85FA-4A14-8D75-A8CD44A16CFA}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

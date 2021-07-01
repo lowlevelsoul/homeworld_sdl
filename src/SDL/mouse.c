@@ -6,10 +6,15 @@
     Copyright Relic Entertainment, Inc.  All rights reserved.
 =============================================================================*/
 
+#include "glinc.h"
+
+#ifdef _WIN32
+    #include <windows.h>
+#endif
+
+
 #include "mouse.h"
-
 #include "SDL.h"
-
 #include "CommandWrap.h"
 #include "DDDFrigate.h"
 #include "Debug.h"
@@ -19,7 +24,6 @@
 #include "FEFlow.h"
 #include "font.h"
 #include "FontReg.h"
-#include "glinc.h"
 #include "Globals.h"
 #include "GravWellGenerator.h"
 #include "InfoOverlay.h"
@@ -41,11 +45,6 @@
 #include "Tweak.h"
 #include "Universe.h"
 #include "utility.h"
-
-#ifdef _WIN32
-    #define WIN32_LEAN_AND_MEAN
-    #include <windows.h>
-#endif
 
 
 /*=============================================================================
@@ -504,6 +503,14 @@ void mousePositionSet(sdword x, sdword y)
 
     if (!mouseClip)
         SDL_WarpMouseInWindow(NULL, x, y);
+}
+
+void mouseStoreCursorUnder(void) {
+
+}
+
+void mouseRestoreCursorUnder(void) {
+
 }
 
 /*-----------------------------------------------------------------------------

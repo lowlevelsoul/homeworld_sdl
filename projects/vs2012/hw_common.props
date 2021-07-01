@@ -11,7 +11,9 @@
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\Game\;$(SolutionDir)..\..\src\Ships\;$(SolutionDir)..\..\src\SDL\;$(SolutionDir)..\..\src\Missions\generated\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opengl32.lib;sdl2main.lib;sdl2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\build\$(Platform)\$(Configuration)\out\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />

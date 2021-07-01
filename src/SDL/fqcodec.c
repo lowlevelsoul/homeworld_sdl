@@ -10,6 +10,7 @@
 #define PI		3.14159265358979323846F
 #endif
 
+
 static float gWHBlock[FQ_HSIZE];
 static float gWBlock[FQ_SIZE];
 static float gWDBlock[FQ_DSIZE];
@@ -17,6 +18,8 @@ static float gWDBlock[FQ_DSIZE];
 static float gCHBlock[FQ_HSIZE];
 static float gCBlock[FQ_SIZE];
 static float gCDBlock[FQ_DSIZE];
+
+double fChopT;
 
 static void fqWriteTBlockBuf(float *aLBlock, float *aRBlock, short nChan, short *pBuf, udword nSize) {
 	udword i;

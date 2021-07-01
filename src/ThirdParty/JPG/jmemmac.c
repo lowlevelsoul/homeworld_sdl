@@ -55,7 +55,7 @@
 #include "jmemsys.h"    /* import the system-dependent declarations */
 
 #ifndef USE_MAC_MEMMGR	/* make sure user got configuration right */
-  You forgot to define USE_MAC_MEMMGR in jconfig.h. /* deliberate syntax error */
+	#error You forgot to define USE_MAC_MEMMGR in jconfig.h.
 #endif
 
 #include <Memory.h>     /* we use the MacOS memory manager */

@@ -38,6 +38,7 @@
 #ifdef _WIN32
     #define WIN32_LEAN_AND_MEAN
     #include <windows.h>
+    #define strcasecmp _stricmp
 #endif
 
 
@@ -415,7 +416,7 @@ void svShipViewRender(featom* atom, regionhandle region)
         else // auto rotate ship model
         {
             // continual 360 degree yaw rotation
-            real_time_angle = DEG_TO_RAD(remainder(universe.totaltimeelapsed, SV_360_ROTATION_SECS) / SV_360_ROTATION_SECS * 360);
+            real_time_angle = DEG_TO_RAD(fmodf(universe.totaltimeelapsed, SV_360_ROTATION_SECS) / SV_360_ROTATION_SECS * 360);
 
             if (angle_user_rotated_to >= 0.0) {
                 user_real_angle_offset = angle_user_rotated_to - real_time_angle;

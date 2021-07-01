@@ -13,6 +13,7 @@
 #include <limits.h>
 #else
 #include <sys/stat.h>
+    #define strcasecmp _stricmp
 #endif
 
 #include "BigFile.h"
