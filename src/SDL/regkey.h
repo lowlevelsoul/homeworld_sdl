@@ -31,7 +31,7 @@
     #ifdef _MACOSX
         #define CONFIGDIR "Library/Application Support/Homeworld"
     #else
-        #define CONFIGDIR ".homeworld"
+        #define CONFIGDIR "Homeworld"
     #endif
 
 #endif

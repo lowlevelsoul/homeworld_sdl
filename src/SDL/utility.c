@@ -934,7 +934,7 @@ void utyOptionsFileWrite(void)
     if (home_dir)
     {
         strcpy(ch_buf, home_dir);
-        strcat(ch_buf, "/" CONFIGDIR "/" UTY_CONFIG_FILENAME);
+        strcat(ch_buf, "\\" CONFIGDIR "\\" UTY_CONFIG_FILENAME);
     }
     else
     {
