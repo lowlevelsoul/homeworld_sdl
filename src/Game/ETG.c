@@ -52,11 +52,11 @@
 #include "utility.h"
 
 #ifdef GENERIC_ETGCALLFUNCTION
-#ifdef _MACOSX_FIX_MISC
+//#ifdef _MACOSX_FIX_MISC
 #include "functions.h"
-#else
-#include "wrapped_functions.h"
-#endif
+//#else
+//#include "wrapped_functions.h"
+//#endif
 #include "wrapped_unlisted_functions.h"
 #endif
 
@@ -5806,6 +5806,7 @@ sdword etgVarAssign(Effect *effect, struct etgeffectstatic *stat, ubyte *opcode)
     return(sizeof(etgvariablecopy));
 }
 
+#define GENERIC_ETGCALLFUNCTION
 #if defined GENERIC_ETGCALLFUNCTION
 
 sdword etgFunctionCall(Effect *effect, struct etgeffectstatic *stat, ubyte *opcode)
@@ -5843,6 +5844,7 @@ sdword etgFunctionCall(Effect *effect, struct etgeffectstatic *stat, ubyte *opco
 
     return(etgFunctionSize(nParams));
 }
+
 
 #elif defined __ppc__
 /* handle function calls

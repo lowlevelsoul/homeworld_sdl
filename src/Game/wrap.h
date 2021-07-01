@@ -6,7 +6,8 @@
 #define get_EVT_RGB(n)           do_get_arg(effect, stat, opcode, n)
 #define get_EVT_RGBA(n)          do_get_arg(effect, stat, opcode, n)
 
-static inline memsize do_get_arg(Effect *effect, struct etgeffectstatic *stat, etgfunctioncall *opcode, udword index)
+
+memsize do_get_arg(struct Effect *effect, struct etgeffectstatic *stat, etgfunctioncall *opcode, udword index)
 {
     memsize param = opcode->parameter[index].param;
 

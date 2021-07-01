@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BCA258BC-E284-4E58-98CD-715818273834}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>HomeworldSDL</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Homeworld.props" />
+    <Import Project="..\3rdparty_libs.props" />
+    <Import Project="..\SDL2.props" />
+    <Import Project="..\hw_common.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Homeworld.props" />
+    <Import Project="..\3rdparty_libs.props" />
+    <Import Project="..\SDL2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_WIN32_FIXME;_CRT_SECURE_NO_WARNINGS;HW_GAME_HOMEWORLD;HW_BUILD_FOR_DEBUGGING;_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>msvcrtd.lib;winmm.lib;kernel32.lib;shell32.lib;Vfw32.lib;ddraw.lib;user32.lib;gdi32.lib;comdlg32.lib;opengl32.lib;sdl2main.lib;sdl2.lib;crc.lib;jpeg.lib;lzss.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\Game\AIAttackMan.h" />
+    <ClInclude Include="..\..\..\src\Game\AIDefenseMan.h" />
+    <ClInclude Include="..\..\..\src\Game\AIEvents.h" />
+    <ClInclude Include="..\..\..\src\Game\AIFeatures.h" />
+    <ClInclude Include="..\..\..\src\Game\AIFleetMan.h" />
+    <ClInclude Include="..\..\..\src\Game\AIHandler.h" />
+    <ClInclude Include="..\..\..\src\Game\AIMoves.h" />
+    <ClInclude Include="..\..\..\src\Game\AIOrders.h" />
+    <ClInclude Include="..\..\..\src\Game\AIPlayer.h" />
+    <ClInclude Include="..\..\..\src\Game\AIResourceMan.h" />
+    <ClInclude Include="..\..\..\src\Game\AIShip.h" />
+    <ClInclude Include="..\..\..\src\Game\AITeam.h" />
+    <ClInclude Include="..\..\..\src\Game\AITrack.h" />
+    <ClInclude Include="..\..\..\src\Game\AIUtilities.h" />
+    <ClInclude Include="..\..\..\src\Game\AIVar.h" />
+    <ClInclude Include="..\..\..\src\Game\Alliance.h" />
+    <ClInclude Include="..\..\..\src\Game\Animatic.h" />
+    <ClInclude Include="..\..\..\src\Game\Attack.h" />
+    <ClInclude Include="..\..\..\src\Game\Attributes.h" />
+    <ClInclude Include="..\..\..\src\Game\AutoDownloadMap.h" />
+    <ClInclude Include="..\..\..\src\Game\AutoLOD.h" />
+    <ClInclude Include="..\..\..\src\Game\B-Spline.h" />
+    <ClInclude Include="..\..\..\src\Game\Battle.h" />
+    <ClInclude Include="..\..\..\src\Game\BigFile.h" />
+    <ClInclude Include="..\..\..\src\Game\Blobs.h" />
+    <ClInclude Include="..\..\..\src\Game\BMP.h" />
+    <ClInclude Include="..\..\..\src\Game\Bounties.h" />
+    <ClInclude Include="..\..\..\src\Game\BTG.h" />
+    <ClInclude Include="..\..\..\src\Game\Camera.h" />
+    <ClInclude Include="..\..\..\src\Game\CameraCommand.h" />
+    <ClInclude Include="..\..\..\src\Game\Captaincy.h" />
+    <ClInclude Include="..\..\..\src\Game\ChannelFSM.h" />
+    <ClInclude Include="..\..\..\src\Game\Chatting.h" />
+    <ClInclude Include="..\..\..\src\Game\Clamp.h" />
+    <ClInclude Include="..\..\..\src\Game\ClassDefs.h" />
+    <ClInclude Include="..\..\..\src\Game\Clipper.h" />
+    <ClInclude Include="..\..\..\src\Game\Clouds.h" />
+    <ClInclude Include="..\..\..\src\Game\Collision.h" />
+    <ClInclude Include="..\..\..\src\Game\Color.h" />
+    <ClInclude Include="..\..\..\src\Game\ColPick.h" />
+    <ClInclude Include="..\..\..\src\Game\CommandDefs.h" />
+    <ClInclude Include="..\..\..\src\Game\CommandLayer.h" />
+    <ClInclude Include="..\..\..\src\Game\CommandNetwork.h" />
+    <ClInclude Include="..\..\..\src\Game\CommandWrap.h" />
+    <ClInclude Include="..\..\..\src\Game\ConsMgr.h" />
+    <ClInclude Include="..\..\..\src\Game\cpuid.h" />
+    <ClInclude Include="..\..\..\src\Game\Crates.h" />
+    <ClInclude Include="..\..\..\src\Game\Damage.h" />
+    <ClInclude Include="..\..\..\src\Game\Debug.h" />
+    <ClInclude Include="..\..\..\src\Game\Demo.h" />
+    <ClInclude Include="..\..\..\src\Game\Dock.h" />
+    <ClInclude Include="..\..\..\src\Game\ETG.h" />
+    <ClInclude Include="..\..\..\src\Game\Eval.h" />
+    <ClInclude Include="..\..\..\src\Game\FastMath.h" />
+    <ClInclude Include="..\..\..\src\Game\FEColour.h" />
+    <ClInclude Include="..\..\..\src\Game\FEFlow.h" />
+    <ClInclude Include="..\..\..\src\Game\FEReg.h" />
+    <ClInclude Include="..\..\..\src\Game\File.h" />
+    <ClInclude Include="..\..\..\src\Game\FlightMan.h" />
+    <ClInclude Include="..\..\..\src\Game\FlightManDefs.h" />
+    <ClInclude Include="..\..\..\src\Game\FontReg.h" />
+    <ClInclude Include="..\..\..\src\Game\Formation.h" />
+    <ClInclude Include="..\..\..\src\Game\FormationDefs.h" />
+    <ClInclude Include="..\..\..\src\Game\functions.h" />
+    <ClInclude Include="..\..\..\src\Game\GameChat.h" />
+    <ClInclude Include="..\..\..\src\Game\GamePick.h" />
+    <ClInclude Include="..\..\..\src\Game\GameStats.h" />
+    <ClInclude Include="..\..\..\src\Game\Globals.h" />
+    <ClInclude Include="..\..\..\src\Game\Gun.h" />
+    <ClInclude Include="..\..\..\src\Game\Hash.h" />
+    <ClInclude Include="..\..\..\src\Game\HorseRace.h" />
+    <ClInclude Include="..\..\..\src\Game\HS.h" />
+    <ClInclude Include="..\..\..\src\Game\InfoOverlay.h" />
+    <ClInclude Include="..\..\..\src\Game\KAS.h" />
+    <ClInclude Include="..\..\..\src\Game\KASFunc.h" />
+    <ClInclude Include="..\..\..\src\Game\Key.h" />
+    <ClInclude Include="..\..\..\src\Game\KeyBindings.h" />
+    <ClInclude Include="..\..\..\src\Game\LagPrint.h" />
+    <ClInclude Include="..\..\..\src\Game\LaunchMgr.h" />
+    <ClInclude Include="..\..\..\src\Game\LevelLoad.h" />
+    <ClInclude Include="..\..\..\src\Game\Light.h" />
+    <ClInclude Include="..\..\..\src\Game\LinkedList.h" />
+    <ClInclude Include="..\..\..\src\Game\LOD.h" />
+    <ClInclude Include="..\..\..\src\Game\MadLinkIn.h" />
+    <ClInclude Include="..\..\..\src\Game\MadLinkInDefs.h" />
+    <ClInclude Include="..\..\..\src\Game\Matrix.h" />
+    <ClInclude Include="..\..\..\src\Game\MaxMultiplayer.h" />
+    <ClInclude Include="..\..\..\src\Game\Memory.h" />
+    <ClInclude Include="..\..\..\src\Game\Mesh.h" />
+    <ClInclude Include="..\..\..\src\Game\MeshAnim.h" />
+    <ClInclude Include="..\..\..\src\Game\MEX.h" />
+    <ClInclude Include="..\..\..\src\Game\MultiplayerGame.h" />
+    <ClInclude Include="..\..\..\src\Game\MultiplayerLANGame.h" />
+    <ClInclude Include="..\..\..\src\Game\NavLights.h" />
+    <ClInclude Include="..\..\..\src\Game\Nebulae.h" />
+    <ClInclude Include="..\..\..\src\Game\NetCheck.h" />
+    <ClInclude Include="..\..\..\src\Game\NIS.h" />
+    <ClInclude Include="..\..\..\src\Game\Objectives.h" />
+    <ClInclude Include="..\..\..\src\Game\ObjTypes.h" />
+    <ClInclude Include="..\..\..\src\Game\Options.h" />
+    <ClInclude Include="..\..\..\src\Game\Particle.h" />
+    <ClInclude Include="..\..\..\src\Game\Physics.h" />
+    <ClInclude Include="..\..\..\src\Game\PiePlate.h" />
+    <ClInclude Include="..\..\..\src\Game\Ping.h" />
+    <ClInclude Include="..\..\..\src\Game\PlugScreen.h" />
+    <ClInclude Include="..\..\..\src\Game\ProfileTimers.h" />
+    <ClInclude Include="..\..\..\src\Game\RaceDefs.h" />
+    <ClInclude Include="..\..\..\src\Game\Randy.h" />
+    <ClInclude Include="..\..\..\src\Game\Region.h" />
+    <ClInclude Include="..\..\..\src\Game\ResCollect.h" />
+    <ClInclude Include="..\..\..\src\Game\ResearchAPI.h" />
+    <ClInclude Include="..\..\..\src\Game\ResearchGUI.h" />
+    <ClInclude Include="..\..\..\src\Game\SaveGame.h" />
+    <ClInclude Include="..\..\..\src\Game\ScenPick.h" />
+    <ClInclude Include="..\..\..\src\Game\Scroller.h" />
+    <ClInclude Include="..\..\..\src\Game\Select.h" />
+    <ClInclude Include="..\..\..\src\Game\Sensors.h" />
+    <ClInclude Include="..\..\..\src\Game\Shader.h" />
+    <ClInclude Include="..\..\..\src\Game\ShipSelect.h" />
+    <ClInclude Include="..\..\..\src\Game\ShipView.h" />
+    <ClInclude Include="..\..\..\src\Game\SinglePlayer.h" />
+    <ClInclude Include="..\..\..\src\Game\SoundEvent.h" />
+    <ClInclude Include="..\..\..\src\Game\SoundEventDefs.h" />
+    <ClInclude Include="..\..\..\src\Game\SoundEventPrivate.h" />
+    <ClInclude Include="..\..\..\src\Game\SoundMusic.h" />
+    <ClInclude Include="..\..\..\src\Game\SoundStructs.h" />
+    <ClInclude Include="..\..\..\src\Game\SpaceObj.h" />
+    <ClInclude Include="..\..\..\src\Game\SpeechEvent.h" />
+    <ClInclude Include="..\..\..\src\Game\Star3d.h" />
+    <ClInclude Include="..\..\..\src\Game\Stats.h" />
+    <ClInclude Include="..\..\..\src\Game\StatScript.h" />
+    <ClInclude Include="..\..\..\src\Game\StringsOnly.h" />
+    <ClInclude Include="..\..\..\src\Game\StringSupport.h" />
+    <ClInclude Include="..\..\..\src\Game\Subtitle.h" />
+    <ClInclude Include="..\..\..\src\Game\Switches.h" />
+    <ClInclude Include="..\..\..\src\Game\Tactical.h" />
+    <ClInclude Include="..\..\..\src\Game\Tactics.h" />
+    <ClInclude Include="..\..\..\src\Game\Task.h" />
+    <ClInclude Include="..\..\..\src\Game\TaskBar.h" />
+    <ClInclude Include="..\..\..\src\Game\Teams.h" />
+    <ClInclude Include="..\..\..\src\Game\Timer.h" />
+    <ClInclude Include="..\..\..\src\Game\TitanNet.h" />
+    <ClInclude Include="..\..\..\src\Game\Tracking.h" />
+    <ClInclude Include="..\..\..\src\Game\TradeMgr.h" />
+    <ClInclude Include="..\..\..\src\Game\Trails.h" />
+    <ClInclude Include="..\..\..\src\Game\Transformer.h" />
+    <ClInclude Include="..\..\..\src\Game\Tutor.h" />
+    <ClInclude Include="..\..\..\src\Game\Tweak.h" />
+    <ClInclude Include="..\..\..\src\Game\Twiddle.h" />
+    <ClInclude Include="..\..\..\src\Game\Types.h" />
+    <ClInclude Include="..\..\..\src\Game\UIControls.h" />
+    <ClInclude Include="..\..\..\src\Game\Undo.h" />
+    <ClInclude Include="..\..\..\src\Game\Universe.h" />
+    <ClInclude Include="..\..\..\src\Game\UnivUpdate.h" />
+    <ClInclude Include="..\..\..\src\Game\Vector.h" />
+    <ClInclude Include="..\..\..\src\Game\VolTweakDefs.h" />
+    <ClInclude Include="..\..\..\src\Game\Volume.h" />
+    <ClInclude Include="..\..\..\src\Game\wrap.h" />
+    <ClInclude Include="..\..\..\src\Game\wrapped_unlisted_functions.h" />
+    <ClInclude Include="..\..\..\src\Game\wrap_types.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission01.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission02.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission03.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission04.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission05.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission05_OEM.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission06.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission07.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission08.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission09.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission10.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission11.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission12.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission13.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission14.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission15.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Mission16.h" />
+    <ClInclude Include="..\..\..\src\Missions\Generated\Tutorial1.h" />
+    <ClInclude Include="..\..\..\src\SDL\avi.h" />
+    <ClInclude Include="..\..\..\src\SDL\ClientCDKey.h" />
+    <ClInclude Include="..\..\..\src\SDL\dct.h" />
+    <ClInclude Include="..\..\..\src\SDL\debugwnd.h" />
+    <ClInclude Include="..\..\..\src\SDL\devstats.h" />
+    <ClInclude Include="..\..\..\src\SDL\font.h" />
+    <ClInclude Include="..\..\..\src\SDL\fqcodec.h" />
+    <ClInclude Include="..\..\..\src\SDL\fqeffect.h" />
+    <ClInclude Include="..\..\..\src\SDL\fquant.h" />
+    <ClInclude Include="..\..\..\src\SDL\glinc.h" />
+    <ClInclude Include="..\..\..\src\SDL\main.h" />
+    <ClInclude Include="..\..\..\src\SDL\mainrgn.h" />
+    <ClInclude Include="..\..\..\src\SDL\mainswitches.h" />
+    <ClInclude Include="..\..\..\src\SDL\mixfft.h" />
+    <ClInclude Include="..\..\..\src\SDL\mouse.h" />
+    <ClInclude Include="..\..\..\src\SDL\NetworkInterface.h" />
+    <ClInclude Include="..\..\..\src\SDL\prim2d.h" />
+    <ClInclude Include="..\..\..\src\SDL\prim3d.h" />
+    <ClInclude Include="..\..\..\src\SDL\Queue.h" />
+    <ClInclude Include="..\..\..\src\SDL\regkey.h" />
+    <ClInclude Include="..\..\..\src\SDL\render.h" />
+    <ClInclude Include="..\..\..\src\SDL\resource.h" />
+    <ClInclude Include="..\..\..\src\SDL\rglu.h" />
+    <ClInclude Include="..\..\..\src\SDL\rinit.h" />
+    <ClInclude Include="..\..\..\src\SDL\screenshot.h" />
+    <ClInclude Include="..\..\..\src\SDL\soundcmn.h" />
+    <ClInclude Include="..\..\..\src\SDL\soundlow.h" />
+    <ClInclude Include="..\..\..\src\SDL\standard_library.h" />
+    <ClInclude Include="..\..\..\src\SDL\texreg.h" />
+    <ClInclude Include="..\..\..\src\SDL\TimeoutTimer.h" />
+    <ClInclude Include="..\..\..\src\SDL\Titan.h" />
+    <ClInclude Include="..\..\..\src\SDL\TitanInterface.h" />
+    <ClInclude Include="..\..\..\src\SDL\TitanInterfaceC.h" />
+    <ClInclude Include="..\..\..\src\SDL\TitanPacketMsg.h" />
+    <ClInclude Include="..\..\..\src\SDL\utility.h" />
+    <ClInclude Include="..\..\..\src\SDL\wave.h" />
+    <ClInclude Include="..\..\..\src\Ships\AdvanceSupportFrigate.h" />
+    <ClInclude Include="..\..\..\src\Ships\Carrier.h" />
+    <ClInclude Include="..\..\..\src\Ships\CloakGenerator.h" />
+    <ClInclude Include="..\..\..\src\Ships\DDDFrigate.h" />
+    <ClInclude Include="..\..\..\src\Ships\DefaultShip.h" />
+    <ClInclude Include="..\..\..\src\Ships\DefenseFighter.h" />
+    <ClInclude Include="..\..\..\src\Ships\DFGFrigate.h" />
+    <ClInclude Include="..\..\..\src\Ships\Drone.h" />
+    <ClInclude Include="..\..\..\src\Ships\FloatingCity.h" />
+    <ClInclude Include="..\..\..\src\Ships\GenericDefender.h" />
+    <ClInclude Include="..\..\..\src\Ships\GenericInterceptor.h" />
+    <ClInclude Include="..\..\..\src\Ships\GravWellGenerator.h" />
+    <ClInclude Include="..\..\..\src\Ships\HeavyCorvette.h" />
+    <ClInclude Include="..\..\..\src\Ships\HeavyCruiser.h" />
+    <ClInclude Include="..\..\..\src\Ships\IonCannonFrigate.h" />
+    <ClInclude Include="..\..\..\src\Ships\LightCorvette.h" />
+    <ClInclude Include="..\..\..\src\Ships\MinelayerCorvette.h" />
+    <ClInclude Include="..\..\..\src\Ships\MissileDestroyer.h" />
+    <ClInclude Include="..\..\..\src\Ships\Mothership.h" />
+    <ClInclude Include="..\..\..\src\Ships\MultiGunCorvette.h" />
+    <ClInclude Include="..\..\..\src\Ships\P1IonArrayFrigate.h" />
+    <ClInclude Include="..\..\..\src\Ships\P1MissileCorvette.h" />
+    <ClInclude Include="..\..\..\src\Ships\P1Mothership.h" />
+    <ClInclude Include="..\..\..\src\Ships\P1StandardCorvette.h" />
+    <ClInclude Include="..\..\..\src\Ships\P2AdvanceSwarmer.h" />
+    <ClInclude Include="..\..\..\src\Ships\P2FuelPod.h" />
+    <ClInclude Include="..\..\..\src\Ships\P2Mothership.h" />
+    <ClInclude Include="..\..\..\src\Ships\P2MultiBeamFrigate.h" />
+    <ClInclude Include="..\..\..\src\Ships\P2Swarmer.h" />
+    <ClInclude Include="..\..\..\src\Ships\P3StandardShip.h" />
+    <ClInclude Include="..\..\..\src\Ships\Probe.h" />
+    <ClInclude Include="..\..\..\src\Ships\ProximitySensor.h" />
+    <ClInclude Include="..\..\..\src\Ships\RepairCorvette.h" />
+    <ClInclude Include="..\..\..\src\Ships\ResearchShip.h" />
+    <ClInclude Include="..\..\..\src\Ships\ResourceCollector.h" />
+    <ClInclude Include="..\..\..\src\Ships\ResourceController.h" />
+    <ClInclude Include="..\..\..\src\Ships\SalCapCorvette.h" />
+    <ClInclude Include="..\..\..\src\Ships\SensorArray.h" />
+    <ClInclude Include="..\..\..\src\Ships\ShipDefs.h" />
+    <ClInclude Include="..\..\..\src\Ships\Ships.h" />
+    <ClInclude Include="..\..\..\src\Ships\StandardDestroyer.h" />
+    <ClInclude Include="..\..\..\src\Ships\StandardFrigate.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\Game\AIAttackMan.c" />
+    <ClCompile Include="..\..\..\src\Game\AIDefenseMan.c" />
+    <ClCompile Include="..\..\..\src\Game\AIEvents.c" />
+    <ClCompile Include="..\..\..\src\Game\AIFleetMan.c" />
+    <ClCompile Include="..\..\..\src\Game\AIHandler.c" />
+    <ClCompile Include="..\..\..\src\Game\AIMoves.c" />
+    <ClCompile Include="..\..\..\src\Game\AIOrders.c" />
+    <ClCompile Include="..\..\..\src\Game\AIPlayer.c" />
+    <ClCompile Include="..\..\..\src\Game\AIResourceMan.c" />
+    <ClCompile Include="..\..\..\src\Game\AIShip.c" />
+    <ClCompile Include="..\..\..\src\Game\AITeam.c" />
+    <ClCompile Include="..\..\..\src\Game\AITrack.c" />
+    <ClCompile Include="..\..\..\src\Game\AIUtilities.c" />
+    <ClCompile Include="..\..\..\src\Game\AIVar.c" />
+    <ClCompile Include="..\..\..\src\Game\Alliance.c" />
+    <ClCompile Include="..\..\..\src\Game\Animatic.c" />
+    <ClCompile Include="..\..\..\src\Game\Attack.c" />
+    <ClCompile Include="..\..\..\src\Game\AutoDownloadMap.c" />
+    <ClCompile Include="..\..\..\src\Game\AutoLOD.c" />
+    <ClCompile Include="..\..\..\src\Game\B-Spline.c" />
+    <ClCompile Include="..\..\..\src\Game\Battle.c" />
+    <ClCompile Include="..\..\..\src\Game\BigFile.c" />
+    <ClCompile Include="..\..\..\src\Game\Blobs.c" />
+    <ClCompile Include="..\..\..\src\Game\BMP.c" />
+    <ClCompile Include="..\..\..\src\Game\Bounties.c" />
+    <ClCompile Include="..\..\..\src\Game\BTG.c" />
+    <ClCompile Include="..\..\..\src\Game\Camera.c" />
+    <ClCompile Include="..\..\..\src\Game\CameraCommand.c" />
+    <ClCompile Include="..\..\..\src\Game\Captaincy.c" />
+    <ClCompile Include="..\..\..\src\Game\ChannelFSM.c" />
+    <ClCompile Include="..\..\..\src\Game\Chatting.c" />
+    <ClCompile Include="..\..\..\src\Game\Clamp.c" />
+    <ClCompile Include="..\..\..\src\Game\Clipper.c" />
+    <ClCompile Include="..\..\..\src\Game\Clouds.c" />
+    <ClCompile Include="..\..\..\src\Game\Collision.c" />
+    <ClCompile Include="..\..\..\src\Game\Color.c" />
+    <ClCompile Include="..\..\..\src\Game\ColPick.c" />
+    <ClCompile Include="..\..\..\src\Game\CommandLayer.c" />
+    <ClCompile Include="..\..\..\src\Game\CommandNetwork.c" />
+    <ClCompile Include="..\..\..\src\Game\CommandWrap.c" />
+    <ClCompile Include="..\..\..\src\Game\ConsMgr.c" />
+    <ClCompile Include="..\..\..\src\Game\Crates.c" />
+    <ClCompile Include="..\..\..\src\Game\Damage.c" />
+    <ClCompile Include="..\..\..\src\Game\Debug.c" />
+    <ClCompile Include="..\..\..\src\Game\Demo.c" />
+    <ClCompile Include="..\..\..\src\Game\Dock.c" />
+    <ClCompile Include="..\..\..\src\Game\ETG.c" />
+    <ClCompile Include="..\..\..\src\Game\Eval.c" />
+    <ClCompile Include="..\..\..\src\Game\FEFlow.c" />
+    <ClCompile Include="..\..\..\src\Game\FEReg.c" />
+    <ClCompile Include="..\..\..\src\Game\File.c" />
+    <ClCompile Include="..\..\..\src\Game\FlightMan.c" />
+    <ClCompile Include="..\..\..\src\Game\FontReg.c" />
+    <ClCompile Include="..\..\..\src\Game\Formation.c" />
+    <ClCompile Include="..\..\..\src\Game\GameChat.c" />
+    <ClCompile Include="..\..\..\src\Game\GamePick.c" />
+    <ClCompile Include="..\..\..\src\Game\Globals.c" />
+    <ClCompile Include="..\..\..\src\Game\Gun.c" />
+    <ClCompile Include="..\..\..\src\Game\Hash.c" />
+    <ClCompile Include="..\..\..\src\Game\HorseRace.c" />
+    <ClCompile Include="..\..\..\src\Game\HS.c" />
+    <ClCompile Include="..\..\..\src\Game\InfoOverlay.c" />
+    <ClCompile Include="..\..\..\src\Game\KAS.c" />
+    <ClCompile Include="..\..\..\src\Game\KASFunc.c" />
+    <ClCompile Include="..\..\..\src\Game\Key.c" />
+    <ClCompile Include="..\..\..\src\Game\KeyBindings.c" />
+    <ClCompile Include="..\..\..\src\Game\KNITransform.c" />
+    <ClCompile Include="..\..\..\src\Game\LagPrint.c" />
+    <ClCompile Include="..\..\..\src\Game\LaunchMgr.c" />
+    <ClCompile Include="..\..\..\src\Game\LevelLoad.c" />
+    <ClCompile Include="..\..\..\src\Game\Light.c" />
+    <ClCompile Include="..\..\..\src\Game\LinkedList.c" />
+    <ClCompile Include="..\..\..\src\Game\LOD.c" />
+    <ClCompile Include="..\..\..\src\Game\MadLinkIn.c" />
+    <ClCompile Include="..\..\..\src\Game\Matrix-mult.c" />
+    <ClCompile Include="..\..\..\src\Game\Matrix.c" />
+    <ClCompile Include="..\..\..\src\Game\Memory.c" />
+    <ClCompile Include="..\..\..\src\Game\Mesh.c" />
+    <ClCompile Include="..\..\..\src\Game\MeshAnim.c" />
+    <ClCompile Include="..\..\..\src\Game\MEX.c" />
+    <ClCompile Include="..\..\..\src\Game\MultiplayerGame.c" />
+    <ClCompile Include="..\..\..\src\Game\MultiplayerLANGame.c" />
+    <ClCompile Include="..\..\..\src\Game\NavLights.c" />
+    <ClCompile Include="..\..\..\src\Game\Nebulae.c" />
+    <ClCompile Include="..\..\..\src\Game\NetCheck.c" />
+    <ClCompile Include="..\..\..\src\Game\NIS.c" />
+    <ClCompile Include="..\..\..\src\Game\Objectives.c" />
+    <ClCompile Include="..\..\..\src\Game\ObjTypes.c" />
+    <ClCompile Include="..\..\..\src\Game\Options.c" />
+    <ClCompile Include="..\..\..\src\Game\Particle.c" />
+    <ClCompile Include="..\..\..\src\Game\Physics.c" />
+    <ClCompile Include="..\..\..\src\Game\PiePlate.c" />
+    <ClCompile Include="..\..\..\src\Game\Ping.c" />
+    <ClCompile Include="..\..\..\src\Game\PlugScreen.c" />
+    <ClCompile Include="..\..\..\src\Game\ProfileTimers.c" />
+    <ClCompile Include="..\..\..\src\Game\Randy.c" />
+    <ClCompile Include="..\..\..\src\Game\Region.c" />
+    <ClCompile Include="..\..\..\src\Game\ResCollect.c" />
+    <ClCompile Include="..\..\..\src\Game\ResearchAPI.c" />
+    <ClCompile Include="..\..\..\src\Game\ResearchGUI.c" />
+    <ClCompile Include="..\..\..\src\Game\SaveGame.c" />
+    <ClCompile Include="..\..\..\src\Game\ScenPick.c" />
+    <ClCompile Include="..\..\..\src\Game\Scroller.c" />
+    <ClCompile Include="..\..\..\src\Game\Select.c" />
+    <ClCompile Include="..\..\..\src\Game\Sensors.c" />
+    <ClCompile Include="..\..\..\src\Game\Shader.c" />
+    <ClCompile Include="..\..\..\src\Game\ShipSelect.c" />
+    <ClCompile Include="..\..\..\src\Game\ShipView.c" />
+    <ClCompile Include="..\..\..\src\Game\SinglePlayer.c" />
+    <ClCompile Include="..\..\..\src\Game\SoundEvent.c" />
+    <ClCompile Include="..\..\..\src\Game\SoundEventPlay.c" />
+    <ClCompile Include="..\..\..\src\Game\SoundEventStop.c" />
+    <ClCompile Include="..\..\..\src\Game\SpeechEvent.c" />
+    <ClCompile Include="..\..\..\src\Game\Star3d.c" />
+    <ClCompile Include="..\..\..\src\Game\Stats.c" />
+    <ClCompile Include="..\..\..\src\Game\StatScript.c" />
+    <ClCompile Include="..\..\..\src\Game\StringSupport.c" />
+    <ClCompile Include="..\..\..\src\Game\StubTransform.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Game\Subtitle.c" />
+    <ClCompile Include="..\..\..\src\Game\Tactical.c" />
+    <ClCompile Include="..\..\..\src\Game\Tactics.c" />
+    <ClCompile Include="..\..\..\src\Game\Task.c" />
+    <ClCompile Include="..\..\..\src\Game\TaskBar.c" />
+    <ClCompile Include="..\..\..\src\Game\Teams.c" />
+    <ClCompile Include="..\..\..\src\Game\Timer.c" />
+    <ClCompile Include="..\..\..\src\Game\TitanNet.c" />
+    <ClCompile Include="..\..\..\src\Game\Tracking.c" />
+    <ClCompile Include="..\..\..\src\Game\TradeMgr.c" />
+    <ClCompile Include="..\..\..\src\Game\Trails.c" />
+    <ClCompile Include="..\..\..\src\Game\Transformer.c" />
+    <ClCompile Include="..\..\..\src\Game\Tutor.c" />
+    <ClCompile Include="..\..\..\src\Game\Tweak.c" />
+    <ClCompile Include="..\..\..\src\Game\Twiddle.c" />
+    <ClCompile Include="..\..\..\src\Game\Types.c" />
+    <ClCompile Include="..\..\..\src\Game\UIControls.c" />
+    <ClCompile Include="..\..\..\src\Game\Undo.c" />
+    <ClCompile Include="..\..\..\src\Game\Universe.c" />
+    <ClCompile Include="..\..\..\src\Game\UnivUpdate.c" />
+    <ClCompile Include="..\..\..\src\Game\Vector.c" />
+    <ClCompile Include="..\..\..\src\Game\Volume.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission01.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission01.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission02.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission02.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission03.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission03.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission04.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission04.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission05.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission05.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission05_OEM.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission05_OEM.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission06.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission06.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission07.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission07.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission08.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission08.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission09.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission09.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission10.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission10.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission11.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission11.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission12.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission12.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission13.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission13.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission14.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission14.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission15.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission15.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission16.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Mission16.func.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Tutorial1.c" />
+    <ClCompile Include="..\..\..\src\Missions\Generated\Tutorial1.func.c" />
+    <ClCompile Include="..\..\..\src\SDL\avi.c" />
+    <ClCompile Include="..\..\..\src\SDL\ClientCDKey.cpp" />
+    <ClCompile Include="..\..\..\src\SDL\dct.c" />
+    <ClCompile Include="..\..\..\src\SDL\debugwnd.c" />
+    <ClCompile Include="..\..\..\src\SDL\font.c" />
+    <ClCompile Include="..\..\..\src\SDL\fqcodec.c" />
+    <ClCompile Include="..\..\..\src\SDL\fqeffect.c" />
+    <ClCompile Include="..\..\..\src\SDL\fquant.c" />
+    <ClCompile Include="..\..\..\src\SDL\main.c" />
+    <ClCompile Include="..\..\..\src\SDL\mainrgn.c" />
+    <ClCompile Include="..\..\..\src\SDL\mixfft.c" />
+    <ClCompile Include="..\..\..\src\SDL\mouse.c" />
+    <ClCompile Include="..\..\..\src\SDL\NetworkInterface.c" />
+    <ClCompile Include="..\..\..\src\SDL\prim2d.c" />
+    <ClCompile Include="..\..\..\src\SDL\prim3d.c" />
+    <ClCompile Include="..\..\..\src\SDL\Queue.c" />
+    <ClCompile Include="..\..\..\src\SDL\render.c" />
+    <ClCompile Include="..\..\..\src\SDL\rglu.c" />
+    <ClCompile Include="..\..\..\src\SDL\rinit.c" />
+    <ClCompile Include="..\..\..\src\SDL\screenshot.c" />
+    <ClCompile Include="..\..\..\src\SDL\smixer.c" />
+    <ClCompile Include="..\..\..\src\SDL\soundlow.c" />
+    <ClCompile Include="..\..\..\src\SDL\sstream.c" />
+    <ClCompile Include="..\..\..\src\SDL\texreg.c" />
+    <ClCompile Include="..\..\..\src\SDL\TimeoutTimer.c" />
+    <ClCompile Include="..\..\..\src\SDL\Titan.c" />
+    <ClCompile Include="..\..\..\src\SDL\TitanInterface.cpp" />
+    <ClCompile Include="..\..\..\src\SDL\TitanInterfaceC.c" />
+    <ClCompile Include="..\..\..\src\SDL\TitanInterfaceC.stub.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SDL\TitanPacketMsg.cpp" />
+    <ClCompile Include="..\..\..\src\SDL\utility.c" />
+    <ClCompile Include="..\..\..\src\SDL\wave.c" />
+    <ClCompile Include="..\..\..\src\SDL\win32glue.c" />
+    <ClCompile Include="..\..\..\src\Ships\AdvanceSupportFrigate.c" />
+    <ClCompile Include="..\..\..\src\Ships\Carrier.c" />
+    <ClCompile Include="..\..\..\src\Ships\CloakGenerator.c" />
+    <ClCompile Include="..\..\..\src\Ships\DDDFrigate.c" />
+    <ClCompile Include="..\..\..\src\Ships\DefaultShip.c" />
+    <ClCompile Include="..\..\..\src\Ships\DefenseFighter.c" />
+    <ClCompile Include="..\..\..\src\Ships\DFGFrigate.c" />
+    <ClCompile Include="..\..\..\src\Ships\Drone.c" />
+    <ClCompile Include="..\..\..\src\Ships\FloatingCity.c" />
+    <ClCompile Include="..\..\..\src\Ships\GenericDefender.c" />
+    <ClCompile Include="..\..\..\src\Ships\GenericInterceptor.c" />
+    <ClCompile Include="..\..\..\src\Ships\GravWellGenerator.c" />
+    <ClCompile Include="..\..\..\src\Ships\HeavyCorvette.c" />
+    <ClCompile Include="..\..\..\src\Ships\HeavyCruiser.c" />
+    <ClCompile Include="..\..\..\src\Ships\IonCannonFrigate.c" />
+    <ClCompile Include="..\..\..\src\Ships\LightCorvette.c" />
+    <ClCompile Include="..\..\..\src\Ships\MinelayerCorvette.c" />
+    <ClCompile Include="..\..\..\src\Ships\MissileDestroyer.c" />
+    <ClCompile Include="..\..\..\src\Ships\Mothership.c" />
+    <ClCompile Include="..\..\..\src\Ships\MultiGunCorvette.c" />
+    <ClCompile Include="..\..\..\src\Ships\P1IonArrayFrigate.c" />
+    <ClCompile Include="..\..\..\src\Ships\P1MissileCorvette.c" />
+    <ClCompile Include="..\..\..\src\Ships\P1Mothership.c" />
+    <ClCompile Include="..\..\..\src\Ships\P1StandardCorvette.c" />
+    <ClCompile Include="..\..\..\src\Ships\P2AdvanceSwarmer.c" />
+    <ClCompile Include="..\..\..\src\Ships\P2FuelPod.c" />
+    <ClCompile Include="..\..\..\src\Ships\P2Mothership.c" />
+    <ClCompile Include="..\..\..\src\Ships\P2MultiBeamFrigate.c" />
+    <ClCompile Include="..\..\..\src\Ships\P2Swarmer.c" />
+    <ClCompile Include="..\..\..\src\Ships\P3StandardShip.c" />
+    <ClCompile Include="..\..\..\src\Ships\Probe.c" />
+    <ClCompile Include="..\..\..\src\Ships\ProximitySensor.c" />
+    <ClCompile Include="..\..\..\src\Ships\RepairCorvette.c" />
+    <ClCompile Include="..\..\..\src\Ships\ResearchShip.c" />
+    <ClCompile Include="..\..\..\src\Ships\ResourceCollector.c" />
+    <ClCompile Include="..\..\..\src\Ships\ResourceController.c" />
+    <ClCompile Include="..\..\..\src\Ships\SalCapCorvette.c" />
+    <ClCompile Include="..\..\..\src\Ships\SensorArray.c" />
+    <ClCompile Include="..\..\..\src\Ships\StandardDestroyer.c" />
+    <ClCompile Include="..\..\..\src\Ships\StandardFrigate.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\Game\Makefile.am" />
+    <None Include="..\..\..\src\Game\Matrix.s" />
+    <None Include="..\..\..\src\Ships\Makefile.am" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
