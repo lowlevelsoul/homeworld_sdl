@@ -3,6 +3,8 @@
 #include "fqcodec.h"
 #include "dct.h"
 #include "mixfft.h"
+#include <malloc.h>
+#include <string.h>
 
 #ifndef PI
 #define PI		3.14159265358979323846F
@@ -13,22 +15,27 @@ int Initdct(float *buf, udword len) {
 	float f;
 
 	for (i = 0; i < len >> 2; i++) {
-		f = ((float)i + 0.125) * (PI * 2.0) * (1.0 / (float)len);
-		buf[i] = sin(f);
-		buf[i + (len >> 2)] = cos(f);
+		f = ((float)i + 0.125f) * (PI * 2.0f) * (1.0f / (float)len);
+		buf[i] = sinf(f);
+		buf[i + (len >> 2)] = cosf(f);
 	}
 
 	return OK;
 }
 
 int idct(float *a, float *b, float *c, udword len) {
-	udword i, j;
-	float aa[len], ab[len], ac[len], ad[len], ae[len];
+	udword i;
+	//float aa[len], ab[len], ac[len], ad[len], ae[len];
+	float * aa = (float *) alloca(sizeof(float) * len);
+	float * ab = (float *) alloca(sizeof(float) * len);
+	float * ac = (float *) alloca(sizeof(float) * len);
+	float * ad = (float *) alloca(sizeof(float) * len);
+	float * ae = (float *) alloca(sizeof(float) * len);
 
 	udword hlen = len / 2;
 	udword qlen = len / 4;
 	udword q3len = qlen * 3;
-	float factor = 8.0 / sqrt(len);
+	float factor = 8.0f / sqrtf(len);
 
 	memset(aa, 0, len << 2);
 	memset(ab, 0, len << 2);
