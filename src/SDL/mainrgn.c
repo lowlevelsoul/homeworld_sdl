@@ -6,6 +6,16 @@
     Copyright Relic Entertainment, Inc.  All rights reserved.
 =============================================================================*/
 
+#ifdef _WIN32
+    #include <windows.h>
+#endif
+
+#include "glinc.h"
+
+#if defined _MSC_VER
+	#define isnan(x) _isnan(x)
+#endif
+
 #include "mainrgn.h"
 
 #include <float.h>
@@ -32,7 +42,6 @@
 #include "FontReg.h"
 #include "GameChat.h"
 #include "GamePick.h"
-#include "glinc.h"
 #include "Globals.h"
 #include "Gun.h"
 #include "InfoOverlay.h"
@@ -78,14 +87,7 @@
 #include "UnivUpdate.h"
 #include "utility.h"
 
-#ifdef _WIN32
-    #define WIN32_LEAN_AND_MEAN
-    #include <windows.h>
-#endif
 
-#if defined _MSC_VER
-	#define isnan(x) _isnan(x)
-#endif
 
 #undef UTY_SCREEN_SHOT
 
@@ -1555,7 +1557,10 @@ Ship *mrNextMothershipPtr(Ship *mothership)
             return(NULL);
         }
         count++;
-        if (shipNode == NULL) return NULL;
+        if (shipNode == NULL) {
+			return NULL;
+		}
+
         bFirstShip = FALSE;
     }
     return(ship);

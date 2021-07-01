@@ -547,7 +547,9 @@
     <ClCompile Include="..\..\..\src\SDL\Titan.c" />
     <ClCompile Include="..\..\..\src\SDL\TitanInterface.cpp" />
     <ClCompile Include="..\..\..\src\SDL\TitanInterfaceC.c" />
-    <ClCompile Include="..\..\..\src\SDL\TitanInterfaceC.stub.c" />
+    <ClCompile Include="..\..\..\src\SDL\TitanInterfaceC.stub.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\..\src\SDL\TitanPacketMsg.cpp" />
     <ClCompile Include="..\..\..\src\SDL\utility.c" />
     <ClCompile Include="..\..\..\src\SDL\wave.c" />

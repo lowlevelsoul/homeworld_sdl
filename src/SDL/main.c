@@ -5,12 +5,26 @@
         Created June 1997 by Luke Moloney.
 ============================================================================*/
 
+#ifdef _WIN32
+    #define WIN32_LEAN_AND_MEAN
+    #define strcasecmp _stricmp
+    #include <windows.h>
+    #include <winreg.h>
+#endif
+
 #include <limits.h> // for PATH_MAX
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
 #include <SDL.h>
+
+#include "Types.h"
+#include "glinc.h"
+#ifdef _WIN32
+    #include "debugwnd.h"
+#endif
+
 
 #include "AIPlayer.h"
 #include "AutoLOD.h"
@@ -28,7 +42,6 @@
 #include "File.h"
 #include "FontReg.h"
 #include "Formation.h"
-#include "glinc.h"
 #include "Globals.h"
 #include "HorseRace.h"
 #include "Key.h"
@@ -59,13 +72,7 @@
 #include "TitanNet.h"
 #include "utility.h"
 
-#ifdef _WIN32
-    #define WIN32_LEAN_AND_MEAN
-    #define strcasecmp _stricmp
-    #include <windows.h>
-    #include <winreg.h>
-    #include "debugwnd.h"
-#endif
+
 
 
 /*=============================================================================
@@ -331,11 +338,13 @@ int RegisterCommandLine(char *commandLine)
 bool SetDisplayNum(char *string)
 {
   displayNum = atoi(string);
+  return (displayNum >= 0);
 }
 
 bool XcodeDebug(char *string)
 {
     DebugWindow=TRUE;
+	return DebugWindow;
 }
 bool HeapSizeSet(char *string)
 {
@@ -2116,7 +2125,7 @@ int main (int argc, char* argv[])
 #ifdef _WIN32
     //check to see if a copy of the program already running and just exit if so.
     //This messy hack is required because hPrevInstance is not reliable under Win32.
-    hMapping = CreateFileMapping( (HANDLE) 0xffffffff,
+    hMapping = CreateFileMappingA( (HANDLE) 0xffffffff,
                     NULL,
                     PAGE_READONLY,
                     0,
@@ -2130,10 +2139,10 @@ int main (int argc, char* argv[])
             HWND hWndPrev;
 
             // Already an instance running. If it has a window yet, restore it.
-            hWndPrev = FindWindow(windowTitle, NULL);
+            hWndPrev = FindWindowA(windowTitle, NULL);
             if (hWndPrev)
             {
-                OutputDebugString("\r\nProgram already running.\r\n");
+                OutputDebugStringA("\r\nProgram already running.\r\n");
                 ShowWindow(hWndPrev, SW_RESTORE);
                 BringWindowToTop(hWndPrev);
                 UpdateWindow(hWndPrev);
