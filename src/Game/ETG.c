@@ -3904,10 +3904,10 @@ char *etgParseVariable(char *params, bool *bSetInitial)
 //create a new integer
 sdword etgNewInteger(struct etgeffectstatic *stat, ubyte *dest, char *opcode, char *params, char *ret)
 {
-    memsize initial;
-    sdword nScanned;
-    bool bSetInitial;
-    char *start;
+    memsize initial = 0;
+    sdword nScanned = 0;
+    bool bSetInitial = 0;
+    char *start = NULL;
 
     if (etgParseMode == EPM_Constant)
     {                                                       //if we're creating a constant
@@ -3963,9 +3963,9 @@ sdword etgNewInteger(struct etgeffectstatic *stat, ubyte *dest, char *opcode, ch
 //create a new RGB variable
 sdword etgNewRGB(struct etgeffectstatic *stat, ubyte *dest, char *opcode, char *params, char *ret)
 {
-    udword initial;
-    bool bSetInitial;
-    char *start;
+    udword initial = 0;
+    bool bSetInitial = 0;
+    char *start = NULL;
 
 #if ETG_ERROR_CHECKING
     if (etgParseMode != EPM_Variables)
@@ -3986,9 +3986,9 @@ sdword etgNewRGB(struct etgeffectstatic *stat, ubyte *dest, char *opcode, char *
 //create a new RGBA variable
 sdword etgNewRGBA(struct etgeffectstatic *stat, ubyte *dest, char *opcode, char *params, char *ret)
 {
-    udword initial;
-    bool bSetInitial;
-    char *start;
+    udword initial = 0;
+    bool bSetInitial = 0;
+    char *start = NULL;
 
 #if ETG_ERROR_CHECKING
     if (etgParseMode != EPM_Variables)
@@ -4322,10 +4322,10 @@ sdword etgSetMeshParse(struct etgeffectstatic *stat, ubyte *dest, char *opcode, 
 //create a new float
 sdword etgNewFloat(struct etgeffectstatic *stat, ubyte *dest, char *opcode, char *params, char *ret)
 {
-    udword initial;
-    sdword nScanned;
-    bool bSetInitial;
-    char *start;
+    udword initial = 0;
+    sdword nScanned = 0;
+    bool bSetInitial = 0;
+    char *start = NULL;
 
     if (etgParseMode == EPM_Constant)
     {                                                       //if we're creating a constant
