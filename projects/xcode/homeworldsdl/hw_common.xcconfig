@@ -1,0 +1,12 @@
+
+HW_ROOT                 = $(PROJECT_DIR)/../../..
+HW_SOURCE               = $(HW_ROOT)/src
+
+HW_INCLUDES             = $(HW_SOURCE)/Game $(HW_SOURCE)/Ships $(HW_SOURCE)/SDL $(HW_SOURCE)/Missions/Generated
+
+HW_THIRDPARTY           = $(HW_SOURCE)/ThirdParty
+HW_THIRDPARTY_INCLUDES  = $(HW_THIRDPARTY)/CRC $(HW_THIRDPARTY)/LZSS $(HW_THIRDPARTY)/JPG
+
+HW_BUILD_DIR           = $(HW_ROOT)/build/$(PLATFORM_NAME)/$(CONFIGURATION)
+HW_BUILD_DIR_OUT       = $(HW_BUILD_DIR)/bin/
+HW_BUILD_DIR_INT       = $(HW_BUILD_DIR)/obj/$(PROJECT_NAME)/$(TARGET_NAME)

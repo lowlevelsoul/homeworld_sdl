@@ -16,6 +16,7 @@
 //#include "SDL_endian.h"
 
 #include <stdint.h>
+#include <stdlib.h>
 
 #if 0
 #ifdef _MSC_VER
@@ -67,7 +68,7 @@ typedef float		real32;
 typedef double		real64;
 
 #ifdef _X86_64
-typedef uqword	memsize;	
+typedef size_t	memsize;
 typedef sqword	smemsize;	
 typedef real64  memrealsize;
 #else

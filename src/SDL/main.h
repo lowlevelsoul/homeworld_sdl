@@ -7,7 +7,7 @@
 #ifndef ___MAIN_H
 #define ___MAIN_H
 
-#include <SDL.h>
+#include "SDL.h"
 
 #include "mainswitches.h"
 #include "Types.h"
@@ -24,11 +24,11 @@
                             + defined( HW_BUILD_FOR_DISTRIBUTION ) 
 
 
-#if HW_GAME_TYPE_COUNT != 1
+#if !defined(HW_GAME_HOMEWORLD) && !defined(HW_GAME_RAIDER_RETREAT) && !defined(HW_GAME_DEMO)
     #error Please specify ONE of the HW_GAME_* types
 #endif
 
-#if HW_BUILD_TYPE_COUNT != 1
+#if !defined(HW_BUILD_FOR_DEBUGGING) && !defined(HW_BUILD_FOR_DISTRIBUTION)
     #error Please specify ONE of the HW_BUILD_* types
 #endif
 

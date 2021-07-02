@@ -215,7 +215,7 @@ extern real32 partNLips;
 void partStartup(void);
 void partShutdown(void);
 
-void partSetDefaults();
+void partSetDefaults(void);
 void partRenderSystem(psysPtr psys);
 bool8 partUpdateSystem(psysPtr psys, real32 dt, vector* velvec);    //TRUE if system died, FALSE otherwise
 psysPtr partCreateSystem(particleType t, udword n);

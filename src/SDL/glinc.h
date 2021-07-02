@@ -87,7 +87,7 @@ static inline void gles_render_current(void) {
             }
             gles_vertex[gles_vertex_count++] = center_x;
             gles_vertex[gles_vertex_count++] = center_y;
-            gles_vertex_data();
+            gles_vertex_data(void)
             glDrawElements(GL_TRIANGLE_FAN, gles_vertex_count / gles_vertex_dimensions, GL_UNSIGNED_SHORT, poly_indices);
             break;
         }
@@ -122,7 +122,7 @@ static inline void glBegin(GLenum mode) {
 }
 
 static inline void glEnd(void) {
-    if (gles_vertex_count) gles_render_current();
+    if (gles_vertex_count) gles_render_current(void)
     gles_immediate = 0;
 }
 
@@ -189,20 +189,20 @@ static inline void glTexCoord2f(GLfloat s, GLfloat t) {
 }
 
 static inline void glVertex2f(GLfloat x, GLfloat y) {
-    if (gles_mode == GL_QUADS && gles_vertex_dimensions && gles_vertex_count / gles_vertex_dimensions == 4) gles_render_current();
+    if (gles_mode == GL_QUADS && gles_vertex_dimensions && gles_vertex_count / gles_vertex_dimensions == 4) gles_render_current(void)
     gles_vertex_dimensions = 2;
     gles_vertex[gles_vertex_count++] = x;
     gles_vertex[gles_vertex_count++] = y;
-    gles_vertex_data();
+    gles_vertex_data(void)
 }
 
 static inline void glVertex3f(GLfloat x, GLfloat y, GLfloat z) {
-    if (gles_mode == GL_QUADS && gles_vertex_dimensions && gles_vertex_count / gles_vertex_dimensions == 4) gles_render_current();
+    if (gles_mode == GL_QUADS && gles_vertex_dimensions && gles_vertex_count / gles_vertex_dimensions == 4) gles_render_current(void)
     gles_vertex_dimensions = 3;
     gles_vertex[gles_vertex_count++] = x;
     gles_vertex[gles_vertex_count++] = y;
     gles_vertex[gles_vertex_count++] = z;
-    gles_vertex_data();
+    gles_vertex_data(void)
 }
 
 static inline void glVertex3fv(const GLfloat *v) {
@@ -215,7 +215,7 @@ static inline void glVertex3fv(const GLfloat *v) {
 
 #else
 
-#include <SDL_opengl.h>
+#include "SDL_opengl.h"
 
 extern PFNGLBINDBUFFERPROC glBindBuffer;
 extern PFNGLDELETEBUFFERSPROC glDeleteBuffers;

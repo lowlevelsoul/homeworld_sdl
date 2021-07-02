@@ -167,8 +167,8 @@ void mouseStoreCursorUnder(void);
 void mouseRestoreCursorUnder(void);
 void mouseDraw(void);
 void mouseDrawType(mouseCursor cursortype);
-void mouseSelectCursorSetting();
-void mouseSetCursorSetting();
+void mouseSelectCursorSetting(void);
+void mouseSetCursorSetting(void);
 void mouseCursorSet(udword mode);
 void mouseCursorClear(udword mode);
 

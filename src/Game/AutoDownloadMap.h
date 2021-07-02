@@ -12,18 +12,18 @@
 
 // INTERFACE -------------------------------------------------------------------
 
-void autodownloadmapStartup();
-void autodownloadmapShutdown();
-void autodownloadmapReset();
+void autodownloadmapStartup(void);
+void autodownloadmapShutdown(void);
+void autodownloadmapReset(void);
 void autodownloadmapGetFilesOfMap(void);
 void autodownloadmapGotMapName(char *mapname, sdword numPlayers, sdword minPlayers, sdword maxPlayers);
-bool autodownloadmapRequired();
+bool autodownloadmapRequired(void);
 void receivedFilePacketCB(ubyte *packet,udword sizeofPacket);
-bool autodownloadmapReceivedAllFiles();
+bool autodownloadmapReceivedAllFiles(void);
 void autodownloadmapSendAllFiles(void);
-void autodownloadmapPrintStatusStart();
-real32 autodownloadmapPercentReceivedFiles();
-real32 autodownloadmapPercentSentFiles();
+void autodownloadmapPrintStatusStart(void);
+real32 autodownloadmapPercentReceivedFiles(void);
+real32 autodownloadmapPercentSentFiles(void);
 bool autodownloadmapSendAFile(void);
 
 #endif

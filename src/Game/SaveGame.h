@@ -95,7 +95,7 @@ void PreLoadGame(char *filename);
 
 void SaveThisChunk(SaveChunk *thischunk);
 SaveChunk *CreateChunk(TypeOfSaveChunk type,sdword contentsSize,void *contents);
-SaveChunk *LoadNextChunk();
+SaveChunk *LoadNextChunk(void);
 
 sdword SpaceObjRegistryGetID(SpaceObj *obj);
 SpaceObj *SpaceObjRegistryGetObj(sdword id);
@@ -104,7 +104,7 @@ Resource *SpaceObjRegistryGetResource(sdword id);
 Bullet *SpaceObjRegistryGetBullet(sdword id);
 TargetPtr SpaceObjRegistryGetTarget(sdword id);
 void SaveInfoNumber(sdword info);
-sdword LoadInfoNumber();
+sdword LoadInfoNumber(void);
 void *ConvertNumToPointerInList(LinkedList *list,sdword num);
 sdword ConvertPointerInListToNum(LinkedList *list,void *entry);
 void SpaceObjRegistryRegister(SpaceObj *obj);
@@ -152,6 +152,6 @@ void Load_StringToAddress(char *addr);
 sdword VerifySaveFile(char *filename);
 
 bool LoadInfoNumberOptional(sdword *info);
-SaveChunk *LoadNextChunkSafe();
+SaveChunk *LoadNextChunkSafe(void);
 
 #endif

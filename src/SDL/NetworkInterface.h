@@ -12,8 +12,8 @@ typedef IpElem* IpList;
 
 typedef struct { TCPsocket sock; IPaddress IP; } Client;
 
-void initNetwork();
-void shutdownNetwork();
+void initNetwork(void)
+void shutdownNetwork(void)
 
 int broadcastStartThread(void*);
 int TCPServerStartThread(void*);
@@ -27,7 +27,7 @@ void removeSockFromList(int);
 int checkList(IPaddress, IpList);
 IpList addList(IPaddress, IpList);
 
-Uint32 getMyAddress();
+Uint32 getMyAddress(void)
 int pingSendThread(void*);
 
 

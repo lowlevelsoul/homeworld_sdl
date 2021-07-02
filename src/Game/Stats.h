@@ -116,7 +116,7 @@ SelectCommand *statsGetMostEfficientShipsToKill(ShipStaticInfo *killer,SelectCom
     Cheat detection:
 =============================================================================*/
 // returns a checksum of the statistics gathered by the game
-/*real32 statsGetStatsChecksum();*/
-udword statsGetStatChecksum();
+/*real32 statsGetStatsChecksum(void)*/
+udword statsGetStatChecksum(void);
 
 #endif

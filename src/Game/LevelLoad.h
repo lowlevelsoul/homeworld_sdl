@@ -17,7 +17,7 @@ void levelStartNext(char *directory,char *pickedMission);        // for single p
 
 // utility functions
 ShipType GetAppropriateShipTypeForRace(ShipType request,ShipRace shiprace);
-void TryToFindMothershipsForPlayers();
+void TryToFindMothershipsForPlayers(void);
 ShipRace GetSinglePlayerRaceEquivalent(ShipRace race);
 
 bool AddResourceToSphere(ResourceVolume *sphere,bool regrowing);

@@ -33,7 +33,7 @@ public:
 	ClientCDKey(const ClientCDKey& theKeyR);
 
 	// Destructor
-	virtual ~ClientCDKey();
+	virtual ~ClientCDKey(void)
 
 	// Operators
 	ClientCDKey& operator=(const ClientCDKey& theKeyR);
@@ -80,11 +80,11 @@ public:
 	const WONCommon::RawBuffer& AsBinary() const;
 
 	// Load/Save key in registry securely (key is encrypted in the registry)
-	virtual bool Load();
+	virtual bool Load(void)
 	virtual bool Save() const;
 
 	// Clean key from registry
-	virtual bool CleanReg();
+	virtual bool CleanReg(void)
 
 protected:
 	// Types
@@ -153,7 +153,7 @@ ClientCDKey::SetProduct(const std::string& theProductR)
 
 inline __int64
 ClientCDKey::AsRaw() const
-{ return BufferFromFields(); }
+{ return BufferFromFields(void) }
 
 };  //namespace WONCDKey
 
@@ -161,7 +161,7 @@ ClientCDKey::AsRaw() const
 // Output operators
 inline std::ostream&
 operator<<(std::ostream& os, const WONCDKey::ClientCDKey& theKeyR)
-{ os << theKeyR.AsString();  return os; }
+{ os << theKeyR.AsString(void)  return os; }
 
 #endif
 #endif

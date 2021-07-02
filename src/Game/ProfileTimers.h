@@ -46,7 +46,7 @@ void profTimerStopFunc(sdword timer);
 void profTimerStatsPrintFunc(sdword *y);
 void profTimerLabelFunc(sdword timer,char *label);
 void profTimerStartLabelFunc(sdword timer,char *label);
-void profTimerOutputRecordingsFunc();
+void profTimerOutputRecordingsFunc(void);
 
 void profTimerStartLittleLabelFunc(sdword timer,char *label);
 void profTimerStopLittleFunc(sdword timer);

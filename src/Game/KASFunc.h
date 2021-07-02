@@ -188,14 +188,14 @@ sdword kasfUnderAttackElsewhere(struct AITeam *otherTeam, GrowSelection *attacke
 sdword kasfShipsCountType(GrowSelection *ships, char *shipType);
 
 void kasfDock(struct AITeam *withTeam);
-void kasfDockSupport();
+void kasfDockSupport(void);
 void kasfDockSupportWith(struct AITeam * withTeam);
 void kasfShipsDockSupportWith(GrowSelection *ships, GrowSelection *withShips);
 void kasfDockStay(struct AITeam * withTeam);
 void kasfShipsDockStay(GrowSelection *ships, GrowSelection *withShips);
 void kasfDockStayMothership(void);
 void kasfDockInstant(struct AITeam * withTeam);
-void kasfLaunch();
+void kasfLaunch(void);
 
 sdword kasfTeamDocking(void);
 sdword kasfTeamDockedReadyForLaunch(void);

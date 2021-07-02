@@ -155,8 +155,8 @@ void bigmessageErase(sdword position);
 
 //probe hack functions
 bool mrNeedProbeHack(void);
-void mrProbeHack();
-void mrRemoveAllProbesFromSelection();
+void mrProbeHack(void);
+void mrRemoveAllProbesFromSelection(void);
 
 //nis strangeness prevention:
 void mrNISStarting(void);

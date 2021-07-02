@@ -30,29 +30,29 @@ extern "C" {
 #endif
 
 int InitWave(DWORD *dwNumDevs);
-int EndWave();
+int EndWave(void)
 
 int StartWavePlay(DWORD nDeviceID);
-int StopWavePlay();
+int StopWavePlay(void)
 
 #ifdef __cplusplus
 }
 #endif
 
 // Internal functions 
-int AllocWaveFormat();
-int FreeWaveFormat();
+int AllocWaveFormat(void)
+int FreeWaveFormat(void)
 
-int AllocWaveHeaders();
-int InitWaveHeaders();
-int FreeWaveHeaders();
+int AllocWaveHeaders(void)
+int InitWaveHeaders(void)
+int FreeWaveHeaders(void)
 
-int AllocWaveBuffers();
-int FreeWaveBuffers();
+int AllocWaveBuffers(void)
+int FreeWaveBuffers(void)
 
-int CloseWavePlay();
-int QueueWaveBuffer();
-int ReadWaveBuffer();
+int CloseWavePlay(void)
+int QueueWaveBuffer(void)
+int ReadWaveBuffer(void)
 
 int GetFormatTagDetails(WORD wFormatTag);
 int GetFormatDetails(LPWAVEFORMATEX pFormatIn);

@@ -13,7 +13,7 @@
 #ifndef __JPEGINTERFACE_H__
 #define __JPEGINTERFACE_H__
 
-typedef unsigned int filehandle;
+typedef int64_t filehandle;
 
 typedef struct _jpegdata {
    unsigned char *ptr;

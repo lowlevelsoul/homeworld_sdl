@@ -35,7 +35,7 @@ memsize do_get_arg(struct Effect *effect, struct etgeffectstatic *stat, etgfunct
 #define funcEntry0(name, ret, func) \
 memsize wrap_##func(Effect *effect, struct etgeffectstatic *stat ,etgfunctioncall *opcode) \
 { \
-    memsize (*func_ptr)(void) = opcode->function; \
+    memsize (*func_ptr)() = opcode->function; \
     return func_ptr(); \
 }
 

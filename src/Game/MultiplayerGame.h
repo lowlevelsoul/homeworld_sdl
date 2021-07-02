@@ -312,14 +312,14 @@ void mgAcceleratorRelease(void);
 
 void LockMutex(void *mutex);
 void UnLockMutex(void *mutex);
-void *gameCreateMutex();            // no windows handles, etc, required!
+void *gameCreateMutex(void);          // no windows handles, etc, required!
 void gameCloseMutex(void *mutex);
 
 void titanJoinGameRequest(tpscenario *gametojoin);
 
-bool mgInvalidGameName();
+bool mgInvalidGameName(void);
 
-bool mgInvalidGamePassword();
+bool mgInvalidGamePassword(void);
 
 void mgPrepareMessageBox(char *string1,char *string2);
 

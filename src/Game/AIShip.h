@@ -107,7 +107,7 @@ extern AIshipStats aishipStats;
 void aishipStatsPrint(sdword *y);
 
 void aishipStatsInitFunc(Ship *ship);
-void aishipStatsCloseFunc();
+void aishipStatsCloseFunc(void)
 
 #define aishipStatsInit(s)   aishipStatsInitFunc(s)
 #define aishipStatsClose()  aishipStatsCloseFunc()

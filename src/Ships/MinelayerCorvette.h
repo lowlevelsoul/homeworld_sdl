@@ -66,6 +66,6 @@ typedef struct
 extern CustShipHeader MinelayerCorvetteHeader;
 
 void MinelayerCorvetteOrderChangedCleanUp(Ship *ship);
-void univUpdateMineWallFormations();
+void univUpdateMineWallFormations(void);
 
 #endif

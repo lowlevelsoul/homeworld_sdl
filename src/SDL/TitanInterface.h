@@ -60,13 +60,13 @@ class TitanInterface : public WONCommon::ThreadBase
 {
 public:
     TitanInterface(unsigned long isLan, unsigned long isIP);
-    ~TitanInterface();
+    ~TitanInterface(void)
 
     // Overridden from ThreadBase
-    void startThread();
-    void stopThread();
+    void startThread(void)
+    void stopThread(void)
 
-    void loadVerifierKey();
+    void loadVerifierKey(void)
 
     //Creates a socket to verify that networking with current protocol is possible
     unsigned long CanNetwork(void);
@@ -77,11 +77,11 @@ public:
     void StartShutdown(unsigned char titanMsgType, const void* thePacket, unsigned short theLen);
 
     // Request the list of valid Homeworld client versions from a Directory Server
-    void RequestValidVersions();
+    void RequestValidVersions(void)
 
     // Request directory contents, theDir is subdir of /Homeworld dir
     // Set theDir to NULL to get contents of /Homeworld
-    void RequestDirectory();
+    void RequestDirectory(void)
 
     // Game data maintenance (create, delete, replace)
     void RequestCreateGame(const wchar_t* theGame, DirectoryCustomInfo* myInfo);
@@ -131,17 +131,17 @@ public:
     void LeaveGameNotify(void);
     Address GetMyPingAddress(void);
 
-    void ConnectingCancelHit();
+    void ConnectingCancelHit(void)
 
 //  void QueryRoutingServers(void);
 
-    void PumpEngine();
+    void PumpEngine(void)
 
     void OnInitialLobbyEnter(void);
     void OnFinalLobbyExit(void);
     void OnCaptainStartedGame(void);
     void CreateMediaMetrixEditControl(void);
-    static bool TitanInterface::SaveWonstuff();
+    static bool TitanInterface::SaveWonstuff(void)
 private:
     bool mUseRoutingServer; // Are we using a routing server for game communication?
     bool mUseOldScheme; // Old
@@ -284,7 +284,7 @@ private:
     WONCommon::CriticalSection mPacketCrit;
     WONCommon::CriticalSection mStartRoutingCrit;
 
-    int threadProcess();
+    int threadProcess(void)
     void ChangeAddress(Address *theOldAddress, Address *theNewAddress);
 
     void HandleWaitCmd(WONMisc::PipeCmd* theCmdP);

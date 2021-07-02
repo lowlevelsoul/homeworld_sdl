@@ -71,10 +71,14 @@
 
 #define MAX_FILES_OPEN          32
 
+#ifndef PATH_MAX
+#   define PATH_MAX 258
+#endif
+
 /*=============================================================================
     Type definitions:
 =============================================================================*/
-typedef smemsize  filehandle;
+typedef smemsize filehandle;
 
 typedef struct {
     sdword inUse;

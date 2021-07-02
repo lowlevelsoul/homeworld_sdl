@@ -143,8 +143,8 @@ extern BabyCallBack    *tacticsFlashMenuBaby;
 extern regionhandle    tacticsMenuRegion;
 //ProtoTypes
 
-void tacticsStartUp();
-void tacticsShutDown();
+void tacticsStartUp(void);
+void tacticsShutDown(void);
 void tacticsPopUpSetUp(TacticsType tacticstype);
 void tacticsSetSelectionToTactics(SelectCommand *selection,udword orderflag);
 void tacticsSetShipToDoDodge(Ship *ship);
@@ -158,7 +158,7 @@ void tacticsReportMove(CommandLayer *comlayer,SelectCommand *selection);
 
 
 void tacticsShipDied(Ship *ship);
-void tacticsGlobalUpdate();
+void tacticsGlobalUpdate(void);
 void tacticsAttackCommandVoided(CommandToDo *command);
 
 real32 tacticsMaxDistToTarget(SelectCommand *selection,SpaceObjRotImpTarg *target);

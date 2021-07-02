@@ -28,6 +28,7 @@
 #include "StringSupport.h"
 #include "Task.h"
 #include "utility.h"
+#include "File.h"
 
 /*=============================================================================
     Data:

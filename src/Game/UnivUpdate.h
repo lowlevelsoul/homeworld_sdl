@@ -56,11 +56,11 @@ typedef struct IDToPtrTable
     Functions:
 =============================================================================*/
 
-void univupdateReset();
-void univupdateInit();
-void univupdateClose();
+void univupdateReset(void);
+void univupdateInit(void);
+void univupdateClose(void);
 
-void univupdateCloseAllObjectsAndMissionSpheres();
+void univupdateCloseAllObjectsAndMissionSpheres(void);
 
 bool univUpdate(real32 phystimeelapsed);
 
@@ -120,11 +120,11 @@ bool univSpaceObjInRenderList(SpaceObj *spaceobj);
 #define univSpaceObjInMinorRenderList univSpaceObjInRenderList
 
 real32 univGetChecksum(sdword *numShipsInChecksum);
-udword univCalcShipChecksum();
+udword univCalcShipChecksum(void);
 
 
-void univUpdateRenderList();
-void univUpdateMinorRenderList();
+void univUpdateRenderList(void);
+void univUpdateMinorRenderList(void);
 
 Ship *univFindShipIAmInside(Ship *me);
 bool univAmIInsideThisShip(Ship *me,Ship *ship);
