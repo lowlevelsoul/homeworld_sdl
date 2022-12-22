@@ -78,7 +78,7 @@
 /*=============================================================================
     Type definitions:
 =============================================================================*/
-typedef smemsize filehandle;
+typedef int64_t filehandle;
 
 typedef struct {
     sdword inUse;

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
@@ -8,13 +8,9 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\Game\;$(SolutionDir)..\..\src\Ships\;$(SolutionDir)..\..\src\SDL\;$(SolutionDir)..\..\src\Missions\generated\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\ThirdParty\CRC\;$(SolutionDir)..\..\src\ThirdParty\JPG\;$(SolutionDir)..\..\src\ThirdParty\LZSS\;$(SolutionDir)..\..\src\ThirdParty\Titan\;$(SolutionDir)..\..\src\Game\;$(SolutionDir)..\..\src\Missions\;$(SolutionDir)..\..\src\SDL\;$(SolutionDir)..\..\src\Ships\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\..\build\$(Platform)\$(Configuration)\out\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>
-      </AdditionalDependencies>
-    </Link>
   </ItemDefinitionGroup>
   <ItemGroup />
 </Project>

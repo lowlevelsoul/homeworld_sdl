@@ -14,6 +14,8 @@
 #ifndef JPEGLIB_H
 #define JPEGLIB_H
 
+#include <stdint.h>
+
 /*
  * First we include the configuration files that record how this
  * installation of the JPEG library is set up.  jconfig.h can be
@@ -41,7 +43,7 @@ extern "C" {
 #define JPEG_LIB_VERSION_MAJOR  8
 #define JPEG_LIB_VERSION_MINOR  3
 
-typedef unsigned int filehandle;
+typedef int64_t filehandle;
 
 
 /* Various constants determining the sizes of things.

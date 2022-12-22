@@ -18,6 +18,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+#define malloc(X) malloc((X) * 16)
+
 #if 0
 #ifdef _MSC_VER
     #ifndef WIN32_LEAN_AND_MEAN
