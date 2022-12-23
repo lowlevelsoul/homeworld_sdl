@@ -941,6 +941,9 @@ void utyOptionsFileWrite(void)
         strcpy(ch_buf, UTY_CONFIG_FILENAME);
     }
     f = fopen(ch_buf, "wt");
+    if ( f == NULL ) {
+        return;
+    }
 
     for (index = 0; utyOptionsList[index].name != NULL; index++)
     {
