@@ -5,8 +5,6 @@
 
 int main( int argc, char* argv[] )
 {
-    static char* errorString = NULL;
-
     SDL_Init( SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_GAMECONTROLLER );
     uint32_t w = 640;
     uint32_t h = 480;
