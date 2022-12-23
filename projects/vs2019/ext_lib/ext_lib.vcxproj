@@ -83,6 +83,7 @@
     <ClCompile Include="..\..\..\src\ThirdParty\JPG\wrtarga.c" />
     <ClCompile Include="..\..\..\src\ThirdParty\LZSS\BitIO.c" />
     <ClCompile Include="..\..\..\src\ThirdParty\LZSS\LZSS.c" />
+    <ClCompile Include="..\..\..\src\ThirdParty\stb\stb_image.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\ThirdParty\CRC\CRC32.h" />
@@ -101,6 +102,27 @@
     <ClInclude Include="..\..\..\src\ThirdParty\JPG\transupp.h" />
     <ClInclude Include="..\..\..\src\ThirdParty\LZSS\BitIO.h" />
     <ClInclude Include="..\..\..\src\ThirdParty\LZSS\LZSS.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_connected_components.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_c_lexer.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_divide.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_ds.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_dxt.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_easy_font.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_herringbone_wang_tile.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_hexwave.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_image.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_image_resize.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_image_write.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_include.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_leakcheck.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_perlin.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_rect_pack.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_sprintf.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_textedit.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_tilemap_editor.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_truetype.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_vorbis.h" />
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_voxel_render.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -8,7 +8,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\ThirdParty\CRC\;$(SolutionDir)..\..\src\ThirdParty\JPG\;$(SolutionDir)..\..\src\ThirdParty\LZSS\;$(SolutionDir)..\..\src\ThirdParty\Titan\;$(SolutionDir)..\..\src\Game\;$(SolutionDir)..\..\src\Missions\;$(SolutionDir)..\..\src\SDL\;$(SolutionDir)..\..\src\Ships\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\ThirdParty\CRC\;$(SolutionDir)..\..\src\ThirdParty\JPG\;$(SolutionDir)..\..\src\ThirdParty\LZSS\;$(SolutionDir)..\..\src\ThirdParty\Titan\;$(SolutionDir)..\..\src\ThirdParty\stb\;$(SolutionDir)..\..\src\Game\;$(SolutionDir)..\..\src\Missions\;$(SolutionDir)..\..\src\SDL\;$(SolutionDir)..\..\src\Ships\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>

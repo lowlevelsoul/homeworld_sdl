@@ -16,6 +16,15 @@
     <Filter Include="jpeg\header">
       <UniqueIdentifier>{e3bd111f-c88a-4ac6-8a98-a7526f80181d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="stb">
+      <UniqueIdentifier>{7203f1f3-be0d-474d-8d0e-f84beb899fc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stb\header">
+      <UniqueIdentifier>{a83a4922-e491-4027-921d-470c31f75b9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stb\source">
+      <UniqueIdentifier>{9ef11eb8-832c-470a-b318-3ab088c0d4b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\ThirdParty\LZSS\BitIO.c">
@@ -210,6 +219,9 @@
     <ClCompile Include="..\..\..\src\ThirdParty\JPG\wrtarga.c">
       <Filter>jpeg\source</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\ThirdParty\stb\stb_image.c">
+      <Filter>stb\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\ThirdParty\LZSS\BitIO.h">
@@ -259,6 +271,69 @@
     </ClInclude>
     <ClInclude Include="..\..\..\src\ThirdParty\JPG\jconfig.h">
       <Filter>jpeg\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_c_lexer.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_connected_components.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_divide.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_ds.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_dxt.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_easy_font.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_herringbone_wang_tile.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_hexwave.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_image.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_image_resize.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_image_write.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_include.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_leakcheck.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_perlin.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_rect_pack.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_sprintf.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_textedit.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_tilemap_editor.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_truetype.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_vorbis.h">
+      <Filter>stb\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\ThirdParty\stb\stb_voxel_render.h">
+      <Filter>stb\header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
