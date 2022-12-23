@@ -78,7 +78,7 @@
 /*=============================================================================
     Type definitions:
 =============================================================================*/
-typedef int64_t filehandle;
+typedef int32_t filehandle;
 
 typedef struct {
     sdword inUse;
