@@ -86,7 +86,7 @@
  * CAUTION: argument order is different from underlying functions!
  */
 
-extern int32_t fileBlockReadNoError( int32_t, void*, int32_t );
+extern int fileBlockReadNoError( int, void *, int );
 
 // Homeworld SDL
 #define JFREAD(file,buf,sizeofbuf)  \

@@ -43,7 +43,7 @@ extern "C" {
 #define JPEG_LIB_VERSION_MAJOR  8
 #define JPEG_LIB_VERSION_MINOR  3
 
-typedef int64_t filehandle;
+typedef int32_t filehandle;
 
 
 /* Various constants determining the sizes of things.

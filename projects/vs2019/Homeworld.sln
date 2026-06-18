@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32802.440
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ext_lib", "ext_lib\ext_lib.vcxproj", "{A140B308-1EDD-4B9B-BDFC-5341010E20F0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Homeworld", "Homeworld\Homeworld.vcxproj", "{A1BE6B38-ACD3-4319-A144-248526712898}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A140B308-1EDD-4B9B-BDFC-5341010E20F0} = {A140B308-1EDD-4B9B-BDFC-5341010E20F0}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SdlTest", "SdlTest\SdlTest.vcxproj", "{06B83644-7C12-4009-870D-301A1871D68A}"
 EndProject
