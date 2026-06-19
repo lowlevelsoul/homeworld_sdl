@@ -159,30 +159,30 @@ typedef udword fonthandle;
     Functions:
 =============================================================================*/
 //load in a font
-fontheader *fontLoad(char *fileName);
-void fontDiscard(fonthandle font);
-void fontDiscardGL(fontheader* font);
+TI_API fontheader *fontLoad(char *fileName);
+TI_API void fontDiscard(fonthandle font);
+TI_API void fontDiscardGL(fontheader* font);
 
 //select a font
-fonthandle fontMakeCurrent(fonthandle font);
-fonthandle fontCurrentGet(void);
+TI_API fonthandle fontMakeCurrent(fonthandle font);
+TI_API fonthandle fontCurrentGet(void);
 
-void fontShadowSet(FontShadowType s, color color);
-FontShadowType fontShadowGet(void);
+TI_API void fontShadowSet(FontShadowType s, color color);
+TI_API FontShadowType fontShadowGet(void);
 
 //printing fonts
-sdword fontPrintCentre(sdword y, color c, char *string);
-sdword fontPrintCentreCentreRectangle(rectangle *rect, color c, char *string);
-sdword fontPrint(sdword x, sdword y, color c, char *string);
-sdword fontPrintN(sdword x, sdword y, color c, char *string, sdword maxCharacters);
-sdword fontPrintf(sdword x, sdword y, color c, char *format, ...);
-sdword fontWidth(char *string);
-sdword fontWidthN(char *string, sdword maxCharacters);
-sdword fontWidthf(char *format, ...);
-sdword fontHeight(char *string);
-sdword fontHeightf(char *format, ...);
+TI_API sdword fontPrintCentre(sdword y, color c, char *string);
+TI_API sdword fontPrintCentreCentreRectangle(rectangle *rect, color c, char *string);
+TI_API sdword fontPrint(sdword x, sdword y, color c, char *string);
+TI_API sdword fontPrintN(sdword x, sdword y, color c, char *string, sdword maxCharacters);
+TI_API sdword fontPrintf(sdword x, sdword y, color c, char *format, ...);
+TI_API sdword fontWidth(char *string);
+TI_API sdword fontWidthN(char *string, sdword maxCharacters);
+TI_API sdword fontWidthf(char *format, ...);
+TI_API sdword fontHeight(char *string);
+TI_API sdword fontHeightf(char *format, ...);
 
-void glfontRecreate(fontheader* header);
+TI_API void glfontRecreate(fontheader* header);
 
 
 #endif

@@ -65,47 +65,47 @@ extern "C" {
 // Functions
 int fqRand(int (*pFunc)(int),int nParam);
 double fqSqrt(double (*pFunc)(double));
-int fqSize(udword nSize);
+TI_API int fqSize(udword nSize);
 
-int fqAdd(float *aPBlock,float *aSBlock);
-//int fqMult(float *aPBlock,float *aSBlock);
-//int fqMax(float *aPBlock,float *aSBlock);
-int fqScale(float *aBlock,float fLev);
-int fqMix(float *aPBlock,float *aSBlock,float fLev);
-//int fqFilter(float *aBlock,udword nMinFreq,udword nMaxFreq);
-//int fqAddNoise(float *aBlock,float fLev,udword nMinFreq,udword nMaxFreq);
-//int fqGenNoise(float *aBlock,float fLev,udword nMinFreq,udword nMaxFreq);
+TI_API int fqAdd(float *aPBlock,float *aSBlock);
+TI_API //int fqMult(float *aPBlock,float *aSBlock);
+TI_API //int fqMax(float *aPBlock,float *aSBlock);
+TI_API int fqScale(float *aBlock,float fLev);
+TI_API int fqMix(float *aPBlock,float *aSBlock,float fLev);
+TI_API //int fqFilter(float *aBlock,udword nMinFreq,udword nMaxFreq);
+TI_API //int fqAddNoise(float *aBlock,float fLev,udword nMinFreq,udword nMaxFreq);
+TI_API //int fqGenNoise(float *aBlock,float fLev,udword nMinFreq,udword nMaxFreq);
 
-int fqPitchShift(float *aBlock,float fShift);
-//int fqPitchSlide(float *aBlock,sdword nSlideFreq);
-//int fqStretch(float *aRBlock,float *aBlock,float *aBuf);
-//int fqGate(float *aBlock,float fLev);
-//int fqLimit(float *aBlock,float fLev);
-int fqEqualize(float *aBlock,float *aEq);
-int fqDelay(float *aBlock,float fLev,udword nDur,float *aBuf,sdword nSize,sdword *nPos);
-int fqAcModel(float *aBlock,float *aEq,udword nDur,float *aBuf,sdword nSize,sdword *nPos);
+TI_API int fqPitchShift(float *aBlock,float fShift);
+TI_API //int fqPitchSlide(float *aBlock,sdword nSlideFreq);
+TI_API //int fqStretch(float *aRBlock,float *aBlock,float *aBuf);
+TI_API //int fqGate(float *aBlock,float fLev);
+TI_API //int fqLimit(float *aBlock,float fLev);
+TI_API int fqEqualize(float *aBlock,float *aEq);
+TI_API int fqDelay(float *aBlock,float fLev,udword nDur,float *aBuf,sdword nSize,sdword *nPos);
+TI_API int fqAcModel(float *aBlock,float *aEq,udword nDur,float *aBuf,sdword nSize,sdword *nPos);
 
-int fqInitE(EFFECT *rEffect);
-//int fqScaleE(float *aBlock,EFFECT *rEffect);
-//int fqMixE(float *aPBlock,float *aSBlock,EFFECT *rEffect);
-int fqFilterE(float *aBlock,EFFECT *rEffect);
+TI_API int fqInitE(EFFECT *rEffect);
+TI_API //int fqScaleE(float *aBlock,EFFECT *rEffect);
+TI_API //int fqMixE(float *aPBlock,float *aSBlock,EFFECT *rEffect);
+TI_API int fqFilterE(float *aBlock,EFFECT *rEffect);
 
-int fqAddNoiseE(float *aBlock,EFFECT *rEffect);
-int fqAddToneE(float *aBlock,EFFECT *rEffect);
-int fqAddBreakE(float *aBlock,EFFECT *rEffect);
+TI_API int fqAddNoiseE(float *aBlock,EFFECT *rEffect);
+TI_API int fqAddToneE(float *aBlock,EFFECT *rEffect);
+TI_API int fqAddBreakE(float *aBlock,EFFECT *rEffect);
 
-//int fqGenNoiseE(float *aBlock,EFFECT *rEffect);
-//int fqGenBreakE(float *fLev,EFFECT *rEffect);
-int fqGenQNoiseE(char *aQBlock,udword nRate,EFFECT *rEffect);
+TI_API //int fqGenNoiseE(float *aBlock,EFFECT *rEffect);
+TI_API //int fqGenBreakE(float *fLev,EFFECT *rEffect);
+TI_API int fqGenQNoiseE(char *aQBlock,udword nRate,EFFECT *rEffect);
 
-//int fqPitchShiftE(float *aBlock,EFFECT *rEffect);
-int fqLimitE(float *aBlock,EFFECT *rEffect);
-//int fqEqualizeE(float *aBlock,EFFECT *rEffect);
+TI_API //int fqPitchShiftE(float *aBlock,EFFECT *rEffect);
+TI_API int fqLimitE(float *aBlock,EFFECT *rEffect);
+TI_API //int fqEqualizeE(float *aBlock,EFFECT *rEffect);
 
-int rrand(int nDummy);
+TI_API int rrand(int nDummy);
 
 // Math functions
-    float gaussian(void);
+    TI_API float gaussian(void);
 
 #ifdef __cplusplus
 }		// extern "C"

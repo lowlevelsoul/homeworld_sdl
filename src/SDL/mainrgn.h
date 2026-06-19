@@ -99,68 +99,68 @@ bool mrCanFocusRoids;
     Functions:
 =============================================================================*/
 //startup/shutdown of main region code
-void mrStartup(void);
-void mrShutdown(void);
-void mrReset(void);
+TI_API void mrStartup(void);
+TI_API void mrShutdown(void);
+TI_API void mrReset(void);
 
-void mrShipDied(struct Ship *ship);
+TI_API void mrShipDied(struct Ship *ship);
 
 //region-process routine for the main region
-udword mrRegionProcess(struct tagRegion *reg, sdword ID, udword event, udword data);
+TI_API udword mrRegionProcess(struct tagRegion *reg, sdword ID, udword event, udword data);
 //region-draw routine for the main region
-void mrRegionDraw(regionhandle reg);
+TI_API void mrRegionDraw(regionhandle reg);
 
 //right-click callback functions
-void mrDockingOrders(char *string, featom *atom);
-void mrDeltaFormation(char *string, featom *atom);
-void mrBroadFormation(char *string, featom *atom);
-void mrXFormation(char *string, featom *atom);
-void mrClawFormation(char *string, featom *atom);
-void mrWallFormation(char *string, featom *atom);
-void mrSphereFormation(char *string, featom *atom);
-void mrCustomFormation(char *string, featom *atom);
-void mrHarvestResources(char *string, featom *atom);
-void mrBuildShips(char *string, featom *atom);
-void mrTradeStuff(char *string, featom *atom);
-void mrMoveShips(char *string, featom *atom);
-void mrInfo(char *string, featom *atom);
-void mrCancel(char *string, featom *atom);
-void mrScuttle(char *string, featom *atom);
-void mrRetire(char *string, featom *atom);
-void mrUpdateHyperspaceStatus(bool goForLaunch);
-void mrHyperspace(char *string, featom *atom);
-void mrLaunch(char *string, featom *atom);
-void mrResearch(char *string, featom *atom);
-void mrEvasiveTactics(char *string, featom *atom);
-void mrNeutralTactics(char *string, featom *atom);
-void mrAgressiveTactics(char *string, featom *atom);
-void mrFormAlliance(char *string, featom *atom);
-void mrBreakAlliance(char *string, featom *atom);
-void mrTransferRUS(char *string, featom *atom);
+TI_API void mrDockingOrders(char *string, featom *atom);
+TI_API void mrDeltaFormation(char *string, featom *atom);
+TI_API void mrBroadFormation(char *string, featom *atom);
+TI_API void mrXFormation(char *string, featom *atom);
+TI_API void mrClawFormation(char *string, featom *atom);
+TI_API void mrWallFormation(char *string, featom *atom);
+TI_API void mrSphereFormation(char *string, featom *atom);
+TI_API void mrCustomFormation(char *string, featom *atom);
+TI_API void mrHarvestResources(char *string, featom *atom);
+TI_API void mrBuildShips(char *string, featom *atom);
+TI_API void mrTradeStuff(char *string, featom *atom);
+TI_API void mrMoveShips(char *string, featom *atom);
+TI_API void mrInfo(char *string, featom *atom);
+TI_API void mrCancel(char *string, featom *atom);
+TI_API void mrScuttle(char *string, featom *atom);
+TI_API void mrRetire(char *string, featom *atom);
+TI_API void mrUpdateHyperspaceStatus(bool goForLaunch);
+TI_API void mrHyperspace(char *string, featom *atom);
+TI_API void mrLaunch(char *string, featom *atom);
+TI_API void mrResearch(char *string, featom *atom);
+TI_API void mrEvasiveTactics(char *string, featom *atom);
+TI_API void mrNeutralTactics(char *string, featom *atom);
+TI_API void mrAgressiveTactics(char *string, featom *atom);
+TI_API void mrFormAlliance(char *string, featom *atom);
+TI_API void mrBreakAlliance(char *string, featom *atom);
+TI_API void mrTransferRUS(char *string, featom *atom);
 
 //misc functions
-void mrCameraMotion(void);
-void mrPlayerNameDraw(sdword playerIndex, sdword x, sdword y);
-void mrCommandMessageDraw(void);
-void mrSelectRectBuild(rectangle *dest, sdword anchorX, sdword anchorY);
-sdword mrCursorText(SpaceObj *cursorobj);
-void mrEnable(void);
-void mrDisable(void);
-void mrNULL(void);
-void mrSelectHold(void);
-void mrShipDied(Ship *ship);
-void mrTacticalOverlayState(bool bTactical);
+TI_API void mrCameraMotion(void);
+TI_API void mrPlayerNameDraw(sdword playerIndex, sdword x, sdword y);
+TI_API void mrCommandMessageDraw(void);
+TI_API void mrSelectRectBuild(rectangle *dest, sdword anchorX, sdword anchorY);
+TI_API sdword mrCursorText(SpaceObj *cursorobj);
+TI_API void mrEnable(void);
+TI_API void mrDisable(void);
+TI_API void mrNULL(void);
+TI_API void mrSelectHold(void);
+TI_API void mrShipDied(Ship *ship);
+TI_API void mrTacticalOverlayState(bool bTactical);
 
-void bigmessageDisplay(char *msg,sdword position);
-void bigmessageErase(sdword position);
+TI_API void bigmessageDisplay(char *msg,sdword position);
+TI_API void bigmessageErase(sdword position);
 
 //probe hack functions
-bool mrNeedProbeHack(void);
-void mrProbeHack(void);
-void mrRemoveAllProbesFromSelection(void);
+TI_API bool mrNeedProbeHack(void);
+TI_API void mrProbeHack(void);
+TI_API void mrRemoveAllProbesFromSelection(void);
 
 //nis strangeness prevention:
-void mrNISStarting(void);
-void mrNISStopping(void);
+TI_API void mrNISStarting(void);
+TI_API void mrNISStopping(void);
 
 #endif

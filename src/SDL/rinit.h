@@ -38,12 +38,12 @@ typedef struct rdevice
 extern "C" {
 #endif
 
-int rinEnumerateDevices(void);
-int rinFreeDevices(void);
-unsigned int rinDirectXVersion(void);
-rdevice* rinGetDeviceList(void);
+TI_API int rinEnumerateDevices(void);
+TI_API int rinFreeDevices(void);
+TI_API unsigned int rinDirectXVersion(void);
+TI_API rdevice* rinGetDeviceList(void);
 
-unsigned int rinDeviceCRC(void);
+TI_API unsigned int rinDeviceCRC(void);
 
 #ifdef __cplusplus
 }

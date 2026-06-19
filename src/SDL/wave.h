@@ -30,39 +30,39 @@
 extern "C" {
 #endif
 
-int InitWave(DWORD *dwNumDevs);
-int EndWave( void );
+TI_API int InitWave(DWORD *dwNumDevs);
+TI_API int EndWave( void );
 
-int StartWavePlay(DWORD nDeviceID);
-int StopWavePlay( void );
+TI_API int StartWavePlay(DWORD nDeviceID);
+TI_API int StopWavePlay( void );
 
 #ifdef __cplusplus
 }
 #endif
 
 // Internal functions 
-int AllocWaveFormat( void );
-int FreeWaveFormat( void );
+TI_API int AllocWaveFormat( void );
+TI_API int FreeWaveFormat( void );
 
-int AllocWaveHeaders( void );
-int InitWaveHeaders( void );
-int FreeWaveHeaders( void );
+TI_API int AllocWaveHeaders( void );
+TI_API int InitWaveHeaders( void );
+TI_API int FreeWaveHeaders( void );
 
-int AllocWaveBuffers( void );
-int FreeWaveBuffers( void );
+TI_API int AllocWaveBuffers( void );
+TI_API int FreeWaveBuffers( void );
 
-int CloseWavePlay( void );
-int QueueWaveBuffer( void );
-int ReadWaveBuffer( void );
+TI_API int CloseWavePlay( void );
+TI_API int QueueWaveBuffer( void );
+TI_API int ReadWaveBuffer( void );
 
-int GetFormatTagDetails(WORD wFormatTag);
-int GetFormatDetails(LPWAVEFORMATEX pFormatIn);
+TI_API int GetFormatTagDetails(WORD wFormatTag);
+TI_API int GetFormatDetails(LPWAVEFORMATEX pFormatIn);
 
 // Thread functions
-int InitWaveThread(void);
-int CleanWaveThread(void);
-int CheckWaveThread(void);
-DWORD WINAPI ExecWaveThread(void);
-LRESULT CALLBACK WaveWndProc(HWND hWnd,UINT uMsg,WPARAM wParam,LPARAM lParam);
+TI_API int InitWaveThread(void);
+TI_API int CleanWaveThread(void);
+TI_API int CheckWaveThread(void);
+TI_API DWORD WINAPI ExecWaveThread(void);
+TI_API LRESULT CALLBACK WaveWndProc(HWND hWnd,UINT uMsg,WPARAM wParam,LPARAM lParam);
 
 #endif

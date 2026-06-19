@@ -6,8 +6,8 @@
 extern "C" {
 #endif
 
-int Initdct(float *buf, udword len);
-int idct(float *a, float *b, float *c, udword len);
+TI_API int Initdct(float *buf, udword len);
+TI_API int idct(float *a, float *b, float *c, udword len);
 
 #ifdef __cplusplus
 }		// extern "C"

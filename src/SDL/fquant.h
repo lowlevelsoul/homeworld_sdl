@@ -55,21 +55,21 @@ extern "C" {
 #endif
 
 // Functions
-//int fqInitQuant(FILE *pStream);
+TI_API //int fqInitQuant(FILE *pStream);
 
 //int fqQuantBlock(char *aQBlock,float *aFPBlock,float *aFSBlock,float *aFMBlock,unsigned char *aEBlock,
 //				 udword nLen,udword nRate,udword nSize,int nFlags);
 
-int fqInitDequant(void);
+TI_API int fqInitDequant(void);
 
 int fqDequantBlock(char *aQBlock,float *aFPBlock,float *aFSBlock,unsigned char *aEBlock,
 				 udword nLen,udword nRate,udword nSize);
 
-//int fqSPack(short nVal,udword nLen,udword nPos,char *aBlock);
-sdword fqSUnpack(udword nLen,udword nPos,char *aBlock);
-udword fqUnpack(udword nLen,udword nPos,char *aBlock);
+TI_API //int fqSPack(short nVal,udword nLen,udword nPos,char *aBlock);
+TI_API sdword fqSUnpack(udword nLen,udword nPos,char *aBlock);
+TI_API udword fqUnpack(udword nLen,udword nPos,char *aBlock);
 
-//int linint(float *xa,float *ya,udword n,float x,float *y);
+TI_API //int linint(float *xa,float *ya,udword n,float x,float *y);
 
 #ifdef __cplusplus
 }		// extern "C"

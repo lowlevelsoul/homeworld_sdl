@@ -12,7 +12,7 @@
 #include "tiPlatform.h"
 #include "glinc.h"
 
-void rgluPerspective(GLfloat fovy, GLfloat aspect, GLfloat zNear, GLfloat zFar);
+TI_API void rgluPerspective(GLfloat fovy, GLfloat aspect, GLfloat zNear, GLfloat zFar);
 GLint rgluProject(GLfloat objx, GLfloat objy, GLfloat objz,
                   GLfloat const* model, GLfloat const* proj,
                   GLint const* viewport,
@@ -24,7 +24,7 @@ GLint rgluUnProject(GLfloat winx, GLfloat winy, GLfloat winz,
 void rgluLookAt(GLfloat eyex, GLfloat eyey, GLfloat eyez,
                 GLfloat centerx, GLfloat centery, GLfloat centerz,
                 GLfloat upx, GLfloat upy, GLfloat upz);
-void rgluOrtho2D(GLfloat left, GLfloat right, GLfloat bottom, GLfloat top);
-char* rgluErrorString(GLenum err);
+TI_API void rgluOrtho2D(GLfloat left, GLfloat right, GLfloat bottom, GLfloat top);
+TI_API char* rgluErrorString(GLenum err);
 
 #endif

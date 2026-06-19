@@ -98,19 +98,19 @@ extern sdword primModeEnabled;
 =============================================================================*/
 
 //enable/disable primitive drawing mode do not call directly, use macros instead
-void primModeSetFunction2(void);
-void primModeClearFunction2(void);
+TI_API void primModeSetFunction2(void);
+TI_API void primModeClearFunction2(void);
 
 //draw a single colored triangle
-void primTriSolid2(triangle *tri, color c);
-void primTriOutline2(triangle *tri, sdword thickness, color c);
+TI_API void primTriSolid2(triangle *tri, color c);
+TI_API void primTriOutline2(triangle *tri, sdword thickness, color c);
 //draw a rectangle
-void primRectSolid2(rectangle *rect, color c);
-void primRectTranslucent2(rectangle *rect, color c);
-void primBeveledRectSolid(rectangle *rect, color c, uword xb, uword yb);
-void primRectOutline2(rectangle *rect, sdword thickness, color c);
-void primBeveledRectOutline(rectangle *rect, sdword thickness, color c, uword xb, uword yb);
-void primRoundRectOutline(rectangle *rect, sdword thickness, color c, uword xb, uword yb);
+TI_API void primRectSolid2(rectangle *rect, color c);
+TI_API void primRectTranslucent2(rectangle *rect, color c);
+TI_API void primBeveledRectSolid(rectangle *rect, color c, uword xb, uword yb);
+TI_API void primRectOutline2(rectangle *rect, sdword thickness, color c);
+TI_API void primBeveledRectOutline(rectangle *rect, sdword thickness, color c, uword xb, uword yb);
+TI_API void primRoundRectOutline(rectangle *rect, sdword thickness, color c, uword xb, uword yb);
 void primRectShaded2(rectangle *rect, color *c); // color *c is a pointer to an array of 4 color values
 
 #define OL_UL   0x01
@@ -121,26 +121,26 @@ void primRectShaded2(rectangle *rect, color *c); // color *c is a pointer to an 
 void primMaskedRoundRectOutline(rectangle *rect, sdword thickness, color c,
         uword xb, uword yb, uword mask);
 
-void primRectSolidTextured2(rectangle *rect);
-void primRectSolidTexturedFullRect2(rectangle *rect);
-void primRectSolidTexturedFullRectC2(rectangle *rect, color c);
+TI_API void primRectSolidTextured2(rectangle *rect);
+TI_API void primRectSolidTexturedFullRect2(rectangle *rect);
+TI_API void primRectSolidTexturedFullRectC2(rectangle *rect, color c);
 //draw a line
-void primLine2(sdword x0, sdword y0, sdword x1, sdword y1, color c);
-void primNonAALine2(sdword x0, sdword y0, sdword x1, sdword y1, color c);
-void primLineThick2(sdword x0, sdword y0, sdword x1, sdword y1, sdword thickness, color c);
+TI_API void primLine2(sdword x0, sdword y0, sdword x1, sdword y1, color c);
+TI_API void primNonAALine2(sdword x0, sdword y0, sdword x1, sdword y1, color c);
+TI_API void primLineThick2(sdword x0, sdword y0, sdword x1, sdword y1, sdword thickness, color c);
 //draw a line loop
-void primLineLoopStart2(sdword thickness, color c);
-void primLineLoopPoint3F(real32 x, real32 y);
-void primLineLoopEnd2(void);
+TI_API void primLineLoopStart2(sdword thickness, color c);
+TI_API void primLineLoopPoint3F(real32 x, real32 y);
+TI_API void primLineLoopEnd2(void);
 //draw solid circular things
-void primCircleSolid2(sdword x, sdword y, sdword rad, sdword nSlices, color c);
-void primCircleBorder(sdword x, sdword y, sdword radInner, sdword radOuter, sdword nSlices, color colInner);
+TI_API void primCircleSolid2(sdword x, sdword y, sdword rad, sdword nSlices, color c);
+TI_API void primCircleBorder(sdword x, sdword y, sdword radInner, sdword radOuter, sdword nSlices, color colInner);
 //2d rectangle utility functions
-void primRectUnion2(rectangle *result, rectangle *r0, rectangle *r1);
-void primRealRectUnion2(realrectangle *result, realrectangle *r0, realrectangle *r1);
+TI_API void primRectUnion2(rectangle *result, rectangle *r0, rectangle *r1);
+TI_API void primRealRectUnion2(realrectangle *result, realrectangle *r0, realrectangle *r1);
 //draw oval arcs
-void primOvalArcOutline2(oval *o, real32 radStart, real32 radEnd, sdword thickness, sdword segments, color c);
-void primGLCircleOutline2(real32 x, real32 y, real32 radius, sdword nSegments, color c);
+TI_API void primOvalArcOutline2(oval *o, real32 radStart, real32 radEnd, sdword thickness, sdword segments, color c);
+TI_API void primGLCircleOutline2(real32 x, real32 y, real32 radius, sdword nSegments, color c);
 //series of successively blended rect outlines
 void primSeriesOfRects(rectangle *rect, uword width,
                        color fore, color back, uword steps);
@@ -152,13 +152,13 @@ void primSeriesOfRoundRects(rectangle *rect, uword width,
                             uword xb, uword yb);
 
 //points
-void primBlurryPoint2(sdword x, sdword y, color c);
-void primBlurryPoint22(sdword x, sdword y, color c);
+TI_API void primBlurryPoint2(sdword x, sdword y, color c);
+TI_API void primBlurryPoint22(sdword x, sdword y, color c);
 
 //report errors
-void primErrorMessagePrintFunction(char *file, sdword line);
+TI_API void primErrorMessagePrintFunction(char *file, sdword line);
 
 //utility functions
-real32 primPointLineIntersection(real32 xp, real32 yp, real32 x0, real32 y0, real32 x1, real32 y1);
+TI_API real32 primPointLineIntersection(real32 xp, real32 yp, real32 x0, real32 y0, real32 x1, real32 y1);
 
 #endif

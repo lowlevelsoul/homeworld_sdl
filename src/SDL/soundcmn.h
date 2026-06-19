@@ -222,20 +222,20 @@ typedef struct
 } SOUNDCOMPONENT;
 
 /* functions */
-sdword isoundmixerinit(SDL_AudioSpec *aspec);
-void isoundmixerrestore(void);
-int isoundstreamupdate(void *dummy);
+TI_API sdword isoundmixerinit(SDL_AudioSpec *aspec);
+TI_API void isoundmixerrestore(void);
+TI_API int isoundstreamupdate(void *dummy);
 
-sdword SNDreleasebuffer(CHANNEL *pchan);
-sdword SNDchannel(sdword handle);
-void SNDcalcvolpan(CHANNEL *pchan);
+TI_API sdword SNDreleasebuffer(CHANNEL *pchan);
+TI_API sdword SNDchannel(sdword handle);
+TI_API void SNDcalcvolpan(CHANNEL *pchan);
 
-sdword SNDcreatehandle(sdword channel);
-PATCH *SNDgetpatch(void *bankaddress, sdword patnum);
+TI_API sdword SNDcreatehandle(sdword channel);
+TI_API PATCH *SNDgetpatch(void *bankaddress, sdword patnum);
 
-sdword smixCreateDSoundBuffer(SDLWAVEFORMAT *pcmwf);
-sdword smixInitMixBuffer(SDL_AudioSpec *aspec);
+TI_API sdword smixCreateDSoundBuffer(SDLWAVEFORMAT *pcmwf);
+TI_API sdword smixInitMixBuffer(SDL_AudioSpec *aspec);
 
-sdword streamStartThread(void);
+TI_API sdword streamStartThread(void);
 
 #endif

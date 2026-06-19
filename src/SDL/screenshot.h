@@ -35,6 +35,6 @@
 #endif
 
 
-void ssTakeScreenshot(void);
+TI_API void ssTakeScreenshot(void);
 
 #endif

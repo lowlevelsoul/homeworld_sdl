@@ -1,8 +1,9 @@
 #ifndef ___TITANINTERFACEC_H
 #define ___TITANINTERFACEC_H
 
-#ifdef _MACOSX
 #include "tiPlatform.h"
+
+#ifdef _MACOSX
     #include <stdlib.h>
 #else
     #include <wchar.h>
@@ -75,7 +76,7 @@ typedef struct Address
 
 #define GAMEKEY_SIZE 8
 
-void PrintAddressToString(char *buffer,Address *address);
+TI_API void PrintAddressToString(char *buffer,Address *address);
 
 typedef struct
 {
@@ -236,17 +237,17 @@ typedef struct TPServerList
 
 #define sizeofDirectoryCustomInfo(n) (sizeof(DirectoryCustomInfo) + (n).stringdatalength - 1)
 
-void SetChannel(wchar_t *channel,wchar_t *description);
-void ResetChannel(void);
-wchar_t *GetCurrentChannel(void);
-wchar_t *GetCurrentChannelDescription(void);
+TI_API void SetChannel(wchar_t *channel,wchar_t *description);
+TI_API void ResetChannel(void);
+TI_API wchar_t *GetCurrentChannel(void);
+TI_API wchar_t *GetCurrentChannelDescription(void);
 
 extern int ChannelProtectedFlag;
 extern wchar_t ChannelPassword[MAX_PASSWORD_LEN];
 
-void titanGameMsgReceivedCB(const void *blob,unsigned short bloblen);
-//void titanQueryRoutingServers(void);
-void titanGotNumUsersInRoomCB(const wchar_t *theRoomName, int theNumUsers);
+TI_API void titanGameMsgReceivedCB(const void *blob,unsigned short bloblen);
+TI_API //void titanQueryRoutingServers(void);
+TI_API void titanGotNumUsersInRoomCB(const wchar_t *theRoomName, int theNumUsers);
 
 unsigned long titanStart(unsigned long isLan, unsigned long isIP); // returns 1 if succesful, 0 if failed
 unsigned long titanCheckCanNetwork(unsigned long isLan, unsigned long isIP); // returns 1 if can network, 0 if can't.  Assumes titanInterface not initialized
@@ -258,66 +259,66 @@ unsigned long titanCheckCanNetwork(unsigned long isLan, unsigned long isIP); // 
 void titanStartShutdown(unsigned long titanMsgType, const void* thePacket,
                         unsigned short theLen);
 
-void titanLeaveGameNotify(void);
+TI_API void titanLeaveGameNotify(void);
 
-void titanShutdown(void);
-void titanRefreshRequest(char* theDir);
+TI_API void titanShutdown(void);
+TI_API void titanRefreshRequest(char* theDir);
 
-unsigned long titanReadyToStartGame(unsigned char *routingaddress);
-unsigned long titanBehindFirewall(void);
+TI_API unsigned long titanReadyToStartGame(unsigned char *routingaddress);
+TI_API unsigned long titanBehindFirewall(void);
 
-void mgGameStartReceivedCB(const void *blob,unsigned short bloblength);
+TI_API void mgGameStartReceivedCB(const void *blob,unsigned short bloblength);
 
-void titanCreateGame(wchar_t *str, DirectoryCustomInfo* myInfo);
-void titanRemoveGame(wchar_t *str);
+TI_API void titanCreateGame(wchar_t *str, DirectoryCustomInfo* myInfo);
+TI_API void titanRemoveGame(wchar_t *str);
 
-void titanCreateDirectory(char *str, char* desc);
+TI_API void titanCreateDirectory(char *str, char* desc);
 
-void titanSendLanBroadcast(const void* thePacket, unsigned short theLen);
-void titanReceivedLanBroadcastCB(const void* thePacket, unsigned short theLen);
+TI_API void titanSendLanBroadcast(const void* thePacket, unsigned short theLen);
+TI_API void titanReceivedLanBroadcastCB(const void* thePacket, unsigned short theLen);
 
 void titanSendPacketTo(Address *address, unsigned char titanMsgType,
                        const void* thePacket, unsigned short theLen);
 
-void titanBroadcastPacket(unsigned char titanMsgType, const void* thePacket, unsigned short theLen);
+TI_API void titanBroadcastPacket(unsigned char titanMsgType, const void* thePacket, unsigned short theLen);
 
 void titanAnyoneSendPacketTo(Address *address, unsigned char titanMsgType,
                        const void* thePacket, unsigned short theLen);
 
-void titanAnyoneBroadcastPacket(unsigned char titanMsgType, const void* thePacket, unsigned short theLen);
+TI_API void titanAnyoneBroadcastPacket(unsigned char titanMsgType, const void* thePacket, unsigned short theLen);
 
-void titanConnectToClient(Address *address);
+TI_API void titanConnectToClient(Address *address);
 
-int titanStartChatServer(wchar_t *password);
+TI_API int titanStartChatServer(wchar_t *password);
 
-void titanSendPing(Address *address,unsigned int pingsizebytes);
-void titanSendPointMessage(int playerIndex,unsigned char *packet,unsigned int sizeofPacket);
-void titanSendBroadcastMessage(unsigned char *packet,unsigned int sizeofPacket);
-void titanAnyoneSendPointMessage(int playerIndex,unsigned char *packet,unsigned int sizeofPacket);
-void titanAnyoneSendBroadcastMessage(unsigned char *packet,unsigned int sizeofPacket);
-void titanPumpEngine(void);
+TI_API void titanSendPing(Address *address,unsigned int pingsizebytes);
+TI_API void titanSendPointMessage(int playerIndex,unsigned char *packet,unsigned int sizeofPacket);
+TI_API void titanSendBroadcastMessage(unsigned char *packet,unsigned int sizeofPacket);
+TI_API void titanAnyoneSendPointMessage(int playerIndex,unsigned char *packet,unsigned int sizeofPacket);
+TI_API void titanAnyoneSendBroadcastMessage(unsigned char *packet,unsigned int sizeofPacket);
+TI_API void titanPumpEngine(void);
 
-void titanSetGameKey(unsigned char *key);
-const unsigned char *titanGetGameKey(void);
+TI_API void titanSetGameKey(unsigned char *key);
+TI_API const unsigned char *titanGetGameKey(void);
 
 // callback for when titan gets valid version strings (one string, multiple version strings seperated by tabs)
-void titanGotValidVersionStrings(char *validversions);
+TI_API void titanGotValidVersionStrings(char *validversions);
 void titanResetValidVersions(void);     // clears ValidVersions string
 
-Address titanGetMyPingAddress(void);
+TI_API Address titanGetMyPingAddress(void);
 
 //--MikeN
 // This method is invoked when the last client connection is closed.  Note that this
 // may happen at times other than shutdown.
-void titanNoClientsCB(void);
+TI_API void titanNoClientsCB(void);
 
-unsigned long titanConfirmReceivedCB(Address *address,const void *blob,unsigned short bloblen);
-unsigned long titanRejectReceivedCB(Address *address,const void *blob,unsigned short bloblen);
-void titanStartChatReplyReceivedCB(short theStatus);
-void titanUpdateGameDataCB(const void *blob,unsigned short bloblen);
-void titanPingReplyReceivedCB(Address *address,unsigned long theLag);
-unsigned long titanLeaveGameReceivedCB(Address *address,const void *blob,unsigned short bloblen);
-void titanLeaveGame(int shutdown);
+TI_API unsigned long titanConfirmReceivedCB(Address *address,const void *blob,unsigned short bloblen);
+TI_API unsigned long titanRejectReceivedCB(Address *address,const void *blob,unsigned short bloblen);
+TI_API void titanStartChatReplyReceivedCB(short theStatus);
+TI_API void titanUpdateGameDataCB(const void *blob,unsigned short bloblen);
+TI_API void titanPingReplyReceivedCB(Address *address,unsigned long theLag);
+TI_API unsigned long titanLeaveGameReceivedCB(Address *address,const void *blob,unsigned short bloblen);
+TI_API void titanLeaveGame(int shutdown);
 
 #define REQUEST_RECV_CB_DENYANDCLOSE    -1
 #define REQUEST_RECV_CB_JUSTDENY        0
@@ -325,20 +326,20 @@ void titanLeaveGame(int shutdown);
 
 enum { GAME_NOT_STARTED, GAME_STARTING, GAME_STARTED } mGameCreationState;
 
-signed long titanRequestReceivedCB(Address *address,const void *blob,unsigned short bloblen);
+TI_API signed long titanRequestReceivedCB(Address *address,const void *blob,unsigned short bloblen);
 
-void tpLockChannelList(void);
-void tpUnLockChannelList(void);
-void tpLockServerList(void);
-void tpUnLockServerList(void);
+TI_API void tpLockChannelList(void);
+TI_API void tpUnLockChannelList(void);
+TI_API void tpLockServerList(void);
+TI_API void tpUnLockServerList(void);
 
-//void titanGetMyAddress(Address *address);
+TI_API //void titanGetMyAddress(Address *address);
 
-int titanGetPatch(char *filename,char *saveFileName);
+TI_API int titanGetPatch(char *filename,char *saveFileName);
 
-void titanPatchProgressCB(int lenSoFar,int totalLen);
-void titanGetPatchCompleteCB(void);
-void titanGetPatchFailedCB(int patchFailErrorMsg);
+TI_API void titanPatchProgressCB(int lenSoFar,int totalLen);
+TI_API void titanGetPatchCompleteCB(void);
+TI_API void titanGetPatchFailedCB(int patchFailErrorMsg);
 #define PATCHFAIL_UNABLE_TO_CONNECT             1
 #define PATCHFAIL_ERROR_SENDING_REQUEST         2
 #define PATCHFAIL_ERROR_RECEIVING_HTTP_HEADER   3
@@ -352,64 +353,64 @@ void titanGetPatchFailedCB(int patchFailErrorMsg);
 
 extern int patchAbortRequest;
 
-void titanReplaceGameInfo(wchar_t *str, DirectoryCustomInfo* myInfo, unsigned long replaceTimeout);
+TI_API void titanReplaceGameInfo(wchar_t *str, DirectoryCustomInfo* myInfo, unsigned long replaceTimeout);
 
-void titanUpdatePlayerCB(Address *address, const void *blob, unsigned short bloblen);
+TI_API void titanUpdatePlayerCB(Address *address, const void *blob, unsigned short bloblen);
 
 // Callbacks for chatting, user joined user left, etc..
 
-void chatConnect(wchar_t *password);
-void chatClose(void);
+TI_API void chatConnect(wchar_t *password);
+TI_API void chatClose(void);
 
-void BroadcastChatMessage(unsigned short size, const void* chatData);
+TI_API void BroadcastChatMessage(unsigned short size, const void* chatData);
 void SendPrivateChatMessage(unsigned long* userIDList, unsigned short numUsersInList,
                             unsigned short size, const void* chatData);
 
-void chatReceiveUserJoinReply(short status, unsigned long userID);
-void chatReceiveUsersHere(const char *name, unsigned long userID);
-void chatReceiveUsersJoined(const char *name, unsigned long userID);
-void chatReceiveMessage(unsigned long originUserID, int whisper,unsigned long type, unsigned long size, const void* chatData);
-void chatReceiveUserLeft(unsigned long userID);
+TI_API void chatReceiveUserJoinReply(short status, unsigned long userID);
+TI_API void chatReceiveUsersHere(const char *name, unsigned long userID);
+TI_API void chatReceiveUsersJoined(const char *name, unsigned long userID);
+TI_API void chatReceiveMessage(unsigned long originUserID, int whisper,unsigned long type, unsigned long size, const void* chatData);
+TI_API void chatReceiveUserLeft(unsigned long userID);
 
-int authReceiveReply(short status);
+TI_API int authReceiveReply(short status);
 
-void authAuthenticate(char *loginName, char *password);
-void authCreateUser(char *loginName, char *password);
-void authChangePassword(char *loginName, char *oldpassword, char *newpassword);
+TI_API void authAuthenticate(char *loginName, char *password);
+TI_API void authCreateUser(char *loginName, char *password);
+TI_API void authChangePassword(char *loginName, char *oldpassword, char *newpassword);
 
-void mgNotifyAuthRequestFailed(void);
+TI_API void mgNotifyAuthRequestFailed(void);
 
-void mgNotifyGameDisolved(void);
+TI_API void mgNotifyGameDisolved(void);
 
-void mgNotifyKickedOut(void);
+TI_API void mgNotifyKickedOut(void);
 
 // Functions to call from the titan code for the connection state machine
-void cNotifyChatInfo(void);
+TI_API void cNotifyChatInfo(void);
 
-void cNotifyDirStatus(short theStatus);
-void mgNotifyDirRequestFailed(void);
+TI_API void cNotifyDirStatus(short theStatus);
+TI_API void mgNotifyDirRequestFailed(void);
 
-void cNotifyGameCreationStatus(short theStatus);
+TI_API void cNotifyGameCreationStatus(short theStatus);
 
-void cNotifyChatConnectFailed(void);
+TI_API void cNotifyChatConnectFailed(void);
 
-void cNotifyOffline(const signed long theStatus);
+TI_API void cNotifyOffline(const signed long theStatus);
 
-void cNotifyCurrentRoomPresent(int present);
-void cNotifyRoomListPresent(void);
+TI_API void cNotifyCurrentRoomPresent(int present);
+TI_API void cNotifyRoomListPresent(void);
 
 extern TPChannelList tpChannelList;
 extern TPServerList tpServerList;
 extern CaptainGameInfo tpGameCreated;
 
-void mgGameListGameAdded(tpscenario *thegame);
-void mgGameListGameRemoved(tpscenario *thegame);
-void mgGameListGameChanged(tpscenario *thegame);
-void mgGameListNew(void);
+TI_API void mgGameListGameAdded(tpscenario *thegame);
+TI_API void mgGameListGameRemoved(tpscenario *thegame);
+TI_API void mgGameListGameChanged(tpscenario *thegame);
+TI_API void mgGameListNew(void);
 
-int titanLoadPublicKey(char *filename,unsigned char **buffer);
+TI_API int titanLoadPublicKey(char *filename,unsigned char **buffer);
 
-int titanSaveWonstuff(void);
+TI_API int titanSaveWonstuff(void);
 
 extern Address myAddress;
 
@@ -462,14 +463,14 @@ extern signed int captainIndex;
 extern wchar_t GameWereInterestedIn[MAX_TITAN_GAME_NAME_LEN];
 extern void *GameWereInterestedInMutex;
 
-void mgGameInterestedIn(wchar_t *interested);
-void mgGameInterestedOff(void);
+TI_API void mgGameInterestedIn(wchar_t *interested);
+TI_API void mgGameInterestedOff(void);
 
 extern unsigned long TitanReadyToShutdown;
 extern unsigned long WAIT_SHUTDOWN_MS;
-void titanWaitShutdown(void);
+TI_API void titanWaitShutdown(void);
 
-void titanConnectingCancelHit(void);
+TI_API void titanConnectingCancelHit(void);
 
 #endif
 

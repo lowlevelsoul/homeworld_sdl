@@ -18,32 +18,32 @@ void shutdownNetwork(void)
 
 int broadcastStartThread(void*);
 int TCPServerStartThread(void*);
-void sendBroadcastPacket(const void*, int);
-Uint32 connectToServer(Uint32);
+TI_API void sendBroadcastPacket(const void*, int);
+TI_API Uint32 connectToServer(Uint32);
 
-Client * addSockToList(TCPsocket);
-TCPsocket findSockInList(Uint32);
-void removeSockFromList(int);
+TI_API Client * addSockToList(TCPsocket);
+TI_API TCPsocket findSockInList(Uint32);
+TI_API void removeSockFromList(int);
 
-int checkList(IPaddress, IpList);
-IpList addList(IPaddress, IpList);
+TI_API int checkList(IPaddress, IpList);
+TI_API IpList addList(IPaddress, IpList);
 
 Uint32 getMyAddress(void)
 int pingSendThread(void*);
 
 
 // Function defined depending on the protocol used
-void putPacket(Uint32, unsigned char, const void*, unsigned short);
+TI_API void putPacket(Uint32, unsigned char, const void*, unsigned short);
 unsigned char getPacket(TCPsocket, unsigned char*, Uint8**, unsigned short*);
 
 // Callback to the function that Handle messages.
-void HandleTCPMessage(Uint32, unsigned char, const void*, unsigned short);
+TI_API void HandleTCPMessage(Uint32, unsigned char, const void*, unsigned short);
 
-void HandleJoinGame(Uint32, const void*, unsigned short);
-void HandleJoinConfirm(Uint32, const void*, unsigned short);
-void HandleGameData(const void*, unsigned short);
-void HandleGameStart(const void*, unsigned short);
-void HandleGameMsg(const void*, unsigned short);
+TI_API void HandleJoinGame(Uint32, const void*, unsigned short);
+TI_API void HandleJoinConfirm(Uint32, const void*, unsigned short);
+TI_API void HandleGameData(const void*, unsigned short);
+TI_API void HandleGameStart(const void*, unsigned short);
+TI_API void HandleGameMsg(const void*, unsigned short);
 
 
 #define TCPPORT 10500

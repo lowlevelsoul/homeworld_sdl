@@ -28,10 +28,10 @@ public:
 	// Standard constructor
 	// ProductName is string representing product using the CDKey, (i.e., "Homeworld")
 	// *IMPORTANT*  product must be at least 3 chars for good security!!!
-	explicit ClientCDKey(const std::string& theProductR);
+	TI_API explicit ClientCDKey(const std::string& theProductR);
 
 	// Copy Constructor
-	ClientCDKey(const ClientCDKey& theKeyR);
+	TI_API ClientCDKey(const ClientCDKey& theKeyR);
 
 	// Destructor
 	virtual ~ClientCDKey(void)
@@ -44,7 +44,7 @@ public:
 	// Product access.  Careful setting product.  Product is used to encrypt/decypt
 	// the key to/from its binary form and for the Lightweight check.
 	const std::string& GetProduct() const;
-	void SetProduct(const std::string& theProductR);
+	TI_API void SetProduct(const std::string& theProductR);
 
 	// Check two keys for equality
 	virtual bool IsEqual(const ClientCDKey& theKeyR) const;
@@ -57,17 +57,17 @@ public:
 
 	// Init from raw, unencrypted key.  A return of true DOES NOT imply key is valid!
 	// (Call IsValid() to verify validity).
-	virtual bool Init(const __int64& theKeyR);
+	TI_API virtual bool Init(const __int64& theKeyR);
 
 	// Initialize from Human readable string (dashes are optional):
 	//   CVCN-CVCN-CVCN-CVCN-NNNN
 	// Returns true if init is successful, false if not.  A return of true DOES NOT
 	// imply key is valid!  (Call IsValid() to verify validity).
-	virtual bool Init(const std::string& theStrR);
+	TI_API virtual bool Init(const std::string& theStrR);
 
 	// Init from encrypted binary image (what is returned by AsBinary).  A return of
 	// true DOES NOT imply key is valid!  (Call IsValid() to verify validity).
-	virtual bool Init(const WONCommon::RawBuffer& theKeyR);
+	TI_API virtual bool Init(const WONCommon::RawBuffer& theKeyR);
 
 	// Fetch as raw, unencrypted (64bit) key
 	__int64 AsRaw() const;
@@ -108,13 +108,13 @@ protected:
 	void BuildStringKey() const;
 
 	// Extract LightCheck, and Key from a buffer
-	void FieldsFromBuffer(const __int64& theBuf);
+	TI_API void FieldsFromBuffer(const __int64& theBuf);
 
 	// Build buffer from LightCheck and Key
 	__int64 BufferFromFields() const;
 
 	// Decypt mBin Key into buffer
-	bool DecryptKey(__int64& theBufR);
+	TI_API bool DecryptKey(__int64& theBufR);
 
 	// Encrypt buffer into mBinKey
 	bool EncryptKey(const __int64& theBufR) const;
@@ -127,11 +127,11 @@ private:
 	void CreateSymmetricKey(WONCrypt::BFSymmetricKey& theSymKeyR) const;
 
 	// Class methods
-	static void RemoveSkipChars(string& theStrR);
-	static char ValFromBits(const __int64& aBuf, unsigned int theOffset, unsigned int theBits);
-	static bool ProcessCChar(__int64& theBuf, unsigned int& theOffset, char theChar);
-	static bool ProcessVChar(__int64& theBuf, unsigned int& theOffset, char theChar);
-	static bool ProcessNChar(__int64& theBuf, unsigned int& theOffset, char theChar);
+	TI_API static void RemoveSkipChars(string& theStrR);
+	TI_API static char ValFromBits(const __int64& aBuf, unsigned int theOffset, unsigned int theBits);
+	TI_API static bool ProcessCChar(__int64& theBuf, unsigned int& theOffset, char theChar);
+	TI_API static bool ProcessVChar(__int64& theBuf, unsigned int& theOffset, char theChar);
+	TI_API static bool ProcessNChar(__int64& theBuf, unsigned int& theOffset, char theChar);
 };
 
 

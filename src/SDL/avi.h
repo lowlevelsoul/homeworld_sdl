@@ -36,13 +36,13 @@ extern bool utilPlayingIntro;
 =============================================================================*/
 
 
-int aviInit(void);
-bool aviPlay(char* filename);
-int aviStop(void);
-int aviCleanup(void);
-void aviIntroPlay(void);
+TI_API int aviInit(void);
+TI_API bool aviPlay(char* filename);
+TI_API int aviStop(void);
+TI_API int aviCleanup(void);
+TI_API void aviIntroPlay(void);
 
-int aviGetSamples(void* pBuf, long* pNumSamples, long nBufSize);
+TI_API int aviGetSamples(void* pBuf, long* pNumSamples, long nBufSize);
 
 extern int aviIsPlaying;
 

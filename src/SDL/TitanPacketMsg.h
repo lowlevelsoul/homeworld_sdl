@@ -17,13 +17,13 @@ public:
     TitanPacketMsg(unsigned char theType, bool encrypted=false);
 
     // MiniMessage ctor - will throw if MiniMessage type is not MyServiceType
-    explicit TitanPacketMsg(const WONMsg::MiniMessage& theMsgR);
+    TI_API explicit TitanPacketMsg(const WONMsg::MiniMessage& theMsgR);
 
     // Copy ctor
-    TitanPacketMsg(const TitanPacketMsg& theMsgR);
+    TI_API TitanPacketMsg(const TitanPacketMsg& theMsgR);
 
     // Destructor
-    ~TitanPacketMsg(void);
+    TI_API ~TitanPacketMsg(void);
 
     // Assignment
     TitanPacketMsg& operator=(const TitanPacketMsg& theMsgR);
@@ -33,8 +33,8 @@ public:
 
     // Pack and Unpack the message
     // Unpack will throw a BadMsgException is message is not of this type
-    void* Pack(void);
-    void  Unpack(void);
+    TI_API void* Pack(void);
+    TI_API void  Unpack(void);
 
     // Blob access
     const void*    GetBlob(void) const     { return mBlob; }

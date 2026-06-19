@@ -125,62 +125,62 @@ extern renderfunction rndMainViewRender;
 =============================================================================*/
 
 //startup/shutdown the rendering module.
-sdword rndInit(rndinitdata *initData);
-sdword rndSmallInit(rndinitdata* initData, bool GL);
-void rndClose(void);
+TI_API sdword rndInit(rndinitdata *initData);
+TI_API sdword rndSmallInit(rndinitdata* initData, bool GL);
+TI_API void rndClose(void);
 
 //render a mission sphere using a specific camera.  Or don't render; it's your call.
 void rndMainViewRenderFunction(Camera *camera);             //normal rendering mode
 void rndMainViewRenderNothingFunction(Camera *camera);      //don't do anything; just return
 void rndMainViewAllButRenderFunction(Camera *camera);       //compute selection info but don't render
-void rndBackgroundRender(real32 radius, Camera *camera, bool bDrawStars);
+TI_API void rndBackgroundRender(real32 radius, Camera *camera, bool bDrawStars);
 
 //main render task
-DECLARE_TASK(rndRenderTask);
+TI_API DECLARE_TASK(rndRenderTask);
 
 //enable certain renderer options
-void rndHintInc(void);
-void rndBackFaceCullEnable(sdword bEnable);
-sdword rndLightingEnable(sdword bEnable);
-sdword rndTextureEnable(sdword bEnable);
-void rndBillboardEnable(vector *centre);
-void rndBillboardDisable(void);
-udword rndTextureEnvironment(udword mode);
-sdword rndPerspectiveCorrection(sdword bEnable);
-sdword rndNormalizeEnable(sdword bEnable);
-sdword rndAdditiveBlends(sdword bAdditive);
-sdword rndMaterialfv(sdword face, sdword pname, real32* params);
-void rndSetClearColor(color c);
+TI_API void rndHintInc(void);
+TI_API void rndBackFaceCullEnable(sdword bEnable);
+TI_API sdword rndLightingEnable(sdword bEnable);
+TI_API sdword rndTextureEnable(sdword bEnable);
+TI_API void rndBillboardEnable(vector *centre);
+TI_API void rndBillboardDisable(void);
+TI_API udword rndTextureEnvironment(udword mode);
+TI_API sdword rndPerspectiveCorrection(sdword bEnable);
+TI_API sdword rndNormalizeEnable(sdword bEnable);
+TI_API sdword rndAdditiveBlends(sdword bAdditive);
+TI_API sdword rndMaterialfv(sdword face, sdword pname, real32* params);
+TI_API void rndSetClearColor(color c);
 
-real32 rndComputeOverlap(Ship* ship, real32 scalar);
+TI_API real32 rndComputeOverlap(Ship* ship, real32 scalar);
 
-void rndShamelessPlug(void);
+TI_API void rndShamelessPlug(void);
 void rndEnvironmentMap(vector* camera, vector* A, vector* B, vector* C,
                        vector* U, vector* V, vector* W);
 void rndEnvironmentMapConvex(vector* camera, vector* A, vector* B, vector* C,
                        real32 convex, vector* U, vector* V, vector* W);
 
-void rndSetScreenFill(sdword count, color c);
+TI_API void rndSetScreenFill(sdword count, color c);
 
 void rndLoadShamelessPlug(bool on);     //load / free shameless plug texture
-void rndShamelessPlug(void);
+TI_API void rndShamelessPlug(void);
 
-void rndResetGLState(void);
+TI_API void rndResetGLState(void);
 
-void rndClearToBlack(void);
-void rndAllClearToBlack(void);
-void rndClear(void);
-void rndFlush(void);
+TI_API void rndClearToBlack(void);
+TI_API void rndAllClearToBlack(void);
+TI_API void rndClear(void);
+TI_API void rndFlush(void);
 
 //render utility functions
-void rndRenderAHomeworld(void* camera, void *world);
-bool rndShipVisible(SpaceObj* spaceobj, Camera* camera);
-bool rndShipVisibleUsingCoordSys(SpaceObj* spaceobj, Camera* camera);
-void rndDrawScissorBars(bool scissorEnabled);
+TI_API void rndRenderAHomeworld(void* camera, void *world);
+TI_API bool rndShipVisible(SpaceObj* spaceobj, Camera* camera);
+TI_API bool rndShipVisibleUsingCoordSys(SpaceObj* spaceobj, Camera* camera);
+TI_API void rndDrawScissorBars(bool scissorEnabled);
 
 #if RND_GL_STATE_DEBUG
 extern bool rndGLStateSaving;
-void rndGLStateLogFunction(char *location);
+TI_API void rndGLStateLogFunction(char *location);
 #define rndGLStateLog(s) if (rndGLStateSaving) rndGLStateLogFunction(s);
 #else
 #define rndGLStateLog(s)

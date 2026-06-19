@@ -330,63 +330,63 @@ extern bool GLOBAL_NO_TEXTURES;
     Functions:
 =============================================================================*/
 //startup/shutdown and reset texture registry
-void trStartup(void);
-void trShutdown(void);
-void trReset(void);
+TI_API void trStartup(void);
+TI_API void trShutdown(void);
+TI_API void trReset(void);
 void trReload(void);    //fixup OpenGL .DLL hooks
 
 //queue up a texture for loading
-trhandle trTextureRegister(char *fileName, trcolorinfo *info, void *meshReference);
+TI_API trhandle trTextureRegister(char *fileName, trcolorinfo *info, void *meshReference);
 //now change one or more of it's colors
-void trTextureColorsUpdate(trhandle handle, trcolorinfo *info);
-trhandle trRegisterAddition(trhandle handle, trcolorinfo *info);
-void trRegisterRemoval(trhandle handle/*, trcolorinfo *info*/);
-void trInternalTexturesDelete(trhandle handle);
+TI_API void trTextureColorsUpdate(trhandle handle, trcolorinfo *info);
+TI_API trhandle trRegisterAddition(trhandle handle, trcolorinfo *info);
+TI_API void trRegisterRemoval(trhandle handle/*, trcolorinfo *info*/);
+TI_API void trInternalTexturesDelete(trhandle handle);
 
 //'refresh' the texture registry which will load in all the textures requested.
-void trRegistryRefresh(void);
+TI_API void trRegistryRefresh(void);
 
 //'unregister' a texture handle, i.e. decrement it's usage count
-sdword trTextureUnregister(trhandle handle);
-sdword trTextureDelete(trhandle handle);
-void trTextureDeleteAllUnregistered(void);
+TI_API sdword trTextureUnregister(trhandle handle);
+TI_API sdword trTextureDelete(trhandle handle);
+TI_API void trTextureDeleteAllUnregistered(void);
 
 //clear the current texture
-void trClearCurrent(void);
+TI_API void trClearCurrent(void);
 
 //make a given texture current for rendering
-void trMakeCurrent(trhandle handle);
+TI_API void trMakeCurrent(trhandle handle);
 
 //functions for directly manipulating textures, without having to go through
 //the texture registry
-udword trPalettedTextureCreate(ubyte *data, color *palette, sdword width, sdword height);
-udword trRGBTextureCreate(color *data, sdword width, sdword height, bool useAlpha);
-void trRGBTextureUpdate(udword handle, color *data, sdword width, sdword height);
-void trPalettedTextureMakeCurrent(udword handle, color *palette);
-void trRGBTextureMakeCurrent(udword handle);
-void trRGBTextureDelete(udword handle);
-lifheader *trLIFFileLoad(char *fileName, udword flags);
-void trBufferColorRGB(color *dest, color *source, ubyte *teamEffect0, ubyte *teamEffect1, color teamColor0, color teamColor1, sdword size, udword flags, real32 effectScalar0, real32 effectScalar1);
+TI_API udword trPalettedTextureCreate(ubyte *data, color *palette, sdword width, sdword height);
+TI_API udword trRGBTextureCreate(color *data, sdword width, sdword height, bool useAlpha);
+TI_API void trRGBTextureUpdate(udword handle, color *data, sdword width, sdword height);
+TI_API void trPalettedTextureMakeCurrent(udword handle, color *palette);
+TI_API void trRGBTextureMakeCurrent(udword handle);
+TI_API void trRGBTextureDelete(udword handle);
+TI_API lifheader *trLIFFileLoad(char *fileName, udword flags);
+TI_API void trBufferColorRGB(color *dest, color *source, ubyte *teamEffect0, ubyte *teamEffect1, color teamColor0, color teamColor1, sdword size, udword flags, real32 effectScalar0, real32 effectScalar1);
 
 //misc utility functions
-void trFilterEnable(sdword bEnable);
-texreg *trStructureGet(trhandle handle);
-color *trImageScale(color *data, sdword width, sdword height, sdword newWidth, sdword newHeight, bool bFree);
-ubyte *trImageScaleIndexed(ubyte *data, sdword width, sdword height, sdword newWidth, sdword newHeight, bool bFree);
-void trSetAllPending(bool freeNoPal);
-void trTextureUsageList(char *fileName);
-sdword trColorsEqual(trcolorinfo *info, sdword textureIndex);
+TI_API void trFilterEnable(sdword bEnable);
+TI_API texreg *trStructureGet(trhandle handle);
+TI_API color *trImageScale(color *data, sdword width, sdword height, sdword newWidth, sdword newHeight, bool bFree);
+TI_API ubyte *trImageScaleIndexed(ubyte *data, sdword width, sdword height, sdword newWidth, sdword newHeight, bool bFree);
+TI_API void trSetAllPending(bool freeNoPal);
+TI_API void trTextureUsageList(char *fileName);
+TI_API sdword trColorsEqual(trcolorinfo *info, sdword textureIndex);
 
 //no-palette palette functions
-void trNoPalStartup(void);
-void trNoPalReset(void);
-void trNoPalShutdown(void);
-void trNoPalTextureDelete(udword handle);
-void trNoPalTextureRecreate(ubyte* palette, udword handle);
-void trNoPalMakeCurrent(ubyte* palette, udword handle);
-udword trNoPalTextureCreate(ubyte* data, ubyte* palette, sdword width, sdword height, trhandle texreghandle);
-void trNoPalResizePool(sdword mb);
-void trNoPalReadjust(void);
-void trNoPalFilter(sdword bEnable, sdword handle);
+TI_API void trNoPalStartup(void);
+TI_API void trNoPalReset(void);
+TI_API void trNoPalShutdown(void);
+TI_API void trNoPalTextureDelete(udword handle);
+TI_API void trNoPalTextureRecreate(ubyte* palette, udword handle);
+TI_API void trNoPalMakeCurrent(ubyte* palette, udword handle);
+TI_API udword trNoPalTextureCreate(ubyte* data, ubyte* palette, sdword width, sdword height, trhandle texreghandle);
+TI_API void trNoPalResizePool(sdword mb);
+TI_API void trNoPalReadjust(void);
+TI_API void trNoPalFilter(sdword bEnable, sdword handle);
 
 #endif

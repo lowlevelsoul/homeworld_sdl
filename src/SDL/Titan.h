@@ -10,9 +10,9 @@
 #ifndef ___TITAN_H
 #define ___TITAN_H
 
-void titanDebug(char *format, ...);
-void titanLogFileOpen(void);
-void titanLogFileClose(void);
+TI_API void titanDebug(char *format, ...);
+TI_API void titanLogFileOpen(void);
+TI_API void titanLogFileClose(void);
 
 #endif
 

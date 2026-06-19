@@ -20,15 +20,15 @@ typedef struct TTimer
     udword timeoutTicks;
 } TTimer;
 
-void TTimerInit(TTimer *timer);
-void TTimerClose(TTimer *timer);
-void TTimerDisable(TTimer *timer);
-bool TTimerUpdate(TTimer *timer);
-void TTimerReset(TTimer *timer);
-void TTimerStart(TTimer *timer,real32 timeout);
-bool TTimerIsTimedOut(TTimer *timer);
+TI_API void TTimerInit(TTimer *timer);
+TI_API void TTimerClose(TTimer *timer);
+TI_API void TTimerDisable(TTimer *timer);
+TI_API bool TTimerUpdate(TTimer *timer);
+TI_API void TTimerReset(TTimer *timer);
+TI_API void TTimerStart(TTimer *timer,real32 timeout);
+TI_API bool TTimerIsTimedOut(TTimer *timer);
 
-void GetRawTime(sqword *time);
+TI_API void GetRawTime(sqword *time);
 
 #endif
 

@@ -141,7 +141,7 @@ typedef struct
 typedef void (*streamprintfunction)(char *pszInformation);
 
 // channel functions
-void soundGetVoiceLimits(sdword *min,sdword *max);
+TI_API void soundGetVoiceLimits(sdword *min,sdword *max);
 void soundGetNumVoices(sdword *num,sdword *mode);	// mode SOUND_MODE_NORM or SOUND_MODE_AUTO
 void soundSetNumVoices(sdword num,sdword mode);		// mode SOUND_MODE_NORM or SOUND_MODE_AUTO
 
@@ -150,50 +150,50 @@ void soundMixerGetMode(sdword *mode);	// mode SOUND_MODE_NORM or SOUND_MODE_AUTO
 void soundMixerSetMode(sdword mode);	// mode SOUND_MODE_NORM or SOUND_MODE_AUTO or SOUND_MODE_LOW
 
 // Panic mode functions
-void soundPanic(void);
+TI_API void soundPanic(void);
 void soundPanicReset(void);	// mixer.c
 
 /* functions */
-//sdword soundinit(HWND hWnd, sdword mode);
-sdword soundinit(bool mode);
-//sdword soundreinit(HWND hWnd);
-sdword soundreinit(void);
-void soundrestore(void);
-void soundclose(void);
-void soundupdate(void);
+TI_API //sdword soundinit(HWND hWnd, sdword mode);
+TI_API sdword soundinit(bool mode);
+TI_API //sdword soundreinit(HWND hWnd);
+TI_API sdword soundreinit(void);
+TI_API void soundrestore(void);
+TI_API void soundclose(void);
+TI_API void soundupdate(void);
 
-void soundpause(bool bPause);
-void sounddeactivate(bool bDeactivate);
+TI_API void soundpause(bool bPause);
+TI_API void sounddeactivate(bool bDeactivate);
 
-sword soundloadpatch(char *pszFileName, sword looped);
-udword soundbankadd(void *bankaddress);
+TI_API sword soundloadpatch(char *pszFileName, sword looped);
+TI_API udword soundbankadd(void *bankaddress);
 
-sdword soundplayFPRVL(sword patnum, real32 freq, sword pan, sdword priority, sword vol, bool startatloop);
+TI_API sdword soundplayFPRVL(sword patnum, real32 freq, sword pan, sdword priority, sword vol, bool startatloop);
 
-sdword soundvolumeF(sdword handle, sword vol, real32 fadetime);
+TI_API sdword soundvolumeF(sdword handle, sword vol, real32 fadetime);
 #define soundvolume(a, b)		soundvolumeF(a, b, 0)
 
-sdword soundpanF(sdword handle, sword pan, real32 fadetime);
+TI_API sdword soundpanF(sdword handle, sword pan, real32 fadetime);
 #define soundpan(a, b)			soundpanF(a, b, 0)
 
-sdword soundfrequency(sdword handle, real32 freq);
-sdword soundequalize(sdword handle, real32 *eq);
+TI_API sdword soundfrequency(sdword handle, real32 freq);
+TI_API sdword soundequalize(sdword handle, real32 *eq);
 
-void soundstopallSFX(real32 fadetime, bool stopStreams);
+TI_API void soundstopallSFX(real32 fadetime, bool stopStreams);
 #define soundstopall(a)		soundstopallSFX(a, TRUE)
-sdword soundstop(sdword handle, real32 fade);
+TI_API sdword soundstop(sdword handle, real32 fade);
 
-sdword soundrestart(sdword handle);
+TI_API sdword soundrestart(sdword handle);
 
-sdword soundshipheading(sdword handle, sword heading, sdword highband, sdword lowband, real32 velfactor, real32 shipfactor);
+TI_API sdword soundshipheading(sdword handle, sword heading, sdword highband, sdword lowband, real32 velfactor, real32 shipfactor);
 
-bool soundover(sdword handle);
+TI_API bool soundover(sdword handle);
 
-void soundSetMasterEQ(sdword startband, sdword endband, bool increment);
-void soundResetMasterEQ(void);
+TI_API void soundSetMasterEQ(sdword startband, sdword endband, bool increment);
+TI_API void soundResetMasterEQ(void);
 
 
-udword soundgettick(void);
+TI_API udword soundgettick(void);
 
 
 #define soundplay(a)			soundplayFPRVL(a, (real32)SOUND_DEFAULT, SOUND_PAN_CENTER, SOUND_DEFAULT, SOUND_DEFAULT, FALSE)
@@ -206,7 +206,7 @@ udword soundgettick(void);
 #define soundplayPRVL(a, b, c, d, e)	soundplayFPRVL(a, (real32)SOUND_DEFAULT, b, c, d, e)
 
 
-sdword splayFPRVL(void *bankaddress, sdword patnum, real32 *eq, real32 freq, sword pan, sdword priority, sword vol, bool startatloop, bool fadein, bool mute);
+TI_API sdword splayFPRVL(void *bankaddress, sdword patnum, real32 *eq, real32 freq, sword pan, sdword priority, sword vol, bool startatloop, bool fadein, bool mute);
 
 #define splay(f, a)			splayFPRVL(f, a, NULL, (real32)SOUND_DEFAULT, SOUND_PAN_CENTER, SOUND_DEFAULT, SOUND_DEFAULT, FALSE, TRUE, FALSE)
 #define splayV(f, a, b)		splayFPRVL(f, a, NULL, (real32)SOUND_DEFAULT, SOUND_PAN_CENTER, SOUND_DEFAULT, b, FALSE, TRUE, FALSE)
@@ -221,27 +221,27 @@ sdword splayFPRVL(void *bankaddress, sdword patnum, real32 *eq, real32 freq, swo
 #define splayNOFADE(f, a)	splayFPRVL(f, a, NULL, (real32)SOUND_DEFAULT, SOUND_PAN_CENTER, SOUND_DEFAULT, SOUND_DEFAULT, FALSE, FALSE, FALSE)
 #define splayMUTE(f, a, b, c, d)	splayFPRVL(f, a, NULL, (real32)SOUND_DEFAULT, b, c, d, FALSE, TRUE, TRUE)
 
-void soundstreamquery(sdword maxstreams, sdword *pbuffersize, sdword *pstreamersize);
-sdword soundstreaminit(void *pstreamer, sdword size, sdword numstreams, streamprintfunction printfunction);
-udword soundstreamopenfile(char *pszStreamFile, smemsize *handle);
-sdword soundstreamcreatebuffer(void *pstreambuffer, sdword size, uword bitrate);
+TI_API void soundstreamquery(sdword maxstreams, sdword *pbuffersize, sdword *pstreamersize);
+TI_API sdword soundstreaminit(void *pstreamer, sdword size, sdword numstreams, streamprintfunction printfunction);
+TI_API udword soundstreamopenfile(char *pszStreamFile, smemsize *handle);
+TI_API sdword soundstreamcreatebuffer(void *pstreambuffer, sdword size, uword bitrate);
 
-sdword soundstreamqueuePatch(sdword streamhandle, smemsize filehandle, smemsize offset, udword flags, sword vol, sword pan, sword numchannels, sword bitrate, EFFECT *peffect, STREAMEQ *pEQ, STREAMDELAY *pdelay, void *pmixpatch, sdword level, real32 silence, real32 fadetime, sdword actornum, sdword speechEvent, bool bWait);
+TI_API sdword soundstreamqueuePatch(sdword streamhandle, smemsize filehandle, smemsize offset, udword flags, sword vol, sword pan, sword numchannels, sword bitrate, EFFECT *peffect, STREAMEQ *pEQ, STREAMDELAY *pdelay, void *pmixpatch, sdword level, real32 silence, real32 fadetime, sdword actornum, sdword speechEvent, bool bWait);
 #define soundstreamqueue(a, b, c, d, e, f, g, h, i, j, k, l)	soundstreamqueuePatch(a, b, c, d, e, f, g, h, i, j, k, NULL, SOUND_VOL_MIN, 0.0, 0.0, -1, l, FALSE)
 #define soundstreamqueuefade(a, b, c, d, e, f, g, h, i, j, k, l)	soundstreamqueuePatch(a, b, c, d, e, f, g, h, i, j, k, NULL, SOUND_VOL_MIN, 0.0, l, -1, -1, FALSE)
 #define soundstreamqueueSilence(a, b, c, d, e, f, g, h, i, j)	soundstreamqueuePatch(a, SOUND_DEFAULT, SOUND_DEFAULT, b, c, d, e, f, g, h, i, NULL, SOUND_DEFAULT, j, 0.0, -1, -1, FALSE)
 #define soundstreamqueuewait(a, b, c, d, e, f, g, h, i, j, k, l)	soundstreamqueuePatch(a, b, c, d, e, f, g, h, i, j, k, NULL, SOUND_VOL_MIN, 0.0, 0.0, -1, l, TRUE)
 
-sdword soundstreamrestorebuffer(sdword streamhandle);
-sdword soundstreamclosefile(sdword filehandle);
-sdword soundstreamrestore(void);
-sdword soundstreamnumqueued(sdword streamhandle);
-void soundstreamstopall(real32 fadetime);
-sdword soundstreamover(sdword streamhandle);
-sdword soundstreamvolume(sdword handle, sword vol, real32 fadetime);
-sword soundstreamgetvol(sdword handle);
-real32 soundusage(void);
-sdword soundstreamfading(sdword streamhandle);
+TI_API sdword soundstreamrestorebuffer(sdword streamhandle);
+TI_API sdword soundstreamclosefile(sdword filehandle);
+TI_API sdword soundstreamrestore(void);
+TI_API sdword soundstreamnumqueued(sdword streamhandle);
+TI_API void soundstreamstopall(real32 fadetime);
+TI_API sdword soundstreamover(sdword streamhandle);
+TI_API sdword soundstreamvolume(sdword handle, sword vol, real32 fadetime);
+TI_API sword soundstreamgetvol(sdword handle);
+TI_API real32 soundusage(void);
+TI_API sdword soundstreamfading(sdword streamhandle);
 
 #endif
 

@@ -139,44 +139,44 @@ typedef enum
     Functions:
 =============================================================================*/
 //start/stop mouse module
-sdword mouseStartup(void);
-void mouseReset(void);
-void mouseShutdown(void);
+TI_API sdword mouseStartup(void);
+TI_API void mouseReset(void);
+TI_API void mouseShutdown(void);
 
 //hide/show the cursor
-void mouseCursorHide(void);
-void mouseCursorShow(void);
-void mouseCursorDelayShow(uword delay);
+TI_API void mouseCursorHide(void);
+TI_API void mouseCursorShow(void);
+TI_API void mouseCursorDelayShow(uword delay);
 
 //disable/enable cursor
-void mouseDisable(void);
-void mouseEnable(void);
+TI_API void mouseDisable(void);
+TI_API void mouseEnable(void);
 
 //click special callbacks
-bool mouseLDoubleClick(void);
-bool mouseDoubleClickCheck(void);
-void mouseLClick(void);
-void mouseClickShipDied(ShipPtr deadship);
+TI_API bool mouseLDoubleClick(void);
+TI_API bool mouseDoubleClickCheck(void);
+TI_API void mouseLClick(void);
+TI_API void mouseClickShipDied(ShipPtr deadship);
 
 //set new position for mouse
-void mousePositionSet(sdword x, sdword y);
-void mouseClipToRect(rectangle *rect);
-void mouseClipPointToRect(sdword *x, sdword *y, rectangle *rect);
+TI_API void mousePositionSet(sdword x, sdword y);
+TI_API void mouseClipToRect(rectangle *rect);
+TI_API void mouseClipPointToRect(sdword *x, sdword *y, rectangle *rect);
 
 //draw mouse cursor and update cursor position/button flags
-void mouseStoreCursorUnder(void);
-void mouseRestoreCursorUnder(void);
-void mouseDraw(void);
-void mouseDrawType(mouseCursor cursortype);
-void mouseSelectCursorSetting(void);
-void mouseSetCursorSetting(void);
-void mouseCursorSet(udword mode);
-void mouseCursorClear(udword mode);
+TI_API void mouseStoreCursorUnder(void);
+TI_API void mouseRestoreCursorUnder(void);
+TI_API void mouseDraw(void);
+TI_API void mouseDrawType(mouseCursor cursortype);
+TI_API void mouseSelectCursorSetting(void);
+TI_API void mouseSetCursorSetting(void);
+TI_API void mouseCursorSet(udword mode);
+TI_API void mouseCursorClear(udword mode);
 
 //cursor text code
-void mouseCursorTextDraw(void);
+TI_API void mouseCursorTextDraw(void);
 
 //poll current location of mouse and store internally
-void mousePoll(void);
+TI_API void mousePoll(void);
 
 #endif

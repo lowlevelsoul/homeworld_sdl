@@ -28,14 +28,14 @@ typedef struct
     Functions:
 =============================================================================*/
 
-void InitQueue(Queue *queue,udword buffersize);
-void CloseQueue(Queue *queue);
-void ResetQueue(Queue *queue);
-void HWEnqueue(Queue *queue,ubyte *packet,udword sizeofPacket);
-udword HWDequeue(Queue *queue,ubyte **packet);
-udword Peekqueue(Queue *queue,ubyte **packet);
-void LockQueue(Queue *queue);
-void UnLockQueue(Queue *queue);
+TI_API void InitQueue(Queue *queue,udword buffersize);
+TI_API void CloseQueue(Queue *queue);
+TI_API void ResetQueue(Queue *queue);
+TI_API void HWEnqueue(Queue *queue,ubyte *packet,udword sizeofPacket);
+TI_API udword HWDequeue(Queue *queue,ubyte **packet);
+TI_API udword Peekqueue(Queue *queue,ubyte **packet);
+TI_API void LockQueue(Queue *queue);
+TI_API void UnLockQueue(Queue *queue);
 
 /*=============================================================================
     Macros:

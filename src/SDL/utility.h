@@ -153,59 +153,59 @@ extern char utyVoiceFilename[];
     Functions:
 =============================================================================*/
 //handles the message loop for fatal errors
-void utyFatalErrorWaitLoop(int exitCode);
-sdword utyNonFatalErrorWaitLoop(void);
+TI_API void utyFatalErrorWaitLoop(int exitCode);
+TI_API sdword utyNonFatalErrorWaitLoop(void);
 
 //startup/shutdown game systems
-char *utyGameSystemsPreInit(void);
-char *utyGameSystemsPreShutdown(void);
-char *utyGameSystemsInit(void);
-char *utyGameSystemsShutdown(void);
+TI_API char *utyGameSystemsPreInit(void);
+TI_API char *utyGameSystemsPreShutdown(void);
+TI_API char *utyGameSystemsInit(void);
+TI_API char *utyGameSystemsShutdown(void);
 
-udword utyCloseOK(regionhandle region, sdword ID, udword event, udword data);
+TI_API udword utyCloseOK(regionhandle region, sdword ID, udword event, udword data);
 
-void gameStart(char *loadfilename);
-void gameEnd(void);
+TI_API void gameStart(char *loadfilename);
+TI_API void gameEnd(void);
 
 //query system timer and call task manager
-void utyTasksDispatch(void);
+TI_API void utyTasksDispatch(void);
 void utyTaskTimerClear(void);                   //cancels all previous task time
 
 //get client rect in screen coords
-void utyClientRectGet(rectangle *rect);
-void utyMouseButtonsClear(void);
-void utyForceTopmost(bool bTopMost);
+TI_API void utyClientRectGet(rectangle *rect);
+TI_API void utyMouseButtonsClear(void);
+TI_API void utyForceTopmost(bool bTopMost);
 
 //clip the mouse
-void utyClipMouse(sdword clip);
+TI_API void utyClipMouse(sdword clip);
 
-void utyNewGameStart(char *name, featom *atom);
-void utyGameQuit(char *name, featom *atom);
-void utyGameQuitToMain(char *name, featom *atom);
+TI_API void utyNewGameStart(char *name, featom *atom);
+TI_API void utyGameQuit(char *name, featom *atom);
+TI_API void utyGameQuitToMain(char *name, featom *atom);
 
 //load/save options from disk
-void utyOptionsFileRead(void);
-void utyOptionsFileWrite(void);
+TI_API void utyOptionsFileRead(void);
+TI_API void utyOptionsFileWrite(void);
 
 //text entry things
-real32 utyCaretBlinkRate(void);
-void utyDoubleClick(void);
+TI_API real32 utyCaretBlinkRate(void);
+TI_API void utyDoubleClick(void);
 
-void utyLoadSinglePlayerGameGivenFilename(char *filename);
-void utyLoadMultiPlayerGameGivenFilename(char *filename);
+TI_API void utyLoadSinglePlayerGameGivenFilename(char *filename);
+TI_API void utyLoadMultiPlayerGameGivenFilename(char *filename);
 
-bool utyChangeResolution(sdword width, sdword height, sdword depth);
+TI_API bool utyChangeResolution(sdword width, sdword height, sdword depth);
 
-bool utyBrowserExec(char *URL);
-void utyGetFirstCDPath(char *szPath);
+TI_API bool utyBrowserExec(char *URL);
+TI_API void utyGetFirstCDPath(char *szPath);
 
 //toggle key things
-void utyToggleKeyStatesSave(void);
-void utyToggleKeyStatesRestore(void);
-bool utyCapsLockToggleState(void);
+TI_API void utyToggleKeyStatesSave(void);
+TI_API void utyToggleKeyStatesRestore(void);
+TI_API bool utyCapsLockToggleState(void);
 
 // Start the player dropped dialog box.
-void utyStartDroppedDialog(sdword playernum);
+TI_API void utyStartDroppedDialog(sdword playernum);
 
 extern sdword utyPlayerDroppedDisplay;
 

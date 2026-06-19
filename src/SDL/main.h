@@ -130,31 +130,31 @@ extern bool systemActive;
 /*=============================================================================
     Functions:
 =============================================================================*/
-void WindowsCleanup(void);
+TI_API void WindowsCleanup(void);
 
-void ActivateMe(void);
-void DeactivateMe(void);
+TI_API void ActivateMe(void);
+TI_API void DeactivateMe(void);
 
 // Event handler.
-sdword HandleEvent (const SDL_Event* pEvent);
+TI_API sdword HandleEvent (const SDL_Event* pEvent);
 
 //load/save options from disk
-void utyOptionsFileRead(void);
-void utyOptionsFileWrite(void);
+TI_API void utyOptionsFileRead(void);
+TI_API void utyOptionsFileWrite(void);
 
 //renderer swapping functions
-bool mainLoadGL(char* data);
-bool mainLoadRGL(void);
-bool mainLoadParticularRGL(char* device, char* data);
-sdword mainActiveRenderer(void);
-bool mainReinitRGL(void);
-bool mainShutdownRenderer(void);
+TI_API bool mainLoadGL(char* data);
+TI_API bool mainLoadRGL(void);
+TI_API bool mainLoadParticularRGL(char* device, char* data);
+TI_API sdword mainActiveRenderer(void);
+TI_API bool mainReinitRGL(void);
+TI_API bool mainShutdownRenderer(void);
 
-void mainSaveRender(void);
-void mainRestoreRender(void);
-void mainRestoreSoftware(void);
+TI_API void mainSaveRender(void);
+TI_API void mainRestoreRender(void);
+TI_API void mainRestoreSoftware(void);
 
 //video playback module convenience functions
-void mainCleanupAfterVideo(void);
+TI_API void mainCleanupAfterVideo(void);
 
 #endif

@@ -60,7 +60,7 @@ typedef std::map<ClientNetAddr, ClientMapUnion> ClientToPipe;
 class TitanInterface : public WONCommon::ThreadBase
 {
 public:
-    TitanInterface(unsigned long isLan, unsigned long isIP);
+    TI_API TitanInterface(unsigned long isLan, unsigned long isIP);
     ~TitanInterface(void)
 
     // Overridden from ThreadBase
@@ -70,12 +70,12 @@ public:
     void loadVerifierKey(void)
 
     //Creates a socket to verify that networking with current protocol is possible
-    unsigned long CanNetwork(void);
+    TI_API unsigned long CanNetwork(void);
 
     //--MikeN
     // Begin shutdown procesing.  Sends shutdown msg to all connected clients and
     // closes connection after msg has been sent.
-    void StartShutdown(unsigned char titanMsgType, const void* thePacket, unsigned short theLen);
+    TI_API void StartShutdown(unsigned char titanMsgType, const void* thePacket, unsigned short theLen);
 
     // Request the list of valid Homeworld client versions from a Directory Server
     void RequestValidVersions(void)
@@ -85,20 +85,20 @@ public:
     void RequestDirectory(void)
 
     // Game data maintenance (create, delete, replace)
-    void RequestCreateGame(const wchar_t* theGame, DirectoryCustomInfo* myInfo);
-    void RequestDeleteGame(const wchar_t* theGame);
-    void RequestReplaceGame(const wchar_t* theGame, DirectoryCustomInfo* myInfo, unsigned long replaceTimeout);
-    void RequestRenewGameLifespan(const wchar_t* theGame, unsigned long newLifespan);
+    TI_API void RequestCreateGame(const wchar_t* theGame, DirectoryCustomInfo* myInfo);
+    TI_API void RequestDeleteGame(const wchar_t* theGame);
+    TI_API void RequestReplaceGame(const wchar_t* theGame, DirectoryCustomInfo* myInfo, unsigned long replaceTimeout);
+    TI_API void RequestRenewGameLifespan(const wchar_t* theGame, unsigned long newLifespan);
 
     // Connect to a client
-    void ConnectToClient(Address* theAddressP);
+    TI_API void ConnectToClient(Address* theAddressP);
 
     // Ping a game
-    void SendPing(Address* theAddressP,unsigned int pingsizebytes);
+    TI_API void SendPing(Address* theAddressP,unsigned int pingsizebytes);
 
     // Send a Lan broadcast
-    void SendLanBroadcast(const void* thePacket, unsigned short theLen);
-    void BroadcastPacket(unsigned char titanMsgType, const void* thePacket, unsigned short theLen);
+    TI_API void SendLanBroadcast(const void* thePacket, unsigned short theLen);
+    TI_API void BroadcastPacket(unsigned char titanMsgType, const void* thePacket, unsigned short theLen);
 
     // Send a packet to a client
     void SendPacketTo(Address* theAddressP, unsigned char titanMsgType,
@@ -106,42 +106,42 @@ public:
                       bool appendSeqNum = false, int theSeqNum = 0);
 
     // Authentication stuff
-    void Authenticate(const string &loginName, const string &password, const string &theNewPassword, bool CreateAccount);
+    TI_API void Authenticate(const string &loginName, const string &password, const string &theNewPassword, bool CreateAccount);
 
 
     // Routing Server stuff
-    unsigned long StartRoutingServer(const wchar_t* theChannelName, const wchar_t* theChannelDescription, const wchar_t* thePassword, bool isGameServer,unsigned char *routingaddress);
-    void RegisterRoutingServer(void);
-    void HandleRoutingRegisterReply(WONMisc::SocketPipe* thePipeP, const WONMsg::SmallMessage& theMsgR);
+    TI_API unsigned long StartRoutingServer(const wchar_t* theChannelName, const wchar_t* theChannelDescription, const wchar_t* thePassword, bool isGameServer,unsigned char *routingaddress);
+    TI_API void RegisterRoutingServer(void);
+    TI_API void HandleRoutingRegisterReply(WONMisc::SocketPipe* thePipeP, const WONMsg::SmallMessage& theMsgR);
     void ConnectToRoutingServer(wstring theUserName, const wchar_t* thePassword, int theServer, bool reconnect = false);
-    void CloseRoutingServerConnection(int theServer);
+    TI_API void CloseRoutingServerConnection(int theServer);
     void RoutingSendChatBroadcast(unsigned short theSize, const unsigned char* theDataP, int theServer = 0, bool appendSeqNum = false, int theSeqNum = 0);
     void RoutingSendChatWhisper(unsigned long* theIds, unsigned short theNumIds, unsigned short theSize, const unsigned char* theDataP, bool addSeqNum =false, int theSeqNum =0);
     void RoutingSendDataBroadcast(unsigned short theSize, const unsigned char* theDataP, int theServer = 0, bool appendSeqNum = false, int theSeqNum = 0);
     void RoutingSendData(WONMsg::ClientId theId, unsigned short theSize, const unsigned char* theDataP, int theServer = 0, bool appendSeqNum = false, int theSeqNum = 0);
 
-    void SetGameKey(unsigned char *key);
-    const unsigned char *GetGameKey(void);
+    TI_API void SetGameKey(unsigned char *key);
+    TI_API const unsigned char *GetGameKey(void);
 
     // Patch stuff
-    int GetPatch(const char *theFilename,const char *saveFileName);
-    static void GetPatch(void *theArgs);
+    TI_API int GetPatch(const char *theFilename,const char *saveFileName);
+    TI_API static void GetPatch(void *theArgs);
 
-    bool CheckStartingGame(unsigned char *routingaddress);
-    bool BehindFirewall(void);
-    void LeaveGameNotify(void);
-    Address GetMyPingAddress(void);
+    TI_API bool CheckStartingGame(unsigned char *routingaddress);
+    TI_API bool BehindFirewall(void);
+    TI_API void LeaveGameNotify(void);
+    TI_API Address GetMyPingAddress(void);
 
     void ConnectingCancelHit(void)
 
-//  void QueryRoutingServers(void);
+TI_API //  void QueryRoutingServers(void);
 
     void PumpEngine(void)
 
-    void OnInitialLobbyEnter(void);
-    void OnFinalLobbyExit(void);
-    void OnCaptainStartedGame(void);
-    void CreateMediaMetrixEditControl(void);
+    TI_API void OnInitialLobbyEnter(void);
+    TI_API void OnFinalLobbyExit(void);
+    TI_API void OnCaptainStartedGame(void);
+    TI_API void CreateMediaMetrixEditControl(void);
     static bool TitanInterface::SaveWonstuff(void)
 private:
     bool mUseRoutingServer; // Are we using a routing server for game communication?
@@ -163,8 +163,8 @@ private:
 //    std::vector<SOCKADDR_IN> mRoutingAddrMap;
     unsigned short mRoutingQueryOffset;
 
-    void InitPacketList(void);
-    void AddPacketToList(const std::basic_string<unsigned char> &thePacket, unsigned char theType);
+    TI_API void InitPacketList(void);
+    TI_API void AddPacketToList(const std::basic_string<unsigned char> &thePacket, unsigned char theType);
     std::list<std::basic_string<unsigned char> > mPacketList;
     std::list<unsigned char> mPacketTypeList;
     unsigned long mFirstPacket;
@@ -286,137 +286,137 @@ private:
     WONCommon::CriticalSection mStartRoutingCrit;
 
     int threadProcess(void)
-    void ChangeAddress(Address *theOldAddress, Address *theNewAddress);
+    TI_API void ChangeAddress(Address *theOldAddress, Address *theNewAddress);
 
-    void HandleWaitCmd(WONMisc::PipeCmd* theCmdP);
-    void HandleAcceptCmd(WONMisc::SocketPipe* thePipeP, WONMisc::PipeCmd* theCmdP);
-    void HandleCloseCmd(WONMisc::SocketPipe* thePipeP);
-    void HandleRecvCmd(WONMisc::SocketPipe* thePipeP, WONMisc::PipeCmd* theCmdP, bool pipeClosed);
-    void HandleTitanMsg(WONMisc::SocketPipe* thePipeP, const char* theBufP, unsigned long theLen);
-    void HandleSmallMsg(WONMisc::SocketPipe* thePipeP, const char* theBufP, unsigned long theLen);
-    void HandleMiniMsg(WONMisc::SocketPipe* thePipeP, const char* theBufP, unsigned long theLen);
-    void HandleLanBroadcastMsg(WONMisc::SocketPipe* thePipeP, const char* theBufP, unsigned long theLen);
+    TI_API void HandleWaitCmd(WONMisc::PipeCmd* theCmdP);
+    TI_API void HandleAcceptCmd(WONMisc::SocketPipe* thePipeP, WONMisc::PipeCmd* theCmdP);
+    TI_API void HandleCloseCmd(WONMisc::SocketPipe* thePipeP);
+    TI_API void HandleRecvCmd(WONMisc::SocketPipe* thePipeP, WONMisc::PipeCmd* theCmdP, bool pipeClosed);
+    TI_API void HandleTitanMsg(WONMisc::SocketPipe* thePipeP, const char* theBufP, unsigned long theLen);
+    TI_API void HandleSmallMsg(WONMisc::SocketPipe* thePipeP, const char* theBufP, unsigned long theLen);
+    TI_API void HandleMiniMsg(WONMisc::SocketPipe* thePipeP, const char* theBufP, unsigned long theLen);
+    TI_API void HandleLanBroadcastMsg(WONMisc::SocketPipe* thePipeP, const char* theBufP, unsigned long theLen);
 
     // Directory server stuff
-    void DirFailOver(void);
-    void ResetDirFailOver(void);
+    TI_API void DirFailOver(void);
+    TI_API void ResetDirFailOver(void);
 
-    void DirHandleGetTitanServers(void);
-    void DirHandleGetHWDirectory(void);
-    void DirStartPeerLogin(void);
-    void HandleDirStatusReply(const WONMsg::TMessage& theMsgR);
-    void HandleGetDirReply(const WONMsg::TMessage& theMsgR);
-    void HandleDirMultiEntityReply(const WONMsg::SmallMessage& theMsgR);
+    TI_API void DirHandleGetTitanServers(void);
+    TI_API void DirHandleGetHWDirectory(void);
+    TI_API void DirStartPeerLogin(void);
+    TI_API void HandleDirStatusReply(const WONMsg::TMessage& theMsgR);
+    TI_API void HandleGetDirReply(const WONMsg::TMessage& theMsgR);
+    TI_API void HandleDirMultiEntityReply(const WONMsg::SmallMessage& theMsgR);
 
     // Factory Server Stuff
-    void FactFailOver(void);
-    void ResetFactFailOver(void);
+    TI_API void FactFailOver(void);
+    TI_API void ResetFactFailOver(void);
 
-    void PingFactServer(void);
-    void PingHandleReply(const WONMsg::MiniMessage& theMsgR);
+    TI_API void PingFactServer(void);
+    TI_API void PingHandleReply(const WONMsg::MiniMessage& theMsgR);
 
-    void HandleStartRoutingReply(WONMisc::SocketPipe* thePipeP, const WONMsg::SmallMessage& theMsgR);
-    void FactHandleStartProcess(void);
+    TI_API void HandleStartRoutingReply(WONMisc::SocketPipe* thePipeP, const WONMsg::SmallMessage& theMsgR);
+    TI_API void FactHandleStartProcess(void);
 
     // Firewall Server stuff
-    void FirewallFailOver(void);
-    void FirewallDetect(void);
-    void HandleFirewallResponse(WONMisc::SocketPipe *thePipeP, const WONMsg::SmallMessage& theMsgR);
+    TI_API void FirewallFailOver(void);
+    TI_API void FirewallDetect(void);
+    TI_API void HandleFirewallResponse(WONMisc::SocketPipe *thePipeP, const WONMsg::SmallMessage& theMsgR);
 
 // Authentication server stuff
-    void AuthFailOver(void);
-    void ResetAuthFailOver(void);
+    TI_API void AuthFailOver(void);
+    TI_API void ResetAuthFailOver(void);
 
-    bool ReadLoginKey(char *theKey);
+    TI_API bool ReadLoginKey(char *theKey);
     void WriteLoginKey(char *theKey, bool useOldNewLoginKey = false);
 
-    void AuthHandleGetPubKeysReply(const WONMsg::TMessage &theMsg);
-    void AuthGetPubKeyBlock(void);
-    void AuthHandleLogin(void);
-    void AuthHandleChallenge(const WONMsg::TMessage &theMsg);
-    void AuthHandleLoginReply(const WONMsg::TMessage &theMsg);
-    void AuthHandleRefresh(void);
+    TI_API void AuthHandleGetPubKeysReply(const WONMsg::TMessage &theMsg);
+    TI_API void AuthGetPubKeyBlock(void);
+    TI_API void AuthHandleLogin(void);
+    TI_API void AuthHandleChallenge(const WONMsg::TMessage &theMsg);
+    TI_API void AuthHandleLoginReply(const WONMsg::TMessage &theMsg);
+    TI_API void AuthHandleRefresh(void);
 
-    void PeerHandleChallenge(WONMisc::SocketPipe** thePipeP, const WONMsg::TMessage& theMsgR);
-    void PeerHandleComplete(WONMisc::SocketPipe** thePipeP, const WONMsg::TMessage& theMsgR);
-    void PeerHandleMiniChallenge(WONMisc::SocketPipe** thePipeP, const WONMsg::MiniMessage& theMsgR);
-    void PeerHandleMiniComplete(WONMisc::SocketPipe** thePipeP, const WONMsg::MiniMessage& theMsgR);
+    TI_API void PeerHandleChallenge(WONMisc::SocketPipe** thePipeP, const WONMsg::TMessage& theMsgR);
+    TI_API void PeerHandleComplete(WONMisc::SocketPipe** thePipeP, const WONMsg::TMessage& theMsgR);
+    TI_API void PeerHandleMiniChallenge(WONMisc::SocketPipe** thePipeP, const WONMsg::MiniMessage& theMsgR);
+    TI_API void PeerHandleMiniComplete(WONMisc::SocketPipe** thePipeP, const WONMsg::MiniMessage& theMsgR);
 
-    bool EncryptMessage(const WONMsg::BaseMessage &theInMsg, WONMsg::BaseMessage &theOutMsg, const WONCrypt::BFSymmetricKey &theKey, unsigned short theSessionId, unsigned short *theSeqNum);
-//  bool EncryptTMessage(const WONMsg::BaseMessage &theInMsg, WONMsg::BaseMessage &theOutMsg, const WONCrypt::BFSymmetricKey &theKey, unsigned short theSessionId, unsigned short *theSeqNum);
-    bool EncryptNonTMessage(const WONMsg::BaseMessage &theInMsg, WONMsg::BaseMessage &theOutMsg, const WONCrypt::BFSymmetricKey &theKey, unsigned short theSessionId, unsigned short *theSeqNum);
+    TI_API bool EncryptMessage(const WONMsg::BaseMessage &theInMsg, WONMsg::BaseMessage &theOutMsg, const WONCrypt::BFSymmetricKey &theKey, unsigned short theSessionId, unsigned short *theSeqNum);
+TI_API //  bool EncryptTMessage(const WONMsg::BaseMessage &theInMsg, WONMsg::BaseMessage &theOutMsg, const WONCrypt::BFSymmetricKey &theKey, unsigned short theSessionId, unsigned short *theSeqNum);
+    TI_API bool EncryptNonTMessage(const WONMsg::BaseMessage &theInMsg, WONMsg::BaseMessage &theOutMsg, const WONCrypt::BFSymmetricKey &theKey, unsigned short theSessionId, unsigned short *theSeqNum);
 
-    bool DecryptMessage(const char *theBuf, unsigned long theLen, WONMsg::BaseMessage &theOutMsg, WONMisc::SocketPipe **thePipePP);
-//  bool DecryptTMessage(const char *theBuf, unsigned long theLen, WONMsg::BaseMessage &theOutMsg, WONMisc::SocketPipe **thePipePP);
-    bool DecryptNonTMessage(const char *theBuf, unsigned long theLen, WONMsg::BaseMessage &theOutMsg, WONMisc::SocketPipe **thePipePP);
+    TI_API bool DecryptMessage(const char *theBuf, unsigned long theLen, WONMsg::BaseMessage &theOutMsg, WONMisc::SocketPipe **thePipePP);
+TI_API //  bool DecryptTMessage(const char *theBuf, unsigned long theLen, WONMsg::BaseMessage &theOutMsg, WONMisc::SocketPipe **thePipePP);
+    TI_API bool DecryptNonTMessage(const char *theBuf, unsigned long theLen, WONMsg::BaseMessage &theOutMsg, WONMisc::SocketPipe **thePipePP);
 
-//  void HandleGetNumUsersReply(WONMisc::SocketPipe *thePipeP, const WONMsg::MiniMessage& theMsgR);
+TI_API //  void HandleGetNumUsersReply(WONMisc::SocketPipe *thePipeP, const WONMsg::MiniMessage& theMsgR);
 
     // Routing Server methods
-    void HandleRoutingGroupChange(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
-    void HandleRoutingGroupChangeEx(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
-    void HandleRoutingGetClientListReply(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
-    void HandleRoutingRegisterClientReply(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
+    TI_API void HandleRoutingGroupChange(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
+    TI_API void HandleRoutingGroupChangeEx(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
+    TI_API void HandleRoutingGetClientListReply(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
+    TI_API void HandleRoutingRegisterClientReply(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
 
-    void HandleRoutingCreateDataObject(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
-    void HandleRoutingDeleteDataObject(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
+    TI_API void HandleRoutingCreateDataObject(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
+    TI_API void HandleRoutingDeleteDataObject(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
 
-    void HandleRoutingPeerChat(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
-    void HandleRoutingPeerData(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
-    void HandleRoutingPeerData(WONMisc::SocketPipe* thePipeP, const WONCommon::RawBuffer &theData,WONMsg::ClientId theId, int theServer);
-    void HandleRoutingPeerDataMultiple(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
+    TI_API void HandleRoutingPeerChat(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
+    TI_API void HandleRoutingPeerData(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
+    TI_API void HandleRoutingPeerData(WONMisc::SocketPipe* thePipeP, const WONCommon::RawBuffer &theData,WONMsg::ClientId theId, int theServer);
+    TI_API void HandleRoutingPeerDataMultiple(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
 
-    void HandleRoutingReadDataObjectReply(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
-    void HandleRoutingReplaceDataObject(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
-    void HandleRoutingStatusReply(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
+    TI_API void HandleRoutingReadDataObjectReply(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
+    TI_API void HandleRoutingReplaceDataObject(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
+    TI_API void HandleRoutingStatusReply(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR, int theServer);
 
-    void HandleRoutingRegister(int theServer);
-    void OnNewRoutingServerClient(WONMsg::ClientId theClientId, const std::wstring& theUserNameR, unsigned long theIPAddress, int theServer);
+    TI_API void HandleRoutingRegister(int theServer);
+    TI_API void OnNewRoutingServerClient(WONMsg::ClientId theClientId, const std::wstring& theUserNameR, unsigned long theIPAddress, int theServer);
 
     // Event Server stuff
     unsigned long mEventTag;
     bool          mHasLobbyEnterEventBeenSent;
     time_t        mLobbyEnterTime;
     time_t        mGameStartTime;
-    void RecordEvent(unsigned short theEventType);
+    TI_API void RecordEvent(unsigned short theEventType);
 
     // Homeworld stuff
-    void HandlePeerMsg(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
+    TI_API void HandlePeerMsg(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
 
-    void HandleJoinGame(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
-    void HandleJoinConfirm(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
-    void HandleLeaveGame(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
-    void HandleJoinReject(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
-    void HandleGameData(const TitanPacketMsg& theMsgR);
-    void HandleGameStart(const TitanPacketMsg& theMsgR);
-    void HandleGameMsg(const TitanPacketMsg& theMsgR);
-    void HandleGameDisolved(const TitanPacketMsg& theMsgR);
-    void HandleKickedOutOfGame(const TitanPacketMsg& theMsgR);
-    void HandleUpdatePlayer(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
-    void HandleChannelList(WONMsg::DirEntityList& dirEntities);
-    void HandleTitanServerList(WONMsg::DirEntityList& dirEntities);
-    void HandlePing(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
-    void HandlePingReply(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
-    void HandleClientReconnect(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
+    TI_API void HandleJoinGame(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
+    TI_API void HandleJoinConfirm(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
+    TI_API void HandleLeaveGame(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
+    TI_API void HandleJoinReject(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
+    TI_API void HandleGameData(const TitanPacketMsg& theMsgR);
+    TI_API void HandleGameStart(const TitanPacketMsg& theMsgR);
+    TI_API void HandleGameMsg(const TitanPacketMsg& theMsgR);
+    TI_API void HandleGameDisolved(const TitanPacketMsg& theMsgR);
+    TI_API void HandleKickedOutOfGame(const TitanPacketMsg& theMsgR);
+    TI_API void HandleUpdatePlayer(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
+    TI_API void HandleChannelList(WONMsg::DirEntityList& dirEntities);
+    TI_API void HandleTitanServerList(WONMsg::DirEntityList& dirEntities);
+    TI_API void HandlePing(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
+    TI_API void HandlePingReply(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
+    TI_API void HandleClientReconnect(WONMisc::SocketPipe* thePipeP, const WONMsg::MiniMessage& theMsgR);
 
-    void HandleBeginStartGame(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
-    void HandleChangeAddress(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
-    void HandleRequestPackets(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
+    TI_API void HandleBeginStartGame(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
+    TI_API void HandleChangeAddress(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
+    TI_API void HandleRequestPackets(WONMisc::SocketPipe* thePipeP, const TitanPacketMsg& theMsgR);
 
     // Utility
-    ClientNetAddr TitanInterface::MakeClientNetAddr(Address* theAddressP);
-    void TitanInterface::InitDestAddress(Address* theAddressP, WONMisc::SocketPipe* thePipeP);
-    void BuildAddress(SOCKADDR_IN& theAddrR, long theIP, unsigned short thePort);
-    void BuildAddress(SOCKADDR_IN& theAddrR, const WONCommon::RawBuffer& theSixBytes);
-    void BuildAddress(SOCKADDR_IN& theAddrR, unsigned char buffer[]);
-    const char* PrintAddress(SOCKADDR_IN& theAddrR);
-    const char* PrintAddress(const WONCommon::RawBuffer& theSixBytes);
+    TI_API ClientNetAddr TitanInterface::MakeClientNetAddr(Address* theAddressP);
+    TI_API void TitanInterface::InitDestAddress(Address* theAddressP, WONMisc::SocketPipe* thePipeP);
+    TI_API void BuildAddress(SOCKADDR_IN& theAddrR, long theIP, unsigned short thePort);
+    TI_API void BuildAddress(SOCKADDR_IN& theAddrR, const WONCommon::RawBuffer& theSixBytes);
+    TI_API void BuildAddress(SOCKADDR_IN& theAddrR, unsigned char buffer[]);
+    TI_API const char* PrintAddress(SOCKADDR_IN& theAddrR);
+    TI_API const char* PrintAddress(const WONCommon::RawBuffer& theSixBytes);
     bool SendMsg(WONMisc::SocketPipe* thePipeP, const WONMsg::BaseMessage& theMsgR, unsigned char theLengthFieldSize = 0);
-    unsigned long GetLengthFieldSize(const WONMsg::BaseMessage& theMsgR);
+    TI_API unsigned long GetLengthFieldSize(const WONMsg::BaseMessage& theMsgR);
 
-    unsigned long GetLocalIPAddress(void);
+    TI_API unsigned long GetLocalIPAddress(void);
 
-    bool EncryptAndSendRoutingMsg(const WONMsg::BaseMessage &theMsgR, int theServer);
+    TI_API bool EncryptAndSendRoutingMsg(const WONMsg::BaseMessage &theMsgR, int theServer);
 
     WONMisc::SocketPipe* ConnectTo(const SOCKADDR& theDest, WONMisc::EasySocket::SocketType theType=WONMisc::EasySocket::TCP, WONMisc::RecvLengthPrefixType thePrefixType=WONMisc::ptUnsignedLong);
     WONMisc::SocketPipe* ConnectTo(const Address& theDest, WONMisc::EasySocket::SocketType theType=WONMisc::EasySocket::TCP, WONMisc::RecvLengthPrefixType thePrefixType=WONMisc::ptUnsignedLong);
@@ -424,9 +424,9 @@ private:
     WONMisc::SocketPipe* ConnectAndSend(const SOCKADDR_IN& theDest, const WONMsg::BaseMessage& theMsgR, WONMisc::EasySocket::SocketType theType=WONMisc::EasySocket::TCP, WONMisc::RecvLengthPrefixType thePrefixType=WONMisc::ptUnsignedLong);
     WONMisc::SocketPipe* ConnectAndSend(const Address& theDest, const WONMsg::BaseMessage& theMsgR, WONMisc::EasySocket::SocketType theType=WONMisc::EasySocket::TCP, WONMisc::RecvLengthPrefixType thePrefixType=WONMisc::ptUnsignedLong);
 
-    static unsigned long GetHashSection(bool restart, unsigned char** theUnhashedBufP, unsigned char digest[MD5_HASH_SIZE]);
-    static void TitanInterface::ShortCircuitChallengeResponse(unsigned char* theSeed, unsigned char* theChallengeResponseP);
-    static bool TitanInterface::ReadFromWonstuff(bool restart, unsigned char* theBufferP);
+    TI_API static unsigned long GetHashSection(bool restart, unsigned char** theUnhashedBufP, unsigned char digest[MD5_HASH_SIZE]);
+    TI_API static void TitanInterface::ShortCircuitChallengeResponse(unsigned char* theSeed, unsigned char* theChallengeResponseP);
+    TI_API static bool TitanInterface::ReadFromWonstuff(bool restart, unsigned char* theBufferP);
 };
 
 #endif

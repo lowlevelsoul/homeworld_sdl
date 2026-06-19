@@ -47,19 +47,19 @@ static inline void gles_vertex_data(void) {
 }
 
 static inline void gles_render_current(void) {
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glVertexPointer(gles_vertex_dimensions, GL_FLOAT, 0, gles_vertex);
+    TI_API glEnableClientState(GL_VERTEX_ARRAY);
+    TI_API glVertexPointer(gles_vertex_dimensions, GL_FLOAT, 0, gles_vertex);
     if (gles_texcoord_count && gles_mode >= GL_TRIANGLES) {
-        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-        glTexCoordPointer(2, GL_FLOAT, 0, gles_texcoord);
+        TI_API glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+        TI_API glTexCoordPointer(2, GL_FLOAT, 0, gles_texcoord);
     }
     if (gles_color_count) {
-        glEnableClientState(GL_COLOR_ARRAY);
-        glColorPointer(4, GL_FLOAT, 0, gles_colors);
+        TI_API glEnableClientState(GL_COLOR_ARRAY);
+        TI_API glColorPointer(4, GL_FLOAT, 0, gles_colors);
     }
     if (gles_normal_count && gles_mode >= GL_TRIANGLES) {
-        glEnableClientState(GL_NORMAL_ARRAY);
-        glNormalPointer(GL_FLOAT, 0, gles_normals);
+        TI_API glEnableClientState(GL_NORMAL_ARRAY);
+        TI_API glNormalPointer(GL_FLOAT, 0, gles_normals);
     }
     switch (gles_mode) {
         case GL_POINTS:
@@ -69,10 +69,10 @@ static inline void gles_render_current(void) {
         case GL_TRIANGLES:
         case GL_TRIANGLE_STRIP:
         case GL_TRIANGLE_FAN:
-            glDrawArrays(gles_mode, 0, gles_vertex_count / gles_vertex_dimensions);
+            TI_API glDrawArrays(gles_mode, 0, gles_vertex_count / gles_vertex_dimensions);
             break;
         case GL_QUADS:
-            glDrawElements(GL_TRIANGLE_STRIP, gles_vertex_count / gles_vertex_dimensions, GL_UNSIGNED_SHORT, gles_quad_indices);
+            TI_API glDrawElements(GL_TRIANGLE_STRIP, gles_vertex_count / gles_vertex_dimensions, GL_UNSIGNED_SHORT, gles_quad_indices);
             break;
         case GL_POLYGON: {
             unsigned int i;
@@ -89,17 +89,17 @@ static inline void gles_render_current(void) {
             gles_vertex[gles_vertex_count++] = center_x;
             gles_vertex[gles_vertex_count++] = center_y;
             gles_vertex_data(void)
-            glDrawElements(GL_TRIANGLE_FAN, gles_vertex_count / gles_vertex_dimensions, GL_UNSIGNED_SHORT, poly_indices);
+            TI_API glDrawElements(GL_TRIANGLE_FAN, gles_vertex_count / gles_vertex_dimensions, GL_UNSIGNED_SHORT, poly_indices);
             break;
         }
         default:
-            printf("gles_render_current: unsupported mode: 0x%x\n", gles_mode);
+            TI_API printf("gles_render_current: unsupported mode: 0x%x\n", gles_mode);
             break;
     }
-    glDisableClientState(GL_VERTEX_ARRAY);
-    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-    glDisableClientState(GL_COLOR_ARRAY);
-    glDisableClientState(GL_NORMAL_ARRAY);
+    TI_API glDisableClientState(GL_VERTEX_ARRAY);
+    TI_API glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    TI_API glDisableClientState(GL_COLOR_ARRAY);
+    TI_API glDisableClientState(GL_NORMAL_ARRAY);
     gles_vertex_count = 0;
     gles_texcoord_count = 0;
     if (gles_color_count) {
@@ -145,20 +145,20 @@ static inline void glesColor4f(GLfloat red, GLfloat green, GLfloat blue, GLfloat
         gles_colors[1] = green;
         gles_colors[2] = blue;
         gles_colors[3] = alpha;
-        glColor4f(red, green, blue, alpha);
+        TI_API glColor4f(red, green, blue, alpha);
     }
 }
 
 static inline void glColor3f(GLfloat red, GLfloat green, GLfloat blue) {
-    glesColor4f(red, green, blue, 1.0f);
+    TI_API glesColor4f(red, green, blue, 1.0f);
 }
 
 static inline void glesColor4ub(GLubyte red, GLubyte green, GLubyte blue, GLubyte alpha) {
-    glesColor4f((GLfloat)red / 255.0f, (GLfloat)green / 255.0f, (GLfloat)blue / 255.0f, (GLfloat)alpha / 255.0f);
+    TI_API glesColor4f((GLfloat)red / 255.0f, (GLfloat)green / 255.0f, (GLfloat)blue / 255.0f, (GLfloat)alpha / 255.0f);
 }
 
 static inline void glColor3ub(GLubyte red, GLubyte green, GLubyte blue) {
-    glesColor4ub(red, green, blue, 255);
+    TI_API glesColor4ub(red, green, blue, 255);
 }
 
 static inline void glesNormal3f(GLfloat nx, GLfloat ny, GLfloat nz) {
@@ -176,12 +176,12 @@ static inline void glesNormal3f(GLfloat nx, GLfloat ny, GLfloat nz) {
         gles_normals[0] = nx;
         gles_normals[1] = ny;
         gles_normals[2] = nz;
-        glNormal3f(nx, ny, nz);
+        TI_API glNormal3f(nx, ny, nz);
     }
 }
 
 static inline void glNormal3fv(const GLfloat *v) {
-    glesNormal3f(v[0], v[1], v[2]);
+    TI_API glesNormal3f(v[0], v[1], v[2]);
 }
 
 static inline void glTexCoord2f(GLfloat s, GLfloat t) {
@@ -207,7 +207,7 @@ static inline void glVertex3f(GLfloat x, GLfloat y, GLfloat z) {
 }
 
 static inline void glVertex3fv(const GLfloat *v) {
-    glVertex3f(v[0], v[1], v[2]);
+    TI_API glVertex3f(v[0], v[1], v[2]);
 }
 
 #define glColor4ub(R, G, B, A) glesColor4ub(R, G, B, A)
@@ -216,6 +216,7 @@ static inline void glVertex3fv(const GLfloat *v) {
 
 #else
 
+#include "tiPlatform.h"
 #include "SDL_opengl.h"
 
 extern PFNGLBINDBUFFERPROC glBindBuffer;
@@ -234,6 +235,6 @@ extern PFNGLDRAWTEXIOESPROC glDrawTexiOES;
 #define GL_TEXTURE_CROP_RECT_OES 0x8B9D
 #endif
 
-int glCheckExtension(const char *ext);
+TI_API int glCheckExtension(const char *ext);
 
 #endif

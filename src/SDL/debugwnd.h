@@ -91,29 +91,29 @@ pane;
 =============================================================================*/
 #ifdef _WIN32   /* Don't use debug window outside Windows. */
 //start/close down the debug window.
-sdword dbwStart(udword hInstance, udword hWndParent);
-void   dbwClose(void);
-void   dbwWriteOptions(void);
+TI_API sdword dbwStart(udword hInstance, udword hWndParent);
+TI_API void   dbwClose(void);
+TI_API void   dbwWriteOptions(void);
 
 //setting attributes of window
-sdword dbwLocationSet(sdword xPixels, sdword yPixels);
-sdword dbwSizeSet(sdword xChars, sdword yChars);
-sdword dbwScrollBufferSizeSet(sdword yChars);
+TI_API sdword dbwLocationSet(sdword xPixels, sdword yPixels);
+TI_API sdword dbwSizeSet(sdword xChars, sdword yChars);
+TI_API sdword dbwScrollBufferSizeSet(sdword yChars);
 
 //pane attribute functions
-sdword dbwPaneEnable(sdword pane, sdword enable);
+TI_API sdword dbwPaneEnable(sdword pane, sdword enable);
 
 //logging
-sdword dbwLogStart(sdword pane, char *fileName);
-sdword dbwLogFlush(sdword pane);
-sdword dbwLogEnd(sdword pane);
-sdword dbwLogEndAll(void);
+TI_API sdword dbwLogStart(sdword pane, char *fileName);
+TI_API sdword dbwLogFlush(sdword pane);
+TI_API sdword dbwLogEnd(sdword pane);
+TI_API sdword dbwLogEndAll(void);
 
 //printing strings to the window
-sdword dbwPrint(sdword pane, char *string);
-sdword dbwLineFeed(sdword pane);
-void   dbwPaneClear(sdword pane);
-sdword dbwCursorSet(sdword pane, sdword x, sdword y);
+TI_API sdword dbwPrint(sdword pane, char *string);
+TI_API sdword dbwLineFeed(sdword pane);
+TI_API void   dbwPaneClear(sdword pane);
+TI_API sdword dbwCursorSet(sdword pane, sdword x, sdword y);
 #endif  /* _WIN32 */
 
 #endif

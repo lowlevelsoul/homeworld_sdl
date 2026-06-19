@@ -6,7 +6,7 @@
 extern "C" {
 #endif
 
-void fft(long n,float *xRe,float *xIm,float *yRe,float *yIm);
+TI_API void fft(long n,float *xRe,float *xIm,float *yRe,float *yIm);
 
 #ifdef __cplusplus
 }		// extern "C"
