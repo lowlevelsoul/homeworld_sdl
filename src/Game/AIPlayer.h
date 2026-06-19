@@ -139,8 +139,8 @@ typedef struct AIPlayer
     ubyte ResearchersToBuild;
     ubyte ResearchDelay;            //delay for research depending on difficulty level
 
-    bool firstTurn;
-    bool recalculateAllies;
+    bool_t firstTurn;
+    bool_t recalculateAllies;
 
     //hyperspacing stuff
     sdword aifHyperSavings;         //the amount of RUs saved up for hyperspacing
@@ -176,7 +176,7 @@ typedef struct AIPlayer
     // defenseman stuff
     //GrowSelection    newdefenseships;
     SelectCommand    *shipsattackingmothership;
-    bool             MothershipUnderAttack;             //later change to an AlertStatus bit
+    bool_t             MothershipUnderAttack;             //later change to an AlertStatus bit
     udword           AlertStatus;
     udword           NumProxSensorsRequested;
     SelectCommand    *aidProximitySensors;
@@ -198,7 +198,7 @@ typedef struct AIPlayer
 /*=============================================================================
     Global Variables:
 =============================================================================*/
-extern bool aiplayerLogEnable;
+extern bool_t aiplayerLogEnable;
 
 extern AIPlayer *aiCurrentAIPlayer;
 extern uword    aiIndex;

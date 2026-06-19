@@ -367,14 +367,14 @@ typedef void (*niseventdispatch)(nisplaying* NIS, nisevent* event);
 /*=============================================================================
     Data:
 =============================================================================*/
-extern bool nisIsRunning;
-extern bool nisCaptureCamera;
+extern bool_t nisIsRunning;
+extern bool_t nisCaptureCamera;
 extern Camera *nisCamera;
 extern taskhandle nisTaskHandle;
 #if NIS_PRINT_INFO
 extern char nisInfoString[256];
-extern bool nisPrintInfo;
-extern bool nisNoLockout;
+extern bool_t nisPrintInfo;
+extern bool_t nisNoLockout;
 #endif
 #if NIS_TEST
 nisplaying *testPlaying;
@@ -385,7 +385,7 @@ extern nisheader *thisNisHeader;
 extern nisDoneCB thisNisDoneCB;
 extern sdword nisTextCardIndex;
 
-extern bool nisFullyScissored;                  //is scissor fully opaque?
+extern bool_t nisFullyScissored;                  //is scissor fully opaque?
 extern real32 nisScissorFade;                   //current fade amount (0..1)
 extern real32 nisScissorFadeIn;                 //duration of fade in/out
 extern real32 nisScissorFadeOut;                //duration of fade in/out
@@ -430,12 +430,12 @@ TI_API real32 nisUpdate(nisplaying *NIS, real32 timeElapsed);
 TI_API void nisObjectEulerToMatrix(matrix *coordsys, vector *rotVector);
 TI_API void nisShipEulerToMatrix(matrix *coordsys, vector *rotVector);
 TI_API void nisStop(nisplaying *NIS);
-TI_API void nisPause(bool bPause);
+TI_API void nisPause(bool_t bPause);
 
 TI_API void nisGoToEnd(nisplaying *NIS);
 
 //utility functions for others to use
-TI_API bool nisShipStartPosition(vector *destVector, matrix *destMatrix, nisheader *header, ShipRace race, ShipType type, sdword instance);
+TI_API bool_t nisShipStartPosition(vector *destVector, matrix *destMatrix, nisheader *header, ShipRace race, ShipType type, sdword instance);
 TI_API void nisRotateAboutVector(real32* m, vector* axis, real32 radians);
 TI_API void nisTextCardListDraw(void);
 TI_API void nisRemoveMissileReference(Missile *missile);

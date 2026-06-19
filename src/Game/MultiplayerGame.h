@@ -283,10 +283,10 @@ typedef struct
 
 struct ChatPacket;
 
-TI_API void mgStartMultiPlayerGameScreens(regionhandle region, sdword ID, udword event, udword data, bool AlreadyLoggedIn);
+TI_API void mgStartMultiPlayerGameScreens(regionhandle region, sdword ID, udword event, udword data, bool_t AlreadyLoggedIn);
 TI_API void mgShutdownMultiPlayerGameScreens(void);
 
-TI_API void mgFailedToConnectToChannel(bool existing);
+TI_API void mgFailedToConnectToChannel(bool_t existing);
 
 TI_API void mgDisplayMessage(char *message);
 
@@ -308,7 +308,7 @@ TI_API void mgSetGameType(char *gameName);
 
 TI_API void mgScreensDisappear(void);
 
-TI_API bool mgAccelerator(void);
+TI_API bool_t mgAccelerator(void);
 TI_API void mgAcceleratorRelease(void);
 
 TI_API void LockMutex(void *mutex);
@@ -318,13 +318,13 @@ TI_API void gameCloseMutex(void *mutex);
 
 TI_API void titanJoinGameRequest(tpscenario *gametojoin);
 
-TI_API bool mgInvalidGameName(void);
+TI_API bool_t mgInvalidGameName(void);
 
-TI_API bool mgInvalidGamePassword(void);
+TI_API bool_t mgInvalidGamePassword(void);
 
 TI_API void mgPrepareMessageBox(char *string1,char *string2);
 
-TI_API bool mgIsPlayerInList(LinkedList *list, gameplayerinfo *find);
+TI_API bool_t mgIsPlayerInList(LinkedList *list, gameplayerinfo *find);
 
 void GeneralMessageBox(char *string1,char *string2);        // designed for external use
 
@@ -336,7 +336,7 @@ TI_API void mgBackuptpGameCreated(void);
 TI_API void mgRestoretpGameCreated(void);
 TI_API void mgResetNamePassword(void);
 
-TI_API bool mgIsUserBanned(char *name);
+TI_API bool_t mgIsUserBanned(char *name);
 
 /*=============================================================================
     Data:
@@ -349,7 +349,7 @@ extern int LanProtocalsValid;
 
 extern int LanProtocalButton;
 
-extern bool mgRunning;
+extern bool_t mgRunning;
 
 // N    P   M   D   u   p        nc  sf  bs  sr   ii    ia     lt    la   ad  ab  p     f
 //= {L"", L"", "", "", 0,  {0,0,0},  0,  1,  3,   1, 1440, 2000, 19200, 2000, 50, 50, 0, 22058};

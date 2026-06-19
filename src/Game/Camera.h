@@ -62,9 +62,9 @@ TI_API void cameraInit(Camera *camera,real32 distance);
 TI_API void cameraJoystickReset(void);
 TI_API void cameraRotAngle(Camera *camera,real32 angle);
 TI_API void cameraRotDeclination(Camera *camera,real32 declination);
-TI_API void cameraZoom(Camera *camera,real32 zoomfactor, bool EnforceShipDistances);
+TI_API void cameraZoom(Camera *camera,real32 zoomfactor, bool_t EnforceShipDistances);
 TI_API void cameraSetEyePosition(Camera *camera);
-TI_API sdword cameraControl(Camera *camera,bool EnforceShipDistances);
+TI_API sdword cameraControl(Camera *camera,bool_t EnforceShipDistances);
 TI_API void cameraCopyPositionInfo(Camera *dst,Camera *src);
 TI_API void cameraChangeLookatpoint(Camera *camera,vector *newlookatpoint);
 TI_API void cameraRotateAbout(Camera *camera,vector about,real32 deg);
@@ -118,8 +118,8 @@ extern sword camJoyRightAscension;
 extern bool8 wheel_up;
 extern bool8 wheel_down;
 
-extern bool zoomOutNow;
-extern bool zoomInNow;
+extern bool_t zoomOutNow;
+extern bool_t zoomInNow;
 
 extern bool8 useSlowWheelZoomIn;
 

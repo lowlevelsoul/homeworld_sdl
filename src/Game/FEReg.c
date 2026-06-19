@@ -472,7 +472,7 @@ sdword ferSelectedDotMarginY = 1;
 sdword ferPopoutArrowMarginX = 13;
 sdword ferPopoutArrowMarginY = 1;
 
-static bool useDrawTex = FALSE;
+static bool_t useDrawTex = FALSE;
 
 #define NUM_CUTS 8
 
@@ -551,7 +551,7 @@ void ferMirrorBitmapVert(udword *bitmap, sdword width, sdword height)
     Outputs     :
     Return      : TRUE if the corner/side is found
 ----------------------------------------------------------------------------*/
-bool ferFindCutoutType(textype cuts[NUM_CUTS], textype find)
+bool_t ferFindCutoutType(textype cuts[NUM_CUTS], textype find)
 {
     udword i;
 
@@ -882,7 +882,7 @@ lifheader *ferTextureRegisterSpecial(char *fileName, textype newtype, textype or
     udword i;
     Node *node;
     textureregistry *element;
-    bool    found=FALSE;
+    bool_t    found=FALSE;
     tex_holder holder;
     udword new_th_accum=0, end = (udword)end_texholder;
 
@@ -1734,7 +1734,7 @@ textype ferDrawCutout(rectangle dimensions, rectangle cutDimensions,
 void ferDrawBox(rectangle dimensions, tex_holder outerCornerName, tex_holder innerCornerName,
                 tex_holder sideName, udword kludgyflag)
 {
-    bool primModeOn = TRUE;
+    bool_t primModeOn = TRUE;
     udword width, i;
     textype cutout_corners[NUM_CUTS];
     Node *node;
@@ -1800,7 +1800,7 @@ void ferDrawBox(rectangle dimensions, tex_holder outerCornerName, tex_holder inn
     Return      :
 ----------------------------------------------------------------------------*/
 void ferDrawBoxRegion(rectangle dimensions, drawtype textures,
-                       drawtype glow, LinkedList *cutouts, bool bUseAlpha)
+                       drawtype glow, LinkedList *cutouts, bool_t bUseAlpha)
 {
     tex_holder  outerCorner = BOX_OUTER_CORNER,
                 innerCorner = BOX_INNER_CORNER,

@@ -61,7 +61,7 @@ void soundEventClose(void);				/* Shuts down the mixer and frees resources, any 
 void soundEventReset(void);				/* Shuts down the mixer but does not free resources, soundevent calls will continue to work */
 void soundEventUpdate(void);			/* Update function that does panning, volume, etc for objects in the universe */
 void soundEventInitStruct(SOUNDEVENT *pseStruct);	/* initializes a SOUNDEVENT structure for use, all ships have a SOUNDEVENT structure */
-void soundEventPause(bool bPause);		/* Shuts down or restore the mixer */
+void soundEventPause(bool_t bPause);		/* Shuts down or restore the mixer */
 TI_API void soundEventReloadVolumes(void);
 TI_API void soundEventShutdown(void);
 TI_API void soundEventRestart(void);
@@ -95,7 +95,7 @@ TI_API //sdword speechEventPlay(void *object, sdword event, sdword var, sdword p
 //#define speechEvent(a,b,c)				speechEventPlay(a, b, c, SOUND_NOTINITED, SOUND_NOTINITED)
 //#define speechEventVar(a, b, c, d)		speechEventPlay(a, b, c, SOUND_NOTINITED, d)
 
-TI_API bool speechEventAttack(void);
+TI_API bool_t speechEventAttack(void);
 TI_API void speechEventUnderAttack(Ship *target);
 
 TI_API sdword speechEventQueue(void *object, sdword event, sdword var, sdword variation, sdword actornum, sdword playernum, sdword linkto, real32 timeout, sword volume);
@@ -107,7 +107,7 @@ TI_API sdword speechEventQueue(void *object, sdword event, sdword var, sdword va
 #define speechEventVar(a, b, c, d)	speechEventQueue(a, b, c, d, -1, -1, -1, 0.0f, -1)
 
 TI_API sdword speechEventRemoveShip(Ship *pShip);
-TI_API sdword speechEventStop(sdword handle, real32 fadetime, bool addstatic);
+TI_API sdword speechEventStop(sdword handle, real32 fadetime, bool_t addstatic);
 TI_API sdword speechEventStopAllSpecific(real32 fadetime, sdword speechType);
 #define speechEventStopAll(ft)		speechEventStopAllSpecific(ft, SPEECH_TYPE_SINGLE_PLAYER)
 TI_API sdword speechEventActorStop(udword actorMask, real32 fadetime);
@@ -139,10 +139,10 @@ TI_API void soundEventMusicMasterVol(real32);
 TI_API void soundEventMusicVolNOW(real32 level);
 TI_API void soundEventMusicMasterVolNOW(real32 level);
 TI_API void soundEventMasterEQ(real32 *pmasterEQ);
-TI_API void soundEventSetActor(sdword actornum, bool bOn);
-TI_API void soundEventVocalSettings(bool bCommands, bool bStatus, bool bChatter);
+TI_API void soundEventSetActor(sdword actornum, bool_t bOn);
+TI_API void soundEventVocalSettings(bool_t bCommands, bool_t bStatus, bool_t bChatter);
 TI_API void soundEventGetVolume(real32 *sfxvol, real32 *speechvol, real32 *musicvol);
 TI_API void soundEventHearActor(sdword actornum);
-TI_API void soundEventSetActorFlag(sdword actorflag, bool bOn);
+TI_API void soundEventSetActorFlag(sdword actorflag, bool_t bOn);
 
 #endif

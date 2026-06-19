@@ -72,10 +72,10 @@
 //structure for command-line parsing
 typedef struct
 {
-    //bool visible;                               //is this option visible by using '/?'?
+    //bool_t visible;                               //is this option visible by using '/?'?
     udword flags;                               //flags for this entry.  See above for possible values.
     char *parameter;                            //parameter string (begins with a slash)
-    bool (*function)(char *string);             //function to call, NULL if none.  Called after variable is set.
+    bool_t (*function)(char *string);             //function to call, NULL if none.  Called after variable is set.
     void *variableToModify;                     //variable to modify, NULL if none
     udword valueToSet;                          //value to set variable to
     char *helpString;                           //string printed in help screen
@@ -96,19 +96,19 @@ udword initialSensorLevel;
 extern sdword enableTrails;
 extern sdword showBackgrounds;
 
-extern bool mainRasterSkip;
+extern bool_t mainRasterSkip;
 
-extern bool mainSafeGL;
+extern bool_t mainSafeGL;
 
-extern bool mainForceKatmai;
-extern bool mainAllowKatmai;
-extern bool mainAllowPacking;
-extern bool mainOnlyPacking;
+extern bool_t mainForceKatmai;
+extern bool_t mainAllowKatmai;
+extern bool_t mainAllowPacking;
+extern bool_t mainOnlyPacking;
 
-extern bool fullScreen;
+extern bool_t fullScreen;
 extern int displayNum;
 
-extern bool enableAVI;
+extern bool_t enableAVI;
 
 extern sdword mainReinitRenderer;
 
@@ -124,8 +124,8 @@ extern sdword mainWindowDepth;
 extern char mainDeviceToSelect[];
 extern char mainGLToSelect[];
 
-extern bool mainNoPerspective;
-extern bool systemActive;
+extern bool_t mainNoPerspective;
+extern bool_t systemActive;
 
 /*=============================================================================
     Functions:
@@ -143,12 +143,12 @@ TI_API void utyOptionsFileRead(void);
 TI_API void utyOptionsFileWrite(void);
 
 //renderer swapping functions
-TI_API bool mainLoadGL(char* data);
-TI_API bool mainLoadRGL(void);
-TI_API bool mainLoadParticularRGL(char* device, char* data);
+TI_API bool_t mainLoadGL(char* data);
+TI_API bool_t mainLoadRGL(void);
+TI_API bool_t mainLoadParticularRGL(char* device, char* data);
 TI_API sdword mainActiveRenderer(void);
-TI_API bool mainReinitRGL(void);
-TI_API bool mainShutdownRenderer(void);
+TI_API bool_t mainReinitRGL(void);
+TI_API bool_t mainShutdownRenderer(void);
 
 TI_API void mainSaveRender(void);
 TI_API void mainRestoreRender(void);

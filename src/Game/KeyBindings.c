@@ -186,14 +186,14 @@ fonthandle kbKeyListFont;
 // pointer to the listwindow handle
 listwindowhandle kbListWindow=NULL;
 
-bool bkDisableKeyRemap=FALSE;
+bool_t bkDisableKeyRemap=FALSE;
 
 /*=============================================================================
     Private Function Prototypes :
 =============================================================================*/
 
 void kbSetNewKey(udword keypressed);
-bool kbKeyUsed(udword keytocheck);
+bool_t kbKeyUsed(udword keytocheck);
 
 /*=============================================================================
     Function Logic :
@@ -654,9 +654,9 @@ void kbSaveSettings(void)
     Inputs      : key to check
     Outputs     : boolean
     Parameters  : sdword keytocheck
-    Return      : bool
+    Return      : bool_t
 -----------------------------------------------------------------------------*/
-bool kbKeyUsed(udword keytocheck)
+bool_t kbKeyUsed(udword keytocheck)
 {
     sdword index, count=0;
 
@@ -679,9 +679,9 @@ bool kbKeyUsed(udword keytocheck)
     Inputs      : command
     Outputs     : boolean
     Parameters  : udword command
-    Return      : bool
+    Return      : bool_t
 -----------------------------------------------------------------------------*/
-bool kbCommandKeyIsHit(udword command)
+bool_t kbCommandKeyIsHit(udword command)
 {
     return(keyIsHit(kbKeyTable[command].primarykey));
 }
@@ -712,7 +712,7 @@ udword kbKeyBoundToCommand(udword command)
 void kbInitKeyBindings(void)
 {
     sdword index;
-    bool   bInFile=FALSE;
+    bool_t   bInFile=FALSE;
 
     kbKeyListFont = frFontRegister("hw_eurosecond_11.hff");
 

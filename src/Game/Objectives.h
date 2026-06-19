@@ -46,7 +46,7 @@ TI_API void objectiveLoad(void);
 // *fullDescription is the text found in the fleet intelligence window
 // The fullDescription pointer can be NULL
 // showOnce forces Fleet Intelligence to be drawn once and then deleted
-TI_API Objective *objectiveAndFleetIntelligenceCreate(char *label, char *briefDescription, char* fullDescription, bool8 showOnce, bool primary);
+TI_API Objective *objectiveAndFleetIntelligenceCreate(char *label, char *briefDescription, char* fullDescription, bool8 showOnce, bool_t primary);
 
 // Called independently if you wish to show fleet intelligence only once and right away
 TI_API FleetIntelligence *fleetIntelligenceCreate(char *description, bool8 showOnce);

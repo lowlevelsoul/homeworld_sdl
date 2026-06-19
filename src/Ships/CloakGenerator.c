@@ -249,7 +249,7 @@ void DeCloakAllObjects(Ship *ship)
     }
 }
 
-bool CloakGeneratorSpecialActivate(Ship *ship)
+bool_t CloakGeneratorSpecialActivate(Ship *ship)
 {
     CloakGeneratorSpec *spec = (CloakGeneratorSpec *)ship->ShipSpecifics;
     CloakGeneratorStatics *cloakgeneratorstatics;

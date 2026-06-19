@@ -260,7 +260,7 @@ void BlobRegistryRegister(blob *tblob)
     growSelectAddShip(&BlobRegistry,(Ship *)tblob);
 }
 
-sdword BlobRegistryGetIDWrapper(blob *tblob, bool check_valid_id)
+sdword BlobRegistryGetIDWrapper(blob *tblob, bool_t check_valid_id)
 {
     if (tblob != NULL)
     {
@@ -425,7 +425,7 @@ sdword LoadInfoNumber()
     return num;
 }
 
-bool LoadInfoNumberOptional(sdword *info)
+bool_t LoadInfoNumberOptional(sdword *info)
 {
     SaveChunk *chunk;
 
@@ -673,7 +673,7 @@ void LoadPreGameInfo(void)
     Outputs     :
     Return      : TRUE on success
 ----------------------------------------------------------------------------*/
-bool SaveGame(char *filename)
+bool_t SaveGame(char *filename)
 {
     sdword i;
 

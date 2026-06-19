@@ -30,11 +30,11 @@ typedef struct chathistory
 }
 chathistory;
 
-extern bool gcRunning;
-extern bool ViewingBuffer;
+extern bool_t gcRunning;
+extern bool_t ViewingBuffer;
 
 TI_API void gcRemoveAmpersands(char *dest, char *source);
-TI_API void gcChatEntryStart(bool toAllies);
+TI_API void gcChatEntryStart(bool_t toAllies);
 TI_API void gcRUTransferStart(uword playertosendto);
 TI_API void gcProcessGameChatPacket(struct ChatPacket *packet);
 TI_API void gcProcessGameTextMessage(char *message, udword col);

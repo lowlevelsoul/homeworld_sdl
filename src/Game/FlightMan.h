@@ -81,11 +81,11 @@ TI_API void scriptSetFlightManEvasiveFrontCB(char *directory,char *field,FlightM
 TI_API void scriptSetFlightManEvasivePureCB(char *directory,char *field,FlightManProb *dataToFillIn);
 
 TI_API udword flightmanGetRandom(FlightManProb *prob,udword flightmanSubtype);
-TI_API bool flightmanTestRandom(FlightManProb *prob,udword flightmanSubtype,udword flightman);
+TI_API bool_t flightmanTestRandom(FlightManProb *prob,udword flightmanSubtype,udword flightman);
 
 TI_API void flightmanInitFunc(Ship *ship,udword flightman,smemsize flags);
 
-TI_API bool flightmanExecute(Ship *ship);
+TI_API bool_t flightmanExecute(Ship *ship);
 TI_API void flightmanClose(Ship *ship);
 
 #define flightmanInit(ship,flightman) flightmanInitFunc(ship,flightman,-1)

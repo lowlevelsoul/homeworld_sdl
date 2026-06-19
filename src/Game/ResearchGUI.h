@@ -116,7 +116,7 @@ typedef struct
 }
 LRUPicture;
 
-extern bool rmGUIActive;
+extern bool_t rmGUIActive;
 
 // LRU defines, so that the trade manager can reuse the same LRU cache
 #define RM_TOTALPICS            6

@@ -90,7 +90,7 @@ typedef struct
     dbgAssertOrIgnore(c);                       \
     dbgAssertOrIgnore((c)->type == (t));
 
-TI_API bool SaveGame(char *filename);
+TI_API bool_t SaveGame(char *filename);
 TI_API void LoadGame(char *filename);
 TI_API void PreLoadGame(char *filename);
 
@@ -152,7 +152,7 @@ TI_API void Load_StringToAddress(char *addr);
 
 TI_API sdword VerifySaveFile(char *filename);
 
-TI_API bool LoadInfoNumberOptional(sdword *info);
+TI_API bool_t LoadInfoNumberOptional(sdword *info);
 TI_API SaveChunk *LoadNextChunkSafe(void);
 
 #endif

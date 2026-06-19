@@ -66,7 +66,7 @@ extern sdword SFX_AMBIENT_VOLUME;
 extern sdword SFX_NIS_MAX_ENGINES;
 extern sdword SFX_NIS_MIN_CAPSHIPS;
 extern real32 SFX_MAX_ENGINE_RANGE;
-extern bool   SFX_CAPSHIPS_ALWAYS_ON;
+extern bool_t   SFX_CAPSHIPS_ALWAYS_ON;
 extern sdword SFX_MAX_AMBIENT;
 extern real32 SFX_FLOAT_VELOCITY;
 extern real32 SFX_NIS_FLOAT_VELOCITY;
@@ -77,7 +77,7 @@ extern sword  SFX_HYPERSPACE_VOLUME;
 extern real32 SFX_DAMAGERATIO_LIGHT;
 extern real32 SFX_DAMAGERATIO_MEDIUM;
 extern real32 SFX_DAMAGERATIO_HEAVY;
-extern bool   SFX_DAMAGERATIO_ENABLE;
+extern bool_t   SFX_DAMAGERATIO_ENABLE;
 
 extern real32 SFX_CARDIOD_FACTOR;
 extern real32 SFX_CARDIOD_MIN;
@@ -93,12 +93,12 @@ extern real32 CORVETTE_VELOCITY_SCALE;
 extern real32 FIGHTER_DOPPLER_SCALE;
 extern sdword FIGHTER_DOPPLER_LOW;
 extern sdword FIGHTER_DOPPLER_HIGH;
-extern bool   FIGHTER_DOPPLER_USEVELOCITY;
+extern bool_t   FIGHTER_DOPPLER_USEVELOCITY;
 
 extern real32 CORVETTE_DOPPLER_SCALE;
 extern sdword CORVETTE_DOPPLER_LOW;
 extern sdword CORVETTE_DOPPLER_HIGH;
-extern bool   CORVETTE_DOPPLER_USEVELOCITY;
+extern bool_t   CORVETTE_DOPPLER_USEVELOCITY;
 
 extern real32 SPEECH_VOL_FACTOR;
 extern sword  SPEECH_VOL_LOW;
@@ -123,7 +123,7 @@ extern real32 SPEECH_DISOBEY_FORCEDATTACK;
 
 extern real32 SPEECH_MIN_PERCEPTABLE_VOL;
 extern real32 SPEECH_AMBIENT_LEVEL;
-extern bool   SPEECH_AMBIENT_ENABLE;
+extern bool_t   SPEECH_AMBIENT_ENABLE;
 
 extern real32 SPEECH_STIKEDAMAGE_MULT;
 extern real32 SPEECH_CAPDAMAGE_MULT;
@@ -155,14 +155,14 @@ TI_API void SEupdateShipRange(void);
 
 TI_API sword SEcalcenginevol(sdword shipclass, real32 distance);
 TI_API sword SEcalcvol(sdword shipclass, real32 distance);
-TI_API bool SEinrange(sdword shipclass, real32 distance);
-TI_API bool SEinrangeSqr(sdword shipclass, real32 distancesqr);
+TI_API bool_t SEinrange(sdword shipclass, real32 distance);
+TI_API bool_t SEinrangeSqr(sdword shipclass, real32 distancesqr);
 TI_API sword SEequalize(sdword objtype, real32 distance, real32 *eq);
 TI_API void SEeq(sdword objtype, real32 distance, real32 *eq);
-TI_API void SEstopengine(Ship *ship, bool stopnow);
+TI_API void SEstopengine(Ship *ship, bool_t stopnow);
 TI_API void SEloadbank(void);
 TI_API sdword SEselectactor(void);
-TI_API sdword SEspeechevent(sdword stream, sdword actor, sdword event, sdword var, sword vol, sword pan, double dist, float damageratio, sdword setVariation, bool bookend, ShipClass shipclass);
+TI_API sdword SEspeechevent(sdword stream, sdword actor, sdword event, sdword var, sword vol, sword pan, double dist, float damageratio, sdword setVariation, bool_t bookend, ShipClass shipclass);
 TI_API sword SEgetAngleToCamera(Ship *ship);
 TI_API sdword GetPatch(SFXLUT *lut, sdword object, sdword event);
 TI_API real32 SEsilence(void);

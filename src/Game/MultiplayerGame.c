@@ -175,13 +175,13 @@ int             WaitingForGame  = FALSE;
 // did the person create the game
 int             GameCreator     = FALSE;
 // is the person logged into WON
-bool            LoggedIn        = FALSE;
+bool_t            LoggedIn        = FALSE;
 
 // is this a LAN game - shared stuff
 int LanProtocalsValid = 0;      // 1 indicates IPX, 2 indicates TCP/IP, 3 indicates both
 int LanProtocalButton = 0;      // 0 indicates IPX, 1 indicates TCP/IP (same as IPGame)
 
-int            LANGame         = FALSE;     // use int not bool becuase CPP gets confused with our bool's.
+int            LANGame         = FALSE;     // use int not bool_t becuase CPP gets confused with our bool_t's.
 int            IPGame          = 1;  // DO NOT USE TRUE, use 1 or CPP gets confused
                                      // if we are using IP protocal (LAN or Internet)
 
@@ -198,9 +198,9 @@ sdword mgHumanArrowIndex = -1;
 sdword mgCPUArrowIndex = -1;
 
 // This flag is returned from the refresh task, will be changed when the observation server goes into effect.
-bool            donerefreshing  = TRUE;
-bool            donepinging     = TRUE;
-bool            mgCreatingNetworkGame = FALSE;
+bool_t            donerefreshing  = TRUE;
+bool_t            donepinging     = TRUE;
+bool_t            mgCreatingNetworkGame = FALSE;
 
 // structures and variables for creating a game.
 CaptainGameInfo BackupGameCreated;
@@ -344,10 +344,10 @@ typedef struct mgCommandInfo
 {
     char           *Command;
     mgCommandFunc   callback;
-    bool            hasnamearg;
-    bool            captainonly;
-    bool            roomchat;
-    bool            pregamechat;
+    bool_t            hasnamearg;
+    bool_t            captainonly;
+    bool_t            roomchat;
+    bool_t            pregamechat;
 }
 mgCommandInfo;
 
@@ -399,8 +399,8 @@ mgCommandInfo mgCommandItalian[] =
 };
 
 
-bool        gamestarted     = FALSE;
-bool        newscreen       = FALSE;
+bool_t        gamestarted     = FALSE;
+bool_t        newscreen       = FALSE;
 
 // Queue for transferring packets between threads.
 Queue       mgThreadTransfer;
@@ -440,7 +440,7 @@ BabyCallBack    *refreshbaby=NULL;
 BabyCallBack    *pinggamesbaby=NULL;
 
 // is the multiplayer game screens running.
-bool mgRunning=FALSE;
+bool_t mgRunning=FALSE;
 
 // currently active screen
 sdword currentScreen=-1;
@@ -450,7 +450,7 @@ sdword lastScreen=-1;
 // used for starting a screen in a separate thread.
 sdword screenaskedfor=-1;
 //sdword mgScreensAdded=0;
-bool   hideallscreens=TRUE;
+bool_t   hideallscreens=TRUE;
 
 // type of query asked for from titan.
 sdword mgQueryType=-1;
@@ -483,13 +483,13 @@ udword BaseColorSave;
 udword StripeColorSave;
 uword  RaceSave;
 
-bool refreshChannelsScreenRequest = FALSE;
-bool refreshServersScreenRequest = FALSE;
+bool_t refreshChannelsScreenRequest = FALSE;
+bool_t refreshServersScreenRequest = FALSE;
 
 extern color PATCHBARCOLOR;
 extern color PATCHBAROUTLINECOLOR;
 
-//bool tempstartship;  //need to update titannet.h for captaingameinfo
+//bool_t tempstartship;  //need to update titannet.h for captaingameinfo
 // this is the width in pixels of the chat windows
 sdword chatwindowwidth = 384-20;
 
@@ -504,7 +504,7 @@ int patchComplete = 0;
 char tempname[64];
 
 CaptainGameInfo joinBackuptpGameCreated;
-bool joinBackuptpGameCreatedValid = FALSE;
+bool_t joinBackuptpGameCreatedValid = FALSE;
 
 udword mgPlayerLimit = 0;
 
@@ -574,9 +574,9 @@ void mgSeeDetails                   (char *name, featom *atom);
 void mgJoinGame                     (char *name, featom *atom);
 void mgListOfGamesInit              (char *name, featom *atom);
 void mgListOfGamesBack              (char *name, featom *atom);
-bool Refresh                        (udword num, void *data, struct BabyCallBack *baby);
-bool PingAllGames                   (udword num, void *data, struct BabyCallBack *baby);
-bool PingAllServers                 (udword num, void *data, struct BabyCallBack *baby);
+bool_t Refresh                        (udword num, void *data, struct BabyCallBack *baby);
+bool_t PingAllGames                   (udword num, void *data, struct BabyCallBack *baby);
+bool_t PingAllServers                 (udword num, void *data, struct BabyCallBack *baby);
 
 // Callbacks for the waiting for game screens.
 void mgGameChatWindowInit           (char *name, featom *atom);
@@ -944,11 +944,11 @@ void mgGameInterestedOff()
 // a private message.  It has to search through two different lists of users, depending
 // on whether it is in game chat or the room chat that they are typing in.
 
-void *mgParseChatEntry(char *messageorig, bool preGameChat)
+void *mgParseChatEntry(char *messageorig, bool_t preGameChat)
 {
     udword      i,nummatches;
     char        toname[64], ampremoved[64], messagetmp[280], *message;
-    bool        done=FALSE;
+    bool_t        done=FALSE;
     Node       *walk=NULL;
     userlist   *user, *matched=NULL;
     gameplayerinfo *guser, *gmatched=NULL;
@@ -1052,11 +1052,11 @@ void *mgParseChatEntry(char *messageorig, bool preGameChat)
     return NULL;
 }
 
-void *mgCompleteRoomPlayerName(char *message, char *compname, bool preGameChat)
+void *mgCompleteRoomPlayerName(char *message, char *compname, bool_t preGameChat)
 {
     udword      i,nummatches;
     char        toname[64], ampremoved[64];
-    bool        done=FALSE;
+    bool_t        done=FALSE;
     Node       *walk=NULL;
     userlist   *user, *matched=NULL;
     gameplayerinfo *guser, *gmatched=NULL;
@@ -1246,7 +1246,7 @@ void mgProcessBan(char *name, char *retmessage)
     }
 }
 
-bool mgIsUserBanned(char *name)
+bool_t mgIsUserBanned(char *name)
 {
     if (mgIsUserInList(&listofBannedUsers,name) != NULL)
     {
@@ -1278,7 +1278,7 @@ void mgProcessLimit(char *name, char *retmessage)
     return;
 }
 
-sdword mgCommandEntered(char *text, bool preGameChat)
+sdword mgCommandEntered(char *text, bool_t preGameChat)
 {
     char *parse=text, *space=text;
     sdword i=0, command=-1;
@@ -1312,7 +1312,7 @@ sdword mgCommandEntered(char *text, bool preGameChat)
     }
 }
 
-sdword mgCommandExecute(char *text, char *retmessage, bool preGameChat)
+sdword mgCommandExecute(char *text, char *retmessage, bool_t preGameChat)
 {
     sdword  command;
     char   *name = text;
@@ -1331,11 +1331,11 @@ sdword mgCommandExecute(char *text, char *retmessage, bool preGameChat)
     return(command);
 }
 
-sdword mgCommandComplete(char *text, char *commandstr, bool preGameChat)
+sdword mgCommandComplete(char *text, char *commandstr, bool_t preGameChat)
 {
     sdword      j,i,nummatches, command=-1;
     char        toname[64], compname[64];
-    bool        done=FALSE;
+    bool_t        done=FALSE;
 
     // if not command at all then return NULL
     if (text[0]!='!') return(-1);
@@ -1431,7 +1431,7 @@ void mgScreensDisappear(void)
     Outputs     :
     Return      : void
 ----------------------------------------------------------------------------*/
-void mgShowScreen(sdword screennum, bool disappear)
+void mgShowScreen(sdword screennum, bool_t disappear)
 {
     char screenname[64];
 
@@ -1936,7 +1936,7 @@ void mgValidateName(void)
 }
 
 // This function will strip all of the invalid characters from peoples names!
-void mgVerifyValidNameChars(textentryhandle entry, bool login)
+void mgVerifyValidNameChars(textentryhandle entry, bool_t login)
 {
     char key = entry->textBuffer[entry->iCharacter-1];
 
@@ -2991,7 +2991,7 @@ void mgChannelConfirmEntry(char*name, featom *atom)
     }
 }
 
-bool channelAlreadyExists(wchar_t *channelname)
+bool_t channelAlreadyExists(wchar_t *channelname)
 {
 #ifndef _MACOSX_FIX_LAN
     sdword i;
@@ -3068,13 +3068,13 @@ void mgBackToAvailableChannels(char *name, featom *atom)
 =============================================================================*/
 
 Node    *pingwalk;
-bool     firstping=FALSE;
+bool_t     firstping=FALSE;
 
 void mgPingAllGames(char*name,featom *atom)
 {
     Node       *walk, *isthere;
     newping    *pinginfo;
-    bool        found=FALSE;
+    bool_t        found=FALSE;
     gamelist   *game;
     newping    *ping;
 
@@ -3235,7 +3235,7 @@ void mgListOfGamesBack(char *name, featom *atom)
 // the following functions are all callbacks to do with list windows
 
 // callback for sorting the game list window
-bool mgListOfGamesCompare(void *firststruct,void *secondstruct)
+bool_t mgListOfGamesCompare(void *firststruct,void *secondstruct)
 {
 #ifndef _MACOSX_FIX_LAN
     sdword i;
@@ -3470,8 +3470,8 @@ void mgListOfGamesItemDraw(rectangle *rect, listitemhandle data)
     color       c;
     fonthandle  oldfont;
     gamelist   *gameinfo = (gamelist *)data->data;
-    bool gameinprogress = gameinfo->game.directoryCustomInfo.flag & GAME_IN_PROGRESS;
-    bool diffversion = (!CheckNetworkVersionCompatibility(gameinfo->game.directoryCustomInfo.versionInfo));
+    bool_t gameinprogress = gameinfo->game.directoryCustomInfo.flag & GAME_IN_PROGRESS;
+    bool_t diffversion = (!CheckNetworkVersionCompatibility(gameinfo->game.directoryCustomInfo.versionInfo));
 
 #ifndef _MACOSX_FIX_LAN
     udword passwordlen;
@@ -3595,7 +3595,7 @@ void mgListOfGamesInit(char *name, featom *atom)
 }
 
 // function called to refresh the list of games structure
-bool Refresh(udword num, void *data, struct BabyCallBack *baby)
+bool_t Refresh(udword num, void *data, struct BabyCallBack *baby)
 {
     //static sdword refreshcount = 0;
 
@@ -3616,7 +3616,7 @@ bool Refresh(udword num, void *data, struct BabyCallBack *baby)
     return (donerefreshing);
 }
 
-bool PingAllGames(udword num, void *data, struct BabyCallBack *baby)
+bool_t PingAllGames(udword num, void *data, struct BabyCallBack *baby)
 {
     Address addr;
 
@@ -3674,7 +3674,7 @@ void ConvertAddressToUChar6(ubyte *uchar6,Address *address)
     uchar6[5] = IPPtr[3];
 }
 
-bool PingAllServers(udword num, void *data, struct BabyCallBack *baby)
+bool_t PingAllServers(udword num, void *data, struct BabyCallBack *baby)
 {
     serverlist *servertoping;
     Address addr;
@@ -4116,7 +4116,7 @@ void mgDirtyNumPlayerRegions()
     }
 }
 
-bool mgInvalidGameName()
+bool_t mgInvalidGameName()
 {
 #ifndef _MACOSX_FIX_LAN
     featom  *atomchange;
@@ -4148,7 +4148,7 @@ bool mgInvalidGameName()
     return FALSE;
 }
 
-bool mgInvalidGamePassword()
+bool_t mgInvalidGamePassword()
 {
 #ifndef _MACOSX_FIX_LAN
     if (bitTest(tpGameCreated.flag,MG_PasswordProtected))
@@ -4321,7 +4321,7 @@ void mgRemoveCPUOpp(void)
     }
 }
 
-bool mgAccelerator(void)
+bool_t mgAccelerator(void)
 {
     if (taskTimeElapsed >= mgAccTime)
     {
@@ -4462,13 +4462,13 @@ sdword mgAddCPUProcess(regionhandle region, sdword ID, udword event, udword data
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-void mgDrawArrow(regionhandle region, bool leftArrow, bool human)
+void mgDrawArrow(regionhandle region, bool_t leftArrow, bool_t human)
 {
     sdword y;
     rectangle *rect = &region->rect;
     triangle tri;
     sdword width = rect->x1 - rect->x0 - 4;
-    bool flag;
+    bool_t flag;
 
     y = rect->y0 + mg_ArrowMarginTop;
 
@@ -5488,7 +5488,7 @@ void mgGoRoomPassword(char *name, featom *atom)
 
 void mgYesQuitWON(char *name, featom *atom)
 {
-    bool waitforshutdown = FALSE;
+    bool_t waitforshutdown = FALSE;
     LoggedIn=FALSE;
 
     if (WaitingForGame)
@@ -5677,7 +5677,7 @@ void mgProcessPingInfo(mgqueuenewping *ping)
     Node       *walk;
     gamelist   *gameinfo;
     serverlist *serverinfo;
-    bool foundgameping = FALSE;
+    bool_t foundgameping = FALSE;
     Address addr;
 
     walk = listofgames.head;
@@ -5869,7 +5869,7 @@ void mgProcessNewStatusInfo(mgqueuestatusline *status)
     }
 }
 
-bool mgIsPlayerInList(LinkedList *list, gameplayerinfo *find)
+bool_t mgIsPlayerInList(LinkedList *list, gameplayerinfo *find)
 {
     Node           *walk;
     gameplayerinfo *player;
@@ -6061,7 +6061,7 @@ DEFINE_TASK(mgProcessCallBacksTask)
     static Node           *nextnode;
     static channellist    *channelinfo;
     static serverlist     *serverinfo;
-    static bool            found;
+    static bool_t            found;
     static sdword          sizeofpacket, i;
     static ubyte          *packet;
     static ubyte          *copypacket;
@@ -6381,7 +6381,7 @@ DEFINE_TASK(mgProcessCallBacksTask)
     Startup the multiplayer game screens and display the connection screen:
 =============================================================================*/
 
-void mgStartMultiPlayerGameScreens(regionhandle region, sdword ID, udword event, udword data, bool AlreadyLoggedIn)
+void mgStartMultiPlayerGameScreens(regionhandle region, sdword ID, udword event, udword data, bool_t AlreadyLoggedIn)
 {
 #if 0       // relocated to mgStartup
     if (!mgScreensHandle)
@@ -7064,7 +7064,7 @@ void mgGameListNew(void)
     UnLockQueue(&mgThreadTransfer);
 }
 
-void mgFailedToConnectToChannel(bool existing)
+void mgFailedToConnectToChannel(bool_t existing)
 {
     mgDisplayMessage(strGetString(strFailedToChat));
     mgDisplayMessage(strGetString(strHitCancelContinue));
@@ -7216,7 +7216,7 @@ void mgNotifyAuthRequestFailed(void)
 void mgGameStartReceivedCB(const void *blob,unsigned short bloblength)
 {
     sdword i;
-    bool   found=FALSE;
+    bool_t   found=FALSE;
 
     dbgAssertOrIgnore(bloblength == sizeof(CaptainGameInfo));
     mgBackuptpGameCreated();
@@ -7575,7 +7575,7 @@ void mgDrawListOfServersTitle(rectangle *rect)
 }
 
 // callback for sorting the server list window
-bool mgListOfServersCompare(void *firststruct,void *secondstruct)
+bool_t mgListOfServersCompare(void *firststruct,void *secondstruct)
 {
 #ifndef _MACOSX_FIX_LAN
     sdword i;

@@ -47,7 +47,7 @@ TI_API void aioCreateHarass(struct AITeam *team);
 TI_API void aioCreateTakeoutMothershipFast(struct AITeam *team,Ship *mothership);
 TI_API void aioCreateTakeoutMothershipGuard(struct AITeam *team,Ship *mothership);
 TI_API void aioCreateTakeoutMothershipHuge(struct AITeam *team, Ship *mothership);
-TI_API void aioCreateTakeoutMothershipBig(struct AITeam *team,Ship *mothership, bool ForceBig);
+TI_API void aioCreateTakeoutMothershipBig(struct AITeam *team,Ship *mothership, bool_t ForceBig);
 TI_API void aioCreateTakeoutTargetsWithCurrentTeam(struct AITeam *team,SelectCommand *targets);
 TI_API void aioCreateTakeoutTargetWithCurrentTeam(struct AITeam *team,Ship *ship);
 TI_API void aioCreateFancyTakeoutTarget(struct AITeam *team,Ship *target);
@@ -70,7 +70,7 @@ TI_API void aioCreateMultiBeamAttack(struct AITeam *team);
 TI_API void aioCreateP2MothershipAttack(struct AITeam *team);
 
 TI_API void aioCreateTakeoutMothershipFast(struct AITeam *team,Ship *mothership);
-TI_API void aioCreateTakeoutMothershipBig(struct AITeam *team,Ship *mothership, bool ForceBig);
+TI_API void aioCreateTakeoutMothershipBig(struct AITeam *team,Ship *mothership, bool_t ForceBig);
 TI_API void aioCreateTakeoutMothershipHuge(struct AITeam *team,Ship *mothership);
 TI_API void aioCreateTakeoutMothershipGuard(struct AITeam *team,Ship *mothership);
 TI_API void aioCreateTakeoutTargetsWithCurrentTeam(struct AITeam *team,SelectCommand *targets);

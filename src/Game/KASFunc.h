@@ -136,7 +136,7 @@ TI_API void kasfTeamSkillSet(sdword skillLevel);
 TI_API sdword kasfTeamSkillGet(void);
 
 TI_API void kasfDisablePlayerHyperspace(void);
-TI_API void kasfHoldHyperspaceWindow(bool hold);
+TI_API void kasfHoldHyperspaceWindow(bool_t hold);
 TI_API void kasfTeamHyperspaceIn(hvector *destination);
 TI_API void kasfTeamHyperspaceInNear(hvector *destination, sdword distance);
 TI_API void kasfTeamHyperspaceOut(void);
@@ -350,7 +350,7 @@ TI_API void kasfTutCameraFocusDerelictType(char *derelictType);
 TI_API void kasfTutCameraFocusFar(GrowSelection *ships);
 TI_API void kasfTutCameraFocusCancel(void);
 
-TI_API void kasfDisablePlayer(bool toggle);
+TI_API void kasfDisablePlayer(bool_t toggle);
 
 TI_API sdword kasfTutShipsInView(GrowSelection *ships);
 TI_API sdword kasfTutShipsTactics(GrowSelection *ships);

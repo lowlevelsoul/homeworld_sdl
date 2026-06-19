@@ -52,13 +52,13 @@
 =============================================================================*/
 
 
-extern bool fullScreen;
+extern bool_t fullScreen;
 extern void* ghMainWindow;
 extern int MAIN_WindowWidth;
 extern int MAIN_WindowHeight;
-extern bool systemActive;
+extern bool_t systemActive;
 
-bool g_bMoreFrames;
+bool_t g_bMoreFrames;
 
 int aviDonePlaying = 1;
 int aviIsPlaying = 0;
@@ -594,7 +594,7 @@ int aviStop(void)
     return 1;
 }
 
-bool aviPlay(char* filename)
+bool_t aviPlay(char* filename)
 {
     char  fullname[1024];
 #if AVI_VERBOSE_LEVEL >= 2

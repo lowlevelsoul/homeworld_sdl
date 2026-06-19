@@ -38,7 +38,7 @@
 
 #define M_PI_F 3.1415926535f
 
-static bool useVBO = FALSE;
+static bool_t useVBO = FALSE;
 
 static ubyte lastbg[4] = {255,255,255,0};
 
@@ -393,7 +393,7 @@ void btgGetTexture(char* filename, udword* thandle, sdword* width, sdword* heigh
     Outputs     :
     Return      : TRUE or FALSE (in or not in list)
 ----------------------------------------------------------------------------*/
-bool btgTexInList(char* filename)
+bool_t btgTexInList(char* filename)
 {
     starTex* ptex;
 
@@ -1248,7 +1248,7 @@ void btgRender()
     static sdword lastFade = 255;
 
 #if MR_KEYBOARD_CHEATS
-    extern bool gMosaic;
+    extern bool_t gMosaic;
 #endif
 
     if (btgHead == NULL)

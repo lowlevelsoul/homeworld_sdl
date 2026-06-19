@@ -110,7 +110,7 @@ char *dbgStackDump(void)
     Outputs     : ..
     Return      : void
 ----------------------------------------------------------------------------*/
-void dbgMessage(char *string)
+void dbgMessage( const char *string)
 {
     /* Debug window disabled (using stdout instead, at least for now).
        dbw*() functions in other parts of code (main.c, utility.c, and
@@ -128,7 +128,7 @@ void dbgMessage(char *string)
  Outputs     :
  Return      : void
  ----------------------------------------------------------------------------*/
-void dbgMessagef(char *format, ...)
+void dbgMessagef( const char *format, ...)
 {
     char message[DBG_BufferLength];
     va_list argList;
@@ -151,7 +151,7 @@ void dbgMessagef(char *format, ...)
     Outputs     :
     Return      : void
 ----------------------------------------------------------------------------*/
-void dbgWarning(char *file, sdword line, char *string)
+void dbgWarning( const char *file, sdword line, const char *string)
 {
     snprintf(dbgFatalErrorString, DBG_BufferMax, "\n%s (%d): Warning - %s", file, line, string);
 
@@ -165,7 +165,7 @@ void dbgWarning(char *file, sdword line, char *string)
  Outputs     :
  Return      : void
  ----------------------------------------------------------------------------*/
-void dbgWarningf(char *file, sdword line, char *format, ...)
+void dbgWarningf( const char *file, sdword line, const  char *format, ...)
 {
     char message[DBG_BufferLength];
     va_list argList;
@@ -188,7 +188,7 @@ void dbgWarningf(char *file, sdword line, char *format, ...)
     Outputs     :
     Return      : void
 ----------------------------------------------------------------------------*/
-void dbgFatal(char *file, sdword line, char *string)
+void dbgFatal( const char *file, sdword line, const char * string)
 {
     char *fileName = NULL;
 
@@ -227,7 +227,7 @@ void dbgFatal(char *file, sdword line, char *string)
  Outputs     :
  Return      : void
  ----------------------------------------------------------------------------*/
-void dbgFatalf(char *file, sdword line, char *format, ...)
+void dbgFatalf( const char *file, sdword line, const char *format, ...)
 {
     char message[DBG_BufferLength];
     va_list argList;
@@ -248,7 +248,7 @@ void dbgFatalf(char *file, sdword line, char *format, ...)
     Outputs     :
     Return      : void
 ----------------------------------------------------------------------------*/
-void dbgNonFatal(char *file, sdword line, char *string)
+void dbgNonFatal( const char *file, sdword line, const char *string)
 {
     snprintf(dbgFatalErrorString, DBG_BufferMax, "\n%s (%d): Non-fatal error - %s", file, line, string);
 
@@ -276,7 +276,7 @@ void dbgNonFatal(char *file, sdword line, char *string)
     Outputs     :
     Return      : void
 ----------------------------------------------------------------------------*/
-void dbgNonFatalf(char *file, sdword line, char *format, ...)
+void dbgNonFatalf( const char *file, sdword line, const char *format, ...)
 {
     char message[DBG_BufferLength];
     va_list argList;

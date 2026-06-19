@@ -25,9 +25,9 @@
 /*=============================================================================
     Data:
 =============================================================================*/
-bool demDemoRecording = FALSE;
-bool demDemoPlaying = FALSE;
-bool wasDemoPlaying = FALSE;
+bool_t demDemoRecording = FALSE;
+bool_t demDemoPlaying = FALSE;
+bool_t wasDemoPlaying = FALSE;
 char demDemoFilename[128];
 taskhandle demDemoTask;
 char demFileSaveName[128] = "";
@@ -74,17 +74,17 @@ extern udword utyNFrameTicks;
 
 //auto-demo stuff
 #if DEM_AUTO_DEMO
-bool demAutoDemo = TRUE;
+bool_t demAutoDemo = TRUE;
 real32 demAutoDemoWaitTime = DEM_AUTO_DELAY;
 #endif
 
 #if DEM_CHECKSUM
-bool demChecksumError = FALSE;
+bool_t demChecksumError = FALSE;
 char demChecksumString[DEM_ChecksumLength];
 #endif
 
 #if DEM_INTERRUPTABLE
-bool demPlaybackInterrupted = FALSE;
+bool_t demPlaybackInterrupted = FALSE;
 #endif
 
 //stuff for keeping track of fake vs. real renders
@@ -93,7 +93,7 @@ udword demRecordedTicks;                        //accumulated number of ticks fr
 udword demPlaybackTicks;                        //accumulated number of ticks from playback, including the remainder of last division
 udword demPacketNumber;                         //what demo 'packet' we're on
 #if DEM_FAKE_RENDER_SWITCH
-bool demFakeRenders = TRUE;                     //fake renders on by default
+bool_t demFakeRenders = TRUE;                     //fake renders on by default
 #endif
 
 /*=============================================================================
@@ -318,7 +318,7 @@ void demRecordEnd(void)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool demBlockRead(void *dest, sdword size)
+bool_t demBlockRead(void *dest, sdword size)
 {
     if (demFilePointer + size <= (ubyte *)demLoadFile + demFileSize)
     {

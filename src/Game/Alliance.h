@@ -23,8 +23,8 @@ TI_API void allianceBreakWith(udword playerindex);
 TI_API void allianceFormRequestRecievedCB(ChatPacket *packet);
 TI_API void allianceSetAlliance(udword AllianceType, uword playerone, uword playertwo);
 
-TI_API bool allianceIsShipAlly(Ship *ship, Player *player);
-TI_API bool allianceArePlayersAllied(Player *playerone, Player *playertwo);
+TI_API bool_t allianceIsShipAlly(Ship *ship, Player *player);
+TI_API bool_t allianceArePlayersAllied(Player *playerone, Player *playertwo);
 
 TI_API void allianceBreakAll(void);
 

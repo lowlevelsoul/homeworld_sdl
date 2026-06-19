@@ -13,7 +13,7 @@
 #include "AIPlayer.h"
 
 TI_API void aidDefenseManager(void);
-TI_API bool aidShipDied(AIPlayer *aiplayer, ShipPtr ship);
+TI_API bool_t aidShipDied(AIPlayer *aiplayer, ShipPtr ship);
 TI_API void aidTeamDied(AIPlayer *aiplayer, AITeam *team);
 
 TI_API void aidInit(AIPlayer *aiplayer);

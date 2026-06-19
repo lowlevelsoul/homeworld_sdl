@@ -108,7 +108,7 @@ uword mouseWillBeVisible = 0;
 bool8 mouseDisabled = FALSE;
 uword mouseInsideClient = FALSE;
 
-static bool mouseGLInitialized;
+static bool_t mouseGLInitialized;
 
 mouseCursor  mouseCursorType = normal_mouse;
 udword       mouseCursorMode = 0;
@@ -547,7 +547,7 @@ void mouseClipToRect(rectangle *rect)
                   FALSE if no processing was done (processing for the single
                   left click continues)
 ----------------------------------------------------------------------------*/
-bool mouseLDoubleClick(void)
+bool_t mouseLDoubleClick(void)
 {
     MaxSelection tempSelection;
 
@@ -711,7 +711,7 @@ bool mouseLDoubleClick(void)
     Outputs     : Very specific depending on the state of mouseInfo
     Return      : TRUE if processing was done, FALSE if not
 ----------------------------------------------------------------------------*/
-bool mouseDoubleClickCheck(void)
+bool_t mouseDoubleClickCheck(void)
 {
     if (mouseDoubleClickExpire == 0.0)
     {
@@ -920,10 +920,10 @@ extern regionhandle spHyperspaceRollCallScreen;
 #define SY primScreenToGLY
 void mouseDraw(void)
 {
-    bool primModeOn = TRUE;
+    bool_t primModeOn = TRUE;
     lifheader *texture = NULL;
     GLuint thandle = 0;
-    bool textureMouse;
+    bool_t textureMouse;
     static mouseCursor mousehold = normal_mouse;
     static real32 mouseholdexpire = 0.0;
 
@@ -1076,7 +1076,7 @@ void mouseDraw(void)
     {
         if (textureMouse)
         {
-            bool texOn;
+            bool_t texOn;
 
             trClearCurrent();
             texOn = rndTextureEnable(TRUE);

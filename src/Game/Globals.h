@@ -61,7 +61,7 @@ typedef struct
 
 typedef struct
 {
-    bool messageOn;
+    bool_t messageOn;
     char message[MAX_BIGMESSAGE_LENGTH];
 } bMessageType;
 
@@ -74,45 +74,45 @@ extern sdword vecNormalizeCounter;
 #endif
 
 extern udword startingGameState;
-extern bool HaveSentNonCaptainReadyPacket;
+extern bool_t HaveSentNonCaptainReadyPacket;
 
-extern bool gameIsRunning;
-extern bool multiPlayerGame;
-extern bool multiPlayerGameUnderWay;
+extern bool_t gameIsRunning;
+extern bool_t multiPlayerGame;
+extern bool_t multiPlayerGameUnderWay;
 
-extern bool singlePlayerGame;
-extern bool objectivesShown;
+extern bool_t singlePlayerGame;
+extern bool_t objectivesShown;
 
 #define TUTORIAL_ONLY           1
 #define TUTORIAL_SINGLEPLAYER   2
 extern sdword tutorial;
-extern bool tutorialdone;
+extern bool_t tutorialdone;
 
 #define PLAYER_QUIT             6
 #define PLAYER_DROPPED_OUT      7
-extern bool playersReadyToGo[MAX_MULTIPLAYER_PLAYERS];
+extern bool_t playersReadyToGo[MAX_MULTIPLAYER_PLAYERS];
 
 #define playerHasDroppedOutOrQuit(index) ((playersReadyToGo[index] == PLAYER_DROPPED_OUT) || (playersReadyToGo[index] == PLAYER_QUIT))
 
 extern uword numPlayers;
 extern uword curPlayer;
 
-extern bool startingGame;
-//extern bool nisEnabled;
+extern bool_t startingGame;
+//extern bool_t nisEnabled;
 
 extern void *gMessageMutex;
 extern gMessageType gMessage[MAX_MESSAGES+1];
 
 extern bMessageType bMessage[MAX_BIGMESSAGES];
 
-extern bool smSensorsActive;
+extern bool_t smSensorsActive;
 
 extern udword logEnable;
 extern char logFilePath[];
 
 
 #ifdef GOD_LIKE_SYNC_CHECKING
-extern bool syncDumpOn;
+extern bool_t syncDumpOn;
 extern sdword syncDumpWindowSize;
 extern sdword syncDumpGranularity;
 extern sdword syncDumpWindowPos;
@@ -120,10 +120,10 @@ extern sdword syncDumpGranTrack;
 #endif
 
 #ifdef DEBUG_GAME_STATS
-extern bool statLogOn;
+extern bool_t statLogOn;
 #endif
 
-extern bool smGhostMode;
+extern bool_t smGhostMode;
 
 extern char playerNames[MAX_MULTIPLAYER_PLAYERS][MAX_PERSONAL_NAME_LEN];
 
@@ -136,15 +136,15 @@ extern sdword captainProposal;
 extern sdword captainTransferState;
 extern sdword receiveSyncPacketsFrom;
 
-extern bool hrAbortLoadingGame;
+extern bool_t hrAbortLoadingGame;
 
-extern bool explicitlyRequestingPackets;
+extern bool_t explicitlyRequestingPackets;
 extern udword explicitlyRequestingFrom;
 extern udword explicitlyRequestingTo;
 
 extern bool8 ComputerPlayerOn[MAX_MULTIPLAYER_PLAYERS];
 
-extern bool startRecordingGameWhenSafe;
+extern bool_t startRecordingGameWhenSafe;
 
 /*=============================================================================
     Public Macros:
@@ -158,7 +158,7 @@ extern bool startRecordingGameWhenSafe;
     Functions:
 =============================================================================*/
 
-TI_API void globalsResetFunc(bool firstTime);
+TI_API void globalsResetFunc(bool_t firstTime);
 #define globalsReset()  globalsResetFunc(0)
 #define globalsInit() globalsResetFunc(1)
 

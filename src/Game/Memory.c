@@ -43,7 +43,7 @@ sdword memNumberWalks;
 sdword memNumberAllocs;
 sdword memAllocPool;
 char memStatString[256];
-bool memStatsLogging;
+bool_t memStatsLogging;
 taskhandle memStatsTaskHandle = 0xffffffff;
 memcookiename memStatsCookieNames[MS_NumberCookieNames];
 #endif
@@ -174,7 +174,7 @@ DEFINE_TASK(memStatsTaskFunction)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-void memCookieNameAdd(char *name, sdword length)
+void memCookieNameAdd( const char * name, sdword length )
 {
     sdword index;
 
@@ -294,7 +294,7 @@ sdword memStartup(void *heapStart, sdword heapSize, memgrowcallback grow)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-void memPoolReset(mempool *pool, void *heapStart, sdword heapSize, bool bSmallHeaps)
+void memPoolReset(mempool *pool, void *heapStart, sdword heapSize, bool_t bSmallHeaps)
 {
     ubyte *poolData;
 #if MEM_SMALL_BLOCK_HEAP
@@ -524,7 +524,7 @@ sdword memClearDword(void *dest, udword pattern, sdword nDwords)
         at MEM_NameLength - 1 characters.  It will be NULL terminated.
 ----------------------------------------------------------------------------*/
 #if MEM_USE_NAMES
-sdword memNameSetFunction(memcookie *cookie, char *name)
+sdword memNameSetFunction(memcookie *cookie, const char *name)
 {
     memInitCheck();
     memCookieVerify(cookie);
@@ -538,7 +538,7 @@ sdword memNameSetFunction(memcookie *cookie, char *name)
     return(OKAY);
 }
 #if MEM_SMALL_BLOCK_HEAP
-sdword mbhNameSetFunction(mbhcookie *cookie, char *name)
+sdword mbhNameSetFunction(mbhcookie *cookie, const char * name)
 {
     memInitCheck();
     memCookieVerify(cookie);
@@ -565,7 +565,7 @@ sdword mbhNameSetFunction(mbhcookie *cookie, char *name)
                     MEM_NameLength characters will be used.
 ----------------------------------------------------------------------------*/
 #if MEM_USE_NAMES
-sdword memNameSetLongFunction(memcookie *cookie, char *name)
+sdword memNameSetLongFunction(memcookie *cookie, const char * name)
 {
     memInitCheck();
     memCookieVerify(cookie);
@@ -595,7 +595,7 @@ sdword memNameSetLongFunction(memcookie *cookie, char *name)
         at MEM_NameLength - 1 characters.  It will be NULL terminated.
 ----------------------------------------------------------------------------*/
 #if MEM_USE_NAMES
-void memRename(void *pointer, char *newName)
+void memRename(void *pointer, const char * newName)
 {
     memcookie *cookie;
 
@@ -667,7 +667,7 @@ void memSBHGrowBy(mbheap *heap, sdword nNewCookies)
 ----------------------------------------------------------------------------*/
 #if MEM_SMALL_BLOCK_HEAP
 #if MEM_USE_NAMES
-void *memAllocFunctionSBH(sdword length, char *name, udword flags)
+void *memAllocFunctionSBH(sdword length, const char * name, udword flags)
 #else
 void *memAllocFunctionSBH(sdword length, udword flags)
 #endif
@@ -765,7 +765,7 @@ void *memAllocFunctionSBH(sdword length, udword flags)
     Return      : Pointer to newly allocated block, or NULL if failure.
 ----------------------------------------------------------------------------*/
 #if MEM_USE_NAMES
-void *memAllocFunctionANV(sdword length, char *name, udword flags, mempool *pool)
+void *memAllocFunctionANV( sdword length, const char * name, udword flags, mempool *pool )
 #else
 void *memAllocFunctionANV(sdword length, udword flags, mempool *pool)
 #endif
@@ -942,7 +942,7 @@ void *memAllocFunctionANV(sdword length, udword flags, mempool *pool)
     Return      : Pointer to newly allocated block, or NULL if failure.
 ----------------------------------------------------------------------------*/
 #if MEM_USE_NAMES
-void *memAllocFunctionA(sdword length, char *name, udword flags, mempool *pool)
+void *memAllocFunctionA(sdword length, const char * name, udword flags, mempool *pool)
 #else
 void *memAllocFunctionA(sdword length, udword flags, mempool *pool)
 #endif
@@ -1185,7 +1185,7 @@ mempool *memNewGrowthPoolAlloc(sdword length)
     Return      : New pointer or NULL on failure.
 ----------------------------------------------------------------------------*/
 #if MEM_USE_NAMES
-void *memAllocAttemptFunction(sdword length, char *name, udword flags)
+void *memAllocAttemptFunction(sdword length, const char * name, udword flags)
 #else
 void *memAllocAttemptFunction(sdword length, udword flags)
 #endif
@@ -1254,7 +1254,7 @@ void *memAllocAttemptFunction(sdword length, udword flags)
         return NULL on allocation failure, rather it will generate a fatal error.
 ----------------------------------------------------------------------------*/
 #if MEM_USE_NAMES
-void *memAllocFunction(sdword length, char *name, udword flags)
+void *memAllocFunction(sdword length, const char * name, udword flags)
 #else
 void *memAllocFunction(sdword length, udword flags)
 #endif
@@ -1728,7 +1728,7 @@ foundPool:;
     Return      : newly allocated string
     Note        : Use memFree to free these strings
 ----------------------------------------------------------------------------*/
-char *memStringDupe(char *string)
+char *memStringDupe( const char * string)
 {
     char *newString;
 
@@ -1745,7 +1745,7 @@ char *memStringDupe(char *string)
     Return      : newly allocated string
     Note        : Use memFree to free these strings
 ----------------------------------------------------------------------------*/
-char *memStringDupeNV(char *string)
+char *memStringDupeNV( const char * string)
 {
     char *newString;
 
@@ -1767,7 +1767,7 @@ char *memStringDupeNV(char *string)
                     be optimized.
 ----------------------------------------------------------------------------*/
 #if MEM_USE_NAMES
-void *memReallocFunction(void *currentPointer, sdword newSize, char *name, udword flags)
+void *memReallocFunction(void *currentPointer, sdword newSize, const char * name, udword flags)
 #else
 void *memReallocFunction(void *currentPointer, sdword newSize, udword flags)
 #endif
@@ -2200,7 +2200,7 @@ void memAnalysisCreate(void)
     Outputs     :
     Return      : dest
 ----------------------------------------------------------------------------*/
-char *memStrncpy(char *dest, char *source, sdword count)
+char *memStrncpy( char *dest, const char * source, sdword count )
 {
     char *destStart = dest;
 

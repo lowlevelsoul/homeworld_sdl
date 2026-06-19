@@ -62,7 +62,7 @@
 #define FINISHED_LAUNCHING_FROM_DOCKING 4
 #define FINISHED_RETIREMENT             5
 
-bool isCapitalShipStaticOrBig(ShipStaticInfo *shipstatic);
+bool_t isCapitalShipStaticOrBig(ShipStaticInfo *shipstatic);
 
 /*=============================================================================
     Tweakables:
@@ -312,7 +312,7 @@ sdword dockFindDockIndex(char *name,DockStaticInfo *dockstaticinfo)
     Outputs     :
     Return      : returns TRUE if ship is within docking range of target
 ----------------------------------------------------------------------------*/
-bool ShipWithinDockRange(Ship *ship,Ship *target)
+bool_t ShipWithinDockRange(Ship *ship,Ship *target)
 {
     vector diff;
     real32 distsqr;
@@ -520,7 +520,7 @@ sdword ThisShipIs(ShipStaticInfo *shipstatic)
 }
 
 //returns TRUE if the shiptype requires a mothership in order to retire
-bool shipRetireNeedsMothership(Ship *ship)
+bool_t shipRetireNeedsMothership(Ship *ship)
 {
     if (ship->staticinfo->salvageStaticInfo != NULL)
     {
@@ -545,7 +545,7 @@ bool shipRetireNeedsMothership(Ship *ship)
     //lets allow it otherwise
     return FALSE;
 }
-bool ThisShipCanDockWith(Ship *ship,Ship *dockwith,DockType dockType)
+bool_t ThisShipCanDockWith(Ship *ship,Ship *dockwith,DockType dockType)
 {
     sdword thisShip;
 
@@ -733,7 +733,7 @@ dockatbusydontdock:
     Outputs     :
     Return      : returns TRUE if all ships in selection are docking with same ship
 ----------------------------------------------------------------------------*/
-bool allShipsDockingWithSameShip(SelectCommand *selectcom)
+bool_t allShipsDockingWithSameShip(SelectCommand *selectcom)
 {
     sdword numShips = selectcom->numShips;
     Ship *firstship;
@@ -801,8 +801,8 @@ DockType dockGetAppropriateTypeOfDocking(SelectCommand *selectcom)
     DockType dockType = DOCK_FOR_BOTHREFUELANDREPAIR;
     sdword shipsConsidered = 0;
     sdword shipsFuelConsidered = 0;
-    bool shipsNeedRepair = FALSE;
-    bool shipsNeedRefuel = FALSE;
+    bool_t shipsNeedRepair = FALSE;
+    bool_t shipsNeedRefuel = FALSE;
     real32 avgfuel = 0.0f;
     real32 avghealth = 0.0f;
 
@@ -864,7 +864,7 @@ DockType dockGetAppropriateTypeOfDocking(SelectCommand *selectcom)
     return dockType;
 }
 
-bool ShipIsntResearchShip(Ship *ship)
+bool_t ShipIsntResearchShip(Ship *ship)
 {
     if (ship->shiptype != ResearchShip)
     {
@@ -1069,7 +1069,7 @@ sdword clDock(CommandLayer *comlayer,SelectCommand *selectcom,DockType dockType,
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-void dockChangeSingleShipToDock(struct CommandToDo *command,Ship *ship,Ship *dockship,bool wasHarvesting,DockType dockType)
+void dockChangeSingleShipToDock(struct CommandToDo *command,Ship *ship,Ship *dockship,bool_t wasHarvesting,DockType dockType)
 {
     dbgAssertOrIgnore(command->selection->numShips == 1);
 
@@ -1288,11 +1288,11 @@ void DockCleanup(struct CommandToDo *docktodo)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool dockShipRefuelsAtShip(Ship *ship,Ship *dockwith)
+bool_t dockShipRefuelsAtShip(Ship *ship,Ship *dockwith)
 {
     ShipStaticInfo *shipstaticinfo = (ShipStaticInfo *)ship->staticinfo;
     ShipStaticInfo *dockwithstaticinfo = (ShipStaticInfo *)dockwith->staticinfo;
-    bool alldone = TRUE;
+    bool_t alldone = TRUE;
 
     dbgAssertOrIgnore(dockwithstaticinfo->canReceiveShips | dockwithstaticinfo->canReceiveResources);
 
@@ -1363,14 +1363,14 @@ bool dockShipRefuelsAtShip(Ship *ship,Ship *dockwith)
     }
     return alldone;
 }
-bool dockFlyToConeInsideAndAlign(Ship *ship,Ship *dockwith,real32 headingTolerance,real32 dockDistance,ShipRace dockwithRace)
+bool_t dockFlyToConeInsideAndAlign(Ship *ship,Ship *dockwith,real32 headingTolerance,real32 dockDistance,ShipRace dockwithRace)
 {
      DockStaticPoint *dockstaticpoint = ship->dockvars.dockstaticpoint;
      vector coneheadingInWorldCoordSys;
      vector conepositionInWorldCoordSys;
      vector heading;
      vector destination;
-     bool ok=FALSE;
+     bool_t ok=FALSE;
 
      matMultiplyMatByVec(&coneheadingInWorldCoordSys,&dockwith->rotinfo.coordsys,&dockstaticpoint->conenormal);
      matMultiplyMatByVec(&conepositionInWorldCoordSys,&dockwith->rotinfo.coordsys,&dockstaticpoint->position);
@@ -1408,7 +1408,7 @@ bool dockFlyToConeInsideAndAlign(Ship *ship,Ship *dockwith,real32 headingToleran
 
      return FALSE;
 }
-bool dockFlyToConeOrigin(Ship *ship,Ship *dockwith,real32 tolerance,real32 minflyspeed,bool pointAlongConeVector, bool faceWithDockwith)
+bool_t dockFlyToConeOrigin(Ship *ship,Ship *dockwith,real32 tolerance,real32 minflyspeed,bool_t pointAlongConeVector, bool_t faceWithDockwith)
 {
     vector conepositionInWorldCoordSys,tmpvec;
     DockStaticPoint *dockstaticpoint = ship->dockvars.dockstaticpoint;
@@ -1466,7 +1466,7 @@ bool dockFlyToConeOrigin(Ship *ship,Ship *dockwith,real32 tolerance,real32 minfl
     }
 }
 
-bool dockFlyToConeOriginLatchIfWithin(Ship *ship,Ship *dockwith,real32 withindistsqr)
+bool_t dockFlyToConeOriginLatchIfWithin(Ship *ship,Ship *dockwith,real32 withindistsqr)
 {
     vector conepositionInWorldCoordSys,tmpvec;
     DockStaticPoint *dockstaticpoint = ship->dockvars.dockstaticpoint;
@@ -1537,7 +1537,7 @@ latchimmediately:
     }
 }
 
-bool dockFlyToConeOriginLatch(Ship *ship,Ship *dockwith)
+bool_t dockFlyToConeOriginLatch(Ship *ship,Ship *dockwith)
 {
     vector conepositionInWorldCoordSys,tmpvec;
     DockStaticPoint *dockstaticpoint = ship->dockvars.dockstaticpoint;
@@ -1590,7 +1590,7 @@ bool dockFlyToConeOriginLatch(Ship *ship,Ship *dockwith)
     }
 }
 
-bool dockBackoutOfConeLatch(Ship *ship,Ship *dockwith)
+bool_t dockBackoutOfConeLatch(Ship *ship,Ship *dockwith)
 {
     DockStaticPoint *dockstaticpoint = ship->dockvars.dockstaticpoint;
     real32 backupDistance = dockstaticpoint->flyawaydist;
@@ -1616,7 +1616,7 @@ bool dockBackoutOfConeLatch(Ship *ship,Ship *dockwith)
         return FALSE;
     }
 }
-bool dockBackoutOfConeLatchFacingProperly(Ship *ship,Ship *dockwith,real32 withindistsqr)
+bool_t dockBackoutOfConeLatchFacingProperly(Ship *ship,Ship *dockwith,real32 withindistsqr)
 {
     DockStaticPoint *dockstaticpoint = ship->dockvars.dockstaticpoint;
     real32 backupDistance = dockstaticpoint->flyawaydist;
@@ -1672,7 +1672,7 @@ bool dockBackoutOfConeLatchFacingProperly(Ship *ship,Ship *dockwith,real32 withi
     return FALSE;
 }
 
-bool dockFlyOutOfCone(Ship *ship,Ship *dockwith,sdword headingdirection,sdword updirection)
+bool_t dockFlyOutOfCone(Ship *ship,Ship *dockwith,sdword headingdirection,sdword updirection)
 {
     DockStaticPoint *dockstaticpoint = ship->dockvars.dockstaticpoint;
     real32 backupDistance = dockstaticpoint->flyawaydist;
@@ -1718,7 +1718,7 @@ bool dockFlyOutOfCone(Ship *ship,Ship *dockwith,sdword headingdirection,sdword u
     }
 }
 
-bool dockFlyAboveMothershipDoor(Ship *ship,Ship *dockwith)
+bool_t dockFlyAboveMothershipDoor(Ship *ship,Ship *dockwith)
 {
     vector destination;
     vector dest1;
@@ -1751,14 +1751,14 @@ bool dockFlyAboveMothershipDoor(Ship *ship,Ship *dockwith)
 #define DOOR_Stage1_Right   -3700.0f
 #define DOOR_Stage1_Up  -1550.0f
 
-bool dockFlyToBottomOfDoor1(Ship *ship,Ship *dockwith)
+bool_t dockFlyToBottomOfDoor1(Ship *ship,Ship *dockwith)
 {
     vector destination;
     vector dest1;
     vector heading,up,right,doorheading,doorup;
     matrix coordsysWS;
-    //bool track = FALSE;
-    bool dest = FALSE;
+    //bool_t track = FALSE;
+    bool_t dest = FALSE;
 
     mothershipGetCargoPosition(dockwith,(SpaceObjRotImpTargGuidanceShipDerelict *)ship,&destination,&coordsysWS,&heading,&up,&right);
     //madLinkInGetDoorInfo(dockwith,&coordsysWS,&dest1);
@@ -1788,14 +1788,14 @@ bool dockFlyToBottomOfDoor1(Ship *ship,Ship *dockwith)
 
 #define DOOR_Stage2_UpOffset  -2700.0f
 
-bool dockFlyToBottomOfDoor2(Ship *ship,Ship *dockwith)
+bool_t dockFlyToBottomOfDoor2(Ship *ship,Ship *dockwith)
 {
     vector destination;
     vector dest1;
     vector heading,up,right;
     matrix coordsysWS;
-    bool track = FALSE;
-    bool dest = FALSE;
+    bool_t track = FALSE;
+    bool_t dest = FALSE;
 
     mothershipGetCargoPosition(dockwith,(SpaceObjRotImpTargGuidanceShipDerelict *)ship,&destination,&coordsysWS,&heading,&up,&right);
     //madLinkInGetDoorInfo(dockwith,&coordsysWS,&dest1);
@@ -1820,14 +1820,14 @@ bool dockFlyToBottomOfDoor2(Ship *ship,Ship *dockwith)
 
     return FALSE;
 }
-bool dockFlyToBottomOfDoor3(Ship *ship,Ship *dockwith)
+bool_t dockFlyToBottomOfDoor3(Ship *ship,Ship *dockwith)
 {
     vector destination;
     vector dest1;
     vector heading,up,right;
     matrix coordsysWS;
-    bool track = FALSE;
-    bool dest = FALSE;
+    bool_t track = FALSE;
+    bool_t dest = FALSE;
 
     mothershipGetCargoPosition(dockwith,(SpaceObjRotImpTargGuidanceShipDerelict *)ship,&destination,&coordsysWS,&heading,&up,&right);
     //madLinkInGetDoorInfo(dockwith,&coordsysWS,&dest1);
@@ -1853,13 +1853,13 @@ bool dockFlyToBottomOfDoor3(Ship *ship,Ship *dockwith)
     return FALSE;
 }
 
-bool dockFlyToDoor(Ship *ship,Ship *dockwith)
+bool_t dockFlyToDoor(Ship *ship,Ship *dockwith)
 {
     vector destination;
     vector heading,up,right;
     matrix coordsysWS;
-    bool track = FALSE;
-    bool dest = FALSE;
+    bool_t track = FALSE;
+    bool_t dest = FALSE;
 
     mothershipGetCargoPosition(dockwith,(SpaceObjRotImpTargGuidanceShipDerelict *)ship,&destination,&coordsysWS,&heading,&up,&right);
     //madLinkInGetDoorInfo(dockwith,&coordsysWS,&dest1);
@@ -1882,7 +1882,7 @@ bool dockFlyToDoor(Ship *ship,Ship *dockwith)
     return FALSE;
 }
 
-bool dockFlyToConeInside(Ship *ship,Ship *dockwith,real32 dockDistance)
+bool_t dockFlyToConeInside(Ship *ship,Ship *dockwith,real32 dockDistance)
 {
     DockStaticPoint *dockstaticpoint = ship->dockvars.dockstaticpoint;
     vector coneheadingInWorldCoordSys;
@@ -2736,7 +2736,7 @@ void JunkYardHQStaticDockInit(ShipStaticInfo *staticinfo)
     JUNKYARDHQ_Latch = dockFindDockIndex("dawg",dockStaticInfo);
 }
 
-bool ShipDocksAtJunkYardHQ(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
+bool_t ShipDocksAtJunkYardHQ(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockstaticpoint;
@@ -2912,7 +2912,7 @@ void R2RepairCorvetteStaticDockInit(ShipStaticInfo *staticinfo)
     R2REPCORV_Latch = dockFindDockIndex("Latch",dockStaticInfo);
 }
 
-bool ShipDocksAtRepairCorvette(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
+bool_t ShipDocksAtRepairCorvette(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockstaticpoint;
@@ -3111,7 +3111,7 @@ void R2ResourceCollectorStaticDockInit(ShipStaticInfo *staticinfo)
     R2RESCOLCORV_Latch  = dockFindDockIndex("Corv0",dockStaticInfo);
 }
 
-bool ShipDocksAtResourceCollector(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
+bool_t ShipDocksAtResourceCollector(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockstaticpoint;
@@ -3379,7 +3379,7 @@ void R2ASFStaticDockInit(ShipStaticInfo *staticinfo)
     R2ASF_Corv3 = dockFindDockIndex("Corv3",dockStaticInfo);
 }
 
-bool ShipDocksAtASF(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
+bool_t ShipDocksAtASF(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockstaticpoint;
@@ -3667,7 +3667,7 @@ void R2ResControllerStaticDockInit(ShipStaticInfo *staticinfo)
     R2RESCONTROLLER_Fight5 = dockFindDockIndex("Fight5",dockStaticInfo);
 }
 
-bool ShipDocksAtResController(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
+bool_t ShipDocksAtResController(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockstaticpoint;
@@ -4092,7 +4092,7 @@ sdword **ResourceLatchPoints[] = {
 // Also be careful of the code in src/Ships/SalCapCorvette.* that is
 // attempting to do the same thing... (Needs to be unified)
 
-bool shipStaticIndicatesBigHangerBayForRace(ShipStaticInfo *ship_static, sdword race)
+bool_t shipStaticIndicatesBigHangerBayForRace(ShipStaticInfo *ship_static, sdword race)
 {
     if (ship_static                    != NULL
     &&  ship_static->salvageStaticInfo != NULL)
@@ -4112,7 +4112,7 @@ bool shipStaticIndicatesBigHangerBayForRace(ShipStaticInfo *ship_static, sdword 
     return FALSE;
 }
 
-bool shipRequiresBigHangerBayWhenDockingWith(Ship *smaller_ship, Ship *larger_ship)
+bool_t shipRequiresBigHangerBayWhenDockingWith(Ship *smaller_ship, Ship *larger_ship)
 {
     if (smaller_ship != NULL && larger_ship != NULL)
     {
@@ -4232,7 +4232,7 @@ sdword **GetLaunchPoints(ShipStaticInfo *shipstatic,ShipStaticInfo *dockwithstat
     return NULL;
 }
 
-bool LaunchShipFromCarrierMother(Ship *ship,Ship *dockwith)
+bool_t LaunchShipFromCarrierMother(Ship *ship,Ship *dockwith)
 {
     sdword launchpointindex,overide;
     DockStaticPoint *dockstaticpoint;
@@ -4398,7 +4398,7 @@ bool LaunchShipFromCarrierMother(Ship *ship,Ship *dockwith)
 
 #define CARRIERMOTHER_CONE_ALIGN_TOLERANCE  0.99f
 
-bool ShipDocksAtCarrierMother(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
+bool_t ShipDocksAtCarrierMother(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockstaticpoint;
@@ -4410,7 +4410,7 @@ bool ShipDocksAtCarrierMother(struct CommandToDo *docktodo,struct Ship *ship,str
     real32 dotprod;
     AtCarrierDockInfo *customdockinfo;
     sdword dockpointindex;
-    bool resourcercanlatch,flag2;
+    bool_t resourcercanlatch,flag2;
 
 
     Player *player = ship->playerowner;
@@ -4920,7 +4920,7 @@ waitforlatch:
     DDDFrigate Launching/docking
 =============================================================================*/
 
-bool LaunchShipFromDDDF(Ship *ship,Ship *dockwith)
+bool_t LaunchShipFromDDDF(Ship *ship,Ship *dockwith)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockstaticpoint;
@@ -4976,7 +4976,7 @@ typedef struct
 #define DRONEDOCK_FLYTOINSIDECONE   2
 #define DRONEDOCK_FLYTOCONEORIGIN   3
 
-bool DroneDocksAtDDDF(struct Ship *ship,struct Ship *dockwith)
+bool_t DroneDocksAtDDDF(struct Ship *ship,struct Ship *dockwith)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockstaticpoint;
@@ -5092,7 +5092,7 @@ void bitClearAllSlaves(Ship *ship)
         bitClear(ship->slaveinfo->Master->specialFlags,SPECIAL_StopForResearchDocking);
     }
 }
-bool isThereAMasterForMe(Ship *ship)
+bool_t isThereAMasterForMe(Ship *ship)
 {
     Ship *m;
     Node *shipnode = universe.ShipList.head;
@@ -5117,7 +5117,7 @@ bool isThereAMasterForMe(Ship *ship)
     return FALSE;
 }
 
-bool parallelParkStabilize(Ship *ship,Ship *dockwith, real32 POS_TOL, real32 ANG_TOL, sdword FIT)
+bool_t parallelParkStabilize(Ship *ship,Ship *dockwith, real32 POS_TOL, real32 ANG_TOL, sdword FIT)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockwithstaticpoint;
@@ -5192,7 +5192,7 @@ bool parallelParkStabilize(Ship *ship,Ship *dockwith, real32 POS_TOL, real32 ANG
 
 }
 
-bool parallelParkPiePlate(Ship *ship,Ship *dockwith, real32 POS_DIS, real32 POS_TOL, real32 ANG_TOL, sdword FIT)
+bool_t parallelParkPiePlate(Ship *ship,Ship *dockwith, real32 POS_DIS, real32 POS_TOL, real32 ANG_TOL, sdword FIT)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockwithstaticpoint;
@@ -5264,7 +5264,7 @@ bool parallelParkPiePlate(Ship *ship,Ship *dockwith, real32 POS_DIS, real32 POS_
     return FALSE;
 
 }
-bool dockFlyToPiePoint(Ship *ship,Ship *dockwith)
+bool_t dockFlyToPiePoint(Ship *ship,Ship *dockwith)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockwithstaticpoint;
@@ -5327,7 +5327,7 @@ void FlyToResearchWaitPoint(Ship *ship,Ship *dockwith)
     Return      :
 ----------------------------------------------------------------------------*/
 
-bool R1ResearchShipDocksAtResearchShip(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
+bool_t R1ResearchShipDocksAtResearchShip(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
 {
     ShipStaticInfo *shipstatic = (ShipStaticInfo *)ship->staticinfo;
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
@@ -5591,7 +5591,7 @@ morer1resdock:
 
 #define R2_FINAL_ANGLE_TOL          0.999f
 
-bool R2atdockpathstart(Ship *ship, Ship *dockwith)
+bool_t R2atdockpathstart(Ship *ship, Ship *dockwith)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockwithstaticpoint;
@@ -5624,7 +5624,7 @@ bool R2atdockpathstart(Ship *ship, Ship *dockwith)
     return(MoveReachedDestinationVariable(ship,&destination,PIE_POINT_TOLR2));
 }
 
-bool R2spinintoplace(Ship *ship, Ship *dockwith, real32 POS_TOL, real32 ANGLE_TOL, sdword FIT)
+bool_t R2spinintoplace(Ship *ship, Ship *dockwith, real32 POS_TOL, real32 ANGLE_TOL, sdword FIT)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockwithstaticpoint;
@@ -5749,7 +5749,7 @@ bool R2spinintoplace(Ship *ship, Ship *dockwith, real32 POS_TOL, real32 ANGLE_TO
 
 
 
-bool R2ResearchShipDocksAtResearchShip(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
+bool_t R2ResearchShipDocksAtResearchShip(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
 {
     ShipStaticInfo *shipstatic = (ShipStaticInfo *)ship->staticinfo;
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
@@ -5980,7 +5980,7 @@ r2dockinstantfinish:
 
 // these routines will eventually not be used
 
-bool LaunchShipFromDefaultShip(Ship *ship,Ship *dockwith)
+bool_t LaunchShipFromDefaultShip(Ship *ship,Ship *dockwith)
 {
     vector destination;
     vector heading;
@@ -6016,7 +6016,7 @@ bool LaunchShipFromDefaultShip(Ship *ship,Ship *dockwith)
     return FALSE;
 }
 
-bool ShipDocksAtDefaultShip(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
+bool_t ShipDocksAtDefaultShip(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
 {
     ship->dockingship = dockwith;
     if (MoveReachedDestinationVariable(ship,&dockwith->posinfo.position,50.0f))
@@ -6200,7 +6200,7 @@ void P2FuelPodStaticDockInit(ShipStaticInfo *staticinfo)
     P2FUELPOD_FightR2 = dockFindDockIndex("FightR2",dockStaticInfo);
 }
 
-bool ShipDocksAtFuelPod(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
+bool_t ShipDocksAtFuelPod(struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith)
 {
     ShipStaticInfo *dockwithstatic = (ShipStaticInfo *)dockwith->staticinfo;
     DockStaticPoint *dockstaticpoint;
@@ -6484,13 +6484,13 @@ void dockInitializeCustomFunctions(ShipStaticInfo *statinfo,ShipType type,ShipRa
     Outputs     : resourceShip, resource
     Return      : returns TRUE if dock has completed
 ----------------------------------------------------------------------------*/
-bool processDockToDo(CommandToDo *docktodo)
+bool_t processDockToDo(CommandToDo *docktodo)
 {
     sdword i;
     SelectCommand *selection = docktodo->selection;
     Ship *ship;
     Ship *dockwith;
-    bool alldone = TRUE;
+    bool_t alldone = TRUE;
     udword returnval;
 
     for (i=0;i<selection->numShips; )
@@ -6524,7 +6524,7 @@ bool processDockToDo(CommandToDo *docktodo)
             }
             else if(returnval == FINISHED_RETIREMENT)
             {
-                bool removed;
+                bool_t removed;
                 RemoveShipFromDocking(ship);
                 if (docktodo->dock.wasHarvesting)
                 {
@@ -6683,7 +6683,7 @@ void dockDrawDockInfo(Ship *ship)
 }
 #endif
 
-bool ShipIsRefuelingAtCarrierMother(struct Ship *ship)
+bool_t ShipIsRefuelingAtCarrierMother(struct Ship *ship)
 {
     if (ship->dockvars.dockship)
     {
@@ -6699,7 +6699,7 @@ bool ShipIsRefuelingAtCarrierMother(struct Ship *ship)
     return FALSE;
 }
 
-bool ShipIsWaitingForSoftLaunch(struct Ship *ship)
+bool_t ShipIsWaitingForSoftLaunch(struct Ship *ship)
 {
     if (ship->dockvars.dockship)
     {

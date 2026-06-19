@@ -164,7 +164,7 @@ void rinAddMode(rdevice* dev, int width, int height, int depth)
     Outputs     :
     Return      : true or false
 ----------------------------------------------------------------------------*/
-static bool rinModeAccepted(rdevice* dev, int width, int height, int depth)
+static bool_t rinModeAccepted(rdevice* dev, int width, int height, int depth)
 {
     int index;
 
@@ -443,7 +443,7 @@ int rinMaxWidth(void)
     Outputs     :
     Return      : true or false (could or couldn't enumerate)
 ----------------------------------------------------------------------------*/
-bool rinEnumeratePrimary(rdevice* dev)
+bool_t rinEnumeratePrimary(rdevice* dev)
 {
 	SDL_DisplayMode mode;
     Uint32 flags;
@@ -495,7 +495,7 @@ int rinEnumerateDevices(void)
     rdevice* dev;
     rdevice* gldev;
     rdevice  primaryDev;
-    bool primaryVal;
+    bool_t primaryVal;
     
 #ifndef _MACOSX_FIX_GL
     int maxWidth;

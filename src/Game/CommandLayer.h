@@ -120,7 +120,7 @@ typedef struct CommandLayer
     Data:
 =============================================================================*/
 #if CL_TEXTFEEDBACK
-extern bool enableTextFeedback;
+extern bool_t enableTextFeedback;
 #endif
 
 /*=============================================================================
@@ -163,14 +163,14 @@ TI_API void clSetResearch(udword type, udword playernum, udword labnum, udword t
 TI_API void clDeterministicBuild(udword command, CommandLayer* comlayer, sdword numShips, ShipType shipType, ShipRace shipRace, uword playerIndex, ShipPtr creator);
 
 // does ship have to launch
-TI_API bool ShipHasToLaunch(Ship *InsideShip, Ship *ship);
+TI_API bool_t ShipHasToLaunch(Ship *InsideShip, Ship *ship);
 
 // launch functions
 TI_API void LaunchAllInternalShipsOfPlayerThatMustBeLaunched(struct Player *player);
 TI_API sdword LaunchAllInternalShipsOfPlayer(struct Player *player, udword carriermask);
 
 // checks if can ChangeOrderToPassiveAttack
-TI_API bool canChangeOrderToPassiveAttack(CommandToDo *alreadycommand,AttackCommand *attack);
+TI_API bool_t canChangeOrderToPassiveAttack(CommandToDo *alreadycommand,AttackCommand *attack);
 
 // changes order to passive attack
 // WARNING: Must call canChangeOrderToPassiveAttack to see if you can call this
@@ -184,7 +184,7 @@ TI_API void ChangeOrderToMove(CommandToDo *alreadycommand,vector from,vector to)
 
 // Returns allocated command containing the ship
 TI_API CommandToDo *getShipAndItsCommand(CommandLayer *comlayer,ShipPtr ship);
-TI_API SelectCommand *getShipAndItsCommandSelection(CommandLayer *comlayer,ShipPtr ship,bool *parade);
+TI_API SelectCommand *getShipAndItsCommandSelection(CommandLayer *comlayer,ShipPtr ship,bool_t *parade);
 
 // Returns allocated command containing the ship and its formation
 TI_API CommandToDo *getShipAndItsFormationCommand(CommandLayer *comlayer,ShipPtr ship);
@@ -193,7 +193,7 @@ TI_API CommandToDo *getShipAndItsFormationCommand(CommandLayer *comlayer,ShipPtr
 TI_API SelectCommand *getShipAndItsFormation(CommandLayer *comlayer,ShipPtr ship);
 
 // returns TRUE if searchfor is in comlayer
-TI_API bool CommandInCommandLayer(CommandLayer *comlayer,CommandToDo *searchfor);
+TI_API bool_t CommandInCommandLayer(CommandLayer *comlayer,CommandToDo *searchfor);
 
 // Call this function to see if this selection is already in formation
 TI_API TypeOfFormation clSelectionAlreadyInFormation(CommandLayer *comlayer,SelectCommand *selectcom);
@@ -243,10 +243,10 @@ TI_API void removeShipsFromDockingWithThisShip(Ship *ship);
 TI_API void RemoveShipFromAttacking(Ship *ship);
 
 // Initializes ship's AI state variables
-TI_API void InitShipAI(Ship *ship,bool fresh);
+TI_API void InitShipAI(Ship *ship,bool_t fresh);
 
 // Initializes selection ships AI state variables
-TI_API void InitShipsForAI(SelectCommand *selection,bool fresh);
+TI_API void InitShipsForAI(SelectCommand *selection,bool_t fresh);
 
 // clears any protecting in command
 TI_API void ClearProtecting(CommandToDo *command);
@@ -280,8 +280,8 @@ TI_API void fixFlipTurnSelection(SelectCommand *selection,SelectCommand *global)
 TI_API CommandToDo *GetMilitaryGroupAroundShip(CommandLayer *comlayer,Ship *aroundShip);
 
 // call whenever creating a new command in command layer or ships changing their command
-TI_API void PrepareShipsForCommand(CommandToDo *command,bool rowClear);
-TI_API void PrepareOneShipForCommand(Ship *ship,CommandToDo *command,bool rowClear);
+TI_API void PrepareShipsForCommand(CommandToDo *command,bool_t rowClear);
+TI_API void PrepareOneShipForCommand(Ship *ship,CommandToDo *command,bool_t rowClear);
 
 // call whenever removing command
 TI_API void RemoveShipsFromCommand(CommandToDo *command);
@@ -297,7 +297,7 @@ TI_API void FillInCarrierMothershipInfo(struct Player *player,Ship **mothership,
 TI_API void clCancelAllLaunchOrdersFromPlayer(struct Player *player);
 
 // tells ship to stay nearby protectThisShip - actual logic for attack if protectThisShip being attacked not in this routine
-TI_API void protectShip(Ship *ship,Ship *protectThisShip,bool passiveAttacked);
+TI_API void protectShip(Ship *ship,Ship *protectThisShip,bool_t passiveAttacked);
 
 /*=============================================================================
     Data:

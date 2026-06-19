@@ -16,7 +16,7 @@ TI_API void airResourceManager(void);
 TI_API void airInit(AIPlayer *aiplayer);
 TI_API void airClose(AIPlayer *aiplayer);
 
-TI_API bool airShipDied(AIPlayer *aiplayer, ShipPtr ship);
+TI_API bool_t airShipDied(AIPlayer *aiplayer, ShipPtr ship);
 TI_API void airTeamDied(AIPlayer *aiplayer, AITeam *team);
 
 TI_API sdword NumberOfEasilyAccesibleRUs(Player *player);

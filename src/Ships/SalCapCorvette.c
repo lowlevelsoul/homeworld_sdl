@@ -79,7 +79,7 @@
 //prototyped here to avoid warning!!!
 void clLaunchShip(CommandLayer *comlayer,SelectCommand *selectcom,ShipPtr receiverShip);
 void startTractorBeam(Ship *ship, SpaceObjRotImpTargGuidanceShipDerelict *target);
-bool salCapAreEnoughSalvagersTargettingThisTarget(Ship *ship,SpaceObjRotImpTargGuidanceShipDerelict *target);
+bool_t salCapAreEnoughSalvagersTargettingThisTarget(Ship *ship,SpaceObjRotImpTargGuidanceShipDerelict *target);
 
 SalCapCorvetteStatics SalCapCorvetteStatic;
 SalCapCorvetteStatics SalCapCorvetteStaticRace1;
@@ -99,7 +99,7 @@ scriptStructEntry SalCapCorvetteStaticTable[] =
 };
 
 
-bool handOffTargetToDockWith(Ship *ship);
+bool_t handOffTargetToDockWith(Ship *ship);
 void SalCapRemoveShipReferences(Ship *ship, Ship *shiptoremove);
 
 
@@ -165,9 +165,9 @@ void SalCapCorvetteAttack(Ship *ship,SpaceObjRotImpTarg *target,real32 maxdist)
 
     attackSideStep(ship,target,&spec->attacksidestep,&corvstat->sidestepParameters);
 }
-void SalCapCorvetteAttackPassive(Ship *ship,Ship *target,bool rotate)
+void SalCapCorvetteAttackPassive(Ship *ship,Ship *target,bool_t rotate)
 {
-    if ((rotate) & ((bool)((ShipStaticInfo *)(ship->staticinfo))->rotateToRetaliate))
+    if ((rotate) & ((bool_t)((ShipStaticInfo *)(ship->staticinfo))->rotateToRetaliate))
     {
         attackPassiveRotate(ship,target);
     }
@@ -178,7 +178,7 @@ void SalCapCorvetteAttackPassive(Ship *ship,Ship *target,bool rotate)
 }
 */
 //temporary test to generate a derelict
-bool SalCapCorvetteSpecialActivate(Ship *ship)
+bool_t SalCapCorvetteSpecialActivate(Ship *ship)
 {
     vector place;
     matGetVectFromMatrixCol3(place,ship->rotinfo.coordsys);
@@ -440,7 +440,7 @@ sdword salCapFlyOutOfCone(Ship *ship,SpaceObjRotImpTargGuidanceShipDerelict *tar
 
 }
 
-bool isThereAnotherTargetForMe(Ship *ship,SelectAnyCommand *targets)
+bool_t isThereAnotherTargetForMe(Ship *ship,SelectAnyCommand *targets)
 {
     sdword i,index;
     SpaceObjRotImpTarg *t;
@@ -751,7 +751,7 @@ void docapture(Ship *ship,Ship *target)
 ----------------------------------------------------------------------------*/
 void salCapHarvestTarget(SpaceObjRotImpTargGuidanceShipDerelict *target,Ship *dockwith)
 {
-    bool spm3AlreadySalvaged = FALSE;   // TRUE if the player has already salvaged a frigate in Mission 3
+    bool_t spm3AlreadySalvaged = FALSE;   // TRUE if the player has already salvaged a frigate in Mission 3
 
     switch(target->objtype)
     {
@@ -1618,7 +1618,7 @@ sdword salCapFlyToDockingPoint3(Ship *dockwith,SpaceObjRotImpTargGuidanceShipDer
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool SalCapCorvetteSpecialTarget(Ship *ship, void *custom)
+bool_t SalCapCorvetteSpecialTarget(Ship *ship, void *custom)
 {
     SelectAnyCommand *targets;
     SalCapCorvetteSpec *spec = (SalCapCorvetteSpec *)ship->ShipSpecifics;
@@ -2485,7 +2485,7 @@ reachedit:
 #define DROP_DOORDEAL 3
 #define DROP_DO_HARVEST 4
 
-bool handOffTargetToDockWith(Ship *ship)
+bool_t handOffTargetToDockWith(Ship *ship)
 {
     SalCapCorvetteSpec *spec = (SalCapCorvetteSpec *)ship->ShipSpecifics;
     sdword i;
@@ -2560,7 +2560,7 @@ handed:
 
 
 
-bool DropTargetInShip(Ship *dockwith,sdword *targetDepotState, SpaceObjRotImpTargGuidanceShipDerelict *target,sdword *dockindex)
+bool_t DropTargetInShip(Ship *dockwith,sdword *targetDepotState, SpaceObjRotImpTargGuidanceShipDerelict *target,sdword *dockindex)
 {
     switch(*targetDepotState)
     {
@@ -3293,7 +3293,7 @@ ditchTarget:
 //counts the number of salvage corvettes in the universe targeting this same ship
 //must already be targeting it
 //returns TRUE if enough are heading towards it to get it
-bool salCapAreEnoughSalvagersTargettingThisTarget(Ship *ship,SpaceObjRotImpTargGuidanceShipDerelict *target)
+bool_t salCapAreEnoughSalvagersTargettingThisTarget(Ship *ship,SpaceObjRotImpTargGuidanceShipDerelict *target)
 {
     sdword count;
     Node *node = universe.mainCommandLayer.todolist.head;

@@ -149,7 +149,7 @@ TI_API void *mexGetChunk(void *mex,char *type,char *name);
 
 TI_API void *mexLoad(char *filename);
 TI_API void mexFree(void *mex);
-TI_API bool mexVerify(void *mex);
+TI_API bool_t mexVerify(void *mex);
 
 TI_API ResNozzleStatic *mexGetResNozzleStatic(void *mex);
 TI_API RepairNozzleStatic *mexGetRepairNozzleStatic(void *mex);

@@ -155,20 +155,20 @@ void soundPanicReset(void);	// mixer.c
 
 /* functions */
 TI_API //sdword soundinit(HWND hWnd, sdword mode);
-TI_API sdword soundinit(bool mode);
+TI_API sdword soundinit(bool_t mode);
 TI_API //sdword soundreinit(HWND hWnd);
 TI_API sdword soundreinit(void);
 TI_API void soundrestore(void);
 TI_API void soundclose(void);
 TI_API void soundupdate(void);
 
-TI_API void soundpause(bool bPause);
-TI_API void sounddeactivate(bool bDeactivate);
+TI_API void soundpause(bool_t bPause);
+TI_API void sounddeactivate(bool_t bDeactivate);
 
 TI_API sword soundloadpatch(char *pszFileName, sword looped);
 TI_API udword soundbankadd(void *bankaddress);
 
-TI_API sdword soundplayFPRVL(sword patnum, real32 freq, sword pan, sdword priority, sword vol, bool startatloop);
+TI_API sdword soundplayFPRVL(sword patnum, real32 freq, sword pan, sdword priority, sword vol, bool_t startatloop);
 
 TI_API sdword soundvolumeF(sdword handle, sword vol, real32 fadetime);
 #define soundvolume(a, b)		soundvolumeF(a, b, 0)
@@ -179,7 +179,7 @@ TI_API sdword soundpanF(sdword handle, sword pan, real32 fadetime);
 TI_API sdword soundfrequency(sdword handle, real32 freq);
 TI_API sdword soundequalize(sdword handle, real32 *eq);
 
-TI_API void soundstopallSFX(real32 fadetime, bool stopStreams);
+TI_API void soundstopallSFX(real32 fadetime, bool_t stopStreams);
 #define soundstopall(a)		soundstopallSFX(a, TRUE)
 TI_API sdword soundstop(sdword handle, real32 fade);
 
@@ -187,9 +187,9 @@ TI_API sdword soundrestart(sdword handle);
 
 TI_API sdword soundshipheading(sdword handle, sword heading, sdword highband, sdword lowband, real32 velfactor, real32 shipfactor);
 
-TI_API bool soundover(sdword handle);
+TI_API bool_t soundover(sdword handle);
 
-TI_API void soundSetMasterEQ(sdword startband, sdword endband, bool increment);
+TI_API void soundSetMasterEQ(sdword startband, sdword endband, bool_t increment);
 TI_API void soundResetMasterEQ(void);
 
 
@@ -206,7 +206,7 @@ TI_API udword soundgettick(void);
 #define soundplayPRVL(a, b, c, d, e)	soundplayFPRVL(a, (real32)SOUND_DEFAULT, b, c, d, e)
 
 
-TI_API sdword splayFPRVL(void *bankaddress, sdword patnum, real32 *eq, real32 freq, sword pan, sdword priority, sword vol, bool startatloop, bool fadein, bool mute);
+TI_API sdword splayFPRVL(void *bankaddress, sdword patnum, real32 *eq, real32 freq, sword pan, sdword priority, sword vol, bool_t startatloop, bool_t fadein, bool_t mute);
 
 #define splay(f, a)			splayFPRVL(f, a, NULL, (real32)SOUND_DEFAULT, SOUND_PAN_CENTER, SOUND_DEFAULT, SOUND_DEFAULT, FALSE, TRUE, FALSE)
 #define splayV(f, a, b)		splayFPRVL(f, a, NULL, (real32)SOUND_DEFAULT, SOUND_PAN_CENTER, SOUND_DEFAULT, b, FALSE, TRUE, FALSE)
@@ -226,7 +226,7 @@ TI_API sdword soundstreaminit(void *pstreamer, sdword size, sdword numstreams, s
 TI_API udword soundstreamopenfile(char *pszStreamFile, smemsize *handle);
 TI_API sdword soundstreamcreatebuffer(void *pstreambuffer, sdword size, uword bitrate);
 
-TI_API sdword soundstreamqueuePatch(sdword streamhandle, smemsize filehandle, smemsize offset, udword flags, sword vol, sword pan, sword numchannels, sword bitrate, EFFECT *peffect, STREAMEQ *pEQ, STREAMDELAY *pdelay, void *pmixpatch, sdword level, real32 silence, real32 fadetime, sdword actornum, sdword speechEvent, bool bWait);
+TI_API sdword soundstreamqueuePatch(sdword streamhandle, smemsize filehandle, smemsize offset, udword flags, sword vol, sword pan, sword numchannels, sword bitrate, EFFECT *peffect, STREAMEQ *pEQ, STREAMDELAY *pdelay, void *pmixpatch, sdword level, real32 silence, real32 fadetime, sdword actornum, sdword speechEvent, bool_t bWait);
 #define soundstreamqueue(a, b, c, d, e, f, g, h, i, j, k, l)	soundstreamqueuePatch(a, b, c, d, e, f, g, h, i, j, k, NULL, SOUND_VOL_MIN, 0.0, 0.0, -1, l, FALSE)
 #define soundstreamqueuefade(a, b, c, d, e, f, g, h, i, j, k, l)	soundstreamqueuePatch(a, b, c, d, e, f, g, h, i, j, k, NULL, SOUND_VOL_MIN, 0.0, l, -1, -1, FALSE)
 #define soundstreamqueueSilence(a, b, c, d, e, f, g, h, i, j)	soundstreamqueuePatch(a, SOUND_DEFAULT, SOUND_DEFAULT, b, c, d, e, f, g, h, i, NULL, SOUND_DEFAULT, j, 0.0, -1, -1, FALSE)

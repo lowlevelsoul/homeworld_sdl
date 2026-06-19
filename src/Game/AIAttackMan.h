@@ -16,7 +16,7 @@
 TI_API AITeam *aiaSendRecon(SelectCommand *ships);
 TI_API void aiaAttackManager(void);
 TI_API void aiaProcessSpecialTeams(void);
-TI_API bool aiaShipDied(AIPlayer *aiplayer, ShipPtr ship);
+TI_API bool_t aiaShipDied(AIPlayer *aiplayer, ShipPtr ship);
 TI_API void aiaTeamDied(AIPlayer *aiplayer, AITeam *team);
 
 TI_API void aiaP2AttackManager(void);

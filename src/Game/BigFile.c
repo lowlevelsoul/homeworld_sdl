@@ -48,7 +48,7 @@
 //  NOTE: This slows the initial (blackscreen) load of the
 //  game a bit, and we could probably eliminate it for
 //  the retail version.
-bool CompareBigfiles =
+bool_t CompareBigfiles =
 #ifdef HW_BUILD_FOR_DISTRIBUTION
     FALSE
 #else
@@ -58,11 +58,11 @@ bool CompareBigfiles =
 
 //  allows you to force loading from regular filesystem,
 //  even if files are available in a bigfile
-bool IgnoreBigfiles = FALSE;
+bool_t IgnoreBigfiles = FALSE;
 
 //  allows you to create a text file of all data file loads
 //  (useful for ordering or creating a bigfile)
-bool LogFileLoads = FALSE;
+bool_t LogFileLoads = FALSE;
 
 #endif
 
@@ -111,7 +111,7 @@ static udword numOpenedBigFiles = 0;
 //
 //  (operate on the string in place)
 //
-static void filenameSlashMassage(char *filename, bool bLocalPath)
+static void filenameSlashMassage(char *filename, bool_t bLocalPath)
 {
     udword i, j;
     char slash_ch, not_slash_ch;
@@ -530,7 +530,7 @@ static int bigSort(char *bigfilename)
     Outputs     : fileNum - 0...numFiles, if it's found
     Return      : 1 if found, 0 otherwise
 ----------------------------------------------------------------------------*/
-bool bigTOCFileExists(bigTOC *toc, char *filename, udword *fileNum)
+bool_t bigTOCFileExists(bigTOC *toc, char *filename, udword *fileNum)
 {
     char filenamei[PATH_MAX] = "";
     bigTOCFileEntry target;
@@ -2291,7 +2291,7 @@ int bigExtract(char *bigFilename, int numFiles, char *filenames[], int optFreshe
         for (i = 0; i < toc.numFiles; i++)
         {
             int j = 0;
-            bool matches_args = 0;
+            bool_t matches_args = 0;
 
             // get the entry in the TOC for the next file
             fileEntry = toc.fileEntries + i;
@@ -2484,7 +2484,7 @@ abort:
 //
 #ifdef BF_HOMEWORLD
 
-bool bigOpenAllBigFiles(void)
+bool_t bigOpenAllBigFiles(void)
 {
     udword bigfile_i = 0;
     char bigFilePath[PATH_MAX] = "";
@@ -2844,7 +2844,7 @@ void bigFilesystemCompare(char *baseDirectory, char *directory)
     }
 }
 
-bool bigFindFile(char *filename, bigFileConfiguration **whereFound, udword *fileIndex)
+bool_t bigFindFile(char *filename, bigFileConfiguration **whereFound, udword *fileIndex)
 {
     udword bigfile_i = 0;
     

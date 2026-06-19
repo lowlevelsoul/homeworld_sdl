@@ -49,12 +49,12 @@ TI_API void TimeoutTimerUpdateAll(void);
 TI_API void GiveUpCaptaincy(void);
 
 TI_API void captaincyLogInit(void);
-TI_API void captaincyLog(bool echotoscreen, char *format, ...);
+TI_API void captaincyLog(bool_t echotoscreen, char *format, ...);
 
 
-extern bool transferCaptaincyDisabled;
-extern bool captaincyLogEnable;
-extern bool printCaptainMessage;
+extern bool_t transferCaptaincyDisabled;
+extern bool_t captaincyLogEnable;
+extern bool_t printCaptainMessage;
 
 extern real32 T1_Timeout;
 extern real32 T2_Timeout;

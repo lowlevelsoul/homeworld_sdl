@@ -313,17 +313,17 @@ extern char *trDetailColorNames[];
 extern char *trOtherLayerNames[];
 extern char *trAllLayerNames[];
 #if TR_DEBUG_TEXTURES
-extern bool trSpecialTextures;
+extern bool_t trSpecialTextures;
 #endif
 extern sdword texLinearFiltering;               //enable bi-linear filtering
 
 extern real32 trBaseColorScalar;
 extern real32 trStripeColorScalar;
 
-extern bool trNoPalettes;
+extern bool_t trNoPalettes;
 
 #if TR_NIL_TEXTURE
-extern bool GLOBAL_NO_TEXTURES;
+extern bool_t GLOBAL_NO_TEXTURES;
 #endif
 
 /*=============================================================================
@@ -360,7 +360,7 @@ TI_API void trMakeCurrent(trhandle handle);
 //functions for directly manipulating textures, without having to go through
 //the texture registry
 TI_API udword trPalettedTextureCreate(ubyte *data, color *palette, sdword width, sdword height);
-TI_API udword trRGBTextureCreate(color *data, sdword width, sdword height, bool useAlpha);
+TI_API udword trRGBTextureCreate(color *data, sdword width, sdword height, bool_t useAlpha);
 TI_API void trRGBTextureUpdate(udword handle, color *data, sdword width, sdword height);
 TI_API void trPalettedTextureMakeCurrent(udword handle, color *palette);
 TI_API void trRGBTextureMakeCurrent(udword handle);
@@ -371,9 +371,9 @@ TI_API void trBufferColorRGB(color *dest, color *source, ubyte *teamEffect0, uby
 //misc utility functions
 TI_API void trFilterEnable(sdword bEnable);
 TI_API texreg *trStructureGet(trhandle handle);
-TI_API color *trImageScale(color *data, sdword width, sdword height, sdword newWidth, sdword newHeight, bool bFree);
-TI_API ubyte *trImageScaleIndexed(ubyte *data, sdword width, sdword height, sdword newWidth, sdword newHeight, bool bFree);
-TI_API void trSetAllPending(bool freeNoPal);
+TI_API color *trImageScale(color *data, sdword width, sdword height, sdword newWidth, sdword newHeight, bool_t bFree);
+TI_API ubyte *trImageScaleIndexed(ubyte *data, sdword width, sdword height, sdword newWidth, sdword newHeight, bool_t bFree);
+TI_API void trSetAllPending(bool_t freeNoPal);
 TI_API void trTextureUsageList(char *fileName);
 TI_API sdword trColorsEqual(trcolorinfo *info, sdword textureIndex);
 

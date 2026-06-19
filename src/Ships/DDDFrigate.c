@@ -174,7 +174,7 @@ void DDDFrigateSwitchSides(Ship *dddf,sdword player)
     }
 }
 
-bool DDDFrigateSpecialActivate(Ship *ship)
+bool_t DDDFrigateSpecialActivate(Ship *ship)
 {
     DDDFrigateSpec *spec = (DDDFrigateSpec *)ship->ShipSpecifics;
 
@@ -292,7 +292,7 @@ void DDDFrigateHousekeep(Ship *ship)
             // for all of the DDD's Drones,
             udword i;
             Ship *drone;
-            bool alllaunched = TRUE;
+            bool_t alllaunched = TRUE;
 
             for (i=0;i<MAX_NUM_DRONES;i++)
             {
@@ -417,7 +417,7 @@ void DDDFrigateHousekeep(Ship *ship)
             sdword i;
             Ship *drone;
             DroneSpec *dronespec;
-            bool allDocked = TRUE;
+            bool_t allDocked = TRUE;
 
             // for each drone in DRONE_STATE_Docking, call DroneDocksAtDDDF
             for (i=0;i<MAX_NUM_DRONES;i++)
@@ -497,7 +497,7 @@ void DDDFrigateAttack(Ship *ship,SpaceObjRotImpTarg *target,real32 maxdist)
     DDDFrigateSpec *spec = (DDDFrigateSpec *)ship->ShipSpecifics;
     vector trajectory;
     real32 range;
-    bool inRange = FALSE;
+    bool_t inRange = FALSE;
 
     aishipGetTrajectory(ship,target,&trajectory);
     range = RangeToTarget(ship,target,&trajectory);
@@ -526,7 +526,7 @@ void DDDFrigateAttack(Ship *ship,SpaceObjRotImpTarg *target,real32 maxdist)
     }
 }
 
-void DDDFrigatePassiveAttack(Ship *ship,Ship *target,bool rotate)
+void DDDFrigatePassiveAttack(Ship *ship,Ship *target,bool_t rotate)
 {
     DDDFrigateStatics *dddstatics = (DDDFrigateStatics *)ship->staticinfo->custstatinfo;
     DDDFrigateSpec *spec = (DDDFrigateSpec *)ship->ShipSpecifics;

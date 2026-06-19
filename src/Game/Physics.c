@@ -137,7 +137,7 @@ void physApplyRotToObj(SpaceObjRot *obj,real32 torque,uword rotdir)
     Outputs     :
     Return      : true if the bullet should now be deleted
 ----------------------------------------------------------------------------*/
-bool physUpdateBulletPosVel(Bullet *bullet,real32 phystimeelapsed)
+bool_t physUpdateBulletPosVel(Bullet *bullet,real32 phystimeelapsed)
 {
     vector d;
     Ship *ship;
@@ -239,8 +239,8 @@ void physUpdateObjPosVel(SpaceObj *obj,real32 phystimeelapsed)
     vector d;
     StaticHeader *staticheader = &obj->staticinfo->staticheader;
     ShipStaticInfo *shipstaticinfo = FALSE;
-    bool coordsysChanged = FALSE;
-    bool wasAboveLowFuel;
+    bool_t coordsysChanged = FALSE;
+    bool_t wasAboveLowFuel;
     //real32 burnmult;
     real32 speedmult;
     matrix rotxmatrix;
@@ -549,8 +549,8 @@ void physUpdateObjPosVelShip(Ship *obj,real32 phystimeelapsed)
     vector d;
     StaticHeader *staticheader = &obj->staticinfo->staticheader;
     ShipStaticInfo *shipstaticinfo;
-    bool coordsysChanged = FALSE;
-    bool wasAboveLowFuel;
+    bool_t coordsysChanged = FALSE;
+    bool_t wasAboveLowFuel;
     real32 speedmult;
     matrix rotxmatrix;
     matrix rotymatrix;
@@ -796,7 +796,7 @@ void physUpdateObjPosVelDerelicts(Derelict *obj,real32 phystimeelapsed)
     vector a;
     vector d;
     StaticHeader *staticheader = &obj->staticinfo->staticheader;
-    bool coordsysChanged = FALSE;
+    bool_t coordsysChanged = FALSE;
     //real32 burnmult;
     matrix rotxmatrix;
     matrix rotymatrix;
@@ -955,7 +955,7 @@ void physUpdateObjPosVelMissile(Missile *obj,real32 phystimeelapsed)
     vector a;
     vector d;
     StaticHeader *staticheader = &obj->staticinfo->staticheader;
-    bool coordsysChanged = FALSE;
+    bool_t coordsysChanged = FALSE;
     matrix rotxmatrix;
     matrix rotymatrix;
     matrix rotzmatrix;
@@ -1107,7 +1107,7 @@ void physUpdateObjPosVelBasic(SpaceObj *obj,real32 phystimeelapsed)
     vector a;
     vector d;
     StaticHeader *staticheader = &obj->staticinfo->staticheader;
-    bool coordsysChanged = FALSE;
+    bool_t coordsysChanged = FALSE;
     matrix rotxmatrix;
     matrix rotymatrix;
     matrix rotzmatrix;

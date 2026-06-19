@@ -45,9 +45,9 @@ void P1IonArrayFrigateAttack(Ship *ship,SpaceObjRotImpTarg *target,real32 maxdis
     attackStraightForward(ship,target,frigstat->frigateGunRange[ship->tacticstype],frigstat->frigateTooCloseRange[ship->tacticstype]);
 }
 
-void P1IonArrayFrigateAttackPassive(Ship *ship,Ship *target,bool rotate)
+void P1IonArrayFrigateAttackPassive(Ship *ship,Ship *target,bool_t rotate)
 {
-    if ((rotate) & ((bool)((ShipStaticInfo *)(ship->staticinfo))->rotateToRetaliate))
+    if ((rotate) & ((bool_t)((ShipStaticInfo *)(ship->staticinfo))->rotateToRetaliate))
     {
         attackPassiveRotate(ship,target);
     }

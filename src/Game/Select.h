@@ -173,14 +173,14 @@ TI_API void selSelectionAddSingleShip(MaxSelection *dest, Ship *ship);
 TI_API //void selSelectionAddSingleShip(Ship *ship);
 TI_API void selSelectionRemoveSingleShip(MaxSelection *dest, Ship *ship);
 TI_API sdword selShipInSelection(ShipPtr *shipList, sdword nShips, ShipPtr ship);
-TI_API bool selShipsInSelection(MaxSelection *dest, MaxSelection *list);
+TI_API bool_t selShipsInSelection(MaxSelection *dest, MaxSelection *list);
 
 //selections by mouse dragging
-TI_API void selRectDragFunction(Node *startNode, Camera *camera, rectangle *rect, SpaceObjRotImpTarg **destList, sdword *destCount, sdword playerSpecific, bool selectAnything, bool bAttack);
+TI_API void selRectDragFunction(Node *startNode, Camera *camera, rectangle *rect, SpaceObjRotImpTarg **destList, sdword *destCount, sdword playerSpecific, bool_t selectAnything, bool_t bAttack);
 TI_API void selRectDragAddFunction(Node *startNode, Camera *camera, rectangle *rect);
 
 //selection by mouse click (on release)
-TI_API Ship *selSelectionClick(Node *listhead, Camera *camera, sdword x, sdword y, bool bIncludeDerelicts, bool bIncludeResources);
+TI_API Ship *selSelectionClick(Node *listhead, Camera *camera, sdword x, sdword y, bool_t bIncludeDerelicts, bool_t bIncludeResources);
 TI_API SpaceObj *selClickFromArray(SpaceObj **list, sdword length, sdword x, sdword y);
 
 //selections by key
@@ -200,7 +200,7 @@ TI_API void selSelectionDimensions(hmatrix *modelView, hmatrix *projection, Sele
 
 //selection manipulation
 TI_API sdword selSelectionCopy(MaxAnySelection *dest, MaxAnySelection *source);
-TI_API bool selSelectionIsReinforced(MaxAnySelection *dest, MaxAnySelection *source);
+TI_API bool_t selSelectionIsReinforced(MaxAnySelection *dest, MaxAnySelection *source);
 TI_API sdword selSelectionCopyByClass(MaxSelection *dest, MaxSelection *source, ShipClass classMask);
 TI_API sdword selSelectionCopyByType(MaxSelection *dest, MaxSelection *source, ShipType typeMask);
 TI_API sdword selHotKeyNumbersSet(sdword group);

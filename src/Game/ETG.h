@@ -408,7 +408,7 @@ typedef struct _etgfunctioncall_
 #endif
     udword nParameters;                         //number of parameters to pass
     memsize returnValue;                         //variable to assign return value to, if any
-    bool passThis;                              //shall we pass a reference to this effect?
+    bool_t passThis;                              //shall we pass a reference to this effect?
     struct
     {
         udword type;                            //type of parameter, see above
@@ -615,8 +615,8 @@ extern sdword etgBigDeathFactor[NUM_RACES][NUM_CLASSES];
 extern sdword etgBigDeathFactorDerelict[NUM_DERELICTTYPES];
 extern ubyte etgDeathModeByGunType[];
 extern sdword etgEffectsEnabled;
-extern bool etgErrorRecoverable;
-extern bool etgErrorEncountered;
+extern bool_t etgErrorRecoverable;
+extern bool_t etgErrorEncountered;
 
 
 //variables for ETG user tweaks:
@@ -625,10 +625,10 @@ extern real32 etgSoftwareScalarHit;             //scale certain effects down whe
 extern real32 etgSoftwareScalarFire;            //scale certain effects down when in software mode.
 extern sdword etgHistoryScalar;                 //from etgHistoryScalarMin to 256 inclusive
 extern sdword etgHistoryScalarMin;
-extern bool   etgDamageEffectsEnabled;
-extern bool   etgHitEffectsEnabled;
-extern bool   etgFireEffectsEnabled;
-extern bool   etgBulletEffectsEnabled;
+extern bool_t   etgDamageEffectsEnabled;
+extern bool_t   etgHitEffectsEnabled;
+extern bool_t   etgFireEffectsEnabled;
+extern bool_t   etgBulletEffectsEnabled;
 
 /*=============================================================================
     Macros:
@@ -657,18 +657,18 @@ TI_API void etgFixupUV(void);
 
 //load in an effect template from an effect file and then delete.
 TI_API etgeffectstatic *etgEffectCodeLoad(char *fileName);
-TI_API etgeffectstatic *etgEffectStaticFind(char *name, bool bRegister);
-TI_API void etgEffectCodeDelete(etgeffectstatic *stat, bool bFullDelete);
+TI_API etgeffectstatic *etgEffectStaticFind(char *name, bool_t bRegister);
+TI_API void etgEffectCodeDelete(etgeffectstatic *stat, bool_t bFullDelete);
 
 //create effects
 TI_API void etgEffectCodeStart(struct etgeffectstatic *stat, struct Effect *effect, sdword nParams, ...);
 TI_API void etgEffectDelete(struct Effect *effect);
 TI_API void *etgEffectCreate(etgeffectstatic *stat, void *owner, vector *pos, vector *vel, matrix *coordsys, real32 nLips, udword flags, sdword nParams, ...);
-TI_API bool etgFrequencyExceeded(etgeffectstatic *stat);
+TI_API bool_t etgFrequencyExceeded(etgeffectstatic *stat);
 TI_API void etgHistoryRegisterFunction(etgeffectstatic *stat);
 
 //update effects
-TI_API bool etgEffectUpdate(struct Effect *effect, real32 timeElapsed);
+TI_API bool_t etgEffectUpdate(struct Effect *effect, real32 timeElapsed);
 TI_API void etgEffectDraw(struct Effect *effect);
 TI_API void etgShipDied(struct Ship *deadDuck);
 TI_API sdword etgDeleteEffectsOwnedBy(struct Ship *owner);

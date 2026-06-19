@@ -46,7 +46,7 @@ sdword SFX_AMBIENT_VOLUME;
 sdword SFX_NIS_MAX_ENGINES;
 sdword SFX_NIS_MIN_CAPSHIPS;
 real32 SFX_MAX_ENGINE_RANGE;
-bool   SFX_CAPSHIPS_ALWAYS_ON;
+bool_t   SFX_CAPSHIPS_ALWAYS_ON;
 sdword SFX_MAX_AMBIENT;
 real32 SFX_FLOAT_VELOCITY;
 real32 SFX_NIS_FLOAT_VELOCITY;
@@ -57,7 +57,7 @@ sword  SFX_HYPERSPACE_VOLUME;
 real32 SFX_DAMAGERATIO_LIGHT;
 real32 SFX_DAMAGERATIO_MEDIUM;
 real32 SFX_DAMAGERATIO_HEAVY;
-bool   SFX_DAMAGERATIO_ENABLE;
+bool_t   SFX_DAMAGERATIO_ENABLE;
 
 real32 SFX_CARDIOD_FACTOR;
 real32 SFX_CARDIOD_MIN;
@@ -73,12 +73,12 @@ real32 CORVETTE_VELOCITY_SCALE;
 real32 FIGHTER_DOPPLER_SCALE;
 sdword FIGHTER_DOPPLER_LOW;
 sdword FIGHTER_DOPPLER_HIGH;
-bool   FIGHTER_DOPPLER_USEVELOCITY;
+bool_t   FIGHTER_DOPPLER_USEVELOCITY;
 
 real32 CORVETTE_DOPPLER_SCALE;
 sdword CORVETTE_DOPPLER_LOW;
 sdword CORVETTE_DOPPLER_HIGH;
-bool   CORVETTE_DOPPLER_USEVELOCITY;
+bool_t   CORVETTE_DOPPLER_USEVELOCITY;
 
 real32 SPEECH_VOL_FACTOR;
 sword  SPEECH_VOL_LOW;
@@ -103,7 +103,7 @@ real32 SPEECH_DISOBEY_FORCEDATTACK;
 
 real32 SPEECH_MIN_PERCEPTABLE_VOL;
 real32 SPEECH_AMBIENT_LEVEL;
-bool   SPEECH_AMBIENT_ENABLE;
+bool_t   SPEECH_AMBIENT_ENABLE;
 
 real32 SPEECH_STIKEDAMAGE_MULT;
 real32 SPEECH_CAPDAMAGE_MULT;
@@ -230,7 +230,7 @@ scriptEntry SoundeventTweaks[] =
 sword   soundeventinited = FALSE;
 ubyte   *bankLoadAddress;
 sdword  ambienthandle = SOUND_DEFAULT;
-bool    soundpaused = FALSE;
+bool_t    soundpaused = FALSE;
 
 /* new banks */
 BANK   *GunBank;
@@ -258,7 +258,7 @@ real32		    *FreqLUT;
 real32  DefaultEQ[SOUND_EQ_SIZE];
 real32  MasterEQ[SOUND_EQ_SIZE] = {1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0};
 
-extern bool nisIsRunning;
+extern bool_t nisIsRunning;
 
 #ifdef USING_SDL1
 SDL_CD* gCD = NULL;  /* CD device used for CD playback. */
@@ -270,12 +270,12 @@ real32 volSpeech = 1.0f;
 real32 volMusic = 1.0f;
 real32 volSFX = 1.0f;
 real32 volNIS = 1.0f;
-bool bVolMusicNoFade = FALSE;
+bool_t bVolMusicNoFade = FALSE;
 
-bool    bActorOn[4] = {TRUE, TRUE, TRUE, TRUE};
-bool    bCommandsOn = TRUE;
-bool    bStatusOn = TRUE;
-bool    bChatterOn = TRUE;
+bool_t    bActorOn[4] = {TRUE, TRUE, TRUE, TRUE};
+bool_t    bCommandsOn = TRUE;
+bool_t    bStatusOn = TRUE;
+bool_t    bChatterOn = TRUE;
 
 sdword  actorFlagsEnabled = (
                              SPEECH_ACTOR_PILOT               |
@@ -296,7 +296,7 @@ sdword  actorFlagsEnabled = (
 real32 nearestShipDistance = 0.0f;
 real32 musicVolFactor = 0.0f;
 real32 battleMusicVolFactor = 0.0f;
-bool nearestShipMoving = FALSE;
+bool_t nearestShipMoving = FALSE;
 real32 musicInactiveFactor = 0.0f;
 
 // used for figuring out which engines to play
@@ -597,7 +597,7 @@ void soundEventMasterEQ(real32 *pmasterEQ)
     Outputs     :
     Return      :
 -----------------------------------------------------------------------------*/
-void soundEventSetActor(sdword actornum, bool bOn)
+void soundEventSetActor(sdword actornum, bool_t bOn)
 {
     if ((actornum > 0) && (actornum < 4))
     {
@@ -612,7 +612,7 @@ void soundEventSetActor(sdword actornum, bool bOn)
     Outputs     :
     Return      :
 -----------------------------------------------------------------------------*/
-void soundEventVocalSettings(bool bCommands, bool bStatus, bool bChatter)
+void soundEventVocalSettings(bool_t bCommands, bool_t bStatus, bool_t bChatter)
 {
     bCommandsOn = bCommands;
     bStatusOn = bStatus;
@@ -649,7 +649,7 @@ void soundEventHearActor(sdword actornum)
     Outputs     :
     Return      :
 -----------------------------------------------------------------------------*/
-void soundEventSetActorFlag(sdword actorflag, bool bOn)
+void soundEventSetActorFlag(sdword actorflag, bool_t bOn)
 {
     if (bOn)
     {
@@ -931,7 +931,7 @@ void soundEventStopSFX(real32 fadetime)
 }
 
 
-void soundEventPause(bool bPause)
+void soundEventPause(bool_t bPause)
 {
     if (!soundeventinited)
     {
@@ -1052,8 +1052,8 @@ void soundEventUpdate(void)
     GunInfo *gunInfo;
     sdword i;
     Gun *gun = NULL;
-    bool specialon;
-    bool ambienton;
+    bool_t specialon;
+    bool_t ambienton;
 	CloakGeneratorSpec *CGspec;
     GravWellGeneratorSpec *GWspec;
     CommandToDo *command = NULL;
@@ -1061,8 +1061,8 @@ void soundEventUpdate(void)
     real32 damageratio = 1.0f;
     sdword ambient;
 	ShipSinglePlayerGameInfo *shipSinglePlayerGameInfo;
-	bool damageOn = FALSE;
-	bool noAmbient = FALSE;
+	bool_t damageOn = FALSE;
+	bool_t noAmbient = FALSE;
 
     if (!soundeventinited || soundpaused)
     {
@@ -2300,7 +2300,7 @@ void soundEventDerelictRemove(Derelict *pDerelict)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool SEinrange(sdword shipclass, real32 distance)
+bool_t SEinrange(sdword shipclass, real32 distance)
 {
     if (RangeLUT != NULL)
     {
@@ -2324,7 +2324,7 @@ bool SEinrange(sdword shipclass, real32 distance)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool SEinrangeSqr(sdword shipclass, real32 distancesqr)
+bool_t SEinrangeSqr(sdword shipclass, real32 distancesqr)
 {
     if (RangeLUT != NULL)
     {
@@ -2538,7 +2538,7 @@ sword SEcalcenginevol(sdword shipclass, real32 distance)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-void SEstopengine(Ship *ship, bool stopnow)
+void SEstopengine(Ship *ship, bool_t stopnow)
 {
     if (ship == NULL)
         return;

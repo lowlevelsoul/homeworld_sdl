@@ -466,7 +466,7 @@ void dmgShipThink(Ship* ship)
     ShipSinglePlayerGameInfo* ssinfo;
     ShipClass shipClass;
     real32 maxhealth, health, healthRatio;
-    extern bool gShowDamage;
+    extern bool_t gShowDamage;
 
     if (!gShowDamage)
     {

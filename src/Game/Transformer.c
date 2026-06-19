@@ -898,7 +898,7 @@ void transGeneralPerspectiveTransform(sdword n, hvector* dest, hvector* source, 
     Return      : TRUE if transPerspectiveTransform will suffice, FALSE if the matrix
                   is too general
 ----------------------------------------------------------------------------*/
-bool transPerspectiveMatrix(hmatrix* m)
+bool_t transPerspectiveMatrix(hmatrix* m)
 {
     real32* mat = (real32*)m;
 

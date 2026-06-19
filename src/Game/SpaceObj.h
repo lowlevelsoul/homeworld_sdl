@@ -151,7 +151,7 @@ typedef struct
     vector effect_going_to;
     real32 waittime;
     struct Player *playerowner;
-    bool FULL;
+    bool_t FULL;
     sdword wallstate;
     struct Effect *effect;
     udword numat;
@@ -278,7 +278,7 @@ typedef struct
   uword up;
   sword useNewOffset;
   vector offset;    //offset modification
-  bool lightNameUsed;
+  bool_t lightNameUsed;
   char lightName[LIGHTNAME_LENGTH];
 } DockStaticOveride;
 
@@ -530,9 +530,9 @@ typedef struct
     void (*CustShipClose) (struct Ship *ship);
     void (*CustShipAttack) (struct Ship *ship,struct SpaceObjRotImpTarg *target,real32 maxdist);
     void (*CustShipFire) (struct Ship *ship, struct SpaceObjRotImpTarg *target);
-    void (*CustShipAttackPassive) (struct Ship *ship,struct Ship *target,bool rotate);
-    bool (*CustShipSpecialActivate) (struct Ship *ship);
-    bool (*CustShipSpecialTarget) (struct Ship *ship,void *custom);
+    void (*CustShipAttackPassive) (struct Ship *ship,struct Ship *target,bool_t rotate);
+    bool_t (*CustShipSpecialActivate) (struct Ship *ship);
+    bool_t (*CustShipSpecialTarget) (struct Ship *ship,void *custom);
     void (*CustShipHousekeep) (struct Ship *ship);
     void (*CustShipRemoveShipReferences)(struct Ship *ship, struct Ship *shiptoremove);
     void (*CustShipDied)(struct Ship *ship);
@@ -591,7 +591,7 @@ typedef struct ShipStaticInfo
     bool8 rotateToRetaliate;
     bool8 canReceiveTheseShips[4];
 
-    bool passiveAttackPenaltyExempt;
+    bool_t passiveAttackPenaltyExempt;
 
     bool8 specialActivateIsContinuous;
     bool8 canSpecialBandBoxFriendlies;
@@ -603,7 +603,7 @@ typedef struct ShipStaticInfo
     sdword canHandleNumShipsDocking;
     sdword canHandleNumShipsDepositingRU;
 
-    bool repairBeamCapable;
+    bool_t repairBeamCapable;
     real32 healthPerSecond;
     real32 CapitalDistanceRepairStart2;
     real32 CapitalDistanceRepairStart;
@@ -641,9 +641,9 @@ typedef struct ShipStaticInfo
     real32 dockShipRange;       // distance to ship to get for docking, squared
 
     real32 formationPaddingModifier;
-    bool cannotForceAttackIfOwnShip;    //variable..if set to TRUE player cannot force attack this ship IF it is their own ship
-    bool shipIsCapital;                 //Set to TRUE is ship is a TRUE capital ship (class defs are unreliable)
-    bool cantMoveAndAttack;             //if set, SHIP explicitly cannot move and attack...will be given a special move order.
+    bool_t cannotForceAttackIfOwnShip;    //variable..if set to TRUE player cannot force attack this ship IF it is their own ship
+    bool_t shipIsCapital;                 //Set to TRUE is ship is a TRUE capital ship (class defs are unreliable)
+    bool_t cantMoveAndAttack;             //if set, SHIP explicitly cannot move and attack...will be given a special move order.
     vector engineNozzleOffset[MAX_NUM_TRAILS];      //offset of engine in object co-ordinates
     trailstatic* trailStatic[MAX_NUM_TRAILS];
     udword multipleEngines;
@@ -688,8 +688,8 @@ typedef struct ShipStaticInfo
     ResNozzleStatic *resNozzleStatic;
     RepairNozzleStatic *repairNozzleStatic;
     TractorBeamStatic *tractorEmitterStatic;
-    bool (*ShipXDocksAtShipY) (struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith);
-    bool (*LaunchShipXFromShipY) (struct Ship *ship,struct Ship *dockwith);
+    bool_t (*ShipXDocksAtShipY) (struct CommandToDo *docktodo,struct Ship *ship,struct Ship *dockwith);
+    bool_t (*LaunchShipXFromShipY) (struct Ship *ship,struct Ship *dockwith);
 } ShipStaticInfo;
 
 typedef struct
@@ -797,10 +797,10 @@ typedef struct
     NAVLightStaticInfo *navlightStaticInfo;
 /* Derelict specific below */
     DerelictType derelicttype;
-    bool    salvageable;                        //TRUE if derelict is to be targetable by salcap corvettes
+    bool_t    salvageable;                        //TRUE if derelict is to be targetable by salcap corvettes
 
     real32 scaleFactor;                         //only used for 'world rendering'
-    bool   worldRender;                         //TRUE for Angel moon, homeworld, and POO
+    bool_t   worldRender;                         //TRUE for Angel moon, homeworld, and POO
 
     real32 minimumZoomDistance;
     real32 renderlistFade, renderlistLimitSqr;
@@ -1346,11 +1346,11 @@ typedef struct Ship         // Ship object
     //*******Tactics stuff start
     //FIX LATER to support fewer variables using bitmasks
     TacticsType tacticstype;        //ships current tactcis setting
-    bool isDodging;                 //flag, true if ship is performing a dodge
+    bool_t isDodging;                 //flag, true if ship is performing a dodge
     real32 DodgeTime;               //variable used to control when a ship will stop dodging
     uword  DodgeDir;
     uword  pad2;
-    bool tacticsFormationVar1;      //variable for formation attacking
+    bool_t tacticsFormationVar1;      //variable for formation attacking
     udword DodgeFlag;               //info flag for dodging
     sdword tactics_ordertype;       //ships order type convulved into the Tactics Domain
     udword tacticsTalk;             //var used for intership comunication

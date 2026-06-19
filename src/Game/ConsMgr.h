@@ -54,7 +54,7 @@ typedef struct
 {
     Node node;
     struct Ship *ship;
-    bool canBuildBigShips;
+    bool_t canBuildBigShips;
     shipinprogress progress[TOTAL_STD_SHIPS];
 }
 shipsinprogress;
@@ -98,17 +98,17 @@ extern sdword cmNumPlayersCarriers;
 
 
 #if CM_CHEAP_SHIPS
-extern bool cmCheapShips;
+extern bool_t cmCheapShips;
 #endif
 
 #define CM_SHIFT 256
 
 extern KeysToShips cmShipTypes[];
-extern bool cmPrintHotKey;
+extern bool_t cmPrintHotKey;
 
 extern sdword shiplagtotals[TOTAL_NUM_SHIPS];
 
-extern bool cmActive;
+extern bool_t cmActive;
 
 extern sdword cmMaxJobsPerClass[NUM_CLASSES];
 
@@ -131,14 +131,14 @@ TI_API sdword cmConstructionBegin(regionhandle region, smemsize ID, udword event
 //start a new build job
 TI_API void cmBuildJobsAdd(shipsinprogress *factory, ShipStaticInfo *info, sdword index);
 
-TI_API void cmAddFactory(struct Ship *ship,bool canBuildBigShips);
+TI_API void cmAddFactory(struct Ship *ship,bool_t canBuildBigShips);
 TI_API void cmRemoveFactory(struct Ship *ship);
 
 TI_API void cmCloseIfOpen(void);
 
-TI_API bool cmCanBuildShipType(Ship *factoryship,ShipType shiptype,bool checkResearch);
+TI_API bool_t cmCanBuildShipType(Ship *factoryship,ShipType shiptype,bool_t checkResearch);
 
-TI_API bool cmBuildHotKey(keyindex key, bool shift);
+TI_API bool_t cmBuildHotKey(keyindex key, bool_t shift);
 TI_API ShipType cmKeyToShipType(uword key);
 TI_API uword cmShipTypeToKey(ShipType ship);
 

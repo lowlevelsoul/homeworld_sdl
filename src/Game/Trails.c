@@ -795,7 +795,7 @@ void trailDrawCapitalGlow(shiptrail* trail, sdword LOD)
     hmatrix coordMatrixForGL;
     real32 scaleFactor;
     real32 scale[3];
-    bool moshipGlow;
+    bool_t moshipGlow;
     extern bool8 g_NoMatSwitch;
 
     if (trail->width == -1.0f || trail->state == TRAIL_CONTRACTED)
@@ -1297,7 +1297,7 @@ void trailLineInit(shiptrail* trail, sdword n)
 ----------------------------------------------------------------------------*/
 void trailLinePyramid(
     sdword LOD, sdword i, vector* vectora, vector* vectorb, color c,
-    vector horiz[], vector vert[], bool wide)
+    vector horiz[], vector vert[], bool_t wide)
 {
     vector from, to;
     real32 VS, halfWidth, width, height;
@@ -1708,7 +1708,7 @@ void trailLineSequence(sdword LOD, sdword n, vector vectors[], color* segmentArr
     Return      :
 ----------------------------------------------------------------------------*/
 void trailLine(sdword LOD, sdword i, vector vectors[], color c,
-               vector horiz[], vector vert[], bool wides[])
+               vector horiz[], vector vert[], bool_t wides[])
 {
     if (bitTest(gDevcaps2, DEVSTAT2_NO_IALPHA))
     {
@@ -1834,7 +1834,7 @@ void trailDraw(vector *current, shiptrail *trail, sdword LOD, sdword teamIndex)
     trailstatic *trailStatic = trail->staticInfo;
     color *segmentArray;
     real32 velratio, mag, maxvel;
-    bool dontdrawtrail = FALSE;
+    bool_t dontdrawtrail = FALSE;
 
     Ship* ship = (Ship*)trail->vship;
 
@@ -1982,7 +1982,7 @@ void trailDraw(vector *current, shiptrail *trail, sdword LOD, sdword teamIndex)
         vector segments[40];
         vector horizontals[40];
         vector verticals[40];
-        bool   wides[40];
+        bool_t   wides[40];
         sdword i, n;
 /*
         real32 size = SIZE_MAJOR * velratio * NLipsScaleFactor;
@@ -2082,7 +2082,7 @@ void trailDraw(vector *current, shiptrail *trail, sdword LOD, sdword teamIndex)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-void trailMakeWobbly(void* vship, bool state)
+void trailMakeWobbly(void* vship, bool_t state)
 {
     sdword i;
     Ship* ship = (Ship*)vship;

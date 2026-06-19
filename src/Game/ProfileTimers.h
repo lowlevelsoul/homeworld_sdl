@@ -32,7 +32,7 @@ typedef struct ProfileTimers
     char timeLabel[NUM_PROFILE_TIMERS][PROFILE_TIMER_LABLEN];
     RecordProfTimer recordTimer[NUM_PROFILE_TIMERS];
     udword profileTimerType[NUM_PROFILE_TIMERS];
-    bool recordTimersOn;
+    bool_t recordTimersOn;
 } ProfileTimers;
 
 #ifdef PROFILE_TIMERS

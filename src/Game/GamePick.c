@@ -51,8 +51,8 @@
     Data:
 =============================================================================*/
 
-bool gpQuickSave(void);
-bool gpQuickLoad(void);
+bool_t gpQuickSave(void);
+bool_t gpQuickLoad(void);
 
 void gpGameWindowInit(char *name, featom *atom);
 void gpTextEntryWindowInit(char *name, featom *atom);
@@ -71,8 +71,8 @@ void gpStopRecording(char *name, featom *atom);
 void gpOverwriteYes(char *name, featom *atom);
 void gpOverwriteNo(char *name, featom *atom);
 
-bool gpLoadSinglePlayerGame = FALSE;
-bool gpLoadTutorial = FALSE;
+bool_t gpLoadSinglePlayerGame = FALSE;
+bool_t gpLoadTutorial = FALSE;
 
 #ifdef _WIN32
 //SinglePlayerSavedGamesPath is non-static because it is used in KASFunc.c
@@ -554,7 +554,7 @@ char* gpQuickSetup(void)
     }
 }
 
-bool gpQuickSave(void)
+bool_t gpQuickSave(void)
 {
     char* path;
     char  filename[128];
@@ -573,7 +573,7 @@ bool gpQuickSave(void)
     return TRUE;
 }
 
-bool gpQuickLoad(void)
+bool_t gpQuickLoad(void)
 {
     char* path;
     char  filename[128];
@@ -753,7 +753,7 @@ void gpDonePicking(char *name, featom *atom)
 }
 
 static char overwritefilename[PATH_MAX] = "";
-static bool overwriteRecGame = FALSE;
+static bool_t overwriteRecGame = FALSE;
 
 void gpOverwriteYes(char *name, featom *atom)
 {
@@ -1157,7 +1157,7 @@ void gpDeleteGame(char *name, featom *atom)
     fontMakeCurrent(oldfont);
 }
 
-bool gpGetGameName(char *name, featom *atom, char *filename)
+bool_t gpGetGameName(char *name, featom *atom, char *filename)
 {
     if (gpNumberGames > 0)
     {

@@ -51,7 +51,7 @@ LinkedList CircleList;
 ----------------------------------------------------------------------------*/
 void primLine3(vector *p1, vector *p2, color c)
 {
-    bool blendon = FALSE;
+    bool_t blendon = FALSE;
 
     blendon = glIsEnabled(GL_BLEND);
     if (!blendon) glEnable(GL_BLEND);
@@ -436,8 +436,8 @@ void primPoint3(vector *p1, color c)
     glEnd();
 }
 
-static bool gFastBlends;
-static bool gWasBlending;
+static bool_t gFastBlends;
+static bool_t gWasBlending;
 
 /*-----------------------------------------------------------------------------
     Name        : primBeginPointSize3Fade

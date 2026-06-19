@@ -100,8 +100,8 @@ void RenderNAVLights(Ship *ship)
    vector origin = {0.0f, 0.0f, 0.0f};
    NAVLightStaticInfo *navLightStaticInfo;
    real32 fade;
-   bool lightOn;
-   extern bool bFade;
+   bool_t lightOn;
+   extern bool_t bFade;
    extern real32 meshFadeAlpha;
 
    fade = bFade ? meshFadeAlpha : 1.0f;

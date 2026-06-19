@@ -53,11 +53,11 @@ extern udword gDevcaps2;
 static udword opDevcaps;
 static udword opDevcaps2;
 
-bool   opTimerActive = FALSE;
+bool_t   opTimerActive = FALSE;
 real32 opTimerStart;
 real32 opTimerLength = 22.0f;
 
-bool opReloading = FALSE;
+bool_t opReloading = FALSE;
 
 static char lastDev[64] = "";
 
@@ -98,7 +98,7 @@ sdword speechEventCleanup(void);
 
 #if(0)
 
-bool smoothiesactive = FALSE;
+bool_t smoothiesactive = FALSE;
 
 real32 smoothmusicvol;
 real32 smoothsfxvol;
@@ -121,7 +121,7 @@ region *nchannelsregion;
 Smoothie *SmoothieArray[NUM_SMOOTHIES];
 
 
-bool opSmoothiesBabyFunction(udword num, void *data, struct BabyCallBack *baby);
+bool_t opSmoothiesBabyFunction(udword num, void *data, struct BabyCallBack *baby);
 void AddSmoothie(Smoothie *smoo);
 void RemoveSmoothie(Smoothie *smoo);
 void DoSmoothies(void);
@@ -160,8 +160,8 @@ void opRenderListLoad(void);
     Data:
 =============================================================================*/
 
-bool opCustomEffectsToggled;
-bool opEqualizerToggled;
+bool_t opCustomEffectsToggled;
+bool_t opEqualizerToggled;
 
 sword opKeySelected=-1;
 sword opKeyBeingDefined=-1;
@@ -371,7 +371,7 @@ fonthandle opKeyboardFont;
 
 //use #define to modify a variable directly without modifying function
 
-extern void mgDrawArrow(regionhandle region, bool leftArrow, bool human);
+extern void mgDrawArrow(regionhandle region, bool_t leftArrow, bool_t human);
 
 sdword opNoPalMaxMB = 128;
 sdword opNoPalMinMB = 16;
@@ -607,7 +607,7 @@ void opKeyboardDraw(featom *atom, regionhandle region)
     rectangle rect = region->rect, select;
     color c;
     fonthandle currentFont;
-    bool hl = FALSE;
+    bool_t hl = FALSE;
 
     keyboardregion = region;
 
@@ -757,7 +757,7 @@ udword opSelectKey(regionhandle region, sdword ID, udword event, udword data)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool opHighlightBabyFunction(udword num, void* data, struct BabyCallBack* baby)
+bool_t opHighlightBabyFunction(udword num, void* data, struct BabyCallBack* baby)
 {
     sdword i;
 
@@ -848,7 +848,7 @@ void opKeyAssign(uword func, keyindex key)
 {
     uword i;
     sword oldfunc = -1;
-    bool oldfuncsecondkey = FALSE;
+    bool_t oldfuncsecondkey = FALSE;
 
 
     //find function key was previously assigned to
@@ -974,7 +974,7 @@ char* opKeyToNiceString(keyindex key)
     Outputs     :
     Return      :
 -------------------------------------------------------------------------------*/
-bool opValidKey(keyindex key)
+bool_t opValidKey(keyindex key)
 {
     sdword i;
 
@@ -1048,7 +1048,7 @@ char ConvertSliderToAIPlayerDifficulty(sdword sliderval)
     return AI_ADVANCED;
 }
 
-bool opResHackSupported(void)
+bool_t opResHackSupported(void)
 {
     rmode* mode;
     int width, height, depth;
@@ -1072,7 +1072,7 @@ bool opResHackSupported(void)
     return FALSE;
 }
 
-bool opResResSupported(opres* res)
+bool_t opResResSupported(opres* res)
 {
     rdevice* dev;
     rmode* mode;
@@ -1099,7 +1099,7 @@ bool opResResSupported(opres* res)
     return FALSE;
 }
 
-bool opResChanged(void)
+bool_t opResChanged(void)
 {
     if (opSaveMAIN_WindowWidth  != MAIN_WindowWidth ||
         opSaveMAIN_WindowHeight != MAIN_WindowHeight ||
@@ -1625,10 +1625,10 @@ void EqualizerSmoothieCallback(real32 data, Smoothie* smoo)
 #endif
 
 /*
-void soundEventSetActor(sdword actornum, bool bOn);
+void soundEventSetActor(sdword actornum, bool_t bOn);
     actornum is 1, 2 or 3
     bOn is TRUE if checked FALSE if not
-void soundEventVocalSettings(bool bCommandsOn, bool bStatusOn, bool bChatterOn);
+void soundEventVocalSettings(bool_t bCommandsOn, bool_t bStatusOn, bool_t bChatterOn);
  */
 
 void opOptionsSaveEqualizerSettings(void)
@@ -3490,7 +3490,7 @@ void DoSmoothies(void)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool opSmoothiesBabyFunction(udword num, void* data, struct BabyCallBack* baby)
+bool_t opSmoothiesBabyFunction(udword num, void* data, struct BabyCallBack* baby)
 {
     DoSmoothies();
     return !smoothiesactive;

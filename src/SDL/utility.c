@@ -166,7 +166,7 @@ udword loadedDevcaps2 = 0xFFFFFFFF;
     Outputs     :
     Return      : TRUE if the browser was started OK, FALSE otherwise
 ----------------------------------------------------------------------------*/
-bool utyBrowserExec(char *URL)
+bool_t utyBrowserExec(char *URL)
 {
     return FALSE;
 }
@@ -175,8 +175,8 @@ bool utyBrowserExec(char *URL)
 //
 //  for bigfiles
 //
-extern bool CompareBigfiles;
-extern bool IgnoreBigfiles;
+extern bool_t CompareBigfiles;
+extern bool_t IgnoreBigfiles;
 extern bigTOC mainTOC;
 extern bigTOC updateTOC;
 extern FILE *updateFP;     // for NULL checking
@@ -187,13 +187,13 @@ extern unsigned char *updateNewerAvailable;
     Data:
 =============================================================================*/
 
-bool utilPlayingIntro = FALSE;
+bool_t utilPlayingIntro = FALSE;
 
 void *utyMemoryHeap;
 char errorString[UTY_ErrorStringLength];
 
 // used to skip the tutorial warning after you have played a non tutorial mission
-bool needtutorial=TRUE;
+bool_t needtutorial=TRUE;
 
 //data for the timing of tasks
 Uint32 utyTimerDivisor;
@@ -256,7 +256,7 @@ char *utyFrontEndFiles[] =
 
 void scriptSetHomeworldCRC(char *directory,char *field,void *dataToFillIn);
 
-bool onlygetfirstcrc = FALSE;
+bool_t onlygetfirstcrc = FALSE;
 
 scriptEntry WonStuffSet[] =
 {
@@ -269,13 +269,13 @@ scriptEntry WonStuffSet[] =
 taskhandle utyRenderTask;
 
 //TRUE if tutorial savegame check is not to be performed
-static bool forceSP = FALSE;
+static bool_t forceSP = FALSE;
 
 //global flag for demo functionality
 #if defined (HW_GAME_DEMO) || defined(HW_GAME_RAIDER_RETREAT)
-bool utyPlugScreens = FALSE;
+bool_t utyPlugScreens = FALSE;
 #endif
-bool utyCreditsSequence = FALSE;
+bool_t utyCreditsSequence = FALSE;
 
 //front-end callback functions
 void utySinglePlayerOptions(char *name, featom *atom);
@@ -965,7 +965,7 @@ void utyOptionsFileWrite(void)
         }
         else if (utyOptionsList[index].setVarCB == scriptSetBool) {
             fprintf(f, "%s    %s\n", utyOptionsList[index].name,
-                *((bool *)utyOptionsList[index].dataPtr) ? "TRUE" : "FALSE");
+                *((bool_t *)utyOptionsList[index].dataPtr) ? "TRUE" : "FALSE");
         }
     }
     
@@ -982,8 +982,8 @@ void utyOptionsFileWrite(void)
 ----------------------------------------------------------------------------*/
 color utyBaseColor;
 color utyStripeColor;
-bool  utyShipsAlwaysUseOwnerColors = FALSE;
-//bool utyColorsPicked = FALSE;
+bool_t  utyShipsAlwaysUseOwnerColors = FALSE;
+//bool_t utyColorsPicked = FALSE;
 
 void utyPickColors(char *name, featom *atom)
 {
@@ -1421,7 +1421,7 @@ void utyLanguageToggle(char* name, featom* atom)
 //    spScenarioPick(NULL);//!!! make some real pointer
 //}
 
-extern bool nisScreenStarted;
+extern bool_t nisScreenStarted;
 void utyHideMenuOrGotoQuitGame(char *name, featom *atom)
 {
 /*
@@ -2449,7 +2449,7 @@ void utyDemoFinishedCB(void)
     Return      : TRUE - don't try this again, dag nabbit!
                   FALSE - we'd like to try this again later.
 ----------------------------------------------------------------------------*/
-bool utyDemoAutoPlay(udword num, void* data, struct BabyCallBack* baby)
+bool_t utyDemoAutoPlay(udword num, void* data, struct BabyCallBack* baby)
 {
     sdword index, attempt, chosen;
     char *names[DEM_NumberNames];
@@ -3082,7 +3082,7 @@ void utyGameQuit(char *name, featom *atom)
 ----------------------------------------------------------------------------*/
 void utyGameQuitToMain(char *name, featom *atom)
 {
-    bool networkgame=multiPlayerGame;
+    bool_t networkgame=multiPlayerGame;
     dbgMessagef("Quit to main menu!");
 
     feAllScreensDelete();
@@ -3991,7 +3991,7 @@ char *utyGameSystemsInit(void)
     if (enableAVI)
     {
         SDL_Event e;
-        bool gotMsg;
+        bool_t gotMsg;
         sdword intro;
 
         utilPlayingIntro = TRUE;
@@ -4325,7 +4325,7 @@ char* utyGameSystemsPreShutdown(void)
     if (utyTest(SSA_MemoryHeap))
     {
 #ifdef _WIN32
-        bool result = VirtualFree(utyMemoryHeap, 0, MEM_RELEASE);
+        bool_t result = VirtualFree(utyMemoryHeap, 0, MEM_RELEASE);
         dbgAssertOrIgnore(result);
 #else
         dbgAssertAlwaysDo(munmap(utyMemoryHeap, 0) != -1);
@@ -4675,7 +4675,7 @@ char *utyGameSystemsShutdown(void)
     if (utyTest(SSA_MemoryHeap))
     {
 #ifdef _WIN32
-        bool result;
+        bool_t result;
         result = VirtualFree(utyMemoryHeap, 0, MEM_RELEASE);
         dbgAssertOrIgnore(result);
 #elif _MACOSX
@@ -4807,7 +4807,7 @@ void utyClientRectGet(rectangle *rect)
     Outputs     :
     Return      : void
 ----------------------------------------------------------------------------*/
-void utyForceTopmost(bool bTopMost)
+void utyForceTopmost(bool_t bTopMost)
 {
 #if 0
     SetWindowPos(ghMainWindow, bTopMost ? HWND_TOPMOST : HWND_NOTOPMOST,
@@ -4912,7 +4912,7 @@ void utyDoubleClick(void)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool utyChangeResolution(sdword width, sdword height, sdword depth)
+bool_t utyChangeResolution(sdword width, sdword height, sdword depth)
 {
     if (!utyTest(SSA_Render))
     {
@@ -5067,7 +5067,7 @@ void utyToggleKeyStatesRestore(void)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool utyCapsLockToggleState(void)
+bool_t utyCapsLockToggleState(void)
 {
     return SDL_GetModState() & KMOD_CAPS;
 }

@@ -139,7 +139,7 @@ void godSyncShutDown()
 //pass in FALSE to generate another frame and keep it in memory
 //pass in TRUE to write the whole memory dump to disk without
 //generating a new snapshot
-void syncDebugDump(char *filename1,sdword counter,bool save)
+void syncDebugDump(char *filename1,sdword counter,bool_t save)
 {
     filehandle syncFH;
     FILE *syncFP = NULL;
@@ -480,7 +480,7 @@ void netcheckIndustrialChecksum()
 
 void netReceivedSyncFromNonCaptain(void *checksums,udword frame,udword playerIndex)
 {
-    bool BREAK=FALSE;
+    bool_t BREAK=FALSE;
     sdword num = frame & GOD_NUMBER_CHECKSUMS_REMEMBERED_MASK;
 
     if(godnetsyncchecksums[num].randcheck != ((GodSyncCheckSums *)checksums)->randcheck)
@@ -684,7 +684,7 @@ tryagain:
     return packet;
 }
 
-bool recPackPlayLoadHeader()
+bool_t recPackPlayLoadHeader()
 {
     udword size;
     udword validcheck;

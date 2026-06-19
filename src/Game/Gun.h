@@ -38,14 +38,14 @@
     Functions:
 =============================================================================*/
 
-TI_API bool gunCanShoot(Ship *ship, Gun *gun);
-TI_API bool gunOrientGimbleGun(Ship *ship,Gun *gun,SpaceObjRotImpTarg *target);
+TI_API bool_t gunCanShoot(Ship *ship, Gun *gun);
+TI_API bool_t gunOrientGimbleGun(Ship *ship,Gun *gun,SpaceObjRotImpTarg *target);
 TI_API void missileShoot(Ship *ship,Gun *gun,SpaceObjRotImpTarg *target);
 TI_API void gunShoot(Ship *ship,Gun *gun, SpaceObjRotImpTarg *target);
-TI_API bool gunShootGunsAtTarget(Ship *ship,SpaceObjRotImpTarg *target,real32 range,vector *trajectory);
-TI_API bool gunShootGunsAtMultipleTargets(Ship *ship);
+TI_API bool_t gunShootGunsAtTarget(Ship *ship,SpaceObjRotImpTarg *target,real32 range,vector *trajectory);
+TI_API bool_t gunShootGunsAtMultipleTargets(Ship *ship);
 
-TI_API bool gunMatrixUpdate(udword flags, hmatrix *startMatrix, hmatrix *matrix, void *data, smemsize ID);
+TI_API bool_t gunMatrixUpdate(udword flags, hmatrix *startMatrix, hmatrix *matrix, void *data, smemsize ID);
 
 #if RND_VISUALIZATION
 TI_API void gunDrawGunInfo(Ship *ship);
@@ -75,7 +75,7 @@ TI_API void gunTuneGun(Ship *ship);
 =============================================================================*/
 
 #if GUN_TUNE_MODE
-extern bool gunTuningMode;
+extern bool_t gunTuningMode;
 extern sdword tuningGun;
 #endif
 

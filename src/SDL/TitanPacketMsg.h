@@ -14,7 +14,7 @@ class TitanPacketMsg : public WONMsg::MiniMessage
 {
 public:
     // Default ctor
-    TitanPacketMsg(unsigned char theType, bool encrypted=false);
+    TitanPacketMsg(unsigned char theType, bool_t encrypted=false);
 
     // MiniMessage ctor - will throw if MiniMessage type is not MyServiceType
     TI_API explicit TitanPacketMsg(const WONMsg::MiniMessage& theMsgR);
@@ -53,7 +53,7 @@ public:
 private:
     unsigned short mBlobLen;  // Length of data
     const void*    mBlob;
-	bool           mIncludeGameName;
+	bool_t           mIncludeGameName;
     wstring        mGameName;
 };
 

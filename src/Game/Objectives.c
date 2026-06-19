@@ -104,10 +104,10 @@ FleetIntelligence *fleetIntelligenceCreate(char *description, bool8 showOnce)
     return fleetIntelligence;
 }
 
-Objective *objectiveAndFleetIntelligenceCreate(char *label, char *briefDescription, char* fullDescription, bool8 showOnce, bool primary)
+Objective *objectiveAndFleetIntelligenceCreate(char *label, char *briefDescription, char* fullDescription, bool8 showOnce, bool_t primary)
 {
     Objective *objective;
-    bool hyperspace;
+    bool_t hyperspace;
 
     if (objectiveFind(label))
     {

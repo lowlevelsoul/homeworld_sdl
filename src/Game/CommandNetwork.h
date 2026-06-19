@@ -549,11 +549,11 @@ TI_API void SendChatPacketPacket(ChatPacket *packet, udword sizeofpacket,udword 
 TI_API void InitLastSyncPktsQ(void);
 TI_API void CloseLastSyncPktsQ(void);
 TI_API void ResetLastSyncPktsQ(void);
-TI_API bool GetSyncPktFromLastSyncPktsQ(udword frame,HWPacketHeader **packet,udword *size);
+TI_API bool_t GetSyncPktFromLastSyncPktsQ(udword frame,HWPacketHeader **packet,udword *size);
 
-TI_API bool checkPlayersReady(void);
+TI_API bool_t checkPlayersReady(void);
 
-TI_API void PlayerDroppedOut(udword player,bool timedOut);
+TI_API void PlayerDroppedOut(udword player,bool_t timedOut);
 TI_API void PlayerInGameQuited(udword player);
 
 TI_API void CaptaincyChangedNotify(void);

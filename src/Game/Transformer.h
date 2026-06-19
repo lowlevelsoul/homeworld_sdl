@@ -25,7 +25,7 @@ TI_API void transTransformVertexList(sdword n, hvector* dest, vertexentry* sourc
 TI_API void transPerspectiveTransform(sdword n, hvector* dest, hvector* source, hmatrix* m);
 TI_API void transGeneralPerspectiveTransform(sdword n, hvector* dest, hvector* source, hmatrix* m);
 TI_API void transTransformCompletely(sdword n, hvector* dest, hvector* intermed, vertexentry* source, hmatrix* m0, hmatrix* m1);
-TI_API bool transPerspectiveMatrix(hmatrix* m);
+TI_API bool_t transPerspectiveMatrix(hmatrix* m);
 
 TI_API void transSinglePerspectiveTransform(hvector* screenSpace, hmatrix* projection, hvector* cameraSpace);
 TI_API void transSingleTotalTransform(vector* screenSpace, hmatrix* modelview, hmatrix* projection, vector* worldSpace);

@@ -94,7 +94,7 @@ extern char CurrentMissionScopeName[];
 extern LabelledVector **LabelledVectors;
 extern sdword LabelledVectorsUsed;
 
-extern bool ccCameraTimeoutOverride;
+extern bool_t ccCameraTimeoutOverride;
 
 nisstatic stat1 = {0, 50, 25,  5,  3, 240, 173, 0.5f, 0.5f, 0.9f, 0.1f, 0.2f, 0.1f, 0.6f, 0.2f, TRUE, FALSE, 0};
 
@@ -1120,7 +1120,7 @@ void kasfDisablePlayerHyperspace(void)
     singlePlayerGameInfo.hyperspaceFails = TRUE;
 }
 
-void kasfHoldHyperspaceWindow(bool hold)
+void kasfHoldHyperspaceWindow(bool_t hold)
 {
     spHoldHyperspaceWindow = hold;
 }
@@ -1826,7 +1826,7 @@ sdword kasfTeamDocking(void)
     return ((CurrentTeamP->teamFlags & TEAM_DOCKING) != 0);  // ensure 0/1 return value
 }
 
-bool ShipReadyForLaunch(Ship *ship)
+bool_t ShipReadyForLaunch(Ship *ship)
 {
     if ((ship->flags & (SOF_Hide | SOF_Hyperspace)) == SOF_Hide)
     {
@@ -1842,7 +1842,7 @@ bool ShipReadyForLaunch(Ship *ship)
     return FALSE;
 }
 
-bool ShipFinishedLaunching(Ship *ship)
+bool_t ShipFinishedLaunching(Ship *ship)
 {
     if (ship->specialFlags & SPECIAL_KasCheckDoneLaunching)
     {
@@ -2594,7 +2594,7 @@ sdword kasfShipsSelectNearby(GrowSelection *newShips, GrowSelection *originalShi
     Outputs     :
     Return      : TRUE if the ship meets the criteria
 ----------------------------------------------------------------------------*/
-bool kasfShipMeetsCriteria(ShipPtr ship, sdword CriteriaFlag)
+bool_t kasfShipMeetsCriteria(ShipPtr ship, sdword CriteriaFlag)
 {
     switch (CriteriaFlag)
     {
@@ -2664,7 +2664,7 @@ bool kasfShipMeetsCriteria(ShipPtr ship, sdword CriteriaFlag)
 sdword kasfShipsSelectSpecial(GrowSelection *newShips, GrowSelection *originalShips, sdword SpecialFlag)
 {
     ShipPtr ship;
-    bool selected = FALSE, sourceIsDest = FALSE;
+    bool_t selected = FALSE, sourceIsDest = FALSE;
     udword i;
 
     if ((newShips == NULL) ||
@@ -3344,7 +3344,7 @@ void kasfTutCameraFocusCancel(void)
     Outputs     :
     Return      : void
 ----------------------------------------------------------------------------*/
-void kasfDisablePlayer(bool toggle)
+void kasfDisablePlayer(bool_t toggle)
 {
     if (toggle)
     {

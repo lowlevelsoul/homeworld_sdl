@@ -49,8 +49,8 @@ typedef struct
 extern CustShipHeader JunkYardDawgHeader;
 extern CustShipHeader SalCapCorvetteHeader;
 
-TI_API bool DropTargetInShip(Ship *dockwith,sdword *targetDepotState, SpaceObjRotImpTargGuidanceShipDerelict *target,sdword *dockindex);
-TI_API bool isThereAnotherTargetForMe(Ship *ship,SelectAnyCommand *targets);
+TI_API bool_t DropTargetInShip(Ship *dockwith,sdword *targetDepotState, SpaceObjRotImpTargGuidanceShipDerelict *target,sdword *dockindex);
+TI_API bool_t isThereAnotherTargetForMe(Ship *ship,SelectAnyCommand *targets);
 TI_API void salCapCleanUpCloakingTarget(Ship *ship, Ship *shiptoremove);
 TI_API void salCapClearTechBool(void);
 TI_API void SalCapDropTarget(Ship *ship);

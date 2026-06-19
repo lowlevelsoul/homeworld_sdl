@@ -108,7 +108,7 @@ typedef struct
 typedef struct
 {
     udword       HasTechnology;         // what tech this player has
-    bool         CanDoResearch;         // are they allowed to do research
+    bool_t         CanDoResearch;         // are they allowed to do research
     TechStatics *techstat;              // statics for that technology
     LinkedList   listoftopics;          // list of topics being researched for this player
     ResearchLab  researchlabs[NUM_RESEARCHLABS];  // list of labs for this player
@@ -149,21 +149,21 @@ TI_API void rmGiveTechToPlayerByType(struct Player *player, TechnologyType techt
 
 TI_API void   rmAddTechToPlayer(struct Player *player, udword techlevel);
 TI_API sdword rmFindFreeLab(struct Player *player);
-TI_API bool   rmCanBuildShip(struct Player *player, ShipType type);
+TI_API bool_t   rmCanBuildShip(struct Player *player, ShipType type);
 TI_API //void   rmResearchTechForShip(struct Player *player, ShipType type);
 TI_API void   rmClearResearchlab(struct Player *player, sdword labnumber);
 TI_API void   rmAssignPlayersLabToResearch(struct Player *player, sdword labnumber, TechnologyType tech);
 TI_API void   rmDeactivateLab(struct Player *player);
 TI_API void   rmActivateFreeLab(struct Player *player);
 TI_API void   rmUpdateResearch(void);
-TI_API void   rmInitializeResearchStruct(struct Player *player, bool candoresearch, sdword techlevel);
+TI_API void   rmInitializeResearchStruct(struct Player *player, bool_t candoresearch, sdword techlevel);
 
 TI_API sdword rmTechRequiredForShip(struct Player *player, ShipType type);
-TI_API bool   rmResearchTechForShip(struct Player *player, ShipType type);
+TI_API bool_t   rmResearchTechForShip(struct Player *player, ShipType type);
 
 TI_API void rmInitializeResearchStatics(struct Player *player);
 
-TI_API void rmEnableShip(ShipRace race, ShipType ship, bool bEnabled);
+TI_API void rmEnableShip(ShipRace race, ShipType ship, bool_t bEnabled);
 TI_API void rmRemoveAllUnneededTech(void);
 TI_API void rmResetStaticInfo(void);
 

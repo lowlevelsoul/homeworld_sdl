@@ -34,7 +34,7 @@
 =============================================================================*/
 #if MR_TEST_HPB
 sdword madTestHPBIndex = 0;
-extern bool mrTestHPBMode;
+extern bool_t mrTestHPBMode;
 extern real32 mrHeading, mrPitch, mrBank;
 #endif
 
@@ -197,7 +197,7 @@ void madHeaderDelete(madheader *header)
     Outputs     :
     Return      : (Matrix not updated)
 ----------------------------------------------------------------------------*/
-bool madAnimBindingPause(udword flags, hmatrix *startMatrix, hmatrix *matrixDest, void *data, sdword ID)
+bool_t madAnimBindingPause(udword flags, hmatrix *startMatrix, hmatrix *matrixDest, void *data, sdword ID)
 {
     return(FALSE);
 }
@@ -212,7 +212,7 @@ bool madAnimBindingPause(udword flags, hmatrix *startMatrix, hmatrix *matrixDest
     Outputs     : matrixDest - animated matrix
     Return      : TRUE = matrix updated
 ----------------------------------------------------------------------------*/
-bool madAnimBindingUpdate(udword flags, hmatrix *startMatrix, hmatrix *matrixDest, void *data, sdword ID)
+bool_t madAnimBindingUpdate(udword flags, hmatrix *startMatrix, hmatrix *matrixDest, void *data, sdword ID)
 {
     real32 timeElapsed;
     Ship *ship = (Ship *)data;
@@ -330,7 +330,7 @@ void madBindingsPost(meshdata *mesh, struct shipbindings *bindings, sdword curre
     Outputs     :
     Return      : FALSE (keep on walking)
 ----------------------------------------------------------------------------*/
-bool madBindingListCallback(meshdata *mesh, polygonobject *object, sdword iObject)
+bool_t madBindingListCallback(meshdata *mesh, polygonobject *object, sdword iObject)
 {
     sdword j;
 
@@ -370,7 +370,7 @@ foundOne:
                     bindings for all LOD's of the mesh.
     Return      : void
 ----------------------------------------------------------------------------*/
-void madAnimBindingsDupe(Ship *ship, ShipStaticInfo *staticInfo,bool LoadingGame)
+void madAnimBindingsDupe(Ship *ship, ShipStaticInfo *staticInfo,bool_t LoadingGame)
 {
     shipbindings *bindings = &ship->madBindings->bindings;
     lodinfo *LOD = staticInfo->staticheader.LOD;
@@ -497,7 +497,7 @@ foundTime:
     Outputs     :
     Return      : TRUE if the animation ends
 ----------------------------------------------------------------------------*/
-bool madAnimationUpdate(Ship *ship, real32 timeElapsed)
+bool_t madAnimationUpdate(Ship *ship, real32 timeElapsed)
 {
     madanim *anim = ship->madBindings;
     madheader *header = anim->header;
@@ -620,7 +620,7 @@ sdword madGunBindingIndexFindByName(ShipStaticInfo *info, char *name)
     Return      : TRUE means stop walking, take a rest
 ----------------------------------------------------------------------------*/
 /*
-bool madBindingFindCallback(meshdata *mesh, polygonobject *object, sdword iObject)
+bool_t madBindingFindCallback(meshdata *mesh, polygonobject *object, sdword iObject)
 {
     sdword j;
 
@@ -682,7 +682,7 @@ sdword madBindingIndexFindByName(madheader *header, char *name)
     Outputs     :
     Return      : void
 ----------------------------------------------------------------------------*/
-void madAnimationPause(Ship *ship, bool bFreeze)
+void madAnimationPause(Ship *ship, bool_t bFreeze)
 {
     madanim *anim = ship->madBindings;
     sdword index;

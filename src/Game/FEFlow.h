@@ -256,13 +256,13 @@ extern udword feTabStop;
 extern festackentry feStack[FE_StackDepth];     //actual stack data
 extern sdword feStackIndex;                     //index of CURRENT screen on stack
 extern fescreen *feTempMenuScreen;
-extern bool   feSavingMouseCursor;
-extern bool   feRenderEverything;
+extern bool_t   feSavingMouseCursor;
+extern bool_t   feRenderEverything;
 extern sdword feMenuLevel;
 extern sdword feDontFlush;
 
 #if FEF_TEXTURES_DISABLABLE
-extern bool fetEnableTextures;
+extern bool_t fetEnableTextures;
 #endif
 
 /*=============================================================================
@@ -301,9 +301,9 @@ TI_API sdword feStartup(void);
 TI_API void feReset(void);
 TI_API void feShutdown(void);
 
-TI_API void feFunctionExecute(char *name, featom *atom, bool firstcall);
+TI_API void feFunctionExecute(char *name, featom *atom, bool_t firstcall);
 
-TI_API bool feShouldSaveMouseCursor(void);
+TI_API bool_t feShouldSaveMouseCursor(void);
 
 //load in a front end screen
 TI_API fibfileheader *feScreensLoad(char *fileName);
@@ -355,8 +355,8 @@ TI_API void feToggleButtonSet(char *name, sdword bPressed);
 //misc...
 TI_API void feScreenDisappear(char *string, featom *atom);
 TI_API void feMenuDisappear(char *string, featom *atom);
-TI_API regionhandle feRegionsAdd(regionhandle parent, fescreen *screen, bool moveToFront);
-TI_API regionhandle feFindRadioButtonRegion(regionhandle temp, bool selected);
+TI_API regionhandle feRegionsAdd(regionhandle parent, fescreen *screen, bool_t moveToFront);
+TI_API regionhandle feFindRadioButtonRegion(regionhandle temp, bool_t selected);
 
 struct uiclistwindow;
 TI_API void feWheelNegative(struct uiclistwindow *listwindow);
@@ -371,7 +371,7 @@ TI_API sdword feResRepositionCentredY(sdword y);
 TI_API sdword feResRepositionScaledX(sdword x);
 TI_API sdword feResRepositionScaledY(sdword y);
 
-TI_API bool feAllScreensReposition(void);
+TI_API bool_t feAllScreensReposition(void);
 
 TI_API udword feButtonProcess(regionhandle region, smemsize ID, udword event, udword data);
 

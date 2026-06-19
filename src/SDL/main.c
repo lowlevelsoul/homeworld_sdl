@@ -81,29 +81,29 @@
 
 extern udword gDevcaps, gDevcaps2;
 
-bool mainSafeGL = FALSE;
+bool_t mainSafeGL = FALSE;
 
 udword* devTable = NULL;
 sdword  devTableLength = 0;
 
-static bool mainActuallyQuit = TRUE;
+static bool_t mainActuallyQuit = TRUE;
 
-bool selectedRES = FALSE;
-bool selectedDEVICE = FALSE;
-bool selectedGL = FALSE;
+bool_t selectedRES = FALSE;
+bool_t selectedDEVICE = FALSE;
+bool_t selectedGL = FALSE;
 
 sdword mainReinitRenderer = 0;
-static bool reinitInProgress = FALSE;
+static bool_t reinitInProgress = FALSE;
 
-bool bMustFree = TRUE;
+bool_t bMustFree = TRUE;
 
-bool mainPlayAVIs;
+bool_t mainPlayAVIs;
 
-bool windowNeedsDeleting = FALSE;
+bool_t windowNeedsDeleting = FALSE;
 
-bool mainNoPerspective = FALSE;
+bool_t mainNoPerspective = FALSE;
 
-bool systemActive = FALSE;              //active flag for the program
+bool_t systemActive = FALSE;              //active flag for the program
 
 #ifndef _MACOSX
 static char windowTitle[] = "Homeworld";//name of window
@@ -128,121 +128,121 @@ void *ghMainWindow = NULL;
 void *ghInstance = NULL;
 #endif
 
-extern bool CompareBigfiles;
-extern bool IgnoreBigfiles;
-extern bool LogFileLoads;
+extern bool_t CompareBigfiles;
+extern bool_t IgnoreBigfiles;
+extern bool_t LogFileLoads;
 
 //command-line switches and parameters
-bool mainNoDrawPixels = FALSE;
-bool mainOutputCRC = FALSE;
-bool mainNoPalettes = TRUE;
-bool mainSoftwareDirectDraw = FALSE;
-bool mainDirectDraw = FALSE;
-bool mainRasterSkip = FALSE;
-bool mainDoubleIsTriple = FALSE;
+bool_t mainNoDrawPixels = FALSE;
+bool_t mainOutputCRC = FALSE;
+bool_t mainNoPalettes = TRUE;
+bool_t mainSoftwareDirectDraw = FALSE;
+bool_t mainDirectDraw = FALSE;
+bool_t mainRasterSkip = FALSE;
+bool_t mainDoubleIsTriple = FALSE;
 #ifdef __GNUC__
-bool mainFastFrontend = FALSE;
+bool_t mainFastFrontend = FALSE;
 #else
-bool mainFastFrontend = TRUE;
+bool_t mainFastFrontend = TRUE;
 #endif
-bool mainForceSoftware = FALSE;
-bool mainAutoRenderer = TRUE;
-bool mainForceKatmai = FALSE;
+bool_t mainForceSoftware = FALSE;
+bool_t mainAutoRenderer = TRUE;
+bool_t mainForceKatmai = FALSE;
 #ifdef _WINDOWS
-bool mainAllowKatmai = TRUE;
+bool_t mainAllowKatmai = TRUE;
 #else
-bool mainAllowKatmai = FALSE;
+bool_t mainAllowKatmai = FALSE;
 #endif
-bool mainAllow3DNow = FALSE;
-bool enableAVI = TRUE;
-bool mainAllowPacking = TRUE;
-bool mainOnlyPacking = FALSE;
-bool gShowDamage = TRUE;
-bool DebugWindow = FALSE;
+bool_t mainAllow3DNow = FALSE;
+bool_t enableAVI = TRUE;
+bool_t mainAllowPacking = TRUE;
+bool_t mainOnlyPacking = FALSE;
+bool_t gShowDamage = TRUE;
+bool_t DebugWindow = FALSE;
 sdword MemoryHeapSize = MEM_HeapSizeDefault;
 #if MAIN_MOUSE_FREE
-bool startupClipMouse = TRUE;
+bool_t startupClipMouse = TRUE;
 #endif
-bool mouseClipped = FALSE;
+bool_t mouseClipped = FALSE;
 sdword showBackgrounds = TRUE;
-bool showBorder = TRUE;
+bool_t showBorder = TRUE;
 sdword enableTextures = TRUE;
 sdword enableSmoothing = TRUE;
 sdword enableStipple = FALSE;
 sdword enableTrails = TRUE;
 #if TR_NIL_TEXTURE
-bool GLOBAL_NO_TEXTURES = FALSE;
+bool_t GLOBAL_NO_TEXTURES = FALSE;
 #endif
 
 // turn fullscreen off when debugging so that if the debugger kicks in
 // after a crash you don't find yourself locked out and have to reboot...
 #if defined(HW_BUILD_FOR_DEBUGGING) 
-bool fullScreen = FALSE;
+bool_t fullScreen = FALSE;
 #else
-bool fullScreen = TRUE;
+bool_t fullScreen = TRUE;
 #endif
 //Display to draw window on
 int displayNum = 0;
-bool slowBlits = FALSE;
+bool_t slowBlits = FALSE;
 #if RND_VISUALIZATION
-bool dockLines = FALSE;
-bool gunLines = FALSE;
+bool_t dockLines = FALSE;
+bool_t gunLines = FALSE;
 bool8 RENDER_BOXES;
 bool8 RENDER_LIGHTLINES;
 #endif
-bool enableSFX = TRUE;
-bool enableSpeech = TRUE;
-bool reverseStereo = FALSE;
-bool useWaveout = FALSE;
-bool useDSound = FALSE;
-bool coopDSound = FALSE;
-bool accelFirst = FALSE;
+bool_t enableSFX = TRUE;
+bool_t enableSpeech = TRUE;
+bool_t reverseStereo = FALSE;
+bool_t useWaveout = FALSE;
+bool_t useDSound = FALSE;
+bool_t coopDSound = FALSE;
+bool_t accelFirst = FALSE;
 bool8 RENDER_BOXES = FALSE;
 bool8 RENDER_LIGHTLINES = FALSE;
 #if CL_TEXTFEEDBACK
-bool enableTextFeedback = FALSE;
+bool_t enableTextFeedback = FALSE;
 #endif
 
 #if FEF_TEXTURES_DISABLABLE
-bool fetEnableTextures = TRUE;
+bool_t fetEnableTextures = TRUE;
 #endif
-bool noDefaultComputerPlayer = FALSE;
+bool_t noDefaultComputerPlayer = FALSE;
 bool8 ComputerPlayerEnabled[MAX_MULTIPLAYER_PLAYERS] = { FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE };
 //udword ComputerPlayerLevel[MAX_MULTIPLAYER_PLAYERS] = {2,2,2,2,2,2,2,2};
-bool gatherStats = FALSE;
-bool showStatsFight = FALSE;
+bool_t gatherStats = FALSE;
+bool_t showStatsFight = FALSE;
 udword showStatsFightI = 0;
 udword showStatsFightJ = 0;
-bool showStatsFancyFight = FALSE;
+bool_t showStatsFancyFight = FALSE;
 char showStatsFancyFightScriptFile[50];
-bool SecretWON = FALSE;
-bool forceLAN = FALSE;
-bool ShortCircuitWON = FALSE;
+bool_t SecretWON = FALSE;
+bool_t forceLAN = FALSE;
+bool_t ShortCircuitWON = FALSE;
 #if DBW_TO_FILE
-bool debugToFile = FALSE;
+bool_t debugToFile = FALSE;
 #endif
 
-bool debugPacketRecord = FALSE;
+bool_t debugPacketRecord = FALSE;
 
-bool recordPackets = FALSE;
-bool playPackets = FALSE;
-bool recordplayPacketsInGame = FALSE;
-bool recordFakeSendPackets = FALSE;
+bool_t recordPackets = FALSE;
+bool_t playPackets = FALSE;
+bool_t recordplayPacketsInGame = FALSE;
+bool_t recordFakeSendPackets = FALSE;
 char recordPacketFileName[MAX_RECORDPACKETFILENAME_STRLEN];
 char recordPacketSaveFileName[MAX_RECORDPACKETFILENAME_STRLEN];
 
-bool autoSaveDebug = FALSE;
+bool_t autoSaveDebug = FALSE;
 
 #ifdef DEBUG_TACTICS
-    bool tacticsOn = TRUE;
+    bool_t tacticsOn = TRUE;
 #endif
-bool noRetreat = FALSE;
+bool_t noRetreat = FALSE;
 
-bool noPauseAltTab = FALSE;
-bool noMinimizeAltTab = FALSE;
+bool_t noPauseAltTab = FALSE;
+bool_t noMinimizeAltTab = FALSE;
 
 //options altered by a password function:
-bool mainCDCheckEnabled = TRUE;
+bool_t mainCDCheckEnabled = TRUE;
 
 #if defined(HW_GAME_DEMO)
 char networkVersion[MAX_NETWORKVERSION_STRING_LEN] =   "DLD_05";
@@ -280,15 +280,15 @@ char versionString[MAX_VERSION_STRING_LEN] = "";        // constructed at beginn
 sdword mainWindowTotalWidth = 0;
 sdword mainWindowTotalHeight = 0;
 
-bool noAuthorization = FALSE;
+bool_t noAuthorization = FALSE;
 
-bool determCompPlayer = FALSE;
+bool_t determCompPlayer = FALSE;
 
 #if MAIN_SENSOR_LEVEL
 udword initialSensorLevel = 0;
 #endif
 
-bool pilotView = FALSE;
+bool_t pilotView = FALSE;
 
 
 /*=============================================================================
@@ -335,18 +335,18 @@ int RegisterCommandLine(char *commandLine)
 /*-----------------------------------------------------------------------------
     Command-line parsing functions called when a certain flags are set
 -----------------------------------------------------------------------------*/
-bool SetDisplayNum(char *string)
+bool_t SetDisplayNum(char *string)
 {
   displayNum = atoi(string);
   return (displayNum >= 0);
 }
 
-bool XcodeDebug(char *string)
+bool_t XcodeDebug(char *string)
 {
     DebugWindow=TRUE;
 	return DebugWindow;
 }
-bool HeapSizeSet(char *string)
+bool_t HeapSizeSet(char *string)
 {
     sscanf(string, "%d", &MemoryHeapSize);
     if (MemoryHeapSize <= MEM_BlockSize * 2)
@@ -357,48 +357,48 @@ bool HeapSizeSet(char *string)
 }
 
 
-bool EnableFileLoadLog(char *string)
+bool_t EnableFileLoadLog(char *string)
 {
     logfileClear(FILELOADSLOG);
     return TRUE;
 }
 
-bool SelectDevice(char* string)
+bool_t SelectDevice(char* string)
 {
     selectedDEVICE = TRUE;
     return TRUE;
 }
 
-bool SelectMSGL(char* string)
+bool_t SelectMSGL(char* string)
 {
     return TRUE;
 }
 
-bool EnableRasterSkip(char* string)
+bool_t EnableRasterSkip(char* string)
 {
     mainRasterSkip = TRUE;
     return TRUE;
 }
 
-bool EnableDoubleIsTriple(char* string)
+bool_t EnableDoubleIsTriple(char* string)
 {
     mainDoubleIsTriple = TRUE;
     return TRUE;
 }
 
-bool DisableFastFrontend(char* string)
+bool_t DisableFastFrontend(char* string)
 {
     mainFastFrontend = FALSE;
     return TRUE;
 }
 
-bool EnableGatherStats(char *string)
+bool_t EnableGatherStats(char *string)
 {
     noDefaultComputerPlayer = TRUE;
     return TRUE;
 }
 
-bool EnableShowStatsFancyFight(char *string)
+bool_t EnableShowStatsFancyFight(char *string)
 {
     showStatsFancyFight = TRUE;
     strcpy(showStatsFancyFightScriptFile,string);
@@ -406,7 +406,7 @@ bool EnableShowStatsFancyFight(char *string)
     return TRUE;
 }
 
-bool EnableShowStatsFight(char *string)
+bool_t EnableShowStatsFight(char *string)
 {
     sscanf(string, "%d", &showStatsFightI);
 
@@ -420,7 +420,7 @@ bool EnableShowStatsFight(char *string)
     return TRUE;
 }
 
-bool SpecifyLogFilePath(char *string)
+bool_t SpecifyLogFilePath(char *string)
 {
     strcpy(logFilePath,string);
     return TRUE;
@@ -430,7 +430,7 @@ bool SpecifyLogFilePath(char *string)
 #if NIS_TEST
 extern char *nisTestNIS;
 extern char *nisTestScript;
-bool TestNISSet(char *string)
+bool_t TestNISSet(char *string)
 {
     static char staticString[256];
 
@@ -440,7 +440,7 @@ bool TestNISSet(char *string)
     nisTestNIS = staticString;
     return TRUE;
 }
-bool TestNISScriptSet(char *string)
+bool_t TestNISScriptSet(char *string)
 {
     static char staticString[256];
 
@@ -453,7 +453,7 @@ bool TestNISScriptSet(char *string)
 #endif
 
 #if MAIN_SENSOR_LEVEL
-bool InitialSensorLevelSet(char *string)
+bool_t InitialSensorLevelSet(char *string)
 {
     sscanf(string, "%d", &initialSensorLevel);
     return TRUE;
@@ -461,14 +461,14 @@ bool InitialSensorLevelSet(char *string)
 #endif
 
 #if LOD_SCALE_DEBUG
-bool EnableLodScaleDebug(char *string)
+bool_t EnableLodScaleDebug(char *string)
 {
     sscanf(string, "%f", &lodDebugScaleFactor);
     return TRUE;
 }
 #endif
 
-bool EnableDemoRecord(char *string)
+bool_t EnableDemoRecord(char *string)
 {
     if (!demDemoPlaying)
     {
@@ -478,7 +478,7 @@ bool EnableDemoRecord(char *string)
     return TRUE;
 }
 
-bool EnableDemoPlayback(char *string)
+bool_t EnableDemoPlayback(char *string)
 {
     if (!demDemoRecording)
     {
@@ -490,27 +490,27 @@ bool EnableDemoPlayback(char *string)
 }
 
 #if DEM_AUTO_DEMO
-bool AutoDemoWaitSet(char *string)
+bool_t AutoDemoWaitSet(char *string)
 {
     sscanf(string , "%f", &demAutoDemoWaitTime);
     return TRUE;
 }
 #endif
 
-bool EnablePacketPlay(char *string)
+bool_t EnablePacketPlay(char *string)
 {
     transferCaptaincyDisabled = TRUE;
     strcpy(recordPacketFileName, strtok(NULL, TS_Delimiters));
     return TRUE;
 }
 
-bool EnablePacketRecord(char *string)
+bool_t EnablePacketRecord(char *string)
 {
     debugPacketRecord = TRUE;
     return TRUE;
 }
 
-bool EnableDebugSync(char *string)
+bool_t EnableDebugSync(char *string)
 {
     recordPackets = TRUE;
     logEnable = LOG_VERBOSE;
@@ -518,13 +518,13 @@ bool EnableDebugSync(char *string)
     return TRUE;
 }
 
-bool EnableAutoSaveDebug(char *string)
+bool_t EnableAutoSaveDebug(char *string)
 {
     autoSaveDebug = TRUE;
     return TRUE;
 }
 
-bool EnableMiniRes(char* string)
+bool_t EnableMiniRes(char* string)
 {
     selectedRES = TRUE;
     mainWindowWidth  = 320;
@@ -532,7 +532,7 @@ bool EnableMiniRes(char* string)
     return TRUE;
 }
 
-bool EnableLoRes(char *string)
+bool_t EnableLoRes(char *string)
 {
     selectedRES = TRUE;
     mainWindowWidth  = 640;
@@ -540,7 +540,7 @@ bool EnableLoRes(char *string)
     return TRUE;
 }
 
-bool EnableHiRes(char *string)
+bool_t EnableHiRes(char *string)
 {
     selectedRES = TRUE;
     mainWindowWidth  = 800;
@@ -548,7 +548,7 @@ bool EnableHiRes(char *string)
     return TRUE;
 }
 
-bool EnableMegaRes(char *string)
+bool_t EnableMegaRes(char *string)
 {
     selectedRES = TRUE;
     mainWindowWidth  = 1024;
@@ -556,7 +556,7 @@ bool EnableMegaRes(char *string)
     return TRUE;
 }
 
-bool EnableUltraRes(char* string)
+bool_t EnableUltraRes(char* string)
 {
     selectedRES = TRUE;
     mainWindowWidth  = 1280;
@@ -564,7 +564,7 @@ bool EnableUltraRes(char* string)
     return TRUE;
 }
 
-bool EnableInsaneRes(char* string)
+bool_t EnableInsaneRes(char* string)
 {
     selectedRES = TRUE;
     mainWindowWidth  = 1600;
@@ -572,21 +572,21 @@ bool EnableInsaneRes(char* string)
     return TRUE;
 }
 
-bool Enable32Bit(char* string)
+bool_t Enable32Bit(char* string)
 {
     selectedRES = TRUE;
     MAIN_WindowDepth = 32;
     return TRUE;
 }
 
-bool Enable16Bit(char* string)
+bool_t Enable16Bit(char* string)
 {
     selectedRES = TRUE;
     MAIN_WindowDepth = 16;
     return TRUE;
 }
 
-bool Enable24Bit(char* string)
+bool_t Enable24Bit(char* string)
 {
     selectedRES = TRUE;
     MAIN_WindowDepth = 24;
@@ -596,7 +596,7 @@ bool Enable24Bit(char* string)
 #ifdef GOD_LIKE_SYNC_CHECKING
 
 #define GUESS_NUM_SHIPS     400
-bool syncDumpInit(char *string1)
+bool_t syncDumpInit(char *string1)
 {
     if(sscanf(string1,"%d!%d",&syncDumpWindowSize,&syncDumpGranularity) != 2)
     {
@@ -1242,7 +1242,7 @@ void mainRescaleMainWindow(void)
 {
     /* Maybe? */
 #if 0
-    bool wasClipped;
+    bool_t wasClipped;
 
     mainWindowTotalWidth  = MAIN_WindowWidth  + mainWidthAdd;
     mainWindowTotalHeight = MAIN_WindowHeight + mainHeightAdd;
@@ -1271,7 +1271,7 @@ void mainRescaleMainWindow(void)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool mainStartupGL(char* data)
+bool_t mainStartupGL(char* data)
 {
     rndinitdata renderData;
 
@@ -1326,7 +1326,7 @@ void mainMemFree(void* pointer)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool mainStartupParticularRGL(char* device, char* data)
+bool_t mainStartupParticularRGL(char* device, char* data)
 {
     rndinitdata renderData;
 
@@ -1565,7 +1565,7 @@ void mainRestoreRender(void)
     Outputs     :
     Return      : TRUE or FALSE
 ----------------------------------------------------------------------------*/
-bool mainShutdownRenderer(void)
+bool_t mainShutdownRenderer(void)
 {
     dbgMessage("mainShutdownRenderer");
 
@@ -1583,7 +1583,7 @@ bool mainShutdownRenderer(void)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool mainLoadGL(char* data)
+bool_t mainLoadGL(char* data)
 {
     dbgMessage("-- load OpenGL --");
 
@@ -1614,7 +1614,7 @@ bool mainLoadGL(char* data)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool mainLoadParticularRGL(char* device, char* data)
+bool_t mainLoadParticularRGL(char* device, char* data)
 {
     dbgMessagef("-- load rGL device %s --", device);
 
@@ -1714,7 +1714,7 @@ udword keyLanguageTranslate(udword wParam)
 //long FAR PASCAL WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam )
 sdword HandleEvent (const SDL_Event* pEvent)
 {
-    extern bool utilPlayingIntro;
+    extern bool_t utilPlayingIntro;
 
     /* Mouse button press times for double-click support. */
     static Uint32 mbDownTime[3] = { 0, 0, 0 };
@@ -1982,7 +1982,7 @@ sdword HandleEvent (const SDL_Event* pEvent)
     Outputs     :
     Return      : TRUE if successful, FALSE if not
 ----------------------------------------------------------------------------*/
-static bool InitWindow ()
+static bool_t InitWindow ()
 {
     unsigned int rinDevCRC;
 
@@ -2118,7 +2118,7 @@ int main (int argc, char* argv[])
 #ifdef _WIN32
     static HANDLE hMapping;
 #endif
-    static bool preInit;
+    static bool_t preInit;
     SDL_Event e;
     int event_res = 0;
 

@@ -216,7 +216,7 @@ meshdata;
 
 //hierarchy binding information
 struct shipbindings;
-typedef bool (*mhbindingfunction)(udword flags, hmatrix *startMatrix, hmatrix *matrix, void *data, smemsize ID);
+typedef bool_t (*mhbindingfunction)(udword flags, hmatrix *startMatrix, hmatrix *matrix, void *data, smemsize ID);
 typedef void (*mhhelperfunction)(meshdata *mesh, struct shipbindings *bindings, sdword currentLOD);
 typedef struct
 {
@@ -253,7 +253,7 @@ typedef struct shipbindings
 shipbindings;
 
 //mesh hierarchy walking callback
-typedef bool (*meshcallback)(meshdata *mesh, polygonobject *object, sdword iObject);
+typedef bool_t (*meshcallback)(meshdata *mesh, polygonobject *object, sdword iObject);
 
 /*=============================================================================
     Data:
@@ -262,11 +262,11 @@ typedef bool (*meshcallback)(meshdata *mesh, polygonobject *object, sdword iObje
 extern sdword meshTotalMaterials;
 extern sdword meshMaterialChanges;
 extern char meshMaterialStatsString[100];
-extern bool usingShader;
+extern bool_t usingShader;
 #endif //MESH_MATERIAL_STATS
 
 #if MESH_MORPH_DEBUG
-extern bool meshMorphDebug;
+extern bool_t meshMorphDebug;
 #endif
 
 /*=============================================================================
@@ -287,7 +287,7 @@ TI_API meshdata *meshLoad(char *fileName);
 TI_API void meshFree(meshdata *mesh);
 TI_API void meshRecolorize(meshdata *mesh);
 TI_API void meshFixupUV(meshdata* mesh);
-TI_API bool meshPagedVersionExists(char* fileName);
+TI_API bool_t meshPagedVersionExists(char* fileName);
 
 //render a specific mesh
 TI_API sdword meshRender(meshdata *mesh, sdword iColorScheme);
@@ -309,7 +309,7 @@ TI_API mhbinding *meshBindingListCreate(meshdata *mesh);
 TI_API void meshBindingListDelete(mhbinding *list);
 TI_API mhbinding *meshBindingFindByName(mhbinding *startBinding, mhbinding *list, meshdata *data, char *name);
 TI_API sdword meshBindingIndexFindByName(mhbinding *list, meshdata *mesh, char *name);
-TI_API bool meshFindHierarchyMatrixByUserData(hmatrix *dest, hmatrix *destNC, mhbinding *bindings, void *userData);
+TI_API bool_t meshFindHierarchyMatrixByUserData(hmatrix *dest, hmatrix *destNC, mhbinding *bindings, void *userData);
 TI_API void meshHierarchyWalk(meshdata *mesh, meshcallback preMesh, meshcallback postCallback);
 
 TI_API void meshSetFade(real32 fade);

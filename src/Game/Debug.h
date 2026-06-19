@@ -51,16 +51,16 @@
 
 extern sdword dbgAllowInterrupts;
 
-TI_API void dbgMessage  (char *string     );
-TI_API void dbgMessagef (char *format, ...);
+TI_API void dbgMessage  ( const char *string     );
+TI_API void dbgMessagef ( const char *format, ...);
 
-TI_API void dbgWarning  (char *file, sdword line, char *string      );
-TI_API void dbgWarningf (char *file, sdword line, char *format, ... );
+TI_API void dbgWarning  ( const char *file, sdword line, const char * string      );
+TI_API void dbgWarningf ( const char *file, sdword line, const char * format, ... );
 
-TI_API void dbgFatal    (char *file, sdword line, char *string      );
-TI_API void dbgFatalf   (char *file, sdword line, char *format, ... );
+TI_API void dbgFatal    ( const char *file, sdword line, const char * string      );
+TI_API void dbgFatalf   ( const char *file, sdword line, const char * format, ... );
 
-TI_API void dbgNonFatal (char *file, sdword line, char *string      );
-TI_API void dbgNonFatalf(char *file, sdword line, char *format, ... );
+TI_API void dbgNonFatal ( const char *file, sdword line, const char * string      );
+TI_API void dbgNonFatalf( const char *file, sdword line, const char * format, ... );
 
 #endif

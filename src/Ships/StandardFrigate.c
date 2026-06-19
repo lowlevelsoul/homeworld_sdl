@@ -46,9 +46,9 @@ void StandardFrigateAttack(Ship *ship,SpaceObjRotImpTarg *target,real32 maxdist)
     attackStraightForward(ship,target,frigstat->frigateGunRange[ship->tacticstype],frigstat->frigateTooCloseRange[ship->tacticstype]);
 }
 
-void StandardFrigateAttackPassive(Ship *ship,Ship *target,bool rotate)
+void StandardFrigateAttackPassive(Ship *ship,Ship *target,bool_t rotate)
 {
-    if ((rotate) & ((bool)((ShipStaticInfo *)(ship->staticinfo))->rotateToRetaliate))
+    if ((rotate) & ((bool_t)((ShipStaticInfo *)(ship->staticinfo))->rotateToRetaliate))
     {
         attackPassiveRotate(ship,target);
     }

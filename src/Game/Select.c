@@ -175,7 +175,7 @@ void selShutdown(void)
                   Also updates the selCentrePoint vector.
     Return      : void
 ----------------------------------------------------------------------------*/
-void selRectDragFunction(Node *startNode, Camera *camera, rectangle *screenRect, SpaceObjRotImpTarg **destList, sdword *destCount, sdword playerSpecific, bool selectAnything, bool bAttack)
+void selRectDragFunction(Node *startNode, Camera *camera, rectangle *screenRect, SpaceObjRotImpTarg **destList, sdword *destCount, sdword playerSpecific, bool_t selectAnything, bool_t bAttack)
 {
     Node *targetnode;
     SpaceObjRotImpTarg *target;
@@ -495,7 +495,7 @@ void selSelectionRemoveSingleShip(MaxSelection *dest, Ship *ship)
     Note        : A margin around each ship's selection sphere is added to
                     permit clicking very distant ships.
 ----------------------------------------------------------------------------*/
-Ship *selSelectionClick(Node *listHead, Camera *camera, sdword x, sdword y, bool bIncludeDerelicts, bool bIncludeResources)
+Ship *selSelectionClick(Node *listHead, Camera *camera, sdword x, sdword y, bool_t bIncludeDerelicts, bool_t bIncludeResources)
 {
     Node *shipnode;
     Ship *ship;
@@ -2291,7 +2291,7 @@ sdword selSelectionCopy(MaxAnySelection *dest, MaxAnySelection *source)
     Outputs     :
     Return      : TRUE if it's a reinforcement.
 ----------------------------------------------------------------------------*/
-bool selSelectionIsReinforced(MaxAnySelection *dest, MaxAnySelection *source)
+bool_t selSelectionIsReinforced(MaxAnySelection *dest, MaxAnySelection *source)
 {
     sdword index;
     sdword nAlreadyInSelection = 0;
@@ -2464,7 +2464,7 @@ sdword selSelectionCompare(MaxAnySelection *s0, MaxAnySelection *s1)
     Outputs     : sorts both lists for better searching
     Return      : TRUE of ship found, false otherwise
 ----------------------------------------------------------------------------*/
-bool selShipsInSelection(MaxSelection *dest, MaxSelection *list)
+bool_t selShipsInSelection(MaxSelection *dest, MaxSelection *list)
 {
     sdword nMatched, index, lIndex;
 

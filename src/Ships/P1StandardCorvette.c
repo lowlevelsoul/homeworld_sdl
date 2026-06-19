@@ -47,9 +47,9 @@ void P1StandardCorvetteAttack(Ship *ship,SpaceObjRotImpTarg *target,real32 maxdi
     attackSideStep(ship,target,&spec->attacksidestep,&corvstat->sidestepParameters);
 }
 
-void P1StandardCorvetteAttackPassive(Ship *ship,Ship *target,bool rotate)
+void P1StandardCorvetteAttackPassive(Ship *ship,Ship *target,bool_t rotate)
 {
-    if ((rotate) & ((bool)((ShipStaticInfo *)(ship->staticinfo))->rotateToRetaliate))
+    if ((rotate) & ((bool_t)((ShipStaticInfo *)(ship->staticinfo))->rotateToRetaliate))
     {
         attackPassiveRotate(ship,target);
     }

@@ -34,7 +34,7 @@ TI_API void madLinkInCloseSpecialShip(Ship *ship);
 
 TI_API void madLinkInOpenDoor(Ship *ship);
 TI_API void madLinkInCloseDoor(Ship *ship);
-TI_API bool madLinkInGetDoorInfo(Ship *ship, matrix *coordsys, vector *position);
+TI_API bool_t madLinkInGetDoorInfo(Ship *ship, matrix *coordsys, vector *position);
 
 #endif
 

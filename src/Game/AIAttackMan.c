@@ -30,10 +30,10 @@
     Outputs     :
     Return      : TRUE if the ship is one to take out
 ----------------------------------------------------------------------------*/
-static bool aiaPriorityShipsConstraints(Ship *ship)
+static bool_t aiaPriorityShipsConstraints(Ship *ship)
 {
     ShipStaticInfo *shipstatic = ship->staticinfo;
-    bool dangerous = FALSE;
+    bool_t dangerous = FALSE;
 
     if (aiuShipIsntAnEnemyMothership(ship))
     {
@@ -151,7 +151,7 @@ void aiaArmada(void)
     AITeam *recon_team;
     AITeamMove *recon_move;
     SelectCommand *sel_target = NULL;
-    bool visibility;
+    bool_t visibility;
     udword num_armada = aitFindNumTeamsWithFlag(TEAM_ARMADA);
 
     //build up armada strength more if enemy player doesn't have many battle
@@ -258,10 +258,10 @@ ShipPtr aiaGetTakeoutTarget(void)
     Outputs     : Creates a new team or two
     Return      : void
 ----------------------------------------------------------------------------*/
-bool aiaGenerateAttackType(AITeam *newteam, AttackType attacktype, bool ForceBig)
+bool_t aiaGenerateAttackType(AITeam *newteam, AttackType attacktype, bool_t ForceBig)
 {
     ShipPtr ship;
-    bool return_value = FALSE;
+    bool_t return_value = FALSE;
 
     switch (attacktype)
     {
@@ -410,7 +410,7 @@ bool aiaGenerateAttackType(AITeam *newteam, AttackType attacktype, bool ForceBig
     Outputs     : Creates a team and an order
     Return      : TRUE if the team was created
 ----------------------------------------------------------------------------*/
-bool aiaGenerateNewAttackOrder(AttackType attacktype)
+bool_t aiaGenerateNewAttackOrder(AttackType attacktype)
 {
     sdword index = aiCurrentAIPlayer->numAttackTeams;
     aiCurrentAIPlayer->attackTeam[aiCurrentAIPlayer->numAttackTeams++] = aitCreate(AttackTeam);
@@ -440,7 +440,7 @@ void aiaGenerateNewAttackTeam(sdword AttackTeamNumber)
 {
     AttackType randomAttack;
     udword probability_of_attack;
-    bool attack_type_found = FALSE;
+    bool_t attack_type_found = FALSE;
     udword i=0;
 
     aiCurrentAIPlayer->attackTeam[AttackTeamNumber] = aitCreate(AttackTeam);
@@ -771,12 +771,12 @@ void aiaProcessReconTeams(void)
     Outputs     : Creates some orders
     Return      : void
 ----------------------------------------------------------------------------*/
-bool aiaDivideNewShips(void)
+bool_t aiaDivideNewShips(void)
 {
     SelectCommand *NewShips = aiCurrentAIPlayer->newships.selection;
     udword numShipType[TOTAL_NUM_SHIPS];
     sdword i;
-    bool done = FALSE, newteam = FALSE;
+    bool_t done = FALSE, newteam = FALSE;
 
     for (i=0;i<TOTAL_NUM_SHIPS;i++)
     {
@@ -879,7 +879,7 @@ void aiaCleanupTeams(void)
 ----------------------------------------------------------------------------*/
 void aiaAttackManager(void)
 {
-    bool newteams = FALSE;
+    bool_t newteams = FALSE;
 
     aiaCleanupTeams();
 
@@ -961,7 +961,7 @@ void aiaProcessSwarm(void)
         numNewAttackTeams, numSwarmersPerTeam, numExtraSwarmers, newTeamNum,
         numNewSwarmGroups, numAdvPerTeam, numExtraAdv, numPodsPerTeam,
         numExtraPods, i, j, k, l, m;
-    bool fuelpod = FALSE, mothership = FALSE;
+    bool_t fuelpod = FALSE, mothership = FALSE;
     ShipPtr ship;
 
     if (aiCurrentAIPlayer->newships.selection->numShips)
@@ -1198,7 +1198,7 @@ void aiaP2AttackManager(void)
     Non AI Related Stuff:
 =============================================================================*/
 //temporary bug fixin'
-bool aiaPlayerCanBuildShipType(ShipType shiptype, AIPlayer *aiplayer)
+bool_t aiaPlayerCanBuildShipType(ShipType shiptype, AIPlayer *aiplayer)
 {
     ShipStaticInfo *teststatic;
     ShipRace race;
@@ -1266,7 +1266,7 @@ void aiaTeamDied(struct AIPlayer *aiplayer,struct AITeam *team)
     }
 }
 
-bool aiaShipDied(struct AIPlayer *aiplayer, ShipPtr ship)
+bool_t aiaShipDied(struct AIPlayer *aiplayer, ShipPtr ship)
 {
     if ((aiplayer->aiaArmada.targets) && (clRemoveShipFromSelection(aiplayer->aiaArmada.targets, ship)))
     {

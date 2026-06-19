@@ -35,7 +35,7 @@ udword hDebugFont;                              //font handle for selection into
 pane dbwPane[DBW_NumberPanes];
 
 #if DBW_TO_FILE
-extern bool debugToFile;
+extern bool_t debugToFile;
 #endif
 
 /*=============================================================================
@@ -267,7 +267,7 @@ sdword dbwFontChoose(void)
     Outputs     : returnString - string to fill in
     Return      : TRUE if the string was found and scanned in properly.
 ----------------------------------------------------------------------------*/
-bool dbwFindString(char *fileName, char *keyString, char *defaultString, char *returnString, sdword length)
+bool_t dbwFindString(char *fileName, char *keyString, char *defaultString, char *returnString, sdword length)
 {
     char stringBuffer[1024], *dataStart;
     FILE *f;
@@ -339,7 +339,7 @@ sdword dbgDataNybble(char c)
     Outputs     : buffer - buffer to fill in.
     Return      :
 ----------------------------------------------------------------------------*/
-bool dbwFindBinary(char *fileName, char *keyString, ubyte *buffer, udword length)
+bool_t dbwFindBinary(char *fileName, char *keyString, ubyte *buffer, udword length)
 {
     char stringBuffer[1024], *dataStart;
     FILE *f;

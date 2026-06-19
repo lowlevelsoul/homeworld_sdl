@@ -49,9 +49,9 @@ extern CustShipHeader GenericInterceptorHeader;
 extern CustShipHeader TargetDroneHeader;
 
 TI_API void GenericInterceptorAttack(Ship *ship, SpaceObjRotImpTarg *target, real32 maxdist);
-TI_API bool GenericInterceptorCanFire(Ship *ship, SpaceObjRotImpTarg *target, vector *trajectory, real32 triggerHappy);
+TI_API bool_t GenericInterceptorCanFire(Ship *ship, SpaceObjRotImpTarg *target, vector *trajectory, real32 triggerHappy);
 TI_API FlightManProb *GenericInterceptorGetFlightManProb(Ship *ship, SpaceObjRotImpTarg *target);
-TI_API bool InterceptorInRange(Ship *ship, SpaceObjRotImpTarg *target);
+TI_API bool_t InterceptorInRange(Ship *ship, SpaceObjRotImpTarg *target);
 TI_API void SpawnCloakingEffect(Ship *ship, etglod *etgLOD);
 
 #endif

@@ -33,7 +33,7 @@ real32 statsOverkillfactorSqr = 1.0f;
 
 TypeOfFormation showStatsFightF[2];
 TacticsType showStatsFightT[2];
-bool ShowFancyFights = FALSE;
+bool_t ShowFancyFights = FALSE;
 
 static CommandToDo *attackcommands[2];
 
@@ -180,7 +180,7 @@ static sbyte *RaceCalcFightStatsFor[NUM_RACES_TO_GATHER_STATS_FOR] =
     P3CalcFightStatsFor
 };
 
-bool ForceTotalRefresh = FALSE;
+bool_t ForceTotalRefresh = FALSE;
 
 static void StatsForRaceCB(char *directory,char *field,void *dataToFillIn);
 static void StatsForCB(char *directory,char *field,void *dataToFillIn);
@@ -402,7 +402,7 @@ void SetupShipsForFight(FightStats *fightStats)
     memFree(selection[1]);
 }
 
-bool AreShipsDoneFighting()
+bool_t AreShipsDoneFighting()
 {
     // keep going until an attack is finished
     if (!CommandInCommandLayer(&universe.mainCommandLayer,attackcommands[0]))
@@ -507,7 +507,7 @@ void GetPostCombatStats(FightStats *fightStats)
 //    universe.univUpdateCounter = 0;
 }
 
-void GatherFightStatsFor(sdword i,sdword j,bool actuallyDoFight)
+void GatherFightStatsFor(sdword i,sdword j,bool_t actuallyDoFight)
 {
     FightStats *fightStats = &FightStatsTable[i][j];
     sdword *binsearchtable = NULL;
@@ -729,7 +729,7 @@ FancyFightEntry fancyFightEntry[MAX_NUM_FANCYFIGHTENTRYS];
 
 sdword currentFancyFightEntry = 0;
 sdword currentFancyFightRepeatFight = 0;
-bool ShowFancyFightsShipsFighting = FALSE;
+bool_t ShowFancyFightsShipsFighting = FALSE;
 
 void SetFlightEntrysCB(char *directory,char *field,void *dataToFillIn);
 void SetFlightEntrysPreLoadCB(char *directory,char *field,void *dataToFillIn);
@@ -1292,17 +1292,17 @@ real32 statsGetOverallKillRating(ShipStaticInfo *shipstatic)
     return FightStatsColumnSum[i].Killratio;
 }
 
-bool ShipConstraintsNoneCB(Ship *ship)
+bool_t ShipConstraintsNoneCB(Ship *ship)
 {
     return TRUE;
 }
 
-bool statShipConstraintsNoneCB(ShipStaticInfo *shipstatic)
+bool_t statShipConstraintsNoneCB(ShipStaticInfo *shipstatic)
 {
     return TRUE;
 }
 
-bool statShipConstraintsFrigatesOrWorseCB(ShipStaticInfo *shipstatic)
+bool_t statShipConstraintsFrigatesOrWorseCB(ShipStaticInfo *shipstatic)
 {
     if (shipstatic->shipclass >= CLASS_Frigate)
     {
@@ -1314,7 +1314,7 @@ bool statShipConstraintsFrigatesOrWorseCB(ShipStaticInfo *shipstatic)
     }
 }
 
-bool statShipConstraintsFrigatesOrBetterCB(ShipStaticInfo *shipstatic)
+bool_t statShipConstraintsFrigatesOrBetterCB(ShipStaticInfo *shipstatic)
 {
     if (shipstatic->shipclass <= CLASS_Frigate)
     {
@@ -1335,7 +1335,7 @@ bool statShipConstraintsFrigatesOrBetterCB(ShipStaticInfo *shipstatic)
     Outputs     :
     Return      : TRUE if the ship is a fighting ship
 ----------------------------------------------------------------------------*/
-bool statShipConstraintsFightingShipsCB(ShipStaticInfo *shipstatic)
+bool_t statShipConstraintsFightingShipsCB(ShipStaticInfo *shipstatic)
 {
     switch (shipstatic->shipclass)
     {
@@ -1394,7 +1394,7 @@ bool statShipConstraintsFightingShipsCB(ShipStaticInfo *shipstatic)
     Outputs     :
     Return      : TRUE if the ship is a fighting ship
 ----------------------------------------------------------------------------*/
-bool statShipConstraintsCarrierFightingShipsCB(ShipStaticInfo *shipstatic)
+bool_t statShipConstraintsCarrierFightingShipsCB(ShipStaticInfo *shipstatic)
 {
     switch (shipstatic->shipclass)
     {
@@ -1786,7 +1786,7 @@ real32 statsGetRelativeFleetStrengthAgainstShip(SelectCommand *fleet1,ShipStatic
     return statsGetKillRatingAgainstFleet(targetstatic,fleet1);
 }
 
-SelectCommand *statsBestShipsToUseToKillTarget(SelectCommand *freeships,ShipStaticInfo *targetstatic,bool *goodEnough)
+SelectCommand *statsBestShipsToUseToKillTarget(SelectCommand *freeships,ShipStaticInfo *targetstatic,bool_t *goodEnough)
 {
     SelectCommand *freeshipsleft;
     SelectCommand *useships;
@@ -1863,7 +1863,7 @@ foundit:
     return useships;
 }
 
-SelectCommand *statsBestShipsToUseToKillFleet(SelectCommand *freeships,SelectCommand *targetFleet,bool *goodEnough)
+SelectCommand *statsBestShipsToUseToKillFleet(SelectCommand *freeships,SelectCommand *targetFleet,bool_t *goodEnough)
 {
     SelectCommand *freeshipsleft;
     SelectCommand *useships;

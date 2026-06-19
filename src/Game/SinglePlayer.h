@@ -109,7 +109,7 @@ typedef struct
 {
     MissionEnum currentMission;
     sdword onCompletePlayNIS;
-    bool onCompleteHyperspace;
+    bool_t onCompleteHyperspace;
 
     sdword onLoadPlayNIS;
 
@@ -124,11 +124,11 @@ typedef struct
     sdword resourceUnitsCollected;
 
     GrowSelection ShipsToHyperspace;
-    bool giveComputerFleetControl;
-    bool asteroid0sCanMove;
+    bool_t giveComputerFleetControl;
+    bool_t asteroid0sCanMove;
 
-    bool playerCanHyperspace;
-    bool hyperspaceFails;
+    bool_t playerCanHyperspace;
+    bool_t hyperspaceFails;
 
 } SinglePlayerGameInfo;             // later save this data structure
 
@@ -146,9 +146,9 @@ typedef enum
 
 typedef struct ShipSinglePlayerGameInfo
 {
-    bool midlevelHyperspaceIn;
-    bool midlevelHyperspaceOut;
-    bool staticHyperspaceGate;
+    bool_t midlevelHyperspaceIn;
+    bool_t midlevelHyperspaceOut;
+    bool_t staticHyperspaceGate;
     hvector midlevelHyperspaceTo;
     struct Effect* hyperspaceEffect;
 
@@ -166,10 +166,10 @@ typedef struct ShipSinglePlayerGameInfo
 } ShipSinglePlayerGameInfo;
 
 extern SinglePlayerGameInfo singlePlayerGameInfo;
-extern bool singlePlayerGameLoadNewLevelFlag;
-extern bool hyperspaceFails;
-extern bool singlePlayerHyperspacingInto;
-extern bool spCollectResourcesAtEndOfMission;
+extern bool_t singlePlayerGameLoadNewLevelFlag;
+extern bool_t hyperspaceFails;
+extern bool_t singlePlayerHyperspacingInto;
+extern bool_t spCollectResourcesAtEndOfMission;
 
 TI_API void spHyperspaceButtonPushed(void);
 
@@ -180,7 +180,7 @@ TI_API void spHyperspaceSelectionOutStatic(SelectCommand *selection);
 
 TI_API void spResetMissionSequenceToBeginning(void);
 TI_API void singlePlayerInit(void);
-TI_API void singlePlayerPostInit(bool loadingSaveGame);
+TI_API void singlePlayerPostInit(bool_t loadingSaveGame);
 TI_API void singlePlayerClose(void);
 TI_API void singlePlayerSetMissionAttributes(char *directory,char *filename);
 
@@ -209,8 +209,8 @@ TI_API void GetMissionsDirAndFile(MissionEnum mission);
 
 TI_API void spMainScreen(void);
 
-TI_API bool GetStartPointPlayer(hvector *startpoint);
-TI_API bool GetPointOfName(hvector *point,char *name);
+TI_API bool_t GetStartPointPlayer(hvector *startpoint);
+TI_API bool_t GetPointOfName(hvector *point,char *name);
 
 TI_API ShipSinglePlayerGameInfo *spNewShipSinglePlayerGameInfo(void);
 
@@ -238,8 +238,8 @@ TI_API const void** MissionEnumToFunctionList(MissionEnum mission);
 TI_API void spNISletTestAttempt(sdword index);
 #endif
 
-TI_API bool singlePlayerNISletNamesGet(char **nisname, char **scriptname, sdword nisletNumber);
-TI_API bool spFindCameraAttitude(vector *position);
+TI_API bool_t singlePlayerNISletNamesGet(char **nisname, char **scriptname, sdword nisletNumber);
+TI_API bool_t spFindCameraAttitude(vector *position);
 
 TI_API void UpdateMidLevelHyperspacingShips(void);
 
@@ -259,7 +259,7 @@ extern char spMissionsFile[];
 extern real32 spFleetModifier;
 
 extern real32 spHyperspaceDelay;
-extern bool   spHoldHyperspaceWindow;
+extern bool_t   spHoldHyperspaceWindow;
 
 extern real32 HYPERSPACEGATE_HEALTH;
 extern real32 HYPERSPACEGATE_WIDTH;

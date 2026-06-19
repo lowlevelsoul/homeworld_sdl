@@ -22,18 +22,18 @@
 
 // variables initialized here should also be initialized in globalsReset()
 
-bool gameIsRunning = FALSE;
+bool_t gameIsRunning = FALSE;
 
-bool multiPlayerGame = FALSE;
-bool multiPlayerGameUnderWay = FALSE;
+bool_t multiPlayerGame = FALSE;
+bool_t multiPlayerGameUnderWay = FALSE;
 
-bool singlePlayerGame = FALSE;
-bool objectivesShown = TRUE;
+bool_t singlePlayerGame = FALSE;
+bool_t objectivesShown = TRUE;
 
 sdword tutorial = 0;
-bool tutorialdone = FALSE;
+bool_t tutorialdone = FALSE;
 
-bool playersReadyToGo[MAX_MULTIPLAYER_PLAYERS];
+bool_t playersReadyToGo[MAX_MULTIPLAYER_PLAYERS];
 
 int sigsPressedStartGame = FALSE;
 
@@ -41,9 +41,9 @@ uword numPlayers = 0;
 uword curPlayer = 0;
 
 udword startingGameState = 0;
-bool HaveSentNonCaptainReadyPacket = FALSE;
+bool_t HaveSentNonCaptainReadyPacket = FALSE;
 
-bool startingGame = FALSE;
+bool_t startingGame = FALSE;
 
 void *gMessageMutex = NULL;
 gMessageType gMessage[MAX_MESSAGES+1];
@@ -59,7 +59,7 @@ char logFilePath[300] = "";
 #ifdef GOD_LIKE_SYNC_CHECKING
 sdword syncDumpWindowSize;
 sdword syncDumpGranularity;
-bool syncDumpOn=FALSE;
+bool_t syncDumpOn=FALSE;
 sdword syncDumpWindowPos=0;
 sdword syncDumpGranTrack=0;
 #endif
@@ -70,7 +70,7 @@ sdword vecNormalizeCounter;
 
 
 #ifdef DEBUG_GAME_STATS
-bool statLogOn=FALSE;
+bool_t statLogOn=FALSE;
 #endif
 
 
@@ -90,9 +90,9 @@ sdword captainTransferState = 0;
 
 sdword receiveSyncPacketsFrom = 0;
 
-bool hrAbortLoadingGame = FALSE;
+bool_t hrAbortLoadingGame = FALSE;
 
-bool explicitlyRequestingPackets = FALSE;
+bool_t explicitlyRequestingPackets = FALSE;
 udword explicitlyRequestingFrom = 0;
 udword explicitlyRequestingTo = 0;
 
@@ -101,7 +101,7 @@ bool8 ComputerPlayerOn[MAX_MULTIPLAYER_PLAYERS] = { -1,-1,-1,-1,-1,-1,-1,-1 };
 sdword numPendingIn = 0;
 sdword numPendingOut = 0;
 
-bool startRecordingGameWhenSafe = FALSE;
+bool_t startRecordingGameWhenSafe = FALSE;
 
 /*-----------------------------------------------------------------------------
     Name        : globalsReset
@@ -110,7 +110,7 @@ bool startRecordingGameWhenSafe = FALSE;
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-void globalsResetFunc(bool firstTime)
+void globalsResetFunc(bool_t firstTime)
 {
     udword i = 0;
 

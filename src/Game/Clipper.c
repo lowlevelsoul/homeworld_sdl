@@ -208,7 +208,7 @@ void clipTransformPoints(udword n, real32* vObj, real32* vEye, real32* m)
     Return      : TRUE  = yes, it is a perspective
                   FALSE = no, it's something else
 ----------------------------------------------------------------------------*/
-bool clipIsPerspective(real32* m)
+bool_t clipIsPerspective(real32* m)
 {
     if (m[4] == 0.0f && m[12] == 0.0f && m[1] == 0.0f && m[13] == 0.0f &&
         m[2] == 0.0f && m[6] == 0.0f && m[3] == 0.0f && m[7] == 0.0f &&
@@ -325,7 +325,7 @@ void clipProjectPoints(
 ----------------------------------------------------------------------------*/
 void clipViewportMap(
     udword n, real32* vClip, ubyte* clipmask, real32* vWin,
-    vector* viewportS, vector* viewportT, bool force)
+    vector* viewportS, vector* viewportT, bool_t force)
 {
     real32 sx, tx, sy, ty, sz, tz;
     udword i;
@@ -390,7 +390,7 @@ void clipViewportMap(
     Return      : 0 = (failure) point is off screen
                   1 = (success) point is on screen
 ----------------------------------------------------------------------------*/
-bool clipPointToScreen(vector* p, vector* screen, bool force)
+bool_t clipPointToScreen(vector* p, vector* screen, bool_t force)
 {
     real32 modelview[16], projection[16];
 
@@ -410,8 +410,8 @@ bool clipPointToScreen(vector* p, vector* screen, bool force)
     Return      : 0 = (failure) point is off screen
                   1 = (success) point is on screen
 ----------------------------------------------------------------------------*/
-bool clipPointToScreenWithMatrices(
-    vector* p, vector* screen, real32* modelview, real32* projection, bool force)
+bool_t clipPointToScreenWithMatrices(
+    vector* p, vector* screen, real32* modelview, real32* projection, bool_t force)
 {
     hvector vbObj[1];
     hvector vbEye[1];
@@ -471,7 +471,7 @@ bool clipPointToScreenWithMatrices(
 
 #if CORRECT_BBOX_CLIP
 //helper, determines whether a line is inside the frustum or not
-static bool _lineinside(
+static bool_t _lineinside(
     hvector rectpos[], udword v1, udword v2, ubyte clipmask[], hvector vbClip[])
 {
     if (clipmask[v1] | clipmask[v2])
@@ -504,7 +504,7 @@ sdword clipTotallyIn = FALSE;
     Outputs     :
     Return      : TRUE if totally outside of frustum, FALSE otherwise
 ----------------------------------------------------------------------------*/
-bool clipBBoxIsClipped(
+bool_t clipBBoxIsClipped(
     real32* collrectoffset, real32 uplength, real32 rightlength, real32 forwardlength)
 {
     vector upvector = {1.0f, 0.0f, 0.0f};
@@ -521,7 +521,7 @@ bool clipBBoxIsClipped(
     real32 modelview[16], projection[16];
 
     sdword i;
-    bool result;
+    bool_t result;
 
     clipTotallyIn = FALSE;
 
@@ -601,7 +601,7 @@ PASSED:
     Return      : 0 = (failure) line is off screen
                   1 = (success) line is on screen
 ----------------------------------------------------------------------------*/
-bool clipLineToScreen(
+bool_t clipLineToScreen(
     vector* pa, vector* pb, real32* modelview, real32* projection,
     vector* screenA, vector* screenB)
 {

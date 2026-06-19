@@ -153,8 +153,8 @@ TI_API void mouseDisable(void);
 TI_API void mouseEnable(void);
 
 //click special callbacks
-TI_API bool mouseLDoubleClick(void);
-TI_API bool mouseDoubleClickCheck(void);
+TI_API bool_t mouseLDoubleClick(void);
+TI_API bool_t mouseDoubleClickCheck(void);
 TI_API void mouseLClick(void);
 TI_API void mouseClickShipDied(ShipPtr deadship);
 

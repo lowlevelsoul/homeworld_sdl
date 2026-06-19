@@ -38,8 +38,8 @@ public:
 
 	// Operators
 	ClientCDKey& operator=(const ClientCDKey& theKeyR);
-	bool operator==(const ClientCDKey& theKeyR) const;
-	bool operator!=(const ClientCDKey& theKeyR) const;
+	bool_t operator==(const ClientCDKey& theKeyR) const;
+	bool_t operator!=(const ClientCDKey& theKeyR) const;
 
 	// Product access.  Careful setting product.  Product is used to encrypt/decypt
 	// the key to/from its binary form and for the Lightweight check.
@@ -47,45 +47,45 @@ public:
 	TI_API void SetProduct(const std::string& theProductR);
 
 	// Check two keys for equality
-	virtual bool IsEqual(const ClientCDKey& theKeyR) const;
+	virtual bool_t IsEqual(const ClientCDKey& theKeyR) const;
 
 	// Check validity of a key, performs lightweight check if needed.
-	virtual bool IsValid() const;
+	virtual bool_t IsValid() const;
 
 	// Is this a beta key?
-	bool IsBeta() const;
+	bool_t IsBeta() const;
 
 	// Init from raw, unencrypted key.  A return of true DOES NOT imply key is valid!
 	// (Call IsValid() to verify validity).
-	TI_API virtual bool Init(const __int64& theKeyR);
+	TI_API virtual bool_t Init(const __int64& theKeyR);
 
 	// Initialize from Human readable string (dashes are optional):
 	//   CVCN-CVCN-CVCN-CVCN-NNNN
 	// Returns true if init is successful, false if not.  A return of true DOES NOT
 	// imply key is valid!  (Call IsValid() to verify validity).
-	TI_API virtual bool Init(const std::string& theStrR);
+	TI_API virtual bool_t Init(const std::string& theStrR);
 
 	// Init from encrypted binary image (what is returned by AsBinary).  A return of
 	// true DOES NOT imply key is valid!  (Call IsValid() to verify validity).
-	TI_API virtual bool Init(const WONCommon::RawBuffer& theKeyR);
+	TI_API virtual bool_t Init(const WONCommon::RawBuffer& theKeyR);
 
 	// Fetch as raw, unencrypted (64bit) key
 	__int64 AsRaw() const;
 
 	// Fetch as human readable string.  Validates key if needed if validate is true.
 	// If Keys fails to validate, returns "#######INVALID KEY######"
-	const std::string& AsString(bool validate=true) const;
+	const std::string& AsString(bool_t validate=true) const;
 
 	// Fetch as encrypted binary image.  Valdates key if needed.  Returns empty
 	// buffer if key is not valid.
 	const WONCommon::RawBuffer& AsBinary() const;
 
 	// Load/Save key in registry securely (key is encrypted in the registry)
-	virtual bool Load(void)
-	virtual bool Save() const;
+	virtual bool_t Load(void)
+	virtual bool_t Save() const;
 
 	// Clean key from registry
-	virtual bool CleanReg(void)
+	virtual bool_t CleanReg(void)
 
 protected:
 	// Types
@@ -114,10 +114,10 @@ protected:
 	__int64 BufferFromFields() const;
 
 	// Decypt mBin Key into buffer
-	TI_API bool DecryptKey(__int64& theBufR);
+	TI_API bool_t DecryptKey(__int64& theBufR);
 
 	// Encrypt buffer into mBinKey
-	bool EncryptKey(const __int64& theBufR) const;
+	bool_t EncryptKey(const __int64& theBufR) const;
 
 private:
 	// Methods
@@ -129,18 +129,18 @@ private:
 	// Class methods
 	TI_API static void RemoveSkipChars(string& theStrR);
 	TI_API static char ValFromBits(const __int64& aBuf, unsigned int theOffset, unsigned int theBits);
-	TI_API static bool ProcessCChar(__int64& theBuf, unsigned int& theOffset, char theChar);
-	TI_API static bool ProcessVChar(__int64& theBuf, unsigned int& theOffset, char theChar);
-	TI_API static bool ProcessNChar(__int64& theBuf, unsigned int& theOffset, char theChar);
+	TI_API static bool_t ProcessCChar(__int64& theBuf, unsigned int& theOffset, char theChar);
+	TI_API static bool_t ProcessVChar(__int64& theBuf, unsigned int& theOffset, char theChar);
+	TI_API static bool_t ProcessNChar(__int64& theBuf, unsigned int& theOffset, char theChar);
 };
 
 
 // Inlines
-inline bool
+inline bool_t
 ClientCDKey::operator==(const ClientCDKey& theKeyR) const
 { return IsEqual(theKeyR); }
 
-inline bool
+inline bool_t
 ClientCDKey::operator!=(const ClientCDKey& theKeyR) const
 { return (! IsEqual(theKeyR)); }
 

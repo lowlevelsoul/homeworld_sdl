@@ -139,7 +139,7 @@ typedef struct uicbutton
     color contentColor, borderColor;            //colors of button
     fescreen *screen;                           //optional front-end atom pointer
     sdword clickX, clickY;                      //where the mouse was clicked to start dragging (only for drag buttons)
-    bool bDragged;                              //was this button ever dragged?
+    bool_t bDragged;                              //was this button ever dragged?
 }
 uicbutton;
 
@@ -243,7 +243,7 @@ typedef struct uiclistwindow
     listtitlebardraw    titledraw;              // function called when the title bar needs to be drawn
                                                 // data for the list items callbacks etc.
     sdword              sorttype;               // info for sorting the list, useful if the list can be sorted in multiple ways.
-    bool                sortOrder;
+    bool_t                sortOrder;
     sdword              itemheight;             // height of each items in pixels, the max number of items on screen at once is calculated dynamically
     LinkedList          listofitems;            // linked list of items in the list
     listitemdraw        itemdraw;               // function called to draw each item, if 10 items onscreen, it is called 10 times.
@@ -326,8 +326,8 @@ TI_API udword uicEndProcess(struct tagRegion *reg, sdword num_buttons, udword ev
 //utility functions for front end navigation
 TI_API regionhandle uicFindFlag(regionhandle find, udword flag, uword type);
 TI_API regionhandle uicFindTabstop(regionhandle find);
-TI_API void uicSetCurrent(regionhandle reg, bool bUserInput);
-TI_API bool uicClearCurrent(regionhandle reg);
+TI_API void uicSetCurrent(regionhandle reg, bool_t bUserInput);
+TI_API bool_t uicClearCurrent(regionhandle reg);
 
 
 //adjust attributes of the basic control
@@ -336,7 +336,7 @@ TI_API void uicTextEntrySet(textentryhandle entry, char *text, sdword cursorPos)
 TI_API void uicTextEntryGet(textentryhandle entry, char *dest, sdword maxLength);
 TI_API void uicTextBufferResize(textentryhandle entry, sdword size);
 TI_API void uicTextEntryCleanUp(textentryhandle entry);
-TI_API bool uicBackspaceCharacter(textentryhandle entry);
+TI_API bool_t uicBackspaceCharacter(textentryhandle entry);
 
 // adjust attributes and manage the list window control
 void uicListWindowInit(listwindowhandle     listwindow,

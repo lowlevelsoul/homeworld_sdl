@@ -50,8 +50,8 @@ extern gpgame *gpGames;             //list of available games
 extern sdword gpCurrentSelected;    //current game index, if OK is pressed
 extern char   *gpTextEntryName;     //text box entry name
 
-extern bool gpLoadSinglePlayerGame;
-extern bool gpLoadTutorial;
+extern bool_t gpLoadSinglePlayerGame;
+extern bool_t gpLoadTutorial;
 
 extern char TutorialSavedGamesPath[];
 
@@ -71,10 +71,10 @@ TI_API void gpGamePick(char *dest);
 TI_API void gpDonePicking(char *name, featom *atom);
 TI_API void gpBackPicking(char *name, featom *atom);
 
-TI_API bool gpQuickSave(void);
-TI_API bool gpQuickLoad(void);
+TI_API bool_t gpQuickSave(void);
+TI_API bool_t gpQuickLoad(void);
 
-TI_API bool gpGetGameName(char *name, featom *atom, char *filename);
+TI_API bool_t gpGetGameName(char *name, featom *atom, char *filename);
 
 TI_API sdword gpCountTrainingSavegames(void);
 

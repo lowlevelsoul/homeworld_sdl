@@ -57,7 +57,7 @@ typedef enum {
 
 
 extern udword tmTechForSale[TM_NUM_TECHS];
-extern bool tmCheaptechs;
+extern bool_t tmCheaptechs;
 extern sword tmTechResearchable[TM_NUM_TECHS];
 
 
@@ -95,11 +95,11 @@ TI_API void SetBaseTechnologyCost(char *techname, sdword cost);
 
 
 TI_API void tmEnableTraderGUI(void);
-TI_API bool tmTraderGUIActive(void);
+TI_API bool_t tmTraderGUIActive(void);
 TI_API void tmSetDialog(sdword phrasenum, char *sentence);
 TI_API void tmSetPriceScale(udword percent);
 TI_API uword tmGetPriceScale(void);
-TI_API void tmSetTradeDisabled(bool trade);
+TI_API void tmSetTradeDisabled(bool_t trade);
 
 // Save Game stuff
 TI_API void tmSave(void);
@@ -138,7 +138,7 @@ typedef struct
 wkTradeType;
 
 extern wkTradeType wkTradeShips[WK_MAX_SHIPS];
-extern bool wkTradeStuffActive;
+extern bool_t wkTradeStuffActive;
 TI_API void mrTradeStuffTest(sdword *a, sdword *b);
 TI_API void wkTradeUpdate(void);
 

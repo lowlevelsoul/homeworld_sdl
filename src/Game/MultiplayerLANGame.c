@@ -108,8 +108,8 @@ tpscenario lgMyGameInfo;
 fibfileheader  *lgScreensHandle = NULL;
 
 // This flag is returned from the refresh task, will be changed when the observation server goes into effect.
-bool            lgdonerefreshing  = TRUE;
-bool            lgCreatingNetworkGame = FALSE;
+bool_t            lgdonerefreshing  = TRUE;
+bool_t            lgCreatingNetworkGame = FALSE;
 
 // tweakable fonthandles.
 fonthandle lgListOfGamesFont=0;
@@ -202,8 +202,8 @@ extern LinkedList  listofplayersold;
 // this holds all of the history for the game chat window
 extern LinkedList  listofgamechatinfo;
 
-extern bool gamestarted;
-bool        lgnewscreen       = FALSE;
+extern bool_t gamestarted;
+bool_t        lgnewscreen       = FALSE;
 
 // Queue for transferring packets between threads.
 Queue       lgThreadTransfer;
@@ -225,12 +225,12 @@ sdword  lgChannelNameWidth  = 258;
 
 
 // is the multiplayer game screens running.
-bool lgRunning=FALSE;
+bool_t lgRunning=FALSE;
 
 // used for starting a screen in a separate thread.
 extern sdword screenaskedfor;
 //sdword lgScreensAdded=0;
-bool   lghideallscreens=TRUE;
+bool_t   lghideallscreens=TRUE;
 
 // type of query asked for from titan.
 sdword lgQueryType=-1;
@@ -298,7 +298,7 @@ void lgBackFromPassword             (char *name, featom *atom);
 void lgSeeDetails                   (char *name, featom *atom);
 void lgJoinGame                     (char *name, featom *atom);
 void lgListOfGamesInit              (char *name, featom *atom);
-//bool lgRefresh                        (udword num, void *data, struct BabyCallBack *baby);
+//bool_t lgRefresh                        (udword num, void *data, struct BabyCallBack *baby);
 
 // Callbacks for the waiting for game screens.
 void lgGameChatWindowInit           (char *name, featom *atom);
@@ -468,11 +468,11 @@ void lgDrawProtocal(featom *atom, regionhandle region)
 // a private message.  It has to search through two different lists of users, depending
 // on whether it is in game chat or the room chat that they are typing in.
 
-void *lgParseChatEntry(char *messageorig, bool preGameChat)
+void *lgParseChatEntry(char *messageorig, bool_t preGameChat)
 {
     udword      i,nummatches;
     char        toname[64], ampremoved[64], messagetmp[280], *message;
-    bool        done=FALSE;
+    bool_t        done=FALSE;
     Node       *walk=NULL;
     userlist   *user, *matched=NULL;
     gameplayerinfo *guser, *gmatched=NULL;
@@ -1195,7 +1195,7 @@ void lgJoinGame(char*name,featom*atom)
 // the following functions are all callbacks to do with list windows
 
 // callback for sorting the game list window
-bool lgListOfGamesCompare(void *firststruct,void *secondstruct)
+bool_t lgListOfGamesCompare(void *firststruct,void *secondstruct)
 {
 #ifndef _MACOSX_FIX_LAN
     sdword i;
@@ -1412,8 +1412,8 @@ void lgListOfGamesItemDraw(rectangle *rect, listitemhandle data)
     color       c;
     fonthandle  oldfont;
     lggamelist   *gameinfo = (lggamelist *)data->data;
-    bool gameinprogress = gameinfo->game.directoryCustomInfo.flag & GAME_IN_PROGRESS;
-    bool diffversion = (!CheckNetworkVersionCompatibility(gameinfo->game.directoryCustomInfo.versionInfo));
+    bool_t gameinprogress = gameinfo->game.directoryCustomInfo.flag & GAME_IN_PROGRESS;
+    bool_t diffversion = (!CheckNetworkVersionCompatibility(gameinfo->game.directoryCustomInfo.versionInfo));
 
 #ifndef _MACOSX_FIX_LAN
     udword passwordlen;
@@ -2149,7 +2149,7 @@ void lgBackToConnection(char *name, featom *atom)
 
 void lgYesQuitWON(char *name, featom *atom)
 {
-    bool waitforshutdown = FALSE;
+    bool_t waitforshutdown = FALSE;
     //LoggedIn=FALSE;
 
     if (WaitingForGame)
@@ -2791,7 +2791,7 @@ DEFINE_TASK(lgProcessCallBacksTask)
     Startup the multiplayer game screens and display the connection screen:
 =============================================================================*/
 
-void lgStartMultiPlayerLANGameScreens(regionhandle region, sdword ID, udword event, udword data, bool AlreadylgLoggedIn)
+void lgStartMultiPlayerLANGameScreens(regionhandle region, sdword ID, udword event, udword data, bool_t AlreadylgLoggedIn)
 {
     if (FEFIRSTCALL(((featom *)ID)))
     {

@@ -16,7 +16,7 @@
 #include "Types.h"
 #include "Vector.h"
 
-TI_API void partFilter(bool on);
+TI_API void partFilter(bool_t on);
 
 #ifdef HW_BUILD_FOR_DEBUGGING
 #define PART_Debug
@@ -232,7 +232,7 @@ TI_API void partModifyExponent(psysPtr psys, real32 exponent);
 
 TI_API void partModifyDrag(psysPtr psys, real32 d);
 TI_API void partModifyMesh(psysPtr psys, meshdata *mesh);
-TI_API void partModifyLighting(psysPtr psys, bool lit);
+TI_API void partModifyLighting(psysPtr psys, bool_t lit);
 TI_API void partModifyIllum(psysPtr psys, real32 illum);
 TI_API void partModifyDeltaIllum(psysPtr psys, real32 deltaIllum);
 void partModifyTexture(psysPtr psys, trhandle tex,
@@ -262,12 +262,12 @@ TI_API void partModifyLoopFlag(psysPtr psys, bool8 willLoop);
 TI_API void partModifyBillPosition(psysPtr psys, vector* pos);
 
 //flag modifiers
-TI_API void partModifySpecular(psysPtr psys, bool spec);
-TI_API void partModifyStipple(psysPtr psys, bool stip);
-TI_API void partModifyNoDepthWrite(psysPtr psys, bool noWrite);
-TI_API void partModifyAdditiveBlends(psysPtr psys, bool add);
-TI_API void partModifyPseudoBillboard(psysPtr psys, bool bill);
-TI_API void partModifyTrueBillboard(psysPtr psys, bool bill);
+TI_API void partModifySpecular(psysPtr psys, bool_t spec);
+TI_API void partModifyStipple(psysPtr psys, bool_t stip);
+TI_API void partModifyNoDepthWrite(psysPtr psys, bool_t noWrite);
+TI_API void partModifyAdditiveBlends(psysPtr psys, bool_t add);
+TI_API void partModifyPseudoBillboard(psysPtr psys, bool_t bill);
+TI_API void partModifyTrueBillboard(psysPtr psys, bool_t bill);
 //0 - normal, 1 - additive, 2 - stipple
 TI_API void partModifyAlphaMode(psysPtr psys, udword mode);
 TI_API void partModifyColorScheme(psysPtr psys, sdword colorScheme);
@@ -350,7 +350,7 @@ TI_API void partSetDeltaColorDist(real32 r, real32 g, real32 b);
 TI_API void partSetDeltaColorA(real32 r, real32 g, real32 b, real32 a);
 TI_API void partSetDeltaColorADist(real32 r, real32 g, real32 b, real32 a);
 
-TI_API void partSetLighting(bool l);
+TI_API void partSetLighting(bool_t l);
 TI_API void partSetIllum(real32 n);
 TI_API void partSetIllumDist(real32 n);
 TI_API void partSetDeltaIllum(real32 n);
@@ -368,12 +368,12 @@ TI_API void partSetDeltaLengthDist(real32 d);
 TI_API void partSetColorBias(real32 rb, real32 gb, real32 bb);
 TI_API void partSetColorBiasDist(real32 drb, real32 dgb, real32 dbb);
 
-TI_API void partSetSpecular(bool spec);
-TI_API void partSetStipple(bool stip);
-TI_API void partSetNoDepthWrite(bool noWrite);
-TI_API void partSetAdditiveBlends(bool add);
-TI_API void partSetPseudoBillboard(bool bill);
-TI_API void partSetTrueBillboard(bool bill);
+TI_API void partSetSpecular(bool_t spec);
+TI_API void partSetStipple(bool_t stip);
+TI_API void partSetNoDepthWrite(bool_t noWrite);
+TI_API void partSetAdditiveBlends(bool_t add);
+TI_API void partSetPseudoBillboard(bool_t bill);
+TI_API void partSetTrueBillboard(bool_t bill);
 void partSetAlphaMode(udword mode);     //0 - normal, 1 - additive, 2 - stippled
 TI_API void partSetColorScheme(sdword colorScheme);
 

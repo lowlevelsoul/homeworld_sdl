@@ -70,7 +70,7 @@ splinecurve;
 TI_API void bsStartup(void);
 TI_API void bsShutdown(void);
 
-TI_API splinecurve *bsCurveStart(sdword nPoints, real32 *points, real32 *times, tcb *params, bool bAlloc);
+TI_API splinecurve *bsCurveStart(sdword nPoints, real32 *points, real32 *times, tcb *params, bool_t bAlloc);
 TI_API void bsCurveStartPrealloced(splinecurve *curve, sdword nPoints, real32 *values, real32 *times, tcb *params);
 TI_API void bsCurveRestart(splinecurve *curve);
 TI_API real32 bsCurveUpdate(splinecurve *curve, real32 timeElapsed);

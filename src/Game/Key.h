@@ -203,8 +203,8 @@ extern real32 keyLastTimeHit;
 =============================================================================*/
 TI_API void keyInit(void);
 TI_API void keyClose(void);
-TI_API bool keyAnyKeyHit(void);
-TI_API bool keyAnyKeyStuck(void);
+TI_API bool_t keyAnyKeyHit(void);
+TI_API bool_t keyAnyKeyStuck(void);
 TI_API void keyClearAll(void);
 TI_API void keyClearAllStuckKeys(void);
 
@@ -214,8 +214,8 @@ TI_API void keyPressUp(udword key);
 TI_API void keyRepeat(udword key);
 
 //functions for buffered keystrokes
-TI_API udword keyBufferedKeyGet(bool *bShift);
-TI_API void keyBufferAdd(udword key, bool bShift);
+TI_API udword keyBufferedKeyGet(bool_t *bShift);
+TI_API void keyBufferAdd(udword key, bool_t bShift);
 TI_API void keyBufferClear(void);
 
 TI_API udword keyGermanToEnglish(udword virtkey);

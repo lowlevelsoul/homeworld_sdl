@@ -52,7 +52,7 @@ void ResourceCollectorInit(Ship *ship)
 }
 
 
-bool ResourceCollectorSpecialTarget(Ship *ship, void *custom)
+bool_t ResourceCollectorSpecialTarget(Ship *ship, void *custom)
 {
     ResourceCollectorStatics *resourcestat = (ResourceCollectorStatics *)ship->staticinfo->custstatinfo;
     SelectAnyCommand *targets;

@@ -21,7 +21,7 @@
 
 #define TITAN_LOG_FILE_NAME "titanlog.txt"
 
-//bool titanLogEnable = TRUE;
+//bool_t titanLogEnable = TRUE;
 
 void titanDebug(char *format, ...)
 {

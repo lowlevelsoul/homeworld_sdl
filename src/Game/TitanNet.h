@@ -18,8 +18,8 @@ extern real32 TITAN_PICKER_REFRESH_TIME;
 TI_API void generateDirectoryCustomInfo(DirectoryCustomInfoMax *buildDirectoryCustomInfo);
 
 TI_API void captainGameStartCB(void);
-TI_API void titanGameDisolved(bool shutdown);
-TI_API void titanUpdatePlayer(bool captain);
+TI_API void titanGameDisolved(bool_t shutdown);
+TI_API void titanUpdatePlayer(bool_t captain);
 
 TI_API void titanResetGameCreated(void);
 
@@ -37,15 +37,15 @@ extern real32 KEEPALIVE_SEND_IAMALIVE_TIME;
 extern real32 KEEPALIVE_IAMALIVE_TIMEOUT;
 extern real32 KEEPALIVE_SEND_ALIVESTATUS_TIME;
 
-TI_API bool titanCheckValidVersion(char *myversion);
-TI_API bool CheckNetworkVersionCompatibility(char *netversion);
+TI_API bool_t titanCheckValidVersion(char *myversion);
+TI_API bool_t CheckNetworkVersionCompatibility(char *netversion);
 
-extern bool HaveValidVersions;
+extern bool_t HaveValidVersions;
 extern char ValidVersions[];
 
 extern udword ROOM_MIN_THRESHOLD;
 extern udword ROOM_MAX_THRESHOLD;
 
-TI_API bool titanKickPlayer(udword i);
+TI_API bool_t titanKickPlayer(udword i);
 
 #endif

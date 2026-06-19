@@ -23,10 +23,10 @@ TI_API void alodSetTargetPolys(udword targetPolys, udword polyDelta);
 TI_API void alodGetTargetPolys(udword* targetPolys, udword* polyDelta);
 TI_API void alodSetPolys(udword polys);
 TI_API void alodIncPolys(udword polys);
-TI_API void alodEnable(bool enable);
+TI_API void alodEnable(bool_t enable);
 TI_API void alodAdjustScaleFactor(void);
 TI_API udword alodGetPolys(void);
-TI_API bool alodGetPanic(void);
-TI_API void alodSetPanic(bool panic);
+TI_API bool_t alodGetPanic(void);
+TI_API void alodSetPanic(bool_t panic);
 
 #endif

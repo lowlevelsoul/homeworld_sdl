@@ -153,8 +153,8 @@ TI_API void tacticsDoDodge(Ship *ship);
 TI_API //sdword tacticsGetFormationOptimalState(SelectCommand *selection);
 TI_API void tacticsUpdate(Ship *ship);
 
-TI_API void tacticsDelegateAttackCommand(Ship *ship,CommandToDo *command, AttackCommand *attack, bool gettingRocked,bool doingSomething);
-TI_API void tacticsDelegateSingleAttack(Ship *ship,CommandLayer *comlayer,SelectCommand *selectone,AttackCommand *attack, bool gettingRocked);
+TI_API void tacticsDelegateAttackCommand(Ship *ship,CommandToDo *command, AttackCommand *attack, bool_t gettingRocked,bool_t doingSomething);
+TI_API void tacticsDelegateSingleAttack(Ship *ship,CommandLayer *comlayer,SelectCommand *selectone,AttackCommand *attack, bool_t gettingRocked);
 TI_API void tacticsReportMove(CommandLayer *comlayer,SelectCommand *selection);
 
 
@@ -163,14 +163,14 @@ TI_API void tacticsGlobalUpdate(void);
 TI_API void tacticsAttackCommandVoided(CommandToDo *command);
 
 TI_API real32 tacticsMaxDistToTarget(SelectCommand *selection,SpaceObjRotImpTarg *target);
-TI_API bool tacticsCheckGuardConditionsDuringAttack(struct CommandToDo *command);
+TI_API bool_t tacticsCheckGuardConditionsDuringAttack(struct CommandToDo *command);
 TI_API real32 tacticsGetShipsMaxVelocity(Ship *ship);
 
-TI_API bool tacticsAreStrikeCraftInSelection(SelectCommand *selection);
+TI_API bool_t tacticsAreStrikeCraftInSelection(SelectCommand *selection);
 
 //TRUE if shipA has retreated from shipB, only valid for time that
 //shipsB is on lookout for shipA (maybe 90seconds?  tunable)
-TI_API bool tacticsHasShipRetreatedFromShip(Ship *shipA, Ship *shipB);
+TI_API bool_t tacticsHasShipRetreatedFromShip(Ship *shipA, Ship *shipB);
 
 TI_API void tacticsMakeShipsNotLookForOtherShips(SelectCommand *selection);
 

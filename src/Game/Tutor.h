@@ -113,7 +113,7 @@ typedef struct
 }
 tutpointer;
 
-extern bool tutPointersDrawnThisFrame;
+extern bool_t tutPointersDrawnThisFrame;
 
 /*=============================================================================
     Functions:
@@ -153,7 +153,7 @@ TI_API void tutRemoveAllPointers(void);
 TI_API void tutRemoveAllPointers(void);
 TI_API void tutDrawTextPointers(rectangle *pRect);
 
-TI_API void tutSetTextDisplayBox(sdword x, sdword y, sdword width, sdword height, bool bScale);
+TI_API void tutSetTextDisplayBox(sdword x, sdword y, sdword width, sdword height, bool_t bScale);
 TI_API void tutSetTextDisplayBoxToSubtitleRegion(void);
 TI_API void tutShowText(char *szText);
 TI_API void tutHideText(void);
@@ -175,7 +175,7 @@ TI_API void tutEnableEverything(void);
 TI_API void tutDisableEverything(void);
 TI_API void tutSetEnableFlags(char *pFlagString, long Val);
 
-TI_API void tutBuilderSetRestrictions(char *pShipTypes, bool bRestricted);
+TI_API void tutBuilderSetRestrictions(char *pShipTypes, bool_t bRestricted);
 TI_API void tutBuilderRestrictAll(void);
 TI_API void tutBuilderRestrictNone(void);
 
@@ -184,8 +184,8 @@ TI_API sdword tutIsBuildShipRestricted(sdword shipType);
 TI_API sdword tutSelectedContainsShipTypes(char *pShipTypes);
 
 TI_API void tutGameMessage(char *commandName);
-TI_API bool tutGameSentMessage(char *commandName);
-TI_API bool tutGameMessageInQueue(char *commandNames);
+TI_API bool_t tutGameSentMessage(char *commandName);
+TI_API bool_t tutGameMessageInQueue(char *commandNames);
 TI_API void tutResetGameMessageQueue(void);
 TI_API sdword tutContextMenuDisplayedForShipType(char *pShipType);
 TI_API void  tutResetContextMenuShipTypeTest(void);

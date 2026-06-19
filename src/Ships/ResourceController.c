@@ -43,7 +43,7 @@ void ResourceControllerStaticInit(char *directory,char *filename,struct ShipStat
     scriptSetStruct(directory,filename,RCStaticScriptTable,(ubyte *)resourcestat);
 }
 
-bool ResourceControllerSpecialTarget(Ship *ship, void *custom)
+bool_t ResourceControllerSpecialTarget(Ship *ship, void *custom)
 {
     ResourceControllerStatics *rcstat = (ResourceControllerStatics *)ship->staticinfo->custstatinfo;
     SelectAnyCommand *targets;

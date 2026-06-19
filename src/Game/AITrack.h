@@ -24,25 +24,25 @@
     Functions:
 =============================================================================*/
 
-bool aitrackIsStabilizeShip(Ship *ship);      // if ship is not rotating, and oriented up
-bool aitrackIsZeroVelocity(Ship *ship);       // if ship is not drifting
-bool aitrackIsZeroRotation(Ship *ship);       // if ship is not rotating
+bool_t aitrackIsStabilizeShip(Ship *ship);      // if ship is not rotating, and oriented up
+bool_t aitrackIsZeroVelocity(Ship *ship);       // if ship is not drifting
+bool_t aitrackIsZeroRotation(Ship *ship);       // if ship is not rotating
 
-bool aitrackIsShipSteady(Ship *ship);         // if ship is stabilized, and not drifting
-bool aitrackSteadyShip(Ship *ship);           // stabilize ship, and stop drifting
+bool_t aitrackIsShipSteady(Ship *ship);         // if ship is stabilized, and not drifting
+bool_t aitrackSteadyShip(Ship *ship);           // stabilize ship, and stop drifting
 
 // save as above functions but will not necessarily stop the ship oriented up
-bool aitrackIsShipSteadyAnywhere(Ship *ship);   // if ship is not rotating (any orientation), and not drifting
-bool aitrackSteadyShipAnywhere(Ship *ship);     // stop ship from rotating (any orientation), and not drifting
+bool_t aitrackIsShipSteadyAnywhere(Ship *ship);   // if ship is not rotating (any orientation), and not drifting
+bool_t aitrackSteadyShipAnywhere(Ship *ship);     // stop ship from rotating (any orientation), and not drifting
 
-bool aitrackStabilizeGuidance(SpaceObjRotImpTargGuidance *ship);        // stabilize ship
+bool_t aitrackStabilizeGuidance(SpaceObjRotImpTargGuidance *ship);        // stabilize ship
 #define aitrackStabilizeShip(ship) aitrackStabilizeGuidance((SpaceObjRotImpTargGuidance *)ship)
 
-bool aitrackZeroRotationAnywhere(Ship *ship);           // stop ship from rotating (any orientation)
-bool aitrackZeroVelocity(Ship *ship);                   // stop ship from drifting
-bool aitrackZeroForwardVelocity(Ship *ship);            // stop ship from drifting (forward only)
+bool_t aitrackZeroRotationAnywhere(Ship *ship);           // stop ship from rotating (any orientation)
+bool_t aitrackZeroVelocity(Ship *ship);                   // stop ship from drifting
+bool_t aitrackZeroForwardVelocity(Ship *ship);            // stop ship from drifting (forward only)
 
-TI_API bool aitrackSteadyShipDriftOnly(Ship *ship);
+TI_API bool_t aitrackSteadyShipDriftOnly(Ship *ship);
 
 TI_API void aitrackForceSteadyShip(Ship *ship);
 TI_API void aitrackForceGuidanceZeroRotation(SpaceObjRotImpTargGuidance *ship);
@@ -51,25 +51,25 @@ TI_API void aitrackForceZeroVelocity(Ship *ship);
 TI_API void aitrackForceHeading(Ship *ship, vector *heading, vector *upvector);
 
 // Note: desiredHeading should be normalized
-TI_API bool aitrackHeadingFunc(SpaceObjRotImpTargGuidance *ship,vector *desiredHeading,real32 accuracy,real32 upaccuracy, real32 sinbank,udword flags);
+TI_API bool_t aitrackHeadingFunc(SpaceObjRotImpTargGuidance *ship,vector *desiredHeading,real32 accuracy,real32 upaccuracy, real32 sinbank,udword flags);
 
 // Note: desiredHeading, desiredUp should be normalized
-TI_API bool aitrackHeadingAndUp(Ship *ship,vector *desiredHeading,vector *desiredUp,real32 accuracy);
+TI_API bool_t aitrackHeadingAndUp(Ship *ship,vector *desiredHeading,vector *desiredUp,real32 accuracy);
 
 // Note: desiredHeading does not have to be normalized
-TI_API bool aitrackHeadingWithBankPitchFunc(Ship *ship,vector *desiredHeading,real32 accuracy,real32 sinbank,real32 pitchdescend,real32 pitchturn,udword flags);
+TI_API bool_t aitrackHeadingWithBankPitchFunc(Ship *ship,vector *desiredHeading,real32 accuracy,real32 sinbank,real32 pitchdescend,real32 pitchturn,udword flags);
 
 // Note: desiredRightVector should be normalized
-TI_API bool aitrackRightVector(Ship *ship,vector *desiredRightVector,real32 accuracy);
+TI_API bool_t aitrackRightVector(Ship *ship,vector *desiredRightVector,real32 accuracy);
 
 TI_API void aitrackVelocityVectorGuidance(SpaceObjRotImpTargGuidance *ship,vector *desiredVelocity);
 #define aitrackVelocityVector(ship,v) aitrackVelocityVectorGuidance((SpaceObjRotImpTargGuidance *)ship,v)
 
-TI_API bool MoveReachedDestinationVariable(Ship *ship,vector *destination,real32 bounds);
+TI_API bool_t MoveReachedDestinationVariable(Ship *ship,vector *destination,real32 bounds);
 
 TI_API real32 MoveLeftToGo(Ship *ship,vector *destination);
 
-TI_API bool aitrackRotationSpeed(Ship *ship, real32 rotspeed, uword track);
+TI_API bool_t aitrackRotationSpeed(Ship *ship, real32 rotspeed, uword track);
 
 /*=============================================================================
     Macros

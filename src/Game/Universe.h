@@ -124,7 +124,7 @@ typedef struct
 
     LinkedList RenderList;      // Linked list of all objects (SpaeceObj's to be rendered)
     LinkedList MinorRenderList;
-    bool dontUpdateRenderList;
+    bool_t dontUpdateRenderList;
 
     real32 phystimeelapsed;
     real32 totaltimeelapsed;
@@ -174,7 +174,7 @@ typedef struct
     uword shipMaxUnits[TOTAL_NUM_SHIPS];
 
     sbyte aiplayerEnemy[MAX_MULTIPLAYER_PLAYERS];
-    bool  aiplayerProcessing;
+    bool_t  aiplayerProcessing;
 
     sdword CapitalShipCaptured;     // bit field of players who have had a ship captured
     sdword PlayerWhoWon;            // bit field of players who have captured a enemy's ship
@@ -183,12 +183,12 @@ typedef struct
     sdword bountySize;
 
     GameStats gameStats;
-    bool DerelictTech;              //variable that needs to be saved that controls the salvagability of technology holding derelicts
+    bool_t DerelictTech;              //variable that needs to be saved that controls the salvagability of technology holding derelicts
 
     real32 crateTimer;
     udword numCratesInWorld;
 
-    bool collUpdateAllBlobs;        // put in here so it gets saved with SaveGame
+    bool_t collUpdateAllBlobs;        // put in here so it gets saved with SaveGame
 
     uword numPlayers;
     uword curPlayerIndex;
@@ -231,20 +231,20 @@ extern meshdata *defaultmesh;
 extern uword RacesAllowedForGivenShip[TOTAL_NUM_SHIPS];
 
 extern ubyte turboTimeCompressionFactor;
-extern bool universeTurbo;
-extern bool universePause;
+extern bool_t universeTurbo;
+extern bool_t universePause;
 
 extern sdword cdMaxShipsAllowed;            // max number of ships allowed
 extern sdword cdLimitCaps[TOTAL_NUM_SHIPS]; // max number of ships per player allowed
 extern sdword cdClassCaps[NUM_CLASSES];     // max number of ships per class allowed
-extern bool   cdEnabled;                    // flag specifying whether unit caps enabled
+extern bool_t   cdEnabled;                    // flag specifying whether unit caps enabled
 
 extern lodinfo *defaultlod;                 // remove later when all stubs are taken out
 extern void *defaultmex;                    // remove later when all stubs are taken out
-extern bool universeForceDefaultShip;       //flag for forcing ships to be loaded as rave borgs
+extern bool_t universeForceDefaultShip;       //flag for forcing ships to be loaded as rave borgs
 
 #if UNIV_SHIP_LOADFREE_LOG
-extern bool univLoadFreeLog;
+extern bool_t univLoadFreeLog;
 #endif
 
 extern real32 rowAvoidBy[TOTAL_NUM_SHIPS];
@@ -294,7 +294,7 @@ TI_API void InitStatDerelictInfoByPath(DerelictStaticInfo *derelictStatInfo, Der
 
 TI_API void unitCapCreateShip(Ship *ship, Player *player);
 TI_API void unitCapDeleteShip(Ship *ship, Player *player);
-TI_API bool unitCapCanCreateShip(ShipType ship, shipsinprogress *factory, shipavailable *cmShipsAvail);
+TI_API bool_t unitCapCanCreateShip(ShipType ship, shipsinprogress *factory, shipavailable *cmShipsAvail);
 TI_API void unitCapInitialize(Player *player);
 TI_API void unitCapEnable(void);
 TI_API void unitCapDisable(void);
@@ -317,7 +317,7 @@ TI_API void writeGameStatsToFile(char *filename);
 TI_API void gameStatsShipDied(Ship *ship);
 TI_API void gameStatsCalcShipCostTotals(void);
 
-TI_API bool isStrikeCraft(ShipType type);
+TI_API bool_t isStrikeCraft(ShipType type);
 
 TI_API void unitCapInitStatics(udword numplayers);
 

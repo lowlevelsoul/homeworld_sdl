@@ -36,7 +36,7 @@ typedef struct AutoDownloadMapInfo
     sdword numPlayers;
     sdword minPlayers;      // min players map can support
     sdword maxPlayers;      // max players map can support
-    bool needAutoDownload;
+    bool_t needAutoDownload;
     sdword numFilesSent;
     sdword numFilesAutodownloaded;      // only has meaning if you are the one downloading
     sdword totalFilesToAutodownload;    // only has meaning if you are the one downloading
@@ -83,7 +83,7 @@ void GetExactMapDirNames(sdword num)
     sprintf(autodownloadmapInfo.exactdirname,autodownloadmapInfo.dirname,num);
 }
 
-bool autodownloadmapBuiltIn()
+bool_t autodownloadmapBuiltIn()
 {
     char fullfile[200];
 
@@ -127,7 +127,7 @@ void autodownloadmapGotMapName(char *mapname,sdword numPlayers,sdword minPlayers
     }
 }
 
-bool autodownloadmapRequired()
+bool_t autodownloadmapRequired()
 {
     return autodownloadmapInfo.needAutoDownload;
 }
@@ -259,7 +259,7 @@ void SendFile(char *dirname,char *filename,sdword fileSize)
     titanSendBroadcastMessage((ubyte *)pkt,sizeofFilePacketGivenPacket(pkt));
 }
 
-bool autodownloadmapSendAFile(void)
+bool_t autodownloadmapSendAFile(void)
 {
     sdword i = autodownloadmapInfo.numFilesSent;
 
@@ -289,7 +289,7 @@ void autodownloadmapSendAllFiles(void)
     }
 }
 
-bool autodownloadmapReceivedAllFiles()
+bool_t autodownloadmapReceivedAllFiles()
 {
     if (autodownloadmapInfo.numFilesAutodownloaded == 0)
     {

@@ -68,7 +68,7 @@ TI_API void scriptSetSwordCB(char *directory,char *field,void *dataToFillIn);
 TI_API void scriptSetUwordCB(char *directory,char *field,void *dataToFillIn);
 TI_API void scriptSetSdwordCB(char *directory,char *field,void *dataToFillIn);
 TI_API void scriptSetUdwordCB(char *directory,char *field,void *dataToFillIn);
-TI_API bool scriptStringToBool(char *boolString);
+TI_API bool_t scriptStringToBool(char *boolString);
 TI_API void scriptSetBool8(char *directory,char *field,void *dataToFillIn);
 TI_API void scriptSetBool(char *directory,char *field,void *dataToFillIn);
 TI_API void scriptSetBitUdword(char *directory,char *field,void *dataToFillIn);

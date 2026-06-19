@@ -56,21 +56,21 @@ TI_API void RemoveShipFromLaunching(Ship *ship);
 TI_API void RemoveShipFromDocking(Ship *ship);
 
 TI_API void dockPrepareSingleShipForLaunch(Ship *ship,Ship *dockship);
-TI_API void dockChangeSingleShipToDock(struct CommandToDo *command,Ship *ship,Ship *dock,bool wasHarvesting,DockType dockType);
+TI_API void dockChangeSingleShipToDock(struct CommandToDo *command,Ship *ship,Ship *dock,bool_t wasHarvesting,DockType dockType);
 TI_API void DockCleanup(struct CommandToDo *docktodo);
 TI_API void LaunchCleanup(struct CommandToDo *launchtodo);
-TI_API bool processDockToDo(struct CommandToDo *docktodo);
+TI_API bool_t processDockToDo(struct CommandToDo *docktodo);
 
-TI_API bool ShipWithinDockRange(Ship *ship,Ship *target);
+TI_API bool_t ShipWithinDockRange(Ship *ship,Ship *target);
 TI_API Ship *FindNearestShipToDockAt(Ship *ship,DockType dockType);
 
 // specific docking for certain ships
-TI_API bool LaunchShipFromDDDF(Ship *ship,Ship *dockwith);
-TI_API bool DroneDocksAtDDDF(struct Ship *ship,struct Ship *dockwith);
+TI_API bool_t LaunchShipFromDDDF(Ship *ship,Ship *dockwith);
+TI_API bool_t DroneDocksAtDDDF(struct Ship *ship,struct Ship *dockwith);
 TI_API void dockPrepareDroneForDocking(Ship *ship,Ship *dockship);
 
-TI_API bool ShipIsRefuelingAtCarrierMother(struct Ship *ship);
-TI_API bool ShipIsWaitingForSoftLaunch(struct Ship *ship);
+TI_API bool_t ShipIsRefuelingAtCarrierMother(struct Ship *ship);
+TI_API bool_t ShipIsWaitingForSoftLaunch(struct Ship *ship);
 TI_API Ship *FindAnotherResearchShiptoDockWith(Ship *ship);
 TI_API void dockMakeMaster(Ship *master);
 TI_API void dockAddSlave(Ship *master, Ship *slave);

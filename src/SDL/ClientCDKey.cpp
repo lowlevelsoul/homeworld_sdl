@@ -127,12 +127,12 @@ ClientCDKey::ValFromBits(const __int64& aBuf, unsigned int theOffset, unsigned i
 // ClientCDKey::ProcessCChar
 // Places a C into 8 byte buffer starting at theOffset.  Cs use 4 bits.  Value of
 // theOffset is incremented by 4.
-bool
+bool_t
 ClientCDKey::ProcessCChar(__int64& theBuf, unsigned int& theOffset, char theChar)
 {
 	WTRACE("ClientCDKey::ProcessCChar");
 	WDBG_LL("ClientCDKey::ProcessCChar char=" << theChar << " offset=" << theOffset);
-	bool    aRet  = true;
+	bool_t    aRet  = true;
 	__int64 aMask = 0;
 
 	// Determine mask based on char
@@ -185,12 +185,12 @@ ClientCDKey::ProcessCChar(__int64& theBuf, unsigned int& theOffset, char theChar
 // ClientCDKey::ProcessVChar
 // Places a V into 8 byte buffer starting at theOffset.  Vs use 2 bits.  Value of
 // theOffset is incremented by 2.
-bool
+bool_t
 ClientCDKey::ProcessVChar(__int64& theBuf, unsigned int& theOffset, char theChar)
 {
 	WTRACE("ClientCDKey::ProcessVChar");
 	WDBG_LL("ClientCDKey::ProcessVChar char=" << theChar << " offset=" << theOffset);
-	bool    aRet  = true;
+	bool_t    aRet  = true;
 	__int64 aMask = 0;
 
 	// Determine mask based on char
@@ -219,12 +219,12 @@ ClientCDKey::ProcessVChar(__int64& theBuf, unsigned int& theOffset, char theChar
 // ClientCDKey::ProcessNChar
 // Places a N into 8 byte buffer starting at theOffset.  Ns use 3 bits.  Value of
 // theOffset is incremented by 3.
-bool
+bool_t
 ClientCDKey::ProcessNChar(__int64& theBuf, unsigned int& theOffset, char theChar)
 {
 	WTRACE("ClientCDKey::ProcessNChar");
 	WDBG_LL("ClientCDKey::ProcessNChar char=" << theChar << " offset=" << theOffset);
-	bool aRet = ((isdigit(theChar)) && (theChar > '1'));
+	bool_t aRet = ((isdigit(theChar)) && (theChar > '1'));
 	if (aRet)
 	{
 		__int64 aMask = (theChar - '0') - 2;
@@ -501,7 +501,7 @@ ClientCDKey::BufferFromFields() const
 // ClientCDKey::DecryptKey
 // Decrypt 16 byte binary key into 8 byte buffer.  Uses symmetric key built from product
 // name for decryption.
-bool
+bool_t
 ClientCDKey::DecryptKey(__int64& theBufR)
 {
 	WTRACE("ClientCDKey::DecryptKey");
@@ -538,7 +538,7 @@ ClientCDKey::DecryptKey(__int64& theBufR)
 // ClientCDKey::EncryptKey
 // Encrypts into 8 byte buffer in 16 byte binary.  Uses symmetric key built from product
 // name for encryption.
-bool
+bool_t
 ClientCDKey::EncryptKey(const __int64& theBufR) const
 {
 	WTRACE("ClientCDKey::EncryptKey");
@@ -593,7 +593,7 @@ ClientCDKey::operator=(const ClientCDKey& theKeyR)
 
 // ClientCDKey::IsEqual
 // Compare 2 client keys for equality.
-bool
+bool_t
 ClientCDKey::IsEqual(const ClientCDKey& theKeyR) const
 {
 	WTRACE("ClientCDKey::IsEqual");
@@ -604,7 +604,7 @@ ClientCDKey::IsEqual(const ClientCDKey& theKeyR) const
 
 // ClientCDKey::IsValid
 // Check client key for validity.  Performs lightweight check only if needed.
-bool
+bool_t
 ClientCDKey::IsValid() const
 {
 	WTRACE("ClientCDKey::IsValid");
@@ -619,7 +619,7 @@ ClientCDKey::IsValid() const
 // ClientCDKey::IsBeta
 // Checks to see if this is a beta key.  Key is beta if bit 0 of first byte of
 // mKey is set.
-bool
+bool_t
 ClientCDKey::IsBeta() const
 {
 	WTRACE("ClientCDKey::IsBeta");
@@ -630,7 +630,7 @@ ClientCDKey::IsBeta() const
 
 // ClientCDKey::Init(__int64)
 // Initializes key from 8 byte raw buffer.  Does not validate key.
-bool
+bool_t
 ClientCDKey::Init(const __int64& theKeyR)
 {
 	WTRACE("ClientCDKey::Init(__int64)");
@@ -648,7 +648,7 @@ ClientCDKey::Init(const __int64& theKeyR)
 
 // ClientCDKey::Init(string)
 // Initializes key from human readable string.  Does not validate key.
-bool
+bool_t
 ClientCDKey::Init(const string& theKeyR)
 {
 	WTRACE("ClientCDKey::Init(string)");
@@ -675,7 +675,7 @@ ClientCDKey::Init(const string& theKeyR)
 	unsigned int anOffset = 0;
 	for (int i=0; i < STRINGKEY_LEN; i++)
 	{
-		bool aTst = true;
+		bool_t aTst = true;
 		switch (STRINGKEY_MAP[i])
 		{
 		case 'C':
@@ -710,7 +710,7 @@ ClientCDKey::Init(const string& theKeyR)
 
 // ClientCDKey::Init(RawBuffer)
 // Initializes key from encrypted binary buffer.  Does not validate key.
-bool
+bool_t
 ClientCDKey::Init(const RawBuffer& theKeyR)
 {
 	WTRACE("ClientCDKey::Init(RawBuffer)");
@@ -746,7 +746,7 @@ ClientCDKey::Init(const RawBuffer& theKeyR)
 // ClientCDKey::AsString
 // Returns human readable string form of CD-Key.  Builds string form if needed.
 const string&
-ClientCDKey::AsString(bool validate) const
+ClientCDKey::AsString(bool_t validate) const
 {
 	WTRACE("ClientCDKey::AsString");
 	if ((mStrKey.empty()) || (mValidity != Valid))
@@ -781,7 +781,7 @@ ClientCDKey::AsBinary() const
 // ClientCDKey::Load
 // Loads CD-Key from WON standard location in registry.  Entry is registry must be
 // the enrypted binary form.  Calls Init(RawBuffer).
-bool
+bool_t
 ClientCDKey::Load()
 {
 	WTRACE("ClientCDKey::Load");
@@ -816,7 +816,7 @@ ClientCDKey::Load()
 // ClientCDKey::Save
 // Saves CD-Key to WON standard location in registry.  Entry is saved to registry as
 // the enrypted binary form.  Calls AsBinary().
-bool
+bool_t
 ClientCDKey::Save() const
 {
 	WTRACE("ClientCDKey::Save");
@@ -838,7 +838,7 @@ ClientCDKey::Save() const
 
 // ClientCDKey::CleanReg
 // Cleans registry of CD-Key in WON standard location.
-bool
+bool_t
 ClientCDKey::CleanReg()
 {
 	WTRACE("ClientCDKey::CleanReg");

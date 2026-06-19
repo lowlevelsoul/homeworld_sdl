@@ -41,17 +41,17 @@ STREAM streams[SOUND_MAX_STREAM_BUFFERS];
 sdword numstreams;
 
 #if VCE_BACKWARDS_COMPATIBLE
-bool ssOldFormatVCE = FALSE;
+bool_t ssOldFormatVCE = FALSE;
 #endif
 
 extern CHANNEL channels[];
 extern SENTENCELUT *SentenceLUT;
-extern bool soundinited;
+extern bool_t soundinited;
 extern SOUNDCOMPONENT	streamer;
 extern udword mixerticks;
 
-extern bool bSoundPaused;
-extern bool bSoundDeactivated;
+extern bool_t bSoundPaused;
+extern bool_t bSoundDeactivated;
 
 
 /*-----------------------------------------------------------------------------
@@ -369,7 +369,7 @@ sdword soundstreamfading(sdword streamhandle)
 	Outputs		:
 	Return		:
 ----------------------------------------------------------------------------*/	
-sdword soundstreamqueuePatch(sdword streamhandle, smemsize filehandle, smemsize offset, udword flags, sword vol, sword pan, sword numchannels, sword bitrate, EFFECT *peffect, STREAMEQ *pEQ, STREAMDELAY *pdelay, void *pmixpatch, sdword level, real32 silence, real32 fadetime, sdword actornum, sdword speechEvent, bool bWait)
+sdword soundstreamqueuePatch(sdword streamhandle, smemsize filehandle, smemsize offset, udword flags, sword vol, sword pan, sword numchannels, sword bitrate, EFFECT *peffect, STREAMEQ *pEQ, STREAMDELAY *pdelay, void *pmixpatch, sdword level, real32 silence, real32 fadetime, sdword actornum, sdword speechEvent, bool_t bWait)
 {
 	sdword chan;
 	STREAM	*pstream;
@@ -583,7 +583,7 @@ sdword soundstreamvolume(sdword handle, sword vol, real32 fadetime)
 {
 	CHANNEL *pchan;
 	sdword channel;
-	bool stop = FALSE;
+	bool_t stop = FALSE;
 	sdword fadeblocks = -1;
 	STREAM *pstream;
 	sdword i;

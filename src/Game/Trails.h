@@ -91,7 +91,7 @@ typedef struct
     ubyte  state;
     ubyte  counter;
 
-    bool   wobbly;
+    bool_t   wobbly;
 
     real32 lastvelsquared;
     real32 prevvelsquared;
@@ -157,7 +157,7 @@ TI_API void trailZeroLength(shiptrail *trail);
 TI_API void trailMove(shiptrail* trail, vector *delta);
 
 //cause a trail or glow to enter/exit its "wobbly" state
-TI_API void trailMakeWobbly(void* vship, bool state);
+TI_API void trailMakeWobbly(void* vship, bool_t state);
 
 //parse a ship definition file and create a trailstatic structure
 TI_API trailstatic *trailStaticInfoParse(char *directory, char *fileName);

@@ -408,12 +408,12 @@ void scriptSetUdwordCB(char *directory,char *field,void *dataToFillIn)
 
 /*-----------------------------------------------------------------------------
     Name        : scriptStringToBool
-    Description : Convert a string to a bool.  Looks for nonzero numbers, "TRUE" or "YES"
+    Description : Convert a string to a bool_t.  Looks for nonzero numbers, "TRUE" or "YES"
     Inputs      : boolString - string to convert
     Outputs     :
     Return      : TRUE or FALSE
 ----------------------------------------------------------------------------*/
-bool scriptStringToBool(char *boolString)
+bool_t scriptStringToBool(char *boolString)
 {
     while (*boolString && strchr(" \t,\n", *boolString))
     {                                                       //strip the leading fluff characters
@@ -438,7 +438,7 @@ void scriptSetBool8(char *directory,char *field,void *dataToFillIn)
 
 void scriptSetBool(char *directory,char *field,void *dataToFillIn)
 {
-    *((bool *)dataToFillIn) = scriptStringToBool(field);
+    *((bool_t *)dataToFillIn) = scriptStringToBool(field);
 }
 
 void scriptSetBitUdword(char *directoryy,char *field,void *dataToFillIn)
@@ -691,7 +691,7 @@ void StripTrailingSpaces(char *value)
     Outputs     : returnName, returnValue
     Return      : TRUE if returnName, returnValue were found and set, FALSE otherwise
 ----------------------------------------------------------------------------*/
-bool parseLine(char *line,char **returnName,char **returnValue)
+bool_t parseLine(char *line,char **returnName,char **returnValue)
 {
     char *name;
     char *value;

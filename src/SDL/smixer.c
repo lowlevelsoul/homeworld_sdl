@@ -53,7 +53,7 @@ udword mixerticks = 0;
 udword panicdur = 0L;
 udword framecount = 0L;
 
-bool panicflag=FALSE;
+bool_t panicflag=FALSE;
 sdword numvoices = 0;
 
 udword buffersize;
@@ -71,19 +71,19 @@ real32 mixbuffer1L[FQ_SIZE], mixbuffer1R[FQ_SIZE], mixbuffer2L[FQ_SIZE], mixbuff
 
 //extern LPDIRECTSOUND lpDirectSound;
 extern CHANNEL channels[];
-extern bool soundinited;
+extern bool_t soundinited;
 extern STREAM streams[];
 extern CHANNEL speechchannels[];
 extern sdword numstreams;
-extern bool bDirectSoundCertified;
+extern bool_t bDirectSoundCertified;
 extern SENTENCELUT *SentenceLUT;
 extern real32 MasterEQ[];
 
 extern SOUNDCOMPONENT	mixer;
 extern SOUNDCOMPONENT	streamer;
 
-extern bool bSoundPaused;
-extern bool bSoundDeactivated;
+extern bool_t bSoundPaused;
+extern bool_t bSoundDeactivated;
 
 extern sdword soundnumvoices;
 extern sdword soundvoicemode;

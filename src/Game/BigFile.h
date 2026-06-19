@@ -121,7 +121,7 @@ bigLocalFileAgeComparison;
 typedef struct 
 {
     char   *bigFileName;
-    bool    required;
+    bool_t    required;
     FILE   *filePtr;
     bigTOC  tableOfContents;
     bigLocalFileAgeComparison  *localFileRelativeAge;   // array with TOC file number as index
@@ -143,7 +143,7 @@ TI_API int bigAddFile(char *bigFilename, char *filename, char *storedFilename, i
 TI_API int bigDelete(char *bigfilename, int numFiles, char *filenames[], int consoleOutput);
 TI_API int bigView(char *bigfilename, int consoleOutput);
 TI_API int bigExtract(char *bigfilename, int numFiles, char *filenames[], int optFreshen, int optMove, int optPathnames, int optOverwrite, int consoleOutput);
-TI_API bool bigTOCFileExists(bigTOC *toc, char *filename, udword *fileNum);
+TI_API bool_t bigTOCFileExists(bigTOC *toc, char *filename, udword *fileNum);
 TI_API int bigTOCFileExistsByCRC(bigTOC *toc, bigTOCFileEntry *target, udword *fileNum);
 TI_API void bigTOCSort(bigTOC *toc);
 TI_API void bigFilenameEncrypt(char *filename);
@@ -152,12 +152,12 @@ TI_API crc32 bigTOCCRC(bigTOC *toc);
 
 // not used in command line utility, only in the game
 #ifdef BF_HOMEWORLD
-    TI_API bool bigOpenAllBigFiles(void);
+    TI_API bool_t bigOpenAllBigFiles(void);
     TI_API void bigCloseAllBigFiles(void);
     
     TI_API void bigCRC(udword *bigCRCArray, udword arraySize);
     TI_API void bigFilesystemCompare(char *baseDirectory, char *directory);
-    TI_API bool bigFindFile(char *filename, bigFileConfiguration **whereFound, udword *fileIndex);
+    TI_API bool_t bigFindFile(char *filename, bigFileConfiguration **whereFound, udword *fileIndex);
 
     TI_API sdword bigFileLoadAlloc(bigTOC *toc, FILE *bigFP, char *filename, udword fileNum, void **address);
     TI_API sdword bigFileLoad(bigTOC *toc, FILE *bigFP, udword fileNum, void *address);

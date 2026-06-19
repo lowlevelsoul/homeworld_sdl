@@ -34,7 +34,7 @@ typedef struct
 
 extern CustShipHeader RepairCorvetteHeader;
 
-TI_API bool refuelRepairShips(Ship *ship, SelectAnyCommand *targets, real32 rangetoRefuel);
+TI_API bool_t refuelRepairShips(Ship *ship, SelectAnyCommand *targets, real32 rangetoRefuel);
 TI_API void RepairCorvetteOrderChanged(Ship *ship);
 TI_API void stopRepairEffect(Ship *ship);
 

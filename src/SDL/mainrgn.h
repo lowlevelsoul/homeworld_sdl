@@ -64,7 +64,7 @@
     Data:
 =============================================================================*/
 //data exported for the benefit of other modules with similar functionality
-extern bool mrWhiteOut;
+extern bool_t mrWhiteOut;
 extern real32 mrWhiteOutT;
 extern sdword mrRenderMainScreen;
 extern sdword mrOldMouseX, mrOldMouseY;
@@ -83,16 +83,16 @@ extern void (*mrHoldRight)(void);
 
 extern char *mrMenuItemByTactic[];
 
-extern bool helpinfoactive;
+extern bool_t helpinfoactive;
 
 extern real32 mrNumberDoublePressTime;
 extern sdword mrLastKeyPressed;
 extern real32 mrLastKeyTime;
 
-extern bool mrDisabled;
+extern bool_t mrDisabled;
 
 #if MR_CAN_FOCUS_ROIDS
-bool mrCanFocusRoids;
+bool_t mrCanFocusRoids;
 #endif
 
 /*=============================================================================
@@ -127,7 +127,7 @@ TI_API void mrInfo(char *string, featom *atom);
 TI_API void mrCancel(char *string, featom *atom);
 TI_API void mrScuttle(char *string, featom *atom);
 TI_API void mrRetire(char *string, featom *atom);
-TI_API void mrUpdateHyperspaceStatus(bool goForLaunch);
+TI_API void mrUpdateHyperspaceStatus(bool_t goForLaunch);
 TI_API void mrHyperspace(char *string, featom *atom);
 TI_API void mrLaunch(char *string, featom *atom);
 TI_API void mrResearch(char *string, featom *atom);
@@ -149,13 +149,13 @@ TI_API void mrDisable(void);
 TI_API void mrNULL(void);
 TI_API void mrSelectHold(void);
 TI_API void mrShipDied(Ship *ship);
-TI_API void mrTacticalOverlayState(bool bTactical);
+TI_API void mrTacticalOverlayState(bool_t bTactical);
 
 TI_API void bigmessageDisplay(char *msg,sdword position);
 TI_API void bigmessageErase(sdword position);
 
 //probe hack functions
-TI_API bool mrNeedProbeHack(void);
+TI_API bool_t mrNeedProbeHack(void);
 TI_API void mrProbeHack(void);
 TI_API void mrRemoveAllProbesFromSelection(void);
 

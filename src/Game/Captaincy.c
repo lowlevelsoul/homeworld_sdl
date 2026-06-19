@@ -50,7 +50,7 @@ extern Uint32 utyTimerDivisor;
 
 typedef struct TimeoutTimer
 {
-    bool enabled;
+    bool_t enabled;
     Uint32 timerLast;
     udword timeoutTicks;
 } TimeoutTimer;
@@ -72,11 +72,11 @@ sdword TimedOutWaitingForPauseAcksGiveUpAfterNumTimes = 2;
 
 TimeoutTimer timeoutTimers[NUMBER_TIMEOUTTIMERS];
 
-bool transferCaptaincyDisabled = FALSE;
+bool_t transferCaptaincyDisabled = FALSE;
 
 udword pausedNextPacketToReceive[MAX_MULTIPLAYER_PLAYERS] = { 0,0,0,0,0,0,0,0 };
 
-bool printCaptainMessage = FALSE;
+bool_t printCaptainMessage = FALSE;
 
 void AcknowledgeNewCaptain(sdword newcaptainIndex);
 
@@ -106,7 +106,7 @@ void resetPausedNextPacketToReceive()
     }
 }
 
-void captaincyLog(bool echotoscreen,char *format, ...)
+void captaincyLog(bool_t echotoscreen,char *format, ...)
 {
     char buffer[200];
     va_list argList;
@@ -388,7 +388,7 @@ void IBecomeCaptain(void)
 #define STATE_WAIT_FOR_PAUSE_ACKS   3
 #define STATE_PAUSED                4
 
-void TransitionToSTATE_NORMAL(bool tellUser)
+void TransitionToSTATE_NORMAL(bool_t tellUser)
 {
     captaincyLog(tellUser,"Cap:Transition to state normal");
     captainTransferState = STATE_NORMAL;
@@ -454,7 +454,7 @@ void SendSyncPacketsToAllOtherPlayersTillCaughtUp(void)
             sdword j;
             HWPacketHeader *packet;
             udword size;
-            bool gotit;
+            bool_t gotit;
 
             for (j=pausedNextPacketToReceive[i];j<pausedNextPacketToReceive[sigsPlayerIndex];j++)
             {
@@ -474,7 +474,7 @@ void SendSyncPacketsToAllOtherPlayersTillCaughtUp(void)
     }
 }
 
-bool IHaveEqualOrLatestSyncPacket(void)
+bool_t IHaveEqualOrLatestSyncPacket(void)
 {
     sdword i;
 

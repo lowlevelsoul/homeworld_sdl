@@ -113,7 +113,7 @@ tasklistitem;
 #define TBDISABLE_SENSORS_USE       2
 #define TBDISABLE_TRADEMGR_USE      4
 //exported variable
-extern bool tbDisable;
+extern bool_t tbDisable;
 
 /*=============================================================================
     Functions:
@@ -143,6 +143,6 @@ TI_API void tbObjectivesListCleanUp(void);
 TI_API void tbSensorsHook(void);
 
 //bump up the taskbar
-TI_API void tbForceTaskbar(bool On);
+TI_API void tbForceTaskbar(bool_t On);
 
 #endif

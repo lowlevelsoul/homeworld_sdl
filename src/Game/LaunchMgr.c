@@ -71,10 +71,10 @@ extern udword strCurLanguage;
 
 static sdword lmRenderEverythingCounter;
 
-bool lmActive = FALSE;
+bool_t lmActive = FALSE;
 
 extern ShipType svShipType;
-bool lmPaletted;
+bool_t lmPaletted;
 
 LaunchShipsAvailable shipsavailable[LM_CORVETTE_SPACER+1];
 
@@ -109,9 +109,9 @@ sdword PrintOrder[LM_NUMSHIPS] =
     -1
 };
 
-// This is a bool that is TRUE if the ship is in the printlist. dynamically calculated
+// This is a bool_t that is TRUE if the ship is in the printlist. dynamically calculated
 // based on the PrintOrder
-bool lmShipInList[TOTAL_NUM_SHIPS];
+bool_t lmShipInList[TOTAL_NUM_SHIPS];
 
 
 // callback functions for the launch GUI
@@ -184,7 +184,7 @@ color lmAvailableColor          = LM_AvailableColor;
 
 //variables for selection etc...
 
-bool lmIoSaveState;
+bool_t lmIoSaveState;
 
 
 Ship *lmCarrierX[NUM_LMCARRIERS] = { NULL, NULL, NULL, NULL };
@@ -236,7 +236,7 @@ ShipType lmcurshipview=DefaultShip;
 void lmUpdateShipView(void)
 {
     udword index;
-    bool   set=TRUE;
+    bool_t   set=TRUE;
     listitemhandle listitem;
 
     if (lmcurshipview == DefaultShip)
@@ -820,7 +820,7 @@ void lmShipsToLaunchDraw(char *string, featom *atom)
 {
     fonthandle      oldfont;
     sdword          index;
-    bool            is_corv=FALSE, is_fight=FALSE;
+    bool_t            is_corv=FALSE, is_fight=FALSE;
 
     if (FEFIRSTCALL(atom))
     {
@@ -1505,7 +1505,7 @@ void lmUpdateShipsInside(void)
     sdword      index;
     sdword      shipnum=-1;
     listitemhandle listitem;
-    bool            is_corv=FALSE, is_fight=FALSE;
+    bool_t            is_corv=FALSE, is_fight=FALSE;
 
     if (lmBaseRegion!=NULL)
     {
@@ -1750,7 +1750,7 @@ void lmReLaunch(Ship *newship)
     sdword      index;
     sdword      shipnum=-1;
     listitemhandle listitem;
-    bool            is_corv=FALSE, is_fight=FALSE;
+    bool_t            is_corv=FALSE, is_fight=FALSE;
 
     launchship = newship;
 

@@ -80,9 +80,7 @@ typedef sdword	smemsize;
 typedef real32  memrealsize;
 #endif
 
-#ifndef __cplusplus
-typedef udword  bool;
-#endif
+typedef udword  bool_t;
 
 typedef sbyte   bool8;
 typedef sword   bool16;

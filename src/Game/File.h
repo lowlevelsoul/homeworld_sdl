@@ -115,10 +115,10 @@ extern char filePathTempBuffer    [];
 TI_API char *filePathPrepend(char *fileName, udword flags);
 TI_API void fileNameReplaceSlashesInPlace(char *fileName);
 
-TI_API bool fileCDROMPathSet(char *path);
+TI_API bool_t fileCDROMPathSet(char *path);
 TI_API void fileHomeworldDataPathSet(char *path);
-TI_API bool fileOverrideBigPathSet(char *path);
-TI_API bool fileUserSettingsPathSet(char *path);
+TI_API bool_t fileOverrideBigPathSet(char *path);
+TI_API bool_t fileUserSettingsPathSet(char *path);
 
 
 //load files directly into memory
@@ -147,8 +147,8 @@ TI_API FILE *fileStream(filehandle handle);
 //utility functions
 TI_API bool8 fileMakeDirectory(const char *directoryName);
 TI_API bool8 fileMakeDestinationDirectory(const char *fileName);
-TI_API bool fileExistsInBigFile(char *fileName);
-TI_API bool fileExists(char *fileName, udword flags);
+TI_API bool_t fileExistsInBigFile(char *fileName);
+TI_API bool_t fileExists(char *fileName, udword flags);
 TI_API sdword fileSizeGet(char *fileName, udword flags);
 
 TI_API void logfileClear(char *logfile);

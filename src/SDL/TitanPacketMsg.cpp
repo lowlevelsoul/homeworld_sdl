@@ -15,7 +15,7 @@ using WONMsg::MiniMessage;
 // ** Constructors / Destructor
 
 // Default ctor
-TitanPacketMsg::TitanPacketMsg(unsigned char theType, bool encrypted) :
+TitanPacketMsg::TitanPacketMsg(unsigned char theType, bool_t encrypted) :
     mBlob(NULL),
     mBlobLen(0),
 	mIncludeGameName(theType != TITANMSGTYPE_GAME)

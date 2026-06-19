@@ -110,7 +110,7 @@ sdword cpStripeHue, cpStripeSaturation, cpStripeValue;
 color *cpPBaseColor = &utyBaseColor;
 color *cpPStripeColor = &utyStripeColor;
 //ShipRace *cpPRace;
-bool   cpColorsPicked = FALSE;
+bool_t   cpColorsPicked = FALSE;
 
 //region handles for the interactive user regions
 regionhandle cpHueSaturationRegion = NULL, cpValueRegion = NULL;

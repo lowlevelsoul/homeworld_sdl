@@ -39,7 +39,7 @@
 extern uword opKeyDetour;
 extern char opKeymap[OP_KEYMAPSIZE];
 
-extern bool opReloading;
+extern bool_t opReloading;
 extern sdword opNoPalMB;
 extern sdword opMusicVol;
 extern sdword opSFXVol;
@@ -59,13 +59,13 @@ extern sdword opBattleChatter;
 extern sdword opEffectsVal;
 extern sdword opBrightnessVal;
 extern udword opDetailThresholdVal;
-extern bool opCustomEffectsToggled;
+extern bool_t opCustomEffectsToggled;
 extern sdword opNoLODVal;
 extern sdword opNumChannels;
 extern sdword opAutoChannel;
 extern sdword opSoundQuality;
 
-extern bool   opTimerActive;
+extern bool_t   opTimerActive;
 extern real32 opTimerStart;
 extern real32 opTimerLength;
 
@@ -113,7 +113,7 @@ TI_API void opUpdateSettings(void);
 TI_API char *opKeyToNiceString(keyindex key);
 TI_API keyindex opKeyTranslate(keyindex key);
 TI_API void opKeyAssign(uword func, keyindex key);
-TI_API bool opValidKey(keyindex key);
+TI_API bool_t opValidKey(keyindex key);
 TI_API void opDefineThisKey(keyindex key);
 TI_API void opKeyboardLoad(void);
 TI_API udword opMusicVolumeProcess(regionhandle reg, sdword ID, udword event, udword data);

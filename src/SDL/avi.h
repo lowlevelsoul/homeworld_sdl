@@ -28,7 +28,7 @@ extern "C" {
 #endif
 
 
-extern bool utilPlayingIntro;
+extern bool_t utilPlayingIntro;
 
 
 /*=============================================================================
@@ -37,7 +37,7 @@ extern bool utilPlayingIntro;
 
 
 TI_API int aviInit(void);
-TI_API bool aviPlay(char* filename);
+TI_API bool_t aviPlay(char* filename);
 TI_API int aviStop(void);
 TI_API int aviCleanup(void);
 TI_API void aviIntroPlay(void);

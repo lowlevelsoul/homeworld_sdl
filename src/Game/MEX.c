@@ -25,7 +25,7 @@
 #define strcasecmp _stricmp
 #endif
 
-bool mexVerify(void *mex)
+bool_t mexVerify(void *mex)
 {
     return (strcasecmp((char *)mex,"mannngo") == 0);
 }

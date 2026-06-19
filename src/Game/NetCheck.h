@@ -61,7 +61,7 @@ TI_API void recPackInGameStopCB(void);
 extern char OrigRecordPacketFileName[];
 
 #ifdef GOD_LIKE_SYNC_CHECKING
-TI_API void syncDebugDump(char *filename,sdword counter,bool save);
+TI_API void syncDebugDump(char *filename,sdword counter,bool_t save);
 TI_API void industrialStrengthSyncDebugging(sdword FrameNumber);
 TI_API void netcheckIndustrialChecksum(void);
 TI_API void netReceivedSyncFromNonCaptain(void *checksums,udword frame,udword playerIndex);

@@ -85,7 +85,7 @@ TI_API void kbRestoreSavedSettings(void);
 TI_API void kbSaveSettings(void);
 
 TI_API udword kbKeyBoundToCommand(udword command);
-TI_API bool kbCommandKeyIsHit(udword command);
+TI_API bool_t kbCommandKeyIsHit(udword command);
 
 TI_API void kbInitKeyBindings(void);
 

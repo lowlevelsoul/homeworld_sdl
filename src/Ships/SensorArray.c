@@ -35,7 +35,7 @@ void SensorArrayInit(Ship *ship)
     ship->playerowner->sensorLevel = 2;
 }
 
-bool noMoreLocalSensorArrays(Ship *ship)
+bool_t noMoreLocalSensorArrays(Ship *ship)
 {
     Node *shipnode = universe.ShipList.head;
     Ship *obj;

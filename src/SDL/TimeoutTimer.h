@@ -14,8 +14,8 @@
 
 typedef struct TTimer
 {
-    bool enabled;
-    bool timedOut;
+    bool_t enabled;
+    bool_t timedOut;
     sqword timerLast;
     udword timeoutTicks;
 } TTimer;
@@ -23,10 +23,10 @@ typedef struct TTimer
 TI_API void TTimerInit(TTimer *timer);
 TI_API void TTimerClose(TTimer *timer);
 TI_API void TTimerDisable(TTimer *timer);
-TI_API bool TTimerUpdate(TTimer *timer);
+TI_API bool_t TTimerUpdate(TTimer *timer);
 TI_API void TTimerReset(TTimer *timer);
 TI_API void TTimerStart(TTimer *timer,real32 timeout);
-TI_API bool TTimerIsTimedOut(TTimer *timer);
+TI_API bool_t TTimerIsTimedOut(TTimer *timer);
 
 TI_API void GetRawTime(sqword *time);
 

@@ -29,9 +29,9 @@ HeavyCorvetteStatics HeavyCorvetteStaticRace1;
 HeavyCorvetteStatics HeavyCorvetteStaticRace2;
 
 void heavyCleanSpec(Ship *ship);
-bool doBurstCharging(Ship *ship);
-bool flytoBurstPosition(Ship *ship);
-bool doBurstFire(Ship *ship);
+bool_t doBurstCharging(Ship *ship);
+bool_t flytoBurstPosition(Ship *ship);
+bool_t doBurstFire(Ship *ship);
 
 void HeavyCorvetteStaticInit(char *directory,char *filename,struct ShipStaticInfo *statinfo)
 {
@@ -60,9 +60,9 @@ void HeavyCorvetteAttack(Ship *ship,SpaceObjRotImpTarg *target,real32 maxdist)
     attackSideStep(ship,target,&spec->attacksidestep,&corvstat->sidestepParameters);
 }
 
-void HeavyCorvetteAttackPassive(Ship *ship,Ship *target,bool rotate)
+void HeavyCorvetteAttackPassive(Ship *ship,Ship *target,bool_t rotate)
 {
-    if ((rotate) & ((bool)((ShipStaticInfo *)(ship->staticinfo))->rotateToRetaliate))
+    if ((rotate) & ((bool_t)((ShipStaticInfo *)(ship->staticinfo))->rotateToRetaliate))
     {
         attackPassiveRotate(ship,target);
     }
@@ -78,7 +78,7 @@ void HeavyCorvetteAttackPassive(Ship *ship,Ship *target,bool rotate)
 #define BURST_Fire              2
 
 
-bool HeavyCorvetteSpecialTarget(Ship *ship, void *custom)
+bool_t HeavyCorvetteSpecialTarget(Ship *ship, void *custom)
 {
     HeavyCorvetteSpec *spec = (HeavyCorvetteSpec *)ship->ShipSpecifics;
     SelectAnyCommand *targets = (SelectAnyCommand *)custom;
@@ -181,7 +181,7 @@ void heavyCorvetteOrderChanged(Ship *ship)
 //heavy corvette.
 //
 //Function also creates effect for charging
-bool doBurstCharging(Ship *ship)
+bool_t doBurstCharging(Ship *ship)
 {
     HeavyCorvetteSpec *spec = (HeavyCorvetteSpec *)ship->ShipSpecifics;
 
@@ -204,11 +204,11 @@ bool doBurstCharging(Ship *ship)
 
 //this function flies the ship to within range of the desired target location and
 //orients itself to fire.  Returns true when in position
-bool flytoBurstPosition(Ship *ship)
+bool_t flytoBurstPosition(Ship *ship)
 {
     HeavyCorvetteSpec *spec = (HeavyCorvetteSpec *)ship->ShipSpecifics;
     vector heading;
-    bool ready = FALSE;
+    bool_t ready = FALSE;
     //maybe track to within gun gimbleness
     vecSub(heading,spec->burstFireVector,ship->posinfo.position);
     vecNormalize(&heading);
@@ -227,7 +227,7 @@ bool flytoBurstPosition(Ship *ship)
 }
 
 //fires the bursts for the ship
-bool doBurstFire(Ship *ship)
+bool_t doBurstFire(Ship *ship)
 {
     HeavyCorvetteSpec *spec = (HeavyCorvetteSpec *)ship->ShipSpecifics;
     sdword done;

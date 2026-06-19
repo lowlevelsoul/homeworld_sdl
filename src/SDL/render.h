@@ -100,10 +100,10 @@ extern real32 rndAspectRatio;                                      //aspect rati
 extern bool8  rndFogOn;
 extern hmatrix rndCameraMatrix;
 extern hmatrix rndProjectionMatrix;
-extern bool rndNormalization;
-extern bool rndTakeScreenshot;
+extern bool_t rndNormalization;
+extern bool_t rndTakeScreenshot;
 extern udword rndLightingEnabled;
-extern bool rndScissorEnabled;
+extern bool_t rndScissorEnabled;
 
 #if RND_POLY_STATS
 sdword rndDisplayPolyStats;
@@ -126,14 +126,14 @@ extern renderfunction rndMainViewRender;
 
 //startup/shutdown the rendering module.
 TI_API sdword rndInit(rndinitdata *initData);
-TI_API sdword rndSmallInit(rndinitdata* initData, bool GL);
+TI_API sdword rndSmallInit(rndinitdata* initData, bool_t GL);
 TI_API void rndClose(void);
 
 //render a mission sphere using a specific camera.  Or don't render; it's your call.
 void rndMainViewRenderFunction(Camera *camera);             //normal rendering mode
 void rndMainViewRenderNothingFunction(Camera *camera);      //don't do anything; just return
 void rndMainViewAllButRenderFunction(Camera *camera);       //compute selection info but don't render
-TI_API void rndBackgroundRender(real32 radius, Camera *camera, bool bDrawStars);
+TI_API void rndBackgroundRender(real32 radius, Camera *camera, bool_t bDrawStars);
 
 //main render task
 TI_API DECLARE_TASK(rndRenderTask);
@@ -162,7 +162,7 @@ void rndEnvironmentMapConvex(vector* camera, vector* A, vector* B, vector* C,
 
 TI_API void rndSetScreenFill(sdword count, color c);
 
-void rndLoadShamelessPlug(bool on);     //load / free shameless plug texture
+void rndLoadShamelessPlug(bool_t on);     //load / free shameless plug texture
 TI_API void rndShamelessPlug(void);
 
 TI_API void rndResetGLState(void);
@@ -174,12 +174,12 @@ TI_API void rndFlush(void);
 
 //render utility functions
 TI_API void rndRenderAHomeworld(void* camera, void *world);
-TI_API bool rndShipVisible(SpaceObj* spaceobj, Camera* camera);
-TI_API bool rndShipVisibleUsingCoordSys(SpaceObj* spaceobj, Camera* camera);
-TI_API void rndDrawScissorBars(bool scissorEnabled);
+TI_API bool_t rndShipVisible(SpaceObj* spaceobj, Camera* camera);
+TI_API bool_t rndShipVisibleUsingCoordSys(SpaceObj* spaceobj, Camera* camera);
+TI_API void rndDrawScissorBars(bool_t scissorEnabled);
 
 #if RND_GL_STATE_DEBUG
-extern bool rndGLStateSaving;
+extern bool_t rndGLStateSaving;
 TI_API void rndGLStateLogFunction(char *location);
 #define rndGLStateLog(s) if (rndGLStateSaving) rndGLStateLogFunction(s);
 #else

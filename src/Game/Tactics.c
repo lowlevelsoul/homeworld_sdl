@@ -77,10 +77,10 @@ real32 GLOBAL_SHIP_SPEED_MODIFIER = 1.0f;
 real32 DELAY_FORMTIGHTNESS_CHANGE = 5.0f;
 
 //local prototypes
-bool tacticsShipCanDodge(Ship *ship);
-bool tacticsShipIsAffectedByTactics(Ship *ship);
-bool tacticsIsShipLookingForAnyOfThese(Ship *ship,SelectCommand *selection);
-bool tacticsAreEnemiesNearby(Ship *leadership, Ship *thisship,real32 retaliateZone);
+bool_t tacticsShipCanDodge(Ship *ship);
+bool_t tacticsShipIsAffectedByTactics(Ship *ship);
+bool_t tacticsIsShipLookingForAnyOfThese(Ship *ship,SelectCommand *selection);
+bool_t tacticsAreEnemiesNearby(Ship *leadership, Ship *thisship,real32 retaliateZone);
 
 //special ops prototype
 void speedBurstUpdate(Ship *ship);
@@ -541,7 +541,7 @@ void tacticsShutDown()
 }
 extern regionhandle ghMainRegion;
 
-bool tacticsDeleteMenu(udword num, void *data, struct BabyCallBack *baby)
+bool_t tacticsDeleteMenu(udword num, void *data, struct BabyCallBack *baby)
 {
 #ifdef DEBUG_TACTICS
     dbgAssertOrIgnore(tacticsOn);
@@ -762,7 +762,7 @@ void tacticsDoDodge(Ship *ship)
     }
 }
 
-bool tacticsShipCanDodge(Ship *ship)
+bool_t tacticsShipCanDodge(Ship *ship)
 {
 #ifdef DEBUG_TACTICS
     dbgAssertOrIgnore(tacticsOn);
@@ -785,7 +785,7 @@ bool tacticsShipCanDodge(Ship *ship)
     return(tacticsShipIsAffectedByTactics(ship));
 }
 
-bool tacticsShipIsAffectedByTactics(Ship *ship)
+bool_t tacticsShipIsAffectedByTactics(Ship *ship)
 {
 #ifdef DEBUG_TACTICS
     dbgAssertOrIgnore(tacticsOn);
@@ -853,7 +853,7 @@ void tacticsBeFairToRetreaters(Ship *ship, SelectCommand *targets)
 {
     AttackAtom  *attackatom;
     Node *node;
-    bool flagFreeBe;
+    bool_t flagFreeBe;
     sdword i,j;
 
     node = universe.AttackMemory.head;
@@ -968,7 +968,7 @@ void tacticsSpeechForRetaliation(Ship *ship)
 }
 
 
-void tacticsDelegateAttackCommand(Ship *ship,CommandToDo *command, AttackCommand *attack, bool gettingRocked,bool doingSomething)
+void tacticsDelegateAttackCommand(Ship *ship,CommandToDo *command, AttackCommand *attack, bool_t gettingRocked,bool_t doingSomething)
 {
     //ship is in retreat list...so attack it...
     //
@@ -1100,7 +1100,7 @@ neutralstuff:
 }
 
 
-void tacticsDelegateSingleAttack(Ship *ship,CommandLayer *comlayer,SelectCommand *selectone,AttackCommand *attack, bool gettingRocked)
+void tacticsDelegateSingleAttack(Ship *ship,CommandLayer *comlayer,SelectCommand *selectone,AttackCommand *attack, bool_t gettingRocked)
 {
     CommandToDo *cmtest;
 
@@ -1552,7 +1552,7 @@ nextnode:
 }
 
 //returns true if at least 1 of the ships in list is on the ships target list
-bool tacticsIsShipLookingForAnyOfThese(Ship *ship,SelectCommand *selection)
+bool_t tacticsIsShipLookingForAnyOfThese(Ship *ship,SelectCommand *selection)
 {
     AttackAtom  *attackatom;
     Node *node;
@@ -1581,7 +1581,7 @@ bool tacticsIsShipLookingForAnyOfThese(Ship *ship,SelectCommand *selection)
     }
     return FALSE;
 }
-bool tacticsAreStrikeCraftInSelection(SelectCommand *selection)
+bool_t tacticsAreStrikeCraftInSelection(SelectCommand *selection)
 {
     sdword i;
     for(i = 0; i< selection->numShips; i++)
@@ -2011,7 +2011,7 @@ void tacticsGlobalUpdate()
     }
 }
 
-bool tacticsAreEnemiesNearby(Ship *leadership,Ship *thisship, real32 retaliateZone)
+bool_t tacticsAreEnemiesNearby(Ship *leadership,Ship *thisship, real32 retaliateZone)
 {
     Player *playerowner = thisship->playerowner;
     blob *thisblob = thisship->collMyBlob;
@@ -2125,7 +2125,7 @@ void speedBurstUpdate(Ship *ship)
     Outputs     :
     Return      : as above
 ----------------------------------------------------------------------------*/
-bool tacticsCheckGuardConditionsDuringAttack(CommandToDo *command)
+bool_t tacticsCheckGuardConditionsDuringAttack(CommandToDo *command)
 {
     sdword i;
     real32 distSqr,tempreal;
@@ -2255,7 +2255,7 @@ real32 tacticsGetShipsMaxVelocity(Ship *ship)
     Outputs     :
     Return      : as above
 ----------------------------------------------------------------------------*/
-bool tacticsHasShipRetreatedFromShip(Ship *shipA, Ship *shipB)
+bool_t tacticsHasShipRetreatedFromShip(Ship *shipA, Ship *shipB)
 {
     CommandToDo *attackerCommand;
     Node *node;

@@ -138,7 +138,7 @@ void profTimerRecord(sdword timer)
 void profTimerOutputRecordingsFunc()
 {
     sdword i,j;
-    bool haverecordings = FALSE;
+    bool_t haverecordings = FALSE;
 
     for (i=0;i<NUM_PROFILE_TIMERS;i++)
     {

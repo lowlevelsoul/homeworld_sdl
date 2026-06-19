@@ -90,7 +90,7 @@ colpickcurve;
 =============================================================================*/
 extern sdword cpDarkestColor0;
 extern sdword cpDarkestColor1;
-extern bool   cpColorsPicked;
+extern bool_t   cpColorsPicked;
 extern trcolorinfo colPreviousColors[CP_NumberPreviousColors];
 
 /*=============================================================================

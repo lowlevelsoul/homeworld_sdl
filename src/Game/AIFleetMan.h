@@ -17,9 +17,9 @@ TI_API void aifFleetCommand(void);
 TI_API void aifInit(AIPlayer *aiplayer);
 TI_API void aifClose(void);
 
-TI_API void aifTeamDied(AIPlayer *aiplayer, AITeam *team, bool removeAllReferencesToTeam);
+TI_API void aifTeamDied(AIPlayer *aiplayer, AITeam *team, bool_t removeAllReferencesToTeam);
 
-TI_API bool aifShipDied(AIPlayer *aiplayer, ShipPtr ship);
+TI_API bool_t aifShipDied(AIPlayer *aiplayer, ShipPtr ship);
 
 TI_API void aifResourceManRequestsShipsCB(ShipType shiptype, sdword number, sdword priority);
 TI_API void aifAttackManRequestsShipsCB(ShipType shiptype, sdword number, sdword priority);

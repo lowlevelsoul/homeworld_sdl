@@ -131,7 +131,7 @@ typedef struct
 TI_API void growSelectAddShip(GrowSelection *growSelect,Ship *ship);
 
 // Returns TRUE if obj was removed
-TI_API bool growSelectRemoveShip(GrowSelection *growSelect,Ship *ship);
+TI_API bool_t growSelectRemoveShip(GrowSelection *growSelect,Ship *ship);
 
 // Removes ship at index index from growSelect
 TI_API void growSelectRemoveShipIndex(GrowSelection *growSelect,sdword index);
@@ -155,10 +155,10 @@ TI_API void AddSpaceObjToSelectionBeforeIndex(SpaceObj *obj,SpaceObjSelection *s
 TI_API void AddSpaceObjToSelectionAfterIndex(SpaceObj *obj,SpaceObjSelection *selection,sdword index);
 
 // Returns TRUE if obj was removed
-TI_API bool RemoveSpaceObjFromSelectionPreserveOrder(SpaceObjSelection *selection,SpaceObj *obj);
+TI_API bool_t RemoveSpaceObjFromSelectionPreserveOrder(SpaceObjSelection *selection,SpaceObj *obj);
 
 // Returns TRUE if ship is in selection
-TI_API bool ShipInSelection(SelectCommand *selection,Ship *ship);
+TI_API bool_t ShipInSelection(SelectCommand *selection,Ship *ship);
 
 // Returns number if ShipType "type"  in selection
 TI_API udword ShiptypeInSelection(SelectCommand *selection, ShipType type);
@@ -168,21 +168,21 @@ TI_API ShipPtr FindFirstInstanceOfShipType(SelectCommand *selection, ShipType ty
 
 // Does not delete entry - just removes reference to it.
 // Returns TRUE if any ship was removed
-TI_API bool clRemoveTargetFromSelection(SelectAnyCommand *selection,TargetPtr removeTargetPtr);
+TI_API bool_t clRemoveTargetFromSelection(SelectAnyCommand *selection,TargetPtr removeTargetPtr);
 
 #define clRemoveShipFromSelection(sel,ship) clRemoveTargetFromSelection((SelectAnyCommand *)(sel),(TargetPtr)ship)
 
 // returns true if any ships in theseShips are in selection
-TI_API bool AnyOfTheseShipsAreInSelection(SelectCommand *theseShips,SelectCommand *selection);
+TI_API bool_t AnyOfTheseShipsAreInSelection(SelectCommand *theseShips,SelectCommand *selection);
 
 // returns true if all of these ships are in selection
-TI_API bool TheseShipsAreInSelection(SelectCommand *theseShips,SelectCommand *selection);
+TI_API bool_t TheseShipsAreInSelection(SelectCommand *theseShips,SelectCommand *selection);
 
 // returns true if selections 1 and 2 are equivalent (ignores order)
-TI_API bool SelectionsAreEquivalent(SelectCommand *selection1,SelectCommand *selection2);
+TI_API bool_t SelectionsAreEquivalent(SelectCommand *selection1,SelectCommand *selection2);
 
 // returns true if selections 1 and 2 are equivalent (including order)
-TI_API bool SelectionsAreTotallyEquivalent(SelectCommand *selection1,SelectCommand *selection2);
+TI_API bool_t SelectionsAreTotallyEquivalent(SelectCommand *selection1,SelectCommand *selection2);
 
 // Makes sure that ships in selection do not include theseships
 TI_API void MakeShipsNotIncludeTheseShips(SelectCommand *selection,SelectCommand *theseships);
@@ -191,7 +191,7 @@ TI_API void MakeShipsNotIncludeTheseShips(SelectCommand *selection,SelectCommand
 TI_API void MakeTargetsNotIncludeMissiles(SelectAnyCommand *selection);
 
 // Returns true if ship can harvest
-TI_API bool ShipCanHarvest(ShipStaticInfo *shipstatic);
+TI_API bool_t ShipCanHarvest(ShipStaticInfo *shipstatic);
 
 // Makes targets all be within range of comparewith, but don't include comparewith
 TI_API void MakeTargetsOnlyBeWithinRangeAndNotIncludeMe(SelectAnyCommand *selection,SpaceObjRotImpTarg *comparewith,real32 range);
@@ -205,13 +205,13 @@ TI_API void MakeTargetsOnlyNonForceAttackTargets(SelectAnyCommand *selection,str
 // Makes targets only be salvageable ships/derelicts
 TI_API void MakeTargetsSalvageable(SelectAnyCommand *selection,struct Player *curplayer);
 
-typedef bool (*ShipConstraintsCB)(Ship *ship);
+typedef bool_t (*ShipConstraintsCB)(Ship *ship);
 // Makes sure that all ships in selection follow shipConstraintsCB
 TI_API void MakeShipsOnlyFollowConstraints(SelectCommand *selection,ShipConstraintsCB shipConstraintsCB);
 // Returns TRUE if any ships in selection follow shipConstraintsCB
-TI_API bool DoAnyShipsFollowConstraints(SelectCommand *selection,ShipConstraintsCB shipConstraintsCB);
+TI_API bool_t DoAnyShipsFollowConstraints(SelectCommand *selection,ShipConstraintsCB shipConstraintsCB);
 // Returns TRUE if all ships in selection follow shipConstraintsCB
-TI_API bool DoAllShipsFollowConstraints(SelectCommand *selection,ShipConstraintsCB shipConstraintsCB);
+TI_API bool_t DoAllShipsFollowConstraints(SelectCommand *selection,ShipConstraintsCB shipConstraintsCB);
 
 // Makes sure that ships in selection are friendly ships (are curplayer's ships)
 TI_API void MakeShipsFriendlyShips(SelectCommand *selection,struct Player *curplayer);
@@ -227,22 +227,22 @@ TI_API sdword MakeShipsAttackCapable(SelectCommand *dest, SelectCommand *source)
 TI_API //void MakeShipsAttackCapable(SelectCommand *selection);
 
 // Returns TRUE if all ships are attack capable
-TI_API bool AreAllShipsAttackCapable(SelectCommand *selection);
+TI_API bool_t AreAllShipsAttackCapable(SelectCommand *selection);
 
 // returns TRUE if any ships are attack capable
-TI_API bool AreAnyShipsAttackCapable(SelectCommand *selection);
+TI_API bool_t AreAnyShipsAttackCapable(SelectCommand *selection);
 
 // Returns TRUE if ship is attack capable
-TI_API bool isShipAttackCapable(Ship *ship);
+TI_API bool_t isShipAttackCapable(Ship *ship);
 
 // Returns TRUE if all ships are attack capable
-TI_API bool AreAllShipsPassiveAttackCapable(SelectCommand *selection);
+TI_API bool_t AreAllShipsPassiveAttackCapable(SelectCommand *selection);
 
 // returns TRUE if any ships are attack capable
-TI_API bool AreAnyShipsPassiveAttackCapable(SelectCommand *selection);
+TI_API bool_t AreAnyShipsPassiveAttackCapable(SelectCommand *selection);
 
 // Returns TRUE if ship is attack capable
-TI_API bool isShipPassiveAttackCapable(Ship *ship);
+TI_API bool_t isShipPassiveAttackCapable(Ship *ship);
 
 // Makes sure that ships are guard capable
 TI_API void MakeShipsGuardCapable(SelectCommand *selection);
@@ -251,11 +251,11 @@ TI_API void MakeShipsGuardCapable(SelectCommand *selection);
 TI_API void MakeShipsSpecialActivateCapable(SelectCommand *selection);
 
 // Makes sure the ships have special targeting capability
-TI_API void MakeShipsSpecialTargetCapable(SelectCommand *selection, bool bFriendlies);
+TI_API void MakeShipsSpecialTargetCapable(SelectCommand *selection, bool_t bFriendlies);
 
 // Makes sure that ships are mobile
 TI_API void MakeShipsMobile(SelectCommand *selection);
-TI_API bool AreShipsMobile(SelectCommand *selection);
+TI_API bool_t AreShipsMobile(SelectCommand *selection);
 
 // Makes sure ships aren't capital ships
 TI_API void MakeShipsNonCapital(SelectCommand *selection);
@@ -290,7 +290,7 @@ TI_API void makeShipsFormationCapable(SelectCommand *selection);
 TI_API void makeShipsNotIncludeSinglePlayerMotherships(SelectCommand *selection);
 
 //Removes non Kamikazeable ships
-TI_API bool MakeSelectionKamikazeCapable(SelectCommand *selection);
+TI_API bool_t MakeSelectionKamikazeCapable(SelectCommand *selection);
 
 //remove any ships not allowed to hyperspace
 TI_API void makeSelectionHyperspaceCapable(SelectCommand *selection);

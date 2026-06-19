@@ -64,7 +64,7 @@ typedef struct
 	sdword			status;
 	sdword			handle;
 
-	bool			mute;
+	bool_t			mute;
 
 	PATCH			*ppatch;
 	
@@ -114,7 +114,7 @@ typedef struct
 
 	real32			filter[SOUND_EQ_SIZE];
 	real32			cardiodfilter[SOUND_EQ_SIZE];
-	bool			usecardiod;
+	bool_t			usecardiod;
 } CHANNEL;		/* 80 bytes + mixbuffers */
 
 typedef struct

@@ -58,8 +58,8 @@ typedef struct HorseRaceBars
     data:
 =============================================================================*/
 
-extern bool hrRunning;
-extern bool hrBackgroundReinit;
+extern bool_t hrRunning;
+extern bool_t hrBackgroundReinit;
 
 extern HorseStatus horseracestatus;
 
@@ -74,6 +74,6 @@ TI_API void hrProcessPacket(ChatPacket *packet);
 TI_API void recievedHorsePacketCB(ubyte *packet,udword sizeofpacket);
 
 TI_API void HorseRaceBeginBar(uword barnum);
-TI_API bool HorseRaceNext(real32 percent);
+TI_API bool_t HorseRaceNext(real32 percent);
 
 #endif

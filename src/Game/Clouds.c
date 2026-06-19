@@ -33,7 +33,7 @@ static real32 fogColor[4];
 
 static GLuint _counter = 0;
 
-static bool useVBO = FALSE;
+static bool_t useVBO = FALSE;
 
 bool8  dontNebulate;
 real32 g_FogSum = 0.0f;
@@ -1053,7 +1053,7 @@ void cloudRenderSystem(cloudSystem* system, sdword lod)
     vector origin = {0.0f, 0.0f, 0.0f};
     color cloudColor = system->cloudColor;
     udword i;
-    bool fogOn;
+    bool_t fogOn;
     GLfloat attrib[4];
 
     if (system == NULL)

@@ -336,7 +336,7 @@ TI_API void ferShutdown(void);
 
 //draw a textured box
 void ferDrawBoxRegion(rectangle dimensions, drawtype textures,
-                       drawtype glow, LinkedList *cutouts, bool bUseAlpha);
+                       drawtype glow, LinkedList *cutouts, bool_t bUseAlpha);
 
 //draw UI Elements
 TI_API void ferDrawButton(rectangle dimensions, ferbuttonstate);

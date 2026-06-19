@@ -12,12 +12,12 @@ Copyright Relic Entertainment, Inc.  All rights reserved.
 #include "tiPlatform.h"
 #include "SpaceObj.h"
 
-TI_API void hsStart(Ship* ship, real32 cliptDelta, bool into, bool displayEffect);
-TI_API void hsContinue(Ship* ship, bool displayEffect);
-TI_API void hsEnd(Ship* ship, bool displayEffect);
+TI_API void hsStart(Ship* ship, real32 cliptDelta, bool_t into, bool_t displayEffect);
+TI_API void hsContinue(Ship* ship, bool_t displayEffect);
+TI_API void hsEnd(Ship* ship, bool_t displayEffect);
 TI_API void hsUpdate(Ship* ship);
 TI_API void hsFinish(Ship* ship);
-TI_API bool hsShouldDisplayEffect(Ship* ship);
+TI_API bool_t hsShouldDisplayEffect(Ship* ship);
 
 #define HS_STATIC_ACTIVE        1
 #define HS_STATIC_COLLAPSING    2
@@ -27,7 +27,7 @@ TI_API bool hsShouldDisplayEffect(Ship* ship);
 
 typedef struct hsStaticGate
 {
-    bool   active;
+    bool_t   active;
     vector position;
     real32 rotation;
     sdword state;
@@ -45,7 +45,7 @@ void hsStaticReset(void);   //level reset (clear structs)
 void hsStaticDestroy(hvector*); //destroy a gate
 void hsSetStaticData(sdword size, ubyte* data); //set static gate data (for loading)
 void hsStaticRender(void);  //render all static gates
-TI_API void hsNoGate(bool state);
+TI_API void hsNoGate(bool_t state);
 
 TI_API void SaveHyperspaceGates(void);
 TI_API void LoadHyperspaceGates(void);

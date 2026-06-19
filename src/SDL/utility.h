@@ -128,7 +128,7 @@ extern ShipRace whichRaceSelected;
 
 extern color utyBaseColor;
 extern color utyStripeColor;
-extern bool  utyShipsAlwaysUseOwnerColors;
+extern bool_t  utyShipsAlwaysUseOwnerColors;
 
 extern char utyName[MAX_PERSONAL_NAME_LEN];
 extern char utyPassword[MAX_PERSONAL_NAME_LEN];
@@ -139,9 +139,9 @@ extern char dirfile[];
 extern udword utyNFrameTicks;
 extern taskhandle utyRenderTask;
 #if defined (HW_GAME_DEMO) || defined (HW_GAME_RAIDER_RETREAT)
-extern bool utyPlugScreens;
+extern bool_t utyPlugScreens;
 #endif
-extern bool utyCreditsSequence;
+extern bool_t utyCreditsSequence;
 
 extern bool8 utyStartedBits[SSA_NumberBits];
 
@@ -174,7 +174,7 @@ void utyTaskTimerClear(void);                   //cancels all previous task time
 //get client rect in screen coords
 TI_API void utyClientRectGet(rectangle *rect);
 TI_API void utyMouseButtonsClear(void);
-TI_API void utyForceTopmost(bool bTopMost);
+TI_API void utyForceTopmost(bool_t bTopMost);
 
 //clip the mouse
 TI_API void utyClipMouse(sdword clip);
@@ -194,15 +194,15 @@ TI_API void utyDoubleClick(void);
 TI_API void utyLoadSinglePlayerGameGivenFilename(char *filename);
 TI_API void utyLoadMultiPlayerGameGivenFilename(char *filename);
 
-TI_API bool utyChangeResolution(sdword width, sdword height, sdword depth);
+TI_API bool_t utyChangeResolution(sdword width, sdword height, sdword depth);
 
-TI_API bool utyBrowserExec(char *URL);
+TI_API bool_t utyBrowserExec(char *URL);
 TI_API void utyGetFirstCDPath(char *szPath);
 
 //toggle key things
 TI_API void utyToggleKeyStatesSave(void);
 TI_API void utyToggleKeyStatesRestore(void);
-TI_API bool utyCapsLockToggleState(void);
+TI_API bool_t utyCapsLockToggleState(void);
 
 // Start the player dropped dialog box.
 TI_API void utyStartDroppedDialog(sdword playernum);

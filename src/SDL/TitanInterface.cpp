@@ -289,7 +289,7 @@ void titanConnectingCancelHit(void)
     titanInterface->ConnectingCancelHit();
 }
 
-bool TitanInterface::CheckStartingGame(unsigned char *routingaddress) {
+bool_t TitanInterface::CheckStartingGame(unsigned char *routingaddress) {
     if(mIsLan || mUseOldScheme || tpGameCreated.numPlayers==1) {
         mGameCreationState = GAME_STARTED;
         InitPacketList();
@@ -343,7 +343,7 @@ unsigned long titanBehindFirewall(void) {
     return titanInterface->BehindFirewall() ? 1 : 0;
 }
 
-bool TitanInterface::BehindFirewall() {
+bool_t TitanInterface::BehindFirewall() {
     return mBehindFirewall;
 }
 
@@ -802,7 +802,7 @@ void TitanInterface::ChangeAddress(Address *theOldAddress, Address *theNewAddres
 unsigned long TitanInterface::CanNetwork(void)
 {
     SOCKET aSocket;
-    bool success = false;
+    bool_t success = false;
     int bindSuccess = false;
 
     if ( mIpType == ip )
@@ -954,8 +954,8 @@ void TitanInterface::GetPatch(void *theArgs)
     string aLine;
     int aFileLen = -1;
 
-    bool append = false;
-    bool readFirstLine = false;
+    bool_t append = false;
+    bool_t readFirstLine = false;
 
     // Read HTTP header
     while(true)
@@ -1317,7 +1317,7 @@ unsigned long TitanInterface::GetLengthFieldSize(const BaseMessage& theMsgR)
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-bool
+bool_t
 TitanInterface::SendMsg(SocketPipe* thePipeP, const BaseMessage& theMsgR, unsigned char theLengthFieldSize)
 {
     if(thePipeP==NULL)
@@ -1810,7 +1810,7 @@ void TitanInterface::AuthHandleGetPubKeysReply(const WONMsg::TMessage& theMsgR)
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-bool TitanInterface::ReadLoginKey(char *theKey) {
+bool_t TitanInterface::ReadLoginKey(char *theKey) {
     FILE *aFile = fopen(LOGIN_KEY_FILE_NAME,"rb");
     if(aFile==NULL)
         return false;
@@ -1836,7 +1836,7 @@ bool TitanInterface::ReadLoginKey(char *theKey) {
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-void TitanInterface::WriteLoginKey(char *theKey, bool useOldNewLoginKey) {
+void TitanInterface::WriteLoginKey(char *theKey, bool_t useOldNewLoginKey) {
     if(AUTHSERVER_NUM==0)
         return;
 
@@ -2060,7 +2060,7 @@ void TitanInterface::AuthHandleChallenge(const WONMsg::TMessage &theMsgR) {
 
             MD5Update2(&ContextKeyedHash, (BYTE*)aCryptRet.first, aCryptRet.second);
 
-            bool firsttime = true;
+            bool_t firsttime = true;
             unsigned long aBytesRead = 0;
             unsigned char* aUnhashedBuf = NULL;
             while ((aBytesRead = GetHashSection(firsttime, &aUnhashedBuf, reinterpret_cast<unsigned char*>(aChallengeResponse) + MD5_HASH_SIZE)) != 0)
@@ -2270,7 +2270,7 @@ void TitanInterface::AuthHandleRefresh(void)
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-void TitanInterface::Authenticate(const string &loginName, const string &password, const string &theNewPassword,bool CreateAccount)
+void TitanInterface::Authenticate(const string &loginName, const string &password, const string &theNewPassword,bool_t CreateAccount)
 {
     titanDebug("TitanInterface::Authenticate");
 
@@ -2335,7 +2335,7 @@ void TitanInterface::PeerHandleChallenge(SocketPipe** thePipeP, const TMessage& 
 
     AutoCrit aCrit(mPipeCrit);
 
-    bool dirStuff = false, factStuff = false, routeStuff = false;
+    bool_t dirStuff = false, factStuff = false, routeStuff = false;
     if(*thePipeP==mDirPipe)
         dirStuff = true;
     else if(*thePipeP==mFactPipe)
@@ -2470,7 +2470,7 @@ void TitanInterface::PeerHandleComplete(SocketPipe** thePipeP, const TMessage& t
 
     AutoCrit aCrit(mPipeCrit);
 
-    bool dirStuff = false, factStuff = false, routeStuff = false;
+    bool_t dirStuff = false, factStuff = false, routeStuff = false;
     if(*thePipeP==mDirPipe)
         dirStuff = true;
     else if(*thePipeP==mFactPipe)
@@ -2583,7 +2583,7 @@ void TitanInterface::PeerHandleComplete(SocketPipe** thePipeP, const TMessage& t
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-bool TitanInterface::EncryptAndSendRoutingMsg(const WONMsg::BaseMessage &theMsgR, int theServer)
+bool_t TitanInterface::EncryptAndSendRoutingMsg(const WONMsg::BaseMessage &theMsgR, int theServer)
 {
     titanDebug("TitanInterface::EncryptAndSendRoutingMsg");
 
@@ -2611,7 +2611,7 @@ bool TitanInterface::EncryptAndSendRoutingMsg(const WONMsg::BaseMessage &theMsgR
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-bool TitanInterface::EncryptMessage(const BaseMessage &theInMsg, BaseMessage &theOutMsg,
+bool_t TitanInterface::EncryptMessage(const BaseMessage &theInMsg, BaseMessage &theOutMsg,
             const BFSymmetricKey &theKey, unsigned short theSessionId,
             unsigned short *theSeqNum)
 {
@@ -2630,7 +2630,7 @@ bool TitanInterface::EncryptMessage(const BaseMessage &theInMsg, BaseMessage &th
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 /*
-bool TitanInterface::EncryptTMessage(const BaseMessage &theInMsg, BaseMessage &theOutMsg,
+bool_t TitanInterface::EncryptTMessage(const BaseMessage &theInMsg, BaseMessage &theOutMsg,
             const BFSymmetricKey &theKey, unsigned short theSessionId,
             unsigned short *theSeqNum)
 {
@@ -2679,7 +2679,7 @@ bool TitanInterface::EncryptTMessage(const BaseMessage &theInMsg, BaseMessage &t
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-bool TitanInterface::EncryptNonTMessage(const BaseMessage &theInMsg, BaseMessage &theOutMsg,
+bool_t TitanInterface::EncryptNonTMessage(const BaseMessage &theInMsg, BaseMessage &theOutMsg,
             const BFSymmetricKey &theKey, unsigned short theSessionId,
             unsigned short *theSeqNum)
 {
@@ -2736,7 +2736,7 @@ bool TitanInterface::EncryptNonTMessage(const BaseMessage &theInMsg, BaseMessage
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-bool TitanInterface::DecryptMessage(const char *theBuf, unsigned long theLen, BaseMessage &theOutMsg, SocketPipe **thePipePP)
+bool_t TitanInterface::DecryptMessage(const char *theBuf, unsigned long theLen, BaseMessage &theOutMsg, SocketPipe **thePipePP)
 {
     //titanDebug("TitanInterface::DecryptMessage");
 
@@ -2753,7 +2753,7 @@ bool TitanInterface::DecryptMessage(const char *theBuf, unsigned long theLen, Ba
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 /*
-bool TitanInterface::DecryptTMessage(const char *theBuf, unsigned long theLen, BaseMessage &theOutMsg, SocketPipe **thePipePP)
+bool_t TitanInterface::DecryptTMessage(const char *theBuf, unsigned long theLen, BaseMessage &theOutMsg, SocketPipe **thePipePP)
 {
     titanDebug("TitanInterface::DecryptTMessage");
 
@@ -2821,7 +2821,7 @@ bool TitanInterface::DecryptTMessage(const char *theBuf, unsigned long theLen, B
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-bool TitanInterface::DecryptNonTMessage(const char *theBuf, unsigned long theLen, BaseMessage &theOutMsg, SocketPipe **thePipePP)
+bool_t TitanInterface::DecryptNonTMessage(const char *theBuf, unsigned long theLen, BaseMessage &theOutMsg, SocketPipe **thePipePP)
 {
     //titanDebug("TitanInterface::DecryptNonTMessage");
 
@@ -3440,7 +3440,7 @@ TitanInterface::SendPing(Address* theAddressP,unsigned int pingsizebytes)
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 unsigned long
-TitanInterface::StartRoutingServer(const wchar_t* theChannelName, const wchar_t* theChannelDescription, const wchar_t* thePassword, bool isGameServer,unsigned char *routingaddress)
+TitanInterface::StartRoutingServer(const wchar_t* theChannelName, const wchar_t* theChannelDescription, const wchar_t* thePassword, bool_t isGameServer,unsigned char *routingaddress)
 {
     titanDebug("TitanInterface::StartRoutingServer");
     AutoCrit aPipeCrit(mPipeCrit);
@@ -3575,7 +3575,7 @@ TitanInterface::SendLanBroadcast(const void* thePacket, unsigned short theLen)
 void
 TitanInterface::SendPacketTo(Address* theAddressP, unsigned char titanMsgType,
                              const void* thePacket, unsigned short theLen,
-                                                        bool addSeqNum, int theSeqNum)
+                                                        bool_t addSeqNum, int theSeqNum)
 {
 
     TitanPacketMsg aMsg(titanMsgType, !mUseRoutingServer);
@@ -3991,7 +3991,7 @@ TitanInterface::HandleCloseCmd(SocketPipe* thePipeP)
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void
-TitanInterface::HandleRecvCmd(SocketPipe* thePipeP, PipeCmd* theCmdP, bool pipeClosed)
+TitanInterface::HandleRecvCmd(SocketPipe* thePipeP, PipeCmd* theCmdP, bool_t pipeClosed)
 {
     // Cast to real command type
     RecvPrefCmd* aRecvCmdP = dynamic_cast<RecvPrefCmd*>(theCmdP);
@@ -4386,7 +4386,7 @@ void TitanInterface::HandlePeerMsg(WONMisc::SocketPipe* thePipeP, const WONMsg::
     else
     {
         LockMutex(GameWereInterestedInMutex);
-        bool ignore = (aTitanPacketMsg.GetGameName() != GameWereInterestedIn);
+        bool_t ignore = (aTitanPacketMsg.GetGameName() != GameWereInterestedIn);
         UnLockMutex(GameWereInterestedInMutex);
         if (!ignore)
         {
@@ -4599,9 +4599,9 @@ void TitanInterface::HandleChannelList(WONMsg::DirEntityList& dirEntities)
 {
     tpLockChannelList();
 
-    bool readFactServers = (FACTSERVER_NUM==0);
+    bool_t readFactServers = (FACTSERVER_NUM==0);
     int foundCurrentChannel = false;
-    bool isHWDS = false;
+    bool_t isHWDS = false;
 
 //    mRoutingAddrMap.clear();
 
@@ -5399,7 +5399,7 @@ TitanInterface::StartShutdown(unsigned char titanMsgType, const void* thePacket,
 
 
 // Routing Server stuff
-void TitanInterface::ConnectToRoutingServer(wstring theUserName, const wchar_t* thePassword, int theServer, bool reconnect)
+void TitanInterface::ConnectToRoutingServer(wstring theUserName, const wchar_t* thePassword, int theServer, bool_t reconnect)
 {
     titanDebug("TitanInterface::ConnectToRoutingServer");
     AutoCrit aPipeCrit(mPipeCrit);
@@ -5653,7 +5653,7 @@ TitanInterface::BroadcastPacket(unsigned char titanMsgType, const void* thePacke
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void TitanInterface::RoutingSendChatBroadcast(unsigned short theSize, const unsigned char* theDataP, int theServer, bool addSeqNum, int theSeqNum)
+void TitanInterface::RoutingSendChatBroadcast(unsigned short theSize, const unsigned char* theDataP, int theServer, bool_t addSeqNum, int theSeqNum)
 {
     titanDebug("TitanInterface::RoutingSendChatBroadcast");
     AutoCrit aCrit(mRoutingCrit);
@@ -5708,7 +5708,7 @@ void TitanInterface::RoutingSendChatBroadcast(unsigned short theSize, const unsi
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void TitanInterface::RoutingSendDataBroadcast(unsigned short theSize, const unsigned char* theDataP, int theServer, bool addSeqNum, int theSeqNum)
+void TitanInterface::RoutingSendDataBroadcast(unsigned short theSize, const unsigned char* theDataP, int theServer, bool_t addSeqNum, int theSeqNum)
 {
     titanDebug("TitanInterface::RoutingSendDataBroadcast");
     AutoCrit aCrit(mRoutingCrit);
@@ -5761,7 +5761,7 @@ void TitanInterface::RoutingSendDataBroadcast(unsigned short theSize, const unsi
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void TitanInterface::RoutingSendChatWhisper(unsigned long* theIds, unsigned short theNumIds, unsigned short theSize, const unsigned char* theDataP, bool addSeqNum, int theSeqNum)
+void TitanInterface::RoutingSendChatWhisper(unsigned long* theIds, unsigned short theNumIds, unsigned short theSize, const unsigned char* theDataP, bool_t addSeqNum, int theSeqNum)
 {
     titanDebug("TitanInterface::RoutingSendChatWhisper");
     AutoCrit aCrit(mRoutingCrit);
@@ -5819,7 +5819,7 @@ void TitanInterface::RoutingSendChatWhisper(unsigned long* theIds, unsigned shor
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void TitanInterface::RoutingSendData(WONMsg::ClientId theId, unsigned short theSize, const unsigned char* theDataP, int theServer, bool addSeqNum, int theSeqNum)
+void TitanInterface::RoutingSendData(WONMsg::ClientId theId, unsigned short theSize, const unsigned char* theDataP, int theServer, bool_t addSeqNum, int theSeqNum)
 {
     titanDebug("TitanInterface::RoutingSendData");
     AutoCrit aCrit(mRoutingCrit);
@@ -6418,7 +6418,7 @@ void TitanInterface::CreateMediaMetrixEditControl()
                                         NULL);          // pointer not needed
 }
 
-unsigned long TitanInterface::GetHashSection(bool restart, unsigned char** theUnhashedBufP, unsigned char digest[MD5_HASH_SIZE])
+unsigned long TitanInterface::GetHashSection(bool_t restart, unsigned char** theUnhashedBufP, unsigned char digest[MD5_HASH_SIZE])
 {
     const unsigned int HASH_CHUNK_SIZE = 16384; // number of writes read from the exe per GetHashSection call
     static HANDLE aFileH = INVALID_HANDLE_VALUE;
@@ -6465,7 +6465,7 @@ void TitanInterface::ShortCircuitChallengeResponse(unsigned char* theSeed, unsig
     MD5Final2(theChallengeResponseP + MD5_HASH_SIZE, &Context);
 }
 
-bool TitanInterface::SaveWonstuff()
+bool_t TitanInterface::SaveWonstuff()
 {
     unsigned char digest[MD5_HASH_SIZE];
     DWORD dwBytesWritten;
@@ -6497,7 +6497,7 @@ bool TitanInterface::SaveWonstuff()
     MD5Init2(&Context);
 
     // write out the partial-file digests
-    bool firsttime = true;
+    bool_t firsttime = true;
     DWORD dwBytesRead;
     unsigned char* aUnhashedBuf = NULL;
     while ((dwBytesRead = GetHashSection(firsttime, &aUnhashedBuf, digest)) != 0)
@@ -6527,7 +6527,7 @@ int titanSaveWonstuff()
     return TitanInterface::SaveWonstuff();
 }
 
-bool TitanInterface::ReadFromWonstuff(bool restart, unsigned char* theBufferP)
+bool_t TitanInterface::ReadFromWonstuff(bool_t restart, unsigned char* theBufferP)
 {
     static HANDLE aFileH = INVALID_HANDLE_VALUE;
     char readfile[500];

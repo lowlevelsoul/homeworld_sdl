@@ -11,7 +11,7 @@
 /*=============================================================================
     Insert global tweakables here:
 =============================================================================*/
-extern bool shipsRetaliate;
+extern bool_t shipsRetaliate;
 extern uword singleMachineNumPlayers;
 extern char useMission[50];
 extern real32 RETALIATE_ZONE;

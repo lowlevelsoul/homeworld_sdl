@@ -256,12 +256,12 @@ TI_API void battlePingEvaluate(void *thisPing, battleping *battlePing);
 TI_API void battlePingEvaluateNoFriendlies(void *voidPing, battleping *battlePing);
 TI_API void battlePingEvaluateNoEnemies(void *voidPing, battleping *battlePing);
 
-TI_API bool battleCanChatterAtThisTime(sdword event, Ship *ship);
+TI_API bool_t battleCanChatterAtThisTime(sdword event, Ship *ship);
 TI_API sdword battleChatterAttempt(sdword linkTo, sdword event, Ship *ship, sdword variable);
 TI_API sdword battleChatterFleetAttempt(sdword linkTo, sdword event, sdword variable, vector *where);
 TI_API Ship *battleMouthPieceFindAnother(Ship *firstMouthPiece, Ship **ships, sdword numShips);
 TI_API Ship *battleMouthPieceFind(Ship **ships, sdword numShips);
-TI_API bool battleShipOnMyTail(Ship *meShip, Ship *badGuyShip);
+TI_API bool_t battleShipOnMyTail(Ship *meShip, Ship *badGuyShip);
 TI_API void battleAccountForLosses(Ship *ship, battleping *battlePing);
 TI_API void battleChatterFrequencySet(sdword freq100);
 TI_API void battleShipDyingWithTimeToScream(Ship *ship);

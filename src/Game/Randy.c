@@ -36,8 +36,8 @@ ranstream ranStream[RANDOM_NUMBER_STREAMS];
     }
     ranlogentry;
 
-    bool         ranCallerDebug = FALSE;
-    bool         ranLogCleared  = FALSE;
+    bool_t         ranCallerDebug = FALSE;
+    bool_t         ranLogCleared  = FALSE;
     sdword       ranLogIndex    = 0;
     ranlogentry *ranLogBuffer   = NULL;
 #endif

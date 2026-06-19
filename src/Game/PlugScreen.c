@@ -41,7 +41,7 @@ char psDirectory[80];
 psimage psScreenImage;
 
 //whether we have to reactivate the glcompat module on psModeEnd
-static bool psGLCompat = FALSE;
+static bool_t psGLCompat = FALSE;
 
 //fading stuff
 psimage psFadeImage;
@@ -65,7 +65,7 @@ real32 psScreenTimeout;                         //duration of screen or 0 if no 
 char psTimeoutName[80];                         //name of screen to link to or "exit" if it's an exit screen
 
 //is mouse enabled for current screen?
-bool psMouseFlag;
+bool_t psMouseFlag;
 
 scriptEntry psScreenTweaks[] =
 {

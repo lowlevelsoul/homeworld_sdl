@@ -192,9 +192,9 @@ smticktext;
     Data:
 =============================================================================*/
 
-extern bool smSensorsDisable;
+extern bool_t smSensorsDisable;
 extern bool8 smZoomingIn, smZoomingOut, smFocus;
-extern bool smInstantTransition;
+extern bool_t smInstantTransition;
 
 //tweakables in the level files
 extern real32 smDepthCueRadius;
@@ -211,15 +211,15 @@ extern real32 smClosestDistance;
 extern sdword  smFuzzyBlobs;
 
 extern sdword smTacticalOverlay;
-extern bool smFocusOnMothershipOnClose;
-extern bool smCentreWorldPlane;
+extern bool_t smFocusOnMothershipOnClose;
+extern bool_t smCentreWorldPlane;
 
 extern color smWorldPlaneColor;
 extern real32 smMovementWorldPlaneDim;
 extern color smCurrentWorldPlaneColor;
 extern sdword smTickTextIndex;
 
-extern bool smFleetIntel;
+extern bool_t smFleetIntel;
 
 extern ubyte smShipTypeRenderFlags[TOTAL_NUM_SHIPS];
 
@@ -258,7 +258,7 @@ TI_API void smSensorWeirdnessInit(void);
 TI_API void *smStrchr(char *string, char character);
 TI_API void smHorizonLineDraw(void *cam, hmatrix *modelView, hmatrix *projection, real32 distance);
 TI_API void smTickTextDraw(void);
-TI_API void smUpdateHyperspaceStatus(bool goForLaunch);
+TI_API void smUpdateHyperspaceStatus(bool_t goForLaunch);
 
 //logic handlers for main region
 TI_API void smNULL(void);

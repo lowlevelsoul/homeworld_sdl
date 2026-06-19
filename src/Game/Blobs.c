@@ -25,7 +25,7 @@
 
 BobStats bobStats = { 0,0,0,0,0,0,0,0,0,0,0 };
 
-void bobListUpdateStatsInitFunc(bool subBlobs)
+void bobListUpdateStatsInitFunc(bool_t subBlobs)
 {
     memset(&bobStats,0,sizeof(struct BobStats));
     bobStats.subBlobs = subBlobs;
@@ -162,7 +162,7 @@ blob *bobFindNearestBlobToObject(LinkedList *list,SpaceObj *obj,real32 *returndi
     Outputs     :
     Return      : TRUE if firststruct > secondstruct (ascending order)
 ----------------------------------------------------------------------------*/
-bool bobListSortCallback(void *firststruct,void *secondstruct)
+bool_t bobListSortCallback(void *firststruct,void *secondstruct)
 {
     if (((blob *)(firststruct))->sortDistance > ((blob *)(secondstruct))->sortDistance)
     {
@@ -700,7 +700,7 @@ void bobSubBlobListCreate(BlobProperties *blobProperties, LinkedList *list, blob
     Outputs     :
     Return      : TRUE if all blob objects are still within the blob
 ----------------------------------------------------------------------------*/
-bool bobAllObjectsSatisfyBlob(blob *thisBlob)
+bool_t bobAllObjectsSatisfyBlob(blob *thisBlob)
 {
     vector difference, blobPosition;
     real32 blobRadius, blobRadiusSq = thisBlob->radius * thisBlob->radius;
@@ -1195,7 +1195,7 @@ void bobBlobItemize(blob *thisBlob, sdword sensorsLevel)
     SpaceObj *object = NULL;
     ubyte shipClass;
     SpaceObjSelection *blobObjects = thisBlob->blobObjects;
-    bool bGravWellDetected = FALSE, bProbeDetected = FALSE;
+    bool_t bGravWellDetected = FALSE, bProbeDetected = FALSE;
     Ship *gravWell = NULL, *probe = NULL;
 
     thisBlob->RUs = 0;
@@ -1993,7 +1993,7 @@ void blobAnalVerifyFn(blob *thisBlob)
     sdword index;
     SpaceObjSelection *blobObjects;
     SpaceObj *object;
-    bool result;
+    bool_t result;
     sdword numShips, numSmallShips, numBigShips, numSmallTargets, numBigTargets, numResources, numDerelicts, numBullets, numMissileMissiles, numMissileMines, numObjects;
 
     //verify the main object list

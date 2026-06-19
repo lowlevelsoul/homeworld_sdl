@@ -42,7 +42,7 @@ typedef struct
 extern CustShipHeader GravWellGeneratorHeader;
 
 TI_API void GravWellGeneratorJustDisabled(Ship *ship);
-TI_API bool gravwellIsShipStuckForHyperspaceing(Ship *ship);
+TI_API bool_t gravwellIsShipStuckForHyperspaceing(Ship *ship);
 TI_API void turnoffGravwell(Ship *ship);
 
 #endif

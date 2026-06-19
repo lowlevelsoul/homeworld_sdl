@@ -21,9 +21,9 @@ TI_API ShipType GetAppropriateShipTypeForRace(ShipType request,ShipRace shiprace
 TI_API void TryToFindMothershipsForPlayers(void);
 TI_API ShipRace GetSinglePlayerRaceEquivalent(ShipRace race);
 
-TI_API bool AddResourceToSphere(ResourceVolume *sphere,bool regrowing);
-TI_API bool AddResourceToCylinder(ResourceVolume *cylinder,bool regrowing);
-TI_API bool AddResourceToRectangle(ResourceVolume *rectangle,bool regrowing);
+TI_API bool_t AddResourceToSphere(ResourceVolume *sphere,bool_t regrowing);
+TI_API bool_t AddResourceToCylinder(ResourceVolume *cylinder,bool_t regrowing);
+TI_API bool_t AddResourceToRectangle(ResourceVolume *rectangle,bool_t regrowing);
 
 TI_API void SetInfoNeededForShipAndRelatedStaticInfo(ShipType type,ShipRace race,bool8 dataToFillIn);
 

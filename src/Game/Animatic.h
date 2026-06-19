@@ -17,11 +17,11 @@ extern sdword animaticJustPlayed;
 TI_API void animStartup(void);
 TI_API void animShutdown(void);
 
-TI_API void animAviSetup(bool on);
-TI_API bool animAviPlay(sdword a, sdword b);
+TI_API void animAviSetup(bool_t on);
+TI_API bool_t animAviPlay(sdword a, sdword b);
 TI_API void animAviEnd(void);
 
-TI_API bool animBinkPlay(sdword a, sdword b);
+TI_API bool_t animBinkPlay(sdword a, sdword b);
 
 TI_API void animAviDecode(sdword frame);
 

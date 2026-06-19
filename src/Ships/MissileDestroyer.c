@@ -87,9 +87,9 @@ void MissileDestroyerAttack(Ship *ship,SpaceObjRotImpTarg *target,real32 maxdist
     attackStraightForward(ship,target,mdestroyerstat->missiledestroyerGunRange[ship->tacticstype],mdestroyerstat->missiledestroyerTooCloseRange[ship->tacticstype]);
 }
 
-void MissileDestroyerAttackPassive(Ship *ship,Ship *target,bool rotate)
+void MissileDestroyerAttackPassive(Ship *ship,Ship *target,bool_t rotate)
 {
-    if ((rotate) & ((bool)((ShipStaticInfo *)(ship->staticinfo))->rotateToRetaliate))
+    if ((rotate) & ((bool_t)((ShipStaticInfo *)(ship->staticinfo))->rotateToRetaliate))
     {
         attackPassiveRotate(ship,target);
     }
@@ -144,7 +144,7 @@ void MissileDestroyerHousekeep(Ship *ship)
     }
 }
 
-bool MissileDestroyerSpecialTarget(Ship *ship,void *custom)
+bool_t MissileDestroyerSpecialTarget(Ship *ship,void *custom)
 {
     SelectAnyCommand *targets;
     sdword i;
@@ -157,7 +157,7 @@ bool MissileDestroyerSpecialTarget(Ship *ship,void *custom)
     ShipStaticInfo *shipstaticinfo;
     MissileDestroyerSpec *spec;
     MissileDestroyerStatics *mdestroyerstat;
-    bool firedSomeMissiles,triedToFire;
+    bool_t firedSomeMissiles,triedToFire;
     vector trajectory;
 
     spec = (MissileDestroyerSpec *)ship->ShipSpecifics;

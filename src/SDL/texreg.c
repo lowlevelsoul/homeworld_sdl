@@ -36,7 +36,7 @@
     Data:
 =============================================================================*/
 //configuration information:
-static bool trNoPalInitialized = FALSE;
+static bool_t trNoPalInitialized = FALSE;
 
 sdword trTextureChanges = 0;
 sdword trAvoidedChanges = 0;
@@ -72,7 +72,7 @@ sdword trRamPoolGranularity = 16;               //granularity - this is just a g
 
 #if TR_DEBUG_TEXTURES
 color trTestPalette0[TR_PaletteLength];         //black-to-white palette
-bool trSpecialTextures = FALSE;
+bool_t trSpecialTextures = FALSE;
 sdword trSpecialTextureMode = TSM_None;
 char *trSpecialTextureName[TSM_NumberModes] =
 {"Normal", "Uncolored", "Base color buffer", "Stripe color buffer"};
@@ -86,7 +86,7 @@ real32 trBaseColorScalar = 0.0f;
 real32 trStripeColorScalar = 0.0f;
 
 #if TR_PRINT_TEXTURE_NAMES
-bool trPrintTextureNames = FALSE;
+bool_t trPrintTextureNames = FALSE;
 #endif
 
 trhandle trCurrentHandle = TR_Invalid;
@@ -325,7 +325,7 @@ void trInternalTexturesDelete(trhandle handle)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-void trAllSharedFromDelete(sdword iSharedFrom, bool bRemoveInternalTextures)
+void trAllSharedFromDelete(sdword iSharedFrom, bool_t bRemoveInternalTextures)
 {
     sdword index;
 
@@ -504,7 +504,7 @@ sdword trColorsEqual(trcolorinfo *info, sdword textureIndex)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-bool trAllColorsEqual(sdword index0, sdword index1)
+bool_t trAllColorsEqual(sdword index0, sdword index1)
 {
     sdword index;
     trcolorinfo *textureColor0;
@@ -1239,7 +1239,7 @@ udword trPalettedTextureCreate(ubyte *data, color *palette, sdword width, sdword
                     the following function and made current by the function
                     after that.
 ----------------------------------------------------------------------------*/
-udword trRGBTextureCreate(color *data, sdword width, sdword height, bool useAlpha)
+udword trRGBTextureCreate(color *data, sdword width, sdword height, bool_t useAlpha)
 {
     udword newHandle, destType;
     color* tempData;
@@ -1419,7 +1419,7 @@ void trScaleArbitrary(color *dest, color *source, sdword width, sdword scaleFact
     Outputs     : Allocates new buffer and frees old one.
     Return      : Newly allocated and scaled buffer.
 ----------------------------------------------------------------------------*/
-color *trImageScale(color *data, sdword width, sdword height, sdword newWidth, sdword newHeight, bool bFree)
+color *trImageScale(color *data, sdword width, sdword height, sdword newWidth, sdword newHeight, bool_t bFree)
 {
     color *newBuffer;
     sdword index, scaleX, scaleY;
@@ -1617,7 +1617,7 @@ void trScaleDownIndexed(ubyte *dest, ubyte *source, sdword width, sdword scaleFa
     Outputs     : Allocates new buffer and frees old one.
     Return      : Newly allocated and scaled buffer.
 ----------------------------------------------------------------------------*/
-ubyte *trImageScaleIndexed(ubyte *data, sdword width, sdword height, sdword newWidth, sdword newHeight, bool bFree)
+ubyte *trImageScaleIndexed(ubyte *data, sdword width, sdword height, sdword newWidth, sdword newHeight, bool_t bFree)
 {
     ubyte *newBuffer;
     sdword index, scaleX, scaleY;
@@ -2644,7 +2644,7 @@ llelement *trListFileLoad(char *name, sdword *number)
                   sharedFrom - name of texture we're shared from, or NULL
     Return      : TRUE if found, FALSE otherwise
 ----------------------------------------------------------------------------*/
-bool trImageMeasureFromListing(char *name, llelement *list, sdword listLength, sdword *width, sdword *height, udword *flags, char **sharedFrom)
+bool_t trImageMeasureFromListing(char *name, llelement *list, sdword listLength, sdword *width, sdword *height, udword *flags, char **sharedFrom)
 {
     sdword base = 0, index, length = listLength, result;
     char ch, name_cpy[PATH_MAX];
@@ -2712,7 +2712,7 @@ void trSharedFilenameCreate(sdword trIndex, llelement *lifListing, sdword listin
     sdword width, height;
     udword listFlags;
     char *pSharedFrom, *newFilename;
-    bool bResult;
+    bool_t bResult;
     texreg *reg = trStructure(trIndex);
 
     bResult = trImageMeasureFromListing(reg->fileName, lifListing, listingLength, &width, &height, &listFlags, &pSharedFrom);
@@ -2733,7 +2733,7 @@ void trSharedFilenameCreate(sdword trIndex, llelement *lifListing, sdword listin
     Outputs     : width, height, flags - out parameters for the file attributes
     Return      : TRUE if the file measured OK, FALSE otherwise.
 ----------------------------------------------------------------------------*/
-bool trLiFMeasure(char *fileName, sdword *width, sdword *height, udword *flags)
+bool_t trLiFMeasure(char *fileName, sdword *width, sdword *height, udword *flags)
 {
     filehandle handle;
     lifheader header;
@@ -3319,7 +3319,7 @@ texreg *trStructureGet(trhandle handle)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-void trSetAllPending(bool freeNoPal)
+void trSetAllPending(bool_t freeNoPal)
 {
     sdword index;
 

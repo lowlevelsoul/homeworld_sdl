@@ -63,7 +63,7 @@ TI_API void univupdateClose(void);
 
 TI_API void univupdateCloseAllObjectsAndMissionSpheres(void);
 
-TI_API bool univUpdate(real32 phystimeelapsed);
+TI_API bool_t univUpdate(real32 phystimeelapsed);
 
 TI_API void univRotateObjYaw(SpaceObjRot *robj,real32 rot);
 TI_API void univRotateObjPitch(SpaceObjRot *robj,real32 rot);
@@ -115,7 +115,7 @@ TI_API Resource *univFindNearestResource(Ship *ship,real32 volumeRadius,vector *
 TI_API void univRemoveObjFromRenderList(SpaceObj *spaceobj);
 TI_API void univAddObjToRenderListIf(SpaceObj *newobj,SpaceObj *ifobj);
 TI_API void univAddObjToRenderList(SpaceObj *newobj);
-TI_API bool univSpaceObjInRenderList(SpaceObj *spaceobj);
+TI_API bool_t univSpaceObjInRenderList(SpaceObj *spaceobj);
 
 #define univRemoveObjFromMinorRenderList univRemoveObjFromRenderList
 #define univSpaceObjInMinorRenderList univSpaceObjInRenderList
@@ -128,14 +128,14 @@ TI_API void univUpdateRenderList(void);
 TI_API void univUpdateMinorRenderList(void);
 
 TI_API Ship *univFindShipIAmInside(Ship *me);
-TI_API bool univAmIInsideThisShip(Ship *me,Ship *ship);
+TI_API bool_t univAmIInsideThisShip(Ship *me,Ship *ship);
 
-TI_API Ship *ShipIDtoShip(ShipID shipID,bool considerInsideShips);
+TI_API Ship *ShipIDtoShip(ShipID shipID,bool_t considerInsideShips);
 TI_API ResourcePtr ResourceIDtoResourcePtr(ResourceID resourceID);
 TI_API MissilePtr MissileIDtoMissilePtr(MissileID missileID);
 TI_API DerelictPtr DerelictIDToDerelictPtr(DerelictID derelictID);
 
-TI_API void univInitSpaceObjPosRot(SpaceObj *obj,vector *position,bool randomOrientation);
+TI_API void univInitSpaceObjPosRot(SpaceObj *obj,vector *position,bool_t randomOrientation);
 TI_API void univUpdateObjRotInfo(SpaceObjRot *robj);
 
 TI_API void AddResourceToDeleteResourceList(Resource *resource);
@@ -154,7 +154,7 @@ TI_API Derelict *univAddHyperspaceGateAsDerelict(hvector *posAndRotation);
 
 TI_API void ObjectsCollided(SpaceObjRotImpTarg *obj1,SpaceObjRotImpTarg *obj2,real32 colldist,vector *distvector,real32 dist,real32 distsquared);
 TI_API void ApplyDamageToCollidingObjects(SpaceObjRotImpTarg *obj1,SpaceObjRotImpTarg *obj2,vector *distvector,real32 dist);
-TI_API bool ApplyDamageToTarget(SpaceObjRotImpTarg *target,real32 damagetaken,GunSoundType soundType,sdword damageHow,sdword playerIndex);
+TI_API bool_t ApplyDamageToTarget(SpaceObjRotImpTarg *target,real32 damagetaken,GunSoundType soundType,sdword damageHow,sdword playerIndex);
 
 TI_API void univBulletCollidedWithTarget(SpaceObjRotImpTarg *target,StaticHeader *targetstaticheader,Bullet *bullet,real32 collideLineDist,sdword collSide);
 TI_API void univMissileCollidedWithTarget(SpaceObjRotImpTarg *target,StaticHeader *targetstaticheader,Missile *missile,real32 collideLineDist,sdword collSide);
@@ -177,7 +177,7 @@ TI_API void univResetNewGimbleGun(Gun *gun);
 
 TI_API void InitializeNavLights(Ship *newship);
 
-TI_API bool univFindBackupMothership(struct Player *player);
+TI_API bool_t univFindBackupMothership(struct Player *player);
 
 // fast id table lookup stuff
 TI_API void univInitFastNetworkIDLookups(void);
@@ -190,7 +190,7 @@ TI_API void SaveIDToPtrTable(IDToPtrTable *table);
 
 TI_API void ApplyCareenRotationDirectly(Ship *ship);
 
-TI_API bool univObjectOutsideWorld(SpaceObj *obj);
+TI_API bool_t univObjectOutsideWorld(SpaceObj *obj);
 
 TI_API void univKillOtherPlayersIfDead(Ship *ship);
 

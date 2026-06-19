@@ -96,14 +96,14 @@ static sdword JustInit;
 static sdword localbar;
 
 // Pixels and info about the background image chosen
-static bool hrBackgroundInitFrame = 0;
+static bool_t hrBackgroundInitFrame = 0;
 static long hrBackgroundDirty = 0;
-bool hrBackgroundReinit = FALSE;
+bool_t hrBackgroundReinit = FALSE;
 static long hrBackXSize, hrBackYSize;
 static GLfloat hrBackXFrac, hrBackYFrac;
 static GLuint hrBackgroundTexture = 0;
 
-static bool hrScaleMissionLoadingScreens = HR_SCALE_MISSION_LOADING_SCREENS;
+static bool_t hrScaleMissionLoadingScreens = HR_SCALE_MISSION_LOADING_SCREENS;
 
 static regionhandle hrDecRegion;
 
@@ -118,7 +118,7 @@ fonthandle      playernamefont=0;
 color           hrBackBarColor=HR_BackBarColor;
 color           hrChatTextColor=HR_ChatTextColor;
 
-bool            PlayersAlreadyDrawnDropped[MAX_MULTIPLAYER_PLAYERS];
+bool_t            PlayersAlreadyDrawnDropped[MAX_MULTIPLAYER_PLAYERS];
 
 textentryhandle ChatTextEntryBox = NULL;
 
@@ -148,7 +148,7 @@ region horseCrapRegion =
     NULL                       // atom;
 };
 
-bool hrRunning=FALSE;
+bool_t hrRunning=FALSE;
 
 ChatPacket chathistory[NUM_CHAT_LINES];
 
@@ -238,7 +238,7 @@ void hrDrawPlayersProgress(featom *atom, regionhandle region)
     rectangle outline;
     real32 percent;
     fonthandle currentfont;
-    bool droppedOut;
+    bool_t droppedOut;
 
     hrProgressRegion = region;
 
@@ -894,8 +894,8 @@ void hrDrawBackground(void)
 
         sdword oldTex = rndTextureEnable(TRUE);
         udword oldMode = rndTextureEnvironment(RTE_Replace);
-        bool cull = glIsEnabled(GL_CULL_FACE) ? TRUE : FALSE;
-        bool blend = glIsEnabled(GL_BLEND) ? TRUE : FALSE;
+        bool_t cull = glIsEnabled(GL_CULL_FACE) ? TRUE : FALSE;
+        bool_t blend = glIsEnabled(GL_BLEND) ? TRUE : FALSE;
         glDisable(GL_CULL_FACE);
         glEnable(GL_BLEND);
 
@@ -1014,7 +1014,7 @@ extern bool8 etgHasBeenStarted;
 void horseGetNumBars(HorseRaceBars *horsebars)
 {
     sdword i;
-    bool enablebar[MAX_POSSIBLE_NUM_BARS];
+    bool_t enablebar[MAX_POSSIBLE_NUM_BARS];
     real32 totalperc;
 
     dbgAssertOrIgnore(horseTotalNumBars.numBars > 0);
@@ -1457,14 +1457,14 @@ real32 horseRaceGetPacketPercent(real32 barPercent)
     return percent;
 }
 
-bool HorseRaceNext(real32 percent)
+bool_t HorseRaceNext(real32 percent)
 {
     Uint32 lp;
     HorsePacket packet;
     real32 temptime;
     udword i;
     sdword dontrenderhack = FALSE;
-    bool sendhrpackethack = FALSE;
+    bool_t sendhrpackethack = FALSE;
 //    static real32 lastper = 0.0f;
     static sdword modulusCounter = 0;
 
@@ -1579,7 +1579,7 @@ bool HorseRaceNext(real32 percent)
 void hrProcessPacket(struct ChatPacket *packet)
 {
     sdword  i;
-    bool    done=FALSE;
+    bool_t    done=FALSE;
 
     for (i=0;i<NUM_CHAT_LINES;i++)
     {

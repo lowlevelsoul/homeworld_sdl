@@ -104,7 +104,7 @@ typedef struct LANAdvert_GameHere {
 
 typedef struct LANAdvert_ChatMsg {
     LANAdvertHeader header;
-    bool whispered;
+    bool_t whispered;
     char chatFrom[MAX_PERSONAL_NAME_LEN];
     char whisperToWhoPersonalName[MAX_PERSONAL_NAME_LEN];
     char chatstring[MAX_CHATSTRING_LENGTH];
@@ -186,7 +186,7 @@ lgqueuegameplayerinfo;
     Function Prototypes:
 =============================================================================*/
 
-TI_API void lgStartMultiPlayerLANGameScreens(regionhandle region, sdword ID, udword event, udword data, bool AlreadyLoggedIn);
+TI_API void lgStartMultiPlayerLANGameScreens(regionhandle region, sdword ID, udword event, udword data, bool_t AlreadyLoggedIn);
 TI_API void lgShutdownMultiPlayerGameScreens(void);
 
 TI_API void lgDisplayMessage(char *message);
@@ -202,7 +202,7 @@ TI_API void lgNotifyGameDisolved(void);
 TI_API void lgStartup(void);
 TI_API void lgShutdown(void);
 
-TI_API void mgShowScreen(sdword screennum, bool disappear);
+TI_API void mgShowScreen(sdword screennum, bool_t disappear);
 
 //misc stuff MultiPlayerGame.c needs
 TI_API void lgCreateGameNow(char *name, featom *atom);
@@ -217,7 +217,7 @@ TI_API void lgGoPassword(char *name, featom *atom);
     Data:
 =============================================================================*/
 
-extern bool lgRunning;
+extern bool_t lgRunning;
 
 // = {"","","","",0,0,0,0,0,0,0,0,0,0};
 extern CaptainGameInfo tpGameCreated;

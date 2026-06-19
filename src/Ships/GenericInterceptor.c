@@ -46,8 +46,8 @@ typedef struct                      //Inherited From GenericInterceptorSpec
     bool16 aiAIPflightman;          // AI boolean indicating if attack in progress (AIP) flight maneuver has been chosen
     uword activeGun;
     real32 CloakingStatus;          // Gradient value for cloaking and decloaking state
-    bool CloakLowWarning;
-    bool ReCloak;
+    bool_t CloakLowWarning;
+    bool_t ReCloak;
     real32 ReCloakTime;
 } CloakedFighterSpec;
 
@@ -67,8 +67,8 @@ typedef struct
 void GenericInterceptorStaticInit(char *directory, char *filename, struct ShipStaticInfo *statinfo);
 void GenericInterceptorInit(Ship *ship);
 void GenericInterceptorFire(Ship *ship, SpaceObjRotImpTarg *target);
-void GenericInterceptorPassiveAttack(Ship *ship, Ship *target, bool rotate);
-void GenericInterceptorPassiveAttack(Ship *ship, Ship *target, bool rotate);
+void GenericInterceptorPassiveAttack(Ship *ship, Ship *target, bool_t rotate);
+void GenericInterceptorPassiveAttack(Ship *ship, Ship *target, bool_t rotate);
 
 
 #define FAKE_FLY_BY_DISTANCE_MUCH_BIGGER_THAN_NEEDED   15000.0f
@@ -79,7 +79,7 @@ sdword FIGHTER_BREAK_ANGLE_MAX = 45;
 sdword FIGHTER_BREAK_VERTICAL_ANGLE_MIN = 10;
 sdword FIGHTER_BREAK_VERTICAL_ANGLE_MAX = 30;
 
-bool BombersUseBombingRun = FALSE;
+bool_t BombersUseBombingRun = FALSE;
 
 /*
 typedef struct
@@ -249,7 +249,7 @@ void GenericInterceptorInit(Ship *ship)
     spec->activeGun = 0;
 }
 
-bool GenericInterceptorCanFire(Ship *ship,SpaceObjRotImpTarg *target,vector *trajectory,real32 triggerHappy)
+bool_t GenericInterceptorCanFire(Ship *ship,SpaceObjRotImpTarg *target,vector *trajectory,real32 triggerHappy)
 {
     GenericInterceptorSpec *spec = (GenericInterceptorSpec *)ship->ShipSpecifics;
     GenericInterceptorStatics *interceptorstat = (GenericInterceptorStatics *)(((ShipStaticInfo *)ship->staticinfo)->custstatinfo);
@@ -257,8 +257,8 @@ bool GenericInterceptorCanFire(Ship *ship,SpaceObjRotImpTarg *target,vector *tra
     Gun *gun;
     GunInfo *gunInfo = ship->gunInfo;
     sdword i;
-    bool returnval = FALSE;
-    bool canUseGun;
+    bool_t returnval = FALSE;
+    bool_t canUseGun;
     sdword pickgun;
 
     if (ship->shiptype == TargetDrone)
@@ -436,7 +436,7 @@ void setupWhipStrafe(Ship *ship,GenericInterceptorSpec *spec,Ship *target)
         }                                                                                                                  \
     }
 
-void GenericInterceptorPassiveAttack(Ship *ship,Ship *target,bool rotate)
+void GenericInterceptorPassiveAttack(Ship *ship,Ship *target,bool_t rotate)
 {
     ShipStaticInfo *shipstaticinfo = (ShipStaticInfo *)ship->staticinfo;
     GenericInterceptorStatics *interceptorstat = (GenericInterceptorStatics *)shipstaticinfo->custstatinfo;
@@ -458,7 +458,7 @@ void GenericInterceptorPassiveAttack(Ship *ship,Ship *target,bool rotate)
 
     range = RangeToTargetGivenDist(ship,(SpaceObjRotImpTarg *)target,dist);
 
-    if ((rotate) & ((bool)shipstaticinfo->rotateToRetaliate))
+    if ((rotate) & ((bool_t)shipstaticinfo->rotateToRetaliate))
     {
         aitrackHeading(ship,&trajectory,FLYSHIP_ATTACKACCURACY);
     }
@@ -1065,7 +1065,7 @@ void SpawnCloakingEffect(Ship *ship, etglod *etgLOD)
     }
 }
 
-bool CloakedFighterSpecialActivate(Ship *ship)
+bool_t CloakedFighterSpecialActivate(Ship *ship)
 {
     CloakedFighterSpec *spec = (CloakedFighterSpec *)ship->ShipSpecifics;
     CloakedFighterStatics *cloakedfighterstatics;
@@ -1242,7 +1242,7 @@ void CloakedFighterHouseKeep(Ship *ship)
     }
 }
 
-bool InterceptorInRange(Ship *ship,SpaceObjRotImpTarg *target)
+bool_t InterceptorInRange(Ship *ship,SpaceObjRotImpTarg *target)
 {
     GenericInterceptorStatics *interceptorstat = (GenericInterceptorStatics *)ship->staticinfo->custstatinfo;
     real32 range;
@@ -1269,7 +1269,7 @@ bool InterceptorInRange(Ship *ship,SpaceObjRotImpTarg *target)
     return TRUE;
 }
 
-bool GenericInterceptorSpecialActivate(Ship *ship)
+bool_t GenericInterceptorSpecialActivate(Ship *ship)
 {
     if(ship->shiptype == LightInterceptor)
     {

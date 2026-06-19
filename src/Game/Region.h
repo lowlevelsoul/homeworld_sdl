@@ -172,7 +172,7 @@ extern udword regRegionFrameDrawCount;
     Data:
 =============================================================================*/
 extern region regRootRegion;
-extern bool regKeysFocussed;
+extern bool_t regKeysFocussed;
 
 /*=============================================================================
     Macros:
@@ -242,7 +242,7 @@ TI_API regionhandle regKeySiblingAlloc(regionhandle sibling, smemsize ID, udword
 TI_API void regRegionDelete(regionhandle region);
 
 //adjust region links (usually only used by region allocation/deletion functions)
-TI_API bool regRegionInside(regionhandle needle, regionhandle haystack);
+TI_API bool_t regRegionInside(regionhandle needle, regionhandle haystack);
 TI_API void regChildInsert(regionhandle regionToInsert, regionhandle parent);
 TI_API void regSiblingInsert(regionhandle regionToInsert, regionhandle sibling);
 TI_API void regMoveLinkChild(regionhandle regionToMove, regionhandle newParent);

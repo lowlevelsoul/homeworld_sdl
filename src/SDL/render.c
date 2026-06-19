@@ -107,8 +107,8 @@
 bool8 rndFogOn = FALSE;
 
 #if RND_VISUALIZATION
-extern bool dockLines;
-extern bool gunLines;
+extern bool_t dockLines;
+extern bool_t gunLines;
 extern bool8 RENDER_BOXES;
 extern bool8 RENDER_LIGHTLINES;
 #endif
@@ -121,7 +121,7 @@ extern color HorseRaceDropoutColor;
 
 vector g_RndPosition;
 
-bool rndTakeScreenshot = FALSE;
+bool_t rndTakeScreenshot = FALSE;
 
 /*=============================================================================
     Private Types:
@@ -156,7 +156,7 @@ PFNGLDRAWTEXIOESPROC glDrawTexiOES = 0;
 
 static const char *gl_extensions = 0;
 
-static bool useVBO = FALSE;
+static bool_t useVBO = FALSE;
 static GLuint vboStars;
 
 /* Should remove this stuff after cleaning up rgl functions. */
@@ -181,12 +181,12 @@ rendercallback rndPreObjectCallback = NULL, rndPostObjectCallback = NULL;
 
 udword rndTextureEnviron = RTE_Modulate;
 
-bool rndAdditiveBlending   = FALSE;
-bool rndLightingEnabled    = TRUE;
-bool rndNormalization      = FALSE;
-bool rndPerspectiveCorrect = FALSE;
-bool rndScissorEnabled     = FALSE;
-bool rndTextureEnabled     = FALSE;
+bool_t rndAdditiveBlending   = FALSE;
+bool_t rndLightingEnabled    = TRUE;
+bool_t rndNormalization      = FALSE;
+bool_t rndPerspectiveCorrect = FALSE;
+bool_t rndScissorEnabled     = FALSE;
+bool_t rndTextureEnabled     = FALSE;
 
 //data for billboard geometry
 hmatrix rndCameraMatrix;
@@ -258,7 +258,7 @@ sdword rndPolyStatFrameCounter = 0;
 
 #if RND_XYZ
 #define RND_XYZKey                  NUMPAD9
-bool rndXYZPrint = FALSE;
+bool_t rndXYZPrint = FALSE;
 #endif
 
 //scaling minimum cap crap
@@ -289,7 +289,7 @@ typedef struct
 {
     char *name;
     GLenum enumeration;
-    bool bDefault;
+    bool_t bDefault;
 }
 enumentry;
 #define enumEntry(string, n)            {string, n, FALSE}
@@ -450,7 +450,7 @@ glstateentry rndStateSaveTable[] =
     stateEntry("GL_VIEWPORT", GL_VIEWPORT,                                      G_Integer,   1, NULL),
     {NULL, 0, 0, 0, NULL}
 };
-bool rndGLStateSaving = FALSE;
+bool_t rndGLStateSaving = FALSE;
 char rndGLStateLogFileName[128];
 sdword rndGLStateLogIndex = 0;
 #endif //RND_GL_STATE_DEBUG
@@ -846,14 +846,14 @@ void rndCapScaleCapStatsTaskFunction(void)
     sprintf(rndCapScaleCapStatsString, "\n trailScaleCap %f", scalar);
 }
 
-/*bool setupPixelFormat(HDC hDC)*/
-bool setupPixelFormat()
+/*bool_t setupPixelFormat(HDC hDC)*/
+bool_t setupPixelFormat()
 {
 	Uint32 flags;
 	static Uint32 lastWidth  = 0;
 	static Uint32 lastHeight = 0;
 	static Uint32 lastDepth  = 0;
-	static bool   lastFull   = FALSE;
+	static bool_t   lastFull   = FALSE;
 	int FSAA = 0; //os_config_read_uint( NULL, "FSAA", 1 )
 #ifdef HW_ENABLE_GLES
     SDL_SysWMinfo info;
@@ -1035,7 +1035,7 @@ bool setupPixelFormat()
 }
 
 int glCheckExtension(const char *ext) {
-    bool gotext = gl_extensions && strstr(gl_extensions, ext) != NULL;
+    bool_t gotext = gl_extensions && strstr(gl_extensions, ext) != NULL;
     if (strcmp(ext, "GL_ARB_vertex_buffer_object") == 0) {
 #ifdef HW_ENABLE_GLES
         /* part of the standard in GLES */
@@ -1049,8 +1049,8 @@ int glCheckExtension(const char *ext) {
     return gotext;
 }
 
-/*bool setupPalette(HDC hDC)*/
-bool setupPalette()
+/*bool_t setupPalette(HDC hDC)*/
+bool_t setupPalette()
 {
 	int pix_size;
 
@@ -1072,7 +1072,7 @@ bool setupPalette()
 
 typedef int (*AUXINITPOSITIONPROC)(GLuint, GLuint, GLuint, GLuint, GLuint);
 
-sdword rndSmallInit(rndinitdata* initData, bool GL)
+sdword rndSmallInit(rndinitdata* initData, bool_t GL)
 {
     Uint32 flags;
 
@@ -1274,7 +1274,7 @@ void rndBillboardDisable(void)
     glLoadMatrixf((GLfloat *)(&rndCameraMatrix));    //restore previous camera matrix
 }
 
-void rndFilter(bool on)
+void rndFilter(bool_t on)
 {
 }
 
@@ -1291,7 +1291,7 @@ static real64 rndNear(real64 in)
     Outputs     : renders each segment as a quadrangle about the mission sphere
     Return      : void
 ----------------------------------------------------------------------------*/
-void rndBackgroundRender(real32 radius, Camera* camera, bool bDrawStars)
+void rndBackgroundRender(real32 radius, Camera* camera, bool_t bDrawStars)
 {
     real32 projection[16];
 
@@ -1318,7 +1318,7 @@ void rndBackgroundRender(real32 radius, Camera* camera, bool bDrawStars)
     rndTextureEnable(FALSE);
     if (bDrawStars && gameIsRunning)
     {
-        bool blends, pointSize;
+        bool_t blends, pointSize;
 
         blends = TRUE;
         pointSize = TRUE;
@@ -1406,7 +1406,7 @@ void rndBackgroundRender(real32 radius, Camera* camera, bool bDrawStars)
     Outputs     :
     Return      : TRUE if camera is inside, FALSE otherwise
 ----------------------------------------------------------------------------*/
-bool rndCameraInside(SpaceObj* spaceobj, Camera* camera)
+bool_t rndCameraInside(SpaceObj* spaceobj, Camera* camera)
 {
     if ((spaceobj->flags & SOF_Rotatable) && (spaceobj->flags & SOF_Impactable))
     {
@@ -1441,7 +1441,7 @@ bool rndCameraInside(SpaceObj* spaceobj, Camera* camera)
     Outputs     :
     Return      : TRUE if camera inside, else FALSE
 ----------------------------------------------------------------------------*/
-bool rndInsideShip(SpaceObj* spaceobj, Camera* camera)
+bool_t rndInsideShip(SpaceObj* spaceobj, Camera* camera)
 {
     if (nisIsRunning)
     {
@@ -1463,7 +1463,7 @@ bool rndInsideShip(SpaceObj* spaceobj, Camera* camera)
     Outputs     :
     Return      : TRUE if ship is visible, else FALSE
 ----------------------------------------------------------------------------*/
-bool rndShipVisible(SpaceObj* spaceobj, Camera* camera)
+bool_t rndShipVisible(SpaceObj* spaceobj, Camera* camera)
 {
     vector veye, vobj;
 
@@ -1504,11 +1504,11 @@ bool rndShipVisible(SpaceObj* spaceobj, Camera* camera)
     Outputs     :
     Return      : TRUE if visible, FALSE otherwise
 ----------------------------------------------------------------------------*/
-bool rndShipVisibleUsingCoordSys(SpaceObj* spaceobj, Camera* camera)
+bool_t rndShipVisibleUsingCoordSys(SpaceObj* spaceobj, Camera* camera)
 {
     GLfloat projection[16], modelview[16];
     hmatrix coordMatrixForGL;
-    bool    result;
+    bool_t    result;
 
     glGetFloatv(GL_PROJECTION_MATRIX, projection);
     glGetFloatv(GL_MODELVIEW_MATRIX,  modelview);
@@ -1548,7 +1548,7 @@ bool rndShipVisibleUsingCoordSys(SpaceObj* spaceobj, Camera* camera)
     Outputs     :
     Return      : TRUE if the ship is not visible (totally faded), FALSE otherwise
 ----------------------------------------------------------------------------*/
-bool rndFade(SpaceObj* spaceobj, Camera* camera)
+bool_t rndFade(SpaceObj* spaceobj, Camera* camera)
 {
     vector distvec;
     real32 distsqr0, distsqr1, distsqr;
@@ -1973,7 +1973,7 @@ void rndPostRenderDebug3DStuff(Camera *camera)
     {                                                       //if we should draw the NIS camera
         vector upVector = nisCamera->eyeposition;
         vector cameraVector;
-        static bool flashFlag;
+        static bool_t flashFlag;
 
         rndLightingEnable(FALSE);
         vecSub(cameraVector, nisCamera->lookatpoint, nisCamera->eyeposition);
@@ -2334,13 +2334,13 @@ void rndMainViewRenderFunction(Camera *camera)
 #endif
     extern sdword trailsRendered;
     sdword colorScheme;
-    bool displayEffect = FALSE;
+    bool_t displayEffect = FALSE;
 
     sdword asteroid0Count;
 
     real32 scaledOffset[3];
     static real32 cameraOffset[3] = {0.0f, 0.0f, 0.0f};
-    static bool   cameraFloating = FALSE;
+    static bool_t   cameraFloating = FALSE;
 
     mouseCursorObjPtr  = NULL;               //Falko: got an obscure crash where mouseCursorObjPtr was mangled, will this work?
 
@@ -2703,7 +2703,7 @@ dontdraw2:;
 
                                 if (rndShipVisible(spaceobj, camera))
                                 {
-                                    bool result = rndFade(spaceobj, camera);
+                                    bool_t result = rndFade(spaceobj, camera);
                                     Ship* ship = (Ship*)spaceobj;
                                     ShipSinglePlayerGameInfo* ssinfo = ship->shipSinglePlayerGameInfo;
 
@@ -2770,8 +2770,8 @@ dontdraw2:;
                                         {
 #if DEBUG_VISIBLE_POLYS
                                             extern sdword visiblePoly;
-                                            extern bool g_Points;
-                                            extern bool g_SpecificPoly;
+                                            extern bool_t g_Points;
+                                            extern bool_t g_SpecificPoly;
 #endif
                                             if (((Ship *)spaceobj)->bindings != NULL)
                                             {
@@ -3313,7 +3313,7 @@ udword rndLoadTarga(char* filename, sdword* width, sdword* height)
     Outputs     : plug_handle is either valid or invalid
     Return      :
 ----------------------------------------------------------------------------*/
-void rndLoadShamelessPlug(bool on)
+void rndLoadShamelessPlug(bool_t on)
 {
     if (on)
     {
@@ -3531,7 +3531,7 @@ void rndDrawOnScreenDebugInfo(void)
 #if PIE_VISUALIZE_VERTICAL
     if (pieOnScreen)
     {
-        static bool pieFlashFlag = FALSE;
+        static bool_t pieFlashFlag = FALSE;
         pieFlashFlag ^= TRUE;
         if (pieFlashFlag)
         {
@@ -3615,7 +3615,7 @@ void rndDrawOnScreenDebugInfo(void)
             }
             else if (keyIsHit(SEVENKEY))
             {
-                extern bool g_Output;
+                extern bool_t g_Output;
                 g_Output = TRUE;
             }
         }
@@ -3771,7 +3771,7 @@ void rndDrawOnScreenDebugInfo(void)
     Outputs     :
     Return      :
 ----------------------------------------------------------------------------*/
-void rndDrawScissorBars(bool scissorEnabled)
+void rndDrawScissorBars(bool_t scissorEnabled)
 {
     sdword y;
     real32 GLy, oneGLy;
@@ -3988,7 +3988,7 @@ DEFINE_TASK(rndRenderTask)
         ;
 #else
         {
-            extern bool mainPlayAVIs;
+            extern bool_t mainPlayAVIs;
 
             if (mainPlayAVIs)
             {
