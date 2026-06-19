@@ -412,6 +412,9 @@
     <ClInclude Include="..\..\..\src\Ships\Ships.h" />
     <ClInclude Include="..\..\..\src\Ships\StandardDestroyer.h" />
     <ClInclude Include="..\..\..\src\Ships\StandardFrigate.h" />
+    <ClInclude Include="..\..\..\src\Titan\tiPlatform.h" />
+    <ClInclude Include="..\..\..\src\Titan\tiPlatform_apple.h" />
+    <ClInclude Include="..\..\..\src\Titan\tiPlatform_win.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\Game\AIAttackMan.c" />

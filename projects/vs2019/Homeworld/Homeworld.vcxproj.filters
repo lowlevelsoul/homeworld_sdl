@@ -19,6 +19,9 @@
     <Filter Include="src\Ships">
       <UniqueIdentifier>{ef75894d-5d57-46d8-b458-00c064e8242d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Titan">
+      <UniqueIdentifier>{8b6fd471-4b5d-4bd8-aecf-fc9010df1132}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Game\MadLinkInDefs.h">
@@ -788,6 +791,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\src\Ships\P2Swarmer.h">
       <Filter>src\Ships</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Titan\tiPlatform.h">
+      <Filter>src\Titan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Titan\tiPlatform_win.h">
+      <Filter>src\Titan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Titan\tiPlatform_apple.h">
+      <Filter>src\Titan</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
