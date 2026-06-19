@@ -22,488 +22,17 @@
     <Filter Include="src\Titan">
       <UniqueIdentifier>{8b6fd471-4b5d-4bd8-aecf-fc9010df1132}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Game\Header">
+      <UniqueIdentifier>{5ea34542-53dd-4d9b-bb71-6e238dca8c95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\SDL\Headers">
+      <UniqueIdentifier>{21671c44-53e9-462c-806d-38fb1bc78c15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Ships\Headers">
+      <UniqueIdentifier>{0df60ebb-e344-4682-b5a5-0dc7b91faedc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\src\Game\MadLinkInDefs.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Matrix.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\MaxMultiplayer.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Memory.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Mesh.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\MeshAnim.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\MEX.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\MultiplayerGame.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\MultiplayerLANGame.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\NavLights.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Nebulae.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\NetCheck.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\NIS.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Objectives.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\ObjTypes.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Options.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Particle.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Physics.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\PiePlate.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Ping.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\PlugScreen.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\ProfileTimers.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\RaceDefs.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Randy.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Region.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\ResCollect.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\ResearchAPI.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\ResearchGUI.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\SaveGame.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\ScenPick.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Scroller.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Select.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Sensors.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Shader.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\ShipSelect.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\ShipView.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\SinglePlayer.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\SoundEvent.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\SoundEventDefs.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\SoundEventPrivate.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\SoundMusic.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\SoundStructs.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\SpaceObj.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\SpeechEvent.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Star3d.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Stats.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\StatScript.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\StringsOnly.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\StringSupport.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Subtitle.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Switches.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Tactical.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Tactics.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Task.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\TaskBar.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Teams.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Timer.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\TitanNet.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Tracking.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\TradeMgr.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Trails.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Transformer.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Tutor.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Tweak.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Twiddle.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Types.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\UIControls.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Undo.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Universe.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\UnivUpdate.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Vector.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\VolTweakDefs.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Volume.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\wrap.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\wrap_types.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\wrapped_unlisted_functions.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AIAttackMan.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AIDefenseMan.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AIEvents.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AIFeatures.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AIFleetMan.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AIHandler.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AIMoves.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AIOrders.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AIPlayer.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AIResourceMan.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AIShip.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AITeam.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AITrack.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AIUtilities.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AIVar.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Alliance.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Animatic.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Attack.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Attributes.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AutoDownloadMap.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\AutoLOD.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Battle.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\BigFile.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Blobs.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\BMP.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Bounties.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\B-Spline.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\BTG.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Camera.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\CameraCommand.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Captaincy.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\ChannelFSM.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Chatting.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Clamp.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\ClassDefs.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Clipper.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Clouds.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Collision.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Color.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\ColPick.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\CommandDefs.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\CommandLayer.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\CommandNetwork.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\CommandWrap.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\ConsMgr.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\cpuid.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Crates.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Damage.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Debug.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Demo.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Dock.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\ETG.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Eval.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\FastMath.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\FEColour.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\FEFlow.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\FEReg.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\File.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\FlightMan.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\FlightManDefs.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\FontReg.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Formation.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\FormationDefs.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\functions.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\GameChat.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\GamePick.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\GameStats.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Globals.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Gun.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Hash.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\HorseRace.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\HS.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\InfoOverlay.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\KAS.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\KASFunc.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Key.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\KeyBindings.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\LagPrint.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\LaunchMgr.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\LevelLoad.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\Light.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\LinkedList.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\LOD.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Game\MadLinkIn.h">
-      <Filter>src\Game</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\src\Missions\Generated\Mission09.h">
       <Filter>src\Missions\Generated</Filter>
     </ClInclude>
@@ -558,238 +87,13 @@
     <ClInclude Include="..\..\..\src\Missions\Generated\Mission08.h">
       <Filter>src\Missions\Generated</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\mainswitches.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\mixfft.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\mouse.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\NetworkInterface.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\prim2d.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\prim3d.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\Queue.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\regkey.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\render.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\resource.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\rglu.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\rinit.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\screenshot.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\soundcmn.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\soundlow.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\standard_library.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\texreg.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\TimeoutTimer.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\Titan.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\TitanInterface.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\TitanInterfaceC.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\TitanPacketMsg.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\utility.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\wave.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\avi.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\src\SDL\ClientCDKey.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\dct.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\debugwnd.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\devstats.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\font.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\fqcodec.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\fqeffect.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\fquant.h">
       <Filter>src\SDL</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\SDL\glinc.h">
       <Filter>src\SDL</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\main.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\SDL\mainrgn.h">
-      <Filter>src\SDL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\P3StandardShip.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\Probe.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\ProximitySensor.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\RepairCorvette.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\ResearchShip.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\ResourceCollector.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\ResourceController.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\SalCapCorvette.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\SensorArray.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\src\Ships\ShipDefs.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\Ships.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\StandardDestroyer.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\StandardFrigate.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\AdvanceSupportFrigate.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\Carrier.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\CloakGenerator.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\DDDFrigate.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\DefaultShip.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\DefenseFighter.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\DFGFrigate.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\Drone.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\FloatingCity.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\GenericDefender.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\GenericInterceptor.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\GravWellGenerator.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\HeavyCorvette.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\HeavyCruiser.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\IonCannonFrigate.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\LightCorvette.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\MinelayerCorvette.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\MissileDestroyer.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\Mothership.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\MultiGunCorvette.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\P1IonArrayFrigate.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\P1MissileCorvette.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\P1Mothership.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\P1StandardCorvette.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\P2AdvanceSwarmer.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\P2FuelPod.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\P2Mothership.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\P2MultiBeamFrigate.h">
-      <Filter>src\Ships</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\Ships\P2Swarmer.h">
       <Filter>src\Ships</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\Titan\tiPlatform.h">
@@ -800,6 +104,711 @@
     </ClInclude>
     <ClInclude Include="..\..\..\src\Titan\tiPlatform_apple.h">
       <Filter>src\Titan</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AIAttackMan.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AIDefenseMan.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AIEvents.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AIFeatures.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AIFleetMan.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AIHandler.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AIMoves.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AIOrders.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AIPlayer.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AIResourceMan.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AIShip.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AITeam.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AITrack.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AIUtilities.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Attributes.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AutoDownloadMap.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AutoLOD.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Battle.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\BigFile.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Blobs.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\BMP.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\AIVar.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Alliance.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Animatic.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Attack.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Bounties.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\B-Spline.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\BTG.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Camera.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\CameraCommand.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Captaincy.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\ChannelFSM.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Chatting.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Clamp.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\ClassDefs.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Clipper.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Clouds.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Collision.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\CommandWrap.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\CommandNetwork.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\CommandLayer.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\CommandDefs.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\ColPick.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Color.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\ConsMgr.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Crates.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\cpuid.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Damage.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Debug.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Demo.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Dock.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\ETG.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Eval.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\FastMath.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\FEColour.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\FEFlow.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\FEReg.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\File.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\FlightMan.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\FlightManDefs.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\FontReg.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Formation.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\wrapped_unlisted_functions.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\wrap_types.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\wrap.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Volume.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\VolTweakDefs.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Vector.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\UnivUpdate.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Universe.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Undo.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\UIControls.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Types.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Twiddle.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Tweak.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Tutor.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Transformer.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Trails.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\TradeMgr.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Tracking.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\TitanNet.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Timer.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Teams.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\TaskBar.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Task.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Tactics.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Tactical.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Switches.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Subtitle.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\StringSupport.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\StringsOnly.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\StatScript.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Stats.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Star3d.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\SpeechEvent.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\SpaceObj.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\SoundMusic.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\SoundEventPrivate.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\SoundEventDefs.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\SoundEvent.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\SinglePlayer.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\ShipView.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\ShipSelect.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Shader.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Sensors.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Select.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Scroller.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\ScenPick.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\SaveGame.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\ResearchGUI.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\ResearchAPI.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\ResCollect.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Region.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Randy.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\RaceDefs.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\ProfileTimers.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\PlugScreen.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Ping.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\PiePlate.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Physics.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Particle.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Options.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\ObjTypes.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Objectives.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\NIS.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\NetCheck.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Nebulae.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\NavLights.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\MultiplayerLANGame.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\MultiplayerGame.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\MEX.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\MeshAnim.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Mesh.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Memory.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\MaxMultiplayer.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Matrix.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\MadLinkInDefs.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\MadLinkIn.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\LOD.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\LinkedList.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\FormationDefs.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\functions.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\GameChat.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\GamePick.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\GameStats.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Globals.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Gun.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Hash.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\HorseRace.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\HS.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\InfoOverlay.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\KAS.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\KASFunc.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Key.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\KeyBindings.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\LagPrint.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\LaunchMgr.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\LevelLoad.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\Light.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Game\SoundStructs.h">
+      <Filter>src\Game\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\avi.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\dct.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\debugwnd.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\devstats.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\font.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\fqcodec.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\fqeffect.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\fquant.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\main.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\mainrgn.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\mainswitches.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\mixfft.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\mouse.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\NetworkInterface.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\prim2d.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\prim3d.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\Queue.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\regkey.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\render.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\resource.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\rglu.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\rinit.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\screenshot.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\soundcmn.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\soundlow.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\texreg.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\standard_library.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\TimeoutTimer.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\Titan.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\TitanInterface.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\TitanInterfaceC.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\TitanPacketMsg.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\utility.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SDL\wave.h">
+      <Filter>src\SDL\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\AdvanceSupportFrigate.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\Carrier.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\CloakGenerator.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\DDDFrigate.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\DefaultShip.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\DefenseFighter.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\DFGFrigate.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\Drone.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\FloatingCity.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\GenericDefender.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\GenericInterceptor.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\GravWellGenerator.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\HeavyCorvette.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\HeavyCruiser.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\IonCannonFrigate.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\LightCorvette.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\MinelayerCorvette.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\MissileDestroyer.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\Mothership.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\MultiGunCorvette.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\P1IonArrayFrigate.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\P1MissileCorvette.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\P1Mothership.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\P1StandardCorvette.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\P2AdvanceSwarmer.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\P2FuelPod.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\P2Mothership.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\P2MultiBeamFrigate.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\P2Swarmer.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\P3StandardShip.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\Probe.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\ProximitySensor.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\RepairCorvette.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\ResourceCollector.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\ResearchShip.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\ResourceController.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\SalCapCorvette.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\SensorArray.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\Ships.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\StandardDestroyer.h">
+      <Filter>src\Ships\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Ships\StandardFrigate.h">
+      <Filter>src\Ships\Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
