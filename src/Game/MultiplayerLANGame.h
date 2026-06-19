@@ -186,31 +186,31 @@ lgqueuegameplayerinfo;
     Function Prototypes:
 =============================================================================*/
 
-void lgStartMultiPlayerLANGameScreens(regionhandle region, sdword ID, udword event, udword data, bool AlreadyLoggedIn);
-void lgShutdownMultiPlayerGameScreens(void);
+TI_API void lgStartMultiPlayerLANGameScreens(regionhandle region, sdword ID, udword event, udword data, bool AlreadyLoggedIn);
+TI_API void lgShutdownMultiPlayerGameScreens(void);
 
-void lgDisplayMessage(char *message);
+TI_API void lgDisplayMessage(char *message);
 
-void lgProcessGameChatPacket(struct ChatPacket *packet);
+TI_API void lgProcessGameChatPacket(struct ChatPacket *packet);
 
-void lgJoinGameConfirmed(void);
-void lgJoinGameDenied(void);
-void lgUpdateGameInfo(void);
+TI_API void lgJoinGameConfirmed(void);
+TI_API void lgJoinGameDenied(void);
+TI_API void lgUpdateGameInfo(void);
 
-void lgNotifyGameDisolved(void);
+TI_API void lgNotifyGameDisolved(void);
 
-void lgStartup(void);
-void lgShutdown(void);
+TI_API void lgStartup(void);
+TI_API void lgShutdown(void);
 
-void mgShowScreen(sdword screennum, bool disappear);
+TI_API void mgShowScreen(sdword screennum, bool disappear);
 
 //misc stuff MultiPlayerGame.c needs
-void lgCreateGameNow(char *name, featom *atom);
-void lgBackFromOptions(char *name, featom *atom);
-void lgBasicOptions(char *name,featom *atom);
+TI_API void lgCreateGameNow(char *name, featom *atom);
+TI_API void lgBackFromOptions(char *name, featom *atom);
+TI_API void lgBasicOptions(char *name,featom *atom);
 
 // called from MG.c
-void lgGoPassword(char *name, featom *atom);
+TI_API void lgGoPassword(char *name, featom *atom);
 
 
 /*=============================================================================

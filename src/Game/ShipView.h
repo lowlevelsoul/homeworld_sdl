@@ -14,14 +14,14 @@
 #include "Region.h"
 #include "ShipDefs.h"
 
-void svStartup(void);
-void svShutdown(void);
+TI_API void svStartup(void);
+TI_API void svShutdown(void);
 
-void svSelectShip(ShipType type);
-void svClose(void);
+TI_API void svSelectShip(ShipType type);
+TI_API void svClose(void);
 
-void svDirtyShipView(void);
+TI_API void svDirtyShipView(void);
 
-void svShipViewRender(featom* atom, regionhandle region);
+TI_API void svShipViewRender(featom* atom, regionhandle region);
 
 #endif

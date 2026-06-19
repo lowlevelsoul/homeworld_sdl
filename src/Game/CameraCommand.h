@@ -99,46 +99,46 @@ extern real32 CAMERA_FOCUSFAR_DISTANCE;
 
 // Camera Command Layer
 
-udword NewSetFocusPoint(CameraStackEntry *curentry, real32 *targetDistance);
+TI_API udword NewSetFocusPoint(CameraStackEntry *curentry, real32 *targetDistance);
 
-void ccInit(CameraCommand *cameracommand);
-void ccClose(CameraCommand *cameracommand);
-void ccReset(CameraCommand *cameracommand);
-void ccFocus(CameraCommand *cameracommand,FocusCommand *focuscom);
-void ccFocusClose(CameraCommand *cameracommand, FocusCommand *focuscom);
-void ccFocusFar(CameraCommand *cameracommand,FocusCommand *focuscom, Camera *currentCamera);
-void ccFocusOnMyMothership(CameraCommand *cameracommand);
-void ccFocusOnPlayersMothership(CameraCommand *cameracommand,uword playerindex);
-bool ccFocusOnFleet(CameraCommand *cameracommand);
-bool ccFocusExact(CameraCommand *cameracommand,CameraCommand *focustocopy);
-void ccFocusOnFleetSmooth(CameraCommand *cameracommand);
-void ccFocusGeneral(CameraCommand *cameracommand,FocusCommand *focuscom, bool bCloseUp);
-void ccForwardFocus(CameraCommand *cameracommand);
-void ccCancelFocus(CameraCommand *cameracommand);
-void ccViewToggleMissionSphere(CameraCommand *cameracommand);
-void ccControl(CameraCommand *cameracommand);
-void ccLockOnTargetNow(CameraCommand *cameracommand);
+TI_API void ccInit(CameraCommand *cameracommand);
+TI_API void ccClose(CameraCommand *cameracommand);
+TI_API void ccReset(CameraCommand *cameracommand);
+TI_API void ccFocus(CameraCommand *cameracommand,FocusCommand *focuscom);
+TI_API void ccFocusClose(CameraCommand *cameracommand, FocusCommand *focuscom);
+TI_API void ccFocusFar(CameraCommand *cameracommand,FocusCommand *focuscom, Camera *currentCamera);
+TI_API void ccFocusOnMyMothership(CameraCommand *cameracommand);
+TI_API void ccFocusOnPlayersMothership(CameraCommand *cameracommand,uword playerindex);
+TI_API bool ccFocusOnFleet(CameraCommand *cameracommand);
+TI_API bool ccFocusExact(CameraCommand *cameracommand,CameraCommand *focustocopy);
+TI_API void ccFocusOnFleetSmooth(CameraCommand *cameracommand);
+TI_API void ccFocusGeneral(CameraCommand *cameracommand,FocusCommand *focuscom, bool bCloseUp);
+TI_API void ccForwardFocus(CameraCommand *cameracommand);
+TI_API void ccCancelFocus(CameraCommand *cameracommand);
+TI_API void ccViewToggleMissionSphere(CameraCommand *cameracommand);
+TI_API void ccControl(CameraCommand *cameracommand);
+TI_API void ccLockOnTargetNow(CameraCommand *cameracommand);
 
 void ccSetModeFlag(CameraCommand *cameracommand,udword ccModeFlag);     // use CCMODE_whatever flags
 void ccClearModeFlag(CameraCommand *cameracommand,udword ccModeFlag);   // use CCMODE_whatever flags
 
-void ccChangeAngleDeclination(CameraCommand *cameracommand,real32 angle,real32 declination);
+TI_API void ccChangeAngleDeclination(CameraCommand *cameracommand,real32 angle,real32 declination);
 
-void ccCopyCamera(CameraCommand *cameracommand,Camera *cameraToCopy);
+TI_API void ccCopyCamera(CameraCommand *cameracommand,Camera *cameraToCopy);
 
 // call this routine to update camera command layer to remove ship
-void ccRemoveShip(CameraCommand *cameracommand,Ship *ship);
+TI_API void ccRemoveShip(CameraCommand *cameracommand,Ship *ship);
 
 // call this routine to remove references to theseships from cameracommand
-void ccRemoveTheseShips(CameraCommand *cameracommand,SelectCommand *theseships);
-void GetDistanceAngleDeclination(Camera *camera,vector *distvec);
+TI_API void ccRemoveTheseShips(CameraCommand *cameracommand,SelectCommand *theseships);
+TI_API void GetDistanceAngleDeclination(Camera *camera,vector *distvec);
 
 //cubic curve evaluation:
-void EvalCubic( float *y0, float *m0, float y1, float t );
-void ccGetShipCollCenter(Ship *ship, vector *pos, real32 *rad);
+TI_API void EvalCubic( float *y0, float *m0, float y1, float t );
+TI_API void ccGetShipCollCenter(Ship *ship, vector *pos, real32 *rad);
 
 //cull a focus selection to a certain radius
-sdword ccFocusCullRadiusMean(FocusCommand *selection, real32 radiusSqr, vector *centre);
-sdword ccFocusCullRadiusGeneral(FocusCommand *out, FocusCommand *in, real32 radiusSqr, vector *centre);
+TI_API sdword ccFocusCullRadiusMean(FocusCommand *selection, real32 radiusSqr, vector *centre);
+TI_API sdword ccFocusCullRadiusGeneral(FocusCommand *out, FocusCommand *in, real32 radiusSqr, vector *centre);
 
 #endif

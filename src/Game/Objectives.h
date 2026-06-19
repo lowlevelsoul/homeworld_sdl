@@ -33,34 +33,34 @@ Objective;
 
 extern LinkedList poFleetIntelligence;
 
-void poPlayerObjectivesBegin(regionhandle region);
-void poClose(char *string, featom *atom);
+TI_API void poPlayerObjectivesBegin(regionhandle region);
+TI_API void poClose(char *string, featom *atom);
 
-void objectiveStartup(void);
-void objectiveShutdown(void);
+TI_API void objectiveStartup(void);
+TI_API void objectiveShutdown(void);
 
-void objectiveSave(void);
-void objectiveLoad(void);
+TI_API void objectiveSave(void);
+TI_API void objectiveLoad(void);
 
 // *briefDescription is the text found in the list box under the taskbar
 // *fullDescription is the text found in the fleet intelligence window
 // The fullDescription pointer can be NULL
 // showOnce forces Fleet Intelligence to be drawn once and then deleted
-Objective *objectiveAndFleetIntelligenceCreate(char *label, char *briefDescription, char* fullDescription, bool8 showOnce, bool primary);
+TI_API Objective *objectiveAndFleetIntelligenceCreate(char *label, char *briefDescription, char* fullDescription, bool8 showOnce, bool primary);
 
 // Called independently if you wish to show fleet intelligence only once and right away
-FleetIntelligence *fleetIntelligenceCreate(char *description, bool8 showOnce);
+TI_API FleetIntelligence *fleetIntelligenceCreate(char *description, bool8 showOnce);
 
-Objective *objectiveFind(char *label);
-void objectiveSet(char *label, sdword status);
-sdword objectiveGet(char *label);
-sdword objectiveGetAll(void);
-void objectiveDestroyAll(void);
-void objectiveDestroy(char *label);
+TI_API Objective *objectiveFind(char *label);
+TI_API void objectiveSet(char *label, sdword status);
+TI_API sdword objectiveGet(char *label);
+TI_API sdword objectiveGetAll(void);
+TI_API void objectiveDestroyAll(void);
+TI_API void objectiveDestroy(char *label);
 
 void objectiveDrawStatus(void); // OBSOLETE
-void objectivePopupAll(void);
+TI_API void objectivePopupAll(void);
 
-void poPopupFleetIntelligence(Objective* objective);
+TI_API void poPopupFleetIntelligence(Objective* objective);
 
 #endif

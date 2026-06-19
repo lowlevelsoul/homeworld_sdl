@@ -16,7 +16,7 @@
 #include "Types.h"
 #include "Vector.h"
 
-void partFilter(bool on);
+TI_API void partFilter(bool on);
 
 #ifdef HW_BUILD_FOR_DEBUGGING
 #define PART_Debug
@@ -213,80 +213,80 @@ extern color  partEffectColor;
 extern real32 partNLips;
 
 //functions
-void partStartup(void);
-void partShutdown(void);
+TI_API void partStartup(void);
+TI_API void partShutdown(void);
 
-void partSetDefaults(void);
-void partRenderSystem(psysPtr psys);
+TI_API void partSetDefaults(void);
+TI_API void partRenderSystem(psysPtr psys);
 bool8 partUpdateSystem(psysPtr psys, real32 dt, vector* velvec);    //TRUE if system died, FALSE otherwise
-psysPtr partCreateSystem(particleType t, udword n);
-psysPtr partCreateSystemWithDelta(particleType t, udword n, udword delta);
-psysPtr partCreateSphericalSystem(particleType t, udword n);
-psysPtr partCreateSphericalSystemWithDelta(particleType t, udword n, udword delta);
-udword partHeaderSize(psysPtr psys);
+TI_API psysPtr partCreateSystem(particleType t, udword n);
+TI_API psysPtr partCreateSystemWithDelta(particleType t, udword n, udword delta);
+TI_API psysPtr partCreateSphericalSystem(particleType t, udword n);
+TI_API psysPtr partCreateSphericalSystemWithDelta(particleType t, udword n, udword delta);
+TI_API udword partHeaderSize(psysPtr psys);
 
 //system modifiers
-void partModifyTumble(psysPtr psys, vector* t);
-void partModifyDeltaTumble(psysPtr psys, vector* dt);
-void partModifyExponent(psysPtr psys, real32 exponent);
+TI_API void partModifyTumble(psysPtr psys, vector* t);
+TI_API void partModifyDeltaTumble(psysPtr psys, vector* dt);
+TI_API void partModifyExponent(psysPtr psys, real32 exponent);
 
-void partModifyDrag(psysPtr psys, real32 d);
-void partModifyMesh(psysPtr psys, meshdata *mesh);
-void partModifyLighting(psysPtr psys, bool lit);
-void partModifyIllum(psysPtr psys, real32 illum);
-void partModifyDeltaIllum(psysPtr psys, real32 deltaIllum);
+TI_API void partModifyDrag(psysPtr psys, real32 d);
+TI_API void partModifyMesh(psysPtr psys, meshdata *mesh);
+TI_API void partModifyLighting(psysPtr psys, bool lit);
+TI_API void partModifyIllum(psysPtr psys, real32 illum);
+TI_API void partModifyDeltaIllum(psysPtr psys, real32 deltaIllum);
 void partModifyTexture(psysPtr psys, trhandle tex,
                        udword u0, udword v0, udword u1, udword v1);
-void partModifyScale(psysPtr psys, real32 s);
-void partModifyDeltaScale(psysPtr psys, real32 d);
-void partModifyDeltaLength(psysPtr psys, real32 d);
-void partModifyLifespan(psysPtr psys, real32 l);
-void partModifyLength(psysPtr psys, real32 l);
-void partModifyVelLOF(psysPtr psys, real32 v);
-void partModifyDeltaVelLOF(psysPtr psys, real32 d);
-void partModifyVelR(psysPtr psys, real32 v);
-void partModifyDeltaVelR(psysPtr psys, real32 d);
-void partModifyDeltaColorC(psysPtr psys, color c);
-void partModifyColorC(psysPtr psys, color c);
+TI_API void partModifyScale(psysPtr psys, real32 s);
+TI_API void partModifyDeltaScale(psysPtr psys, real32 d);
+TI_API void partModifyDeltaLength(psysPtr psys, real32 d);
+TI_API void partModifyLifespan(psysPtr psys, real32 l);
+TI_API void partModifyLength(psysPtr psys, real32 l);
+TI_API void partModifyVelLOF(psysPtr psys, real32 v);
+TI_API void partModifyDeltaVelLOF(psysPtr psys, real32 d);
+TI_API void partModifyVelR(psysPtr psys, real32 v);
+TI_API void partModifyDeltaVelR(psysPtr psys, real32 d);
+TI_API void partModifyDeltaColorC(psysPtr psys, color c);
+TI_API void partModifyColorC(psysPtr psys, color c);
 void partModifyColor(psysPtr psys,
                      real32 r, real32 g, real32 b, real32 a);
 void partModifyDeltaColor(psysPtr psys,
                           real32 dr, real32 dg, real32 db, real32 da);
-void partModifyColorBias(psysPtr psys, real32 rb, real32 gb, real32 bb);
-void partModifyAddColor(psysPtr psys, color c);
+TI_API void partModifyColorBias(psysPtr psys, real32 rb, real32 gb, real32 bb);
+TI_API void partModifyAddColor(psysPtr psys, color c);
 
 //for billboard systems
-void partModifyAnimation(psysPtr psys, void* tstruct);
-void partModifyFramerate(psysPtr psys, real32 rate);
-void partModifyLoopFlag(psysPtr psys, bool8 willLoop);
-void partModifyBillPosition(psysPtr psys, vector* pos);
+TI_API void partModifyAnimation(psysPtr psys, void* tstruct);
+TI_API void partModifyFramerate(psysPtr psys, real32 rate);
+TI_API void partModifyLoopFlag(psysPtr psys, bool8 willLoop);
+TI_API void partModifyBillPosition(psysPtr psys, vector* pos);
 
 //flag modifiers
-void partModifySpecular(psysPtr psys, bool spec);
-void partModifyStipple(psysPtr psys, bool stip);
-void partModifyNoDepthWrite(psysPtr psys, bool noWrite);
-void partModifyAdditiveBlends(psysPtr psys, bool add);
-void partModifyPseudoBillboard(psysPtr psys, bool bill);
-void partModifyTrueBillboard(psysPtr psys, bool bill);
+TI_API void partModifySpecular(psysPtr psys, bool spec);
+TI_API void partModifyStipple(psysPtr psys, bool stip);
+TI_API void partModifyNoDepthWrite(psysPtr psys, bool noWrite);
+TI_API void partModifyAdditiveBlends(psysPtr psys, bool add);
+TI_API void partModifyPseudoBillboard(psysPtr psys, bool bill);
+TI_API void partModifyTrueBillboard(psysPtr psys, bool bill);
 //0 - normal, 1 - additive, 2 - stipple
-void partModifyAlphaMode(psysPtr psys, udword mode);
-void partModifyColorScheme(psysPtr psys, sdword colorScheme);
+TI_API void partModifyAlphaMode(psysPtr psys, udword mode);
+TI_API void partModifyColorScheme(psysPtr psys, sdword colorScheme);
 
 //callbacks
 //delta values are assumed to be + or - the given delta,
 //unless the given is -ve which implies a strictly -ve delta
 
-void partSetIsWorldspace(bool8 isWorldspace);
-void partSetVelocityInWorldSpace(bool8 isLocalSpace);
-void partSetWorldVel(vector* worldVel);
+TI_API void partSetIsWorldspace(bool8 isWorldspace);
+TI_API void partSetVelocityInWorldSpace(bool8 isLocalSpace);
+TI_API void partSetWorldVel(vector* worldVel);
 
 //these only make sense for billboard systems
-void partSetAnimation(void* tstruct);
-void partSetFramerate(real32 rate);
-void partSetLoopFlag(bool8 willLoop);
-void partSetStartFrame(udword frame);
+TI_API void partSetAnimation(void* tstruct);
+TI_API void partSetFramerate(real32 rate);
+TI_API void partSetLoopFlag(bool8 willLoop);
+TI_API void partSetStartFrame(udword frame);
 
-void partSetCoordSys(matrix* mat);
+TI_API void partSetCoordSys(matrix* mat);
 
 void partSetSlices(udword s);       //for circles
 
@@ -294,91 +294,91 @@ void partSetPosition(vector *pos);  //used by PART_BILLBOARD systems
 
 void partSetMeshdata(meshdata *m);  //used by PART_MESH systems
 //used by PART_BILLBOARD systems
-void partSetTrHandle(trhandle t, udword u0, udword v0, udword u1, udword v1);
+TI_API void partSetTrHandle(trhandle t, udword u0, udword v0, udword u1, udword v1);
 
 //PART_MESH systems use this, vals are angles in radians (default 0,0,0)
-void partSetTumble(real32 x, real32 y, real32 z);
-void partSetTumbleDist(real32 dx, real32 dy, real32 dz);
+TI_API void partSetTumble(real32 x, real32 y, real32 z);
+TI_API void partSetTumbleDist(real32 dx, real32 dy, real32 dz);
 void partSetDeltaTumble(real32 x, real32 y, real32 z);          //rads/s
-void partSetDeltaTumbleDist(real32 dx, real32 dy, real32 dz);
+TI_API void partSetDeltaTumbleDist(real32 dx, real32 dy, real32 dz);
 
-void partSetExponent(real32 exponent);
+TI_API void partSetExponent(real32 exponent);
 
 //morphing stuff
-void partSetMorph(void* mstruct);
-void partSetMorphFramerate(real32 meshRate);
-void partSetMorphLoopCount(sdword loopCount);
-void partSetMeshStartFrame(real32 frame);
-void partModifyMorph(psysPtr psys, void* mstruct);
-void partModifyMorphFramerate(psysPtr psys, real32 meshRate);
+TI_API void partSetMorph(void* mstruct);
+TI_API void partSetMorphFramerate(real32 meshRate);
+TI_API void partSetMorphLoopCount(sdword loopCount);
+TI_API void partSetMeshStartFrame(real32 frame);
+TI_API void partModifyMorph(psysPtr psys, void* mstruct);
+TI_API void partModifyMorphFramerate(psysPtr psys, real32 meshRate);
 
-void partSetDrag(real32 n);
-void partSetXYZScale(real32 x, real32 y, real32 z);
+TI_API void partSetDrag(real32 n);
+TI_API void partSetXYZScale(real32 x, real32 y, real32 z);
 void partSetScale(real32 n);        //scale refers to linewidth with PART_LINES
-void partSetScaleDist(real32 d);
-void partSetDeltaScale(real32 n);
-void partSetDeltaScaleDist(real32 d);
+TI_API void partSetScaleDist(real32 d);
+TI_API void partSetDeltaScale(real32 n);
+TI_API void partSetDeltaScaleDist(real32 d);
 void partSetOffsetLOF(real32 n);        //starting offset along lof
 void partSetOffsetR(real32 n);          //starting offset along r
 void partSetOffsetTheta(real32 n);      //ditto
 void partSetOffsetArray(vector *offsets);//array of offset positions
 void partSetDeltaLOF(real32 n);         //modifies offsetLOF (nothing to do with velocity)
-void partSetDeltaLOFDist(real32 n);
-void partSetDeltaR(real32 r, real32 t);
-void partSetDeltaRDist(real32 r, real32 t);
+TI_API void partSetDeltaLOFDist(real32 n);
+TI_API void partSetDeltaR(real32 r, real32 t);
+TI_API void partSetDeltaRDist(real32 r, real32 t);
 void partSetVelLOF(real32 v);           //velocity along lof
 void partSetVelLOFDist(real32 d);       //distribution of vel along lof
 void partSetVelR(real32 v);             //velocity along r
 void partSetVelRDist(real32 d);         //velRDist
 void partSetDeltaVelLOF(real32 d);      //acceleration
-void partSetDeltaVelLOFDist(real32 d);
-void partSetDeltaVelR(real32 v);
-void partSetDeltaVelRDist(real32 v);
+TI_API void partSetDeltaVelLOFDist(real32 d);
+TI_API void partSetDeltaVelR(real32 v);
+TI_API void partSetDeltaVelRDist(real32 v);
 
 //angles in radians
-void partSetAng(real32 a);
-void partSetAngDist(real32 d);
-void partSetAngDelta(real32 d);
-void partSetAngDeltaDist(real32 d);
+TI_API void partSetAng(real32 a);
+TI_API void partSetAngDist(real32 d);
+TI_API void partSetAngDelta(real32 d);
+TI_API void partSetAngDeltaDist(real32 d);
 
-void partSetColorA(real32 r, real32 g, real32 b, real32 a);
-void partSetColor(real32 r, real32 g, real32 b);
-void partSetColorDist(real32 r, real32 g, real32 b);
-void partSetColorADist(real32 r, real32 g, real32 b, real32 a);
-void partSetDeltaColor(real32 r, real32 g, real32 b);
-void partSetDeltaColorDist(real32 r, real32 g, real32 b);
-void partSetDeltaColorA(real32 r, real32 g, real32 b, real32 a);
-void partSetDeltaColorADist(real32 r, real32 g, real32 b, real32 a);
+TI_API void partSetColorA(real32 r, real32 g, real32 b, real32 a);
+TI_API void partSetColor(real32 r, real32 g, real32 b);
+TI_API void partSetColorDist(real32 r, real32 g, real32 b);
+TI_API void partSetColorADist(real32 r, real32 g, real32 b, real32 a);
+TI_API void partSetDeltaColor(real32 r, real32 g, real32 b);
+TI_API void partSetDeltaColorDist(real32 r, real32 g, real32 b);
+TI_API void partSetDeltaColorA(real32 r, real32 g, real32 b, real32 a);
+TI_API void partSetDeltaColorADist(real32 r, real32 g, real32 b, real32 a);
 
-void partSetLighting(bool l);
-void partSetIllum(real32 n);
-void partSetIllumDist(real32 n);
-void partSetDeltaIllum(real32 n);
-void partSetDeltaIllumDist(real32 n);
-void partSetLifespan(real32 t);
-void partSetLifespanDist(real32 d);
-void partSetWaitspan(real32 t);
-void partSetWaitspanDist(real32 d);
+TI_API void partSetLighting(bool l);
+TI_API void partSetIllum(real32 n);
+TI_API void partSetIllumDist(real32 n);
+TI_API void partSetDeltaIllum(real32 n);
+TI_API void partSetDeltaIllumDist(real32 n);
+TI_API void partSetLifespan(real32 t);
+TI_API void partSetLifespanDist(real32 d);
+TI_API void partSetWaitspan(real32 t);
+TI_API void partSetWaitspanDist(real32 d);
 
-void partSetLength(real32 l);
-void partSetLengthDist(real32 d);
-void partSetDeltaLength(real32 d);
-void partSetDeltaLengthDist(real32 d);
+TI_API void partSetLength(real32 l);
+TI_API void partSetLengthDist(real32 d);
+TI_API void partSetDeltaLength(real32 d);
+TI_API void partSetDeltaLengthDist(real32 d);
 
-void partSetColorBias(real32 rb, real32 gb, real32 bb);
-void partSetColorBiasDist(real32 drb, real32 dgb, real32 dbb);
+TI_API void partSetColorBias(real32 rb, real32 gb, real32 bb);
+TI_API void partSetColorBiasDist(real32 drb, real32 dgb, real32 dbb);
 
-void partSetSpecular(bool spec);
-void partSetStipple(bool stip);
-void partSetNoDepthWrite(bool noWrite);
-void partSetAdditiveBlends(bool add);
-void partSetPseudoBillboard(bool bill);
-void partSetTrueBillboard(bool bill);
+TI_API void partSetSpecular(bool spec);
+TI_API void partSetStipple(bool stip);
+TI_API void partSetNoDepthWrite(bool noWrite);
+TI_API void partSetAdditiveBlends(bool add);
+TI_API void partSetPseudoBillboard(bool bill);
+TI_API void partSetTrueBillboard(bool bill);
 void partSetAlphaMode(udword mode);     //0 - normal, 1 - additive, 2 - stippled
-void partSetColorScheme(sdword colorScheme);
+TI_API void partSetColorScheme(sdword colorScheme);
 
 void partCreateCallbackSet(void (*function)(sdword userValue, ubyte *userData), sdword userValue, ubyte *userData);
 
-void partCircleSolid3(vector* centre, real32 radius, sdword nSlices, color c);
+TI_API void partCircleSolid3(vector* centre, real32 radius, sdword nSlices, color c);
 
 #endif

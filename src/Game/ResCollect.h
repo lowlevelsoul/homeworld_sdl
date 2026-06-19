@@ -17,35 +17,35 @@ typedef struct
 
 struct CommandLayer;
 
-void ChangeSingleShipToCollectResource(struct CommandToDo *command);
+TI_API void ChangeSingleShipToCollectResource(struct CommandToDo *command);
 
 // returns TRUE if resource is already being targeted for harvesting
-bool ResourceAlreadyBeingHarvested(struct CommandLayer *comlayer,struct CommandToDo *IAmThisCommand,Resource *resource);
+TI_API bool ResourceAlreadyBeingHarvested(struct CommandLayer *comlayer,struct CommandToDo *IAmThisCommand,Resource *resource);
 
 // returns TRUE if resource is moving too fast to be harvested
-bool ResourceMovingTooFast(Resource *resource);
+TI_API bool ResourceMovingTooFast(Resource *resource);
 
-bool processCollectResource(struct CommandToDo *collecttodo);
+TI_API bool processCollectResource(struct CommandToDo *collecttodo);
 
-void TurnHarvestEffectOff(Ship *ship);
+TI_API void TurnHarvestEffectOff(Ship *ship);
 
-void TurnOffAnyResourcingEffects(struct CommandToDo *todo);
+TI_API void TurnOffAnyResourcingEffects(struct CommandToDo *todo);
 
-bool AsteroidTakesDamage(Asteroid *asteroid,sdword damagetaken,bool targetWasAlive);
+TI_API bool AsteroidTakesDamage(Asteroid *asteroid,sdword damagetaken,bool targetWasAlive);
 
-bool DustCloudTakesDamage(DustCloud* dustcloud, sdword damagetaken, bool targetWasAlive);
+TI_API bool DustCloudTakesDamage(DustCloud* dustcloud, sdword damagetaken, bool targetWasAlive);
 
-void DustCloudChargesUp(DustCloud* dustcloud, sdword damagetaken, bool targetWasAlive);
+TI_API void DustCloudChargesUp(DustCloud* dustcloud, sdword damagetaken, bool targetWasAlive);
 
-void BreakAsteroidUp(Asteroid *asteroid);
+TI_API void BreakAsteroidUp(Asteroid *asteroid);
 
-void HandleDustCloudScaling(DustCloud* dustcloud);
+TI_API void HandleDustCloudScaling(DustCloud* dustcloud);
 
-void PreFix_ShipXHarvestsResourceY(Ship *ship);
-void Fix_ShipXHarvestsResourceY(Ship *ship);
+TI_API void PreFix_ShipXHarvestsResourceY(Ship *ship);
+TI_API void Fix_ShipXHarvestsResourceY(Ship *ship);
 
-void R1ResourcerAttacksShip(struct Ship *ship,struct SpaceObjRotImpTarg *target,bool passiveAttacking);
-void removeResourcerFromAttacking(Ship *ship);
+TI_API void R1ResourcerAttacksShip(struct Ship *ship,struct SpaceObjRotImpTarg *target,bool passiveAttacking);
+TI_API void removeResourcerFromAttacking(Ship *ship);
 
 extern real32 ASTEROIDBREAK_LO_ROTATE;
 extern real32 ASTEROIDBREAK_HI_ROTATE;

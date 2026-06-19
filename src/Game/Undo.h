@@ -23,10 +23,10 @@ typedef struct undoinfo
     sdword length;            // length of allocated user data
 } undoinfo;
 
-void udStartup(void);
-void udShutdown(void);
+TI_API void udStartup(void);
+TI_API void udShutdown(void);
 
-sdword udLatestThingPush(undofunc function, sdword userID, ubyte *userData, sdword length);
-sdword udLatestThingUndo(void);
+TI_API sdword udLatestThingPush(undofunc function, sdword userID, ubyte *userData, sdword length);
+TI_API sdword udLatestThingUndo(void);
 
 #endif

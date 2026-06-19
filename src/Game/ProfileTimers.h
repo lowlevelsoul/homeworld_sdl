@@ -39,18 +39,18 @@ typedef struct ProfileTimers
 
 extern ProfileTimers profileTimers;
 
-void profInitFunc(void);
-void profCloseFunc(void);
-void profResetFunc(void);
-void profTimerStartFunc(sdword timer);
-void profTimerStopFunc(sdword timer);
-void profTimerStatsPrintFunc(sdword *y);
-void profTimerLabelFunc(sdword timer,char *label);
-void profTimerStartLabelFunc(sdword timer,char *label);
-void profTimerOutputRecordingsFunc(void);
+TI_API void profInitFunc(void);
+TI_API void profCloseFunc(void);
+TI_API void profResetFunc(void);
+TI_API void profTimerStartFunc(sdword timer);
+TI_API void profTimerStopFunc(sdword timer);
+TI_API void profTimerStatsPrintFunc(sdword *y);
+TI_API void profTimerLabelFunc(sdword timer,char *label);
+TI_API void profTimerStartLabelFunc(sdword timer,char *label);
+TI_API void profTimerOutputRecordingsFunc(void);
 
-void profTimerStartLittleLabelFunc(sdword timer,char *label);
-void profTimerStopLittleFunc(sdword timer);
+TI_API void profTimerStartLittleLabelFunc(sdword timer,char *label);
+TI_API void profTimerStopLittleFunc(sdword timer);
 
 #endif
 

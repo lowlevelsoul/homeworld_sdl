@@ -135,37 +135,37 @@ extern sdword trailInsertCount;
 =============================================================================*/
 
 //startup/shutdown
-void trailStartup(void);
-void trailShutdown(void);
+TI_API void trailStartup(void);
+TI_API void trailShutdown(void);
 
 //allocate and initialize a new missile trail
-missiletrail* mistrailNew(trailstatic* staticInfo, void* vmissile);
-void mistrailDelete(missiletrail* trail);
-void mistrailUpdate(missiletrail* trail, vector* position);
-void mistrailDraw(vector* current, missiletrail* trail, sdword LOD, sdword teamIndex);
+TI_API missiletrail* mistrailNew(trailstatic* staticInfo, void* vmissile);
+TI_API void mistrailDelete(missiletrail* trail);
+TI_API void mistrailUpdate(missiletrail* trail, vector* position);
+TI_API void mistrailDraw(vector* current, missiletrail* trail, sdword LOD, sdword teamIndex);
 
 //allocate and initialize a new ship trail
-shiptrail *trailNew(trailstatic *staticInfo, void* vship, bool8 second, ubyte trailNum);
-void trailDelete(shiptrail *trail);
+TI_API shiptrail *trailNew(trailstatic *staticInfo, void* vship, bool8 second, ubyte trailNum);
+TI_API void trailDelete(shiptrail *trail);
 
 //update a trail by adding in a new position into its queue
-void trailUpdate(shiptrail *trail, vector *position);
+TI_API void trailUpdate(shiptrail *trail, vector *position);
 
 //draw a ship trail
-void trailDraw(vector *current, shiptrail *trail, sdword LOD, sdword teamIndex);
-void trailZeroLength(shiptrail *trail);
-void trailMove(shiptrail* trail, vector *delta);
+TI_API void trailDraw(vector *current, shiptrail *trail, sdword LOD, sdword teamIndex);
+TI_API void trailZeroLength(shiptrail *trail);
+TI_API void trailMove(shiptrail* trail, vector *delta);
 
 //cause a trail or glow to enter/exit its "wobbly" state
-void trailMakeWobbly(void* vship, bool state);
+TI_API void trailMakeWobbly(void* vship, bool state);
 
 //parse a ship definition file and create a trailstatic structure
-trailstatic *trailStaticInfoParse(char *directory, char *fileName);
-void trailStaticDelete(trailstatic *tailInfo);
+TI_API trailstatic *trailStaticInfoParse(char *directory, char *fileName);
+TI_API void trailStaticDelete(trailstatic *tailInfo);
 
 //recolorize trails
-void trailRecolorize(trailstatic *trailStatic);
-void trailsRecolorize(void);
-void mistrailsRecolorize(void);
+TI_API void trailRecolorize(trailstatic *trailStatic);
+TI_API void trailsRecolorize(void);
+TI_API void mistrailsRecolorize(void);
 
 #endif

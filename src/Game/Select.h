@@ -159,62 +159,62 @@ extern sdword selClosestDistance;
     Functions:
 =============================================================================*/
 //startup/shutdown
-void selStartup(void);
-void selShutdown(void);
-void selReset(void);
+TI_API void selStartup(void);
+TI_API void selShutdown(void);
+TI_API void selReset(void);
 
 //compute screen size/location of selection circle for selected ship or mission sphere
-void selCircleComputeGeneral(hmatrix *modelView, hmatrix *projection, vector *location, real32 radius, real32 *destX, real32 *destY, real32 *destRadius);
-void selCircleCompute(hmatrix *modelView, hmatrix *projection, SpaceObjRotImpTarg *target);
+TI_API void selCircleComputeGeneral(hmatrix *modelView, hmatrix *projection, vector *location, real32 radius, real32 *destX, real32 *destY, real32 *destRadius);
+TI_API void selCircleCompute(hmatrix *modelView, hmatrix *projection, SpaceObjRotImpTarg *target);
 
 //explicit selections
-void selSelectionSetSingleShip(Ship *ship);
-void selSelectionAddSingleShip(MaxSelection *dest, Ship *ship);
-//void selSelectionAddSingleShip(Ship *ship);
-void selSelectionRemoveSingleShip(MaxSelection *dest, Ship *ship);
-sdword selShipInSelection(ShipPtr *shipList, sdword nShips, ShipPtr ship);
-bool selShipsInSelection(MaxSelection *dest, MaxSelection *list);
+TI_API void selSelectionSetSingleShip(Ship *ship);
+TI_API void selSelectionAddSingleShip(MaxSelection *dest, Ship *ship);
+TI_API //void selSelectionAddSingleShip(Ship *ship);
+TI_API void selSelectionRemoveSingleShip(MaxSelection *dest, Ship *ship);
+TI_API sdword selShipInSelection(ShipPtr *shipList, sdword nShips, ShipPtr ship);
+TI_API bool selShipsInSelection(MaxSelection *dest, MaxSelection *list);
 
 //selections by mouse dragging
-void selRectDragFunction(Node *startNode, Camera *camera, rectangle *rect, SpaceObjRotImpTarg **destList, sdword *destCount, sdword playerSpecific, bool selectAnything, bool bAttack);
-void selRectDragAddFunction(Node *startNode, Camera *camera, rectangle *rect);
+TI_API void selRectDragFunction(Node *startNode, Camera *camera, rectangle *rect, SpaceObjRotImpTarg **destList, sdword *destCount, sdword playerSpecific, bool selectAnything, bool bAttack);
+TI_API void selRectDragAddFunction(Node *startNode, Camera *camera, rectangle *rect);
 
 //selection by mouse click (on release)
-Ship *selSelectionClick(Node *listhead, Camera *camera, sdword x, sdword y, bool bIncludeDerelicts, bool bIncludeResources);
-SpaceObj *selClickFromArray(SpaceObj **list, sdword length, sdword x, sdword y);
+TI_API Ship *selSelectionClick(Node *listhead, Camera *camera, sdword x, sdword y, bool bIncludeDerelicts, bool bIncludeResources);
+TI_API SpaceObj *selClickFromArray(SpaceObj **list, sdword length, sdword x, sdword y);
 
 //selections by key
 
 //draw selected lists
-void selSelectedDraw(void);
-void selSelectingDraw(void);
+TI_API void selSelectedDraw(void);
+TI_API void selSelectingDraw(void);
 
 //compute centre of selection
-vector selCentrePointComputeGeneral(MaxSelection *selection, real32 *average_size);
+TI_API vector selCentrePointComputeGeneral(MaxSelection *selection, real32 *average_size);
 
 //update selCentrePoint and selAverageSize
-void selCentrePointCompute(void);
+TI_API void selCentrePointCompute(void);
 
 //on-screen position of a selection of ships
-void selSelectionDimensions(hmatrix *modelView, hmatrix *projection, SelectCommand *selection, real32 *destX, real32 *destY, real32 *destRad);
+TI_API void selSelectionDimensions(hmatrix *modelView, hmatrix *projection, SelectCommand *selection, real32 *destX, real32 *destY, real32 *destRad);
 
 //selection manipulation
-sdword selSelectionCopy(MaxAnySelection *dest, MaxAnySelection *source);
-bool selSelectionIsReinforced(MaxAnySelection *dest, MaxAnySelection *source);
-sdword selSelectionCopyByClass(MaxSelection *dest, MaxSelection *source, ShipClass classMask);
-sdword selSelectionCopyByType(MaxSelection *dest, MaxSelection *source, ShipType typeMask);
-sdword selHotKeyNumbersSet(sdword group);
-void selHotKeyGroupRemoveReferences(sdword group);
-void selHotKeyGroupRemoveReferencesFromAllGroups(void);
-sdword selSelectionCompare(MaxAnySelection *s0, MaxAnySelection *s1);
+TI_API sdword selSelectionCopy(MaxAnySelection *dest, MaxAnySelection *source);
+TI_API bool selSelectionIsReinforced(MaxAnySelection *dest, MaxAnySelection *source);
+TI_API sdword selSelectionCopyByClass(MaxSelection *dest, MaxSelection *source, ShipClass classMask);
+TI_API sdword selSelectionCopyByType(MaxSelection *dest, MaxSelection *source, ShipType typeMask);
+TI_API sdword selHotKeyNumbersSet(sdword group);
+TI_API void selHotKeyGroupRemoveReferences(sdword group);
+TI_API void selHotKeyGroupRemoveReferencesFromAllGroups(void);
+TI_API sdword selSelectionCompare(MaxAnySelection *s0, MaxAnySelection *s1);
 #if SEL_ERROR_CHECKING
-void selHotKeyGroupsVerify(void);
+TI_API void selHotKeyGroupsVerify(void);
 #endif
-void selSelectHotKeyGroup(MaxSelection *hotkeygroup);
+TI_API void selSelectHotKeyGroup(MaxSelection *hotkeygroup);
 
 //debug functions
 #if SEL_DRAW_BOXES
-void selDrawBoxes(SpaceObjRotImpTarg *target);
+TI_API void selDrawBoxes(SpaceObjRotImpTarg *target);
 #endif
 
 #endif

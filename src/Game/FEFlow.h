@@ -297,82 +297,82 @@ extern bool fetEnableTextures;
     Functions:
 =============================================================================*/
 //startup/shutdown the front end
-sdword feStartup(void);
-void feReset(void);
-void feShutdown(void);
+TI_API sdword feStartup(void);
+TI_API void feReset(void);
+TI_API void feShutdown(void);
 
-void feFunctionExecute(char *name, featom *atom, bool firstcall);
+TI_API void feFunctionExecute(char *name, featom *atom, bool firstcall);
 
-bool feShouldSaveMouseCursor(void);
+TI_API bool feShouldSaveMouseCursor(void);
 
 //load in a front end screen
-fibfileheader *feScreensLoad(char *fileName);
-sdword feScreensDelete(fibfileheader *screens);
+TI_API fibfileheader *feScreensLoad(char *fileName);
+TI_API sdword feScreensDelete(fibfileheader *screens);
 
 //execute a screen
-regionhandle feScreenStart(regionhandle parent, char *screenName);
-regionhandle feMenuStart(regionhandle parent, fescreen *screen, sdword x, sdword y);
-void feCurrentScreenDelete(void);
+TI_API regionhandle feScreenStart(regionhandle parent, char *screenName);
+TI_API regionhandle feMenuStart(regionhandle parent, fescreen *screen, sdword x, sdword y);
+TI_API void feCurrentScreenDelete(void);
 
 #define FE_DONT_DELETE_REGION_IF_SCREEN_NOT_FOUND   1
-void feScreenDeleteFlags(regionhandle baseRegion,sdword flags);
+TI_API void feScreenDeleteFlags(regionhandle baseRegion,sdword flags);
 #define feScreenDelete(r) feScreenDeleteFlags(r,0)
-void feAllScreensDelete(void);
-void feAllMenusDelete(void);
+TI_API void feAllScreensDelete(void);
+TI_API void feAllMenusDelete(void);
 
 //add a callback for a menu item etc.
-sdword feCallbackAdd(char *controlName, fefunction function);
-sdword feCallbackAddMultiple(fecallback *table);
-sdword feDrawCallbackAdd(char *controlName, fedrawfunction function);
-sdword feDrawCallbackAddMultiple(fedrawcallback *table);
+TI_API sdword feCallbackAdd(char *controlName, fefunction function);
+TI_API sdword feCallbackAddMultiple(fecallback *table);
+TI_API sdword feDrawCallbackAdd(char *controlName, fedrawfunction function);
+TI_API sdword feDrawCallbackAddMultiple(fedrawcallback *table);
 
-void feAllCallOnCreate(fescreen *screen);
+TI_API void feAllCallOnCreate(fescreen *screen);
 
 //add a screen entry point (typically at load time)
-sdword feScreenEntryAdd(fescreen *screen);
-sdword feScreenEntryRemove(fescreen *screen);
+TI_API sdword feScreenEntryAdd(fescreen *screen);
+TI_API sdword feScreenEntryRemove(fescreen *screen);
 
 //find things
-fescreen *feScreenFind(char *name);
-featom *feAtomFindInScreen(fescreen *screen, char *atomName);
-featom *feAtomFindNextInScreen(fescreen *screen, featom *atom, char *atomName);
-regionhandle feRegionFindByFunction(char *name);
+TI_API fescreen *feScreenFind(char *name);
+TI_API featom *feAtomFindInScreen(fescreen *screen, char *atomName);
+TI_API featom *feAtomFindNextInScreen(fescreen *screen, featom *atom, char *atomName);
+TI_API regionhandle feRegionFindByFunction(char *name);
 
 //manipulating screen stack
-fescreen *feScreenPush(void);
-fescreen *feScreenPop(void);
+TI_API fescreen *feScreenPush(void);
+TI_API fescreen *feScreenPop(void);
 
 //drawing front-end screens
-void feStaticTextDraw(regionhandle region);
-void feStaticRectangleDraw(regionhandle region);
-void feBaseRegionDraw(regionhandle region);
-void feDividerDraw(regionhandle region);
+TI_API void feStaticTextDraw(regionhandle region);
+TI_API void feStaticRectangleDraw(regionhandle region);
+TI_API void feBaseRegionDraw(regionhandle region);
+TI_API void feDividerDraw(regionhandle region);
 
 //control-type specific calls
-void feRadioButtonSet(char *name, sdword index);
-void feToggleButtonSet(char *name, sdword bPressed);
+TI_API void feRadioButtonSet(char *name, sdword index);
+TI_API void feToggleButtonSet(char *name, sdword bPressed);
 
 //misc...
-void feScreenDisappear(char *string, featom *atom);
-void feMenuDisappear(char *string, featom *atom);
-regionhandle feRegionsAdd(regionhandle parent, fescreen *screen, bool moveToFront);
-regionhandle feFindRadioButtonRegion(regionhandle temp, bool selected);
+TI_API void feScreenDisappear(char *string, featom *atom);
+TI_API void feMenuDisappear(char *string, featom *atom);
+TI_API regionhandle feRegionsAdd(regionhandle parent, fescreen *screen, bool moveToFront);
+TI_API regionhandle feFindRadioButtonRegion(regionhandle temp, bool selected);
 
 struct uiclistwindow;
-void feWheelNegative(struct uiclistwindow *listwindow);
-void feWheelPositive(struct uiclistwindow *listwindow);
+TI_API void feWheelNegative(struct uiclistwindow *listwindow);
+TI_API void feWheelPositive(struct uiclistwindow *listwindow);
 
-void feUserRegionDraw(regionhandle region);
-void feAcceleratorSet(regionhandle reg, featom *atom);
-void feScreenAllHotKeysUpdate(fescreen *screen);
+TI_API void feUserRegionDraw(regionhandle region);
+TI_API void feAcceleratorSet(regionhandle reg, featom *atom);
+TI_API void feScreenAllHotKeysUpdate(fescreen *screen);
 
-sdword feResRepositionCentredX(sdword x);
-sdword feResRepositionCentredY(sdword y);
-sdword feResRepositionScaledX(sdword x);
-sdword feResRepositionScaledY(sdword y);
+TI_API sdword feResRepositionCentredX(sdword x);
+TI_API sdword feResRepositionCentredY(sdword y);
+TI_API sdword feResRepositionScaledX(sdword x);
+TI_API sdword feResRepositionScaledY(sdword y);
 
-bool feAllScreensReposition(void);
+TI_API bool feAllScreensReposition(void);
 
-udword feButtonProcess(regionhandle region, smemsize ID, udword event, udword data);
+TI_API udword feButtonProcess(regionhandle region, smemsize ID, udword event, udword data);
 
 #endif

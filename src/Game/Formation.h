@@ -145,13 +145,13 @@ typedef struct
 struct CommandLayer;
 
 struct CommandToDo *CreateMilitaryGroupAroundShip(struct CommandLayer *comlayer,ShipPtr ship,ShipPtr aroundShip);
-void processMilitaryParadeToDo(struct CommandToDo *command,bool passiveAttacked);
-void AddShipToMilitaryGroup(ShipPtr ship,struct CommandToDo *militaryGroup);
-void RemoveShipFromMilitaryParade(Ship *shiptoremove,MilitaryParadeCommand *militaryParade);
-void FreeMilitaryParadeContents(MilitaryParadeCommand *militaryParade);
-void setMilitaryParade(struct CommandToDo *command);
-bool shipInMilitaryParade(ShipPtr ship);
-void paradeSetTweakables(void);
+TI_API void processMilitaryParadeToDo(struct CommandToDo *command,bool passiveAttacked);
+TI_API void AddShipToMilitaryGroup(ShipPtr ship,struct CommandToDo *militaryGroup);
+TI_API void RemoveShipFromMilitaryParade(Ship *shiptoremove,MilitaryParadeCommand *militaryParade);
+TI_API void FreeMilitaryParadeContents(MilitaryParadeCommand *militaryParade);
+TI_API void setMilitaryParade(struct CommandToDo *command);
+TI_API bool shipInMilitaryParade(ShipPtr ship);
+TI_API void paradeSetTweakables(void);
 
 /*=============================================================================
     Macros:
@@ -166,39 +166,39 @@ void paradeSetTweakables(void);
 =============================================================================*/
 
 // routines for converting between string and enumeration for TypeOfFormation
-char *TypeOfFormationToStr(TypeOfFormation formation);
-TypeOfFormation StrToTypeOfFormation(char *str);
+TI_API char *TypeOfFormationToStr(TypeOfFormation formation);
+TI_API TypeOfFormation StrToTypeOfFormation(char *str);
 
-char *TypeOfFormationToNiceStr(TypeOfFormation formation);
-TypeOfFormation NiceStrToTypeOfFormation(char *str);
+TI_API char *TypeOfFormationToNiceStr(TypeOfFormation formation);
+TI_API TypeOfFormation NiceStrToTypeOfFormation(char *str);
 
-void formationContentHasChanged(struct CommandToDo *command);
-void formationTypeHasChanged(struct CommandToDo *command);
-void formationArrangeOptimum(struct CommandToDo *formationtodo);
-void processFormationToDo(struct CommandToDo *formationtodo,bool steadyFormation,bool passiveAttacked);
-void setFormationToDo(struct CommandToDo *formationtodo);
+TI_API void formationContentHasChanged(struct CommandToDo *command);
+TI_API void formationTypeHasChanged(struct CommandToDo *command);
+TI_API void formationArrangeOptimum(struct CommandToDo *formationtodo);
+TI_API void processFormationToDo(struct CommandToDo *formationtodo,bool steadyFormation,bool passiveAttacked);
+TI_API void setFormationToDo(struct CommandToDo *formationtodo);
 
-void freeSphereStaticInfo(struct SphereStaticInfo *sphereStaticInfo);
+TI_API void freeSphereStaticInfo(struct SphereStaticInfo *sphereStaticInfo);
 struct SphereStaticInfo *createSphereStaticInfo(void);
 
-void formationWingmanTrackLeader(struct Ship *ship,struct Ship *leader,bool rotate);
+TI_API void formationWingmanTrackLeader(struct Ship *ship,struct Ship *leader,bool rotate);
 
-void FillInShipFormationStuff(Ship *ship,struct CommandToDo *formationcommand);
+TI_API void FillInShipFormationStuff(Ship *ship,struct CommandToDo *formationcommand);
 
 //formation locking variables
-void lockFormation(struct CommandToDo *formationcommand,udword specialEffect);
-void unlockFormation(struct CommandToDo *formationcommand);
+TI_API void lockFormation(struct CommandToDo *formationcommand,udword specialEffect);
+TI_API void unlockFormation(struct CommandToDo *formationcommand);
 
 //function that recalculates a formations minimum travel velocity...
-void setFormationTravelVelocity(struct CommandToDo *formationCommand);
+TI_API void setFormationTravelVelocity(struct CommandToDo *formationCommand);
 
-void FormationCalculateOffsets(struct CommandToDo *formationtodo);
+TI_API void FormationCalculateOffsets(struct CommandToDo *formationtodo);
 
 // returns the selection's velocity at which it can all travel, scaled by scalevel
-real32 GetShipsTravelVel(SelectCommand *selection,real32 scalevel);
+TI_API real32 GetShipsTravelVel(SelectCommand *selection,real32 scalevel);
 
 // returns -1 if not found, ship index if found
-sdword formationRemoveShipFromSelection(struct CommandToDo *formationtodo,Ship *removeship);
+TI_API sdword formationRemoveShipFromSelection(struct CommandToDo *formationtodo,Ship *removeship);
 
 /*=============================================================================
     Data:

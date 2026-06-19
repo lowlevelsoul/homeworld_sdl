@@ -47,7 +47,7 @@ extern sdword starBlueVariance;
     Functions:
 =============================================================================*/
 
-Star3dInfo *star3dInit(udword numStars,real32 innerlimit,real32 outerlimit);
-void star3dClose(Star3dInfo *star3dinfo);
+TI_API Star3dInfo *star3dInit(udword numStars,real32 innerlimit,real32 outerlimit);
+TI_API void star3dClose(Star3dInfo *star3dinfo);
 
 #endif

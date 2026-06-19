@@ -74,19 +74,19 @@ extern udword kbKeySavedKeys[20];
     Function Prototypes :
 =============================================================================*/
 
-void kbListWindowCB(char *string, featom *atom);
-void kbKeyResetToDefault(char *string, featom *atom);
+TI_API void kbListWindowCB(char *string, featom *atom);
+TI_API void kbKeyResetToDefault(char *string, featom *atom);
 
-void kbPoolListWindowCB(char *string, featom *atom);
+TI_API void kbPoolListWindowCB(char *string, featom *atom);
 
-sdword kbCheckBindings(sdword keypressed);
+TI_API sdword kbCheckBindings(sdword keypressed);
 
-void kbRestoreSavedSettings(void);
-void kbSaveSettings(void);
+TI_API void kbRestoreSavedSettings(void);
+TI_API void kbSaveSettings(void);
 
-udword kbKeyBoundToCommand(udword command);
-bool kbCommandKeyIsHit(udword command);
+TI_API udword kbKeyBoundToCommand(udword command);
+TI_API bool kbCommandKeyIsHit(udword command);
 
-void kbInitKeyBindings(void);
+TI_API void kbInitKeyBindings(void);
 
 #endif

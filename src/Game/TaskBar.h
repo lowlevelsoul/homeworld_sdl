@@ -119,30 +119,30 @@ extern bool tbDisable;
     Functions:
 =============================================================================*/
 //startup/shutdown
-void tbStartup(void);
-void tbShutdown(void);
-void PossiblyResetTaskbar(void);
+TI_API void tbStartup(void);
+TI_API void tbShutdown(void);
+TI_API void PossiblyResetTaskbar(void);
 
 //create/remove task bar buttons
-taskbutton *tbButtonCreate(char *caption, tbfunction function, ubyte *userData, udword flags);
-void tbButtonDelete(taskbutton *button);
-void tbButtonDeleteByData(ubyte *userData);
-void tbButtonListRefresh(void);
+TI_API taskbutton *tbButtonCreate(char *caption, tbfunction function, ubyte *userData, udword flags);
+TI_API void tbButtonDelete(taskbutton *button);
+TI_API void tbButtonDeleteByData(ubyte *userData);
+TI_API void tbButtonListRefresh(void);
 
 //select a button
-void tbButtonSelect(taskbutton *button);
-void tbButtonSelectByData(ubyte *userData);
+TI_API void tbButtonSelect(taskbutton *button);
+TI_API void tbButtonSelectByData(ubyte *userData);
 
 // Single player objectives list window on taskbar
-void tbObjectivesListAddItem(ubyte *data);
-void tbObjectivesHyperspace(ubyte *data);
-void tbObjectivesListRemoveItem(ubyte *data);
-void tbObjectivesListCleanUp(void);
+TI_API void tbObjectivesListAddItem(ubyte *data);
+TI_API void tbObjectivesHyperspace(ubyte *data);
+TI_API void tbObjectivesListRemoveItem(ubyte *data);
+TI_API void tbObjectivesListCleanUp(void);
 
 //bump down the taskbar
-void tbSensorsHook(void);
+TI_API void tbSensorsHook(void);
 
 //bump up the taskbar
-void tbForceTaskbar(bool On);
+TI_API void tbForceTaskbar(bool On);
 
 #endif

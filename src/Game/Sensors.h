@@ -232,36 +232,36 @@ extern sdword MP_HyperSpaceFlag;
 =============================================================================*/
 
 //startup/shutdown
-void smStartup(void);
-void smShutdown(void);
-void smUpdateParameters(void);
+TI_API void smStartup(void);
+TI_API void smShutdown(void);
+TI_API void smUpdateParameters(void);
 
 // used in the tactical overlay to draw the players names
-sdword smClickedOnPlayer(rectangle *viewportRect);
-void smPlayerNamesDraw(rectangle *viewportRect);
+TI_API sdword smClickedOnPlayer(rectangle *viewportRect);
+TI_API void smPlayerNamesDraw(rectangle *viewportRect);
 
 //activate the sensors manager.  It will stop itself
-void smSensorsBegin(char *name, featom *atom);
+TI_API void smSensorsBegin(char *name, featom *atom);
 
 //explicitly close sensors manager
-void smSensorsClose(char *name, featom *atom);
-void smSensorsCloseForGood(void);
+TI_API void smSensorsClose(char *name, featom *atom);
+TI_API void smSensorsCloseForGood(void);
 
 //kill an object if you're in the sensors manager
-void smObjectDied(void *object);
+TI_API void smObjectDied(void *object);
 
 //initializes the sensors manager weirdness for
 //single player missions 7 and 8
-void smSensorWeirdnessInit(void);
+TI_API void smSensorWeirdnessInit(void);
 
 //misc functions
-void *smStrchr(char *string, char character);
-void smHorizonLineDraw(void *cam, hmatrix *modelView, hmatrix *projection, real32 distance);
-void smTickTextDraw(void);
-void smUpdateHyperspaceStatus(bool goForLaunch);
+TI_API void *smStrchr(char *string, char character);
+TI_API void smHorizonLineDraw(void *cam, hmatrix *modelView, hmatrix *projection, real32 distance);
+TI_API void smTickTextDraw(void);
+TI_API void smUpdateHyperspaceStatus(bool goForLaunch);
 
 //logic handlers for main region
-void smNULL(void);
+TI_API void smNULL(void);
 extern void (*smHoldLeft)(void);
 extern void (*smHoldRight)(void);
 
@@ -269,7 +269,7 @@ extern void (*smHoldRight)(void);
     Save Game stuff:
 =============================================================================*/
 
-void smSave(void);
-void smLoad(void);
+TI_API void smSave(void);
+TI_API void smLoad(void);
 
 #endif

@@ -330,32 +330,32 @@ typedef struct
     Functions:
 =============================================================================*/
 //startup/shutdown
-void ferStartup(void);
-void ferReset(void);
-void ferShutdown(void);
+TI_API void ferStartup(void);
+TI_API void ferReset(void);
+TI_API void ferShutdown(void);
 
 //draw a textured box
 void ferDrawBoxRegion(rectangle dimensions, drawtype textures,
                        drawtype glow, LinkedList *cutouts, bool bUseAlpha);
 
 //draw UI Elements
-void ferDrawButton(rectangle dimensions, ferbuttonstate);
-void ferDrawMenuItemSelected(rectangle *rect);
-void ferDrawCheckbox(rectangle dimensions, ferbuttonstate state);
-void ferDrawRadioButton(rectangle dimensions, ferbuttonstate state);
-void ferDrawScrollbar(scrollbarhandle shandle, ferscrollbarstate state);
-void ferDrawScrollbarButton(regionhandle region, ferscrollbarbuttonstate state);
-void ferDrawFocusWindow(regionhandle region, ferfocuswindowstate state);
-void ferDrawDecorative(regionhandle region);
-void ferDrawOpaqueDecorative(regionhandle region);
-void ferDrawSelectedDot(rectangle *rect);
-void ferDrawPopoutArrow(rectangle *rect);
-void ferDrawBitmapButton(regionhandle region, ferbitmapbuttonstate state);
+TI_API void ferDrawButton(rectangle dimensions, ferbuttonstate);
+TI_API void ferDrawMenuItemSelected(rectangle *rect);
+TI_API void ferDrawCheckbox(rectangle dimensions, ferbuttonstate state);
+TI_API void ferDrawRadioButton(rectangle dimensions, ferbuttonstate state);
+TI_API void ferDrawScrollbar(scrollbarhandle shandle, ferscrollbarstate state);
+TI_API void ferDrawScrollbarButton(regionhandle region, ferscrollbarbuttonstate state);
+TI_API void ferDrawFocusWindow(regionhandle region, ferfocuswindowstate state);
+TI_API void ferDrawDecorative(regionhandle region);
+TI_API void ferDrawOpaqueDecorative(regionhandle region);
+TI_API void ferDrawSelectedDot(rectangle *rect);
+TI_API void ferDrawPopoutArrow(rectangle *rect);
+TI_API void ferDrawBitmapButton(regionhandle region, ferbitmapbuttonstate state);
 
-void ferDrawHorizSlider(sliderhandle shandle, uword state);
-void ferDrawVertSlider(sliderhandle shandle, uword state);
+TI_API void ferDrawHorizSlider(sliderhandle shandle, uword state);
+TI_API void ferDrawVertSlider(sliderhandle shandle, uword state);
 
-void ferDraw(sdword x, sdword y, lifheader *texture);
-lifheader *ferTextureRegisterSpecial(char *fileName, textype newtype, textype origtype);
+TI_API void ferDraw(sdword x, sdword y, lifheader *texture);
+TI_API lifheader *ferTextureRegisterSpecial(char *fileName, textype newtype, textype origtype);
 
 #endif

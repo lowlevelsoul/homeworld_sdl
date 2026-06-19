@@ -290,7 +290,7 @@ extern sdword memNumberAllocs;
 extern char memStatString[256];
 extern bool memStatsLogging;
 extern taskhandle memStatsTaskHandle;
-DECLARE_TASK(memStatsTaskFunction);
+TI_API DECLARE_TASK(memStatsTaskFunction);
 extern memcookiename memStatsCookieNames[MS_NumberCookieNames];
 #endif
 extern mempool memMainPool;
@@ -365,48 +365,48 @@ extern mempool memMainPool;
 =============================================================================*/
 
 //startup/shutdown/reset memory module
-sdword memStartup(void *heapStart, sdword heapSize, memgrowcallback grow);
-sdword memReset(void);
-sdword memClose(memgrowthfreecallback free);
+TI_API sdword memStartup(void *heapStart, sdword heapSize, memgrowcallback grow);
+TI_API sdword memReset(void);
+TI_API sdword memClose(memgrowthfreecallback free);
 
 //allocate/free memory blocks
 #if MEM_USE_NAMES
-void *memAllocFunction(sdword length, char *name, udword flags);
+TI_API void *memAllocFunction(sdword length, char *name, udword flags);
 #else
-void *memAllocFunction(sdword length, udword flags);
+TI_API void *memAllocFunction(sdword length, udword flags);
 #endif
 #if MEM_USE_NAMES
-void *memReallocFunction(void *currentPointer, sdword newSize, char *name, udword flags);
-void *memAllocAttemptFunction(sdword length, char *name, udword flags);
+TI_API void *memReallocFunction(void *currentPointer, sdword newSize, char *name, udword flags);
+TI_API void *memAllocAttemptFunction(sdword length, char *name, udword flags);
 #else
-void *memReallocFunction(void *currentPointer, sdword newSize, udword flags);
-void *memAllocAttemptFunction(sdword length, udword flags);
+TI_API void *memReallocFunction(void *currentPointer, sdword newSize, udword flags);
+TI_API void *memAllocAttemptFunction(sdword length, udword flags);
 #endif
-void memFree(void *pointer);
-char *memStringDupe(char *string);
-char *memStringDupeNV(char *string);
+TI_API void memFree(void *pointer);
+TI_API char *memStringDupe(char *string);
+TI_API char *memStringDupeNV(char *string);
 
 //utility functions (many stubbed out in retail builds)
 #if MEM_ANALYSIS
-void memAnalysisCreate(void);
+TI_API void memAnalysisCreate(void);
 #endif
 #if MEM_USE_NAMES
-sdword memNameSetFunction(memcookie *cookie, char *name);
+TI_API sdword memNameSetFunction(memcookie *cookie, char *name);
 #if MEM_SMALL_BLOCK_HEAP
-sdword mbhNameSetFunction(mbhcookie *cookie, char *name);
+TI_API sdword mbhNameSetFunction(mbhcookie *cookie, char *name);
 #endif
-sdword memNameSetLongFunction(memcookie *cookie, char *name);
-void memRename(void *pointer, char *newName);
+TI_API sdword memNameSetLongFunction(memcookie *cookie, char *name);
+TI_API void memRename(void *pointer, char *newName);
 #else
 #define memRename(p, n)
 #endif //MEM_USE_NAMES
-sdword memClearDword(void *dest, udword pattern, sdword nDwords);
-char *memStrncpy(char *dest, char *source, sdword count);
+TI_API sdword memClearDword(void *dest, udword pattern, sdword nDwords);
+TI_API char *memStrncpy(char *dest, char *source, sdword count);
 
 #if MEM_ANALYSIS
-sdword memFreeMemGet(mempool *pool);
+TI_API sdword memFreeMemGet(mempool *pool);
 #endif
 
-const memsize * check_mem(const memsize * data);
+TI_API const memsize * check_mem(const memsize * data);
 
 #endif

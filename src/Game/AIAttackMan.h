@@ -13,16 +13,16 @@
 #include "AIPlayer.h"
 #include "AITeam.h"
 
-AITeam *aiaSendRecon(SelectCommand *ships);
-void aiaAttackManager(void);
-void aiaProcessSpecialTeams(void);
-bool aiaShipDied(AIPlayer *aiplayer, ShipPtr ship);
-void aiaTeamDied(AIPlayer *aiplayer, AITeam *team);
+TI_API AITeam *aiaSendRecon(SelectCommand *ships);
+TI_API void aiaAttackManager(void);
+TI_API void aiaProcessSpecialTeams(void);
+TI_API bool aiaShipDied(AIPlayer *aiplayer, ShipPtr ship);
+TI_API void aiaTeamDied(AIPlayer *aiplayer, AITeam *team);
 
-void aiaP2AttackManager(void);
+TI_API void aiaP2AttackManager(void);
 
-void aiaInit(AIPlayer *aiplayer);
-void aiaClose(AIPlayer *aiplayer);
+TI_API void aiaInit(AIPlayer *aiplayer);
+TI_API void aiaClose(AIPlayer *aiplayer);
 
 #endif
 

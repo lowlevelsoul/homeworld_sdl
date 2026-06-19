@@ -231,60 +231,60 @@ extern taskhandle regDrawTaskHandle;
 =============================================================================*/
 
 //startup/shutdown region module
-sdword regStartup(void);
-void regShutdown(void);
+TI_API sdword regStartup(void);
+TI_API void regShutdown(void);
 
 //insert regions as either a child or a sibling of another region
-regionhandle regChildAlloc(regionhandle parent, smemsize ID, sdword x, sdword y, sdword width, sdword height, sdword extra, udword filter);
-regionhandle regSiblingAlloc(regionhandle sibling, smemsize ID, sdword x, sdword y, sdword width, sdword height, sdword extra, udword filter);
-regionhandle regKeyChildAlloc(regionhandle parent, smemsize ID, udword filter, regionfunction function, sdword nKeys, ...);
-regionhandle regKeySiblingAlloc(regionhandle sibling, smemsize ID, udword filter, regionfunction function, sdword nKeys, ...);
-void regRegionDelete(regionhandle region);
+TI_API regionhandle regChildAlloc(regionhandle parent, smemsize ID, sdword x, sdword y, sdword width, sdword height, sdword extra, udword filter);
+TI_API regionhandle regSiblingAlloc(regionhandle sibling, smemsize ID, sdword x, sdword y, sdword width, sdword height, sdword extra, udword filter);
+TI_API regionhandle regKeyChildAlloc(regionhandle parent, smemsize ID, udword filter, regionfunction function, sdword nKeys, ...);
+TI_API regionhandle regKeySiblingAlloc(regionhandle sibling, smemsize ID, udword filter, regionfunction function, sdword nKeys, ...);
+TI_API void regRegionDelete(regionhandle region);
 
 //adjust region links (usually only used by region allocation/deletion functions)
-bool regRegionInside(regionhandle needle, regionhandle haystack);
-void regChildInsert(regionhandle regionToInsert, regionhandle parent);
-void regSiblingInsert(regionhandle regionToInsert, regionhandle sibling);
-void regMoveLinkChild(regionhandle regionToMove, regionhandle newParent);
-void regLinkRemove(regionhandle region);
-regionhandle regSiblingMoveToFront(regionhandle region);
+TI_API bool regRegionInside(regionhandle needle, regionhandle haystack);
+TI_API void regChildInsert(regionhandle regionToInsert, regionhandle parent);
+TI_API void regSiblingInsert(regionhandle regionToInsert, regionhandle sibling);
+TI_API void regMoveLinkChild(regionhandle regionToMove, regionhandle newParent);
+TI_API void regLinkRemove(regionhandle region);
+TI_API regionhandle regSiblingMoveToFront(regionhandle region);
 
 //delete a node, freeing memory associated with it
-void regRegionDelete(regionhandle region);
+TI_API void regRegionDelete(regionhandle region);
 
 //set various attributes of regions
-regiondrawfunction regDrawFunctionSet(regionhandle region, regiondrawfunction function);
-regionfunction regFunctionSet(regionhandle region, regionfunction function);
-udword regFilterSet(regionhandle region, udword filter);
-void regKeysSet(regionhandle region, sdword nKeys, ...);
-udword regTabstopSet(regionhandle region, udword tabstop);
-void regDirtyEverythingUpwardsSelectively(regionhandle region, regionhandle overlap);
-void regDirtyEverythingUpwards(regionhandle region);
-void regDirtyChildren(regionhandle reg);
-void regRecursiveSetDirty(regionhandle reg);
-void regRecursiveSetReallyDirty(regionhandle reg);
-void regDirtyScreensAboveRegion(regionhandle region);
+TI_API regiondrawfunction regDrawFunctionSet(regionhandle region, regiondrawfunction function);
+TI_API regionfunction regFunctionSet(regionhandle region, regionfunction function);
+TI_API udword regFilterSet(regionhandle region, udword filter);
+TI_API void regKeysSet(regionhandle region, sdword nKeys, ...);
+TI_API udword regTabstopSet(regionhandle region, udword tabstop);
+TI_API void regDirtyEverythingUpwardsSelectively(regionhandle region, regionhandle overlap);
+TI_API void regDirtyEverythingUpwards(regionhandle region);
+TI_API void regDirtyChildren(regionhandle reg);
+TI_API void regRecursiveSetDirty(regionhandle reg);
+TI_API void regRecursiveSetReallyDirty(regionhandle reg);
+TI_API void regDirtyScreensAboveRegion(regionhandle region);
 
-//void regFocusLost(regionhandle region);
+TI_API //void regFocusLost(regionhandle region);
 
 //get attributes of regions
 #define regFilterGet(r)    ((r)->flags)
 
 //add render events and render them all
-void regDrawFunctionAdd(regiondrawfunction function, regionhandle reg);
+TI_API void regDrawFunctionAdd(regiondrawfunction function, regionhandle reg);
 //only add a draw function if it hasn't already been added
-void regDrawFunctionAddPossibly(regionhandle region);
-void regFunctionsDraw(void);
+TI_API void regDrawFunctionAddPossibly(regionhandle region);
+TI_API void regFunctionsDraw(void);
 
 //move regions about
-void regRegionScroll(regionhandle reg, sdword scrollX, sdword scrollY);
+TI_API void regRegionScroll(regionhandle reg, sdword scrollX, sdword scrollY);
 
 //misc utility functions
-regionhandle regSiblingFindByFunction(regionhandle reg, regionfunction find);
-regionhandle regFindChildByAtomName(regionhandle reg, char *pAtomName);
+TI_API regionhandle regSiblingFindByFunction(regionhandle reg, regionfunction find);
+TI_API regionhandle regFindChildByAtomName(regionhandle reg, char *pAtomName);
 
 //process null poo
-udword regNULLProcessFunction(regionhandle region, smemsize ID, udword event, udword data);
+TI_API udword regNULLProcessFunction(regionhandle region, smemsize ID, udword event, udword data);
 
 
 #endif

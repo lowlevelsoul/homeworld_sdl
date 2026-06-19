@@ -76,15 +76,15 @@ extern fontregistry frFontRegistry[FR_NumberFonts];
     Functions:
 =============================================================================*/
 //startup/shutdown
-void frStartup(void);
-void frReset(void);
-void frShutdown(void);
+TI_API void frStartup(void);
+TI_API void frReset(void);
+TI_API void frShutdown(void);
 
-void frReloadGL(void);
-void frReloadFonts(void);
+TI_API void frReloadGL(void);
+TI_API void frReloadFonts(void);
 
 //register a font
-fonthandle frFontRegister(char *fileName);
-void frFontUnregister(fonthandle font);
+TI_API fonthandle frFontRegister(char *fileName);
+TI_API void frFontUnregister(fonthandle font);
 
 #endif

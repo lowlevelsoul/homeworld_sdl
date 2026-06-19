@@ -74,19 +74,19 @@ typedef struct
     Functions:
 =============================================================================*/
 
-void scriptSetFlightManTurnaroundCB(char *directory,char *field,FlightManProb *dataToFillIn);
-void scriptSetFlightManAIPCB(char *directory,char *field,FlightManProb *dataToFillIn);
-void scriptSetFlightManEvasiveBehindCB(char *directory,char *field,FlightManProb *dataToFillIn);
-void scriptSetFlightManEvasiveFrontCB(char *directory,char *field,FlightManProb *dataToFillIn);
-void scriptSetFlightManEvasivePureCB(char *directory,char *field,FlightManProb *dataToFillIn);
+TI_API void scriptSetFlightManTurnaroundCB(char *directory,char *field,FlightManProb *dataToFillIn);
+TI_API void scriptSetFlightManAIPCB(char *directory,char *field,FlightManProb *dataToFillIn);
+TI_API void scriptSetFlightManEvasiveBehindCB(char *directory,char *field,FlightManProb *dataToFillIn);
+TI_API void scriptSetFlightManEvasiveFrontCB(char *directory,char *field,FlightManProb *dataToFillIn);
+TI_API void scriptSetFlightManEvasivePureCB(char *directory,char *field,FlightManProb *dataToFillIn);
 
-udword flightmanGetRandom(FlightManProb *prob,udword flightmanSubtype);
-bool flightmanTestRandom(FlightManProb *prob,udword flightmanSubtype,udword flightman);
+TI_API udword flightmanGetRandom(FlightManProb *prob,udword flightmanSubtype);
+TI_API bool flightmanTestRandom(FlightManProb *prob,udword flightmanSubtype,udword flightman);
 
-void flightmanInitFunc(Ship *ship,udword flightman,smemsize flags);
+TI_API void flightmanInitFunc(Ship *ship,udword flightman,smemsize flags);
 
-bool flightmanExecute(Ship *ship);
-void flightmanClose(Ship *ship);
+TI_API bool flightmanExecute(Ship *ship);
+TI_API void flightmanClose(Ship *ship);
 
 #define flightmanInit(ship,flightman) flightmanInitFunc(ship,flightman,-1)
 #define flightmanInitWithFlags(ship,flightman,flags) flightmanInitFunc(ship,flightman,flags)
@@ -118,7 +118,7 @@ extern uword FLIGHTMAN_NUM_EVASIVEPURE_MANEUVERS[NUM_TACTICS_TYPES];
 
 #ifdef HW_BUILD_FOR_DEBUGGING
 extern Ship *testflightmanship;
-void flightmanTest(void);
+TI_API void flightmanTest(void);
 #endif
 
 #endif

@@ -18,14 +18,14 @@
 #define ALLIANCE_FORM_NEW_ALLIANCE   1
 #define ALLIANCE_BREAK_ALLIANCE      2
 
-void allianceFormWith(udword playerindex);
-void allianceBreakWith(udword playerindex);
-void allianceFormRequestRecievedCB(ChatPacket *packet);
-void allianceSetAlliance(udword AllianceType, uword playerone, uword playertwo);
+TI_API void allianceFormWith(udword playerindex);
+TI_API void allianceBreakWith(udword playerindex);
+TI_API void allianceFormRequestRecievedCB(ChatPacket *packet);
+TI_API void allianceSetAlliance(udword AllianceType, uword playerone, uword playertwo);
 
-bool allianceIsShipAlly(Ship *ship, Player *player);
-bool allianceArePlayersAllied(Player *playerone, Player *playertwo);
+TI_API bool allianceIsShipAlly(Ship *ship, Player *player);
+TI_API bool allianceArePlayersAllied(Player *playerone, Player *playertwo);
 
-void allianceBreakAll(void);
+TI_API void allianceBreakAll(void);
 
 #endif

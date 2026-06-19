@@ -250,21 +250,21 @@ extern udword batGlobalFrequencyModifier;       //exported for demo playback
 /*=============================================================================
     Functions:
 =============================================================================*/
-void battleChatterStartup(void);
-void battleChatterShutdown(void);
-void battlePingEvaluate(void *thisPing, battleping *battlePing);
-void battlePingEvaluateNoFriendlies(void *voidPing, battleping *battlePing);
-void battlePingEvaluateNoEnemies(void *voidPing, battleping *battlePing);
+TI_API void battleChatterStartup(void);
+TI_API void battleChatterShutdown(void);
+TI_API void battlePingEvaluate(void *thisPing, battleping *battlePing);
+TI_API void battlePingEvaluateNoFriendlies(void *voidPing, battleping *battlePing);
+TI_API void battlePingEvaluateNoEnemies(void *voidPing, battleping *battlePing);
 
-bool battleCanChatterAtThisTime(sdword event, Ship *ship);
-sdword battleChatterAttempt(sdword linkTo, sdword event, Ship *ship, sdword variable);
-sdword battleChatterFleetAttempt(sdword linkTo, sdword event, sdword variable, vector *where);
-Ship *battleMouthPieceFindAnother(Ship *firstMouthPiece, Ship **ships, sdword numShips);
-Ship *battleMouthPieceFind(Ship **ships, sdword numShips);
-bool battleShipOnMyTail(Ship *meShip, Ship *badGuyShip);
-void battleAccountForLosses(Ship *ship, battleping *battlePing);
-void battleChatterFrequencySet(sdword freq100);
-void battleShipDyingWithTimeToScream(Ship *ship);
-void battleLaunchWelcomeExchange(Ship *ship);
+TI_API bool battleCanChatterAtThisTime(sdword event, Ship *ship);
+TI_API sdword battleChatterAttempt(sdword linkTo, sdword event, Ship *ship, sdword variable);
+TI_API sdword battleChatterFleetAttempt(sdword linkTo, sdword event, sdword variable, vector *where);
+TI_API Ship *battleMouthPieceFindAnother(Ship *firstMouthPiece, Ship **ships, sdword numShips);
+TI_API Ship *battleMouthPieceFind(Ship **ships, sdword numShips);
+TI_API bool battleShipOnMyTail(Ship *meShip, Ship *badGuyShip);
+TI_API void battleAccountForLosses(Ship *ship, battleping *battlePing);
+TI_API void battleChatterFrequencySet(sdword freq100);
+TI_API void battleShipDyingWithTimeToScream(Ship *ship);
+TI_API void battleLaunchWelcomeExchange(Ship *ship);
 
 #endif

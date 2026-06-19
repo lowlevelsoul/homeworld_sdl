@@ -13,19 +13,19 @@
 
 // INTERFACE -------------------------------------------------------------------
 
-void autodownloadmapStartup(void);
-void autodownloadmapShutdown(void);
-void autodownloadmapReset(void);
-void autodownloadmapGetFilesOfMap(void);
-void autodownloadmapGotMapName(char *mapname, sdword numPlayers, sdword minPlayers, sdword maxPlayers);
-bool autodownloadmapRequired(void);
-void receivedFilePacketCB(ubyte *packet,udword sizeofPacket);
-bool autodownloadmapReceivedAllFiles(void);
-void autodownloadmapSendAllFiles(void);
-void autodownloadmapPrintStatusStart(void);
-real32 autodownloadmapPercentReceivedFiles(void);
-real32 autodownloadmapPercentSentFiles(void);
-bool autodownloadmapSendAFile(void);
+TI_API void autodownloadmapStartup(void);
+TI_API void autodownloadmapShutdown(void);
+TI_API void autodownloadmapReset(void);
+TI_API void autodownloadmapGetFilesOfMap(void);
+TI_API void autodownloadmapGotMapName(char *mapname, sdword numPlayers, sdword minPlayers, sdword maxPlayers);
+TI_API bool autodownloadmapRequired(void);
+TI_API void receivedFilePacketCB(ubyte *packet,udword sizeofPacket);
+TI_API bool autodownloadmapReceivedAllFiles(void);
+TI_API void autodownloadmapSendAllFiles(void);
+TI_API void autodownloadmapPrintStatusStart(void);
+TI_API real32 autodownloadmapPercentReceivedFiles(void);
+TI_API real32 autodownloadmapPercentSentFiles(void);
+TI_API bool autodownloadmapSendAFile(void);
 
 #endif
 

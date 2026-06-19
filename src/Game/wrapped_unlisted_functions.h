@@ -1,7 +1,7 @@
 #include "tiPlatform.h"
 #define get_arg(n) do_get_arg(effect, stat, opcode, n)
 
-void partSetTrHandle(trhandle t, udword u0, udword v0, udword u1, udword v1);
+TI_API void partSetTrHandle(trhandle t, udword u0, udword v0, udword u1, udword v1);
 
 memsize wrap_partSetTrHandle(Effect *effect, struct etgeffectstatic *stat, etgfunctioncall *opcode)
 {
@@ -10,12 +10,12 @@ memsize wrap_partSetTrHandle(Effect *effect, struct etgeffectstatic *stat, etgfu
         (udword)get_arg(1),
         (udword)get_arg(2),
         (udword)get_arg(3),
-        (udword)get_arg(4));
+        TI_API (udword)get_arg(4));
 
     return 0;
 }
 
-void partModifyTexture(psysPtr psys, trhandle tex, udword u0, udword v0, udword u1, udword v1);
+TI_API void partModifyTexture(psysPtr psys, trhandle tex, udword u0, udword v0, udword u1, udword v1);
 
 memsize wrap_partModifyTexture(Effect *effect, struct etgeffectstatic *stat, etgfunctioncall *opcode)
 {
@@ -25,12 +25,12 @@ memsize wrap_partModifyTexture(Effect *effect, struct etgeffectstatic *stat, etg
         (udword)get_arg(2),
         (udword)get_arg(3),
         (udword)get_arg(4),
-        (udword)get_arg(5));
+        TI_API (udword)get_arg(5));
 
     return 0;
 }
 
-void partSetMeshdata(meshdata *m);
+TI_API void partSetMeshdata(meshdata *m);
 
 memsize wrap_partSetMeshdata(Effect *effect, struct etgeffectstatic *stat, etgfunctioncall *opcode)
 {
@@ -39,16 +39,16 @@ memsize wrap_partSetMeshdata(Effect *effect, struct etgeffectstatic *stat, etgfu
     return 0;
 }
 
-void etgCreateCallbackSetup(Effect *effect, sdword codeOffset);
+TI_API void etgCreateCallbackSetup(Effect *effect, sdword codeOffset);
 
 memsize wrap_etgCreateCallbackSetup(Effect *effect, struct etgeffectstatic *stat, etgfunctioncall *opcode)
 {
-    etgCreateCallbackSetup(effect, (sdword)get_arg(0));
+    TI_API etgCreateCallbackSetup(effect, (sdword)get_arg(0));
 
     return 0;
 }
 
-memsize etgSpawnNewEffect(Effect *effect, etgeffectstatic *stat, sdword nParams, ...);
+TI_API memsize etgSpawnNewEffect(Effect *effect, etgeffectstatic *stat, sdword nParams, ...);
 
 udword wrap_etgSpawnNewEffect(Effect *effect, struct etgeffectstatic *stat, etgfunctioncall *opcode)
 {
@@ -74,7 +74,7 @@ udword wrap_etgSpawnNewEffect(Effect *effect, struct etgeffectstatic *stat, etgf
     return (etgFunctionSize(nParams));
 }
 
-void etgCreateEffects(Effect *effect, etgeffectstatic *stat, sdword number, sdword dist, sdword nParams, ...);
+TI_API void etgCreateEffects(Effect *effect, etgeffectstatic *stat, sdword number, sdword dist, sdword nParams, ...);
 
 udword wrap_etgCreateEffects(Effect *effect, struct etgeffectstatic *stat, etgfunctioncall *opcode)
 {

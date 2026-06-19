@@ -309,74 +309,74 @@ extern uword NumShipTypesInRace[NUM_RACES];
     Support Functions:
 =============================================================================*/
 
-char *NumToStr(NumStrXlate numstrtab[],uword num);
-sdword StrToNum(NumStrXlate numstrtab[],char *str);
+TI_API char *NumToStr(NumStrXlate numstrtab[],uword num);
+TI_API sdword StrToNum(NumStrXlate numstrtab[],char *str);
 
-ShipRace RaceBitsToRace(uword raceBits);
+TI_API ShipRace RaceBitsToRace(uword raceBits);
 
-char *ShipClassToStr(ShipClass shipclass);
-char *ShipClassToNiceStr(ShipClass shipclass);
-ShipClass StrToShipClass(char *str);
+TI_API char *ShipClassToStr(ShipClass shipclass);
+TI_API char *ShipClassToNiceStr(ShipClass shipclass);
+TI_API ShipClass StrToShipClass(char *str);
 
-char *ShipRaceToStr(ShipRace shiprace);
-ShipRace StrToShipRace(char *str);
+TI_API char *ShipRaceToStr(ShipRace shiprace);
+TI_API ShipRace StrToShipRace(char *str);
 
-char *TacticsTypeToStr(TacticsType tactics);
-TacticsType StrToTacticsType(char *str);
+TI_API char *TacticsTypeToStr(TacticsType tactics);
+TI_API TacticsType StrToTacticsType(char *str);
 
-SpecialEffectType StrToEffectNum(char *str);
+TI_API SpecialEffectType StrToEffectNum(char *str);
 
-char *ShipTypeToStr(ShipType shiptype);
-char *ShipTypeToNiceStr(ShipType shiptype);
-ShipType StrToShipType(char *str);
+TI_API char *ShipTypeToStr(ShipType shiptype);
+TI_API char *ShipTypeToNiceStr(ShipType shiptype);
+TI_API ShipType StrToShipType(char *str);
 
-char *ShipStatToNiceStr(ShipStatsType stattype);
-char *ShipTypeStatToNiceStr(ShipType shiptype, ShipStatsType stattype);
+TI_API char *ShipStatToNiceStr(ShipStatsType stattype);
+TI_API char *ShipTypeStatToNiceStr(ShipType shiptype, ShipStatsType stattype);
 
-char *AsteroidTypeToStr(AsteroidType asteroidtype);
-AsteroidType StrToAsteroidType(char *str);
+TI_API char *AsteroidTypeToStr(AsteroidType asteroidtype);
+TI_API AsteroidType StrToAsteroidType(char *str);
 
-char *DustCloudTypeToStr(DustCloudType dustcloudtype);
-DustCloudType StrToDustCloudType(char *str);
+TI_API char *DustCloudTypeToStr(DustCloudType dustcloudtype);
+TI_API DustCloudType StrToDustCloudType(char *str);
 
-char *GasCloudTypeToStr(GasCloudType gascloudtype);
-GasCloudType StrToGasCloudType(char *str);
+TI_API char *GasCloudTypeToStr(GasCloudType gascloudtype);
+TI_API GasCloudType StrToGasCloudType(char *str);
 
-char *NebulaTypeToStr(NebulaType nebulatype);
-NebulaType StrToNebulaType(char *str);
+TI_API char *NebulaTypeToStr(NebulaType nebulatype);
+TI_API NebulaType StrToNebulaType(char *str);
 
-char *DerelictTypeToStr(DerelictType derelicttype);
-DerelictType StrToDerelictType(char *str);
+TI_API char *DerelictTypeToStr(DerelictType derelicttype);
+TI_API DerelictType StrToDerelictType(char *str);
 
-char *ExplosionTypeToStr(EffectType type);
-EffectType StrToExplosionType(char *str);
+TI_API char *ExplosionTypeToStr(EffectType type);
+TI_API EffectType StrToExplosionType(char *str);
 
-char *GunTypeToStr(GunType guntype);
-GunType StrToGunType(char *str);
+TI_API char *GunTypeToStr(GunType guntype);
+TI_API GunType StrToGunType(char *str);
 
-DockPointType StrToDockPointType(char *str);
-char *DockPointTypeToStr(DockPointType dockpointtype);
+TI_API DockPointType StrToDockPointType(char *str);
+TI_API char *DockPointTypeToStr(DockPointType dockpointtype);
 
-SalvagePointType StrToSalvagePointType(char *str);
-char *SalvagePointTypeToStr(SalvagePointType salvagepointtype);
+TI_API SalvagePointType StrToSalvagePointType(char *str);
+TI_API char *SalvagePointTypeToStr(SalvagePointType salvagepointtype);
 
-char *GunSoundTypeToStr(GunSoundType gunsoundtype);
-GunSoundType StrToGunSoundType(char *str);
+TI_API char *GunSoundTypeToStr(GunSoundType gunsoundtype);
+TI_API GunSoundType StrToGunSoundType(char *str);
 
-char *BulletTypeToStr(BulletType bulletType);
-BulletType StrToBulletType(char *str);
+TI_API char *BulletTypeToStr(BulletType bulletType);
+TI_API BulletType StrToBulletType(char *str);
 
-char *MissileTypeToStr(MissileType missileType);
-MissileType StrToMissileType(char *str);
+TI_API char *MissileTypeToStr(MissileType missileType);
+TI_API MissileType StrToMissileType(char *str);
 
-char *NAVLightTypeToStr(NAVLightType navlightType);
-NAVLightType StrToNAVLightType(char *str);
+TI_API char *NAVLightTypeToStr(NAVLightType navlightType);
+TI_API NAVLightType StrToNAVLightType(char *str);
 
-char *ObjTypeToStr(ObjType objtype);
-ObjType StrToObjType(char *str);
+TI_API char *ObjTypeToStr(ObjType objtype);
+TI_API ObjType StrToObjType(char *str);
 
-char *NisRaceToStr(ShipRace race);
-ShipRace StrToNisRace(char *string);
+TI_API char *NisRaceToStr(ShipRace race);
+TI_API ShipRace StrToNisRace(char *string);
 
 #endif
 

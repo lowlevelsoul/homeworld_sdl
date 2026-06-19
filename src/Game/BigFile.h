@@ -136,31 +136,31 @@ enum {
 };
 
 
-int bigAdd(char *bigfilename, int numFiles, char *filenames[], int optCompression, int optNewer, int optMove, int optPathnames, int consoleOutput);
-int bigFastCreate(char *bigfilename, int numFiles, char *filenames[], int optCompression, int optNewer, int optMove, int optPathnames, int consoleOutput);
-int bigPatch(char *oldfilename, char *newfilename, char *patchfilename, int consoleOutput);
-int bigAddFile(char *bigFilename, char *filename, char *storedFilename, int optCompression, int optNewer, int consoleOutput);
-int bigDelete(char *bigfilename, int numFiles, char *filenames[], int consoleOutput);
-int bigView(char *bigfilename, int consoleOutput);
-int bigExtract(char *bigfilename, int numFiles, char *filenames[], int optFreshen, int optMove, int optPathnames, int optOverwrite, int consoleOutput);
-bool bigTOCFileExists(bigTOC *toc, char *filename, udword *fileNum);
-int bigTOCFileExistsByCRC(bigTOC *toc, bigTOCFileEntry *target, udword *fileNum);
-void bigTOCSort(bigTOC *toc);
-void bigFilenameEncrypt(char *filename);
-void bigFilenameDecrypt(char *filename, int length);
-crc32 bigTOCCRC(bigTOC *toc);
+TI_API int bigAdd(char *bigfilename, int numFiles, char *filenames[], int optCompression, int optNewer, int optMove, int optPathnames, int consoleOutput);
+TI_API int bigFastCreate(char *bigfilename, int numFiles, char *filenames[], int optCompression, int optNewer, int optMove, int optPathnames, int consoleOutput);
+TI_API int bigPatch(char *oldfilename, char *newfilename, char *patchfilename, int consoleOutput);
+TI_API int bigAddFile(char *bigFilename, char *filename, char *storedFilename, int optCompression, int optNewer, int consoleOutput);
+TI_API int bigDelete(char *bigfilename, int numFiles, char *filenames[], int consoleOutput);
+TI_API int bigView(char *bigfilename, int consoleOutput);
+TI_API int bigExtract(char *bigfilename, int numFiles, char *filenames[], int optFreshen, int optMove, int optPathnames, int optOverwrite, int consoleOutput);
+TI_API bool bigTOCFileExists(bigTOC *toc, char *filename, udword *fileNum);
+TI_API int bigTOCFileExistsByCRC(bigTOC *toc, bigTOCFileEntry *target, udword *fileNum);
+TI_API void bigTOCSort(bigTOC *toc);
+TI_API void bigFilenameEncrypt(char *filename);
+TI_API void bigFilenameDecrypt(char *filename, int length);
+TI_API crc32 bigTOCCRC(bigTOC *toc);
 
 // not used in command line utility, only in the game
 #ifdef BF_HOMEWORLD
-    bool bigOpenAllBigFiles(void);
-    void bigCloseAllBigFiles(void);
+    TI_API bool bigOpenAllBigFiles(void);
+    TI_API void bigCloseAllBigFiles(void);
     
-    void bigCRC(udword *bigCRCArray, udword arraySize);
-    void bigFilesystemCompare(char *baseDirectory, char *directory);
-    bool bigFindFile(char *filename, bigFileConfiguration **whereFound, udword *fileIndex);
+    TI_API void bigCRC(udword *bigCRCArray, udword arraySize);
+    TI_API void bigFilesystemCompare(char *baseDirectory, char *directory);
+    TI_API bool bigFindFile(char *filename, bigFileConfiguration **whereFound, udword *fileIndex);
 
-    sdword bigFileLoadAlloc(bigTOC *toc, FILE *bigFP, char *filename, udword fileNum, void **address);
-    sdword bigFileLoad(bigTOC *toc, FILE *bigFP, udword fileNum, void *address);
+    TI_API sdword bigFileLoadAlloc(bigTOC *toc, FILE *bigFP, char *filename, udword fileNum, void **address);
+    TI_API sdword bigFileLoad(bigTOC *toc, FILE *bigFP, udword fileNum, void *address);
 #endif
 
 #endif

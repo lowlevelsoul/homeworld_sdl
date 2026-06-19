@@ -129,42 +129,42 @@ extern real32 NEB_RADIUS;
 
 struct Nebula;
 
-void nebStartup(void);
-void nebShutdown(void);
-void nebReset(void);
-void nebAllocateChunks(nebulae_t* neb, udword num);
-void nebAllocateTendrils(nebulae_t* neb, udword num);
-void nebFreeChunks(nebulae_t* neb);
-void nebFreeTendrils(nebulae_t* neb);
-void nebDeleteChunk(nebChunk* chunk);
-void nebInitChunk(nebChunk* chunk);
-void nebInitTendril(nebTendril* tendril);
-void nebAddTendril(nebChunk* chunk, nebTendril* tendril, udword flags);
-nebTendril* nebGetFreshTendril(nebulae_t* neb);
-nebChunk* nebPickChunk(nebulae_t* neb, sdword type, nebChunk* constrainta, nebChunk* constraintb);
-void nebDistributeChunks(nebulae_t* neb, vector* origin, vector* dimension);
-void nebAttachTendrils(nebulae_t* neb);
-void nebDeactivateEmptyChunksAndFixup(nebulae_t* neb);
-void nebGo(vector* origin, vector* dimension, udword numOfChunks, udword numOfTendrils);
-void nebRenderChunk(nebChunk* chunk, sdword lod);
-void nebRenderTendril(nebTendril* tendril, sdword lod);
-void nebRender(void);
-real32 nebAngularDeviation(nebChunk* newChunk, nebChunk* oldChunka, nebChunk* oldChunkb);
-real32 nebChunkDistance(nebChunk* a, nebChunk* b);
-void nebChunkPicked(nebChunk* chunk, bool8 v);
-void nebUnpickAllChunks(nebulae_t* neb);
-void nebSetFog(void);
-void nebNewNeb(struct Nebula* neb);
-void nebFadeAttachedTendrils(nebChunk* chunk, real32 factor);
+TI_API void nebStartup(void);
+TI_API void nebShutdown(void);
+TI_API void nebReset(void);
+TI_API void nebAllocateChunks(nebulae_t* neb, udword num);
+TI_API void nebAllocateTendrils(nebulae_t* neb, udword num);
+TI_API void nebFreeChunks(nebulae_t* neb);
+TI_API void nebFreeTendrils(nebulae_t* neb);
+TI_API void nebDeleteChunk(nebChunk* chunk);
+TI_API void nebInitChunk(nebChunk* chunk);
+TI_API void nebInitTendril(nebTendril* tendril);
+TI_API void nebAddTendril(nebChunk* chunk, nebTendril* tendril, udword flags);
+TI_API nebTendril* nebGetFreshTendril(nebulae_t* neb);
+TI_API nebChunk* nebPickChunk(nebulae_t* neb, sdword type, nebChunk* constrainta, nebChunk* constraintb);
+TI_API void nebDistributeChunks(nebulae_t* neb, vector* origin, vector* dimension);
+TI_API void nebAttachTendrils(nebulae_t* neb);
+TI_API void nebDeactivateEmptyChunksAndFixup(nebulae_t* neb);
+TI_API void nebGo(vector* origin, vector* dimension, udword numOfChunks, udword numOfTendrils);
+TI_API void nebRenderChunk(nebChunk* chunk, sdword lod);
+TI_API void nebRenderTendril(nebTendril* tendril, sdword lod);
+TI_API void nebRender(void);
+TI_API real32 nebAngularDeviation(nebChunk* newChunk, nebChunk* oldChunka, nebChunk* oldChunkb);
+TI_API real32 nebChunkDistance(nebChunk* a, nebChunk* b);
+TI_API void nebChunkPicked(nebChunk* chunk, bool8 v);
+TI_API void nebUnpickAllChunks(nebulae_t* neb);
+TI_API void nebSetFog(void);
+TI_API void nebNewNeb(struct Nebula* neb);
+TI_API void nebFadeAttachedTendrils(nebChunk* chunk, real32 factor);
 
-void nebSave_Nebula(void);
-void nebLoad_Nebula(void);
+TI_API void nebSave_Nebula(void);
+TI_API void nebLoad_Nebula(void);
 
-nebTendril *nebNumToTendrilPtr(nebulae_t* neb, sdword num);
-sdword nebTendrilPtrToNum(nebulae_t* neb, nebTendril *nebTendril);
+TI_API nebTendril *nebNumToTendrilPtr(nebulae_t* neb, sdword num);
+TI_API sdword nebTendrilPtrToNum(nebulae_t* neb, nebTendril *nebTendril);
 
-nebChunk *nebNumToChunkPtr(nebulae_t* neb, sdword num);
-sdword nebChunkPtrToNum(nebulae_t* neb, nebChunk *nebChunk);
+TI_API nebChunk *nebNumToChunkPtr(nebulae_t* neb, sdword num);
+TI_API sdword nebChunkPtrToNum(nebulae_t* neb, nebChunk *nebChunk);
 
 #endif
 

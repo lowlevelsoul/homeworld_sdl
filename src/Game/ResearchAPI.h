@@ -131,44 +131,44 @@ extern udword         SetTechLevel;
 struct Player;
 
 // callback to set dependancies
-void rmSetShipDependCB(char *directory, char *field, void *dataToFillIn);
-void rmSetTechDependCB(char *directory, char *field, void *dataToFillIn);
+TI_API void rmSetShipDependCB(char *directory, char *field, void *dataToFillIn);
+TI_API void rmSetTechDependCB(char *directory, char *field, void *dataToFillIn);
 
-char *RaceSpecificTechTypeToNiceString(TechnologyType tech, ShipRace race);
-char *TechTypeToNiceString(TechnologyType tech);
-char *TechTypeToString    (TechnologyType tech);
-TechnologyType StrToTechType(char *tech);
+TI_API char *RaceSpecificTechTypeToNiceString(TechnologyType tech, ShipRace race);
+TI_API char *TechTypeToNiceString(TechnologyType tech);
+TI_API char *TechTypeToString    (TechnologyType tech);
+TI_API TechnologyType StrToTechType(char *tech);
 
 // api function calls
-ResearchTopic *Researching(struct Player *player, TechnologyType tech);
+TI_API ResearchTopic *Researching(struct Player *player, TechnologyType tech);
 
-sdword rmResearchingAnything(struct Player *player);
+TI_API sdword rmResearchingAnything(struct Player *player);
 
-void rmGiveTechToPlayerByName(struct Player *player, char *techName);
-void rmGiveTechToPlayerByType(struct Player *player, TechnologyType techtype);
+TI_API void rmGiveTechToPlayerByName(struct Player *player, char *techName);
+TI_API void rmGiveTechToPlayerByType(struct Player *player, TechnologyType techtype);
 
-void   rmAddTechToPlayer(struct Player *player, udword techlevel);
-sdword rmFindFreeLab(struct Player *player);
-bool   rmCanBuildShip(struct Player *player, ShipType type);
-//void   rmResearchTechForShip(struct Player *player, ShipType type);
-void   rmClearResearchlab(struct Player *player, sdword labnumber);
-void   rmAssignPlayersLabToResearch(struct Player *player, sdword labnumber, TechnologyType tech);
-void   rmDeactivateLab(struct Player *player);
-void   rmActivateFreeLab(struct Player *player);
-void   rmUpdateResearch(void);
-void   rmInitializeResearchStruct(struct Player *player, bool candoresearch, sdword techlevel);
+TI_API void   rmAddTechToPlayer(struct Player *player, udword techlevel);
+TI_API sdword rmFindFreeLab(struct Player *player);
+TI_API bool   rmCanBuildShip(struct Player *player, ShipType type);
+TI_API //void   rmResearchTechForShip(struct Player *player, ShipType type);
+TI_API void   rmClearResearchlab(struct Player *player, sdword labnumber);
+TI_API void   rmAssignPlayersLabToResearch(struct Player *player, sdword labnumber, TechnologyType tech);
+TI_API void   rmDeactivateLab(struct Player *player);
+TI_API void   rmActivateFreeLab(struct Player *player);
+TI_API void   rmUpdateResearch(void);
+TI_API void   rmInitializeResearchStruct(struct Player *player, bool candoresearch, sdword techlevel);
 
-sdword rmTechRequiredForShip(struct Player *player, ShipType type);
-bool   rmResearchTechForShip(struct Player *player, ShipType type);
+TI_API sdword rmTechRequiredForShip(struct Player *player, ShipType type);
+TI_API bool   rmResearchTechForShip(struct Player *player, ShipType type);
 
-void rmInitializeResearchStatics(struct Player *player);
+TI_API void rmInitializeResearchStatics(struct Player *player);
 
-void rmEnableShip(ShipRace race, ShipType ship, bool bEnabled);
-void rmRemoveAllUnneededTech(void);
-void rmResetStaticInfo(void);
+TI_API void rmEnableShip(ShipRace race, ShipType ship, bool bEnabled);
+TI_API void rmRemoveAllUnneededTech(void);
+TI_API void rmResetStaticInfo(void);
 
 //start the Research Manager.
-void   rmAPIStartup(void);
-void   rmAPIShutdown(void);
+TI_API void   rmAPIStartup(void);
+TI_API void   rmAPIShutdown(void);
 
 #endif

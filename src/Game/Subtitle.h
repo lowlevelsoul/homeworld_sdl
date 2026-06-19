@@ -172,20 +172,20 @@ extern sdword subMessageEnded;
     Functions:
 =============================================================================*/
 
-void subStartup(void);
-void subReset(void);
-void subTexturesReset(void);
-void subShutdown(void);
-void subRegionsRescale(void);
+TI_API void subStartup(void);
+TI_API void subReset(void);
+TI_API void subTexturesReset(void);
+TI_API void subShutdown(void);
+TI_API void subRegionsRescale(void);
 
-bool subAnyCardsOnScreen(void);
+TI_API bool subAnyCardsOnScreen(void);
 
-sdword subTitleAdd(sdword actor, sdword speechEvent, char *text, sdword length, real32 time);
+TI_API sdword subTitleAdd(sdword actor, sdword speechEvent, char *text, sdword length, real32 time);
 
-void subTitlesUpdate(void);
+TI_API void subTitlesUpdate(void);
 
-void subTitlesDraw(subregion *region);
-void subTitlesFadeOut(subregion *region, real32 fadeTime);
-sdword subStringsChop(rectangle *region, fonthandle font, sdword longLength, char *longString, char *chopBuffer, char **choppedStrings);
+TI_API void subTitlesDraw(subregion *region);
+TI_API void subTitlesFadeOut(subregion *region, real32 fadeTime);
+TI_API sdword subStringsChop(rectangle *region, fonthandle font, sdword longLength, char *longString, char *chopBuffer, char **choppedStrings);
 
 #endif

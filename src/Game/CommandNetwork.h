@@ -499,73 +499,73 @@ extern real32 printTimeout;
     Functions:
 =============================================================================*/
 
-void CommandNetworkReset(void);
+TI_API void CommandNetworkReset(void);
 
-void SendTransferCaptaincyPacket(sdword playerIndex,uword subtype,udword misc,CaptaincyCustomInfo *custominfo);
-void SendRequestSyncPkts(udword frompacketnum,udword topacketnum);
+TI_API void SendTransferCaptaincyPacket(sdword playerIndex,uword subtype,udword misc,CaptaincyCustomInfo *custominfo);
+TI_API void SendRequestSyncPkts(udword frompacketnum,udword topacketnum);
 
-void clSendMove(CommandLayer *comlayer,SelectCommand *selectcom,vector from,vector to);
-void clSendAttack(CommandLayer *comlayer,SelectCommand *selectcom,AttackCommand *attackcom);
-void clSendFormation(CommandLayer *comlayer,SelectCommand *selectcom,TypeOfFormation formation);
-void clSendDock(CommandLayer *comlayer,SelectCommand *selectcom,DockType dockType,ShipPtr dockwith);
-void clSendCreateShip(CommandLayer *comlayer,ShipType shipType,ShipRace shipRace,uword playerIndex,ShipPtr creator);
-void clSendBuildShip(CommandLayer *comlayer,ShipType shipType,ShipRace shipRace,uword playerIndex,ShipPtr creator);
+TI_API void clSendMove(CommandLayer *comlayer,SelectCommand *selectcom,vector from,vector to);
+TI_API void clSendAttack(CommandLayer *comlayer,SelectCommand *selectcom,AttackCommand *attackcom);
+TI_API void clSendFormation(CommandLayer *comlayer,SelectCommand *selectcom,TypeOfFormation formation);
+TI_API void clSendDock(CommandLayer *comlayer,SelectCommand *selectcom,DockType dockType,ShipPtr dockwith);
+TI_API void clSendCreateShip(CommandLayer *comlayer,ShipType shipType,ShipRace shipRace,uword playerIndex,ShipPtr creator);
+TI_API void clSendBuildShip(CommandLayer *comlayer,ShipType shipType,ShipRace shipRace,uword playerIndex,ShipPtr creator);
 
-void clSendDeterministicBuild(udword command, CommandLayer* comlayer, sdword numShips, ShipType shipType, ShipRace shipRace, uword playerIndex, ShipPtr creator);
+TI_API void clSendDeterministicBuild(udword command, CommandLayer* comlayer, sdword numShips, ShipType shipType, ShipRace shipRace, uword playerIndex, ShipPtr creator);
 
-void clSendCollectResource(CommandLayer *comlayer,SelectCommand *selectcom,ResourcePtr resource);
-void clSendProtect(CommandLayer *comlayer,SelectCommand *selectcom,ProtectCommand *protectcom);
-void clSendSpecial(CommandLayer *comlayer,SelectCommand *selectcom,SpecialCommand *targetcom);
-void clSendMisc(CommandLayer *comlayer,SelectCommand *selectcom,uword miscCommand,udword miscData);
-void clSendAutoLaunch(udword OnOff,udword playerIndex);
-void clSendSetAlliance(udword AllianceType, uword curalliance, uword newalliance);
-void clSendLaunchMultipleShips(CommandLayer *comlayer,SelectCommand *selectcom,ShipPtr launchFrom);
-void clProcessSyncPacket(CommandLayer *comlayer,ubyte *packet,udword sizeofPacket);
-void clSendRuTransfer(CommandLayer *comlayer,sdword fromIndex,sdword toIndex, sdword resourceUnits,ubyte flags);
-void clSendMpHyperspace(CommandLayer *comlayer,SelectCommand *selectcom,vector from,vector to);
+TI_API void clSendCollectResource(CommandLayer *comlayer,SelectCommand *selectcom,ResourcePtr resource);
+TI_API void clSendProtect(CommandLayer *comlayer,SelectCommand *selectcom,ProtectCommand *protectcom);
+TI_API void clSendSpecial(CommandLayer *comlayer,SelectCommand *selectcom,SpecialCommand *targetcom);
+TI_API void clSendMisc(CommandLayer *comlayer,SelectCommand *selectcom,uword miscCommand,udword miscData);
+TI_API void clSendAutoLaunch(udword OnOff,udword playerIndex);
+TI_API void clSendSetAlliance(udword AllianceType, uword curalliance, uword newalliance);
+TI_API void clSendLaunchMultipleShips(CommandLayer *comlayer,SelectCommand *selectcom,ShipPtr launchFrom);
+TI_API void clProcessSyncPacket(CommandLayer *comlayer,ubyte *packet,udword sizeofPacket);
+TI_API void clSendRuTransfer(CommandLayer *comlayer,sdword fromIndex,sdword toIndex, sdword resourceUnits,ubyte flags);
+TI_API void clSendMpHyperspace(CommandLayer *comlayer,SelectCommand *selectcom,vector from,vector to);
 #ifdef GOD_LIKE_SYNC_CHECKING
-void clSendGodSync(GodSyncCheckSums *checksumStruct,sdword playIndex,udword type);
+TI_API void clSendGodSync(GodSyncCheckSums *checksumStruct,sdword playIndex,udword type);
 #endif
-WaitPacketStatus clWaitSyncPacket(CommandLayer *comlayer);
-DECLARE_TASK(captainServerTask);
-void ReceivedPacketCB(ubyte *packet,udword sizeofPacket);
-void netCheck(void);
+TI_API WaitPacketStatus clWaitSyncPacket(CommandLayer *comlayer);
+TI_API DECLARE_TASK(captainServerTask);
+TI_API void ReceivedPacketCB(ubyte *packet,udword sizeofPacket);
+TI_API void netCheck(void);
 
-void SendNonCaptainReadyPacket(udword playerIndex);
-void SendDroppingOutOfLoad(udword playerIndex);
-void SendInGameQuittingPacket(udword playerIndex);
+TI_API void SendNonCaptainReadyPacket(udword playerIndex);
+TI_API void SendDroppingOutOfLoad(udword playerIndex);
+TI_API void SendInGameQuittingPacket(udword playerIndex);
 
-void SendLagPacket(udword to, ubyte *packet);
-void SendCheatDetect(void);
+TI_API void SendLagPacket(udword to, ubyte *packet);
+TI_API void SendCheatDetect(void);
 
-void clSendResearch(udword type, udword playernum, udword labnum, udword tech);
+TI_API void clSendResearch(udword type, udword playernum, udword labnum, udword tech);
 
 //prototype for horse race communication
-void SendHorseRacePacket(ubyte *packet,udword sizeofpacket);
+TI_API void SendHorseRacePacket(ubyte *packet,udword sizeofpacket);
 
 //prototype for ingame chat packets
-void SendChatPacketPacket(ChatPacket *packet, udword sizeofpacket,udword users);
+TI_API void SendChatPacketPacket(ChatPacket *packet, udword sizeofpacket,udword users);
 
-void InitLastSyncPktsQ(void);
-void CloseLastSyncPktsQ(void);
-void ResetLastSyncPktsQ(void);
-bool GetSyncPktFromLastSyncPktsQ(udword frame,HWPacketHeader **packet,udword *size);
+TI_API void InitLastSyncPktsQ(void);
+TI_API void CloseLastSyncPktsQ(void);
+TI_API void ResetLastSyncPktsQ(void);
+TI_API bool GetSyncPktFromLastSyncPktsQ(udword frame,HWPacketHeader **packet,udword *size);
 
-bool checkPlayersReady(void);
+TI_API bool checkPlayersReady(void);
 
-void PlayerDroppedOut(udword player,bool timedOut);
-void PlayerInGameQuited(udword player);
+TI_API void PlayerDroppedOut(udword player,bool timedOut);
+TI_API void PlayerInGameQuited(udword player);
 
-void CaptaincyChangedNotify(void);
+TI_API void CaptaincyChangedNotify(void);
 
 // Keep alive stuff:
 
-void KeepAliveReset(void);
-void KeepAliveStartup(void);
-void KeepAliveShutdown(void);
-void KeepAliveUpdate(void);
-void KeepAliveDropPlayerCB(sdword playerindex);
-void KeepAliveDontDropPlayerCB(sdword playerindex);
+TI_API void KeepAliveReset(void);
+TI_API void KeepAliveStartup(void);
+TI_API void KeepAliveShutdown(void);
+TI_API void KeepAliveUpdate(void);
+TI_API void KeepAliveDropPlayerCB(sdword playerindex);
+TI_API void KeepAliveDontDropPlayerCB(sdword playerindex);
 
 /*=============================================================================
     Variables:

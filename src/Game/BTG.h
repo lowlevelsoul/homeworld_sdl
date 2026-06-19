@@ -67,18 +67,18 @@ extern real32 btgFieldOfView;
 // prototypes
 // -----
 
-void btgStartup(void);
-void btgReset(void);
-void btgShutdown(void);
-void btgSetTheta(real32 theta);
-void btgSetPhi(real32 theta);
-real32 btgGetTheta(void);
-real32 btgGetPhi(void);
-void btgCloseTextures(void);
-void btgLoadTextures(void);
-void btgLoad(char* filename);
-void btgConvertVerts(void);
-void btgRender(void);
-void btgSetColourMultiplier(real32 t);
+TI_API void btgStartup(void);
+TI_API void btgReset(void);
+TI_API void btgShutdown(void);
+TI_API void btgSetTheta(real32 theta);
+TI_API void btgSetPhi(real32 theta);
+TI_API real32 btgGetTheta(void);
+TI_API real32 btgGetPhi(void);
+TI_API void btgCloseTextures(void);
+TI_API void btgLoadTextures(void);
+TI_API void btgLoad(char* filename);
+TI_API void btgConvertVerts(void);
+TI_API void btgRender(void);
+TI_API void btgSetColourMultiplier(real32 t);
 
 #endif

@@ -28,11 +28,11 @@ typedef struct
     hash_t* table[1];
 } hashtable;
 
-hashtable* hashNewTable(udword size);
-void  hashDeleteTable(hashtable* table);
-void* hashLookup(hashtable const* table, udword key);
-void  hashInsert(hashtable* table, udword key, void* data);
-void  hashRemove(hashtable* table, udword key);
-udword hashFindFreeKeyBlock(hashtable* table, udword numkeys);
+TI_API hashtable* hashNewTable(udword size);
+TI_API void  hashDeleteTable(hashtable* table);
+TI_API void* hashLookup(hashtable const* table, udword key);
+TI_API void  hashInsert(hashtable* table, udword key, void* data);
+TI_API void  hashRemove(hashtable* table, udword key);
+TI_API udword hashFindFreeKeyBlock(hashtable* table, udword numkeys);
 
 #endif

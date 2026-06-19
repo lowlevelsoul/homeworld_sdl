@@ -61,8 +61,8 @@ ranstream;
 
 
 #if RANDOM_DEBUG_CALL_SEQ
-    udword ranRandomFnSimple(sdword ranIndex);
-    udword ranRandomFn(sdword ranIndex, char *file, sdword line);
+    TI_API udword ranRandomFnSimple(sdword ranIndex);
+    TI_API udword ranRandomFn(sdword ranIndex, char *file, sdword line);
 
     #define ranRandom(i)  ranRandomFn(i, NULL, 0)
     #define gamerand()    ranRandomFn(RANDOM_GAME, __FILE__, __LINE__)
@@ -70,7 +70,7 @@ ranstream;
     extern bool ranCallerDebug;
 #else
     #define ranRandomFnSimple  ranRandomFn
-    udword  ranRandomFn(sdword ranIndex);
+    TI_API udword  ranRandomFn(sdword ranIndex);
 
     #define ranRandom(i)  ranRandomFn(i)
     #define gamerand()    ranRandomFn(RANDOM_GAME)
@@ -83,20 +83,20 @@ ranstream;
 #define frandombetween(a,b) (frandom((b)-(a)  ) + (a))
 
 
-void ranRandomize(sdword ranIndex);
+TI_API void ranRandomize(sdword ranIndex);
 
-udword ranNumberGet(sdword ranIndex);
-void   ranNumberSet(sdword ranIndex, udword nn);
+TI_API udword ranNumberGet(sdword ranIndex);
+TI_API void   ranNumberSet(sdword ranIndex, udword nn);
 
-void ranParametersGet(sdword ranIndex, udword *xx, udword *yy, udword *zz, udword *cc, udword *nn);
-void ranParametersSet(sdword ranIndex, udword  xx, udword  yy, udword  zz, udword  cc, udword  nn);
-void ranParametersReset(sdword ranIndex);
+TI_API void ranParametersGet(sdword ranIndex, udword *xx, udword *yy, udword *zz, udword *cc, udword *nn);
+TI_API void ranParametersSet(sdword ranIndex, udword  xx, udword  yy, udword  zz, udword  cc, udword  nn);
+TI_API void ranParametersReset(sdword ranIndex);
 
-void ranStartup(void);
-void ranShutdown(void);
+TI_API void ranStartup(void);
+TI_API void ranShutdown(void);
 
-void ranLoad(void);
-void ranSave(void);
+TI_API void ranLoad(void);
+TI_API void ranSave(void);
 
 
 #endif

@@ -118,8 +118,8 @@ extern bool tutPointersDrawnThisFrame;
 /*=============================================================================
     Functions:
 =============================================================================*/
-void tutPreInitTutorial(char *dirfile, char *levelfile);
-void tutInitTutorial(char *dirfile, char *levelfile);
+TI_API void tutPreInitTutorial(char *dirfile, char *levelfile);
+TI_API void tutInitTutorial(char *dirfile, char *levelfile);
 
 extern tutGameEnableFlags tutEnable;
 extern char tutBuildRestrict[TOTAL_STD_SHIPS];
@@ -128,72 +128,72 @@ extern ShipPtr tutPointerShip;
 extern rectangle *tutPointerShipHealthRect;
 extern rectangle *tutPointerShipGroupRect;
 
-void tutSaveLesson(sdword Num, char *pName);
+TI_API void tutSaveLesson(sdword Num, char *pName);
 
-void tutSaveTutorialGame(void);
-void tutLoadTutorialGame(void);
+TI_API void tutSaveTutorialGame(void);
+TI_API void tutLoadTutorialGame(void);
 
-void tutTutorial1(char *name, featom *atom);
+TI_API void tutTutorial1(char *name, featom *atom);
 
-void tutSetPointerTargetXY(char *name, sdword x, sdword y);
-void tutSetPointerTargetXYRight(char *name, sdword x, sdword y);
-void tutSetPointerTargetXYBottomRight(char *name, sdword x, sdword y);
-void tutSetPointerTargetXYTaskbar(char *name, sdword x, sdword y);
-void tutSetPointerTargetXYFE(char *name, sdword x, sdword y);
-void tutSetPointerTargetShip(char *name, ShipPtr ship);
-void tutSetPointerTargetShipSelection(char *name, SelectCommand *ships);
-void tutSetPointerTargetShipHealth(char *name, ShipPtr ship);
-void tutSetPointerTargetShipGroup(char *name, ShipPtr ship);
-void tutPlayerShipDied(ShipPtr ship);
-void tutSetPointerTargetFERegion(char *name, char *pAtomName);
-void tutSetPointerTargetRect(char *name, sdword x0, sdword y0, sdword x1, sdword y1);
-void tutSetPointerTargetAIVolume(char *name, Volume *volume);
-void tutRemovePointerByName(char *name);
-void tutRemoveAllPointers(void);
-void tutRemoveAllPointers(void);
-void tutDrawTextPointers(rectangle *pRect);
+TI_API void tutSetPointerTargetXY(char *name, sdword x, sdword y);
+TI_API void tutSetPointerTargetXYRight(char *name, sdword x, sdword y);
+TI_API void tutSetPointerTargetXYBottomRight(char *name, sdword x, sdword y);
+TI_API void tutSetPointerTargetXYTaskbar(char *name, sdword x, sdword y);
+TI_API void tutSetPointerTargetXYFE(char *name, sdword x, sdword y);
+TI_API void tutSetPointerTargetShip(char *name, ShipPtr ship);
+TI_API void tutSetPointerTargetShipSelection(char *name, SelectCommand *ships);
+TI_API void tutSetPointerTargetShipHealth(char *name, ShipPtr ship);
+TI_API void tutSetPointerTargetShipGroup(char *name, ShipPtr ship);
+TI_API void tutPlayerShipDied(ShipPtr ship);
+TI_API void tutSetPointerTargetFERegion(char *name, char *pAtomName);
+TI_API void tutSetPointerTargetRect(char *name, sdword x0, sdword y0, sdword x1, sdword y1);
+TI_API void tutSetPointerTargetAIVolume(char *name, Volume *volume);
+TI_API void tutRemovePointerByName(char *name);
+TI_API void tutRemoveAllPointers(void);
+TI_API void tutRemoveAllPointers(void);
+TI_API void tutDrawTextPointers(rectangle *pRect);
 
-void tutSetTextDisplayBox(sdword x, sdword y, sdword width, sdword height, bool bScale);
-void tutSetTextDisplayBoxToSubtitleRegion(void);
-void tutShowText(char *szText);
-void tutHideText(void);
-void tutShowNextButton(void);
-void tutHideNextButton(void);
-sdword tutNextButtonClicked(void);
-void tutShowBackButton(void);
-void tutHideBackButton(void);
-void tutShowPrevButton(void);
-void tutShowImages(char *szImages);
-void tutHideImages(void);
+TI_API void tutSetTextDisplayBox(sdword x, sdword y, sdword width, sdword height, bool bScale);
+TI_API void tutSetTextDisplayBoxToSubtitleRegion(void);
+TI_API void tutShowText(char *szText);
+TI_API void tutHideText(void);
+TI_API void tutShowNextButton(void);
+TI_API void tutHideNextButton(void);
+TI_API sdword tutNextButtonClicked(void);
+TI_API void tutShowBackButton(void);
+TI_API void tutHideBackButton(void);
+TI_API void tutShowPrevButton(void);
+TI_API void tutShowImages(char *szImages);
+TI_API void tutHideImages(void);
 
-void tutStartup(void);
-void tutShutdown(void);
-void tutInitialize(void);
-void tutUnInitialize(void);
+TI_API void tutStartup(void);
+TI_API void tutShutdown(void);
+TI_API void tutInitialize(void);
+TI_API void tutUnInitialize(void);
 
-void tutEnableEverything(void);
-void tutDisableEverything(void);
-void tutSetEnableFlags(char *pFlagString, long Val);
+TI_API void tutEnableEverything(void);
+TI_API void tutDisableEverything(void);
+TI_API void tutSetEnableFlags(char *pFlagString, long Val);
 
-void tutBuilderSetRestrictions(char *pShipTypes, bool bRestricted);
-void tutBuilderRestrictAll(void);
-void tutBuilderRestrictNone(void);
+TI_API void tutBuilderSetRestrictions(char *pShipTypes, bool bRestricted);
+TI_API void tutBuilderRestrictAll(void);
+TI_API void tutBuilderRestrictNone(void);
 
 
-sdword tutIsBuildShipRestricted(sdword shipType);
-sdword tutSelectedContainsShipTypes(char *pShipTypes);
+TI_API sdword tutIsBuildShipRestricted(sdword shipType);
+TI_API sdword tutSelectedContainsShipTypes(char *pShipTypes);
 
-void tutGameMessage(char *commandName);
-bool tutGameSentMessage(char *commandName);
-bool tutGameMessageInQueue(char *commandNames);
-void tutResetGameMessageQueue(void);
-sdword tutContextMenuDisplayedForShipType(char *pShipType);
-void  tutResetContextMenuShipTypeTest(void);
+TI_API void tutGameMessage(char *commandName);
+TI_API bool tutGameSentMessage(char *commandName);
+TI_API bool tutGameMessageInQueue(char *commandNames);
+TI_API void tutResetGameMessageQueue(void);
+TI_API sdword tutContextMenuDisplayedForShipType(char *pShipType);
+TI_API void  tutResetContextMenuShipTypeTest(void);
 
-sdword tutBuildManagerShipTypeInBatchQueue(char *pShipType);
-sdword tutBuildManagerShipTypeInBuildQueue(char *pShipType);
-sdword tutBuildManagerShipTypeSelected(char *pShipType);
+TI_API sdword tutBuildManagerShipTypeInBatchQueue(char *pShipType);
+TI_API sdword tutBuildManagerShipTypeInBuildQueue(char *pShipType);
+TI_API sdword tutBuildManagerShipTypeSelected(char *pShipType);
 
-sdword tutCameraFocusedOnShipType(char *pShipTypes);
+TI_API sdword tutCameraFocusedOnShipType(char *pShipTypes);
 
 #endif

@@ -11,21 +11,21 @@
     Functions:
 =============================================================================*/
 
-void levelPreInit(char *directory,char *pickedMission);
-void levelInit(char *directory,char *pickedMission);
+TI_API void levelPreInit(char *directory,char *pickedMission);
+TI_API void levelInit(char *directory,char *pickedMission);
 
 void levelStartNext(char *directory,char *pickedMission);        // for single player game only
 
 // utility functions
-ShipType GetAppropriateShipTypeForRace(ShipType request,ShipRace shiprace);
-void TryToFindMothershipsForPlayers(void);
-ShipRace GetSinglePlayerRaceEquivalent(ShipRace race);
+TI_API ShipType GetAppropriateShipTypeForRace(ShipType request,ShipRace shiprace);
+TI_API void TryToFindMothershipsForPlayers(void);
+TI_API ShipRace GetSinglePlayerRaceEquivalent(ShipRace race);
 
-bool AddResourceToSphere(ResourceVolume *sphere,bool regrowing);
-bool AddResourceToCylinder(ResourceVolume *cylinder,bool regrowing);
-bool AddResourceToRectangle(ResourceVolume *rectangle,bool regrowing);
+TI_API bool AddResourceToSphere(ResourceVolume *sphere,bool regrowing);
+TI_API bool AddResourceToCylinder(ResourceVolume *cylinder,bool regrowing);
+TI_API bool AddResourceToRectangle(ResourceVolume *rectangle,bool regrowing);
 
-void SetInfoNeededForShipAndRelatedStaticInfo(ShipType type,ShipRace race,bool8 dataToFillIn);
+TI_API void SetInfoNeededForShipAndRelatedStaticInfo(ShipType type,ShipRace race,bool8 dataToFillIn);
 
 /*=============================================================================
     Global variables:

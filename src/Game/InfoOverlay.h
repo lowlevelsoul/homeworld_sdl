@@ -47,14 +47,14 @@ extern bool ioRunning;
     Function Prototypes:
 =============================================================================*/
 
-void ioSetSelection(bool shiftrelease);
-void ioUpdateShipTotals(void);
+TI_API void ioSetSelection(bool shiftrelease);
+TI_API void ioUpdateShipTotals(void);
 
-void ioEnable(void);
-bool ioDisable(void);
+TI_API void ioEnable(void);
+TI_API bool ioDisable(void);
 
-void ioStartup(void);
-void ioShutdown(void);
-void ioResolutionChange(void);
+TI_API void ioStartup(void);
+TI_API void ioShutdown(void);
+TI_API void ioResolutionChange(void);
 
 #endif

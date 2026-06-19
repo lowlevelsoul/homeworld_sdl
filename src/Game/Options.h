@@ -80,7 +80,7 @@ extern sdword opCPUAttack;
 extern udword opPauseOrders;
 extern udword opShipRecoil;
 
-void opOptionsSaveCustomEffectsSettings(void);
+TI_API void opOptionsSaveCustomEffectsSettings(void);
 
 
 #define NUM_SMOOTHIES 32
@@ -109,25 +109,25 @@ Smoothie;
     Function Prototypes:
 =============================================================================*/
 
-void opUpdateSettings(void);
-char *opKeyToNiceString(keyindex key);
-keyindex opKeyTranslate(keyindex key);
-void opKeyAssign(uword func, keyindex key);
-bool opValidKey(keyindex key);
-void opDefineThisKey(keyindex key);
-void opKeyboardLoad(void);
-udword opMusicVolumeProcess(regionhandle reg, sdword ID, udword event, udword data);
-udword opSFXVolumeProcess(regionhandle reg, sdword ID, udword event, udword data);
-udword opSpeechVolumeProcess(regionhandle reg, sdword ID, udword event, udword data);
-udword opNumChannelsProcess(regionhandle reg, sdword ID, udword event, udword data);
+TI_API void opUpdateSettings(void);
+TI_API char *opKeyToNiceString(keyindex key);
+TI_API keyindex opKeyTranslate(keyindex key);
+TI_API void opKeyAssign(uword func, keyindex key);
+TI_API bool opValidKey(keyindex key);
+TI_API void opDefineThisKey(keyindex key);
+TI_API void opKeyboardLoad(void);
+TI_API udword opMusicVolumeProcess(regionhandle reg, sdword ID, udword event, udword data);
+TI_API udword opSFXVolumeProcess(regionhandle reg, sdword ID, udword event, udword data);
+TI_API udword opSpeechVolumeProcess(regionhandle reg, sdword ID, udword event, udword data);
+TI_API udword opNumChannelsProcess(regionhandle reg, sdword ID, udword event, udword data);
 
-void opTimerExpired(void);
+TI_API void opTimerExpired(void);
 
 void InitSmoothie(Smoothie *smooothie,real32 feedback, real32 *source, real32 *dest,
                   sdword *destint, smoothieFunc callback, real32 threshold);
-void AddSmoothie(Smoothie *smoo);
-void RemoveSmoothie(Smoothie *smoo);
+TI_API void AddSmoothie(Smoothie *smoo);
+TI_API void RemoveSmoothie(Smoothie *smoo);
 
-char ConvertSliderToAIPlayerDifficulty(sdword sliderval);
+TI_API char ConvertSliderToAIPlayerDifficulty(sdword sliderval);
 
 #endif

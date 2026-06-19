@@ -12,8 +12,8 @@
 #include "tiPlatform.h"
 #include "SpaceObj.h"
 
-void RenderNAVLights(Ship *ship);
-void navLightStaticInfoDelete(NAVLightStaticInfo *staticInfo);
+TI_API void RenderNAVLights(Ship *ship);
+TI_API void navLightStaticInfoDelete(NAVLightStaticInfo *staticInfo);
 
 #endif
 

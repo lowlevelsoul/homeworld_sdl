@@ -14,27 +14,27 @@
 #include "SpaceObj.h"
 
 //general prototypes
-void madLinkInUpdateMeshAnimations(Ship *ship);
-void madLinkInSetUpInitialBuiltMadState(Ship *ship);
-void madLinkInSetUpInitialPlacedMadState(Ship *ship);
+TI_API void madLinkInUpdateMeshAnimations(Ship *ship);
+TI_API void madLinkInSetUpInitialBuiltMadState(Ship *ship);
+TI_API void madLinkInSetUpInitialPlacedMadState(Ship *ship);
 
 //gun opening closing
-void madLinkInOpenGuns(CommandToDo *command,udword priority);
-void madLinkInCloseGuns(CommandToDo *command,udword priority);
-void madOpenGunsShip(Ship *ship);
-void madLinkInCloseGunsShip(Ship *ship);
+TI_API void madLinkInOpenGuns(CommandToDo *command,udword priority);
+TI_API void madLinkInCloseGuns(CommandToDo *command,udword priority);
+TI_API void madOpenGunsShip(Ship *ship);
+TI_API void madLinkInCloseGunsShip(Ship *ship);
 
 //docking oriented (fins opening closing)
-void madLinkInPreDocking(CommandToDo *command,udword priority);
-void madLinkInPreDockingShip(Ship *ship);
-void madLinkInPostDocking(CommandToDo *command,udword priority);
-void madLinkInPostDockingShip(Ship *ship);
-void madLinkInOpenSpecialShip(Ship *ship);
-void madLinkInCloseSpecialShip(Ship *ship);
+TI_API void madLinkInPreDocking(CommandToDo *command,udword priority);
+TI_API void madLinkInPreDockingShip(Ship *ship);
+TI_API void madLinkInPostDocking(CommandToDo *command,udword priority);
+TI_API void madLinkInPostDockingShip(Ship *ship);
+TI_API void madLinkInOpenSpecialShip(Ship *ship);
+TI_API void madLinkInCloseSpecialShip(Ship *ship);
 
-void madLinkInOpenDoor(Ship *ship);
-void madLinkInCloseDoor(Ship *ship);
-bool madLinkInGetDoorInfo(Ship *ship, matrix *coordsys, vector *position);
+TI_API void madLinkInOpenDoor(Ship *ship);
+TI_API void madLinkInCloseDoor(Ship *ship);
+TI_API bool madLinkInGetDoorInfo(Ship *ship, matrix *coordsys, vector *position);
 
 #endif
 

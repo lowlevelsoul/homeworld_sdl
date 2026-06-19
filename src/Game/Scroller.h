@@ -18,12 +18,12 @@
 typedef enum {SC_Other = 0, SC_Thumb, SC_Negative, SC_Positive, SC_NoRegion} sc_region;
 typedef enum {SC_UpArrow = 0, SC_DownArrow, SC_LeftArrow, SC_RightArrow} sc_direction;
 
-void scArrow(rectangle *r, uword width, uword thickness, color c, sc_direction dir);
-void scAdjustThumbwheel(scrollbarhandle shandle, uword up, uword maxDisp, uword max);
-uword scThumbRelativeX(scrollbarhandle shandle);
-uword scThumbRelativeY(scrollbarhandle shandle);
-uword scRelativeX(scrollbarhandle shandle);
-uword scRelativeY(scrollbarhandle shandle);
-scrollbarhandle scSetupThumbwheel(uword up, uword max, uword maxDisp, featom* atom);
+TI_API void scArrow(rectangle *r, uword width, uword thickness, color c, sc_direction dir);
+TI_API void scAdjustThumbwheel(scrollbarhandle shandle, uword up, uword maxDisp, uword max);
+TI_API uword scThumbRelativeX(scrollbarhandle shandle);
+TI_API uword scThumbRelativeY(scrollbarhandle shandle);
+TI_API uword scRelativeX(scrollbarhandle shandle);
+TI_API uword scRelativeY(scrollbarhandle shandle);
+TI_API scrollbarhandle scSetupThumbwheel(uword up, uword max, uword maxDisp, featom* atom);
 
 #endif

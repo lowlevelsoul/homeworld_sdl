@@ -112,47 +112,47 @@ extern char filePathTempBuffer    [];
     Functions:
 =============================================================================*/
 
-char *filePathPrepend(char *fileName, udword flags);
-void fileNameReplaceSlashesInPlace(char *fileName);
+TI_API char *filePathPrepend(char *fileName, udword flags);
+TI_API void fileNameReplaceSlashesInPlace(char *fileName);
 
-bool fileCDROMPathSet(char *path);
-void fileHomeworldDataPathSet(char *path);
-bool fileOverrideBigPathSet(char *path);
-bool fileUserSettingsPathSet(char *path);
+TI_API bool fileCDROMPathSet(char *path);
+TI_API void fileHomeworldDataPathSet(char *path);
+TI_API bool fileOverrideBigPathSet(char *path);
+TI_API bool fileUserSettingsPathSet(char *path);
 
 
 //load files directly into memory
-sdword fileLoadAlloc(char *fileName, void **address, udword flags);
-sdword fileLoad(char *fileName, void *address, udword flags);
+TI_API sdword fileLoadAlloc(char *fileName, void **address, udword flags);
+TI_API sdword fileLoad(char *fileName, void *address, udword flags);
 
 //save files, if you want stream saving, use the ANSI C stream functions
-sdword fileSave(char *fileName, void *address, sdword length);
+TI_API sdword fileSave(char *fileName, void *address, sdword length);
 
 //delete a file
-void fileDelete(char *fileName);
+TI_API void fileDelete(char *fileName);
 
 //load files like ANSI C streams (fopen, fread etc)
-filehandle fileOpen(char *fileName, udword flags);
-void fileClose(filehandle handle);
-sdword fileSeek(filehandle handle, sdword offset, sdword whence);
-sdword fileBlockRead(filehandle handle, void *dest, sdword nBytes);
-sdword fileBlockReadNoError(filehandle handle, void *dest, sdword nBytes);
-sdword fileLineRead(filehandle handle, char *dest, sdword nChars);
-sdword fileCharRead(filehandle handle);
+TI_API filehandle fileOpen(char *fileName, udword flags);
+TI_API void fileClose(filehandle handle);
+TI_API sdword fileSeek(filehandle handle, sdword offset, sdword whence);
+TI_API sdword fileBlockRead(filehandle handle, void *dest, sdword nBytes);
+TI_API sdword fileBlockReadNoError(filehandle handle, void *dest, sdword nBytes);
+TI_API sdword fileLineRead(filehandle handle, char *dest, sdword nChars);
+TI_API sdword fileCharRead(filehandle handle);
 
 // for using regular underlying i/o stream (filesystem, not bigfile)
-sdword fileUsingBigfile(filehandle handle);
-FILE *fileStream(filehandle handle);
+TI_API sdword fileUsingBigfile(filehandle handle);
+TI_API FILE *fileStream(filehandle handle);
 
 //utility functions
-bool8 fileMakeDirectory(const char *directoryName);
-bool8 fileMakeDestinationDirectory(const char *fileName);
-bool fileExistsInBigFile(char *fileName);
-bool fileExists(char *fileName, udword flags);
-sdword fileSizeGet(char *fileName, udword flags);
+TI_API bool8 fileMakeDirectory(const char *directoryName);
+TI_API bool8 fileMakeDestinationDirectory(const char *fileName);
+TI_API bool fileExistsInBigFile(char *fileName);
+TI_API bool fileExists(char *fileName, udword flags);
+TI_API sdword fileSizeGet(char *fileName, udword flags);
 
-void logfileClear(char *logfile);
-void logfileLog(char *logfile,char *str);
-void logfileLogf(char *logfile,char *format, ...);
+TI_API void logfileClear(char *logfile);
+TI_API void logfileLog(char *logfile,char *str);
+TI_API void logfileLogf(char *logfile,char *format, ...);
 
 #endif

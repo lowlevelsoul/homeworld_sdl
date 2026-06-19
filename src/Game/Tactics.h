@@ -144,35 +144,35 @@ extern BabyCallBack    *tacticsFlashMenuBaby;
 extern regionhandle    tacticsMenuRegion;
 //ProtoTypes
 
-void tacticsStartUp(void);
-void tacticsShutDown(void);
-void tacticsPopUpSetUp(TacticsType tacticstype);
-void tacticsSetSelectionToTactics(SelectCommand *selection,udword orderflag);
-void tacticsSetShipToDoDodge(Ship *ship);
-void tacticsDoDodge(Ship *ship);
-//sdword tacticsGetFormationOptimalState(SelectCommand *selection);
-void tacticsUpdate(Ship *ship);
+TI_API void tacticsStartUp(void);
+TI_API void tacticsShutDown(void);
+TI_API void tacticsPopUpSetUp(TacticsType tacticstype);
+TI_API void tacticsSetSelectionToTactics(SelectCommand *selection,udword orderflag);
+TI_API void tacticsSetShipToDoDodge(Ship *ship);
+TI_API void tacticsDoDodge(Ship *ship);
+TI_API //sdword tacticsGetFormationOptimalState(SelectCommand *selection);
+TI_API void tacticsUpdate(Ship *ship);
 
-void tacticsDelegateAttackCommand(Ship *ship,CommandToDo *command, AttackCommand *attack, bool gettingRocked,bool doingSomething);
-void tacticsDelegateSingleAttack(Ship *ship,CommandLayer *comlayer,SelectCommand *selectone,AttackCommand *attack, bool gettingRocked);
-void tacticsReportMove(CommandLayer *comlayer,SelectCommand *selection);
+TI_API void tacticsDelegateAttackCommand(Ship *ship,CommandToDo *command, AttackCommand *attack, bool gettingRocked,bool doingSomething);
+TI_API void tacticsDelegateSingleAttack(Ship *ship,CommandLayer *comlayer,SelectCommand *selectone,AttackCommand *attack, bool gettingRocked);
+TI_API void tacticsReportMove(CommandLayer *comlayer,SelectCommand *selection);
 
 
-void tacticsShipDied(Ship *ship);
-void tacticsGlobalUpdate(void);
-void tacticsAttackCommandVoided(CommandToDo *command);
+TI_API void tacticsShipDied(Ship *ship);
+TI_API void tacticsGlobalUpdate(void);
+TI_API void tacticsAttackCommandVoided(CommandToDo *command);
 
-real32 tacticsMaxDistToTarget(SelectCommand *selection,SpaceObjRotImpTarg *target);
-bool tacticsCheckGuardConditionsDuringAttack(struct CommandToDo *command);
-real32 tacticsGetShipsMaxVelocity(Ship *ship);
+TI_API real32 tacticsMaxDistToTarget(SelectCommand *selection,SpaceObjRotImpTarg *target);
+TI_API bool tacticsCheckGuardConditionsDuringAttack(struct CommandToDo *command);
+TI_API real32 tacticsGetShipsMaxVelocity(Ship *ship);
 
-bool tacticsAreStrikeCraftInSelection(SelectCommand *selection);
+TI_API bool tacticsAreStrikeCraftInSelection(SelectCommand *selection);
 
 //TRUE if shipA has retreated from shipB, only valid for time that
 //shipsB is on lookout for shipA (maybe 90seconds?  tunable)
-bool tacticsHasShipRetreatedFromShip(Ship *shipA, Ship *shipB);
+TI_API bool tacticsHasShipRetreatedFromShip(Ship *shipA, Ship *shipB);
 
-void tacticsMakeShipsNotLookForOtherShips(SelectCommand *selection);
+TI_API void tacticsMakeShipsNotLookForOtherShips(SelectCommand *selection);
 
 extern real32 IONCANNON_TARGETS_FIGHTER_ANGLE;
 extern real32 IONCANNON_TARGETS_CORVETTE_ANGLE;

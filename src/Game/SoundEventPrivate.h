@@ -151,33 +151,33 @@ extern sdword RANDOM_AMBIENCE_ADDRANDOM;
 /*=============================================================================
     Functions
 =============================================================================*/
-void SEupdateShipRange(void);
+TI_API void SEupdateShipRange(void);
 
-sword SEcalcenginevol(sdword shipclass, real32 distance);
-sword SEcalcvol(sdword shipclass, real32 distance);
-bool SEinrange(sdword shipclass, real32 distance);
-bool SEinrangeSqr(sdword shipclass, real32 distancesqr);
-sword SEequalize(sdword objtype, real32 distance, real32 *eq);
-void SEeq(sdword objtype, real32 distance, real32 *eq);
-void SEstopengine(Ship *ship, bool stopnow);
-void SEloadbank(void);
-sdword SEselectactor(void);
-sdword SEspeechevent(sdword stream, sdword actor, sdword event, sdword var, sword vol, sword pan, double dist, float damageratio, sdword setVariation, bool bookend, ShipClass shipclass);
-sword SEgetAngleToCamera(Ship *ship);
-sdword GetPatch(SFXLUT *lut, sdword object, sdword event);
-real32 SEsilence(void);
+TI_API sword SEcalcenginevol(sdword shipclass, real32 distance);
+TI_API sword SEcalcvol(sdword shipclass, real32 distance);
+TI_API bool SEinrange(sdword shipclass, real32 distance);
+TI_API bool SEinrangeSqr(sdword shipclass, real32 distancesqr);
+TI_API sword SEequalize(sdword objtype, real32 distance, real32 *eq);
+TI_API void SEeq(sdword objtype, real32 distance, real32 *eq);
+TI_API void SEstopengine(Ship *ship, bool stopnow);
+TI_API void SEloadbank(void);
+TI_API sdword SEselectactor(void);
+TI_API sdword SEspeechevent(sdword stream, sdword actor, sdword event, sdword var, sword vol, sword pan, double dist, float damageratio, sdword setVariation, bool bookend, ShipClass shipclass);
+TI_API sword SEgetAngleToCamera(Ship *ship);
+TI_API sdword GetPatch(SFXLUT *lut, sdword object, sdword event);
+TI_API real32 SEsilence(void);
 
 sword getPanAngle(vector WorldVector, real32 objsize, real32 distance);	/* Returns an angle to the object from the camera: 0 ahead, 90 right, -90 left, 179/-179 behind */
 
-void SEstopsoundhandle(sdword *shandle, real32 fadetime);
+TI_API void SEstopsoundhandle(sdword *shandle, real32 fadetime);
 
-sdword speechEventInit(void);
-void speechEventClose(void);
-sdword speechEventCleanup(void);
+TI_API sdword speechEventInit(void);
+TI_API void speechEventClose(void);
+TI_API sdword speechEventCleanup(void);
 
-sdword musicEventPlay(sdword tracknum);
-sdword musicEventUpdateVolume(void);
-sdword musicEventStop(sdword tracknum, real32 fadetime);
+TI_API sdword musicEventPlay(sdword tracknum);
+TI_API sdword musicEventUpdateVolume(void);
+TI_API sdword musicEventStop(sdword tracknum, real32 fadetime);
 
 
 /* SFX lookup tables */

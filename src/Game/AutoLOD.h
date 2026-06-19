@@ -13,20 +13,20 @@
 
 // INTERFACE -------------------------------------------------------------------
 
-void alodStartup(void);
-void alodReset(void);
-void alodShutdown(void);
-void alodSetMinMax(real32 minScale, real32 maxScale);
-real32 alodGetMin(void);
-real32 alodGetMax(void);
-void alodSetTargetPolys(udword targetPolys, udword polyDelta);
-void alodGetTargetPolys(udword* targetPolys, udword* polyDelta);
-void alodSetPolys(udword polys);
-void alodIncPolys(udword polys);
-void alodEnable(bool enable);
-void alodAdjustScaleFactor(void);
-udword alodGetPolys(void);
-bool alodGetPanic(void);
-void alodSetPanic(bool panic);
+TI_API void alodStartup(void);
+TI_API void alodReset(void);
+TI_API void alodShutdown(void);
+TI_API void alodSetMinMax(real32 minScale, real32 maxScale);
+TI_API real32 alodGetMin(void);
+TI_API real32 alodGetMax(void);
+TI_API void alodSetTargetPolys(udword targetPolys, udword polyDelta);
+TI_API void alodGetTargetPolys(udword* targetPolys, udword* polyDelta);
+TI_API void alodSetPolys(udword polys);
+TI_API void alodIncPolys(udword polys);
+TI_API void alodEnable(bool enable);
+TI_API void alodAdjustScaleFactor(void);
+TI_API udword alodGetPolys(void);
+TI_API bool alodGetPanic(void);
+TI_API void alodSetPanic(bool panic);
 
 #endif

@@ -16,31 +16,31 @@
 /*=============================================================================
     Function Prototypes:
 =============================================================================*/
-void aihGenericEmptyFuelHandler(AITeam *team);
-void aihSwarmerEmptyFuelHandler(AITeam *team);
-void aihGenericFuelLowHandler(AITeam *team);
-void aihHarassNumbersLowHandler(AITeam *team);
-void aihHarassFiringSingleShipHandler(AITeam *team);
-void aihHarassDisengageSingleShipHandler(AITeam *team);
-void aihKamikazeHealthLowHandler(AITeam *team);
-void aihFastDefenseNumbersLowHandler(AITeam *team);
-void aihSlowDefenseNumbersLowHandler(AITeam *team);
-void aihGenericGettingRockedHandler(AITeam *team, SelectCommand *ships);
-void aihPatrolEnemyNearbyHandler(AITeam *team, SelectCommand *ships);
-void aihGravWellEnemyNearbyHandler(AITeam *team, SelectCommand *ships);
-void aihGravWellEnemyNotNearbyHandler(AITeam *team);
-void aihFastDefenseDistressHandler(AITeam *team, udword *intvar);
-void aihSlowDefenseDistressHandler(AITeam *team, udword *intvar);
+TI_API void aihGenericEmptyFuelHandler(AITeam *team);
+TI_API void aihSwarmerEmptyFuelHandler(AITeam *team);
+TI_API void aihGenericFuelLowHandler(AITeam *team);
+TI_API void aihHarassNumbersLowHandler(AITeam *team);
+TI_API void aihHarassFiringSingleShipHandler(AITeam *team);
+TI_API void aihHarassDisengageSingleShipHandler(AITeam *team);
+TI_API void aihKamikazeHealthLowHandler(AITeam *team);
+TI_API void aihFastDefenseNumbersLowHandler(AITeam *team);
+TI_API void aihSlowDefenseNumbersLowHandler(AITeam *team);
+TI_API void aihGenericGettingRockedHandler(AITeam *team, SelectCommand *ships);
+TI_API void aihPatrolEnemyNearbyHandler(AITeam *team, SelectCommand *ships);
+TI_API void aihGravWellEnemyNearbyHandler(AITeam *team, SelectCommand *ships);
+TI_API void aihGravWellEnemyNotNearbyHandler(AITeam *team);
+TI_API void aihFastDefenseDistressHandler(AITeam *team, udword *intvar);
+TI_API void aihSlowDefenseDistressHandler(AITeam *team, udword *intvar);
 
 //team died handlers
-void aihFastDefenseTeamDiedHandler(AITeam *team);
-void aihSlowDefenseTeamDiedHandler(AITeam *team);
-void aihGuardShipsTeamDiedHandler(AITeam *team);
-void aihReconaissanceTeamDiedHandler(AITeam *team);
-void aihReconShipTeamDiedHandler(AITeam *team);
-void aihHarassTeamDiedHandler(AITeam *team);
-void aihPatrolTeamDiedHandler(AITeam *team);
-void aihRemoveTeamDiedHandler(AITeam *team);
+TI_API void aihFastDefenseTeamDiedHandler(AITeam *team);
+TI_API void aihSlowDefenseTeamDiedHandler(AITeam *team);
+TI_API void aihGuardShipsTeamDiedHandler(AITeam *team);
+TI_API void aihReconaissanceTeamDiedHandler(AITeam *team);
+TI_API void aihReconShipTeamDiedHandler(AITeam *team);
+TI_API void aihHarassTeamDiedHandler(AITeam *team);
+TI_API void aihPatrolTeamDiedHandler(AITeam *team);
+TI_API void aihRemoveTeamDiedHandler(AITeam *team);
 
 
 #endif

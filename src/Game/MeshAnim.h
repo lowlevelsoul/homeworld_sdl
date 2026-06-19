@@ -156,27 +156,27 @@ madanim;
 struct Ship;
 struct ShipStaticInfo;
 
-madheader *madFileLoad(char *fileName);
-void madHeaderDelete(madheader *header);
+TI_API madheader *madFileLoad(char *fileName);
+TI_API void madHeaderDelete(madheader *header);
 
 //make ship local bindings for mesh animation
-void madAnimBindingsDupe(struct Ship *ship, struct ShipStaticInfo *staticInfo,bool LoadingGame);
+TI_API void madAnimBindingsDupe(struct Ship *ship, struct ShipStaticInfo *staticInfo,bool LoadingGame);
 
 //play an animation
-void madAnimationStart(struct Ship *ship, sdword animNumber);
-void madAnimationPause(struct Ship *ship, bool bFreeze);
-bool madAnimationUpdate(struct Ship *ship, real32 timeElapsed);
-void madAnimationStop(struct Ship *ship);
+TI_API void madAnimationStart(struct Ship *ship, sdword animNumber);
+TI_API void madAnimationPause(struct Ship *ship, bool bFreeze);
+TI_API bool madAnimationUpdate(struct Ship *ship, real32 timeElapsed);
+TI_API void madAnimationStop(struct Ship *ship);
 
 //find things in animations
-sdword madAnimIndexFindByName(madheader *header, char *name);
-sdword madGunBindingIndexFindByName(struct ShipStaticInfo *info, char *name);
-sdword madBindingIndexFindByName(madheader *header, char *name);
-void madAnimBindingMatrix(matrix *destMatrix, vector *destPos, struct Ship *ship, sdword gunIndex, sdword madIndex);
+TI_API sdword madAnimIndexFindByName(madheader *header, char *name);
+TI_API sdword madGunBindingIndexFindByName(struct ShipStaticInfo *info, char *name);
+TI_API sdword madBindingIndexFindByName(madheader *header, char *name);
+TI_API void madAnimBindingMatrix(matrix *destMatrix, vector *destPos, struct Ship *ship, sdword gunIndex, sdword madIndex);
 
-void PreFix_madBindings(struct Ship *ship,struct Ship *fixcontents);
-void Save_madBindings(struct Ship *ship);
-void Load_madBindings(struct Ship *ship);
-void Fix_madBindings(struct Ship *ship);
+TI_API void PreFix_madBindings(struct Ship *ship,struct Ship *fixcontents);
+TI_API void Save_madBindings(struct Ship *ship);
+TI_API void Load_madBindings(struct Ship *ship);
+TI_API void Fix_madBindings(struct Ship *ship);
 
 #endif

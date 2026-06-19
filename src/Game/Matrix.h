@@ -186,31 +186,31 @@ extern const hmatrix IdentityHMatrix;
 extern const matrix  IdentityMatrix;
 
 
-void hmatMakeHMatFromMat(hmatrix *result, matrix *mat);
-void hmatMakeHMatFromMatAndVec(hmatrix *result, matrix *mat, vector *pos);
-void hmatCreateHMatFromHVecs(hmatrix *result, hvector *col1, hvector *col2, hvector *col3, hvector *col4);
-void hmatMultiplyHMatByHMat(hmatrix *result, hmatrix *first, hmatrix *second);
-void hmatMultiplyHMatByHVec(hvector *result, hmatrix *matrix, hvector *vector);
-void hmatMultiplyHVecByHMat(hvector *result, hvector *vector, hmatrix *matrix);
-void hmatTranspose(hmatrix *matrix);
-void hmatCopyAndTranspose(hmatrix *src, hmatrix *dsttrans);
-void hmatMakeRotAboutZ(hmatrix *matrix, real32 costheta, real32 sintheta);
-void hmatMakeRotAboutX(hmatrix *matrix, real32 costheta, real32 sintheta);
-void hmatMakeRotAboutY(hmatrix *matrix, real32 costheta, real32 sintheta);
-void hmatPrintHMatrix(hmatrix *a);
+TI_API void hmatMakeHMatFromMat(hmatrix *result, matrix *mat);
+TI_API void hmatMakeHMatFromMatAndVec(hmatrix *result, matrix *mat, vector *pos);
+TI_API void hmatCreateHMatFromHVecs(hmatrix *result, hvector *col1, hvector *col2, hvector *col3, hvector *col4);
+TI_API void hmatMultiplyHMatByHMat(hmatrix *result, hmatrix *first, hmatrix *second);
+TI_API void hmatMultiplyHMatByHVec(hvector *result, hmatrix *matrix, hvector *vector);
+TI_API void hmatMultiplyHVecByHMat(hvector *result, hvector *vector, hmatrix *matrix);
+TI_API void hmatTranspose(hmatrix *matrix);
+TI_API void hmatCopyAndTranspose(hmatrix *src, hmatrix *dsttrans);
+TI_API void hmatMakeRotAboutZ(hmatrix *matrix, real32 costheta, real32 sintheta);
+TI_API void hmatMakeRotAboutX(hmatrix *matrix, real32 costheta, real32 sintheta);
+TI_API void hmatMakeRotAboutY(hmatrix *matrix, real32 costheta, real32 sintheta);
+TI_API void hmatPrintHMatrix(hmatrix *a);
 
-void matGetMatFromHMat(matrix *result, hmatrix *hmat);
-void matCreateCoordSysFromHeading(matrix *result, vector *heading);
-void matCreateMatFromVecs(matrix *result, vector *col1, vector *col2, vector *col3);
-void matMultiplyMatByMat(matrix *result, matrix *first, matrix *second);
-void matMultiplyMatByVec(vector *result, matrix *matrix, vector *vector);
-void matMultiplyVecByMat(vector *result, vector *vector, matrix *matrix);
-void matTranspose(matrix *matrix);
-void matCopyAndTranspose(matrix *src, matrix *dsttrans);
-void matMakeRotAboutZ(matrix *matrix, real32 costheta, real32 sintheta);
-void matMakeRotAboutX(matrix *matrix, real32 costheta, real32 sintheta);
-void matMakeRotAboutY(matrix *matrix, real32 costheta, real32 sintheta);
-void matPrintmatrix(matrix *a);
-void matCopyAndScale(matrix *out, matrix *in, real32 scale);
+TI_API void matGetMatFromHMat(matrix *result, hmatrix *hmat);
+TI_API void matCreateCoordSysFromHeading(matrix *result, vector *heading);
+TI_API void matCreateMatFromVecs(matrix *result, vector *col1, vector *col2, vector *col3);
+TI_API void matMultiplyMatByMat(matrix *result, matrix *first, matrix *second);
+TI_API void matMultiplyMatByVec(vector *result, matrix *matrix, vector *vector);
+TI_API void matMultiplyVecByMat(vector *result, vector *vector, matrix *matrix);
+TI_API void matTranspose(matrix *matrix);
+TI_API void matCopyAndTranspose(matrix *src, matrix *dsttrans);
+TI_API void matMakeRotAboutZ(matrix *matrix, real32 costheta, real32 sintheta);
+TI_API void matMakeRotAboutX(matrix *matrix, real32 costheta, real32 sintheta);
+TI_API void matMakeRotAboutY(matrix *matrix, real32 costheta, real32 sintheta);
+TI_API void matPrintmatrix(matrix *a);
+TI_API void matCopyAndScale(matrix *out, matrix *in, real32 scale);
 
 #endif

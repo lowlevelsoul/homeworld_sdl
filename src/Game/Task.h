@@ -90,10 +90,10 @@ typedef struct
 
 extern CallBacks callbacks;
 
-void taskCallBackInit(void);
-void taskCallBackShutDown(void);
-BabyCallBack *taskCallBackRegister(babyFuncCB callback, udword num, void *data, real32 callintime);
-void taskCallBackRemove(BabyCallBack *babytogobyebye);
+TI_API void taskCallBackInit(void);
+TI_API void taskCallBackShutDown(void);
+TI_API BabyCallBack *taskCallBackRegister(babyFuncCB callback, udword num, void *data, real32 callintime);
+TI_API void taskCallBackRemove(BabyCallBack *babytogobyebye);
 // void taskCallBackProcess(void)
 
 /*=============================================================================
@@ -126,7 +126,7 @@ extern real32 taskFrequency;
 #endif
 
 /* Macros for defining task functions.
- * A declaration is simply DECLARE_TASK(name);
+ TI_API * A declaration is simply DECLARE_TASK(name);
  * A definition looks like
  * DEFINE_TASK(name)
  * {
@@ -134,7 +134,7 @@ extern real32 taskFrequency;
  *     taskVar;
  *     // Task-specific variable definitions.  No initializers or funny stuff.
  *     // In reality you are declaring struct members.
- *     taskProg(cvar);
+ TI_API *     taskProg(cvar);
  *     // Executable code.  The task-specific variables are accessible as
  *     // cvar->task_var.  They are malloced, hence not automatically
  *     // initialized.
@@ -188,24 +188,24 @@ extern real32 taskFrequency;
     Functions:
 =============================================================================*/
 //start/close the task manager
-sdword taskStartup(udword frequency);
-void taskShutdown(void);
+TI_API sdword taskStartup(udword frequency);
+TI_API void taskShutdown(void);
 
 #define taskStart(function, period, flags) \
     taskStartName(function, #function, (period), (flags))
 taskhandle taskStartName(taskfunction function, char *name,
 			 real32 period, udword flags);
-void taskPause(taskhandle handle);
-void taskResume(taskhandle handle);
+TI_API void taskPause(taskhandle handle);
+TI_API void taskResume(taskhandle handle);
 // Kill the task, removing it from the task list.
-void taskStop(taskhandle handle);
+TI_API void taskStop(taskhandle handle);
 
 // Pause/resume all tasks.  Previously paused tasks will not be resumed.
-void taskFreezeAll(void);
-void taskResumeAll(void);
-void taskSavePauseStatus(void);
+TI_API void taskFreezeAll(void);
+TI_API void taskResumeAll(void);
+TI_API void taskSavePauseStatus(void);
 
 //execute all pending tasks
-sdword taskExecuteAllPending(sdword ticks);
+TI_API sdword taskExecuteAllPending(sdword ticks);
 
 #endif

@@ -117,17 +117,17 @@ extern real32 lodDebugScaleFactor;
 /*=============================================================================
     Functions:
 =============================================================================*/
-lodinfo *lodTableReadScript(char *directory, char *fileName);
+TI_API lodinfo *lodTableReadScript(char *directory, char *fileName);
 
-lod *lodLevelGet(void *spaceObj, vector *camera, vector *ship);
-lod *lodPanicLevelGet(void *spaceObj, vector *camera, vector *ship);
-void lodAllMeshesRecolorize(lodinfo *LOD);
-sdword lodHierarchySizeCompute(lodinfo *LOD);
+TI_API lod *lodLevelGet(void *spaceObj, vector *camera, vector *ship);
+TI_API lod *lodPanicLevelGet(void *spaceObj, vector *camera, vector *ship);
+TI_API void lodAllMeshesRecolorize(lodinfo *LOD);
+TI_API sdword lodHierarchySizeCompute(lodinfo *LOD);
 
-void lodFree(lodinfo *LOD);
+TI_API void lodFree(lodinfo *LOD);
 
 #if LOD_AUTO_SAVE
-sdword lodAutoSave(lodinfo *LOD);
+TI_API sdword lodAutoSave(lodinfo *LOD);
 #endif
 
 #endif

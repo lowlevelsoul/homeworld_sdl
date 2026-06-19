@@ -70,30 +70,30 @@ typedef bool (*MergeSortCompareCb)(void *firststruct,void *secondstruct);
 
 
 #ifdef HW_BUILD_FOR_DEBUGGING
-void listCheckSort(LinkedList *list);
-void listCheckSortGeneral(LinkedList *list, MergeSortCompareCb compare);
+TI_API void listCheckSort(LinkedList *list);
+TI_API void listCheckSortGeneral(LinkedList *list, MergeSortCompareCb compare);
 #endif
 
 #if LL_ERROR_CHECKING
-void listVerifyAnal(LinkedList *list);
+TI_API void listVerifyAnal(LinkedList *list);
 #endif
 
 
-void listInit(LinkedList *list);
-void listRemoveAll(LinkedList *list);
-void listDeleteAll(LinkedList *list);
+TI_API void listInit(LinkedList *list);
+TI_API void listRemoveAll(LinkedList *list);
+TI_API void listDeleteAll(LinkedList *list);
 void listAddNode(LinkedList *list,Node *toadd,void *structure);             //  add node to end of list by default
 void listAddNodeBeginning(LinkedList *list,Node *toadd,void *structure);    //  add node to beginning of list
-void listAddNodeAfter(Node *node,Node *toadd,void *structure);
-void listAddNodeBefore(Node *node,Node *toadd,void *structure);
-void listMoveNodeToHead(Node *nodeToMove);
-void listRemoveNode(Node *node);
-void listDeleteNode(Node *node);
-void listMoveContentsOfList(LinkedList *dest, LinkedList *source);
-void listMergeSort(LinkedList *list);
-void listInsertSort(LinkedList *list);
-void listMergeSort2(LinkedList *list);
-void listMergeSortGeneral(LinkedList *list, MergeSortCompareCb compare);
+TI_API void listAddNodeAfter(Node *node,Node *toadd,void *structure);
+TI_API void listAddNodeBefore(Node *node,Node *toadd,void *structure);
+TI_API void listMoveNodeToHead(Node *nodeToMove);
+TI_API void listRemoveNode(Node *node);
+TI_API void listDeleteNode(Node *node);
+TI_API void listMoveContentsOfList(LinkedList *dest, LinkedList *source);
+TI_API void listMergeSort(LinkedList *list);
+TI_API void listInsertSort(LinkedList *list);
+TI_API void listMergeSort2(LinkedList *list);
+TI_API void listMergeSortGeneral(LinkedList *list, MergeSortCompareCb compare);
 
 
 #endif

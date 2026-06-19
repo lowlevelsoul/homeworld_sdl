@@ -158,11 +158,11 @@ extern bool startRecordingGameWhenSafe;
     Functions:
 =============================================================================*/
 
-void globalsResetFunc(bool firstTime);
+TI_API void globalsResetFunc(bool firstTime);
 #define globalsReset()  globalsResetFunc(0)
 #define globalsInit() globalsResetFunc(1)
 
-void globalsClose(void);
+TI_API void globalsClose(void);
 
 #endif
 

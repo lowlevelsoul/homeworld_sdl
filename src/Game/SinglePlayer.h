@@ -171,48 +171,48 @@ extern bool hyperspaceFails;
 extern bool singlePlayerHyperspacingInto;
 extern bool spCollectResourcesAtEndOfMission;
 
-void spHyperspaceButtonPushed(void);
+TI_API void spHyperspaceButtonPushed(void);
 
-void spHyperspaceSelectionIn(SelectCommand *selection,hvector *destination);
-void spHyperspaceSelectionOut(SelectCommand *selection);
-void spHyperspaceSelectionInStatic(SelectCommand *selection,hvector *destination);
-void spHyperspaceSelectionOutStatic(SelectCommand *selection);
+TI_API void spHyperspaceSelectionIn(SelectCommand *selection,hvector *destination);
+TI_API void spHyperspaceSelectionOut(SelectCommand *selection);
+TI_API void spHyperspaceSelectionInStatic(SelectCommand *selection,hvector *destination);
+TI_API void spHyperspaceSelectionOutStatic(SelectCommand *selection);
 
-void spResetMissionSequenceToBeginning(void);
-void singlePlayerInit(void);
-void singlePlayerPostInit(bool loadingSaveGame);
-void singlePlayerClose(void);
-void singlePlayerSetMissionAttributes(char *directory,char *filename);
+TI_API void spResetMissionSequenceToBeginning(void);
+TI_API void singlePlayerInit(void);
+TI_API void singlePlayerPostInit(bool loadingSaveGame);
+TI_API void singlePlayerClose(void);
+TI_API void singlePlayerSetMissionAttributes(char *directory,char *filename);
 
-void singlePlayerGameCleanup(void);
+TI_API void singlePlayerGameCleanup(void);
 
-void singlePlayerGameUpdate(void);
-void singlePlayerLoadNewLevel(void);
-void singlePlayerStartGame(void);
+TI_API void singlePlayerGameUpdate(void);
+TI_API void singlePlayerLoadNewLevel(void);
+TI_API void singlePlayerStartGame(void);
 
-void singlePlayerShipDied(Ship *ship);
+TI_API void singlePlayerShipDied(Ship *ship);
 
-void singlePlayerMissionCompleteCB(void);
-void singlePlayerMissionFailedCB(void);
+TI_API void singlePlayerMissionCompleteCB(void);
+TI_API void singlePlayerMissionFailedCB(void);
 
 #if SP_DEBUGKEYS
-void singlePlayerCheckDebugKeys(sdword ID);
+TI_API void singlePlayerCheckDebugKeys(sdword ID);
 #endif
 
-void spSetCurrentMission(MissionEnum mission);
+TI_API void spSetCurrentMission(MissionEnum mission);
 
-MissionEnum spGetPreviousMission(void);
-MissionEnum spGetCurrentMission (void);
-MissionEnum spGetNextMission    (void);
+TI_API MissionEnum spGetPreviousMission(void);
+TI_API MissionEnum spGetCurrentMission (void);
+TI_API MissionEnum spGetNextMission    (void);
 
-void GetMissionsDirAndFile(MissionEnum mission);
+TI_API void GetMissionsDirAndFile(MissionEnum mission);
 
-void spMainScreen(void);
+TI_API void spMainScreen(void);
 
-bool GetStartPointPlayer(hvector *startpoint);
-bool GetPointOfName(hvector *point,char *name);
+TI_API bool GetStartPointPlayer(hvector *startpoint);
+TI_API bool GetPointOfName(hvector *point,char *name);
 
-ShipSinglePlayerGameInfo *spNewShipSinglePlayerGameInfo(void);
+TI_API ShipSinglePlayerGameInfo *spNewShipSinglePlayerGameInfo(void);
 
 // flags for spLockout
 #define SPLOCKOUT_MOUSE     1
@@ -220,30 +220,30 @@ ShipSinglePlayerGameInfo *spNewShipSinglePlayerGameInfo(void);
 #define SPLOCKOUT_DESELECT  4
 #define SPLOCKOUT_EVERYTHING    (SPLOCKOUT_MOUSE+SPLOCKOUT_MR+SPLOCKOUT_DESELECT)
 
-void spMainScreen(void);
-void spLockout(udword flags);
-void spMainScreenAndLockout(udword flags);
-void spUnlockout(void);
+TI_API void spMainScreen(void);
+TI_API void spLockout(udword flags);
+TI_API void spMainScreenAndLockout(udword flags);
+TI_API void spUnlockout(void);
 
-void LoadSinglePlayerGame(void);
-void SaveSinglePlayerGame(void);
+TI_API void LoadSinglePlayerGame(void);
+TI_API void SaveSinglePlayerGame(void);
 
-MissionEnum      WatchFunctionToMissionEnum(KASWatchFunction watchFunction);
-KASWatchFunction MissionEnumToWatchFunction(MissionEnum mission);
+TI_API MissionEnum      WatchFunctionToMissionEnum(KASWatchFunction watchFunction);
+TI_API KASWatchFunction MissionEnumToWatchFunction(MissionEnum mission);
 
-udword FunctionListSize(MissionEnum mission);
-const void** MissionEnumToFunctionList(MissionEnum mission);
+TI_API udword FunctionListSize(MissionEnum mission);
+TI_API const void** MissionEnumToFunctionList(MissionEnum mission);
 
 #if SP_NISLET_TEST
-void spNISletTestAttempt(sdword index);
+TI_API void spNISletTestAttempt(sdword index);
 #endif
 
-bool singlePlayerNISletNamesGet(char **nisname, char **scriptname, sdword nisletNumber);
-bool spFindCameraAttitude(vector *position);
+TI_API bool singlePlayerNISletNamesGet(char **nisname, char **scriptname, sdword nisletNumber);
+TI_API bool spFindCameraAttitude(vector *position);
 
-void UpdateMidLevelHyperspacingShips(void);
+TI_API void UpdateMidLevelHyperspacingShips(void);
 
-void singlePlayerPreLoadCheck(void);
+TI_API void singlePlayerPreLoadCheck(void);
 
 //stores the current mission filename
 extern char CurrentLevelName[];

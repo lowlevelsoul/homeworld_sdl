@@ -111,32 +111,32 @@ extern SpaceObj *pingDyingObject;               //object that is dying and must 
 /*=============================================================================
     Functions:
 =============================================================================*/
-void pingStartup(void);
-void pingShutdown(void);
-void pingReset(void);
+TI_API void pingStartup(void);
+TI_API void pingShutdown(void);
+TI_API void pingReset(void);
 
-ping *pingCreate(vector *loc, SpaceObj *owner, pingeval evaluate, ubyte **userData, sdword userDataSize, SpaceObj *user);
-void pingObjectDied(SpaceObj *obj);
-void pingListDraw(Camera *camera, hmatrix *modelView, hmatrix *projection, rectangle *viewPort);
+TI_API ping *pingCreate(vector *loc, SpaceObj *owner, pingeval evaluate, ubyte **userData, sdword userDataSize, SpaceObj *user);
+TI_API void pingObjectDied(SpaceObj *obj);
+TI_API void pingListDraw(Camera *camera, hmatrix *modelView, hmatrix *projection, rectangle *viewPort);
 
-void pingAnomalySelectionPingAdd(char *pingName, SelectCommand *selection);
-void pingAnomalyObjectPingAdd(char *pingName, SpaceObj *owner);
-void pingAnomalyPositionPingAdd(char *pingName, vector *position);
-sdword pingAnomalyPingRemove(char *pingName);
-void pingAllPingsDelete(void);
+TI_API void pingAnomalySelectionPingAdd(char *pingName, SelectCommand *selection);
+TI_API void pingAnomalyObjectPingAdd(char *pingName, SpaceObj *owner);
+TI_API void pingAnomalyPositionPingAdd(char *pingName, vector *position);
+TI_API sdword pingAnomalyPingRemove(char *pingName);
+TI_API void pingAllPingsDelete(void);
 
-void pingRemovePingByOwner(SpaceObj *owner);
+TI_API void pingRemovePingByOwner(SpaceObj *owner);
 
-void pingAttackPingsCreate(blob *superBlob);
-void pingBattlePingsCreate(LinkedList *blobList);
+TI_API void pingAttackPingsCreate(blob *superBlob);
+TI_API void pingBattlePingsCreate(LinkedList *blobList);
 
-void pingNewShipPingCreate(vector *position);
+TI_API void pingNewShipPingCreate(vector *position);
 
 /*=============================================================================
     Save Game stuff
 =============================================================================*/
 
-void pingSave(void);
-void pingLoad(void);
+TI_API void pingSave(void);
+TI_API void pingLoad(void);
 
 #endif

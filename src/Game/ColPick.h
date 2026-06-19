@@ -97,19 +97,19 @@ extern trcolorinfo colPreviousColors[CP_NumberPreviousColors];
     Functions:
 =============================================================================*/
 
-void cpStartup(color *base, color *stripe);
-void cpShutdown(void);
-void cpColorsPick(color *base, color *stripe, ShipRace *race);
-void cpSetColorsToModify(color *base, color *stripe);
-void cpAcceptColors(void);
-void cpTexturesPurge(void);
-void cpPreviewImageDelete(void);
-void cpColorsUpdate(color base, color stripe);
-void cpTeamEffectScalars(real32 *scalar0, real32 *scalar1, color c0, color c1, ShipRace race);
-real32 cpScalarFromCurveGet(colpickcurve *curve, real32 hue, real32 sat, real32 val);
-void cpColorsReset(color *base, color *stripe);
-void cpResetRegions(void);
+TI_API void cpStartup(color *base, color *stripe);
+TI_API void cpShutdown(void);
+TI_API void cpColorsPick(color *base, color *stripe, ShipRace *race);
+TI_API void cpSetColorsToModify(color *base, color *stripe);
+TI_API void cpAcceptColors(void);
+TI_API void cpTexturesPurge(void);
+TI_API void cpPreviewImageDelete(void);
+TI_API void cpColorsUpdate(color base, color stripe);
+TI_API void cpTeamEffectScalars(real32 *scalar0, real32 *scalar1, color c0, color c1, ShipRace race);
+TI_API real32 cpScalarFromCurveGet(colpickcurve *curve, real32 hue, real32 sat, real32 val);
+TI_API void cpColorsReset(color *base, color *stripe);
+TI_API void cpResetRegions(void);
 
-void cpColorsAddToPreviousList(color base, color stripe);
+TI_API void cpColorsAddToPreviousList(color base, color stripe);
 
 #endif

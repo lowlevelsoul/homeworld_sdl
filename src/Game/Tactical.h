@@ -79,14 +79,14 @@ extern bool8 toClassUsed[NUM_CLASSES+1][TO_NumPlayers];
 =============================================================================*/
 
 //startup/shutdown
-void toStartup(void);
-void toShutdown(void);
+TI_API void toStartup(void);
+TI_API void toShutdown(void);
 
 //draw overlays for all ships
-void toAllShipsDraw(void);
+TI_API void toAllShipsDraw(void);
 
 //draw legend for overlay
-void toLegendDraw(void);
+TI_API void toLegendDraw(void);
 
 
 #endif

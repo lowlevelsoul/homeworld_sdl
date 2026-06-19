@@ -58,25 +58,25 @@ typedef struct Camera
     Functions:
 =============================================================================*/
 
-void cameraInit(Camera *camera,real32 distance);
-void cameraJoystickReset(void);
-void cameraRotAngle(Camera *camera,real32 angle);
-void cameraRotDeclination(Camera *camera,real32 declination);
-void cameraZoom(Camera *camera,real32 zoomfactor, bool EnforceShipDistances);
-void cameraSetEyePosition(Camera *camera);
-sdword cameraControl(Camera *camera,bool EnforceShipDistances);
-void cameraCopyPositionInfo(Camera *dst,Camera *src);
-void cameraChangeLookatpoint(Camera *camera,vector *newlookatpoint);
-void cameraRotateAbout(Camera *camera,vector about,real32 deg);
-void cameraSensitivitySet(sdword sens100);
-void cameraRayCast(vector *dest, Camera *cam, sdword screenX, sdword screenY, sdword screenWidth, sdword screenHeight);
+TI_API void cameraInit(Camera *camera,real32 distance);
+TI_API void cameraJoystickReset(void);
+TI_API void cameraRotAngle(Camera *camera,real32 angle);
+TI_API void cameraRotDeclination(Camera *camera,real32 declination);
+TI_API void cameraZoom(Camera *camera,real32 zoomfactor, bool EnforceShipDistances);
+TI_API void cameraSetEyePosition(Camera *camera);
+TI_API sdword cameraControl(Camera *camera,bool EnforceShipDistances);
+TI_API void cameraCopyPositionInfo(Camera *dst,Camera *src);
+TI_API void cameraChangeLookatpoint(Camera *camera,vector *newlookatpoint);
+TI_API void cameraRotateAbout(Camera *camera,vector about,real32 deg);
+TI_API void cameraSensitivitySet(sdword sens100);
+TI_API void cameraRayCast(vector *dest, Camera *cam, sdword screenX, sdword screenY, sdword screenWidth, sdword screenHeight);
 #if CAM_CHECKSUM
-udword cameraChecksum(Camera *cam);
+TI_API udword cameraChecksum(Camera *cam);
 #endif
 
 struct Ship;
 
-void cameraSetEyePositionBasedOnShip(Camera *camera,struct Ship *ship);
+TI_API void cameraSetEyePositionBasedOnShip(Camera *camera,struct Ship *ship);
 
 /*=============================================================================
     Public tweakable constants:

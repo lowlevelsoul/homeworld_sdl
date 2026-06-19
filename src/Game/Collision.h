@@ -12,24 +12,24 @@
 #include "Blobs.h"
 #include "SpaceObj.h"
 
-real32 RangeToTarget(Ship *ship,SpaceObjRotImpTarg *target,vector *trajectory);
-real32 RangeToTargetGivenDist(Ship *ship,SpaceObjRotImpTarg *target,real32 dist);
-void collUpdateCollRectangle(SpaceObjRotImp *irobj);
-void collDrawCollisionInfo(SpaceObjRotImp *irobj);
-void collZeroRectInfo(StaticCollInfo *staticCollInfo);
-real32 collCheckRectLine(SpaceObjRotImp *obj1,vector *univpoint,vector *univdir,real32 linelength,sdword *collSide);
-bool collCheckRectPoint(SpaceObjRotImp *obj1,vector *point);
-bool collCheckRectInRect(SpaceObjRotImp *obj1,SpaceObjRotImp *obj2);
-bool collCheckLineOfSight(Ship* source, Ship* target, vector* sourcePosition, vector* direction);
+TI_API real32 RangeToTarget(Ship *ship,SpaceObjRotImpTarg *target,vector *trajectory);
+TI_API real32 RangeToTargetGivenDist(Ship *ship,SpaceObjRotImpTarg *target,real32 dist);
+TI_API void collUpdateCollRectangle(SpaceObjRotImp *irobj);
+TI_API void collDrawCollisionInfo(SpaceObjRotImp *irobj);
+TI_API void collZeroRectInfo(StaticCollInfo *staticCollInfo);
+TI_API real32 collCheckRectLine(SpaceObjRotImp *obj1,vector *univpoint,vector *univdir,real32 linelength,sdword *collSide);
+TI_API bool collCheckRectPoint(SpaceObjRotImp *obj1,vector *point);
+TI_API bool collCheckRectInRect(SpaceObjRotImp *obj1,SpaceObjRotImp *obj2);
+TI_API bool collCheckLineOfSight(Ship* source, Ship* target, vector* sourcePosition, vector* direction);
 
 #define collAddSpaceObjToCollBlobs(obj) bobAddObjToNearestBlob(&universe.collBlobList,obj)
 #define collAddSpaceObjToSpecificBlob(tblob,tobj) bobAddObjToSpecificBlob(tblob,tobj)
 
-void collUpdateCollBlobs(void);
-void collUpdateObjsInCollBlobs(void);
+TI_API void collUpdateCollBlobs(void);
+TI_API void collUpdateObjsInCollBlobs(void);
 
-void collCheckAllBumpCollisions(void);
-void collCheckAllBulletMissileCollisions(void);
+TI_API void collCheckAllBumpCollisions(void);
+TI_API void collCheckAllBulletMissileCollisions(void);
 
 #define COLLISION_CHECK_STATS  1
 

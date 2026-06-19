@@ -18,17 +18,17 @@
 
 #define BINNETLOG       1
 
-void netcheckReset(void);
-void netcheckInit(void);
-void netcheckClose(void);
-void netcheckShow(HWPacketHeader *packet);
+TI_API void netcheckReset(void);
+TI_API void netcheckInit(void);
+TI_API void netcheckClose(void);
+TI_API void netcheckShow(HWPacketHeader *packet);
 #if SYNC_CHECK
-void netcheckFillInChecksum(HWPacketHeader *packet);
-void netcheckCheckChecksum(NetSyncChecksums *checksum);
+TI_API void netcheckFillInChecksum(HWPacketHeader *packet);
+TI_API void netcheckCheckChecksum(NetSyncChecksums *checksum);
 #endif
-//void netcheckShow(HWPacketHeader *packet);
-//void netcheckFillInChecksum(HWPacketHeader *packet);
-//void netcheckCheckChecksum(NetSyncChecksums *checksum);
+TI_API //void netcheckShow(HWPacketHeader *packet);
+TI_API //void netcheckFillInChecksum(HWPacketHeader *packet);
+TI_API //void netcheckCheckChecksum(NetSyncChecksums *checksum);
 
 /*=============================================================================
     Public Variables:
@@ -47,26 +47,26 @@ extern udword blobSyncErrFrame;
 
 extern FILE *netlogfile;
 
-void recPackRecordInit(void);
-void recPackRecordPacket(ubyte *packet,udword sizeofPacket);
-void recPackRecordPacketFilename(ubyte *packet,udword sizeofPacket,char *filename);
-ubyte *recPackPlayGetNextPacket(udword *sizeofPacket);
-void recPackPlayInit(void);
-void recPackPlayClose(void);
-void recPackPlayInGameInit(void);
-void recPackInGameStartCB(char *filename);
-void recPackInGameStartCBSafeToStart(void);
-void recPackInGameStopCB(void);
+TI_API void recPackRecordInit(void);
+TI_API void recPackRecordPacket(ubyte *packet,udword sizeofPacket);
+TI_API void recPackRecordPacketFilename(ubyte *packet,udword sizeofPacket,char *filename);
+TI_API ubyte *recPackPlayGetNextPacket(udword *sizeofPacket);
+TI_API void recPackPlayInit(void);
+TI_API void recPackPlayClose(void);
+TI_API void recPackPlayInGameInit(void);
+TI_API void recPackInGameStartCB(char *filename);
+TI_API void recPackInGameStartCBSafeToStart(void);
+TI_API void recPackInGameStopCB(void);
 
 extern char OrigRecordPacketFileName[];
 
 #ifdef GOD_LIKE_SYNC_CHECKING
-void syncDebugDump(char *filename,sdword counter,bool save);
-void industrialStrengthSyncDebugging(sdword FrameNumber);
-void netcheckIndustrialChecksum(void);
-void netReceivedSyncFromNonCaptain(void *checksums,udword frame,udword playerIndex);
-void godSyncInit(void);
-void godSyncShutDown(void);
+TI_API void syncDebugDump(char *filename,sdword counter,bool save);
+TI_API void industrialStrengthSyncDebugging(sdword FrameNumber);
+TI_API void netcheckIndustrialChecksum(void);
+TI_API void netReceivedSyncFromNonCaptain(void *checksums,udword frame,udword playerIndex);
+TI_API void godSyncInit(void);
+TI_API void godSyncShutDown(void);
 
 #endif
 

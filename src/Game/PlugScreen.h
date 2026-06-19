@@ -91,11 +91,11 @@ psimage;
     Functions:
 =============================================================================*/
 
-void psStartup(void);
-void psShutdown(void);
-void psModeBegin(char *directory, udword modeFlags);
-void psModeEnd(void);
-void psScreenStart(char *name);
-void psCurrentScreenDelete(void);
+TI_API void psStartup(void);
+TI_API void psShutdown(void);
+TI_API void psModeBegin(char *directory, udword modeFlags);
+TI_API void psModeEnd(void);
+TI_API void psScreenStart(char *name);
+TI_API void psCurrentScreenDelete(void);
 
 #endif

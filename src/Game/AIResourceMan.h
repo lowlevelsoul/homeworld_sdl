@@ -11,19 +11,19 @@
 #include "tiPlatform.h"
 #include "AIPlayer.h"
 
-void airResourceManager(void);
+TI_API void airResourceManager(void);
 
-void airInit(AIPlayer *aiplayer);
-void airClose(AIPlayer *aiplayer);
+TI_API void airInit(AIPlayer *aiplayer);
+TI_API void airClose(AIPlayer *aiplayer);
 
-bool airShipDied(AIPlayer *aiplayer, ShipPtr ship);
-void airTeamDied(AIPlayer *aiplayer, AITeam *team);
+TI_API bool airShipDied(AIPlayer *aiplayer, ShipPtr ship);
+TI_API void airTeamDied(AIPlayer *aiplayer, AITeam *team);
 
-sdword NumberOfEasilyAccesibleRUs(Player *player);
-sdword NumRUDockPointsOnThisShip(Ship *ship);
+TI_API sdword NumberOfEasilyAccesibleRUs(Player *player);
+TI_API sdword NumRUDockPointsOnThisShip(Ship *ship);
 
-void airAddNewShip(Ship *ship);
-void airProcessSpecialTeams(void);
+TI_API void airAddNewShip(Ship *ship);
+TI_API void airProcessSpecialTeams(void);
 
 #endif
 

@@ -12,15 +12,15 @@
 #include "tiPlatform.h"
 #include "AIPlayer.h"
 
-void aidDefenseManager(void);
-bool aidShipDied(AIPlayer *aiplayer, ShipPtr ship);
-void aidTeamDied(AIPlayer *aiplayer, AITeam *team);
+TI_API void aidDefenseManager(void);
+TI_API bool aidShipDied(AIPlayer *aiplayer, ShipPtr ship);
+TI_API void aidTeamDied(AIPlayer *aiplayer, AITeam *team);
 
-void aidInit(AIPlayer *aiplayer);
-void aidClose(AIPlayer *aiplayer);
+TI_API void aidInit(AIPlayer *aiplayer);
+TI_API void aidClose(AIPlayer *aiplayer);
 
-void aidSendDistressSignal(SelectCommand *ships);
-void aidClearDistressSignal(AIPlayer *aiplayer);
+TI_API void aidSendDistressSignal(SelectCommand *ships);
+TI_API void aidClearDistressSignal(AIPlayer *aiplayer);
 
 #endif
 

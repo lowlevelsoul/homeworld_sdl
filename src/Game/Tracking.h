@@ -74,10 +74,10 @@ trackvalue;
     Functions:
 =============================================================================*/
 #if NUMBER_TRACKING
-void trkTrackValueAddFn(char *name, real32 *number, real32 *timer, color c);
-void trkTrackValueRemoveFn(char *name);
-void trkTrackValueRemoveAllFn(void);
-void trkTrackValuesDisplayFn(void);
+TI_API void trkTrackValueAddFn(char *name, real32 *number, real32 *timer, color c);
+TI_API void trkTrackValueRemoveFn(char *name);
+TI_API void trkTrackValueRemoveAllFn(void);
+TI_API void trkTrackValuesDisplayFn(void);
 #endif
 
 

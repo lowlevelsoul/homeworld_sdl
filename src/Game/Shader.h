@@ -30,36 +30,36 @@ extern shColor* colorList;
         glColor4ub(c->c[0], c->c[1], c->c[2], c->c[3]); \
     }
 
-void shStartup(void);
-void shShutdown(void);
-void shTransformNormal(vector* out, vector* in, real32* m);
-void shTransformVertex(vector* out, vector* in, real32* m);
-real32 shPow(real32 a, real32 b);
+TI_API void shStartup(void);
+TI_API void shShutdown(void);
+TI_API void shTransformNormal(vector* out, vector* in, real32* m);
+TI_API void shTransformVertex(vector* out, vector* in, real32* m);
+TI_API real32 shPow(real32 a, real32 b);
 void shSpecularColour(sdword specInd, sdword side, vector* vobj, vector* norm,
                       ubyte* color, real32* m, real32* minv);
-void shColour(sdword side, vector* norm, ubyte* color, real32* minv);
-void shColourSet(sdword side, vector* norm, real32* minv);
-void shColourSet0(vector* norm);
-void shInvertMatrix(real32* out, real32 const* m);
-void shSetExponent(sdword index, real32 exponent);
-void shSetLightPosition(sdword index, real32* position, real32* m);
-void shSetGlobalAmbient(real32* ambient);
-void shSetMaterial(real32* ambient, real32* diffuse);
-void shSetLighting(sdword index, real32* diffuse, real32* ambient);
-void shUpdateLighting(void);
-void shGammaUp(void);
-void shGammaDown(void);
-void shGammaReset(void);
-void shGammaSet(sdword gamma);
-sdword shGammaGet(void);
+TI_API void shColour(sdword side, vector* norm, ubyte* color, real32* minv);
+TI_API void shColourSet(sdword side, vector* norm, real32* minv);
+TI_API void shColourSet0(vector* norm);
+TI_API void shInvertMatrix(real32* out, real32 const* m);
+TI_API void shSetExponent(sdword index, real32 exponent);
+TI_API void shSetLightPosition(sdword index, real32* position, real32* m);
+TI_API void shSetGlobalAmbient(real32* ambient);
+TI_API void shSetMaterial(real32* ambient, real32* diffuse);
+TI_API void shSetLighting(sdword index, real32* diffuse, real32* ambient);
+TI_API void shUpdateLighting(void);
+TI_API void shGammaUp(void);
+TI_API void shGammaDown(void);
+TI_API void shGammaReset(void);
+TI_API void shGammaSet(sdword gamma);
+TI_API sdword shGammaGet(void);
 
-void shGrowBuffers(sdword nVertices);
-void shShadeBuffer(sdword nVertices, hvector* source);
+TI_API void shGrowBuffers(sdword nVertices);
+TI_API void shShadeBuffer(sdword nVertices, hvector* source);
 
-void shDockLight(real32 t);
-void shDockLightColor(color c);
+TI_API void shDockLight(real32 t);
+TI_API void shDockLightColor(color c);
 
-void shPushLightMatrix(hmatrix *pMat);
-void shPopLightMatrix(void);
+TI_API void shPushLightMatrix(hmatrix *pMat);
+TI_API void shPopLightMatrix(void);
 
 #endif

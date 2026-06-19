@@ -12,21 +12,21 @@
 #include "tiPlatform.h"
 #include "AIPlayer.h"
 
-void aifFleetCommand(void);
+TI_API void aifFleetCommand(void);
 
-void aifInit(AIPlayer *aiplayer);
-void aifClose(void);
+TI_API void aifInit(AIPlayer *aiplayer);
+TI_API void aifClose(void);
 
-void aifTeamDied(AIPlayer *aiplayer, AITeam *team, bool removeAllReferencesToTeam);
+TI_API void aifTeamDied(AIPlayer *aiplayer, AITeam *team, bool removeAllReferencesToTeam);
 
-bool aifShipDied(AIPlayer *aiplayer, ShipPtr ship);
+TI_API bool aifShipDied(AIPlayer *aiplayer, ShipPtr ship);
 
-void aifResourceManRequestsShipsCB(ShipType shiptype, sdword number, sdword priority);
-void aifAttackManRequestsShipsCB(ShipType shiptype, sdword number, sdword priority);
-void aifDefenseManRequestsShipsCB(ShipType shiptype, sdword number, sdword priority);
+TI_API void aifResourceManRequestsShipsCB(ShipType shiptype, sdword number, sdword priority);
+TI_API void aifAttackManRequestsShipsCB(ShipType shiptype, sdword number, sdword priority);
+TI_API void aifDefenseManRequestsShipsCB(ShipType shiptype, sdword number, sdword priority);
 
-void aifTeamRequestsShipsCB(ShipType shiptype, sdword number, AITeam *team, char *doneSetVar, sdword priority);
+TI_API void aifTeamRequestsShipsCB(ShipType shiptype, sdword number, AITeam *team, char *doneSetVar, sdword priority);
 
-void aifHyperspaceInit(AIPlayer *aiplayer);
+TI_API void aifHyperspaceInit(AIPlayer *aiplayer);
 
 #endif

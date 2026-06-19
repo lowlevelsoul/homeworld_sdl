@@ -516,98 +516,98 @@ typedef struct AITeamMove {
     Function Prototypes:
 =============================================================================*/
 //teams initialization and closing routines
-void aitInit(struct AIPlayer *aiplayer);
-void aitClose(struct AIPlayer *aiplayer);
+TI_API void aitInit(struct AIPlayer *aiplayer);
+TI_API void aitClose(struct AIPlayer *aiplayer);
 
 
 /*-----------------------------------------------------------------------------
     General Utility Functions:
 -----------------------------------------------------------------------------*/
-void aitAddmoveBeforeAndMakeCurrent(AITeam *team, AITeamMove *newMove, AITeamMove *thisMove);
-void aitAddmoveBeforeAndMakeCurrentNoSpecial(AITeam *team, AITeamMove *newMove, AITeamMove *thisMove);
+TI_API void aitAddmoveBeforeAndMakeCurrent(AITeam *team, AITeamMove *newMove, AITeamMove *thisMove);
+TI_API void aitAddmoveBeforeAndMakeCurrentNoSpecial(AITeam *team, AITeamMove *newMove, AITeamMove *thisMove);
 
 /*-----------------------------------------------------------------------------
     Team State Query Functions:
 -----------------------------------------------------------------------------*/
-bool aitAnyTeamOfPlayerAttackingThisShip(struct AIPlayer *aiplayer,Ship *ship);
+TI_API bool aitAnyTeamOfPlayerAttackingThisShip(struct AIPlayer *aiplayer,Ship *ship);
 
-udword aitFindNumTeamsWithFlag(udword flag);
-AITeam *aitFindNextTeamWithFlag(AITeam *team, udword flag);
+TI_API udword aitFindNumTeamsWithFlag(udword flag);
+TI_API AITeam *aitFindNextTeamWithFlag(AITeam *team, udword flag);
 
-sdword aitCountTeamsWaitingForShips(TeamType type);
+TI_API sdword aitCountTeamsWaitingForShips(TeamType type);
 
 //team status functions
-bool aitTeamIsDone(AITeam *team);
-bool aitTeamIsIdle(AITeam *team);
-bool aitTeamIsGuarding(AITeam *team);
-bool aitTeamIsAttacking(AITeam *team);
-bool aitTeamIsntDefendingMothership(AITeam *team, SelectCommand *enemyships);
-bool aitTeamIsFinishedMoving(AITeam *team, vector destination, real32 range);
-bool aitTeamIsDoingSpecialOp(AITeam *team);
-bool aitCheckIfOtherDefTeamAnsweringSignalNeedsHelp(AITeam *team, SelectCommand *ships);
-bool aitTeamIsInRange(AITeam *team, ShipPtr ship, real32 time);
-bool aitTeamIsInMothershipRange(AITeam *team);
+TI_API bool aitTeamIsDone(AITeam *team);
+TI_API bool aitTeamIsIdle(AITeam *team);
+TI_API bool aitTeamIsGuarding(AITeam *team);
+TI_API bool aitTeamIsAttacking(AITeam *team);
+TI_API bool aitTeamIsntDefendingMothership(AITeam *team, SelectCommand *enemyships);
+TI_API bool aitTeamIsFinishedMoving(AITeam *team, vector destination, real32 range);
+TI_API bool aitTeamIsDoingSpecialOp(AITeam *team);
+TI_API bool aitCheckIfOtherDefTeamAnsweringSignalNeedsHelp(AITeam *team, SelectCommand *ships);
+TI_API bool aitTeamIsInRange(AITeam *team, ShipPtr ship, real32 time);
+TI_API bool aitTeamIsInMothershipRange(AITeam *team);
 
-void aitRecallGuardTeam(AITeam *team);
-bool aitNeedStrikeSupport(udword minstr);
+TI_API void aitRecallGuardTeam(AITeam *team);
+TI_API bool aitNeedStrikeSupport(udword minstr);
 
 //set team attributes
-void aitMakeTeamSupportShips(AITeam *team, SelectCommand *ships);
-void aitSetTeamHomoHetero(AITeam *team);
-void aitSetTeamSpecialFlags(AITeam *team);
-bool aitTeamHomogenous(AITeam *team);
-void aitSetTeamStrengthValue(AITeam *team);
-ubyte aitSetTeamDifficultyLevel(AITeam *team, udword playerDL, udword teamDL);
+TI_API void aitMakeTeamSupportShips(AITeam *team, SelectCommand *ships);
+TI_API void aitSetTeamHomoHetero(AITeam *team);
+TI_API void aitSetTeamSpecialFlags(AITeam *team);
+TI_API bool aitTeamHomogenous(AITeam *team);
+TI_API void aitSetTeamStrengthValue(AITeam *team);
+TI_API ubyte aitSetTeamDifficultyLevel(AITeam *team, udword playerDL, udword teamDL);
 
-AITeam *aitFindMostValuable(udword valueness);
+TI_API AITeam *aitFindMostValuable(udword valueness);
 
-AITeam *aitFindGoodCoopTeam(ShipType type);
+TI_API AITeam *aitFindGoodCoopTeam(ShipType type);
 
-AITeam *aitCreate(TeamType teamType);
-void aitDestroy(struct AIPlayer *aiplayer, AITeam *team, bool removeAllReferencesToTeam);
+TI_API AITeam *aitCreate(TeamType teamType);
+TI_API void aitDestroy(struct AIPlayer *aiplayer, AITeam *team, bool removeAllReferencesToTeam);
 
-void aitDeleteCurrentMove(AITeam *team);
-void aitDeleteMovesUntilMoveType(AITeam *team, AIMoveTypes type);
-void aitDeleteAllTeamMoves(AITeam *team);
+TI_API void aitDeleteCurrentMove(AITeam *team);
+TI_API void aitDeleteMovesUntilMoveType(AITeam *team, AIMoveTypes type);
+TI_API void aitDeleteAllTeamMoves(AITeam *team);
 
-void aitAddShip(AITeam *team, ShipPtr ship);
+TI_API void aitAddShip(AITeam *team, ShipPtr ship);
 
 //swarm specific code
-void aitMoveSwarmShipDefenseToAttack(AITeam *attackSwarm, AITeam *defenseSwarm, ShipPtr ship);
-void aitMoveAllSwarmShipsDefenseToAttack(AITeam *defenseSwarm, AITeam *attackSwarm);
-void aitMoveAllSwarmShipsAttackToDefense(AITeam *attackSwarm, AITeam *defenseSwarm);
-void aitMoveAllSwarmShipsDefense(AITeam *destTeam, AITeam *sourceTeam);
-void aitMoveAllSwarmShipsAttack(AITeam *destTeam, AITeam *sourceTeam);
-AITeam *aitFindNewPod(AITeam *defenseTeam);
-void aitMoveSwarmersToNewPod(AITeam *defenseTeam, AITeam *podTeam);
-bool aitAllDefenseSwarmersFull(void);
+TI_API void aitMoveSwarmShipDefenseToAttack(AITeam *attackSwarm, AITeam *defenseSwarm, ShipPtr ship);
+TI_API void aitMoveAllSwarmShipsDefenseToAttack(AITeam *defenseSwarm, AITeam *attackSwarm);
+TI_API void aitMoveAllSwarmShipsAttackToDefense(AITeam *attackSwarm, AITeam *defenseSwarm);
+TI_API void aitMoveAllSwarmShipsDefense(AITeam *destTeam, AITeam *sourceTeam);
+TI_API void aitMoveAllSwarmShipsAttack(AITeam *destTeam, AITeam *sourceTeam);
+TI_API AITeam *aitFindNewPod(AITeam *defenseTeam);
+TI_API void aitMoveSwarmersToNewPod(AITeam *defenseTeam, AITeam *podTeam);
+TI_API bool aitAllDefenseSwarmersFull(void);
 
-void aitSpecialDefenseCoopTeamDiedCB(AITeam *team);
-void GenericCooperatingTeamDiedCB(AITeam *team);
+TI_API void aitSpecialDefenseCoopTeamDiedCB(AITeam *team);
+TI_API void GenericCooperatingTeamDiedCB(AITeam *team);
 
 // returns TRUE if removed ship
-bool aitRemoveShip(AITeam *team, ShipPtr ship);
+TI_API bool aitRemoveShip(AITeam *team, ShipPtr ship);
 
 //process current move for each team
-void aitExecute(void);
+TI_API void aitExecute(void);
 
 
-void aitShipDied(struct AIPlayer *aiplayer,ShipPtr ship);
-void aitResourceDied(struct AIPlayer *aiplayer, Resource *resource);
+TI_API void aitShipDied(struct AIPlayer *aiplayer,ShipPtr ship);
+TI_API void aitResourceDied(struct AIPlayer *aiplayer, Resource *resource);
 
-bool aitCheckForLeaderAndMoveToFront(AITeam *team);
+TI_API bool aitCheckForLeaderAndMoveToFront(AITeam *team);
 
-bool aitCheckAmIBeingWatched(AITeam *team, SelectCommand *sel);
-void aitSetAmIBeingWatched(AITeam *team, SelectCommand *sel);
+TI_API bool aitCheckAmIBeingWatched(AITeam *team, SelectCommand *sel);
+TI_API void aitSetAmIBeingWatched(AITeam *team, SelectCommand *sel);
 
 
-sdword aitMsgReceived(AITeam *teamp, char *msg);
-void aitMsgSend(AITeam *fromTeamp, AITeam *teamp, char *msg);
-void aitMsgQueueFree(AITeam *teamp);
+TI_API sdword aitMsgReceived(AITeam *teamp, char *msg);
+TI_API void aitMsgSend(AITeam *fromTeamp, AITeam *teamp, char *msg);
+TI_API void aitMsgQueueFree(AITeam *teamp);
 
-void aitSave(struct AIPlayer *aiplayer);
-void aitLoad(struct AIPlayer *aiplayer);
-void aitFix(struct AIPlayer *aiplayer);
+TI_API void aitSave(struct AIPlayer *aiplayer);
+TI_API void aitLoad(struct AIPlayer *aiplayer);
+TI_API void aitFix(struct AIPlayer *aiplayer);
 
 //
 //  reserved pointers to all allocated AIVars

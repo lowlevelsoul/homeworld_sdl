@@ -24,9 +24,9 @@
 // pixels
 #define POPUPTEXT_BOX_WIDTH  200
 
-void kasfPopupTextDraw(void);
-void kasfPopupText(char *line);
-void kasfPopupTextClear(void);
+TI_API void kasfPopupTextDraw(void);
+TI_API void kasfPopupText(char *line);
+TI_API void kasfPopupTextClear(void);
 
 //
 //  --------------------------------
@@ -38,406 +38,406 @@ void kasfPopupTextClear(void);
 //  translator will recognize them
 //
 
-void kasfMissionCompleted(void);
-void kasfMissionFailed(void);
+TI_API void kasfMissionCompleted(void);
+TI_API void kasfMissionFailed(void);
 
-void kasfFadeToWhite(void);
+TI_API void kasfFadeToWhite(void);
 
-void kasfVarCreate(char *name);
-void kasfVarValueSet(char *name, sdword value);
-void kasfVarCreateSet(char *name, sdword value);
-void kasfVarValueInc(char *name);
-void kasfVarValueDec(char *name);
-sdword kasfVarValueGet(char *name);
-void kasfVarDestroy(char *name);
+TI_API void kasfVarCreate(char *name);
+TI_API void kasfVarValueSet(char *name, sdword value);
+TI_API void kasfVarCreateSet(char *name, sdword value);
+TI_API void kasfVarValueInc(char *name);
+TI_API void kasfVarValueDec(char *name);
+TI_API sdword kasfVarValueGet(char *name);
+TI_API void kasfVarDestroy(char *name);
 
-void kasfCommandMessage(char *message);
+TI_API void kasfCommandMessage(char *message);
 
-void kasfTimerCreate(char *name);
-void kasfTimerSet(char *name, sdword duration);
-void kasfTimerStart(char *name);
-void kasfTimerCreateSetStart(char *name, sdword duration);
-void kasfTimerStop(char *name);
-void kasfHarvest(void);
-sdword kasfTimerRemaining(char *name);
-sdword kasfTimerExpired(char *name);
-sdword kasfTimerExpiredDestroy(char *name);
-void kasfTimerDestroy(char *name);
+TI_API void kasfTimerCreate(char *name);
+TI_API void kasfTimerSet(char *name, sdword duration);
+TI_API void kasfTimerStart(char *name);
+TI_API void kasfTimerCreateSetStart(char *name, sdword duration);
+TI_API void kasfTimerStop(char *name);
+TI_API void kasfHarvest(void);
+TI_API sdword kasfTimerRemaining(char *name);
+TI_API sdword kasfTimerExpired(char *name);
+TI_API sdword kasfTimerExpiredDestroy(char *name);
+TI_API void kasfTimerDestroy(char *name);
 
-sdword kasfMsgReceived(char *msg);
+TI_API sdword kasfMsgReceived(char *msg);
 
-void kasfAttackMothership(void);
-void kasfAttack(GrowSelection *targets);
-void kasfAttackFlank(GrowSelection *targets);
-void kasfAttackHarass(void);
-void kasfAttackSpecial(GrowSelection *targets);
-void kasfMoveAttack(GrowSelection *targets);
-sdword kasfBulgeAttack(GrowSelection *targets, GrowSelection *bulgetargets, GrowSelection *attackers, sdword radius);
-void kasfIntercept(GrowSelection *targets);
-void kasfTargetDrop(void);
-void kasfSetSwarmerTargets(GrowSelection *targets);
-void kasfSwarmMoveTo(GrowSelection *targets);
-void kasfShipsAttack(GrowSelection *targets, GrowSelection *attackers);
+TI_API void kasfAttackMothership(void);
+TI_API void kasfAttack(GrowSelection *targets);
+TI_API void kasfAttackFlank(GrowSelection *targets);
+TI_API void kasfAttackHarass(void);
+TI_API void kasfAttackSpecial(GrowSelection *targets);
+TI_API void kasfMoveAttack(GrowSelection *targets);
+TI_API sdword kasfBulgeAttack(GrowSelection *targets, GrowSelection *bulgetargets, GrowSelection *attackers, sdword radius);
+TI_API void kasfIntercept(GrowSelection *targets);
+TI_API void kasfTargetDrop(void);
+TI_API void kasfSetSwarmerTargets(GrowSelection *targets);
+TI_API void kasfSwarmMoveTo(GrowSelection *targets);
+TI_API void kasfShipsAttack(GrowSelection *targets, GrowSelection *attackers);
 
-void kasfFormationDelta(void);
-void kasfFormationBroad(void);
-void kasfFormationDelta3D(void);
-void kasfFormationClaw(void);
-void kasfFormationWall(void);
-void kasfFormationSphere(void);
-void kasfFormationCustom(GrowSelection *shipsg);
+TI_API void kasfFormationDelta(void);
+TI_API void kasfFormationBroad(void);
+TI_API void kasfFormationDelta3D(void);
+TI_API void kasfFormationClaw(void);
+TI_API void kasfFormationWall(void);
+TI_API void kasfFormationSphere(void);
+TI_API void kasfFormationCustom(GrowSelection *shipsg);
 
-sdword kasfRandom(sdword lowestNum, sdword highestNum);
+TI_API sdword kasfRandom(sdword lowestNum, sdword highestNum);
 
-void kasfGuardMothership(void);
-void kasfGuardShips(GrowSelection *ships);
+TI_API void kasfGuardMothership(void);
+TI_API void kasfGuardShips(GrowSelection *ships);
 
-void kasfPatrolPath(Path *path);
-void kasfPatrolActive(void);
+TI_API void kasfPatrolPath(Path *path);
+TI_API void kasfPatrolActive(void);
 
-void kasfLog(char *string);
-void kasfLogInteger(char *string, sdword integer);
+TI_API void kasfLog(char *string);
+TI_API void kasfLogInteger(char *string, sdword integer);
 
-sdword kasfTeamHealthAverage(void);
-sdword kasfTeamHealthLowest(void);
-sdword kasfTeamFuelAverage(void);
-sdword kasfTeamFuelLowest(void);
-sdword kasfTeamCount(void);
-sdword kasfTeamCountOriginal(void);
-sdword kasfNewShipsAdded(void);
+TI_API sdword kasfTeamHealthAverage(void);
+TI_API sdword kasfTeamHealthLowest(void);
+TI_API sdword kasfTeamFuelAverage(void);
+TI_API sdword kasfTeamFuelLowest(void);
+TI_API sdword kasfTeamCount(void);
+TI_API sdword kasfTeamCountOriginal(void);
+TI_API sdword kasfNewShipsAdded(void);
 
-void kasfGrowSelectionClear(GrowSelection *ships);
+TI_API void kasfGrowSelectionClear(GrowSelection *ships);
 
-void kasfTeamAttributesBitSet(sdword attributes);
-void kasfTeamAttributesBitClear(sdword attributes);
-void kasfTeamAttributesSet(sdword attributes);
+TI_API void kasfTeamAttributesBitSet(sdword attributes);
+TI_API void kasfTeamAttributesBitClear(sdword attributes);
+TI_API void kasfTeamAttributesSet(sdword attributes);
 
-void kasfShipsAttributesBitSet(GrowSelection *ships,sdword attributes);
-void kasfShipsAttributesBitClear(GrowSelection *ships,sdword attributes);
-void kasfShipsAttributesSet(GrowSelection *ships,sdword attributes);
+TI_API void kasfShipsAttributesBitSet(GrowSelection *ships,sdword attributes);
+TI_API void kasfShipsAttributesBitClear(GrowSelection *ships,sdword attributes);
+TI_API void kasfShipsAttributesSet(GrowSelection *ships,sdword attributes);
 
-sdword kasfShipsDisabled(GrowSelection *ships);
+TI_API sdword kasfShipsDisabled(GrowSelection *ships);
 
-sdword kasfShipsCount(GrowSelection *ships);
+TI_API sdword kasfShipsCount(GrowSelection *ships);
 
-sdword kasfPointInside(Volume *volume, hvector *location);
+TI_API sdword kasfPointInside(Volume *volume, hvector *location);
 
-sdword kasfFindShipsInside(Volume *volume, GrowSelection *ships);
-sdword kasfFindEnemiesInside(Volume *volume, GrowSelection *ships, sdword neighborRadius);
-sdword kasfFindEnemiesNearby(GrowSelection *ships, sdword radius);
-sdword kasfFindEnemiesNearTeam(GrowSelection *ships, sdword radius);
-sdword kasfFindEnemyShipsOfType(GrowSelection *ships, char *shipType);
-sdword kasfFindFriendlyShipsOfType(GrowSelection *ships, char *shipType);
-sdword kasfFindEnemyShipsOfClass(GrowSelection *ships, char *shipClass);
-sdword kasfFindFriendlyShipsOfClass(GrowSelection *ships, char *shipClass);
-sdword kasfFindShipsNearPoint(GrowSelection *ships, hvector *location, sdword radius);
+TI_API sdword kasfFindShipsInside(Volume *volume, GrowSelection *ships);
+TI_API sdword kasfFindEnemiesInside(Volume *volume, GrowSelection *ships, sdword neighborRadius);
+TI_API sdword kasfFindEnemiesNearby(GrowSelection *ships, sdword radius);
+TI_API sdword kasfFindEnemiesNearTeam(GrowSelection *ships, sdword radius);
+TI_API sdword kasfFindEnemyShipsOfType(GrowSelection *ships, char *shipType);
+TI_API sdword kasfFindFriendlyShipsOfType(GrowSelection *ships, char *shipType);
+TI_API sdword kasfFindEnemyShipsOfClass(GrowSelection *ships, char *shipClass);
+TI_API sdword kasfFindFriendlyShipsOfClass(GrowSelection *ships, char *shipClass);
+TI_API sdword kasfFindShipsNearPoint(GrowSelection *ships, hvector *location, sdword radius);
 
-void kasfTeamSkillSet(sdword skillLevel);
-sdword kasfTeamSkillGet(void);
+TI_API void kasfTeamSkillSet(sdword skillLevel);
+TI_API sdword kasfTeamSkillGet(void);
 
-void kasfDisablePlayerHyperspace(void);
-void kasfHoldHyperspaceWindow(bool hold);
-void kasfTeamHyperspaceIn(hvector *destination);
-void kasfTeamHyperspaceInNear(hvector *destination, sdword distance);
-void kasfTeamHyperspaceOut(void);
-void kasfHyperspaceDelay(sdword milliseconds);
+TI_API void kasfDisablePlayerHyperspace(void);
+TI_API void kasfHoldHyperspaceWindow(bool hold);
+TI_API void kasfTeamHyperspaceIn(hvector *destination);
+TI_API void kasfTeamHyperspaceInNear(hvector *destination, sdword distance);
+TI_API void kasfTeamHyperspaceOut(void);
+TI_API void kasfHyperspaceDelay(sdword milliseconds);
 
-void kasfGateDestroy(hvector *gatePoint);
-void kasfGateShipsIn(GrowSelection *ships, hvector *gatePoint);
-void kasfGateShipsOut(GrowSelection *ships, hvector *gatePoint);
-void kasfGateMoveToNearest(void);
-sdword kasfGateShipsOutNearest(GrowSelection *ships);
+TI_API void kasfGateDestroy(hvector *gatePoint);
+TI_API void kasfGateShipsIn(GrowSelection *ships, hvector *gatePoint);
+TI_API void kasfGateShipsOut(GrowSelection *ships, hvector *gatePoint);
+TI_API void kasfGateMoveToNearest(void);
+TI_API sdword kasfGateShipsOutNearest(GrowSelection *ships);
 
-void kasfMissionSkillSet(sdword skillLevel);
-sdword kasfMissionSkillGet(void);
+TI_API void kasfMissionSkillSet(sdword skillLevel);
+TI_API sdword kasfMissionSkillGet(void);
 
-void kasfRequestShips(char *shipType, sdword numShips);
-void kasfRequestShipsOriginal(sdword percentOriginal);
+TI_API void kasfRequestShips(char *shipType, sdword numShips);
+TI_API void kasfRequestShipsOriginal(sdword percentOriginal);
 
-void kasfReinforce(struct AITeam *team);
+TI_API void kasfReinforce(struct AITeam *team);
 
-void kasfTeamGiveToAI(void);
+TI_API void kasfTeamGiveToAI(void);
 
-void kasfDisableAIFeature(sdword feature, sdword type);
-void kasfEnableAIFeature(sdword feature, sdword type);
-void kasfDisableAllAIFeatures(void);
-void kasfEnableAllAIFeatures(void);
+TI_API void kasfDisableAIFeature(sdword feature, sdword type);
+TI_API void kasfEnableAIFeature(sdword feature, sdword type);
+TI_API void kasfDisableAllAIFeatures(void);
+TI_API void kasfEnableAllAIFeatures(void);
 
-void kasfTeamSwitchPlayerOwner(void);
-void kasfShipsSwitchPlayerOwner(GrowSelection *ships);
+TI_API void kasfTeamSwitchPlayerOwner(void);
+TI_API void kasfShipsSwitchPlayerOwner(GrowSelection *ships);
 
-void kasfReinforceTeamWithShips(struct AITeam *teamtoreinforce,GrowSelection *shipstoadd);
-void kasfTeamMakeCrazy(sdword makecrazy);
+TI_API void kasfReinforceTeamWithShips(struct AITeam *teamtoreinforce,GrowSelection *shipstoadd);
+TI_API void kasfTeamMakeCrazy(sdword makecrazy);
 
-void kasfForceCombatStatus(GrowSelection *ships, sdword on);
+TI_API void kasfForceCombatStatus(GrowSelection *ships, sdword on);
 
-sdword kasfThisTeamIs(struct AITeam *team);
+TI_API sdword kasfThisTeamIs(struct AITeam *team);
 
-void kasfMoveTo(hvector *destination);
-void kasfShipsMoveTo(GrowSelection *ships, hvector *destination);
+TI_API void kasfMoveTo(hvector *destination);
+TI_API void kasfShipsMoveTo(GrowSelection *ships, hvector *destination);
 
-void kasfTacticsAggressive(void);
-void kasfTacticsNeutral(void);
-void kasfTacticsEvasive(void);
+TI_API void kasfTacticsAggressive(void);
+TI_API void kasfTacticsNeutral(void);
+TI_API void kasfTacticsEvasive(void);
 
-sdword kasfNearby(hvector *location, sdword distance);
-sdword kasfFindDistance(hvector *location1, hvector *location2);
+TI_API sdword kasfNearby(hvector *location, sdword distance);
+TI_API sdword kasfFindDistance(hvector *location1, hvector *location2);
 
-sdword kasfUnderAttack(GrowSelection *attackers);
-sdword kasfUnderAttackElsewhere(struct AITeam *otherTeam, GrowSelection *attackers);
+TI_API sdword kasfUnderAttack(GrowSelection *attackers);
+TI_API sdword kasfUnderAttackElsewhere(struct AITeam *otherTeam, GrowSelection *attackers);
 
-sdword kasfShipsCountType(GrowSelection *ships, char *shipType);
+TI_API sdword kasfShipsCountType(GrowSelection *ships, char *shipType);
 
-void kasfDock(struct AITeam *withTeam);
-void kasfDockSupport(void);
-void kasfDockSupportWith(struct AITeam * withTeam);
-void kasfShipsDockSupportWith(GrowSelection *ships, GrowSelection *withShips);
-void kasfDockStay(struct AITeam * withTeam);
-void kasfShipsDockStay(GrowSelection *ships, GrowSelection *withShips);
-void kasfDockStayMothership(void);
-void kasfDockInstant(struct AITeam * withTeam);
-void kasfLaunch(void);
+TI_API void kasfDock(struct AITeam *withTeam);
+TI_API void kasfDockSupport(void);
+TI_API void kasfDockSupportWith(struct AITeam * withTeam);
+TI_API void kasfShipsDockSupportWith(GrowSelection *ships, GrowSelection *withShips);
+TI_API void kasfDockStay(struct AITeam * withTeam);
+TI_API void kasfShipsDockStay(GrowSelection *ships, GrowSelection *withShips);
+TI_API void kasfDockStayMothership(void);
+TI_API void kasfDockInstant(struct AITeam * withTeam);
+TI_API void kasfLaunch(void);
 
-sdword kasfTeamDocking(void);
-sdword kasfTeamDockedReadyForLaunch(void);
-sdword kasfTeamFinishedLaunching(void);
+TI_API sdword kasfTeamDocking(void);
+TI_API sdword kasfTeamDockedReadyForLaunch(void);
+TI_API sdword kasfTeamFinishedLaunching(void);
 
-void kasfMsgSend(struct AITeam *team, char *msg);
-void kasfMsgSendAll(char *msg);
+TI_API void kasfMsgSend(struct AITeam *team, char *msg);
+TI_API void kasfMsgSendAll(char *msg);
 
-sdword kasfRUsEnemyCollected(void);
+TI_API sdword kasfRUsEnemyCollected(void);
 
-sdword kasfPathNextPoint(void);
+TI_API sdword kasfPathNextPoint(void);
 
-sdword kasfNISRunning(void);
+TI_API sdword kasfNISRunning(void);
 
-void kasfTeamSetMaxVelocity(sdword maxVelocity);
-void kasfTeamClearMaxVelocity(void);
-void kasfShipsSetMaxVelocity(GrowSelection *ships, sdword maxVelocity);
-void kasfShipsClearMaxVelocity(GrowSelection *ships, sdword maxVelocity);
-void kasfShipsSetDamageFactor(GrowSelection *ships, sdword damagePercent);
-void kasfShipsClearDamageFactor(GrowSelection *ships);
-void kasfTeamSetPercentDamaged(sdword percentDamaged);
-void kasfTeamSetPercentFueled(sdword percentFueled);
+TI_API void kasfTeamSetMaxVelocity(sdword maxVelocity);
+TI_API void kasfTeamClearMaxVelocity(void);
+TI_API void kasfShipsSetMaxVelocity(GrowSelection *ships, sdword maxVelocity);
+TI_API void kasfShipsClearMaxVelocity(GrowSelection *ships, sdword maxVelocity);
+TI_API void kasfShipsSetDamageFactor(GrowSelection *ships, sdword damagePercent);
+TI_API void kasfShipsClearDamageFactor(GrowSelection *ships);
+TI_API void kasfTeamSetPercentDamaged(sdword percentDamaged);
+TI_API void kasfTeamSetPercentFueled(sdword percentFueled);
 
-sdword kasfShipsSelectEnemy(GrowSelection *newShips, GrowSelection *originalShips);
-sdword kasfShipsSelectFriendly(GrowSelection *newShips, GrowSelection *originalShips);
-sdword kasfShipsSelectClass(GrowSelection *newShips, GrowSelection *originalShips, char *shipClass);
-sdword kasfShipsSelectType(GrowSelection *newShips, GrowSelection *originalShips, char *shipType);
-sdword kasfShipsSelectDamaged(GrowSelection *newShips, GrowSelection *originalShips, sdword maxHealthPercent);
-sdword kasfShipsSelectMoving(GrowSelection *newShips, GrowSelection *originalShips);
-sdword kasfShipsSelectCapital(GrowSelection *newShips, GrowSelection *originalShips);
-sdword kasfShipsSelectNonCapital(GrowSelection *newShips, GrowSelection *originalShips);
-sdword kasfShipsSelectNotDocked(GrowSelection *newShips, GrowSelection *originalShips);
-sdword kasfShipsSelectIndex(GrowSelection *newShips, GrowSelection *originalShips, sdword Index);
-sdword kasfShipsSelectNearby(GrowSelection *newShips, GrowSelection *originalShips, hvector *location, sdword distance);
+TI_API sdword kasfShipsSelectEnemy(GrowSelection *newShips, GrowSelection *originalShips);
+TI_API sdword kasfShipsSelectFriendly(GrowSelection *newShips, GrowSelection *originalShips);
+TI_API sdword kasfShipsSelectClass(GrowSelection *newShips, GrowSelection *originalShips, char *shipClass);
+TI_API sdword kasfShipsSelectType(GrowSelection *newShips, GrowSelection *originalShips, char *shipType);
+TI_API sdword kasfShipsSelectDamaged(GrowSelection *newShips, GrowSelection *originalShips, sdword maxHealthPercent);
+TI_API sdword kasfShipsSelectMoving(GrowSelection *newShips, GrowSelection *originalShips);
+TI_API sdword kasfShipsSelectCapital(GrowSelection *newShips, GrowSelection *originalShips);
+TI_API sdword kasfShipsSelectNonCapital(GrowSelection *newShips, GrowSelection *originalShips);
+TI_API sdword kasfShipsSelectNotDocked(GrowSelection *newShips, GrowSelection *originalShips);
+TI_API sdword kasfShipsSelectIndex(GrowSelection *newShips, GrowSelection *originalShips, sdword Index);
+TI_API sdword kasfShipsSelectNearby(GrowSelection *newShips, GrowSelection *originalShips, hvector *location, sdword distance);
 
-sdword kasfShipsOrder(GrowSelection *ships);
-sdword kasfShipsOrderAttributes(GrowSelection *ships);
+TI_API sdword kasfShipsOrder(GrowSelection *ships);
+TI_API sdword kasfShipsOrderAttributes(GrowSelection *ships);
 
 #define kasSpecial_ReturningTechnology  1  //ships are salcapcorvettes returning technology
 #define kasSpecial_ShipsDisabled        2  //ships have been disabled (salcapcorvette has locked on)
 #define kasSpecial_ShipsAreArmed        3  //ships have arms on them - includes GravWellGenerator as an armed ship
 #define kasSpecial_ShipsDefected        4  //ships have defected to the other side
-sdword kasfShipsSelectSpecial(GrowSelection *newShips, GrowSelection *originalShips, sdword SpecialFlag);
+TI_API sdword kasfShipsSelectSpecial(GrowSelection *newShips, GrowSelection *originalShips, sdword SpecialFlag);
 
 
-sdword kasfShipsAdd(GrowSelection *shipsA, GrowSelection *shipsB);
-sdword kasfShipsRemove(GrowSelection *shipsA, GrowSelection *shipsB);
+TI_API sdword kasfShipsAdd(GrowSelection *shipsA, GrowSelection *shipsB);
+TI_API sdword kasfShipsRemove(GrowSelection *shipsA, GrowSelection *shipsB);
 
-void kasfShipsSetNonRetaliation(GrowSelection *ships);
-void kasfShipsSetRetaliation(GrowSelection *ships);
+TI_API void kasfShipsSetNonRetaliation(GrowSelection *ships);
+TI_API void kasfShipsSetRetaliation(GrowSelection *ships);
 
-void kasfPingAddSingleShip(GrowSelection *ships, char *label);
-void kasfPingAddShips(GrowSelection *ships, char *label);
-void kasfPingAddPoint(hvector *point, char *label);
-void kasfPingRemove(char *label);
+TI_API void kasfPingAddSingleShip(GrowSelection *ships, char *label);
+TI_API void kasfPingAddShips(GrowSelection *ships, char *label);
+TI_API void kasfPingAddPoint(hvector *point, char *label);
+TI_API void kasfPingRemove(char *label);
 
-void kasfBuildControl(sdword on);
-void kasfBuildingTeam(struct AITeam *builder);
+TI_API void kasfBuildControl(sdword on);
+TI_API void kasfBuildingTeam(struct AITeam *builder);
 
-void kasfStop(void);
+TI_API void kasfStop(void);
 
-void kasfKamikaze(GrowSelection *targets);
-void kasfKamikazeEveryone(GrowSelection *targets);
+TI_API void kasfKamikaze(GrowSelection *targets);
+TI_API void kasfKamikazeEveryone(GrowSelection *targets);
 
-void kasfPopup(char *text);
-void kasfPopupInteger(char *text, sdword integer);
+TI_API void kasfPopup(char *text);
+TI_API void kasfPopupInteger(char *text, sdword integer);
 
-void kasfObjectiveCreate(char *label, char *briefText, char *fullText);
-void kasfObjectiveCreateSecondary(char *label, char* briefText, char* fullText);
-void kasfObjectiveSet(char *label, sdword status);
-//void kasfObjectivePopupAll(void);
-sdword kasfObjectiveGet(char *label);
-sdword kasfObjectiveGetAll(void);
-void kasfObjectiveDestroy(char *label);
-void kasfObjectiveDestroyAll(void);
+TI_API void kasfObjectiveCreate(char *label, char *briefText, char *fullText);
+TI_API void kasfObjectiveCreateSecondary(char *label, char* briefText, char* fullText);
+TI_API void kasfObjectiveSet(char *label, sdword status);
+TI_API //void kasfObjectivePopupAll(void);
+TI_API sdword kasfObjectiveGet(char *label);
+TI_API sdword kasfObjectiveGetAll(void);
+TI_API void kasfObjectiveDestroy(char *label);
+TI_API void kasfObjectiveDestroyAll(void);
 
-void kasfSpecialToggle(void);
+TI_API void kasfSpecialToggle(void);
 
-void kasfShipsDamage(GrowSelection *ships, sdword points);
+TI_API void kasfShipsDamage(GrowSelection *ships, sdword points);
 
-void kasfForceTaskbar(void);
+TI_API void kasfForceTaskbar(void);
 
 // Tutorial helper functions for kas ------------
-void kasfBuilderRestrictShipTypes(char *shipTypes);
-void kasfBuilderUnrestrictShipTypes(char *shipTypes);
-void kasfBuilderRestrictAll(void);
-void kasfBuilderRestrictNone(void);
-void kasfBuilderCloseIfOpen(void);
-void kasfForceBuildShipType(char *shipType);
+TI_API void kasfBuilderRestrictShipTypes(char *shipTypes);
+TI_API void kasfBuilderUnrestrictShipTypes(char *shipTypes);
+TI_API void kasfBuilderRestrictAll(void);
+TI_API void kasfBuilderRestrictNone(void);
+TI_API void kasfBuilderCloseIfOpen(void);
+TI_API void kasfForceBuildShipType(char *shipType);
 
-sdword kasfCameraGetAngleDeg(void);
-sdword kasfCameraGetDeclinationDeg(void);
-sdword kasfCameraGetDistance(void);
+TI_API sdword kasfCameraGetAngleDeg(void);
+TI_API sdword kasfCameraGetDeclinationDeg(void);
+TI_API sdword kasfCameraGetDistance(void);
 
-sdword kasfSelectNumSelected(void);
-sdword kasfSelectIsSelectionShipType(sdword Index, char *shipType);
-sdword kasfSelectContainsShipTypes(char *shipTypes);
-sdword kasfSelectedShipsInFormation(sdword formation);
-sdword kasfShipsInFormation(GrowSelection *ships, sdword formation);
+TI_API sdword kasfSelectNumSelected(void);
+TI_API sdword kasfSelectIsSelectionShipType(sdword Index, char *shipType);
+TI_API sdword kasfSelectContainsShipTypes(char *shipTypes);
+TI_API sdword kasfSelectedShipsInFormation(sdword formation);
+TI_API sdword kasfShipsInFormation(GrowSelection *ships, sdword formation);
 
-void kasfTutSetPointerTargetXY(char *name, sdword x, sdword y);
-void kasfTutSetPointerTargetXYRight(char *name, sdword x, sdword y);
-void kasfTutSetPointerTargetXYBottomRight(char *name, sdword x, sdword y);
-void kasfTutSetPointerTargetXYTaskbar(char *name, sdword x, sdword y);
-void kasfTutSetPointerTargetXYFE(char *name, sdword x, sdword y);
-void kasfTutSetPointerTargetShip(char *name, GrowSelection *ships);
-void kasfTutSetPointerTargetShipSelection(char *name, GrowSelection *ships);
-void kasfTutSetPointerTargetShipHealth(char *name, GrowSelection *ships);
-void kasfTutSetPointerTargetShipGroup(char *name, GrowSelection *ships);
-void kasfTutSetPointerTargetFERegion(char *name, char *pAtomName);
-void kasfTutSetPointerTargetRect(char *name, sdword x0, sdword y0, sdword x1, sdword y1);
-void kasfTutSetPointerTargetAIVolume(char *name, Volume *volume);
-void kasfTutRemovePointer(char *name);
-void kasfTutRemoveAllPointers(void);
+TI_API void kasfTutSetPointerTargetXY(char *name, sdword x, sdword y);
+TI_API void kasfTutSetPointerTargetXYRight(char *name, sdword x, sdword y);
+TI_API void kasfTutSetPointerTargetXYBottomRight(char *name, sdword x, sdword y);
+TI_API void kasfTutSetPointerTargetXYTaskbar(char *name, sdword x, sdword y);
+TI_API void kasfTutSetPointerTargetXYFE(char *name, sdword x, sdword y);
+TI_API void kasfTutSetPointerTargetShip(char *name, GrowSelection *ships);
+TI_API void kasfTutSetPointerTargetShipSelection(char *name, GrowSelection *ships);
+TI_API void kasfTutSetPointerTargetShipHealth(char *name, GrowSelection *ships);
+TI_API void kasfTutSetPointerTargetShipGroup(char *name, GrowSelection *ships);
+TI_API void kasfTutSetPointerTargetFERegion(char *name, char *pAtomName);
+TI_API void kasfTutSetPointerTargetRect(char *name, sdword x0, sdword y0, sdword x1, sdword y1);
+TI_API void kasfTutSetPointerTargetAIVolume(char *name, Volume *volume);
+TI_API void kasfTutRemovePointer(char *name);
+TI_API void kasfTutRemoveAllPointers(void);
 
-void kasfTutSetTextDisplayBoxGame(sdword x, sdword y, sdword width, sdword height);
-void kasfTutSetTextDisplayBoxFE(sdword x, sdword y, sdword width, sdword height);
-void kasfTutSetTextDisplayBoxToSubtitleRegion(void);
-void kasfTutShowText(char *szText);
-void kasfTutHideText(void);
-void kasfTutShowNextButton(void);
-void kasfTutHideNextButton(void);
-sdword kasfTutNextButtonClicked(void);
-void kasfTutShowBackButton(void);
-void kasfTutHideBackButton(void);
-void kasfTutShowPrevButton(void);
-void kasfTutSaveLesson(sdword Num, char *pName);
+TI_API void kasfTutSetTextDisplayBoxGame(sdword x, sdword y, sdword width, sdword height);
+TI_API void kasfTutSetTextDisplayBoxFE(sdword x, sdword y, sdword width, sdword height);
+TI_API void kasfTutSetTextDisplayBoxToSubtitleRegion(void);
+TI_API void kasfTutShowText(char *szText);
+TI_API void kasfTutHideText(void);
+TI_API void kasfTutShowNextButton(void);
+TI_API void kasfTutHideNextButton(void);
+TI_API sdword kasfTutNextButtonClicked(void);
+TI_API void kasfTutShowBackButton(void);
+TI_API void kasfTutHideBackButton(void);
+TI_API void kasfTutShowPrevButton(void);
+TI_API void kasfTutSaveLesson(sdword Num, char *pName);
 
-void kasfTutShowImages(char *szImages);
-void kasfTutHideImages(void);
+TI_API void kasfTutShowImages(char *szImages);
+TI_API void kasfTutHideImages(void);
 
-void kasfTutEnableEverything(void);
-void kasfTutDisableEverything(void);
-void kasfTutEnableFlags(char *pFlags);
-void kasfTutDisableFlags(char *pFlags);
-void kasfTutForceUnpaused(void);
+TI_API void kasfTutEnableEverything(void);
+TI_API void kasfTutDisableEverything(void);
+TI_API void kasfTutEnableFlags(char *pFlags);
+TI_API void kasfTutDisableFlags(char *pFlags);
+TI_API void kasfTutForceUnpaused(void);
 
-sdword kasfTutGameSentMessage(char *commandNames);
-void kasfTutResetGameMessageQueue(void);
-sdword kasfTutContextMenuDisplayedForShipType(char *shipType);
-void  kasfTutResetContextMenuShipTypeTest(void);
-void kasfTutRedrawEverything(void);
+TI_API sdword kasfTutGameSentMessage(char *commandNames);
+TI_API void kasfTutResetGameMessageQueue(void);
+TI_API sdword kasfTutContextMenuDisplayedForShipType(char *shipType);
+TI_API void  kasfTutResetContextMenuShipTypeTest(void);
+TI_API void kasfTutRedrawEverything(void);
 
-sdword kasfBuildManagerShipTypeInBatchQueue(char *shipType);
-sdword kasfBuildManagerShipTypeInBuildQueue(char *shipType);
-sdword kasfBuildManagerShipTypeSelected(char *shipType);
+TI_API sdword kasfBuildManagerShipTypeInBatchQueue(char *shipType);
+TI_API sdword kasfBuildManagerShipTypeInBuildQueue(char *shipType);
+TI_API sdword kasfBuildManagerShipTypeSelected(char *shipType);
 
-sdword kasfTutCameraFocusedOnShipType(char *shipTypes);
-void kasfTutCameraFocus(GrowSelection *ships);
-void kasfTutCameraFocusDerelictType(char *derelictType);
-void kasfTutCameraFocusFar(GrowSelection *ships);
-void kasfTutCameraFocusCancel(void);
+TI_API sdword kasfTutCameraFocusedOnShipType(char *shipTypes);
+TI_API void kasfTutCameraFocus(GrowSelection *ships);
+TI_API void kasfTutCameraFocusDerelictType(char *derelictType);
+TI_API void kasfTutCameraFocusFar(GrowSelection *ships);
+TI_API void kasfTutCameraFocusCancel(void);
 
-void kasfDisablePlayer(bool toggle);
+TI_API void kasfDisablePlayer(bool toggle);
 
-sdword kasfTutShipsInView(GrowSelection *ships);
-sdword kasfTutShipsTactics(GrowSelection *ships);
+TI_API sdword kasfTutShipsInView(GrowSelection *ships);
+TI_API sdword kasfTutShipsTactics(GrowSelection *ships);
 
-sdword kasfTutPieDistance(void);
-sdword kasfTutPieHeight(void);
+TI_API sdword kasfTutPieDistance(void);
+TI_API sdword kasfTutPieHeight(void);
 
-void kasfForceFISensors(void);
-void kasfOpenSensors(sdword flag);
-void kasfCloseSensors(sdword flag);
-sdword kasfSensorsIsOpen(sdword flag);
-void kasfSensorsWeirdness(sdword flag);
+TI_API void kasfForceFISensors(void);
+TI_API void kasfOpenSensors(sdword flag);
+TI_API void kasfCloseSensors(sdword flag);
+TI_API sdword kasfSensorsIsOpen(sdword flag);
+TI_API void kasfSensorsWeirdness(sdword flag);
 
-void kasfAllowPlayerToResearch(char *name);
-void kasfAllowPlayerToPurchase(char *name);
-void kasfPlayerAcquiredTechnology(char *name);
-sdword kasfCanPlayerResearch(char *name);
-sdword kasfCanPlayerPurchase(char *name);
-sdword kasfDoesPlayerHave(char *name);
-void kasfSetBaseTechnologyCost(char *name, sdword cost);
-sdword kasfGetBaseTechnologyCost(char *name);
-sdword kasfTechIsResearching(void);
+TI_API void kasfAllowPlayerToResearch(char *name);
+TI_API void kasfAllowPlayerToPurchase(char *name);
+TI_API void kasfPlayerAcquiredTechnology(char *name);
+TI_API sdword kasfCanPlayerResearch(char *name);
+TI_API sdword kasfCanPlayerPurchase(char *name);
+TI_API sdword kasfDoesPlayerHave(char *name);
+TI_API void kasfSetBaseTechnologyCost(char *name, sdword cost);
+TI_API sdword kasfGetBaseTechnologyCost(char *name);
+TI_API sdword kasfTechIsResearching(void);
 
-void kasfEnableTraderGUI(void);
-sdword kasfTraderGUIActive(void);
-void kasfSetTraderDialog(sdword dialogNum, char *text);
-void kasfSetTraderPriceScale(sdword percent);
-sdword kasfGetTraderPriceScale(void);
-void kasfSetTraderDisabled(sdword disable);
+TI_API void kasfEnableTraderGUI(void);
+TI_API sdword kasfTraderGUIActive(void);
+TI_API void kasfSetTraderDialog(sdword dialogNum, char *text);
+TI_API void kasfSetTraderPriceScale(sdword percent);
+TI_API sdword kasfGetTraderPriceScale(void);
+TI_API void kasfSetTraderDisabled(sdword disable);
 
-sdword kasfRUsGet(sdword player);
-void kasfRUsSet(sdword player, sdword RUs);
+TI_API sdword kasfRUsGet(sdword player);
+TI_API void kasfRUsSet(sdword player, sdword RUs);
 
-sdword kasfGetWorldResources(void);
+TI_API sdword kasfGetWorldResources(void);
 
-void kasfSoundEvent(sdword event);
-void kasfSoundEventShips(GrowSelection *ships, sdword event);
+TI_API void kasfSoundEvent(sdword event);
+TI_API void kasfSoundEventShips(GrowSelection *ships, sdword event);
 
-void kasfSpeechEvent(sdword event, sdword variable);
-void kasfSpeechEventShips(GrowSelection *ships, sdword event, sdword variable);
+TI_API void kasfSpeechEvent(sdword event, sdword variable);
+TI_API void kasfSpeechEventShips(GrowSelection *ships, sdword event, sdword variable);
 
-void kasfToggleActor(sdword Actor, sdword on);
+TI_API void kasfToggleActor(sdword Actor, sdword on);
 
-void kasfMusicPlay(sdword trackNum);
-void kasfMusicStop(sdword fadeTime);
+TI_API void kasfMusicPlay(sdword trackNum);
+TI_API void kasfMusicStop(sdword fadeTime);
 
-sdword kasfRenderedShips(GrowSelection *ships, sdword LOD);
-void kasfResetShipRenderFlags(GrowSelection *ships);
-sdword kasfRenderedDerelicts(char *derelictType, sdword LOD);
-void kasfResetDerelictRenderFlags(char *derelicttype);
+TI_API sdword kasfRenderedShips(GrowSelection *ships, sdword LOD);
+TI_API void kasfResetShipRenderFlags(GrowSelection *ships);
+TI_API sdword kasfRenderedDerelicts(char *derelictType, sdword LOD);
+TI_API void kasfResetDerelictRenderFlags(char *derelicttype);
 
-udword kasfFindSelectedShips(GrowSelection *ships);
+TI_API udword kasfFindSelectedShips(GrowSelection *ships);
 
-void kasfSaveLevel(sdword num, char *name);
+TI_API void kasfSaveLevel(sdword num, char *name);
 
-void kasfClearScreen(void);
+TI_API void kasfClearScreen(void);
 
-void kasfWideScreenIn(sdword frames);
-void kasfWideScreenOut(sdword frames);
-void kasfSubtitleSimulate(sdword actor, sdword milliseconds, char *speech);
-void kasfLocationCard(sdword milliseconds, char *location);
-void kasfHideShips(GrowSelection *ships);
-void kasfUnhideShips(GrowSelection *ships);
+TI_API void kasfWideScreenIn(sdword frames);
+TI_API void kasfWideScreenOut(sdword frames);
+TI_API void kasfSubtitleSimulate(sdword actor, sdword milliseconds, char *speech);
+TI_API void kasfLocationCard(sdword milliseconds, char *location);
+TI_API void kasfHideShips(GrowSelection *ships);
+TI_API void kasfUnhideShips(GrowSelection *ships);
 
-void kasfDeleteShips(GrowSelection *ships);
+TI_API void kasfDeleteShips(GrowSelection *ships);
 
-void kasfRotateDerelictType(char *derelictType, sdword rot_x, sdword rot_y, sdword rot_z, sdword variation);
+TI_API void kasfRotateDerelictType(char *derelictType, sdword rot_x, sdword rot_y, sdword rot_z, sdword variation);
 
-sdword kasfRaceOfHuman(void);
-void kasfUniversePause(void);
-void kasfUniverseUnpause(void);
-void kasfPauseBuildShips(void);
-void kasfUnpauseBuildShips(void);
-void kasfOtherKASPause(void);
-void kasfOtherKASUnpause(void);
+TI_API sdword kasfRaceOfHuman(void);
+TI_API void kasfUniversePause(void);
+TI_API void kasfUniverseUnpause(void);
+TI_API void kasfPauseBuildShips(void);
+TI_API void kasfUnpauseBuildShips(void);
+TI_API void kasfOtherKASPause(void);
+TI_API void kasfOtherKASUnpause(void);
 
-sdword kasfIntelEventEnded(void);
-void kasfIntelEventNotEnded(void);
-void kasfForceIntelEventEnded(void);
+TI_API sdword kasfIntelEventEnded(void);
+TI_API void kasfIntelEventNotEnded(void);
+TI_API void kasfForceIntelEventEnded(void);
 
 //turn sensors manager static on/off
-void kasfSensorsStaticOn(void);
-void kasfSensorsStaticOff(void);
+TI_API void kasfSensorsStaticOn(void);
+TI_API void kasfSensorsStaticOff(void);
 
 //end the game right now and start plugscreens
-void kasfGameEnd(void);
+TI_API void kasfGameEnd(void);
 
-void kasfSpawnEffect(GrowSelection *ships, char *effectName, sdword parameter);
+TI_API void kasfSpawnEffect(GrowSelection *ships, char *effectName, sdword parameter);
 
 #endif

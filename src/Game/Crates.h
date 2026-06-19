@@ -12,9 +12,9 @@
 #include "SpaceObj.h"
       
 //prototypes      
-void cratesUpdate(void);
-void cratesReportCratePlacement(Derelict *crate);
-void crateInit(void);
+TI_API void cratesUpdate(void);
+TI_API void cratesReportCratePlacement(Derelict *crate);
+TI_API void crateInit(void);
 
        
 #endif //CRATES_H 

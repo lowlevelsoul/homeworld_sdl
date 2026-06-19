@@ -129,14 +129,14 @@ extern LRUPicture pictures[RM_TOTALPICS];
 =============================================================================*/
 
 // function called if something changes in the list stuff
-void rmUpdateTechList(void);
+TI_API void rmUpdateTechList(void);
 void rmClearLab(sdword labindex); // Turn off lab selected
 
 //start the Research Manager.  It will kill itself when you hit the launch button.
-void   rmSetPrintList(udword whichlist, TechStatics *techstat);
-sdword rmResearchGUIBegin(regionhandle region, smemsize ID, udword event, udword data);
-void   rmGUIStartup(void);
-void   rmGUIShutdown(void);
-void rmCloseIfOpen(void);
+TI_API void   rmSetPrintList(udword whichlist, TechStatics *techstat);
+TI_API sdword rmResearchGUIBegin(regionhandle region, smemsize ID, udword event, udword data);
+TI_API void   rmGUIStartup(void);
+TI_API void   rmGUIShutdown(void);
+TI_API void rmCloseIfOpen(void);
 
 #endif

@@ -401,7 +401,7 @@ extern scriptEntry nisScriptTable[];
 extern sdword nisEventIndex;
 extern nisheader* nisCurrentHeader;
 extern nisevent* nisEventList;
-extern int nisEventSortCB(void const* p1, void const* p2);
+TI_API extern int nisEventSortCB(void const* p1, void const* p2);
 
 extern nisSMPTE *nisSMPTECounter;
 extern nisstatic *nisStatic[NIS_NumberStatics + NIS_NumberExtraStatics];
@@ -416,46 +416,46 @@ extern nisstatic *nisStatic[NIS_NumberStatics + NIS_NumberExtraStatics];
     Functions:
 =============================================================================*/
 //start/shutdown the module
-void nisStartup(void);
-void nisShutdown(void);
+TI_API void nisStartup(void);
+TI_API void nisShutdown(void);
 
 //load/delete objects
-nisheader *nisLoad(char *fileName, char *scriptName);
-void nisDelete(nisheader *header);
+TI_API nisheader *nisLoad(char *fileName, char *scriptName);
+TI_API void nisDelete(nisheader *header);
 
 //play an NIS
-nisplaying *nisStart(nisheader *header, vector *position, matrix *coordSystem);
-void nisCamPathUpdate(nisplaying *NIS, cameramotion *camPath, real32 timeElapsed);
-real32 nisUpdate(nisplaying *NIS, real32 timeElapsed);
-void nisObjectEulerToMatrix(matrix *coordsys, vector *rotVector);
-void nisShipEulerToMatrix(matrix *coordsys, vector *rotVector);
-void nisStop(nisplaying *NIS);
-void nisPause(bool bPause);
+TI_API nisplaying *nisStart(nisheader *header, vector *position, matrix *coordSystem);
+TI_API void nisCamPathUpdate(nisplaying *NIS, cameramotion *camPath, real32 timeElapsed);
+TI_API real32 nisUpdate(nisplaying *NIS, real32 timeElapsed);
+TI_API void nisObjectEulerToMatrix(matrix *coordsys, vector *rotVector);
+TI_API void nisShipEulerToMatrix(matrix *coordsys, vector *rotVector);
+TI_API void nisStop(nisplaying *NIS);
+TI_API void nisPause(bool bPause);
 
-void nisGoToEnd(nisplaying *NIS);
+TI_API void nisGoToEnd(nisplaying *NIS);
 
 //utility functions for others to use
-bool nisShipStartPosition(vector *destVector, matrix *destMatrix, nisheader *header, ShipRace race, ShipType type, sdword instance);
-void nisRotateAboutVector(real32* m, vector* axis, real32 radians);
-void nisTextCardListDraw(void);
-void nisRemoveMissileReference(Missile *missile);
-real32 nisFocusMaxRadius(vector *centre, MaxSelection *selection);
-void nisFocusPointCompute(vector *centre, MaxSelection *selection);
-void nisSMPTECounterDraw(nisplaying *NIS, nisSMPTE *SMPTE);
-void nisStaticDraw(nisstatic *snow);
-void nisStaticOnExp(nisstatic *newStatic);
-void nisStaticOffExp(sdword index);
+TI_API bool nisShipStartPosition(vector *destVector, matrix *destMatrix, nisheader *header, ShipRace race, ShipType type, sdword instance);
+TI_API void nisRotateAboutVector(real32* m, vector* axis, real32 radians);
+TI_API void nisTextCardListDraw(void);
+TI_API void nisRemoveMissileReference(Missile *missile);
+TI_API real32 nisFocusMaxRadius(vector *centre, MaxSelection *selection);
+TI_API void nisFocusPointCompute(vector *centre, MaxSelection *selection);
+TI_API void nisSMPTECounterDraw(nisplaying *NIS, nisSMPTE *SMPTE);
+TI_API void nisStaticDraw(nisstatic *snow);
+TI_API void nisStaticOnExp(nisstatic *newStatic);
+TI_API void nisStaticOffExp(sdword index);
 
-void nisTaskPause(void);
-void nisTaskResume(void);
-void nisTaskPauseOrResume(void);
-void nisObjectDied(SpaceObj *obj);
+TI_API void nisTaskPause(void);
+TI_API void nisTaskResume(void);
+TI_API void nisTaskPauseOrResume(void);
+TI_API void nisObjectDied(SpaceObj *obj);
 
-void nisScissorBarsReset(void);
+TI_API void nisScissorBarsReset(void);
 
 #if NIS_TEST
-void nisTest(vector *position, matrix *mat);
-void nisTestAnother(sdword skip);
+TI_API void nisTest(vector *position, matrix *mat);
+TI_API void nisTestAnother(sdword skip);
 #endif
 
 

@@ -60,22 +60,22 @@ extern char TutorialSavedGamesPath[];
 =============================================================================*/
 
 //startup/shutdown
-void gpStartup(void);
-void gpShutdown(void);
-void gpReset(void);
+TI_API void gpStartup(void);
+TI_API void gpShutdown(void);
+TI_API void gpReset(void);
 
 //run the game picker
-void gpGamePick(char *dest);
+TI_API void gpGamePick(char *dest);
 
 //close the picker, either with 'back' or with 'OK'
-void gpDonePicking(char *name, featom *atom);
-void gpBackPicking(char *name, featom *atom);
+TI_API void gpDonePicking(char *name, featom *atom);
+TI_API void gpBackPicking(char *name, featom *atom);
 
-bool gpQuickSave(void);
-bool gpQuickLoad(void);
+TI_API bool gpQuickSave(void);
+TI_API bool gpQuickLoad(void);
 
-bool gpGetGameName(char *name, featom *atom, char *filename);
+TI_API bool gpGetGameName(char *name, featom *atom, char *filename);
 
-sdword gpCountTrainingSavegames(void);
+TI_API sdword gpCountTrainingSavegames(void);
 
 #endif

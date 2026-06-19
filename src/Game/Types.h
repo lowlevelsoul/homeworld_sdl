@@ -104,7 +104,7 @@ typedef uqword  bitflag64;
 #define HW_BYTEORDER HW_ENDIAN
 
 // bizarrely SDL endian support only exists for integer types
-float  SwapFloat32( float val );
+TI_API float  SwapFloat32( float val );
 
 // we could use SDL's byte swapping definitions directly but for consistency of
 // use with regard to floats, we redefine them
@@ -122,15 +122,15 @@ float  SwapFloat32( float val );
 	#define FIX_ENDIAN_FLOAT_32(x)    SwapFloat32(x)
 #endif
 
-udword Real32ToUdword(real32 a);
+TI_API udword Real32ToUdword(real32 a);
 
-udword Real32ToSdword(real32 a);
+TI_API udword Real32ToSdword(real32 a);
 
-real32 UdwordToReal32(udword a);
+TI_API real32 UdwordToReal32(udword a);
 
-real32 SdwordToReal32(sdword a);
+TI_API real32 SdwordToReal32(sdword a);
 
-real32 MemsizeToReal32(memsize a);
+TI_API real32 MemsizeToReal32(memsize a);
 
 #define TreatAsUdword(x) (*((udword *)(&(x))))
 

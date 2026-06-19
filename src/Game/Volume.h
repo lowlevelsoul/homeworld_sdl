@@ -29,9 +29,9 @@ typedef struct {
         } attribs;
 } Volume;
 
-sdword volPointInside(Volume *vol, vector *point);
-sdword volSphereIntersection(Volume vol, vector center, real32 radius);
-vector volFindCenter(Volume *vol);
-real32 volFindRadius(Volume *vol);
+TI_API sdword volPointInside(Volume *vol, vector *point);
+TI_API sdword volSphereIntersection(Volume vol, vector center, real32 radius);
+TI_API vector volFindCenter(Volume *vol);
+TI_API real32 volFindRadius(Volume *vol);
 
 #endif

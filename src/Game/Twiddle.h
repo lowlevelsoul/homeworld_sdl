@@ -12,13 +12,13 @@
 #include "Types.h"
 
 // count number of set bits in a number
-udword bitNumberSet(udword target, udword nBits);
+TI_API udword bitNumberSet(udword target, udword nBits);
 
 // find nearest exponent of 2
-udword bitHighExponent2(udword number);
-udword bitLowExponent2(udword number);
+TI_API udword bitHighExponent2(udword number);
+TI_API udword bitLowExponent2(udword number);
 
 // find lowest/highest bit set in a number
-udword bitLowBitPosition(udword number);
+TI_API udword bitLowBitPosition(udword number);
 
 #endif

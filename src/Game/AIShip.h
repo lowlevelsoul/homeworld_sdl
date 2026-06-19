@@ -34,24 +34,24 @@
     Functions:
 =============================================================================*/
 
-void aishipPrecalcInfo(ShipStaticInfo *shipstatinfo);
+TI_API void aishipPrecalcInfo(ShipStaticInfo *shipstatinfo);
 
-void aishipGetTrajectory(Ship *ship,SpaceObjRotImpTarg *target,vector *trajectory);
-void aishipGetTrajectoryWithVelPrediction(Ship *ship,SpaceObjRotImpTarg *target,real32 bulletspeed,vector *trajectory);
-void aishipGetTrajectoryWithAngleCorrection(Ship *ship,SpaceObjRotImpTarg *target,vector *trajectory);
+TI_API void aishipGetTrajectory(Ship *ship,SpaceObjRotImpTarg *target,vector *trajectory);
+TI_API void aishipGetTrajectoryWithVelPrediction(Ship *ship,SpaceObjRotImpTarg *target,real32 bulletspeed,vector *trajectory);
+TI_API void aishipGetTrajectoryWithAngleCorrection(Ship *ship,SpaceObjRotImpTarg *target,vector *trajectory);
 
-udword aishipFlyToPointAvoidingObjsFunc(Ship *ship,vector *destination,udword aishipflags,real32 limitvel,vector *withVel);
+TI_API udword aishipFlyToPointAvoidingObjsFunc(Ship *ship,vector *destination,udword aishipflags,real32 limitvel,vector *withVel);
 
-bool aishipGuideMissile(Missile *missile);
-bool aishipGuideMine(Missile *mine);
+TI_API bool aishipGuideMissile(Missile *missile);
+TI_API bool aishipGuideMine(Missile *mine);
 
-real32 GetCollSizeInDirection(SpaceObjRotImp *obj,vector dir);
+TI_API real32 GetCollSizeInDirection(SpaceObjRotImp *obj,vector dir);
 
-void rowRemoveShipFromGettingOutOfWay(Ship *ship);
-void rowFlyShipOutOfWay(Ship *ship);
-void rowGetOutOfWayShipDiedCB(Ship *ship);
+TI_API void rowRemoveShipFromGettingOutOfWay(Ship *ship);
+TI_API void rowFlyShipOutOfWay(Ship *ship);
+TI_API void rowGetOutOfWayShipDiedCB(Ship *ship);
 
-Ship *getShipNearObjTok(SpaceObjRotImpTarg *obj, real32 range);
+TI_API Ship *getShipNearObjTok(SpaceObjRotImpTarg *obj, real32 range);
 
 /*=============================================================================
     Macros:
@@ -105,9 +105,9 @@ typedef struct AIshipStats
 
 extern AIshipStats aishipStats;
 
-void aishipStatsPrint(sdword *y);
+TI_API void aishipStatsPrint(sdword *y);
 
-void aishipStatsInitFunc(Ship *ship);
+TI_API void aishipStatsInitFunc(Ship *ship);
 void aishipStatsCloseFunc(void)
 
 #define aishipStatsInit(s)   aishipStatsInitFunc(s)

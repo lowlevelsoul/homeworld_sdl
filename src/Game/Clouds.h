@@ -87,50 +87,50 @@ typedef struct
 } ellipseObject;
 
 extern ellipseObject genericEllipse[4];
-void ellipsoid_render(ellipseObject* ellipse, real32 radius);
+TI_API void ellipsoid_render(ellipseObject* ellipse, real32 radius);
 
 /*
  * FUNCTIONS
  */
 
 //load textures, &c
-void cloudStartup(void);
+TI_API void cloudStartup(void);
 
 //free textures, &c
-void cloudShutdown(void);
+TI_API void cloudShutdown(void);
 
 //reset things
-void cloudReset(void);
+TI_API void cloudReset(void);
 
 //create a cloud system with specified radius
-cloudSystem* cloudCreateSystem(real32 radius);
+TI_API cloudSystem* cloudCreateSystem(real32 radius);
 
 //convenient
-void cloudDeleteSystem(cloudSystem* system);
+TI_API void cloudDeleteSystem(cloudSystem* system);
 
 //render a cloud system
-void cloudRenderSystem(cloudSystem* system, sdword lod);
+TI_API void cloudRenderSystem(cloudSystem* system, sdword lod);
 
 //set fog based on camera distance to dust clouds
-void cloudSetFog(void);
+TI_API void cloudSetFog(void);
 
 //ship's lightning render & think fn
-void cloudRenderAndUpdateLightning(lightning* l, sdword lod);
+TI_API void cloudRenderAndUpdateLightning(lightning* l, sdword lod);
 
 //allocate a fresh lightning suitable for a ship
-lightning* cloudNewLightning(void* system, real32 radius);
+TI_API lightning* cloudNewLightning(void* system, real32 radius);
 
 //------------ lightning
 
-lhandle cloudGetFreshLightningHandle(void);
-lightning* cloudGetFreshLightning(void);
-void cloudInitLightning(lightning* l);
-void cloudInitLightningHandle(lhandle handle);
-lightning* cloudLightningFromHandle(lhandle handle);
-void cloudKillLightning(lightning* l);
-void cloudLiveLightning(lightning* l);
-void cloudMainLightning(lightning* l);
-void cloudRandomSphericalPoint(vector* vec);
+TI_API lhandle cloudGetFreshLightningHandle(void);
+TI_API lightning* cloudGetFreshLightning(void);
+TI_API void cloudInitLightning(lightning* l);
+TI_API void cloudInitLightningHandle(lhandle handle);
+TI_API lightning* cloudLightningFromHandle(lhandle handle);
+TI_API void cloudKillLightning(lightning* l);
+TI_API void cloudLiveLightning(lightning* l);
+TI_API void cloudMainLightning(lightning* l);
+TI_API void cloudRandomSphericalPoint(vector* vec);
 
 /*=============================================================================
     Public Data:

@@ -649,39 +649,39 @@ extern bool   etgBulletEffectsEnabled;
 =============================================================================*/
 
 //startup/shutdown effects module
-void etgStartup(void);
-void etgShutdown(void);
-void etgReset(void);
-void etgReloadReset(void);
-void etgFixupUV(void);
+TI_API void etgStartup(void);
+TI_API void etgShutdown(void);
+TI_API void etgReset(void);
+TI_API void etgReloadReset(void);
+TI_API void etgFixupUV(void);
 
 //load in an effect template from an effect file and then delete.
-etgeffectstatic *etgEffectCodeLoad(char *fileName);
-etgeffectstatic *etgEffectStaticFind(char *name, bool bRegister);
-void etgEffectCodeDelete(etgeffectstatic *stat, bool bFullDelete);
+TI_API etgeffectstatic *etgEffectCodeLoad(char *fileName);
+TI_API etgeffectstatic *etgEffectStaticFind(char *name, bool bRegister);
+TI_API void etgEffectCodeDelete(etgeffectstatic *stat, bool bFullDelete);
 
 //create effects
-void etgEffectCodeStart(struct etgeffectstatic *stat, struct Effect *effect, sdword nParams, ...);
-void etgEffectDelete(struct Effect *effect);
-void *etgEffectCreate(etgeffectstatic *stat, void *owner, vector *pos, vector *vel, matrix *coordsys, real32 nLips, udword flags, sdword nParams, ...);
-bool etgFrequencyExceeded(etgeffectstatic *stat);
-void etgHistoryRegisterFunction(etgeffectstatic *stat);
+TI_API void etgEffectCodeStart(struct etgeffectstatic *stat, struct Effect *effect, sdword nParams, ...);
+TI_API void etgEffectDelete(struct Effect *effect);
+TI_API void *etgEffectCreate(etgeffectstatic *stat, void *owner, vector *pos, vector *vel, matrix *coordsys, real32 nLips, udword flags, sdword nParams, ...);
+TI_API bool etgFrequencyExceeded(etgeffectstatic *stat);
+TI_API void etgHistoryRegisterFunction(etgeffectstatic *stat);
 
 //update effects
-bool etgEffectUpdate(struct Effect *effect, real32 timeElapsed);
-void etgEffectDraw(struct Effect *effect);
-void etgShipDied(struct Ship *deadDuck);
-sdword etgDeleteEffectsOwnedBy(struct Ship *owner);
+TI_API bool etgEffectUpdate(struct Effect *effect, real32 timeElapsed);
+TI_API void etgEffectDraw(struct Effect *effect);
+TI_API void etgShipDied(struct Ship *deadDuck);
+TI_API sdword etgDeleteEffectsOwnedBy(struct Ship *owner);
 
 //mesh registry stuff
-meshdata *etgMeshRegister(char *filename);
-void etgMeshRegistryReset(void);
+TI_API meshdata *etgMeshRegister(char *filename);
+TI_API void etgMeshRegistryReset(void);
 
 //etg random stream
-extern udword etgFRandom(real32 low, real32 high);
+TI_API extern udword etgFRandom(real32 low, real32 high);
 
 // Save Game stuff
-sdword saveEtglodGunEventToIndex(etglod *lod);
-etglod *saveIndexToEtglodGunEvent(sdword index);
+TI_API sdword saveEtglodGunEventToIndex(etglod *lod);
+TI_API etglod *saveIndexToEtglodGunEvent(sdword index);
 
 #endif

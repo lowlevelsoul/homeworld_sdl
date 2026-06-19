@@ -80,18 +80,18 @@ extern sdword spScenarioListLength;
 =============================================================================*/
 
 //startup/shutdown
-void spStartup(void);
-void spShutdown(void);
+TI_API void spStartup(void);
+TI_API void spShutdown(void);
 
 //run the scenario picker
-void spScenarioPick(char *dest);
+TI_API void spScenarioPick(char *dest);
 
 //close the picker, either with 'back' or with 'OK'
-void spDonePicking(char *name, featom *atom);
-void spBackPicking(char *name, featom *atom);
+TI_API void spDonePicking(char *name, featom *atom);
+TI_API void spBackPicking(char *name, featom *atom);
 
-void spFindMap(char *MapName);
+TI_API void spFindMap(char *MapName);
 
-sdword spScenarioFind(char *scenarioName);
+TI_API sdword spScenarioFind(char *scenarioName);
 
 #endif

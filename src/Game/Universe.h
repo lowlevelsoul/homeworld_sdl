@@ -258,67 +258,67 @@ typedef struct
     char names[MAX_MULTIPLAYER_PLAYERS+1][20];
 }GameStatsDebugHeader;
 
-void gameStatsInitLog(void);
-void gameStatsUpdateLogFile(sdword framenum);
+TI_API void gameStatsInitLog(void);
+TI_API void gameStatsUpdateLogFile(sdword framenum);
 
 #endif
 /*=============================================================================
     Functions:
 =============================================================================*/
 
-void universeClosePlayers(void);
-void universeInit(void);
-void universeClose(void);
-void universeReset(void);
-void universeSetZeroPlayers(void);
-void universeStaticInit(void);
-void universeStaticClose(void);
-DECLARE_TASK(universeUpdateTask);
-void universeSwitchToNextPlayer(void);
-void universeSwitchToPlayer(uword playerIndex);
+TI_API void universeClosePlayers(void);
+TI_API void universeInit(void);
+TI_API void universeClose(void);
+TI_API void universeReset(void);
+TI_API void universeSetZeroPlayers(void);
+TI_API void universeStaticInit(void);
+TI_API void universeStaticClose(void);
+TI_API DECLARE_TASK(universeUpdateTask);
+TI_API void universeSwitchToNextPlayer(void);
+TI_API void universeSwitchToPlayer(uword playerIndex);
 
 ShipRace GetValidRaceForShipType(ShipType shiptype);    // returns valid race for shiptype, -1 if none found
-ShipStaticInfo *GetShipStaticInfo(ShipType shiptype,ShipRace shiprace);
+TI_API ShipStaticInfo *GetShipStaticInfo(ShipType shiptype,ShipRace shiprace);
 ShipStaticInfo *GetShipStaticInfoValidate(ShipType shiptype,ShipRace shiprace); // same as above, but makes sure data loaded
 ShipStaticInfo *GetShipStaticInfoSafe(ShipType shiptype,ShipRace shiprace); // same as above, but always safe (returns NULL if fails)
-void InitStatShipInfo(ShipStaticInfo *statinfo,ShipType type,ShipRace race);
-void CloseStatShipInfo(ShipStaticInfo *statinfo);
-void CloseStatAsteroidInfo(AsteroidStaticInfo *asteroidStatInfo);
-void CloseStatDerelictInfo(DerelictStaticInfo *derelictStatInfo);
-void CloseStatDustCloudInfo(DustCloudStaticInfo *dustcloudStatInfo);
-void CloseStatGasCloudInfo(GasCloudStaticInfo *gascloudStatInfo);
-void CloseStatMissileInfo(MissileStaticInfo *missileStatInfo);
-void CloseStatMineInfo(MissileStaticInfo *mineStatInfo);
-void CloseStatEffectInfo(etgeffectstatic *effectStatInfo);
-void InitStatDerelictInfoByPath(DerelictStaticInfo *derelictStatInfo, DerelictType derelicttype, char *directory, char *shipFile);
+TI_API void InitStatShipInfo(ShipStaticInfo *statinfo,ShipType type,ShipRace race);
+TI_API void CloseStatShipInfo(ShipStaticInfo *statinfo);
+TI_API void CloseStatAsteroidInfo(AsteroidStaticInfo *asteroidStatInfo);
+TI_API void CloseStatDerelictInfo(DerelictStaticInfo *derelictStatInfo);
+TI_API void CloseStatDustCloudInfo(DustCloudStaticInfo *dustcloudStatInfo);
+TI_API void CloseStatGasCloudInfo(GasCloudStaticInfo *gascloudStatInfo);
+TI_API void CloseStatMissileInfo(MissileStaticInfo *missileStatInfo);
+TI_API void CloseStatMineInfo(MissileStaticInfo *mineStatInfo);
+TI_API void CloseStatEffectInfo(etgeffectstatic *effectStatInfo);
+TI_API void InitStatDerelictInfoByPath(DerelictStaticInfo *derelictStatInfo, DerelictType derelicttype, char *directory, char *shipFile);
 
-void unitCapCreateShip(Ship *ship, Player *player);
-void unitCapDeleteShip(Ship *ship, Player *player);
-bool unitCapCanCreateShip(ShipType ship, shipsinprogress *factory, shipavailable *cmShipsAvail);
-void unitCapInitialize(Player *player);
-void unitCapEnable(void);
-void unitCapDisable(void);
+TI_API void unitCapCreateShip(Ship *ship, Player *player);
+TI_API void unitCapDeleteShip(Ship *ship, Player *player);
+TI_API bool unitCapCanCreateShip(ShipType ship, shipsinprogress *factory, shipavailable *cmShipsAvail);
+TI_API void unitCapInitialize(Player *player);
+TI_API void unitCapEnable(void);
+TI_API void unitCapDisable(void);
 
-void universeRealTimeTweak(SelectCommand *selection);
-void universeDefaultTeamColors(void);
-extern void universeFlagRaceNeeded(ShipRace shiprace, bool8 bNeeded);
-void universeFlagEverythingNeeded(void);
-void universeSaveEverythingNeeded(void);
-void universeLoadEverythingNeeded(void);
-void universeRaceStaticsScan(ShipRace shiprace, univstatcallback forShips, univstatcallback forMisc);
-void universeAllStaticsScan(univstatcallback forShips, univstatcallback forDerelicts, univstatcallback forResources, univstatcallback forMisc);
+TI_API void universeRealTimeTweak(SelectCommand *selection);
+TI_API void universeDefaultTeamColors(void);
+TI_API extern void universeFlagRaceNeeded(ShipRace shiprace, bool8 bNeeded);
+TI_API void universeFlagEverythingNeeded(void);
+TI_API void universeSaveEverythingNeeded(void);
+TI_API void universeLoadEverythingNeeded(void);
+TI_API void universeRaceStaticsScan(ShipRace shiprace, univstatcallback forShips, univstatcallback forMisc);
+TI_API void universeAllStaticsScan(univstatcallback forShips, univstatcallback forDerelicts, univstatcallback forResources, univstatcallback forMisc);
 
-void resourceInjectionTask(void);
-void resourceLumpSum(void);
+TI_API void resourceInjectionTask(void);
+TI_API void resourceLumpSum(void);
 
-void initGameStats(Universe *universe);
-void gameStatsAddShip(Ship *ship,sdword playerIndex);
-void writeGameStatsToFile(char *filename);
-void gameStatsShipDied(Ship *ship);
-void gameStatsCalcShipCostTotals(void);
+TI_API void initGameStats(Universe *universe);
+TI_API void gameStatsAddShip(Ship *ship,sdword playerIndex);
+TI_API void writeGameStatsToFile(char *filename);
+TI_API void gameStatsShipDied(Ship *ship);
+TI_API void gameStatsCalcShipCostTotals(void);
 
-bool isStrikeCraft(ShipType type);
+TI_API bool isStrikeCraft(ShipType type);
 
-void unitCapInitStatics(udword numplayers);
+TI_API void unitCapInitStatics(udword numplayers);
 
 #endif

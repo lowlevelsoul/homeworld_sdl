@@ -38,30 +38,30 @@
     Functions:
 =============================================================================*/
 
-bool gunCanShoot(Ship *ship, Gun *gun);
-bool gunOrientGimbleGun(Ship *ship,Gun *gun,SpaceObjRotImpTarg *target);
-void missileShoot(Ship *ship,Gun *gun,SpaceObjRotImpTarg *target);
-void gunShoot(Ship *ship,Gun *gun, SpaceObjRotImpTarg *target);
-bool gunShootGunsAtTarget(Ship *ship,SpaceObjRotImpTarg *target,real32 range,vector *trajectory);
-bool gunShootGunsAtMultipleTargets(Ship *ship);
+TI_API bool gunCanShoot(Ship *ship, Gun *gun);
+TI_API bool gunOrientGimbleGun(Ship *ship,Gun *gun,SpaceObjRotImpTarg *target);
+TI_API void missileShoot(Ship *ship,Gun *gun,SpaceObjRotImpTarg *target);
+TI_API void gunShoot(Ship *ship,Gun *gun, SpaceObjRotImpTarg *target);
+TI_API bool gunShootGunsAtTarget(Ship *ship,SpaceObjRotImpTarg *target,real32 range,vector *trajectory);
+TI_API bool gunShootGunsAtMultipleTargets(Ship *ship);
 
-bool gunMatrixUpdate(udword flags, hmatrix *startMatrix, hmatrix *matrix, void *data, smemsize ID);
+TI_API bool gunMatrixUpdate(udword flags, hmatrix *startMatrix, hmatrix *matrix, void *data, smemsize ID);
 
 #if RND_VISUALIZATION
-void gunDrawGunInfo(Ship *ship);
+TI_API void gunDrawGunInfo(Ship *ship);
 #endif
 
 //gun location in world code for silly sound boys
-void gunGetGunPositionInWorld(vector *positionInWorldCoordSys,matrix *coordsys,Gun *gun);
+TI_API void gunGetGunPositionInWorld(vector *positionInWorldCoordSys,matrix *coordsys,Gun *gun);
 
 //compute firepower
-real32 gunFirePower(GunStatic *gunStatic, TacticsType tactics, real32 *fireTime);
-real32 gunShipFirePower(ShipStaticInfo *info, TacticsType tactics);
+TI_API real32 gunFirePower(GunStatic *gunStatic, TacticsType tactics, real32 *fireTime);
+TI_API real32 gunShipFirePower(ShipStaticInfo *info, TacticsType tactics);
 
-void gunStartup(void);
-void gunShutdown(void);
+TI_API void gunStartup(void);
+TI_API void gunShutdown(void);
 #if GUN_TUNE_MODE
-void gunTuneGun(Ship *ship);
+TI_API void gunTuneGun(Ship *ship);
 #endif
 
 /*=============================================================================

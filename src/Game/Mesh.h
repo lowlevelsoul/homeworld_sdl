@@ -278,41 +278,41 @@ extern bool meshMorphDebug;
     Functions:
 =============================================================================*/
 //startup the mesh module
-void meshStartup(void);
+TI_API void meshStartup(void);
 //shutdown the mesh module
-void meshShutdown(void);
+TI_API void meshShutdown(void);
 
 //load in a mesh file
-meshdata *meshLoad(char *fileName);
-void meshFree(meshdata *mesh);
-void meshRecolorize(meshdata *mesh);
-void meshFixupUV(meshdata* mesh);
-bool meshPagedVersionExists(char* fileName);
+TI_API meshdata *meshLoad(char *fileName);
+TI_API void meshFree(meshdata *mesh);
+TI_API void meshRecolorize(meshdata *mesh);
+TI_API void meshFixupUV(meshdata* mesh);
+TI_API bool meshPagedVersionExists(char* fileName);
 
 //render a specific mesh
-sdword meshRender(meshdata *mesh, sdword iColorScheme);
+TI_API sdword meshRender(meshdata *mesh, sdword iColorScheme);
 void meshMorphedObjectRender(
     polygonobject* object1, polygonobject* object2, polyentry *uvPolys,
     materialentry* materials, real32 frac, sdword iColorScheme);
 void meshMorphedObjectRenderTex(polygonobject* object1, polygonobject* object2,
                                 polyentry *uvPolys, materialentry* material,
                                 real32 frac, sdword iColorScheme);
-void meshRenderShipHierarchy(shipbindings *bindings, sdword currentLOD, meshdata *mesh, sdword iColorScheme);
-void meshObjectRender(polygonobject *object, materialentry *materials, sdword iColorScheme);
-void meshObjectRenderTex(polygonobject *object, materialentry *material);
+TI_API void meshRenderShipHierarchy(shipbindings *bindings, sdword currentLOD, meshdata *mesh, sdword iColorScheme);
+TI_API void meshObjectRender(polygonobject *object, materialentry *materials, sdword iColorScheme);
+TI_API void meshObjectRenderTex(polygonobject *object, materialentry *material);
 
 //make a material current
-void meshCurrentMaterialDefault(materialentry *material, sdword iColorScheme);
+TI_API void meshCurrentMaterialDefault(materialentry *material, sdword iColorScheme);
 
 //binding list stuff
-mhbinding *meshBindingListCreate(meshdata *mesh);
-void meshBindingListDelete(mhbinding *list);
-mhbinding *meshBindingFindByName(mhbinding *startBinding, mhbinding *list, meshdata *data, char *name);
-sdword meshBindingIndexFindByName(mhbinding *list, meshdata *mesh, char *name);
-bool meshFindHierarchyMatrixByUserData(hmatrix *dest, hmatrix *destNC, mhbinding *bindings, void *userData);
-void meshHierarchyWalk(meshdata *mesh, meshcallback preMesh, meshcallback postCallback);
+TI_API mhbinding *meshBindingListCreate(meshdata *mesh);
+TI_API void meshBindingListDelete(mhbinding *list);
+TI_API mhbinding *meshBindingFindByName(mhbinding *startBinding, mhbinding *list, meshdata *data, char *name);
+TI_API sdword meshBindingIndexFindByName(mhbinding *list, meshdata *mesh, char *name);
+TI_API bool meshFindHierarchyMatrixByUserData(hmatrix *dest, hmatrix *destNC, mhbinding *bindings, void *userData);
+TI_API void meshHierarchyWalk(meshdata *mesh, meshcallback preMesh, meshcallback postCallback);
 
-void meshSetFade(real32 fade);
+TI_API void meshSetFade(real32 fade);
 void meshSetSpecular(sdword mode, ubyte red, ubyte green, ubyte blue, ubyte alpha); //mode -1 == off
 
 #endif

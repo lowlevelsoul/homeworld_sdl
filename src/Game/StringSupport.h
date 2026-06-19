@@ -29,10 +29,10 @@ typedef enum
 extern udword strCurLanguage;
 extern udword strCurKeyboardLanguage;
 
-bool8 strLoadLanguage(strLanguageType language);
-bool8 strFreeLanguage(void);
-void  strSetStringCB(char *directory, char *field, void *dataToFillIn);
-strGamesMessages strNameToEnum(char *string);
-void strSetCurKeyboard(void);
+TI_API bool8 strLoadLanguage(strLanguageType language);
+TI_API bool8 strFreeLanguage(void);
+TI_API void  strSetStringCB(char *directory, char *field, void *dataToFillIn);
+TI_API strGamesMessages strNameToEnum(char *string);
+TI_API void strSetCurKeyboard(void);
 
 #endif

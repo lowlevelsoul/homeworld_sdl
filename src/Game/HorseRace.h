@@ -66,14 +66,14 @@ extern HorseStatus horseracestatus;
 /*=============================================================================
     Prototypes:
 =============================================================================*/
-void horseRaceInit(void);
-void horseRaceShutdown(void);
+TI_API void horseRaceInit(void);
+TI_API void horseRaceShutdown(void);
 
-void hrProcessPacket(ChatPacket *packet);
+TI_API void hrProcessPacket(ChatPacket *packet);
 
-void recievedHorsePacketCB(ubyte *packet,udword sizeofpacket);
+TI_API void recievedHorsePacketCB(ubyte *packet,udword sizeofpacket);
 
-void HorseRaceBeginBar(uword barnum);
-bool HorseRaceNext(real32 percent);
+TI_API void HorseRaceBeginBar(uword barnum);
+TI_API bool HorseRaceNext(real32 percent);
 
 #endif

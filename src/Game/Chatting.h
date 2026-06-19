@@ -22,8 +22,8 @@
 #define OTHER_PLAYERS_MASK          ((0x000000FF)^(1<<sigsPlayerIndex))
 #define MAX_CHAT_MESSAGE_LENGTH     255
 
-void recievedChatPacketCB(ubyte *packet,udword sizeofPacket);
-void sendChatMessage(udword users, char *message, uword player_index);
-void sendAllianceRequest(udword user, uword player_index, uword type, ubyte data);
+TI_API void recievedChatPacketCB(ubyte *packet,udword sizeofPacket);
+TI_API void sendChatMessage(udword users, char *message, uword player_index);
+TI_API void sendAllianceRequest(udword user, uword player_index, uword type, ubyte data);
 
 #endif

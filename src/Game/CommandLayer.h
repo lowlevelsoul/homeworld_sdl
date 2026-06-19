@@ -128,93 +128,93 @@ extern bool enableTextFeedback;
 =============================================================================*/
 
 // Initializing, Closing, Processing
-void clInit(CommandLayer *comlayer);
-void clClose(CommandLayer *comlayer);
-void clReset(CommandLayer *comlayer);
-void clProcess(CommandLayer *comlayer);
-void clPostProcess(CommandLayer *comlayer);
+TI_API void clInit(CommandLayer *comlayer);
+TI_API void clClose(CommandLayer *comlayer);
+TI_API void clReset(CommandLayer *comlayer);
+TI_API void clProcess(CommandLayer *comlayer);
+TI_API void clPostProcess(CommandLayer *comlayer);
 
-void clChecksum(void);
+TI_API void clChecksum(void);
 
 // Ship Command Layer
-void clMove(CommandLayer *comlayer,SelectCommand *selectcom,vector from,vector to);
-CommandToDo *clAttackThese(CommandLayer *comlayer,SelectCommand *selectcom,AttackCommand *attackcom);
-void clAttack(CommandLayer *comlayer,SelectCommand *selectcom,AttackCommand *attackcom);
-void clPassiveAttack(CommandLayer *comlayer,SelectCommand *selectcom,AttackCommand *attackcom);
-void clFormation(CommandLayer *comlayer,SelectCommand *selectcom,TypeOfFormation formation);
-sdword clDock(CommandLayer *comlayer,SelectCommand *selectcom,DockType dockType,ShipPtr dockwith);
-Ship *clCreateShip(CommandLayer *comlayer,ShipType shipType,ShipRace shipRace,uword playerIndex,ShipPtr creator);
-void clBuildShip(CommandLayer *comlayer,ShipType shipType,ShipRace shipRace,uword playerIndex,ShipPtr creator);
-void clCollectResource(CommandLayer *comlayer,SelectCommand *selectcom,ResourcePtr resource);
-CommandToDo *clProtect(CommandLayer *comlayer,SelectCommand *selectcom,ProtectCommand *protectcom);
-void clSpecial(CommandLayer *comlayer,SelectCommand *selectcom,SpecialCommand *targets);
-void clHalt(CommandLayer *comlayer,SelectCommand *selectcom);
-void clHaltThese(CommandLayer *comlayer,SelectCommand *selectcom);
-void clScuttle(CommandLayer *comlayer,SelectCommand *selectcom);
-void clAutoLaunch(udword OnOff,udword playerIndex);
-void clSetAlliance(udword AllianceType, uword curalliance, uword newalliance);
-void clLaunchMultipleShips(CommandLayer *comlayer,SelectCommand *selectcom,ShipPtr launchFrom);
-void clSetTactics(CommandLayer *comlayer,SelectCommand *selectcom,TacticsType tacticstype);
-void clSetKamikaze(CommandLayer *comlayer,SelectCommand *selectcom);
-void clSetMilitaryParade(CommandLayer *comlayer,SelectCommand *selectcom);
-void clRUTransfer(CommandLayer *comlayer, sdword toIndex, sdword fromIndex, sdword resourceUnits,ubyte flags);
-void clMpHyperspace(CommandLayer *comlayer,SelectCommand *selectcom,vector from,vector to);
-void clSetResearch(udword type, udword playernum, udword labnum, udword tech);
-void clDeterministicBuild(udword command, CommandLayer* comlayer, sdword numShips, ShipType shipType, ShipRace shipRace, uword playerIndex, ShipPtr creator);
+TI_API void clMove(CommandLayer *comlayer,SelectCommand *selectcom,vector from,vector to);
+TI_API CommandToDo *clAttackThese(CommandLayer *comlayer,SelectCommand *selectcom,AttackCommand *attackcom);
+TI_API void clAttack(CommandLayer *comlayer,SelectCommand *selectcom,AttackCommand *attackcom);
+TI_API void clPassiveAttack(CommandLayer *comlayer,SelectCommand *selectcom,AttackCommand *attackcom);
+TI_API void clFormation(CommandLayer *comlayer,SelectCommand *selectcom,TypeOfFormation formation);
+TI_API sdword clDock(CommandLayer *comlayer,SelectCommand *selectcom,DockType dockType,ShipPtr dockwith);
+TI_API Ship *clCreateShip(CommandLayer *comlayer,ShipType shipType,ShipRace shipRace,uword playerIndex,ShipPtr creator);
+TI_API void clBuildShip(CommandLayer *comlayer,ShipType shipType,ShipRace shipRace,uword playerIndex,ShipPtr creator);
+TI_API void clCollectResource(CommandLayer *comlayer,SelectCommand *selectcom,ResourcePtr resource);
+TI_API CommandToDo *clProtect(CommandLayer *comlayer,SelectCommand *selectcom,ProtectCommand *protectcom);
+TI_API void clSpecial(CommandLayer *comlayer,SelectCommand *selectcom,SpecialCommand *targets);
+TI_API void clHalt(CommandLayer *comlayer,SelectCommand *selectcom);
+TI_API void clHaltThese(CommandLayer *comlayer,SelectCommand *selectcom);
+TI_API void clScuttle(CommandLayer *comlayer,SelectCommand *selectcom);
+TI_API void clAutoLaunch(udword OnOff,udword playerIndex);
+TI_API void clSetAlliance(udword AllianceType, uword curalliance, uword newalliance);
+TI_API void clLaunchMultipleShips(CommandLayer *comlayer,SelectCommand *selectcom,ShipPtr launchFrom);
+TI_API void clSetTactics(CommandLayer *comlayer,SelectCommand *selectcom,TacticsType tacticstype);
+TI_API void clSetKamikaze(CommandLayer *comlayer,SelectCommand *selectcom);
+TI_API void clSetMilitaryParade(CommandLayer *comlayer,SelectCommand *selectcom);
+TI_API void clRUTransfer(CommandLayer *comlayer, sdword toIndex, sdword fromIndex, sdword resourceUnits,ubyte flags);
+TI_API void clMpHyperspace(CommandLayer *comlayer,SelectCommand *selectcom,vector from,vector to);
+TI_API void clSetResearch(udword type, udword playernum, udword labnum, udword tech);
+TI_API void clDeterministicBuild(udword command, CommandLayer* comlayer, sdword numShips, ShipType shipType, ShipRace shipRace, uword playerIndex, ShipPtr creator);
 
 // does ship have to launch
-bool ShipHasToLaunch(Ship *InsideShip, Ship *ship);
+TI_API bool ShipHasToLaunch(Ship *InsideShip, Ship *ship);
 
 // launch functions
-void LaunchAllInternalShipsOfPlayerThatMustBeLaunched(struct Player *player);
-sdword LaunchAllInternalShipsOfPlayer(struct Player *player, udword carriermask);
+TI_API void LaunchAllInternalShipsOfPlayerThatMustBeLaunched(struct Player *player);
+TI_API sdword LaunchAllInternalShipsOfPlayer(struct Player *player, udword carriermask);
 
 // checks if can ChangeOrderToPassiveAttack
-bool canChangeOrderToPassiveAttack(CommandToDo *alreadycommand,AttackCommand *attack);
+TI_API bool canChangeOrderToPassiveAttack(CommandToDo *alreadycommand,AttackCommand *attack);
 
 // changes order to passive attack
 // WARNING: Must call canChangeOrderToPassiveAttack to see if you can call this
-void ChangeOrderToPassiveAttack(CommandToDo *alreadycommand,AttackCommand *attackcom);
+TI_API void ChangeOrderToPassiveAttack(CommandToDo *alreadycommand,AttackCommand *attackcom);
 
 // changes order to attack
-void ChangeOrderToAttack(CommandToDo *alreadycommand,AttackCommand *attackcom);
+TI_API void ChangeOrderToAttack(CommandToDo *alreadycommand,AttackCommand *attackcom);
 
 // changes order to move
-void ChangeOrderToMove(CommandToDo *alreadycommand,vector from,vector to);
+TI_API void ChangeOrderToMove(CommandToDo *alreadycommand,vector from,vector to);
 
 // Returns allocated command containing the ship
-CommandToDo *getShipAndItsCommand(CommandLayer *comlayer,ShipPtr ship);
-SelectCommand *getShipAndItsCommandSelection(CommandLayer *comlayer,ShipPtr ship,bool *parade);
+TI_API CommandToDo *getShipAndItsCommand(CommandLayer *comlayer,ShipPtr ship);
+TI_API SelectCommand *getShipAndItsCommandSelection(CommandLayer *comlayer,ShipPtr ship,bool *parade);
 
 // Returns allocated command containing the ship and its formation
-CommandToDo *getShipAndItsFormationCommand(CommandLayer *comlayer,ShipPtr ship);
+TI_API CommandToDo *getShipAndItsFormationCommand(CommandLayer *comlayer,ShipPtr ship);
 
 // Returns allocated selectcommand containing the ship and its formation
-SelectCommand *getShipAndItsFormation(CommandLayer *comlayer,ShipPtr ship);
+TI_API SelectCommand *getShipAndItsFormation(CommandLayer *comlayer,ShipPtr ship);
 
 // returns TRUE if searchfor is in comlayer
-bool CommandInCommandLayer(CommandLayer *comlayer,CommandToDo *searchfor);
+TI_API bool CommandInCommandLayer(CommandLayer *comlayer,CommandToDo *searchfor);
 
 // Call this function to see if this selection is already in formation
-TypeOfFormation clSelectionAlreadyInFormation(CommandLayer *comlayer,SelectCommand *selectcom);
+TI_API TypeOfFormation clSelectionAlreadyInFormation(CommandLayer *comlayer,SelectCommand *selectcom);
 
 // Call this function to update ship command layer when ship dies
-void clShipDied(CommandLayer *comlayer,ShipPtr deadship);
+TI_API void clShipDied(CommandLayer *comlayer,ShipPtr deadship);
 
 // Call this function to update ship command layer when resource dies
-void clResourceDied(CommandLayer *comlayer,ResourcePtr resource);
+TI_API void clResourceDied(CommandLayer *comlayer,ResourcePtr resource);
 
 // Call this function to update ship command layer when derelict dies
-void clDerelictDied(CommandLayer *comlayer,DerelictPtr derelict);
+TI_API void clDerelictDied(CommandLayer *comlayer,DerelictPtr derelict);
 
 // Call this function to update ship command layer when missile dies
-void clMissileDied(CommandLayer *comlayer,MissilePtr missile);
+TI_API void clMissileDied(CommandLayer *comlayer,MissilePtr missile);
 
 // Tells if selectcom is already doing something in the command layer
-CommandToDo *IsSelectionAlreadyDoingSomething(CommandLayer *comlayer,SelectCommand *selectcom);
+TI_API CommandToDo *IsSelectionAlreadyDoingSomething(CommandLayer *comlayer,SelectCommand *selectcom);
 
 // Removes ships in selectcom from doing stuff in the command layer
-void RemoveShipsFromDoingStuff(CommandLayer *comlayer,SelectCommand *selectcom);
+TI_API void RemoveShipsFromDoingStuff(CommandLayer *comlayer,SelectCommand *selectcom);
 
 // values for removeFlag for RemoveShipFromBeingTargeted
 #define REMOVE_PROTECT          1
@@ -224,80 +224,80 @@ void RemoveShipsFromDoingStuff(CommandLayer *comlayer,SelectCommand *selectcom);
 #define REMOVE_HYPERSPACING     16
 
 // Removes ship from being targeted in the command layer
-void RemoveShipFromBeingTargeted(CommandLayer *comlayer,ShipPtr shiptoremove,udword removeFlag);
+TI_API void RemoveShipFromBeingTargeted(CommandLayer *comlayer,ShipPtr shiptoremove,udword removeFlag);
 
 // cleans up game when a ship goes out of view..
-void shipHasJustCloaked(Ship *ship);
+TI_API void shipHasJustCloaked(Ship *ship);
 
 // cleans up game when a ship becomes disabled
-void shipHasJustBeenDisabled(Ship *ship);
+TI_API void shipHasJustBeenDisabled(Ship *ship);
 
 // when ship just disappeared (SOF_Hide) e.g. univRemoveShipFromOutside
-void shipHasJustDisappeared(Ship *ship);
+TI_API void shipHasJustDisappeared(Ship *ship);
 
 // removes target info from command regarding shiptoremove
-void RemoveShipReferencesFromExtraAttackInfo(Ship *shiptoremove,CommandToDo *todo);
-void RemoveAttackTargetFromExtraAttackInfo(SpaceObjRotImpTarg *targettoremove,CommandToDo *todo);
-void removeShipsFromDockingWithThisShip(Ship *ship);
+TI_API void RemoveShipReferencesFromExtraAttackInfo(Ship *shiptoremove,CommandToDo *todo);
+TI_API void RemoveAttackTargetFromExtraAttackInfo(SpaceObjRotImpTarg *targettoremove,CommandToDo *todo);
+TI_API void removeShipsFromDockingWithThisShip(Ship *ship);
 
-void RemoveShipFromAttacking(Ship *ship);
+TI_API void RemoveShipFromAttacking(Ship *ship);
 
 // Initializes ship's AI state variables
-void InitShipAI(Ship *ship,bool fresh);
+TI_API void InitShipAI(Ship *ship,bool fresh);
 
 // Initializes selection ships AI state variables
-void InitShipsForAI(SelectCommand *selection,bool fresh);
+TI_API void InitShipsForAI(SelectCommand *selection,bool fresh);
 
 // clears any protecting in command
-void ClearProtecting(CommandToDo *command);
+TI_API void ClearProtecting(CommandToDo *command);
 
 // clears any passive attack command
-void ClearPassiveAttacking(CommandToDo *command);
+TI_API void ClearPassiveAttacking(CommandToDo *command);
 
 // frees last order of command, so new order can be put in
-void FreeLastOrder(CommandToDo *command);
+TI_API void FreeLastOrder(CommandToDo *command);
 
 // adds a ship to a formation group
-void AddShipToFormationGroup(ShipPtr ship,CommandToDo *group);
+TI_API void AddShipToFormationGroup(ShipPtr ship,CommandToDo *group);
 
 // adds a ship to a command group
-void AddShipToGroup(ShipPtr ship,CommandToDo *group);
+TI_API void AddShipToGroup(ShipPtr ship,CommandToDo *group);
 
 // Adds a ship to the proper group around aroundShip
-void GroupShip(CommandLayer *comlayer,ShipPtr ship,ShipPtr aroundShip);
+TI_API void GroupShip(CommandLayer *comlayer,ShipPtr ship,ShipPtr aroundShip);
 
 // groups ship into military parade around aroundShip
-void GroupShipIntoMilitaryParade(CommandLayer *comlayer,ShipPtr ship,ShipPtr aroundShip);
+TI_API void GroupShipIntoMilitaryParade(CommandLayer *comlayer,ShipPtr ship,ShipPtr aroundShip);
 
 // sets ships to correct position according to command layer
-void clPresetShipsToPosition(CommandLayer *comlayer);
+TI_API void clPresetShipsToPosition(CommandLayer *comlayer);
 
 // cleans up formation ship stuff
-void RemoveShipFromFormation(Ship *ship);
+TI_API void RemoveShipFromFormation(Ship *ship);
 
-void fixFlipTurnSelection(SelectCommand *selection,SelectCommand *global);
+TI_API void fixFlipTurnSelection(SelectCommand *selection,SelectCommand *global);
 
-CommandToDo *GetMilitaryGroupAroundShip(CommandLayer *comlayer,Ship *aroundShip);
+TI_API CommandToDo *GetMilitaryGroupAroundShip(CommandLayer *comlayer,Ship *aroundShip);
 
 // call whenever creating a new command in command layer or ships changing their command
-void PrepareShipsForCommand(CommandToDo *command,bool rowClear);
-void PrepareOneShipForCommand(Ship *ship,CommandToDo *command,bool rowClear);
+TI_API void PrepareShipsForCommand(CommandToDo *command,bool rowClear);
+TI_API void PrepareOneShipForCommand(Ship *ship,CommandToDo *command,bool rowClear);
 
 // call whenever removing command
-void RemoveShipsFromCommand(CommandToDo *command);
+TI_API void RemoveShipsFromCommand(CommandToDo *command);
 // call whenever removing a ship from command (e.g. removing ship from command->selection)
-void RemoveShipFromCommand(Ship *ship);
+TI_API void RemoveShipFromCommand(Ship *ship);
 
 //returns cost of selSelected to hyperspace to distance
-real32 hyperspaceCost(real32 distance,SelectCommand *selection);
+TI_API real32 hyperspaceCost(real32 distance,SelectCommand *selection);
 
-void FillInCarrierMothershipInfo(struct Player *player,Ship **mothership,Ship *carrierX[]);
+TI_API void FillInCarrierMothershipInfo(struct Player *player,Ship **mothership,Ship *carrierX[]);
 
 //cancels all current players launching ship(single player game only)
-void clCancelAllLaunchOrdersFromPlayer(struct Player *player);
+TI_API void clCancelAllLaunchOrdersFromPlayer(struct Player *player);
 
 // tells ship to stay nearby protectThisShip - actual logic for attack if protectThisShip being attacked not in this routine
-void protectShip(Ship *ship,Ship *protectThisShip,bool passiveAttacked);
+TI_API void protectShip(Ship *ship,Ship *protectThisShip,bool passiveAttacked);
 
 /*=============================================================================
     Data:

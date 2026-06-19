@@ -138,49 +138,49 @@ typedef struct {
 
 } AIEvents;
 
-sdword aieCheckGettingRocked(struct AITeam *team, SelectCommand **ships);
-sdword aieCheckEnemyNearby(struct AITeam *team, SelectCommand **ships);
-sdword aieCheckEnemyNotNearby(struct AITeam *team);
-sdword aieCheckFiring(struct AITeam *team);
-sdword aieCheckDisengage(struct AITeam *team);
-sdword aieCheckHealthLow(struct AITeam *team);
-sdword aieCheckHealthHigh(struct AITeam *team);
-sdword aieCheckNumbersLow(struct AITeam *team);
-sdword aieCheckNumbersHigh(struct AITeam *team);
-sdword aieCheckFuelLow(struct AITeam *team);
-sdword aieCheckFuelHigh(struct AITeam *team);
-sdword aieCheckShipDied(void);
-sdword aieCheckTeamDied(struct AITeam *team);
-sdword aieCheckInterrupt(struct AITeam *team);
+TI_API sdword aieCheckGettingRocked(struct AITeam *team, SelectCommand **ships);
+TI_API sdword aieCheckEnemyNearby(struct AITeam *team, SelectCommand **ships);
+TI_API sdword aieCheckEnemyNotNearby(struct AITeam *team);
+TI_API sdword aieCheckFiring(struct AITeam *team);
+TI_API sdword aieCheckDisengage(struct AITeam *team);
+TI_API sdword aieCheckHealthLow(struct AITeam *team);
+TI_API sdword aieCheckHealthHigh(struct AITeam *team);
+TI_API sdword aieCheckNumbersLow(struct AITeam *team);
+TI_API sdword aieCheckNumbersHigh(struct AITeam *team);
+TI_API sdword aieCheckFuelLow(struct AITeam *team);
+TI_API sdword aieCheckFuelHigh(struct AITeam *team);
+TI_API sdword aieCheckShipDied(void);
+TI_API sdword aieCheckTeamDied(struct AITeam *team);
+TI_API sdword aieCheckInterrupt(struct AITeam *team);
 
 struct AITeamMove;
 
-void aieHandlerSetGettingRocked (struct AITeamMove *move, bool8 oneShot, aieHandlerShips handler);
-void aieHandlerSetEnemyNearby(struct AITeamMove *move, real32 watchRadius, bool8 oneShot, aieHandlerShips handler);
-void aieHandlerSetEnemyNotNearby(struct AITeamMove *move, real32 watchRadius, bool8 oneShot, aieHandlerSimple hander);
-void aieHandlerSetFiring(struct AITeamMove *move, bool8 oneShot, aieHandlerSimple handler);
-void aieHandlerSetDisengage(struct AITeamMove *move, bool8 oneShot, aieHandlerSimple handler);
-void aieHandlerSetHealthLow(struct AITeamMove *move, sdword watchPrecentage, bool8 watchIndividual, bool8 oneShot, aieHandlerSimple handler);
-void aieHandlerSetHealthHigh (struct AITeamMove *move, sdword watchPercentage, bool8 watchIndividual, bool8 oneShot, aieHandlerSimple handler);
+TI_API void aieHandlerSetGettingRocked (struct AITeamMove *move, bool8 oneShot, aieHandlerShips handler);
+TI_API void aieHandlerSetEnemyNearby(struct AITeamMove *move, real32 watchRadius, bool8 oneShot, aieHandlerShips handler);
+TI_API void aieHandlerSetEnemyNotNearby(struct AITeamMove *move, real32 watchRadius, bool8 oneShot, aieHandlerSimple hander);
+TI_API void aieHandlerSetFiring(struct AITeamMove *move, bool8 oneShot, aieHandlerSimple handler);
+TI_API void aieHandlerSetDisengage(struct AITeamMove *move, bool8 oneShot, aieHandlerSimple handler);
+TI_API void aieHandlerSetHealthLow(struct AITeamMove *move, sdword watchPrecentage, bool8 watchIndividual, bool8 oneShot, aieHandlerSimple handler);
+TI_API void aieHandlerSetHealthHigh (struct AITeamMove *move, sdword watchPercentage, bool8 watchIndividual, bool8 oneShot, aieHandlerSimple handler);
 //note: if watchBaseCount in "SetNumbersLow/High" is 0, the initial value will be set
 //      using the number of ships in the team the first time the event is checked
-void aieHandlerSetNumbersLow(struct AITeamMove *move, sdword watchPercentage, sdword watchBaseCount, bool8 oneShot, aieHandlerSimple handler);
-void aieHandlerSetNumbersHigh (struct AITeamMove *move, sdword watchPercentage, sdword watchBaseCount, bool8 oneShot, aieHandlerSimple handler);
-void aieHandlerSetFuelLow(struct AITeamMove *move, sdword watchPercentage, bool8 watchIndividual, bool8 oneShot, aieHandlerSimple handler);
-void aieHandlerSetFuelHigh(struct AITeamMove *move, sdword watchPercentage, bool8 watchIndividual, bool8 oneShot, aieHandlerSimple handler);
-void aieHandlerSetShipDied(struct AITeamMove *move, bool8 oneShot, aieHandlerShip handler);
-void aieHandlerSetTeamDied(struct AITeamMove *move, aieHandlerSimple handler);
-void aieHandlerSetInterrupt(struct AITeamMove *move, udword *intvar, udword interval, bool8 oneShot, aieHandlerInt handler);
+TI_API void aieHandlerSetNumbersLow(struct AITeamMove *move, sdword watchPercentage, sdword watchBaseCount, bool8 oneShot, aieHandlerSimple handler);
+TI_API void aieHandlerSetNumbersHigh (struct AITeamMove *move, sdword watchPercentage, sdword watchBaseCount, bool8 oneShot, aieHandlerSimple handler);
+TI_API void aieHandlerSetFuelLow(struct AITeamMove *move, sdword watchPercentage, bool8 watchIndividual, bool8 oneShot, aieHandlerSimple handler);
+TI_API void aieHandlerSetFuelHigh(struct AITeamMove *move, sdword watchPercentage, bool8 watchIndividual, bool8 oneShot, aieHandlerSimple handler);
+TI_API void aieHandlerSetShipDied(struct AITeamMove *move, bool8 oneShot, aieHandlerShip handler);
+TI_API void aieHandlerSetTeamDied(struct AITeamMove *move, aieHandlerSimple handler);
+TI_API void aieHandlerSetInterrupt(struct AITeamMove *move, udword *intvar, udword interval, bool8 oneShot, aieHandlerInt handler);
 
-void aieHandlersClear (struct AITeamMove *move);
+TI_API void aieHandlersClear (struct AITeamMove *move);
 
-void aieExecute(struct AITeam *team);
+TI_API void aieExecute(struct AITeam *team);
 
 // SaveGame Stuff
-void aieFixAIEvents(struct AITeamMove *move);
-void aiePreFixAIEvents(struct AITeamMove *move);
+TI_API void aieFixAIEvents(struct AITeamMove *move);
+TI_API void aiePreFixAIEvents(struct AITeamMove *move);
 
-aieHandlerSimple aieNumToHandler(sdword num);
-sdword aieHandlerToNum(aieHandlerSimple handler);
+TI_API aieHandlerSimple aieNumToHandler(sdword num);
+TI_API sdword aieHandlerToNum(aieHandlerSimple handler);
 
 #endif

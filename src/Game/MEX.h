@@ -145,25 +145,25 @@ typedef struct tagMEXNAVLightChunk
     char            NAVLightName[20];       // Actual name.
 } MEXNAVLightChunk; // 36 bytes...
 
-void *mexGetChunk(void *mex,char *type,char *name);
+TI_API void *mexGetChunk(void *mex,char *type,char *name);
 
-void *mexLoad(char *filename);
-void mexFree(void *mex);
-bool mexVerify(void *mex);
+TI_API void *mexLoad(char *filename);
+TI_API void mexFree(void *mex);
+TI_API bool mexVerify(void *mex);
 
-ResNozzleStatic *mexGetResNozzleStatic(void *mex);
-RepairNozzleStatic *mexGetRepairNozzleStatic(void *mex);
-TractorBeamStatic *mexGetTractorBeamStatic(void *mex);
-void mexGetGunStaticInfo(GunStaticInfo *gunstaticinfo,void *mex);
-void mexGetDockStaticInfo(DockStaticInfo *dockstaticinfo,void *mex);
-void mexGetSalvageStaticInfo(SalvageStaticInfo *salvagestaticinfo,void *mex);
-void mexGetNAVLightStaticInfo(NAVLightStaticInfo *navlightstaticinfo, void *mex);
-void mexSetCollisionInfo(StaticCollInfo *staticCollInfo,void *mex,real32 forwardScale,real32 upScale,real32 rightScale, real32 xslide, real32 yslide, real32 zslide);
-void mexSetEngineNozzle(vector* engineNozzleOffset, void* mex, sdword index);
-void mexVecToVec(vector *dest, vector *source);
-MEXDockingChunk *mexGetDockChunk(void *mex,char *dockname);
-MEXSalvageChunk *mexGetSalChunk(void *mex,char *salvagename);
-MEXNAVLightChunk *mexGetNAVLightChunk(void *mex,char *navLightName);
+TI_API ResNozzleStatic *mexGetResNozzleStatic(void *mex);
+TI_API RepairNozzleStatic *mexGetRepairNozzleStatic(void *mex);
+TI_API TractorBeamStatic *mexGetTractorBeamStatic(void *mex);
+TI_API void mexGetGunStaticInfo(GunStaticInfo *gunstaticinfo,void *mex);
+TI_API void mexGetDockStaticInfo(DockStaticInfo *dockstaticinfo,void *mex);
+TI_API void mexGetSalvageStaticInfo(SalvageStaticInfo *salvagestaticinfo,void *mex);
+TI_API void mexGetNAVLightStaticInfo(NAVLightStaticInfo *navlightstaticinfo, void *mex);
+TI_API void mexSetCollisionInfo(StaticCollInfo *staticCollInfo,void *mex,real32 forwardScale,real32 upScale,real32 rightScale, real32 xslide, real32 yslide, real32 zslide);
+TI_API void mexSetEngineNozzle(vector* engineNozzleOffset, void* mex, sdword index);
+TI_API void mexVecToVec(vector *dest, vector *source);
+TI_API MEXDockingChunk *mexGetDockChunk(void *mex,char *dockname);
+TI_API MEXSalvageChunk *mexGetSalChunk(void *mex,char *salvagename);
+TI_API MEXNAVLightChunk *mexGetNAVLightChunk(void *mex,char *navLightName);
 
 #endif
 

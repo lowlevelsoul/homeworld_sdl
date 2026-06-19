@@ -201,26 +201,26 @@ extern real32 keyLastTimeHit;
 /*=============================================================================
     Functions:
 =============================================================================*/
-void keyInit(void);
-void keyClose(void);
-bool keyAnyKeyHit(void);
-bool keyAnyKeyStuck(void);
-void keyClearAll(void);
-void keyClearAllStuckKeys(void);
+TI_API void keyInit(void);
+TI_API void keyClose(void);
+TI_API bool keyAnyKeyHit(void);
+TI_API bool keyAnyKeyStuck(void);
+TI_API void keyClearAll(void);
+TI_API void keyClearAllStuckKeys(void);
 
 //called from the Windows interface layer, set/clear the sticky and on bits
-void keyPressDown(udword key);
-void keyPressUp(udword key);
-void keyRepeat(udword key);
+TI_API void keyPressDown(udword key);
+TI_API void keyPressUp(udword key);
+TI_API void keyRepeat(udword key);
 
 //functions for buffered keystrokes
-udword keyBufferedKeyGet(bool *bShift);
-void keyBufferAdd(udword key, bool bShift);
-void keyBufferClear(void);
+TI_API udword keyBufferedKeyGet(bool *bShift);
+TI_API void keyBufferAdd(udword key, bool bShift);
+TI_API void keyBufferClear(void);
 
-udword keyGermanToEnglish(udword virtkey);
-udword keyFrenchToEnglish(udword virtkey);
-udword keySpanishToEnglish(udword virtkey);
-udword keyItalianToEnglish(udword virtkey);
+TI_API udword keyGermanToEnglish(udword virtkey);
+TI_API udword keyFrenchToEnglish(udword virtkey);
+TI_API udword keySpanishToEnglish(udword virtkey);
+TI_API udword keyItalianToEnglish(udword virtkey);
 
 #endif

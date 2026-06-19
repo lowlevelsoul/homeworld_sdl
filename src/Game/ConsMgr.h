@@ -115,37 +115,37 @@ extern sdword cmMaxJobsPerClass[NUM_CLASSES];
 /*=============================================================================
     Functions:
 =============================================================================*/
-void cmStartup(void);
-void cmShutdown(void);
-void cmLoadTextures(void);
-void cmCloseTextures(void);
+TI_API void cmStartup(void);
+TI_API void cmShutdown(void);
+TI_API void cmLoadTextures(void);
+TI_API void cmCloseTextures(void);
 
 // cancels all jobs of a certain shiptype
-void cmForceBuildShipType(ShipType type);
+TI_API void cmForceBuildShipType(ShipType type);
 
 void cmReset(void); // Free carrier ship pointers used by construction manager
 
 //start the construction manager.  It will kill itself when you hit the quit button.
-sdword cmConstructionBegin(regionhandle region, smemsize ID, udword event, udword data);
+TI_API sdword cmConstructionBegin(regionhandle region, smemsize ID, udword event, udword data);
 
 //start a new build job
-void cmBuildJobsAdd(shipsinprogress *factory, ShipStaticInfo *info, sdword index);
+TI_API void cmBuildJobsAdd(shipsinprogress *factory, ShipStaticInfo *info, sdword index);
 
-void cmAddFactory(struct Ship *ship,bool canBuildBigShips);
-void cmRemoveFactory(struct Ship *ship);
+TI_API void cmAddFactory(struct Ship *ship,bool canBuildBigShips);
+TI_API void cmRemoveFactory(struct Ship *ship);
 
-void cmCloseIfOpen(void);
+TI_API void cmCloseIfOpen(void);
 
-bool cmCanBuildShipType(Ship *factoryship,ShipType shiptype,bool checkResearch);
+TI_API bool cmCanBuildShipType(Ship *factoryship,ShipType shiptype,bool checkResearch);
 
-bool cmBuildHotKey(keyindex key, bool shift);
-ShipType cmKeyToShipType(uword key);
-uword cmShipTypeToKey(ShipType ship);
+TI_API bool cmBuildHotKey(keyindex key, bool shift);
+TI_API ShipType cmKeyToShipType(uword key);
+TI_API uword cmShipTypeToKey(ShipType ship);
 
-void cmUpdateShipsAvailable(void);
+TI_API void cmUpdateShipsAvailable(void);
 
-void cmPauseAllJbos(void);
-void cmUnPauseAllJobs(void);
+TI_API void cmPauseAllJbos(void);
+TI_API void cmUnPauseAllJobs(void);
 
 #define CMD_START   1
 #define CMD_PAUSE   2
@@ -155,13 +155,13 @@ void cmUnPauseAllJobs(void);
 void cmDeterministicBuild(udword command, sdword numShips,
                           ShipType shipType, ShipRace shipRace,
                           uword playerIndex, ShipPtr creator);
-void cmDeterministicBuildProcess(void);
-void cmDeterministicBuildDisplay(void);
-void cmDeterministicReset(void);
+TI_API void cmDeterministicBuildProcess(void);
+TI_API void cmDeterministicBuildDisplay(void);
+TI_API void cmDeterministicReset(void);
 // Not really a task anymore.
-void cmBuildTaskFunction(void);
+TI_API void cmBuildTaskFunction(void);
 
-void LoadConsMgrDetermOptional(void);
-void SaveConsMgrDetermOptional(void);
+TI_API void LoadConsMgrDetermOptional(void);
+TI_API void SaveConsMgrDetermOptional(void);
 
 #endif

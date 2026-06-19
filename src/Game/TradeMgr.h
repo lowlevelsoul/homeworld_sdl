@@ -65,45 +65,45 @@ extern sword tmTechResearchable[TM_NUM_TECHS];
 /*=============================================================================
     Functions:
 =============================================================================*/
-void tmStartup(void);
-void tmShutdown(void);
+TI_API void tmStartup(void);
+TI_API void tmShutdown(void);
 
-void tmTechInit(void);
-void tmReset(void);
-void tmClearTechs(void);
-
-
-sdword tmTradeBegin(regionhandle region, sdword ID, udword event, udword data);
-void tmLeave(char *string, featom *atom);
-
-void tmCostListDraw(featom *atom, regionhandle region);
-void tmDialogDraw(featom *atom, regionhandle region);
-void tmTechInfoDraw(featom *atom, regionhandle region);
+TI_API void tmTechInit(void);
+TI_API void tmReset(void);
+TI_API void tmClearTechs(void);
 
 
+TI_API sdword tmTradeBegin(regionhandle region, sdword ID, udword event, udword data);
+TI_API void tmLeave(char *string, featom *atom);
 
-
-void AllowPlayerToResearch(char *techname);
-void AllowPlayerToPurchase(char *techname);
-void PlayerAcquiredTechnology(char *techname);
-sdword CanPlayerResearch(char *techname);
-sdword CanPlayerPurchase(char *techname);
-sdword DoesPlayerHave(char *techname);
-sdword GetBaseTechnologyCost(char *techname);
-void SetBaseTechnologyCost(char *techname, sdword cost);
+TI_API void tmCostListDraw(featom *atom, regionhandle region);
+TI_API void tmDialogDraw(featom *atom, regionhandle region);
+TI_API void tmTechInfoDraw(featom *atom, regionhandle region);
 
 
 
-void tmEnableTraderGUI(void);
-bool tmTraderGUIActive(void);
-void tmSetDialog(sdword phrasenum, char *sentence);
-void tmSetPriceScale(udword percent);
-uword tmGetPriceScale(void);
-void tmSetTradeDisabled(bool trade);
+
+TI_API void AllowPlayerToResearch(char *techname);
+TI_API void AllowPlayerToPurchase(char *techname);
+TI_API void PlayerAcquiredTechnology(char *techname);
+TI_API sdword CanPlayerResearch(char *techname);
+TI_API sdword CanPlayerPurchase(char *techname);
+TI_API sdword DoesPlayerHave(char *techname);
+TI_API sdword GetBaseTechnologyCost(char *techname);
+TI_API void SetBaseTechnologyCost(char *techname, sdword cost);
+
+
+
+TI_API void tmEnableTraderGUI(void);
+TI_API bool tmTraderGUIActive(void);
+TI_API void tmSetDialog(sdword phrasenum, char *sentence);
+TI_API void tmSetPriceScale(udword percent);
+TI_API uword tmGetPriceScale(void);
+TI_API void tmSetTradeDisabled(bool trade);
 
 // Save Game stuff
-void tmSave(void);
-void tmLoad(void);
+TI_API void tmSave(void);
+TI_API void tmLoad(void);
 
 
 
@@ -139,8 +139,8 @@ wkTradeType;
 
 extern wkTradeType wkTradeShips[WK_MAX_SHIPS];
 extern bool wkTradeStuffActive;
-void mrTradeStuffTest(sdword *a, sdword *b);
-void wkTradeUpdate(void);
+TI_API void mrTradeStuffTest(sdword *a, sdword *b);
+TI_API void wkTradeUpdate(void);
 
 
 #endif

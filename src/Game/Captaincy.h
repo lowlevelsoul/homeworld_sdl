@@ -34,22 +34,22 @@ typedef struct CaptaincyCustomInfo
 } CaptaincyCustomInfo;
 
 
-void TransferCaptaincyGameEnded(void);
-void TransferCaptaincyGameStarted(void);
+TI_API void TransferCaptaincyGameEnded(void);
+TI_API void TransferCaptaincyGameStarted(void);
 
-void TransferCaptaincyStateMachine(CaptaincyEvent event, uword from, udword misc, CaptaincyCustomInfo *customInfo);
-void TransferCaptaincySyncPacketReceivedNotify(void);
+TI_API void TransferCaptaincyStateMachine(CaptaincyEvent event, uword from, udword misc, CaptaincyCustomInfo *customInfo);
+TI_API void TransferCaptaincySyncPacketReceivedNotify(void);
 
-void TransferCaptaincyUpdate(void);
+TI_API void TransferCaptaincyUpdate(void);
 
-void TimeoutTimerInitAll(void);
-void TimeoutTimerCloseAll(void);
-void TimeoutTimerUpdateAll(void);
+TI_API void TimeoutTimerInitAll(void);
+TI_API void TimeoutTimerCloseAll(void);
+TI_API void TimeoutTimerUpdateAll(void);
 
-void GiveUpCaptaincy(void);
+TI_API void GiveUpCaptaincy(void);
 
-void captaincyLogInit(void);
-void captaincyLog(bool echotoscreen, char *format, ...);
+TI_API void captaincyLogInit(void);
+TI_API void captaincyLog(bool echotoscreen, char *format, ...);
 
 
 extern bool transferCaptaincyDisabled;

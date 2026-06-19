@@ -29,22 +29,22 @@ typedef struct {
     bool8 bPaused;
 } Timer;
 
-void timTimerCreate(char *name);
-void timTimerStart(char *name);
-void timTimerStop(char *name);
-sdword timTimerExpired(char *name);
-sdword timTimerExpiredDestroy(char *name);
-sdword timTimerRemaining(char *name);
-void timTimerSet(char *name, sdword duration);
-void timTimerCreateSetStart(char *name, sdword duration);
-void timTimerDestroy(char *name);
-void timTimerDestroyAll(void);
-void timTimerPause(Timer *tim);
-void timTimerPauseAllNotScoped(char *scopeName);
-void timTimerUnpause(Timer *tim);
-void timTimerUnpauseAll(void);
+TI_API void timTimerCreate(char *name);
+TI_API void timTimerStart(char *name);
+TI_API void timTimerStop(char *name);
+TI_API sdword timTimerExpired(char *name);
+TI_API sdword timTimerExpiredDestroy(char *name);
+TI_API sdword timTimerRemaining(char *name);
+TI_API void timTimerSet(char *name, sdword duration);
+TI_API void timTimerCreateSetStart(char *name, sdword duration);
+TI_API void timTimerDestroy(char *name);
+TI_API void timTimerDestroyAll(void);
+TI_API void timTimerPause(Timer *tim);
+TI_API void timTimerPauseAllNotScoped(char *scopeName);
+TI_API void timTimerUnpause(Timer *tim);
+TI_API void timTimerUnpauseAll(void);
 
-void timTimerSave(void);
-void timTimerLoad(void);
+TI_API void timTimerSave(void);
+TI_API void timTimerLoad(void);
 
 #endif

@@ -82,24 +82,24 @@ extern char lightCurrentLighting[];
     Functions:
 =============================================================================*/
 //startup/shutdown
-void lightStartup(void);
-void lightShutdown(void);
+TI_API void lightStartup(void);
+TI_API void lightShutdown(void);
 
 //set the current lighting properties
-void lightPositionSet(void);
-void lightDefaultLightSet(void);
+TI_API void lightPositionSet(void);
+TI_API void lightDefaultLightSet(void);
 
 #if LIGHT_PLAYER_COLORS
-void lightPlayerColorLightSet(sdword playerIndex);
+TI_API void lightPlayerColorLightSet(sdword playerIndex);
 #endif
 
 //parse an HSF file full of lighting data, filling in the default lightinfo struct
 void lightParseHSF(char*);
 //gl up the lighting info (either from an hsf, or defaultlightset)
-void lightSetLighting(void);
+TI_API void lightSetLighting(void);
 
-void lightSetNumLights(udword numLights);
+TI_API void lightSetNumLights(udword numLights);
 
-void lightGetPosition(sdword lightIndex, hvector* position);
+TI_API void lightGetPosition(sdword lightIndex, hvector* position);
 
 #endif

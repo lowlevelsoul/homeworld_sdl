@@ -23,11 +23,11 @@
 #define SLOW_INTERNETICON           LAG_PATH"SlowInternetIcon.lif"
 #define INTERNET_LAG_UPDATERATE     31
 
-void lagSlowComputerIcon(void);
-void lagSlowInternetIcon(void);
+TI_API void lagSlowComputerIcon(void);
+TI_API void lagSlowInternetIcon(void);
 
-void lagUpdateInternetLag(void);
+TI_API void lagUpdateInternetLag(void);
 
-void lagRecievedPacketCB(ubyte *packet,udword sizeofPacket);
+TI_API void lagRecievedPacketCB(ubyte *packet,udword sizeofPacket);
 
 #endif

@@ -90,42 +90,42 @@ typedef struct
     dbgAssertOrIgnore(c);                       \
     dbgAssertOrIgnore((c)->type == (t));
 
-bool SaveGame(char *filename);
-void LoadGame(char *filename);
-void PreLoadGame(char *filename);
+TI_API bool SaveGame(char *filename);
+TI_API void LoadGame(char *filename);
+TI_API void PreLoadGame(char *filename);
 
-void SaveThisChunk(SaveChunk *thischunk);
-SaveChunk *CreateChunk(TypeOfSaveChunk type,sdword contentsSize,void *contents);
-SaveChunk *LoadNextChunk(void);
+TI_API void SaveThisChunk(SaveChunk *thischunk);
+TI_API SaveChunk *CreateChunk(TypeOfSaveChunk type,sdword contentsSize,void *contents);
+TI_API SaveChunk *LoadNextChunk(void);
 
-sdword SpaceObjRegistryGetID(SpaceObj *obj);
-SpaceObj *SpaceObjRegistryGetObj(sdword id);
-Ship *SpaceObjRegistryGetShip(sdword id);
-Resource *SpaceObjRegistryGetResource(sdword id);
-Bullet *SpaceObjRegistryGetBullet(sdword id);
-TargetPtr SpaceObjRegistryGetTarget(sdword id);
-void SaveInfoNumber(sdword info);
-sdword LoadInfoNumber(void);
-void *ConvertNumToPointerInList(LinkedList *list,sdword num);
-sdword ConvertPointerInListToNum(LinkedList *list,void *entry);
-void SpaceObjRegistryRegister(SpaceObj *obj);
+TI_API sdword SpaceObjRegistryGetID(SpaceObj *obj);
+TI_API SpaceObj *SpaceObjRegistryGetObj(sdword id);
+TI_API Ship *SpaceObjRegistryGetShip(sdword id);
+TI_API Resource *SpaceObjRegistryGetResource(sdword id);
+TI_API Bullet *SpaceObjRegistryGetBullet(sdword id);
+TI_API TargetPtr SpaceObjRegistryGetTarget(sdword id);
+TI_API void SaveInfoNumber(sdword info);
+TI_API sdword LoadInfoNumber(void);
+TI_API void *ConvertNumToPointerInList(LinkedList *list,sdword num);
+TI_API sdword ConvertPointerInListToNum(LinkedList *list,void *entry);
+TI_API void SpaceObjRegistryRegister(SpaceObj *obj);
 
-void SaveSelection(SpaceObjSelection *selection);
-SpaceObjSelection *LoadSelection(void);
-SpaceObjSelection *LoadSelectionAndFix(void);
-void FixSelection(SpaceObjSelection *selection);
+TI_API void SaveSelection(SpaceObjSelection *selection);
+TI_API SpaceObjSelection *LoadSelection(void);
+TI_API SpaceObjSelection *LoadSelectionAndFix(void);
+TI_API void FixSelection(SpaceObjSelection *selection);
 
-void SaveGrowSelection(GrowSelection *grow);
-void LoadGrowSelection(GrowSelection *grow);
-void LoadGrowSelectionAndFix(GrowSelection *grow);
-void FixGrowSelection(GrowSelection *grow);
+TI_API void SaveGrowSelection(GrowSelection *grow);
+TI_API void LoadGrowSelection(GrowSelection *grow);
+TI_API void LoadGrowSelectionAndFix(GrowSelection *grow);
+TI_API void FixGrowSelection(GrowSelection *grow);
 
-void SaveMaxSelection(MaxSelection *maxselection);
-void LoadMaxSelectionAndFix(MaxSelection *maxselection);
+TI_API void SaveMaxSelection(MaxSelection *maxselection);
+TI_API void LoadMaxSelectionAndFix(MaxSelection *maxselection);
 
-void SaveLinkedListOfInsideShips(LinkedList *list);
-void LoadLinkedListOfInsideShips(LinkedList *list);
-void FixLinkedListOfInsideShips(LinkedList *list);
+TI_API void SaveLinkedListOfInsideShips(LinkedList *list);
+TI_API void LoadLinkedListOfInsideShips(LinkedList *list);
+TI_API void FixLinkedListOfInsideShips(LinkedList *list);
 
 #define SavePlayerToPlayerIndex(p) (((p) == NULL) ? -1 : (p)->playerIndex)
 #define SavePlayerIndexToPlayer(i) ((((sdword)(i)) == -1) ? NULL : &universe.players[((sdword)(i))])
@@ -134,25 +134,25 @@ typedef void (*SaveStuffInLinkedListCB)(void *stuff);
 typedef void (*LoadStuffInLinkedListCB)(LinkedList *list);
 typedef void (*FixStuffInLinkedListCB)(void *stuff);
 
-void SaveLinkedListOfStuff(LinkedList *list,SaveStuffInLinkedListCB savestuffCB);
-void LoadLinkedListOfStuff(LinkedList *list,LoadStuffInLinkedListCB loadstuffCB);
-void FixLinkedListOfStuff(LinkedList *list,FixStuffInLinkedListCB fixstuffCB);
+TI_API void SaveLinkedListOfStuff(LinkedList *list,SaveStuffInLinkedListCB savestuffCB);
+TI_API void LoadLinkedListOfStuff(LinkedList *list,LoadStuffInLinkedListCB loadstuffCB);
+TI_API void FixLinkedListOfStuff(LinkedList *list,FixStuffInLinkedListCB fixstuffCB);
 
-void SaveStructureOfSize(void *structure,sdword size);
-void *LoadStructureOfSize(sdword size);
-void LoadStructureOfSizeToAddress(void *address,sdword size);
+TI_API void SaveStructureOfSize(void *structure,sdword size);
+TI_API void *LoadStructureOfSize(sdword size);
+TI_API void LoadStructureOfSizeToAddress(void *address,sdword size);
 
-void Save_String(char *string);
-char *Load_String(void);
-void Load_StringToAddress(char *addr);
+TI_API void Save_String(char *string);
+TI_API char *Load_String(void);
+TI_API void Load_StringToAddress(char *addr);
 
 #define VERIFYSAVEFILE_OK               0
 #define VERIFYSAVEFILE_ERROROPENING     -1
 #define VERIFYSAVEFILE_BADVERSION       -2
 
-sdword VerifySaveFile(char *filename);
+TI_API sdword VerifySaveFile(char *filename);
 
-bool LoadInfoNumberOptional(sdword *info);
-SaveChunk *LoadNextChunkSafe(void);
+TI_API bool LoadInfoNumberOptional(sdword *info);
+TI_API SaveChunk *LoadNextChunkSafe(void);
 
 #endif

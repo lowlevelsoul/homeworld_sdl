@@ -110,19 +110,19 @@ extern bool pieVisualizeExtents;
     Functions
 =============================================================================*/
 //movement mechanism functions
-void piePointModeOnOff(void);
-void piePointSpecDraw(void);
-void piePointModeToggle(sdword bOn);
-void piePointModePause(sdword bPause);
-void pieShipDied(Ship *ship);
-void pieAllShipsToPiePlateDraw(real32 distance);
-void piePlaneDraw(real32 distance);
-void pieMovementCursorDraw(real32 distance);
-void piePointModeToggle(sdword bOn);
+TI_API void piePointModeOnOff(void);
+TI_API void piePointSpecDraw(void);
+TI_API void piePointModeToggle(sdword bOn);
+TI_API void piePointModePause(sdword bPause);
+TI_API void pieShipDied(Ship *ship);
+TI_API void pieAllShipsToPiePlateDraw(real32 distance);
+TI_API void piePlaneDraw(real32 distance);
+TI_API void pieMovementCursorDraw(real32 distance);
+TI_API void piePointModeToggle(sdword bOn);
 
-void pieStartup(void);
+TI_API void pieStartup(void);
 
-bool pieMovePointClipToLimits(real32 sizeX, real32 sizeY, real32 sizeZ, vector *pointA, vector *pointB);
-sdword pieCircleSegmentsCompute(real32 screenRadius);
+TI_API bool pieMovePointClipToLimits(real32 sizeX, real32 sizeY, real32 sizeZ, vector *pointA, vector *pointB);
+TI_API sdword pieCircleSegmentsCompute(real32 screenRadius);
 
 #endif

@@ -393,14 +393,14 @@ extern real32          AIU_FIGHTER_VULNERABLE_MODIFIER;
     Functions
 =============================================================================*/
 
-AIPlayer *aiplayerInit(Player *player,AIPlayerLevel aiplayerLevel);
-void aiplayerClose(AIPlayer *aiplayer);
-void aiplayerPlay(AIPlayer *aiplayer);
-void aiplayerUpdateAll(void);
-void aiplayerGameStart(AIPlayer *aiplayer);
+TI_API AIPlayer *aiplayerInit(Player *player,AIPlayerLevel aiplayerLevel);
+TI_API void aiplayerClose(AIPlayer *aiplayer);
+TI_API void aiplayerPlay(AIPlayer *aiplayer);
+TI_API void aiplayerUpdateAll(void);
+TI_API void aiplayerGameStart(AIPlayer *aiplayer);
 
-void aiplayerStartup(udword num_players, udword num_human_players, udword num_comp_players);
-void aiplayerShutdown(void);
+TI_API void aiplayerStartup(udword num_players, udword num_human_players, udword num_comp_players);
+TI_API void aiplayerShutdown(void);
 
 #ifdef HW_BUILD_FOR_DEBUGGING
 #define aiplayerLog(x)    aiplayerDebugLog x
@@ -408,18 +408,18 @@ void aiplayerShutdown(void);
 #define aiplayerLog(x)    {;}
 #endif
 
-void aiplayerDebugLog(uword playerIndex, char *format, ...);
+TI_API void aiplayerDebugLog(uword playerIndex, char *format, ...);
 
-void aiplayerShipDied(ShipPtr ship);
+TI_API void aiplayerShipDied(ShipPtr ship);
 
-void aiplayerResourceDied(Resource *resource);
+TI_API void aiplayerResourceDied(Resource *resource);
 
-void aiplayerShipLaunchedCallback(Ship *ship);
+TI_API void aiplayerShipLaunchedCallback(Ship *ship);
 
-void aiplayerPlayerDied(Player *player);
+TI_API void aiplayerPlayerDied(Player *player);
 
-void aiplayerChangeBigotry(udword newvalue);
-void aiplayerAddLeader(AIPlayer *aiplayer, ShipPtr ship);
+TI_API void aiplayerChangeBigotry(udword newvalue);
+TI_API void aiplayerAddLeader(AIPlayer *aiplayer, ShipPtr ship);
 
 /*=============================================================================
     Save Game stuff
@@ -427,16 +427,16 @@ void aiplayerAddLeader(AIPlayer *aiplayer, ShipPtr ship);
 
 struct Path;
 
-void aiplayerSave(void);
-void aiplayerLoad(void);
+TI_API void aiplayerSave(void);
+TI_API void aiplayerLoad(void);
 
-void SavePath(struct Path *path);
+TI_API void SavePath(struct Path *path);
 struct Path *LoadPath(void);
 
-AIPlayer *NumberToAIPlayer(sdword number);
-sdword AIPlayerToNumber(AIPlayer *aiplayer);
+TI_API AIPlayer *NumberToAIPlayer(sdword number);
+TI_API sdword AIPlayerToNumber(AIPlayer *aiplayer);
 struct AITeam *AITeamIndexToTeam(AIPlayer *aiplayer,sdword index);
-sdword AITeamToTeamIndex(struct AITeam *team);
+TI_API sdword AITeamToTeamIndex(struct AITeam *team);
 
 extern AIPlayer *fixingThisAIPlayer;
 

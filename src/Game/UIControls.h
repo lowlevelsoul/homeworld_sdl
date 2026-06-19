@@ -289,8 +289,8 @@ extern sdword uicDragY;
     Functions:
 =============================================================================*/
 //startup/shutdown
-void uicStartup(void);
-void uicShutdown(void);
+TI_API void uicStartup(void);
+TI_API void uicShutdown(void);
 
 //create controls
 buttonhandle uicChildButtonAlloc(controlhandle parent, smemsize ID, sdword x, sdword y,
@@ -308,35 +308,35 @@ textentryhandle uicChildTextEntryAlloc(controlhandle parent, featom *atom,
                                        sdword x, sdword y, sdword width, sdword height,
                                        udword filter);
 //delete a control
-void uicControlDelete(controlhandle handle);
+TI_API void uicControlDelete(controlhandle handle);
 
 //functions for keyboard front end navigation
-udword uicTabProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
-udword uicRightArrowProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
-udword uicLeftArrowProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
-udword uicUpArrowProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
-udword uicDownArrowProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
-udword uicSpacebarProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
-udword uicReturnProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
-udword uicEscProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
-udword uicHomeProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
-udword uicEndProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
+TI_API udword uicTabProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
+TI_API udword uicRightArrowProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
+TI_API udword uicLeftArrowProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
+TI_API udword uicUpArrowProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
+TI_API udword uicDownArrowProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
+TI_API udword uicSpacebarProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
+TI_API udword uicReturnProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
+TI_API udword uicEscProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
+TI_API udword uicHomeProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
+TI_API udword uicEndProcess(struct tagRegion *reg, sdword num_buttons, udword event, udword data);
 
 
 //utility functions for front end navigation
-regionhandle uicFindFlag(regionhandle find, udword flag, uword type);
-regionhandle uicFindTabstop(regionhandle find);
-void uicSetCurrent(regionhandle reg, bool bUserInput);
-bool uicClearCurrent(regionhandle reg);
+TI_API regionhandle uicFindFlag(regionhandle find, udword flag, uword type);
+TI_API regionhandle uicFindTabstop(regionhandle find);
+TI_API void uicSetCurrent(regionhandle reg, bool bUserInput);
+TI_API bool uicClearCurrent(regionhandle reg);
 
 
 //adjust attributes of the basic control
-void uicTextEntryInit(textentryhandle entry, udword flags);
-void uicTextEntrySet(textentryhandle entry, char *text, sdword cursorPos);
-void uicTextEntryGet(textentryhandle entry, char *dest, sdword maxLength);
-void uicTextBufferResize(textentryhandle entry, sdword size);
-void uicTextEntryCleanUp(textentryhandle entry);
-bool uicBackspaceCharacter(textentryhandle entry);
+TI_API void uicTextEntryInit(textentryhandle entry, udword flags);
+TI_API void uicTextEntrySet(textentryhandle entry, char *text, sdword cursorPos);
+TI_API void uicTextEntryGet(textentryhandle entry, char *dest, sdword maxLength);
+TI_API void uicTextBufferResize(textentryhandle entry, sdword size);
+TI_API void uicTextEntryCleanUp(textentryhandle entry);
+TI_API bool uicBackspaceCharacter(textentryhandle entry);
 
 // adjust attributes and manage the list window control
 void uicListWindowInit(listwindowhandle     listwindow,
@@ -346,17 +346,17 @@ void uicListWindowInit(listwindowhandle     listwindow,
                        listitemdraw         itemdraw,
                        sdword               itemheight,
                        udword               flags);
-void uicListScrollBarAdjust(listwindowhandle listwindow);
-listitemhandle uicListAddItem(listwindowhandle listwindow, ubyte *data, udword flags, udword where);
-listitemhandle uicListFindItemByData(listwindowhandle listwindow, ubyte *data);
-void uicListRemoveItemByData(listwindowhandle listwindow, ubyte *data);
-void uicListRemoveItem(listwindowhandle listwindow, listitemhandle item);
-void uicListRemoveAllItems(listwindowhandle listwindow);
-void uicListCleanUp(listwindowhandle listwindow);
-void uicListSort(listwindowhandle listwindow, MergeSortCompareCb compare);
-void uicListWindowPageUp(listwindowhandle listhandle);
-void uicListWindowPageDown(listwindowhandle listhandle);
-void uicListWindowSetCurItem(listwindowhandle listhandle, listitemhandle item);
+TI_API void uicListScrollBarAdjust(listwindowhandle listwindow);
+TI_API listitemhandle uicListAddItem(listwindowhandle listwindow, ubyte *data, udword flags, udword where);
+TI_API listitemhandle uicListFindItemByData(listwindowhandle listwindow, ubyte *data);
+TI_API void uicListRemoveItemByData(listwindowhandle listwindow, ubyte *data);
+TI_API void uicListRemoveItem(listwindowhandle listwindow, listitemhandle item);
+TI_API void uicListRemoveAllItems(listwindowhandle listwindow);
+TI_API void uicListCleanUp(listwindowhandle listwindow);
+TI_API void uicListSort(listwindowhandle listwindow, MergeSortCompareCb compare);
+TI_API void uicListWindowPageUp(listwindowhandle listhandle);
+TI_API void uicListWindowPageDown(listwindowhandle listhandle);
+TI_API void uicListWindowSetCurItem(listwindowhandle listhandle, listitemhandle item);
 
 
 #endif

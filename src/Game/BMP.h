@@ -73,7 +73,7 @@ typedef struct
 /*=============================================================================
     Functions:
 =============================================================================*/
-filehandle bmpFileOpen(bmpheader *header, char *fileName);
-void bmpBodyRead(color *dest, filehandle handle, bmpheader *header);
+TI_API filehandle bmpFileOpen(bmpheader *header, char *fileName);
+TI_API void bmpBodyRead(color *dest, filehandle handle, bmpheader *header);
 
 #endif

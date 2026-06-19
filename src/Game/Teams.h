@@ -90,16 +90,16 @@ extern color teResourceColor;
 =============================================================================*/
 
 //startup/shutdown module
-void teStartup(void);
-void teReset(void);
-void teShutdown(void);
+TI_API void teStartup(void);
+TI_API void teReset(void);
+TI_API void teShutdown(void);
 
 //recompute team colors
-void teTeamColorsSet(sdword iTeam, color baseColor, color stripeColor);
+TI_API void teTeamColorsSet(sdword iTeam, color baseColor, color stripeColor);
 
 //parsing callbacks
-void teTrailColorSet(char *directory,char *field,void *dataToFillIn);
-void teColorSet(char *directory,char *field,void *dataToFillIn);
-void teColorFactorsSet(char *directory,char *field,void *dataToFillIn);
+TI_API void teTrailColorSet(char *directory,char *field,void *dataToFillIn);
+TI_API void teColorSet(char *directory,char *field,void *dataToFillIn);
+TI_API void teColorFactorsSet(char *directory,char *field,void *dataToFillIn);
 
 #endif

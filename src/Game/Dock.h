@@ -38,52 +38,52 @@ typedef struct
 } DockCommand;
 
 #if RND_VISUALIZATION
-void dockDrawDockInfo(Ship *ship);
+TI_API void dockDrawDockInfo(Ship *ship);
 #endif
 
-void dockInitializeCustomFunctions(ShipStaticInfo *statinfo,ShipType type,ShipRace race);
+TI_API void dockInitializeCustomFunctions(ShipStaticInfo *statinfo,ShipType type,ShipRace race);
 
-sdword dockFindDockIndex(char *name,DockStaticInfo *dockstaticinfo);
+TI_API sdword dockFindDockIndex(char *name,DockStaticInfo *dockstaticinfo);
 /*static void dockReserveDockPoint(Ship *ship,Ship *dockwith,sdword dockpointindex);*/
 /*void dockReserveDockPoint(Ship *ship,Ship *dockwith,sdword dockpointindex);*/
 
-void dockPutShipInside(Ship *ship,Ship *dockwith);
-void dockInitShipForLaunch(Ship *ship);
-void dockRemoveShipFromInside(Ship *ship,Ship *dockwith);
-void dockPutShipOutside(Ship *ship,Ship *creator,vector *createat,udword headingdirection,udword updirection);
+TI_API void dockPutShipInside(Ship *ship,Ship *dockwith);
+TI_API void dockInitShipForLaunch(Ship *ship);
+TI_API void dockRemoveShipFromInside(Ship *ship,Ship *dockwith);
+TI_API void dockPutShipOutside(Ship *ship,Ship *creator,vector *createat,udword headingdirection,udword updirection);
 
-void RemoveShipFromLaunching(Ship *ship);
-void RemoveShipFromDocking(Ship *ship);
+TI_API void RemoveShipFromLaunching(Ship *ship);
+TI_API void RemoveShipFromDocking(Ship *ship);
 
-void dockPrepareSingleShipForLaunch(Ship *ship,Ship *dockship);
-void dockChangeSingleShipToDock(struct CommandToDo *command,Ship *ship,Ship *dock,bool wasHarvesting,DockType dockType);
-void DockCleanup(struct CommandToDo *docktodo);
-void LaunchCleanup(struct CommandToDo *launchtodo);
-bool processDockToDo(struct CommandToDo *docktodo);
+TI_API void dockPrepareSingleShipForLaunch(Ship *ship,Ship *dockship);
+TI_API void dockChangeSingleShipToDock(struct CommandToDo *command,Ship *ship,Ship *dock,bool wasHarvesting,DockType dockType);
+TI_API void DockCleanup(struct CommandToDo *docktodo);
+TI_API void LaunchCleanup(struct CommandToDo *launchtodo);
+TI_API bool processDockToDo(struct CommandToDo *docktodo);
 
-bool ShipWithinDockRange(Ship *ship,Ship *target);
-Ship *FindNearestShipToDockAt(Ship *ship,DockType dockType);
+TI_API bool ShipWithinDockRange(Ship *ship,Ship *target);
+TI_API Ship *FindNearestShipToDockAt(Ship *ship,DockType dockType);
 
 // specific docking for certain ships
-bool LaunchShipFromDDDF(Ship *ship,Ship *dockwith);
-bool DroneDocksAtDDDF(struct Ship *ship,struct Ship *dockwith);
-void dockPrepareDroneForDocking(Ship *ship,Ship *dockship);
+TI_API bool LaunchShipFromDDDF(Ship *ship,Ship *dockwith);
+TI_API bool DroneDocksAtDDDF(struct Ship *ship,struct Ship *dockwith);
+TI_API void dockPrepareDroneForDocking(Ship *ship,Ship *dockship);
 
-bool ShipIsRefuelingAtCarrierMother(struct Ship *ship);
-bool ShipIsWaitingForSoftLaunch(struct Ship *ship);
-Ship *FindAnotherResearchShiptoDockWith(Ship *ship);
-void dockMakeMaster(Ship *master);
-void dockAddSlave(Ship *master, Ship *slave);
-void bitClearAllSlaves(Ship *ship);
+TI_API bool ShipIsRefuelingAtCarrierMother(struct Ship *ship);
+TI_API bool ShipIsWaitingForSoftLaunch(struct Ship *ship);
+TI_API Ship *FindAnotherResearchShiptoDockWith(Ship *ship);
+TI_API void dockMakeMaster(Ship *master);
+TI_API void dockAddSlave(Ship *master, Ship *slave);
+TI_API void bitClearAllSlaves(Ship *ship);
 
-sdword **GetLaunchPoints(ShipStaticInfo *shipstatic,ShipStaticInfo *dockwithstatic);
+TI_API sdword **GetLaunchPoints(ShipStaticInfo *shipstatic,ShipStaticInfo *dockwithstatic);
 
-DockType dockGetAppropriateTypeOfDocking(SelectCommand *selectcom);
+TI_API DockType dockGetAppropriateTypeOfDocking(SelectCommand *selectcom);
 
 //slaveables...
-void dockDealWithDeadSlaveable(Ship *ship);
-void dockUpdateSlaves(Ship *master);
-void dockCrushMaster(Ship *master);
+TI_API void dockDealWithDeadSlaveable(Ship *ship);
+TI_API void dockUpdateSlaves(Ship *master);
+TI_API void dockCrushMaster(Ship *master);
 
 typedef struct
 {

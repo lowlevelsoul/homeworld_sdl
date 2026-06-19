@@ -25,16 +25,16 @@ typedef struct
     bool fullMovementFreedom;
 } AttackSideStepParameters;
 
-void attackPassiveRotate(Ship *ship,Ship *target);
+TI_API void attackPassiveRotate(Ship *ship,Ship *target);
 
-void attackSideStepInit(AttackSideStep *attacksidestep);
-void attackSideStep(Ship *ship,SpaceObjRotImpTarg *target,AttackSideStep *attacksidestep,AttackSideStepParameters *parameters);
+TI_API void attackSideStepInit(AttackSideStep *attacksidestep);
+TI_API void attackSideStep(Ship *ship,SpaceObjRotImpTarg *target,AttackSideStep *attacksidestep,AttackSideStepParameters *parameters);
 
-void attackStraightForward(Ship *ship,SpaceObjRotImpTarg *target,real32 gunRange,real32 tooCloseRange);
+TI_API void attackStraightForward(Ship *ship,SpaceObjRotImpTarg *target,real32 gunRange,real32 tooCloseRange);
 
-void attackPassive(Ship *ship,Ship *target);
+TI_API void attackPassive(Ship *ship,Ship *target);
 
-void attackSimple(Ship *ship,SpaceObjRotImpTarg *target);
+TI_API void attackSimple(Ship *ship,SpaceObjRotImpTarg *target);
 
 /*=============================================================================
     Data:

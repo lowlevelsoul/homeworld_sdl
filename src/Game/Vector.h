@@ -125,20 +125,20 @@ typedef struct hvector
 
 #define VECTOR_ORIGIN  {0.0, 0.0, 0.0}
 
-void vecNormalize(vector *a);
-void vecHomogenize(vector* dst, hvector* src);
-void vecCopyAndNormalize(vector *src, vector *dst);
-void vecNormalizeToLength(vector *a, real32 length);
-void vecCapVectorSloppy(vector *vectorToCap, real32 maxMagnitude);
-void vecCapVector(vector *vectorToCap, real32 maxMagnitude);
-void vecCapVectorWithMag(vector *vectorToCap, real32 maxMagnitude, real32 actualMag);
-void vecCapMinVector(vector *vectorToCap, real32 minMagnitude);
-void vecCapMinMaxVector(vector *vectorToCap, real32 minMagnitude, real32 maxMagnitude);
-real32 getVectDistSloppy(vector diff);
-void vecLineIntersectWithXYPlane(vector *result, vector *linepoint1,vector *linepoint2, real32 zp);
-void vecLineIntersectWithYZPlane(vector *result, vector *linepoint1,vector *linepoint2, real32 xp);
-void vecLineIntersectWithXZPlane(vector *result, vector *linepoint1,vector *linepoint2, real32 yp);
-void vecLineIntersectWithPlane(vector *dest, vector *Vplane, vector *Vnormal, vector *Vline, vector *Vdirection);
-void vecVectorsBlend(vector *result, vector *start, vector *end, real32 factor);
+TI_API void vecNormalize(vector *a);
+TI_API void vecHomogenize(vector* dst, hvector* src);
+TI_API void vecCopyAndNormalize(vector *src, vector *dst);
+TI_API void vecNormalizeToLength(vector *a, real32 length);
+TI_API void vecCapVectorSloppy(vector *vectorToCap, real32 maxMagnitude);
+TI_API void vecCapVector(vector *vectorToCap, real32 maxMagnitude);
+TI_API void vecCapVectorWithMag(vector *vectorToCap, real32 maxMagnitude, real32 actualMag);
+TI_API void vecCapMinVector(vector *vectorToCap, real32 minMagnitude);
+TI_API void vecCapMinMaxVector(vector *vectorToCap, real32 minMagnitude, real32 maxMagnitude);
+TI_API real32 getVectDistSloppy(vector diff);
+TI_API void vecLineIntersectWithXYPlane(vector *result, vector *linepoint1,vector *linepoint2, real32 zp);
+TI_API void vecLineIntersectWithYZPlane(vector *result, vector *linepoint1,vector *linepoint2, real32 xp);
+TI_API void vecLineIntersectWithXZPlane(vector *result, vector *linepoint1,vector *linepoint2, real32 yp);
+TI_API void vecLineIntersectWithPlane(vector *dest, vector *Vplane, vector *Vnormal, vector *Vline, vector *Vdirection);
+TI_API void vecVectorsBlend(vector *result, vector *start, vector *end, real32 factor);
 
 #endif

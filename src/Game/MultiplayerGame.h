@@ -283,60 +283,60 @@ typedef struct
 
 struct ChatPacket;
 
-void mgStartMultiPlayerGameScreens(regionhandle region, sdword ID, udword event, udword data, bool AlreadyLoggedIn);
-void mgShutdownMultiPlayerGameScreens(void);
+TI_API void mgStartMultiPlayerGameScreens(regionhandle region, sdword ID, udword event, udword data, bool AlreadyLoggedIn);
+TI_API void mgShutdownMultiPlayerGameScreens(void);
 
-void mgFailedToConnectToChannel(bool existing);
+TI_API void mgFailedToConnectToChannel(bool existing);
 
-void mgDisplayMessage(char *message);
+TI_API void mgDisplayMessage(char *message);
 
-void mgProcessGameChatPacket(struct ChatPacket *packet);
+TI_API void mgProcessGameChatPacket(struct ChatPacket *packet);
 
-void mgJoinGameConfirmed(void);
-void mgJoinGameDenied(void);
-void mgUpdateGameInfo(void);
+TI_API void mgJoinGameConfirmed(void);
+TI_API void mgJoinGameDenied(void);
+TI_API void mgUpdateGameInfo(void);
 
-void mgChatConnectionFailed(void);
-void mgGameAlreadyExists(void);
-void mgCreateGameConfirmed(void);
+TI_API void mgChatConnectionFailed(void);
+TI_API void mgGameAlreadyExists(void);
+TI_API void mgCreateGameConfirmed(void);
 
-void mgStartup(void);
-void mgShutdown(void);
+TI_API void mgStartup(void);
+TI_API void mgShutdown(void);
 
 //sets the game options based on gameName
-void mgSetGameType(char *gameName);
+TI_API void mgSetGameType(char *gameName);
 
-void mgScreensDisappear(void);
+TI_API void mgScreensDisappear(void);
 
-bool mgAccelerator(void);
-void mgAcceleratorRelease(void);
+TI_API bool mgAccelerator(void);
+TI_API void mgAcceleratorRelease(void);
 
-void LockMutex(void *mutex);
-void UnLockMutex(void *mutex);
+TI_API void LockMutex(void *mutex);
+TI_API void UnLockMutex(void *mutex);
 void *gameCreateMutex(void);          // no windows handles, etc, required!
-void gameCloseMutex(void *mutex);
+TI_API void gameCloseMutex(void *mutex);
 
-void titanJoinGameRequest(tpscenario *gametojoin);
+TI_API void titanJoinGameRequest(tpscenario *gametojoin);
 
-bool mgInvalidGameName(void);
+TI_API bool mgInvalidGameName(void);
 
-bool mgInvalidGamePassword(void);
+TI_API bool mgInvalidGamePassword(void);
 
-void mgPrepareMessageBox(char *string1,char *string2);
+TI_API void mgPrepareMessageBox(char *string1,char *string2);
 
-bool mgIsPlayerInList(LinkedList *list, gameplayerinfo *find);
+TI_API bool mgIsPlayerInList(LinkedList *list, gameplayerinfo *find);
 
 void GeneralMessageBox(char *string1,char *string2);        // designed for external use
 
-void mgSetGameTypeByStruct(GameType *game);
-void mgSetGameTypeByNum(sdword i);
-void mgGameTypesOtherButtonPressed(void);
+TI_API void mgSetGameTypeByStruct(GameType *game);
+TI_API void mgSetGameTypeByNum(sdword i);
+TI_API void mgGameTypesOtherButtonPressed(void);
 
-void mgBackuptpGameCreated(void);
-void mgRestoretpGameCreated(void);
-void mgResetNamePassword(void);
+TI_API void mgBackuptpGameCreated(void);
+TI_API void mgRestoretpGameCreated(void);
+TI_API void mgResetNamePassword(void);
 
-bool mgIsUserBanned(char *name);
+TI_API bool mgIsUserBanned(char *name);
 
 /*=============================================================================
     Data:

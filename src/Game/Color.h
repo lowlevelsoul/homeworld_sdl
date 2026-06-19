@@ -71,19 +71,19 @@ typedef rgbaquad color;
 =============================================================================*/
 
 //color-space conversions
-void colRGBToHSV(real32 *H, real32 *S, real32 *V, real32 R, real32 G, real32 B);
-void colHSVToRGB(real32 *R, real32 *G, real32 *B, real32 H, real32 S, real32 V);
-void colRGBToHLS(real32 *H, real32 *L, real32 *S, real32 R, real32 G, real32 B);
-void colHLSToRGB(real32 *R, real32 *G, real32 *B, real32 H, real32 L, real32 S);
-udword colIntensityNTSC(color c);
+TI_API void colRGBToHSV(real32 *H, real32 *S, real32 *V, real32 R, real32 G, real32 B);
+TI_API void colHSVToRGB(real32 *R, real32 *G, real32 *B, real32 H, real32 S, real32 V);
+TI_API void colRGBToHLS(real32 *H, real32 *L, real32 *S, real32 R, real32 G, real32 B);
+TI_API void colHLSToRGB(real32 *R, real32 *G, real32 *B, real32 H, real32 L, real32 S);
+TI_API udword colIntensityNTSC(color c);
 
 //palette mapping crap
-color colBestFitFindRGB(color *palette, color colorToMatch, sdword length);
+TI_API color colBestFitFindRGB(color *palette, color colorToMatch, sdword length);
 
 //utilities
-color colMultiply(color c, real32 factor);
-color colMultiplyClamped(color c, real32 factor);
-sdword colRGBCompare(color *p0, color *p1, sdword nPixels);
-color colBlend(color c0, color c1, real32 factor);
+TI_API color colMultiply(color c, real32 factor);
+TI_API color colMultiplyClamped(color c, real32 factor);
+TI_API sdword colRGBCompare(color *p0, color *p1, sdword nPixels);
+TI_API color colBlend(color c0, color c1, real32 factor);
 
 #endif

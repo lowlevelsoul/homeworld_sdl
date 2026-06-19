@@ -54,13 +54,13 @@ extern bool lmActive;
 =============================================================================*/
 
 //start the launch manager.  It will kill itself when you hit the launch button.
-sdword lmLaunchBegin(regionhandle region, smemsize ID, udword event, udword data);
-void   lmUpdateShipsInside(void);
-void   lmStartup(void);
-void   lmShutdown(void);
-void   lmCloseIfOpen(void);
-void   lmFreeTextures(void);
-void   lmLoadTextures(void);
-void   lmLaunchCapableShipDied (Ship *ship);
+TI_API sdword lmLaunchBegin(regionhandle region, smemsize ID, udword event, udword data);
+TI_API void   lmUpdateShipsInside(void);
+TI_API void   lmStartup(void);
+TI_API void   lmShutdown(void);
+TI_API void   lmCloseIfOpen(void);
+TI_API void   lmFreeTextures(void);
+TI_API void   lmLoadTextures(void);
+TI_API void   lmLaunchCapableShipDied (Ship *ship);
 
 #endif

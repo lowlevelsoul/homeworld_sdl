@@ -67,13 +67,13 @@ splinecurve;
     Functions:
 =============================================================================*/
 
-void bsStartup(void);
-void bsShutdown(void);
+TI_API void bsStartup(void);
+TI_API void bsShutdown(void);
 
-splinecurve *bsCurveStart(sdword nPoints, real32 *points, real32 *times, tcb *params, bool bAlloc);
-void bsCurveStartPrealloced(splinecurve *curve, sdword nPoints, real32 *values, real32 *times, tcb *params);
-void bsCurveRestart(splinecurve *curve);
-real32 bsCurveUpdate(splinecurve *curve, real32 timeElapsed);
-void bsCurveDelete(splinecurve *curve);
+TI_API splinecurve *bsCurveStart(sdword nPoints, real32 *points, real32 *times, tcb *params, bool bAlloc);
+TI_API void bsCurveStartPrealloced(splinecurve *curve, sdword nPoints, real32 *values, real32 *times, tcb *params);
+TI_API void bsCurveRestart(splinecurve *curve);
+TI_API real32 bsCurveUpdate(splinecurve *curve, real32 timeElapsed);
+TI_API void bsCurveDelete(splinecurve *curve);
 
 #endif

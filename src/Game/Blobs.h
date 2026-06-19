@@ -165,26 +165,26 @@ typedef bool (*subblobcallback)(blob *superblob, SpaceObj *obj);
     Functions:
 =============================================================================*/
 
-void bobListCreate(BlobProperties *blobProperties, LinkedList *list, udword playerIndex);
-void bobSubBlobListCreate(BlobProperties *blobProperties, LinkedList *list, blob *superBlob, subblobcallback criteria);
-void bobListUpdate(LinkedList *list);
-void bobListDelete(LinkedList *list);
-bool bobListSortCallback(void *firststruct,void *secondstruct);
+TI_API void bobListCreate(BlobProperties *blobProperties, LinkedList *list, udword playerIndex);
+TI_API void bobSubBlobListCreate(BlobProperties *blobProperties, LinkedList *list, blob *superBlob, subblobcallback criteria);
+TI_API void bobListUpdate(LinkedList *list);
+TI_API void bobListDelete(LinkedList *list);
+TI_API bool bobListSortCallback(void *firststruct,void *secondstruct);
 
-blob *bobFindNearestBlobToObject(LinkedList *list,SpaceObj *obj,real32 *returndistsqr);
-void bobAddObjToNearestBlob(LinkedList *list,SpaceObj *obj);
+TI_API blob *bobFindNearestBlobToObject(LinkedList *list,SpaceObj *obj,real32 *returndistsqr);
+TI_API void bobAddObjToNearestBlob(LinkedList *list,SpaceObj *obj);
 
-void bobAddObjToSpecificBlob(blob *putInBlob,SpaceObj *obj);
+TI_API void bobAddObjToSpecificBlob(blob *putInBlob,SpaceObj *obj);
 
-void bobObjectDied(SpaceObj *object,LinkedList *list);
-void bobRemoveMineFromSpecificBlob(blob *thisBlob,Missile *mine);
+TI_API void bobObjectDied(SpaceObj *object,LinkedList *list);
+TI_API void bobRemoveMineFromSpecificBlob(blob *thisBlob,Missile *mine);
 
-void bobUpdateObjsInBlobCollInfo(blob *thisBlob);
+TI_API void bobUpdateObjsInBlobCollInfo(blob *thisBlob);
 
-void bobObjectListMedian(vector *dest, real32 *destRadius, sdword nObjects, SpaceObj **objects);
+TI_API void bobObjectListMedian(vector *dest, real32 *destRadius, sdword nObjects, SpaceObj **objects);
 
-void bobInitProperties(void);
-void bobResetProperties(void);
+TI_API void bobInitProperties(void);
+TI_API void bobResetProperties(void);
 
 #if BOB_STATS
 typedef struct BobStats
@@ -207,7 +207,7 @@ extern BobStats bobStats;
 #endif
 
 #if BOB_ANAL_CHECKING
-void blobAnalVerifyFn(blob *thisBlob);
+TI_API void blobAnalVerifyFn(blob *thisBlob);
 #endif
 
 #endif

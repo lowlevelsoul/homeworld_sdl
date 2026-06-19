@@ -22,13 +22,13 @@
 
 #endif
 
-void dmgStartup(void);
-void dmgShutdown(void);
-void dmgShipThink(Ship* ship);
-void dmgStopEffect(Ship* ship, sdword level);
-void dmgStopSingleEffect(Effect* effect);
-void dmgForgetEffects(Ship* ship);
-void dmgGetLights(Ship* ship);
-void dmgClearLights(Ship* ship);
+TI_API void dmgStartup(void);
+TI_API void dmgShutdown(void);
+TI_API void dmgShipThink(Ship* ship);
+TI_API void dmgStopEffect(Ship* ship, sdword level);
+TI_API void dmgStopSingleEffect(Effect* effect);
+TI_API void dmgForgetEffects(Ship* ship);
+TI_API void dmgGetLights(Ship* ship);
+TI_API void dmgClearLights(Ship* ship);
 
 #endif

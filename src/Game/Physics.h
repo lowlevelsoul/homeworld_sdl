@@ -22,14 +22,14 @@
     Functions:
 =============================================================================*/
 
-void physApplyForceToObj(SpaceObj *obj,real32 force,uword transdir);
-void physApplyRotToObj(SpaceObjRot *obj,real32 torque,uword rotdir);
-void physUpdateObjPosVel(SpaceObj *obj,real32 phystimeelapsed);
-bool physUpdateBulletPosVel(Bullet *bullet,real32 phystimeelapsed);
+TI_API void physApplyForceToObj(SpaceObj *obj,real32 force,uword transdir);
+TI_API void physApplyRotToObj(SpaceObjRot *obj,real32 torque,uword rotdir);
+TI_API void physUpdateObjPosVel(SpaceObj *obj,real32 phystimeelapsed);
+TI_API bool physUpdateBulletPosVel(Bullet *bullet,real32 phystimeelapsed);
 
-void physUpdateObjPosVelShip(Ship *obj,real32 phystimeelapsed);
-void physUpdateObjPosVelDerelicts(Derelict *obj,real32 phystimeelapsed);
-void physUpdateObjPosVelMissile(Missile *obj,real32 phystimeelapsed);
-void physUpdateObjPosVelBasic(SpaceObj *obj,real32 phystimeelapsed);
+TI_API void physUpdateObjPosVelShip(Ship *obj,real32 phystimeelapsed);
+TI_API void physUpdateObjPosVelDerelicts(Derelict *obj,real32 phystimeelapsed);
+TI_API void physUpdateObjPosVelMissile(Missile *obj,real32 phystimeelapsed);
+TI_API void physUpdateObjPosVelBasic(SpaceObj *obj,real32 phystimeelapsed);
 
 #endif

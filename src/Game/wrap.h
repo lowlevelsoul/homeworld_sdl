@@ -17,7 +17,7 @@ memsize do_get_arg(struct Effect *effect, struct etgeffectstatic *stat, etgfunct
         case EVT_Constant:
             break;
         case EVT_Label:
-            dbgAssertOrIgnore(FALSE);
+            TI_API dbgAssertOrIgnore(FALSE);
             break;
         case EVT_ConstLabel:
             param = (memsize)stat->constData + param;

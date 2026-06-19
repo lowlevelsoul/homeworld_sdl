@@ -183,15 +183,15 @@ extern bool demFakeRenders;                     //fake renders on by default
     Functions:
 =============================================================================*/
 
-void demRecordStart(char *fileName, demstatesave saveFunction);
-void demStateSave(void);
-void demRecordEnd(void);
-//void demDemoSaveTask(void);
-//void demDemoPlayTask(void);
-void demPlayStart(char *fileName, demstateload loadFunction, demplayfinished finishFunction);
-void demPlayEnd(void);
-void demStateLoad(void);
-sdword demNumberTicksLoad(sdword initial);
-void demNumberTicksSave(sdword nTicks);
+TI_API void demRecordStart(char *fileName, demstatesave saveFunction);
+TI_API void demStateSave(void);
+TI_API void demRecordEnd(void);
+TI_API //void demDemoSaveTask(void);
+TI_API //void demDemoPlayTask(void);
+TI_API void demPlayStart(char *fileName, demstateload loadFunction, demplayfinished finishFunction);
+TI_API void demPlayEnd(void);
+TI_API void demStateLoad(void);
+TI_API sdword demNumberTicksLoad(sdword initial);
+TI_API void demNumberTicksSave(sdword nTicks);
 
 #endif

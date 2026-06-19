@@ -54,69 +54,69 @@ extern char globalScriptFileName[50];  //file name of file loaded in a script ca
 struct StaticInfoHealthGuidanceShipDerelict;
 struct ShipStaticInfo;
 
-void RemoveCommasFromString(char *field);
-void StripTrailingSpaces(char *value);
+TI_API void RemoveCommasFromString(char *field);
+TI_API void StripTrailingSpaces(char *value);
 
-void scriptSetRGBCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetRGBACB(char *directory,char *field,void *dataToFillIn);
-void scriptSetReal32CB(char *directory,char *field,void *dataToFillIn);
-void scriptSetReal32CB_ARRAY(char *directory,char *field,void *dataToFillIn);
-void scriptSetReal32SqrCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetSbyteCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetUbyteCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetSwordCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetUwordCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetSdwordCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetUdwordCB(char *directory,char *field,void *dataToFillIn);
-bool scriptStringToBool(char *boolString);
-void scriptSetBool8(char *directory,char *field,void *dataToFillIn);
-void scriptSetBool(char *directory,char *field,void *dataToFillIn);
-void scriptSetBitUdword(char *directory,char *field,void *dataToFillIn);
-void scriptSetBitUword(char *directory,char *field,void *dataToFillIn);
-void scriptSetStringCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetStringPtrCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetCosAngCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetCosAngSqrCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetCosAngCB_ARRAY(char *directory,char *field,void *dataToFillIn);
-void scriptSetSinAngCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetTanAngCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetAngCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetGunTypeCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetGunSoundTypeCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetBulletTypeCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetShipClassCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetShipRaceCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetShipTypeCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetVectorCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetLWToHWMonkeyVectorCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetFormationCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetTacticsCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetSalvagePointCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetSalvageStatCB(char *directory,char *field,void *dataToFillIn);
-void scriptSetSalvageStatics(char *directory,char *filename,struct StaticInfoHealthGuidanceShipDerelict *statinfo);
-void scriptSetDockOverideStatics(char *directory,char *filename,struct ShipStaticInfo *shipstatinfo);
+TI_API void scriptSetRGBCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetRGBACB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetReal32CB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetReal32CB_ARRAY(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetReal32SqrCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetSbyteCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetUbyteCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetSwordCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetUwordCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetSdwordCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetUdwordCB(char *directory,char *field,void *dataToFillIn);
+TI_API bool scriptStringToBool(char *boolString);
+TI_API void scriptSetBool8(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetBool(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetBitUdword(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetBitUword(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetStringCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetStringPtrCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetCosAngCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetCosAngSqrCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetCosAngCB_ARRAY(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetSinAngCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetTanAngCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetAngCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetGunTypeCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetGunSoundTypeCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetBulletTypeCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetShipClassCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetShipRaceCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetShipTypeCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetVectorCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetLWToHWMonkeyVectorCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetFormationCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetTacticsCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetSalvagePointCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetSalvageStatCB(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetSalvageStatics(char *directory,char *filename,struct StaticInfoHealthGuidanceShipDerelict *statinfo);
+TI_API void scriptSetDockOverideStatics(char *directory,char *filename,struct ShipStaticInfo *shipstatinfo);
 
-void scriptSetStruct(char *directory,char *filename,scriptStructEntry info[],ubyte *structureToFillIn);
-void scriptSet(char *directory,char *filename,scriptEntry info[]);
-void scriptSetFileSystem(char *directory,char *filename,scriptEntry info[]);
-void scriptSetGunStatics(char *directory,char *filename,struct ShipStaticInfo *shipstatinfo);
-void scriptSetNAVLightStatics(char *directory,char *filename,struct ShipStaticInfo *shipstatinfo);
-void scriptSetDockStatics(char *directory,char *filename,struct ShipStaticInfo *statinfo);
+TI_API void scriptSetStruct(char *directory,char *filename,scriptStructEntry info[],ubyte *structureToFillIn);
+TI_API void scriptSet(char *directory,char *filename,scriptEntry info[]);
+TI_API void scriptSetFileSystem(char *directory,char *filename,scriptEntry info[]);
+TI_API void scriptSetGunStatics(char *directory,char *filename,struct ShipStaticInfo *shipstatinfo);
+TI_API void scriptSetNAVLightStatics(char *directory,char *filename,struct ShipStaticInfo *shipstatinfo);
+TI_API void scriptSetDockStatics(char *directory,char *filename,struct ShipStaticInfo *statinfo);
 struct SphereStaticInfo *scriptSetSphereStaticInfo(char *directory,char *filename);
-void scriptSetShipGroupSizeCB(char *directory, char *field, sdword *dataToFillIn);
-void scriptSetShipProbCB(char *directory, char *field, real32 *dataToFillIn);
-void scriptSetHyperspaceCostCB(char *directory, char *field, real32 *dataToFillIn);
-void scriptSetSpecialDoorOffsetCB(char *directory, char *field, real32 *dataToFillIn);
-void scriptSetBlobPropertyOverlap(char *directory,char *field,void *dataToFillIn);
-void scriptSetBlobBiggestRadius(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetShipGroupSizeCB(char *directory, char *field, sdword *dataToFillIn);
+TI_API void scriptSetShipProbCB(char *directory, char *field, real32 *dataToFillIn);
+TI_API void scriptSetHyperspaceCostCB(char *directory, char *field, real32 *dataToFillIn);
+TI_API void scriptSetSpecialDoorOffsetCB(char *directory, char *field, real32 *dataToFillIn);
+TI_API void scriptSetBlobPropertyOverlap(char *directory,char *field,void *dataToFillIn);
+TI_API void scriptSetBlobBiggestRadius(char *directory,char *field,void *dataToFillIn);
 
 // sets all tweakable global variables in game
-void scriptSetTweakableGlobals(void);
+TI_API void scriptSetTweakableGlobals(void);
 
-void mgGameTypeScriptInit(void);
+TI_API void mgGameTypeScriptInit(void);
 
 #ifdef HW_BUILD_FOR_DEBUGGING
-void CheckValidTacticsClass(TacticsType tactic,ShipClass shipclass,char *field);
+TI_API void CheckValidTacticsClass(TacticsType tactic,ShipClass shipclass,char *field);
 #endif
 
 #endif
