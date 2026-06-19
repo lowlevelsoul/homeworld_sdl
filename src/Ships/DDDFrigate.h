@@ -32,10 +32,10 @@ typedef struct
 
 extern CustShipHeader DDDFrigateHeader;
 
-void DDDFrigateDockAllDronesInstantly(Ship *ship);
-void DDDFrigateJustDisabled(Ship *ship);
-void DDDFrigateMakeReadyForHyperspace(Ship *ship);
-void DDDFrigateMakeSureItCanGuard(Ship *ship);
-void DDDFrigateSwitchSides(Ship *dddf, sdword player);
+TI_API void DDDFrigateDockAllDronesInstantly(Ship *ship);
+TI_API void DDDFrigateJustDisabled(Ship *ship);
+TI_API void DDDFrigateMakeReadyForHyperspace(Ship *ship);
+TI_API void DDDFrigateMakeSureItCanGuard(Ship *ship);
+TI_API void DDDFrigateSwitchSides(Ship *dddf, sdword player);
 
 #endif

@@ -49,19 +49,19 @@ typedef struct
 extern CustShipHeader JunkYardDawgHeader;
 extern CustShipHeader SalCapCorvetteHeader;
 
-bool DropTargetInShip(Ship *dockwith,sdword *targetDepotState, SpaceObjRotImpTargGuidanceShipDerelict *target,sdword *dockindex);
-bool isThereAnotherTargetForMe(Ship *ship,SelectAnyCommand *targets);
-void salCapCleanUpCloakingTarget(Ship *ship, Ship *shiptoremove);
-void salCapClearTechBool(void);
-void SalCapDropTarget(Ship *ship);
-void salCapExtraSpecialOrderCleanUp(SelectCommand *selection,udword ordertype,Ship *dockwith,SelectCommand *targets);
-void salCapHarvestTarget(SpaceObjRotImpTargGuidanceShipDerelict *target,Ship *dockwith);
-sdword salCapNeedBig(Ship *ship,SpaceObjRotImpTargGuidanceShipDerelict *target);
-void SalCapOrderChangedCleanUp(Ship *ship);
-void salCapRemoveDerelictReferences(Ship *ship,Derelict *d);
+TI_API bool DropTargetInShip(Ship *dockwith,sdword *targetDepotState, SpaceObjRotImpTargGuidanceShipDerelict *target,sdword *dockindex);
+TI_API bool isThereAnotherTargetForMe(Ship *ship,SelectAnyCommand *targets);
+TI_API void salCapCleanUpCloakingTarget(Ship *ship, Ship *shiptoremove);
+TI_API void salCapClearTechBool(void);
+TI_API void SalCapDropTarget(Ship *ship);
+TI_API void salCapExtraSpecialOrderCleanUp(SelectCommand *selection,udword ordertype,Ship *dockwith,SelectCommand *targets);
+TI_API void salCapHarvestTarget(SpaceObjRotImpTargGuidanceShipDerelict *target,Ship *dockwith);
+TI_API sdword salCapNeedBig(Ship *ship,SpaceObjRotImpTargGuidanceShipDerelict *target);
+TI_API void SalCapOrderChangedCleanUp(Ship *ship);
+TI_API void salCapRemoveDerelictReferences(Ship *ship,Derelict *d);
 
 #if RND_VISUALIZATION
-void dockDrawSalvageInfo(SpaceObjRotImpTargGuidanceShipDerelict *obj);
+TI_API void dockDrawSalvageInfo(SpaceObjRotImpTargGuidanceShipDerelict *obj);
 #endif
 
 #endif

@@ -45,10 +45,10 @@ typedef struct
 
 extern CustShipHeader ResearchShipHeader;
 
-void addMonkeyResearchShip(Ship *ship);
-void addMonkeyResearchShipChangePosition(Ship *dockwith, Ship *ship,sdword dockindex);
-void ResearchShipMakeReadyForHyperspace(Ship *ship);
-void toFakeOneShip(Ship *ship, vector *oldpos, real32 *oldradius);
-void toUnFakeOneShip(Ship *ship, vector *oldpos,real32 *oldradius);
+TI_API void addMonkeyResearchShip(Ship *ship);
+TI_API void addMonkeyResearchShipChangePosition(Ship *dockwith, Ship *ship,sdword dockindex);
+TI_API void ResearchShipMakeReadyForHyperspace(Ship *ship);
+TI_API void toFakeOneShip(Ship *ship, vector *oldpos, real32 *oldradius);
+TI_API void toUnFakeOneShip(Ship *ship, vector *oldpos,real32 *oldradius);
 
 #endif

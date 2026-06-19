@@ -13,6 +13,6 @@
 
 extern CustShipHeader GenericDefenderHeader;
 
-void doKamikazeAttack(Ship *ship, SpaceObjRotImpTarg *target);
+TI_API void doKamikazeAttack(Ship *ship, SpaceObjRotImpTarg *target);
 
 #endif

@@ -43,7 +43,7 @@ typedef struct
 extern color ProximitySensorBlipColor;
 extern CustShipHeader ProximitySensorHeader;
 
-void proxInFocusSelection(SelectCommand *focus);
-bool proximityCanPlayerSeeShip(Player *player,Ship *shipInQuestion);
+TI_API void proxInFocusSelection(SelectCommand *focus);
+TI_API bool proximityCanPlayerSeeShip(Player *player,Ship *shipInQuestion);
 
 #endif

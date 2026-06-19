@@ -37,10 +37,10 @@ typedef struct
 
 extern CustShipHeader MothershipHeader;
 
-void MothershipAttachObjectToDoor(Ship *ship,SpaceObjRotImpTargGuidanceShipDerelict *object);
-void mothershipCleanDoorForHSInstant(Ship *ship);
-void MothershipDettachObjectFromDoor(Ship *ship);
-void MothershipDoorUpKeep(Ship *ship);
-void mothershipGetCargoPosition(Ship *ship,SpaceObjRotImpTargGuidanceShipDerelict *cargo, vector *position, matrix *coordsys, vector *heading, vector *up,vector *right);
+TI_API void MothershipAttachObjectToDoor(Ship *ship,SpaceObjRotImpTargGuidanceShipDerelict *object);
+TI_API void mothershipCleanDoorForHSInstant(Ship *ship);
+TI_API void MothershipDettachObjectFromDoor(Ship *ship);
+TI_API void MothershipDoorUpKeep(Ship *ship);
+TI_API void mothershipGetCargoPosition(Ship *ship,SpaceObjRotImpTargGuidanceShipDerelict *cargo, vector *position, matrix *coordsys, vector *heading, vector *up,vector *right);
 
 #endif

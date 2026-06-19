@@ -16,6 +16,6 @@ extern CustShipHeader DoNothingShipHeader;
 extern CustShipHeader StationaryGunHeader;
 extern CustShipHeader MiningBaseHeader;
 
-void DefaultShipFire(Ship *ship, SpaceObjRotImpTarg *target);
+TI_API void DefaultShipFire(Ship *ship, SpaceObjRotImpTarg *target);
 
 #endif

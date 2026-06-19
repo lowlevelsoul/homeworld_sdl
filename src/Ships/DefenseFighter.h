@@ -30,8 +30,8 @@ typedef struct
 
 extern CustShipHeader DefenseFighterHeader;
 
-void defenseFighterAdjustLaser(Bullet *bullet);
-void DefenseFighterBulletRemoval(Bullet *bullettogoByeBye);
-void DefenseFighterReportBullet(Ship *ship, Bullet *bullet);
+TI_API void defenseFighterAdjustLaser(Bullet *bullet);
+TI_API void DefenseFighterBulletRemoval(Bullet *bullettogoByeBye);
+TI_API void DefenseFighterReportBullet(Ship *ship, Bullet *bullet);
 
 #endif

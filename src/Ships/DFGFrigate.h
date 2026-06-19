@@ -24,6 +24,6 @@ typedef struct
 
 extern CustShipHeader DFGFrigateHeader;
 
-void univDFGFieldEffect(Ship *ship, Bullet *bullet, real32 totaltimeelapsed);
+TI_API void univDFGFieldEffect(Ship *ship, Bullet *bullet, real32 totaltimeelapsed);
 
 #endif

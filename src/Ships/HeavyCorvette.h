@@ -25,6 +25,6 @@ typedef struct
 
 extern CustShipHeader HeavyCorvetteHeader;
 
-void heavyCorvetteOrderChanged(Ship *ship);
+TI_API void heavyCorvetteOrderChanged(Ship *ship);
 
 #endif

@@ -24,6 +24,6 @@ typedef struct
 
 extern CustShipHeader ProbeHeader;
 
-real32 ProbeGetMaxVelocity(Ship *ship);
+TI_API real32 ProbeGetMaxVelocity(Ship *ship);
 
 #endif
