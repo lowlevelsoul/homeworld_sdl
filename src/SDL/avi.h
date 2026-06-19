@@ -13,6 +13,7 @@
 extern "C" {
 #endif
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 

@@ -8,6 +8,7 @@
 #ifndef ___CRATES_H
 #define ___CRATES_H
  
+#include "tiPlatform.h"
 #include "SpaceObj.h"
       
 //prototypes      

@@ -9,6 +9,7 @@
 #ifndef ___GUN_H
 #define ___GUN_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 #include "render.h"
 

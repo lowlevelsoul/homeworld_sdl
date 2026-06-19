@@ -10,6 +10,7 @@
 #ifndef ___REGION_H
 #define ___REGION_H
 
+#include "tiPlatform.h"
 #include "Memory.h"
 #include "Debug.h"
 #include "Key.h"

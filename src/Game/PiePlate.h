@@ -9,6 +9,7 @@
 #ifndef ___PIEPLATE_H
 #define ___PIEPLATE_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "SpaceObj.h"
 #include "Types.h"

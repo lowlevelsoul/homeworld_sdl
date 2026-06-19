@@ -8,6 +8,7 @@
 #ifndef ___DEFENSEFIGHTER_H
 #define ___DEFENSEFIGHTER_H
 
+#include "tiPlatform.h"
 #include "FlightMan.h"
 
 

@@ -9,6 +9,7 @@
 #ifndef ___NETCHECK_H
 #define ___NETCHECK_H
 
+#include "tiPlatform.h"
 #include "CommandNetwork.h"
 #include "Switches.h"
 #include "Types.h"

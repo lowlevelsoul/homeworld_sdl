@@ -9,6 +9,7 @@
 #ifndef ___TASKBAR_H
 #define ___TASKBAR_H
 
+#include "tiPlatform.h"
 #include "Region.h"
 #include "Types.h"
 

@@ -2,6 +2,7 @@
 #ifndef ___FORMATION_H
 #define ___FORMATION_H
 
+#include "tiPlatform.h"
 #include "FormationDefs.h"
 #include "ShipSelect.h"
 #include "SpaceObj.h"

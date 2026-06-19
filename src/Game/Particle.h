@@ -8,6 +8,7 @@
 #ifndef ___PARTICLE_H
 #define ___PARTICLE_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "Mesh.h"
 #include "SpaceObj.h"

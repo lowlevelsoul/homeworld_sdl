@@ -8,6 +8,7 @@
 #ifndef ___HORSERACE_H
 #define ___HORSERACE_H
 
+#include "tiPlatform.h"
 #include "CommandNetwork.h"
 #include "MaxMultiplayer.h"
 

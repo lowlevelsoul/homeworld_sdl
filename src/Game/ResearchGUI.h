@@ -9,6 +9,7 @@
 #ifndef ___RESEARCHGUI_H
 #define ___RESEARCHGUI_H
 
+#include "tiPlatform.h"
 #include "Region.h"
 #include "ResearchAPI.h"
 #include "texreg.h"

@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 /*=============================================================================
     Name    : madLinkInDefs.h
     Purpose : contains #defines for madAnimationFlags in ship structure 

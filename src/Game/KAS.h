@@ -1,6 +1,7 @@
 #ifndef ___KAS_H
 #define ___KAS_H
 
+#include "tiPlatform.h"
 #include "AIUtilities.h"
 #include "ShipSelect.h"
 #include "Vector.h"

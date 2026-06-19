@@ -8,6 +8,7 @@
 #ifndef ___TWIDDLE_H
 #define ___TWIDDLE_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 // count number of set bits in a number

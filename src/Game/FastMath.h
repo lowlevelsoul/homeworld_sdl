@@ -8,6 +8,7 @@
 #ifndef ___FASTMATH_H
 #define ___FASTMATH_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 #include <math.h>

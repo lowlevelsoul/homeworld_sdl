@@ -8,6 +8,7 @@
 #ifndef ___RESOURCECONTROLLER_H
 #define ___RESOURCECONTROLLER_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader ResourceControllerHeader;

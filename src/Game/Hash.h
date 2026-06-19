@@ -9,6 +9,7 @@
 #ifndef ___HASH_H
 #define ___HASH_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 // INTERFACE -------------------------------------------------------------------

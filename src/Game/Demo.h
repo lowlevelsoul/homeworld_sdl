@@ -9,6 +9,7 @@
 #ifndef ___DEMO_H
 #define ___DEMO_H
 
+#include "tiPlatform.h"
 #include "Key.h"
 #include "Randy.h"
 #include "Task.h"

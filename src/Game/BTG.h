@@ -8,6 +8,7 @@
 #ifndef ___BTG_H
 #define ___BTG_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 

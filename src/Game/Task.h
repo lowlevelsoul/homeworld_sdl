@@ -9,6 +9,7 @@
 #ifndef ___TASK_H
 #define ___TASK_H
 
+#include "tiPlatform.h"
 #include "LinkedList.h"
 #include "Debug.h"
 

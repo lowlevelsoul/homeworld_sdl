@@ -8,6 +8,7 @@
 #ifndef ___MULTIGUNCORVETTE_H
 #define ___MULTIGUNCORVETTE_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader MultiGunCorvetteHeader;

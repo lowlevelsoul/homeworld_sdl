@@ -6,6 +6,7 @@
 //  to put all those platform-specific "#include <*>" tweaks in one place.
 // =============================================================================
 
+#include "tiPlatform.h"
 #include <stdarg.h> 
 #include <stdio.h>
 #include <string.h>

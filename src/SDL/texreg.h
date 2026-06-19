@@ -9,6 +9,7 @@
 #ifndef ___TEXREG_H
 #define ___TEXREG_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "CRC32.h"
 #include "Types.h"

@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 /*=============================================================================
     Name    : Switches.h
     Purpose : Contains global switches for compile options

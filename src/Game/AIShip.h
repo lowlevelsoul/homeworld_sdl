@@ -8,6 +8,7 @@
 #ifndef ___AISHIP_H
 #define ___AISHIP_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 /*=============================================================================

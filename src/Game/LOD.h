@@ -9,6 +9,7 @@
 #ifndef ___LOD_H
 #define ___LOD_H
 
+#include "tiPlatform.h"
 #include "Mesh.h"
 #include "Vector.h"
 

@@ -2,6 +2,7 @@
 #ifndef ___RESCOLLECT_H
 #define ___RESCOLLECT_H
 
+#include "tiPlatform.h"
 #include "Attributes.h"
 #include "SpaceObj.h"
 

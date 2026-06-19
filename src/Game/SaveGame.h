@@ -9,6 +9,7 @@
 #ifndef ___SAVEGAME_H
 #define ___SAVEGAME_H
 
+#include "tiPlatform.h"
 #include "ShipSelect.h"
 #include "SpaceObj.h"
 #include "Types.h"

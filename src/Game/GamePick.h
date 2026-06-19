@@ -9,6 +9,7 @@
 #ifndef ___GAMEPICK_H
 #define ___GAMEPICK_H
 
+#include "tiPlatform.h"
 #include "FEFlow.h"
 #include "Region.h"
 

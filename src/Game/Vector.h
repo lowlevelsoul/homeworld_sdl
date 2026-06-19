@@ -8,6 +8,7 @@
 #ifndef ___VECTOR_H
 #define ___VECTOR_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 // INTERFACE -------------------------------------------------------------------

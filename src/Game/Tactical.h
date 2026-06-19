@@ -8,6 +8,7 @@
 #ifndef ___TACTICAL_H
 #define ___TACTICAL_H
 
+#include "tiPlatform.h"
 #include "ClassDefs.h"
 #include "Color.h"
 #include "Types.h"

@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 // Copyright (c) 1999 Relic Entertainment Inc.
 // Written by Janik Joire
 //

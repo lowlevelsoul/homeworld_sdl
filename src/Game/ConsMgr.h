@@ -9,6 +9,7 @@
 #ifndef ___CONSMGR_H
 #define ___CONSMGR_H
 
+#include "tiPlatform.h"
 #include "ClassDefs.h"
 #include "ObjTypes.h"
 #include "Region.h"

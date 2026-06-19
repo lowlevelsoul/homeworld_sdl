@@ -7,6 +7,7 @@
 #ifndef ___BIGFILE_H
 #define ___BIGFILE_H
 
+#include "tiPlatform.h"
 #include "CRC32.h"
 #include "standard_library.h"
 #include "Types.h"

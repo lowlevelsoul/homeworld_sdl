@@ -8,6 +8,7 @@
 #ifndef ___STANDARDDESTROYER_H
 #define ___STANDARDDESTROYER_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader StandardDestroyerHeader;

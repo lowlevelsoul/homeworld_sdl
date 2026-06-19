@@ -9,6 +9,7 @@
 #ifndef ___NAVLIGHTS_H
 #define ___NAVLIGHTS_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 void RenderNAVLights(Ship *ship);

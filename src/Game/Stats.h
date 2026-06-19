@@ -9,6 +9,7 @@
 #ifndef ___STATS_H
 #define ___STATS_H
 
+#include "tiPlatform.h"
 #include "ShipDefs.h"
 #include "ShipSelect.h"
 #include "StatScript.h"

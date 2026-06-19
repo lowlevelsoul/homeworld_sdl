@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 /*=============================================================================
     Name    : rinit.h
     Purpose : rGL / OpenGL enumeration initialization routines

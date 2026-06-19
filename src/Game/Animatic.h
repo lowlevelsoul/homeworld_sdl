@@ -9,6 +9,7 @@
 #ifndef ___ANIMATIC_H
 #define ___ANIMATIC_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 extern sdword animaticJustPlayed;

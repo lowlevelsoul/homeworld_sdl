@@ -1,6 +1,7 @@
 #ifndef ___NETWORKINTERFACE_H
 #define ___NETWORKINTERFACE_H
 
+#include "tiPlatform.h"
 #include "SDL.h"
 #include "SDL_thread.h"
 #ifdef HW_ENABLE_NETWORK

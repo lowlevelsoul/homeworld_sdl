@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 #define _EVT_Void                    memsize
 #define _EVT_Int                     memsize
 #define _EVT_Float                   real32

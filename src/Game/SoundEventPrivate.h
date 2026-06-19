@@ -9,6 +9,7 @@
 #ifndef ___SOUNDEVENTPRIVATE_H
 #define ___SOUNDEVENTPRIVATE_H
 
+#include "tiPlatform.h"
 #include "ObjTypes.h"
 #include "soundcmn.h"
 #include "SoundStructs.h"

@@ -2,6 +2,7 @@
 #define ___TITANINTERFACEC_H
 
 #ifdef _MACOSX
+#include "tiPlatform.h"
     #include <stdlib.h>
 #else
     #include <wchar.h>

@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 // =============================================================================
 //  AIFeatures.h
 //  - Contains all the flags for AIPlayer features

@@ -8,6 +8,7 @@
 #ifndef ___ATTACK_H
 #define ___ATTACK_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 #include "StatScript.h"
 

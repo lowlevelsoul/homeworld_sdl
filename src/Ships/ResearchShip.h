@@ -8,6 +8,7 @@
 #ifndef ___RESEARCHSHIP_H
 #define ___RESEARCHSHIP_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 #include "Types.h"
 

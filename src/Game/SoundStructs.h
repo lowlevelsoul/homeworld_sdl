@@ -9,6 +9,7 @@
 #ifndef ___SOUNDSTRUCTS_H
 #define ___SOUNDSTRUCTS_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 

@@ -8,6 +8,7 @@
 #ifndef ___DEFAULTSHIP_H
 #define ___DEFAULTSHIP_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader DefaultShipHeader;

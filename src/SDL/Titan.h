@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 /*=============================================================================
     Name    : Titan.h
     Purpose : Definitions for Titan.c

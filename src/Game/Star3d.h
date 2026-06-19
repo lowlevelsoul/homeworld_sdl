@@ -9,6 +9,7 @@
 #ifndef ___STAR3D_H
 #define ___STAR3D_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "Types.h"
 #include "Vector.h"

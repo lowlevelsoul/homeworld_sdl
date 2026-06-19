@@ -1,5 +1,6 @@
 #ifndef ___SPEECHEVENT_H
 #define ___SPEECHEVENT_H
+#include "tiPlatform.h"
 
 // 03 = 00 00 00 11
 // 3F = 00 11 11 11
@@ -489,7 +490,7 @@
 #define N01_All_Misc_7							(351 + SPEECH_ACTOR_PILOT + SPEECH_TYPE_NIS)	//	Scaffold decks A, B, C secure.
 #define N01_All_Misc_8							(352 + SPEECH_ACTOR_PILOT + SPEECH_TYPE_NIS)	//	You got it
 #define N01_All_Misc_9							(353 + SPEECH_ACTOR_PILOT + SPEECH_TYPE_NIS)	//	Roger that Control.
-#define N01_All_Misc_10							(354 + SPEECH_ACTOR_PILOT + SPEECH_TYPE_NIS)	//	…decks D and E secure. Scaffold secure.
+#define N01_All_Misc_10							(354 + SPEECH_ACTOR_PILOT + SPEECH_TYPE_NIS)	//	ï¿½decks D and E secure. Scaffold secure.
 #define N01_All_Misc_11							(355 + SPEECH_ACTOR_PILOT + SPEECH_TYPE_NIS)	//  Scaffold control standing by.
 #define N01_All_Misc_12							(356 + SPEECH_ACTOR_PILOT + SPEECH_TYPE_NIS)	//	All systems green.
 #define N01_All_Misc_13							(357 + SPEECH_ACTOR_PILOT + SPEECH_TYPE_NIS)	//	Forty-two seven-oh-one please confirm.
@@ -534,7 +535,7 @@
 #define M01_Fleet_HyperspaceReady				(393 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_SINGLE_PLAYER)	//	Hyperspace module fully charged.  I am ready to initiate quantum wave generation on your mark.  Good luck everyone.
 #define M01_Intel_HyperspaceReady				(394 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	All sections have reported in.  Trigger the hyperspace drive at your discretion.
 
-/* 1.19 ANIMATIC - M01à M02 */
+/* 1.19 ANIMATIC - M01ï¿½ M02 */
 #define A01_Fleet_HyperspaceFullPower			(395 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_ANIMATIC)	//	All Hyperspace systems operating at full power.
 #define A01_Intel_TargetingSystem				(396 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	If the hyperspace targeting system is accurate, we should emerge in close proximity to the support vessel Khar-Selim.
 #define A01_Intel_2								(397 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	This ship has spent the past 10 years travelling on conventional drives to reach the edge of the Kharak system.
@@ -570,7 +571,7 @@
 #define M02_13_Intel_DestroyAllP1				(420 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	Commander, this race is clearly hostile. We can't allow them to secure a position in our system. I recommend that we destroy the force completely.
 #define M02_Intel_ObjectivesComplete			(421 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	Enemy units are retreating.  Objectives complete.  Standby for immediate return to Kharak.
 
-/* 2.15 ANIMATIC - M02à M03 */
+/* 2.15 ANIMATIC - M02ï¿½ M03 */
 #define A02_Intel_AnalysisOfWreckage			(422 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	Analysis of wreckage reveals the hostile units are using strike craft ranging from Fighters to combat Corvettes.
 #define A02_Intel_2								(423 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	All pilots will be briefed in case hostiles have penetrated further into the Kharak system.
 #define A02_Intel_3								(424 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	On our return to Kharak, the final outfit of the Mothership must be accelerated in order to defend against possible future attacks.
@@ -632,7 +633,7 @@
 #define M03_Intel_DeploySalvageTeam				(469 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//  Withdraw attack and deploy a Salvage Team.  We need that ship.
 #define M03_Intel_HyperspaceReady				(470 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//  Cryo trays loaded and secure.  Hyperspace module charged.  There's nothing left for us here.  Let's go.
 
-/* 3.17 ANIMATIC - M03à M04 */
+/* 3.17 ANIMATIC - M03ï¿½ M04 */
 #define A03_Fleet_CryotraysProcessed			(471 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_ANIMATIC)	//	Cryogenic trays have been processed and our colonists are safe for now.
 #define A03_Fleet_2								(472 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_ANIMATIC)	//	We are all that's left of our world, our culture, our people.
 #define A03_Fleet_3								(473 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_ANIMATIC)	//	No one survived. . .
@@ -682,7 +683,7 @@
 													//	Using data from the Kushan vessel captured at Kharak, we have been able to determine their location.  If we strike now we can take advantage of their damaged condition.
 													//	Hyperspace co-ordinates have been transferred to Fleet Command.
 
-/* 4.12 ANIMATIC - M04à M05 */
+/* 4.12 ANIMATIC - M04ï¿½ M05 */
 #define A04_Intel_SystemsOptimal				(504 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	We have repaired the damage incurred by the Turanic Raiders.
 #define A04_Intel_SystemsOptimal2				(505 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	Combat and sensor systems returning to optimal functionality.
 #define A04_Fleet_Whining						(506 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_ANIMATIC)	//	I can't believe this happened.
@@ -713,7 +714,7 @@
 #define M05_Intel_HyperspaceTaiidan				(524 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	Kushan fleet destroyed.  There's nothing left for us to return to.  Our only option is to follow the path etched into the Guidestone.  Finding our ancient home is our only hope now.Hyperspace coordinates locked in.
 
 
-/* 5.9 ANIMATIC - M05à M06 */
+/* 5.9 ANIMATIC - M05ï¿½ M06 */
 #define A05_Intel_1								(525 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	We've completed de-crypting data from the enemy frigate we captured in the Kharak system.
 #define A05_Intel_2								(526 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	It appears to be an imperial broadcast.
 #define A05_Intel_3								(527 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	In order to stay clear of these outposts, our course will take us into a turbulent asteroid field and through the heart of a nebula.
@@ -736,7 +737,7 @@
 #define M06_Traders_FearNebulaTaiidan			(537 + SPEECH_ACTOR_TRADERS + SPEECH_TYPE_SINGLE_PLAYER)	//	We hear nothing there.  Even the Kushan fear the Great Nebula.  No one returns.
 #define M06_Intel_HyperspaceReady				(538 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	Hyperspace Module fully charged.
 
-/* 6.11 ANIMATIC - M06à M07 */
+/* 6.11 ANIMATIC - M06ï¿½ M07 */
 #define A06_Fleet								(539 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_ANIMATIC)	//	The Bentusi said "No one returns."
 
 
@@ -770,7 +771,7 @@
 #define M07_Fleet_HypdriveOnline				(558 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_SINGLE_PLAYER)	//	The Hyperdrive is back on-line.
 #define M07_Intel_Hyperspace					(559 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	Let's put these fanatics behind us.
 
-/* 7.12 ANIMATIC - M07à M08 */
+/* 7.12 ANIMATIC - M07ï¿½ M08 */
 #define A07_Intel_1								(560 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	The enemy Mothership appeared to be equipped with a powerful field generator.
 #define A07_Intel_2								(561 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	This field deformed our quantum wavefront and prevented us from making a hyperspace jump.
 #define A07_Intel_3								(562 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	We also observed that the enemy's hyperspace module has an identical power signature to our own.
@@ -799,7 +800,7 @@
 #define M08_Fleet_WeAreBrothers					(578 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_SINGLE_PLAYER)	//	We are brothers.
 #define M08_Intel_HyperspaceOnline				(579 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	The inhibitor field has ceased.  Hyperspace module back on-line.
 
-/* 8.10 ANIMATIC - M08à M09 */
+/* 8.10 ANIMATIC - M08ï¿½ M09 */
 #define A08_Intel_1								(580 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	After analyzing the data we collected from the Khar-Toba's sister ship we've been able to determine what happened in the nebula.
 #define A08_Intel_2								(581 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	While the Khar-Toba was able to limp to Kharak, this ship must have tried to hide here in the nebula.
 #define A08_Intel_3								(582 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	They soon resorted to preying on ships passing through the nebula.
@@ -835,7 +836,7 @@
 #define M09_Traders_CouncilTaiidan				(605 + SPEECH_ACTOR_TRADERS + SPEECH_TYPE_SINGLE_PLAYER)	//	Conflict is not our way.  We will bring your cause to the Galactic Council.  The Kushan rule the Empire but even they must answer to the council.
 #define M09_Intel_HyperspaceReady				(606 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	Hyperspace Module fully charged.  Engage at your discretion.
 
-/* 9.14 ANIMATIC - M09à M10 */
+/* 9.14 ANIMATIC - M09ï¿½ M10 */
 #define A09_Intel_Kushan						(607 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	We are about to enter the outer limits of the Taiidan empire.
 #define A09_Intel_Taiidan						(608 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	We are about to enter the outer limits of the Kushan empire.
 #define A09_Intel_2								(609 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	As we approach the galactic core, resistance is expected to increase.
@@ -864,7 +865,7 @@
 #define M10_Intel_DestroyCarrierTaiidan			(625 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	We are picking up a quantum wave effect.  A Kushan Carrier is loading ships and powering up.  It must be destroyed before it can hyperspace.
 #define M10_Intel_HyperspaceReady				(626 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	Enemy base and fleet destroyed.  Hyperspace drives online.
 
-/* 10.11 ANIMATIC - M10à M11 */
+/* 10.11 ANIMATIC - M10ï¿½ M11 */
 #define A10_Intel_Kushan						(627 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	We have intercepted a coded Taiidan transmission:
 #define A10_Intel_Taiidan						(628 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	We have intercepted a coded Kushan transmission:
 #define A10_Admiral_1							(629 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	You have failed to keep the Exiles from penetrating the outer perimeter.  This could be disastrous.  You will find and destroy them immediately.
@@ -898,7 +899,7 @@
 #define M11_Traders_ReachHomeworld				(646 + SPEECH_ACTOR_TRADERS + SPEECH_TYPE_SINGLE_PLAYER)	//	Reach your Homeworld.  Establish your claim.  We will summon the Council.
 #define M11_Intel_EngageHyperdrive				(647 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	Engage Hyperdrive.
 
-/* 0.0 ANIMATIC - M11à M12 */
+/* 0.0 ANIMATIC - M11ï¿½ M12 */
 #define A11_Fleet_1								(648 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_ANIMATIC)	//	Emergency alert!!
 #define A11_Fleet_2								(649 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_ANIMATIC)	//	Hyperdrive Malfunction.
 #define A11_Fleet_3								(650 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_ANIMATIC)	//	The quantum waveform is collapsing.
@@ -923,7 +924,7 @@
 #define M12_Intel_ProtectDefector				(662 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	This could be a trap but the Kapella is clearly damaged.  Engage the pursuing fleet and draw it away from the defecting ship.
 #define M12_Intel_EngageHyperdrive				(663 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	The defecting captain has been brought aboard.  Engage hyperspace.
 
-/* 12.8 ANIMATIC - M12à M13 */
+/* 12.8 ANIMATIC - M12ï¿½ M13 */
 #define A12_Defector_1							(664 + SPEECH_ACTOR_DEFECTOR + SPEECH_TYPE_ANIMATIC)	//  I am Group Captain Elson of the Destroyer Kapella.
 #define A12_Defector_Kushan						(665 + SPEECH_ACTOR_DEFECTOR + SPEECH_TYPE_ANIMATIC)	//  The Taiidan empire has become decadent and corrupt over the centuries.
 #define A12_Defector_Taiidan					(666 + SPEECH_ACTOR_DEFECTOR + SPEECH_TYPE_ANIMATIC)	//  The Kushan empire has become decadent and corrupt over the centuries.
@@ -952,7 +953,7 @@
 #define M13_Defector_CoordinatesTransfered		(683 + SPEECH_ACTOR_DEFECTOR + SPEECH_TYPE_SINGLE_PLAYER)	//	The hyperspace coordinates you require have been transferred to your Mothership.  Farewell.
 #define M13_Intel_HyperspaceEnabled				(684 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	Hyperspace Enabled.
 
-/* 13.10 ANIMATIC - M13à M14 */
+/* 13.10 ANIMATIC - M13ï¿½ M14 */
 #define A13_Intel_1								(685 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	According to the data we received from Captain Elson, the Homeworld system is surrounded by a network of hyperspace inhibitors.
 #define A13_Intel_2								(686 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	The inhibitors are all heavily shielded and do not show up on any sensors.
 #define A13_Intel_3								(687 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	Elson has provided us with co-ordinates of the most vulnerable inhibitor station.
@@ -972,7 +973,7 @@
 #define M14_Intel_HyperdriveOnline				(694 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	The field surrounding the Homeworld system has been shut down.  Hyperdrive on-line.
 #define M14_Fleet_TakeUsHome					(695 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_SINGLE_PLAYER)	//	Take us home.
 
-/* 14.8 ANIMATIC - M14à M15 */
+/* 14.8 ANIMATIC - M14ï¿½ M15 */
 #define A14_Intel_1								(696 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	We have to assume that the Homeworld's defensive fleet must be alerted to our presence.
 #define A14_Intel_2								(697 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	All vessels and crew at maximum readiness.
 #define A14_Intel_3								(698 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_ANIMATIC)	//	Weapons and tracking at 100% efficiency.
@@ -1000,7 +1001,7 @@
 #define M15_Fleet_StandbyForImpact				(713 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_SINGLE_PLAYER)	//	Standby for impact.
 #define M15_Intel_HyperspaceReady				(714 + SPEECH_ACTOR_FLEET_INTELLIGENCE + SPEECH_TYPE_SINGLE_PLAYER)	//	Hyperspace module charged and ready.
 
-/* 15.14 ANIMATIC - M15à M16 */
+/* 15.14 ANIMATIC - M15ï¿½ M16 */
 #define A15_1									(715 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_ANIMATIC)	//	What's happening?  OR  The Enemy must have been desperate.
 #define A15_2									(716 + SPEECH_ACTOR_EMPEROR + SPEECH_TYPE_ANIMATIC)	//  Karan.  OR  The time we took to break up that attack has allowed them time to reinforce.
 #define A15_3									(717 + SPEECH_ACTOR_EMPEROR + SPEECH_TYPE_ANIMATIC)	//  You've taken one step too close to me.  OR  The chemical composition of this system matches that of the Guidestone.
@@ -1026,7 +1027,7 @@
 #define M16_Fleet_BackOnline					(730 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_SINGLE_PLAYER)	//	...Fleet Command back online.  The Emperor is gone.
 #define M16_Traders_BroughtTheCouncil			(731 + SPEECH_ACTOR_TRADERS + SPEECH_TYPE_SINGLE_PLAYER)	//	We have brought the Council.  This war is over.
 
-/* 16.10 ANIMATIC - M15à M16 */
+/* 16.10 ANIMATIC - M15ï¿½ M16 */
 #define A16_Fleet_SigningOff					(732 + SPEECH_ACTOR_FLEET_COMMAND + SPEECH_TYPE_ANIMATIC)	//	This is Fleet Command, signing off.
 
 /* Quick Fixes */

@@ -8,6 +8,7 @@
 #ifndef ___ADVANCESUPPORTFRIGATE_H
 #define ___ADVANCESUPPORTFRIGATE_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader AdvanceSupportFrigateHeader;

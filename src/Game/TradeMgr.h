@@ -9,6 +9,7 @@
 #ifndef ___TRADEMGR_H
 #define ___TRADEMGR_H
 
+#include "tiPlatform.h"
 #include "FEFlow.h"
 #include "Region.h"
 #include "SpaceObj.h"

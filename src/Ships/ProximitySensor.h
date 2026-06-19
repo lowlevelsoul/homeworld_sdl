@@ -8,6 +8,7 @@
 #ifndef ___PROXIMITYSENSOR_H
 #define ___PROXIMITYSENSOR_H
 
+#include "tiPlatform.h"
 #include "ShipSelect.h"
 #include "SpaceObj.h"
 #include "Universe.h"

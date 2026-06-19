@@ -8,6 +8,7 @@
 #ifndef ___CLIPPER_H
 #define ___CLIPPER_H
 
+#include "tiPlatform.h"
 #include "Vector.h"
 
 sdword clipViewclipLine(real32* vectors, udword* i, udword* j);

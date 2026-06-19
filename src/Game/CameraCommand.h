@@ -8,6 +8,7 @@
 #ifndef ___CAMERACOMMAND_H
 #define ___CAMERACOMMAND_H
 
+#include "tiPlatform.h"
 #include "Camera.h"
 #include "ShipSelect.h"
 

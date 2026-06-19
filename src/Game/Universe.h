@@ -15,6 +15,7 @@
 #ifndef ___UNIVERSE_H
 #define ___UNIVERSE_H
 
+#include "tiPlatform.h"
 #include "CameraCommand.h"
 #include "CommandLayer.h"
 #include "ConsMgr.h"

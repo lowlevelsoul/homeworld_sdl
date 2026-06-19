@@ -8,6 +8,7 @@
 #ifndef ___MATRIX_H
 #define ___MATRIX_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 #include "Vector.h"
 

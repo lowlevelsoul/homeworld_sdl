@@ -2,6 +2,7 @@
 #ifndef ___LEVELLOAD_H
 #define ___LEVELLOAD_H
 
+#include "tiPlatform.h"
 #include "ObjTypes.h"
 #include "ShipDefs.h"
 #include "Universe.h"

@@ -8,6 +8,7 @@
 #ifndef ___P1MISSILECORVETTE_H
 #define ___P1MISSILECORVETTE_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader P1MissileCorvetteHeader;

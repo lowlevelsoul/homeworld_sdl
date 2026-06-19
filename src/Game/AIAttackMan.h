@@ -9,6 +9,7 @@
 #ifndef ___AIATTACKMAN_H
 #define ___AIATTACKMAN_H
 
+#include "tiPlatform.h"
 #include "AIPlayer.h"
 #include "AITeam.h"
 

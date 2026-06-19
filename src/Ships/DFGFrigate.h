@@ -8,6 +8,7 @@
 #ifndef ___DFGFRIGATE_H
 #define ___DFGFRIGATE_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 #include "Types.h"
 

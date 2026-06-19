@@ -1,5 +1,6 @@
 #ifndef ___RACEDEFS_H
 #define ___RACEDEFS_H
+#include "tiPlatform.h"
 
 #define R1		0
 #define R2		1

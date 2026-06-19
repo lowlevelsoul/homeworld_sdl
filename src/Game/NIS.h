@@ -9,6 +9,7 @@
 #ifndef ___NIS_H
 #define ___NIS_H
 
+#include "tiPlatform.h"
 #include "B-Spline.h"
 #include "Camera.h"
 #include "font.h"

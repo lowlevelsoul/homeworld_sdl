@@ -8,6 +8,7 @@
 #ifndef ___P2ADVANCESWARMER_H
 #define ___P2ADVANCESWARMER_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader P2AdvanceSwarmerHeader;

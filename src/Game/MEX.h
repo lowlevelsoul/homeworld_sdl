@@ -9,6 +9,7 @@
 #ifndef ___MEX_H
 #define ___MEX_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 #include "Vector.h"
 

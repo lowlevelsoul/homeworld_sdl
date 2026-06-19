@@ -1,6 +1,7 @@
 #ifndef ___KASFUNC_H
 #define ___KASFUNC_H
 
+#include "tiPlatform.h"
 #include "AIUtilities.h"
 #include "ShipSelect.h"
 #include "Volume.h"

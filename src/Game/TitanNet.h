@@ -9,6 +9,7 @@
 #ifndef ___TITANNET_H
 #define ___TITANNET_H
 
+#include "tiPlatform.h"
 #include "TitanInterfaceC.h"
 #include "Types.h"
 

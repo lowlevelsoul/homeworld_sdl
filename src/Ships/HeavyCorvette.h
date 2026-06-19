@@ -8,6 +8,7 @@
 #ifndef ___HEAVYCORVETTE_H
 #define ___HEAVYCORVETTE_H
 
+#include "tiPlatform.h"
 #include "Attack.h"
 
 typedef struct

@@ -9,6 +9,7 @@
 #ifndef ___RESEARCHAPI_H
 #define ___RESEARCHAPI_H
 
+#include "tiPlatform.h"
 #include "LinkedList.h"
 #include "ObjTypes.h"
 #include "ShipDefs.h"

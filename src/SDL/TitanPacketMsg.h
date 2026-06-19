@@ -4,6 +4,7 @@
 #ifndef ___TITANPACKETMSG_H
 #define ___TITANPACKETMSG_H
 
+#include "tiPlatform.h"
 #include <string>
 //#include "msg/TMessage.h"
 //#include "msg/MServiceTypes.h"

@@ -9,6 +9,7 @@
 #ifndef ___MULTIPLAYERLANGAME_H
 #define ___MULTIPLAYERLANGAME_H
 
+#include "tiPlatform.h"
 #include "MultiplayerGame.h"
 #include "TitanInterfaceC.h"
 #include "Types.h"

@@ -7,6 +7,7 @@
 #ifndef ___AIVAR_H
 #define ___AIVAR_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 

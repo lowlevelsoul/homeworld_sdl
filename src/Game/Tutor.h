@@ -5,6 +5,7 @@
 #ifndef ___TUTOR_H
 #define ___TUTOR_H
 
+#include "tiPlatform.h"
 #include "FEFlow.h"
 #include "prim2d.h"
 #include "ShipDefs.h"

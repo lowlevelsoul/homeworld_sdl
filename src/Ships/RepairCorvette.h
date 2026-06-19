@@ -8,6 +8,7 @@
 #ifndef ___REPAIRCORVETTE_H
 #define ___REPAIRCORVETTE_H
 
+#include "tiPlatform.h"
 #include "Attack.h"
 #include "ShipSelect.h"
 

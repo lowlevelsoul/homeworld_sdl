@@ -8,6 +8,7 @@
 #ifndef ___COMMANDLAYER_H
 #define ___COMMANDLAYER_H
 
+#include "tiPlatform.h"
 #include "Dock.h"
 #include "Formation.h"
 #include "ResCollect.h"

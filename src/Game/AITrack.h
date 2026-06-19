@@ -8,6 +8,7 @@
 #ifndef ___AITRACK_H
 #define ___AITRACK_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 /*=============================================================================

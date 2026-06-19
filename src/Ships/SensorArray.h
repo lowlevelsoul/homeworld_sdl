@@ -8,6 +8,7 @@
 #ifndef ___SENSORARRAY_H
 #define ___SENSORARRAY_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader SensorArrayHeader;

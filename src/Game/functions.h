@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 #include "wrap_types.h"
 #include "wrap.h"
 

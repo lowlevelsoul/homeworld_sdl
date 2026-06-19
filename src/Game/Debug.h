@@ -8,6 +8,7 @@
 #ifndef ___DEBUG_H
 #define ___DEBUG_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 // INTERFACE -------------------------------------------------------------------

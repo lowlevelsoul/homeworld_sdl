@@ -1,5 +1,6 @@
 #ifndef ___RESOURCE_H
 #define ___RESOURCE_H
+#include "tiPlatform.h"
 
 /* TC 2003-09-30: Still using this for some of the codes (particularly
    "CID_*"). */

@@ -11,6 +11,7 @@
 // try not to include too many files in here since StringSupport.h may be included
 // by jpeg files, etc.
 
+#include "tiPlatform.h"
 #include "StringsOnly.h"
 #include "Types.h"
 

@@ -8,6 +8,7 @@
 #ifndef ___MOTHERSHIP_H
 #define ___MOTHERSHIP_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 #include "Types.h"
 

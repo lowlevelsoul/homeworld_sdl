@@ -8,6 +8,7 @@
 #ifndef ___GRAVWELLGENERATOR_H
 #define ___GRAVWELLGENERATOR_H
 
+#include "tiPlatform.h"
 #include "LinkedList.h"
 #include "SpaceObj.h"
 #include "Types.h"

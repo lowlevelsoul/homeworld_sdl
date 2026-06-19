@@ -8,6 +8,7 @@
 #ifndef ___P2SWARMER_H
 #define ___P2SWARMER_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader P2SwarmerHeader;

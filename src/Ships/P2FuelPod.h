@@ -8,6 +8,7 @@
 #ifndef ___P2FUELPOD_H
 #define ___P2FUELPOD_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader P2FuelPodHeader;

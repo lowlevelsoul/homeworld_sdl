@@ -8,6 +8,7 @@
 #ifndef ___CAMERA_H
 #define ___CAMERA_H
 
+#include "tiPlatform.h"
 #include "Vector.h"
 
 /*=============================================================================

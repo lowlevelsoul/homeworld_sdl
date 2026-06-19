@@ -8,6 +8,7 @@
 #ifndef ___LINKEDLIST_H
 #define ___LINKEDLIST_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 // INTERFACE -------------------------------------------------------------------

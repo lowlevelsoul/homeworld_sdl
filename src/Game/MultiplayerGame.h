@@ -9,6 +9,7 @@
 #ifndef ___MULTIPLAYERGAME_H
 #define ___MULTIPLAYERGAME_H
 
+#include "tiPlatform.h"
 #include "LinkedList.h"
 #include "TitanInterfaceC.h"
 #include "TimeoutTimer.h"

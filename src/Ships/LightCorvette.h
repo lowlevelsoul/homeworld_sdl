@@ -8,6 +8,7 @@
 #ifndef ___LIGHTCORVETTE_H
 #define ___LIGHTCORVETTE_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader LightCorvetteHeader;

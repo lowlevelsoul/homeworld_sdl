@@ -8,6 +8,7 @@
 #ifndef ___DRONE_H
 #define ___DRONE_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 #include "Types.h"
 

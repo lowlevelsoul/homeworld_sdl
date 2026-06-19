@@ -13,6 +13,7 @@
 #ifndef ___TIMER_H
 #define ___TIMER_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 #define TIMER_NAME_MAX_LENGTH 47

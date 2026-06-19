@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 /*=============================================================================
     DEBUGWND.H: Definitions for the Windows part of the debug window code.
 

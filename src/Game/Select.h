@@ -9,6 +9,7 @@
 #ifndef ___SELECT_H
 #define ___SELECT_H
 
+#include "tiPlatform.h"
 #include "PiePlate.h"
 #include "Camera.h"
 #include "font.h"

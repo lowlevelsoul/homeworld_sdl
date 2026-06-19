@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 // =============================================================================
 //  MaxMultiplayer.h
 //  - header to contain definition...for easy project sharing and modularity

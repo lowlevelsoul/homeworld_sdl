@@ -8,6 +8,7 @@
 #ifndef ___STANDARDFRIGATE_H
 #define ___STANDARDFRIGATE_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader StandardFrigateHeader;

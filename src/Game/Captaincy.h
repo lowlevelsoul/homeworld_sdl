@@ -8,6 +8,7 @@
 #ifndef ___CAPTAINCY_H
 #define ___CAPTAINCY_H
 
+#include "tiPlatform.h"
 #include "MaxMultiplayer.h"
 #include "Types.h"
 

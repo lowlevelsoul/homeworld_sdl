@@ -1,5 +1,6 @@
 #ifndef ___SOUNDMUSIC_H
 #define ___SOUNDMUSIC_H
+#include "tiPlatform.h"
 
 /* defines for music tracks in the music file */
 

@@ -8,6 +8,7 @@
 #ifndef ___BLOBS_H
 #define ___BLOBS_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "LinkedList.h"
 #include "ShipSelect.h"

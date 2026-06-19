@@ -9,6 +9,7 @@
 #ifndef ___DOCK_H
 #define ___DOCK_H
 
+#include "tiPlatform.h"
 #include "render.h"
 #include "ShipSelect.h"
 #include "SpaceObj.h"

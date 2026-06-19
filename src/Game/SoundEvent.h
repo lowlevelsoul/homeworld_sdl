@@ -9,6 +9,7 @@
 #ifndef ___SOUNDEVENT_H
 #define ___SOUNDEVENT_H
 
+#include "tiPlatform.h"
 #include "SoundEventDefs.h"
 #include "SoundMusic.h"
 #include "SoundStructs.h"

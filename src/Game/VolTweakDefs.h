@@ -1,5 +1,6 @@
 #ifndef ___VOLTWEAKDEFS_H
 #define ___VOLTWEAKDEFS_H
+#include "tiPlatform.h"
 
 /* Engine Sounds first */
 #define Engine_Mothership			0

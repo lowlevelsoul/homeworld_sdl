@@ -8,6 +8,7 @@
 #ifndef ___CLOAKGENERATOR_H
 #define ___CLOAKGENERATOR_H
 
+#include "tiPlatform.h"
 #include "LinkedList.h"
 #include "SpaceObj.h"
 #include "Types.h"

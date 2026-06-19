@@ -8,6 +8,7 @@
 #ifndef ___COLLISION_H
 #define ___COLLISION_H
 
+#include "tiPlatform.h"
 #include "Blobs.h"
 #include "SpaceObj.h"
 

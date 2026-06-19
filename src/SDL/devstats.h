@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 /*=============================================================================
     Name    : devstats.h
     Purpose : bitflags for disabling certain features on hardware w/ known problems

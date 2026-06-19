@@ -9,6 +9,7 @@
 #ifndef ___RANDY_H
 #define ___RANDY_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 // INTERFACE -------------------------------------------------------------------

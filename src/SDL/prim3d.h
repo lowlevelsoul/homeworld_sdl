@@ -9,6 +9,7 @@
 #ifndef ___PRIM3D_H
 #define ___PRIM3D_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "texreg.h"
 #include "Types.h"

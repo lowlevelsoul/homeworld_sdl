@@ -8,6 +8,7 @@
 #ifndef ___AIPLAYER_H
 #define ___AIPLAYER_H
 
+#include "tiPlatform.h"
 #include "AITeam.h"
 #include "AIVar.h"
 #include "LinkedList.h"

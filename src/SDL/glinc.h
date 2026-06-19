@@ -3,6 +3,7 @@
 
 #ifdef HW_ENABLE_GLES
 
+#include "tiPlatform.h"
 #include <GLES/egl.h>
 #include <GLES/glext.h>
 

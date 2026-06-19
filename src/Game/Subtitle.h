@@ -9,6 +9,7 @@
 #ifndef ___SUBTITLE_H
 #define ___SUBTITLE_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "font.h"
 #include "texreg.h"

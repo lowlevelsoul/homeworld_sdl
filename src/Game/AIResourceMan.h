@@ -8,6 +8,7 @@
 #ifndef ___AIRESOURCEMAN_H
 #define ___AIRESOURCEMAN_H
 
+#include "tiPlatform.h"
 #include "AIPlayer.h"
 
 void airResourceManager(void);

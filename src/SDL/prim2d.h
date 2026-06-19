@@ -9,6 +9,7 @@
 #ifndef ___PRIM2D_H
 #define ___PRIM2D_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "main.h"
 

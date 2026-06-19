@@ -10,6 +10,7 @@
 #ifndef ___LAGPRINT_H
 #define ___LAGPRINT_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 #ifdef _WIN32

@@ -9,6 +9,7 @@
 #ifndef ___MOUSE_H
 #define ___MOUSE_H
 
+#include "tiPlatform.h"
 #include "prim2d.h"
 #include "ShipSelect.h"
 #include "SpaceObj.h"

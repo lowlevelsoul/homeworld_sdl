@@ -9,6 +9,7 @@
 #ifndef ___SCREENSHOT_H
 #define ___SCREENSHOT_H
 
+#include "tiPlatform.h"
 #include "Key.h"
 #include "Types.h"
 

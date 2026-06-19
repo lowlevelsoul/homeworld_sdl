@@ -8,6 +8,7 @@
 #ifndef ___CARRIER_H
 #define ___CARRIER_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 #include "Types.h"
 

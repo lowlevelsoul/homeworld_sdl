@@ -8,6 +8,7 @@
 #ifndef ___AIUTILITIES_H
 #define ___AIUTILITIES_H
 
+#include "tiPlatform.h"
 #include "Blobs.h"
 #include "ShipSelect.h"
 #include "SpaceObj.h"

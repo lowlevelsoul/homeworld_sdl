@@ -7,6 +7,7 @@
 #ifndef ___TACTICS_H
 #define ___TACTICS_H
 
+#include "tiPlatform.h"
 #include "ClassDefs.h"
 #include "CommandLayer.h"
 #include "Region.h"

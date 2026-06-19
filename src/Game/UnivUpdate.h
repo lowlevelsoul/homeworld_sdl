@@ -9,6 +9,7 @@
 #ifndef ___UNIVUPDATE_H
 #define ___UNIVUPDATE_H
 
+#include "tiPlatform.h"
 #include "LinkedList.h"
 #include "ShipSelect.h"
 #include "SpaceObj.h"

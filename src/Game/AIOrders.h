@@ -7,6 +7,7 @@
 #ifndef ___AIORDERS_H
 #define ___AIORDERS_H
 
+#include "tiPlatform.h"
 #include "AIUtilities.h"
 #include "ShipSelect.h"
 

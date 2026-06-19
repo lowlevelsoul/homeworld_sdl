@@ -7,6 +7,7 @@
 #ifndef ___AIMOVES_H
 #define ___AIMOVES_H
 
+#include "tiPlatform.h"
 #include "AITeam.h"
 
 struct AITeam;

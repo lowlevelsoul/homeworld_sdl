@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 // =============================================================================
 //  Attributes.h
 //  - property definitions set for any object in Mission Editor

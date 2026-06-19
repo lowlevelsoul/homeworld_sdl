@@ -9,6 +9,7 @@
 #ifndef ___AIDEFENSEMAN_H
 #define ___AIDEFENSEMAN_H
 
+#include "tiPlatform.h"
 #include "AIPlayer.h"
 
 void aidDefenseManager(void);

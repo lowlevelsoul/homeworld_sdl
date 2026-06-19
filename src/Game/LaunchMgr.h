@@ -10,6 +10,7 @@
 #ifndef ___LAUNCHMGR_H
 #define ___LAUNCHMGR_H
 
+#include "tiPlatform.h"
 #include "Region.h"
 #include "SpaceObj.h"
 

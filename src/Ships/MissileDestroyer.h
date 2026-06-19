@@ -8,6 +8,7 @@
 #ifndef ___MISSILEDESTROYER_H
 #define ___MISSILEDESTROYER_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader MissileDestroyerHeader;

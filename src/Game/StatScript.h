@@ -9,6 +9,7 @@
 #ifndef ___STATSCRIPT_H
 #define ___STATSCRIPT_H
 
+#include "tiPlatform.h"
 #include "ObjTypes.h"
 #include "Types.h"
 

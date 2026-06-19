@@ -8,6 +8,7 @@
 #ifndef ___PROBE_H
 #define ___PROBE_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 typedef struct

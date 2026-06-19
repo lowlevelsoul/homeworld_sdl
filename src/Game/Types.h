@@ -15,6 +15,7 @@
 //#include "SDL_stdinc.h"
 //#include "SDL_endian.h"
 
+#include "tiPlatform.h"
 #include <stdint.h>
 #include <stdlib.h>
 

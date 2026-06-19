@@ -9,6 +9,7 @@
 #ifndef ___PHYSICS_H
 #define ___PHYSICS_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 /*=============================================================================

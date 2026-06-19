@@ -1,5 +1,6 @@
 #ifndef ___DCT_H
 #define ___DCT_H
+#include "tiPlatform.h"
 
 #ifdef __cplusplus
 extern "C" {

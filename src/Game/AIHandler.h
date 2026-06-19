@@ -8,6 +8,7 @@
 #ifndef ___AIHANDLER_H
 #define ___AIHANDLER_H
 
+#include "tiPlatform.h"
 #include "AITeam.h"
 
 #define GENERIC_STRENGTHRATIO   1.5

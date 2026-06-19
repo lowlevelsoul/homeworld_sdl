@@ -10,6 +10,7 @@
 #ifndef ___TEAMS_H
 #define ___TEAMS_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "MaxMultiplayer.h"
 #include "texreg.h"

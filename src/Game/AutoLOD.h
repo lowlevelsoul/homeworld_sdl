@@ -8,6 +8,7 @@
 #ifndef ___AUTOLOD_H
 #define ___AUTOLOD_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 // INTERFACE -------------------------------------------------------------------

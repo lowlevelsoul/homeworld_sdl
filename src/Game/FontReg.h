@@ -9,6 +9,7 @@
 #ifndef ___FONTREG_H
 #define ___FONTREG_H
 
+#include "tiPlatform.h"
 #include "font.h"
 
 /*=============================================================================

@@ -8,6 +8,7 @@
 #ifndef ___BOUNTIES_H
 #define ___BOUNTIES_H
 
+#include "tiPlatform.h"
 #include "Universe.h"
 
 void BountyInit(sdword bountySettingSize);

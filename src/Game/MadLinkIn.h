@@ -9,6 +9,7 @@
 #ifndef ___MADLINKIN_H
 #define ___MADLINKIN_H
 
+#include "tiPlatform.h"
 #include "CommandLayer.h"
 #include "SpaceObj.h"
 

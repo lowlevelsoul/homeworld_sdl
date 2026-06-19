@@ -8,6 +8,7 @@
 #ifndef ___FILE_H
 #define ___FILE_H
 
+#include "tiPlatform.h"
 #include <stdio.h>
 
 #ifdef __FreeBSD__

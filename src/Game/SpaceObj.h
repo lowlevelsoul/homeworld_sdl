@@ -7,6 +7,7 @@
 #ifndef ___SPACEOBJ_H
 #define ___SPACEOBJ_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "ETG.h"
 #include "Globals.h"

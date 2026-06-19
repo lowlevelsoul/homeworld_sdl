@@ -8,6 +8,7 @@
 #ifndef ___AUTODOWNLOADMAP_H
 #define ___AUTODOWNLOADMAP_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 // INTERFACE -------------------------------------------------------------------

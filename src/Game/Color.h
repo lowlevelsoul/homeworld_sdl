@@ -8,6 +8,7 @@
 #ifndef ___COLOR_H
 #define ___COLOR_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 /*=============================================================================

@@ -9,6 +9,7 @@
 #ifndef ___FLIGHTMAN_H
 #define ___FLIGHTMAN_H
 
+#include "tiPlatform.h"
 #include "FlightManDefs.h"
 #include "ObjTypes.h"
 #include "SpaceObj.h"

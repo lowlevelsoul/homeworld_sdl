@@ -8,6 +8,7 @@
 #ifndef ___RESOURCECOLLECTOR_H
 #define ___RESOURCECOLLECTOR_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader ResourceCollectorHeader;

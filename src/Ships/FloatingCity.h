@@ -8,6 +8,7 @@
 #ifndef ___FLOATINGCITY_H
 #define ___FLOATINGCITY_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader FloatingCityHeader;

@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 /*=============================================================================
     REGKEY.H: Registry key definitions for Homeworld.
 

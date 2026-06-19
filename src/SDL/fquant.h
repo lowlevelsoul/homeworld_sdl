@@ -8,6 +8,7 @@
 #ifndef ___FQUANT_H
 #define ___FQUANT_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 // General constants

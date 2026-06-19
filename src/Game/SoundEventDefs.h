@@ -1,5 +1,6 @@
 #ifndef ___SOUNDEVENTDEFS_H
 #define ___SOUNDEVENTDEFS_H
+#include "tiPlatform.h"
 
 /* Flags for banks */
 #define UI_Flag							256      //0x100

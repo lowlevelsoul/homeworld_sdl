@@ -9,6 +9,7 @@
 #ifndef ___BATTLE_H
 #define ___BATTLE_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 /*=============================================================================

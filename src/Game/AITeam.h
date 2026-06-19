@@ -8,6 +8,7 @@
 #ifndef ___AITEAM_H
 #define ___AITEAM_H
 
+#include "tiPlatform.h"
 #include "AIEvents.h"
 #include "AIUtilities.h"
 #include "AIVar.h"

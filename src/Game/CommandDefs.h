@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 // =============================================================================
 //  CommandDefs.h
 //  - List of commands and command attributes

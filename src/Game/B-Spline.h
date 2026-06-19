@@ -9,6 +9,7 @@
 #ifndef ___B_SPLINE_H
 #define ___B_SPLINE_H 
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 /*=============================================================================

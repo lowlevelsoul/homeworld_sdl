@@ -9,6 +9,7 @@ Copyright Relic Entertainment, Inc.  All rights reserved.
 #ifndef ___HS_H
 #define ___HS_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 void hsStart(Ship* ship, real32 cliptDelta, bool into, bool displayEffect);

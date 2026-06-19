@@ -10,6 +10,7 @@
 #ifndef ___KEYBINDINGS_H
 #define ___KEYBINDINGS_H
 
+#include "tiPlatform.h"
 #include "FEFlow.h"
 #include "font.h"
 

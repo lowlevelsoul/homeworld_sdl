@@ -9,6 +9,7 @@
 #ifndef ___SHIPVIEW_H
 #define ___SHIPVIEW_H
 
+#include "tiPlatform.h"
 #include "FEFlow.h"
 #include "Region.h"
 #include "ShipDefs.h"

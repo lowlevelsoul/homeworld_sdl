@@ -7,6 +7,7 @@
 #ifndef ___CHANNELFSM_H
 #define ___CHANNELFSM_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 bool cCreateChannel(wchar_t *name, wchar_t *desc);

@@ -9,6 +9,7 @@
 #ifndef ___FEREG_H
 #define ___FEREG_H
 
+#include "tiPlatform.h"
 #include "LinkedList.h"
 #include "prim2d.h"
 #include "Region.h"

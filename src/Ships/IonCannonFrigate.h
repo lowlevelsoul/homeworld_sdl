@@ -8,6 +8,7 @@
 #ifndef ___IONCANNONFRIGATE_H
 #define ___IONCANNONFRIGATE_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader IonCannonFrigateHeader;

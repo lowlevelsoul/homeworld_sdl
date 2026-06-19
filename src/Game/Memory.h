@@ -7,6 +7,7 @@
 #ifndef ___MEMORY_H
 #define ___MEMORY_H
 
+#include "tiPlatform.h"
 #include "LinkedList.h"
 #include "Task.h"
 

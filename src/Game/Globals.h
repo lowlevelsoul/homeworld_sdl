@@ -9,6 +9,7 @@
 #ifndef ___GLOBALS_H
 #define ___GLOBALS_H
 
+#include "tiPlatform.h"
 #include "MaxMultiplayer.h"
 #include "Queue.h"
 #include "TitanInterfaceC.h"

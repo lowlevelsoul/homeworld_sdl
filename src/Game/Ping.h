@@ -9,6 +9,7 @@
 #ifndef ___PING_H
 #define ___PING_H
 
+#include "tiPlatform.h"
 #include "Blobs.h"
 #include "Camera.h"
 #include "prim2d.h"

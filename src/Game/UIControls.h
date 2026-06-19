@@ -9,6 +9,7 @@
 #ifndef ___UICONTROLS_H
 #define ___UICONTROLS_H
 
+#include "tiPlatform.h"
 #include "FEFlow.h"
 #include "font.h"
 

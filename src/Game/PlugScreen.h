@@ -9,6 +9,7 @@
 #ifndef ___PLUGSCREEN_H
 #define ___PLUGSCREEN_H
 
+#include "tiPlatform.h"
 #include "Region.h"
 #include "texreg.h"
 

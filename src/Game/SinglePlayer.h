@@ -9,6 +9,7 @@
 #ifndef ___SINGLEPLAYER_H
 #define ___SINGLEPLAYER_H
 
+#include "tiPlatform.h"
 #include "KAS.h"
 #include "LinkedList.h"
 #include "Types.h"

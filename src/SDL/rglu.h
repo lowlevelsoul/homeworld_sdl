@@ -9,6 +9,7 @@
 #ifndef ___RGLU_H
 #define ___RGLU_H
 
+#include "tiPlatform.h"
 #include "glinc.h"
 
 void rgluPerspective(GLfloat fovy, GLfloat aspect, GLfloat zNear, GLfloat zFar);

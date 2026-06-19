@@ -1,5 +1,6 @@
 #ifndef ___MIXFFT_H
 #define ___MIXFFT_H
+#include "tiPlatform.h"
 
 #ifdef __cplusplus
 extern "C" {

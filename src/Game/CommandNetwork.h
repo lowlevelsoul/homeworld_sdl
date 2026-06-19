@@ -8,6 +8,7 @@
 #ifndef ___COMMANDNETWORK_H
 #define ___COMMANDNETWORK_H
 
+#include "tiPlatform.h"
 #include "Captaincy.h"
 #include "Chatting.h"
 #include "CommandLayer.h"

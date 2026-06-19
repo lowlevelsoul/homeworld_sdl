@@ -8,6 +8,7 @@
 #ifndef ___ALLIANCE_H
 #define ___ALLIANCE_H
 
+#include "tiPlatform.h"
 #include "CommandNetwork.h"
 #include "Types.h"
 #include "Universe.h"

@@ -9,6 +9,7 @@
 #ifndef ___INFOOVERLAY_H
 #define ___INFOOVERLAY_H
 
+#include "tiPlatform.h"
 #include "Region.h"
 #include "SpaceObj.h"
 

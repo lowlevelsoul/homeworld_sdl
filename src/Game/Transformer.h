@@ -9,6 +9,7 @@
 #ifndef ___TRANSFORMER_H
 #define ___TRANSFORMER_H
 
+#include "tiPlatform.h"
 #include "Matrix.h"
 #include "Mesh.h"
 #include "Types.h"

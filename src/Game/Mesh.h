@@ -9,6 +9,7 @@
 #ifndef ___MESH_H
 #define ___MESH_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "Matrix.h"
 

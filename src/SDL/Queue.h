@@ -2,6 +2,7 @@
 #ifndef ___QUEUE_H
 #define ___QUEUE_H
 
+#include "tiPlatform.h"
 #include "SDL.h"
 #include "Types.h"
 

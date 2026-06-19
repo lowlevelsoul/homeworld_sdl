@@ -8,6 +8,7 @@
 #ifndef ___HEAVYCRUISER_H
 #define ___HEAVYCRUISER_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader HeavyCruiserHeader;

@@ -9,6 +9,7 @@
 #ifndef ___AIFLEETMAN_H
 #define ___AIFLEETMAN_H
 
+#include "tiPlatform.h"
 #include "AIPlayer.h"
 
 void aifFleetCommand(void);

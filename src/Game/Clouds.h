@@ -8,6 +8,7 @@
 #ifndef ___CLOUDS_H
 #define ___CLOUDS_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "Matrix.h"
 #include "ObjTypes.h"

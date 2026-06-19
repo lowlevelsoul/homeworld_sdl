@@ -10,6 +10,7 @@
 #ifndef ___ETG_H
 #define ___ETG_H
 
+#include "tiPlatform.h"
 #include "ClassDefs.h"
 #include "Color.h"
 #include "ObjTypes.h"

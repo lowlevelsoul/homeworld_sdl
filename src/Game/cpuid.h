@@ -6,6 +6,7 @@
 #ifdef _MSC_VER
 //this code could be expanded to support *nix
 
+#include "tiPlatform.h"
 #include <excpt.h>
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
@@ -27,7 +28,7 @@ Input: see below
 Output: returns 1 if feature is supported, 0 if not
 
 see also: 
-> intel ia32 Architecture Software Developer’s Manual Volume 1; basic architecture.pdf
+> intel ia32 Architecture Software Developerï¿½s Manual Volume 1; basic architecture.pdf
 11.6.2 Checking for SSE/SSE2 Support
 
 > Cracking Open The Pentium III by Rob Wyatt

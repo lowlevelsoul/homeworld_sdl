@@ -9,6 +9,7 @@
 #ifndef ___TRAILS_H
 #define ___TRAILS_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "MaxMultiplayer.h"
 #include "Types.h"

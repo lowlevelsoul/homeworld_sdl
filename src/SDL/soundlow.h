@@ -9,6 +9,7 @@
 #ifndef ___SOUNDLOW_H
 #define ___SOUNDLOW_H
 
+#include "tiPlatform.h"
 #include "fqeffect.h"
 #include "Types.h"
 

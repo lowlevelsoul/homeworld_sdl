@@ -9,6 +9,7 @@
 #ifndef ___TRACKING_H
 #define ___TRACKING_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "Types.h"
 

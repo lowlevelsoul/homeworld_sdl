@@ -8,6 +8,7 @@
 #ifndef ___P3STANDARDSHIP_H
 #define ___P3STANDARDSHIP_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader P3StandardShipHeader;

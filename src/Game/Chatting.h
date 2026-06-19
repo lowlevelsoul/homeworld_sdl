@@ -7,6 +7,7 @@
 #ifndef ___CHATTING_H
 #define ___CHATTING_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 // INTERFACE -------------------------------------------------------------------

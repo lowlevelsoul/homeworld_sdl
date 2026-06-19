@@ -8,6 +8,7 @@
 #ifndef ___P1MOTHERSHIP_H
 #define ___P1MOTHERSHIP_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader P1MothershipHeader;

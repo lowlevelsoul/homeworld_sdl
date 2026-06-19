@@ -8,6 +8,7 @@
 #ifndef ___UTILITY_H
 #define ___UTILITY_H
 
+#include "tiPlatform.h"
 #include "FEFlow.h"
 #include "ObjTypes.h"
 #include "Region.h"

@@ -8,6 +8,7 @@
 #ifndef ___GENERICINTERCEPTOR_H
 #define ___GENERICINTERCEPTOR_H
 
+#include "tiPlatform.h"
 #include "ClassDefs.h"
 #include "FlightMan.h"
 #include "ObjTypes.h"

@@ -9,6 +9,7 @@
 #ifndef ___NEBULAE_H
 #define ___NEBULAE_H
 
+#include "tiPlatform.h"
 #include "Clouds.h"
 
 

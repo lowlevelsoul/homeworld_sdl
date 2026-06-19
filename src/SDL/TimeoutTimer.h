@@ -9,6 +9,7 @@
 #ifndef ___TIMEOUTTIMER_H
 #define ___TIMEOUTTIMER_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 typedef struct TTimer

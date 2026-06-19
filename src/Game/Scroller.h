@@ -9,6 +9,7 @@
 #ifndef ___SCROLLER_H
 #define ___SCROLLER_H
 
+#include "tiPlatform.h"
 #include "UIControls.h"
 
 #define widthOf(r) ((uword)(r.x1 - r.x0))

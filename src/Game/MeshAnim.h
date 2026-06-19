@@ -9,6 +9,7 @@
 #ifndef ___MESHANIM_H
 #define ___MESHANIM_H
 
+#include "tiPlatform.h"
 #include "B-Spline.h"
 #include "CRC32.h"
 #include "Mesh.h"

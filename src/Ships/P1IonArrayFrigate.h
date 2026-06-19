@@ -8,6 +8,7 @@
 #ifndef ___P1IONARRAYFRIGATE_H
 #define ___P1IONARRAYFRIGATE_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader P1IonArrayFrigateHeader;

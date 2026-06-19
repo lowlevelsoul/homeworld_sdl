@@ -9,6 +9,7 @@
 #ifndef ___OBJTYPES_H
 #define ___OBJTYPES_H
 
+#include "tiPlatform.h"
 #include "RaceDefs.h"
 #include "ShipDefs.h"
 #include "Types.h"

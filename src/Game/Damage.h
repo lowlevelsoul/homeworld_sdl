@@ -9,6 +9,7 @@
 #ifndef ___DAMAGE_H
 #define ___DAMAGE_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 #ifdef HW_BUILD_FOR_DEBUGGING

@@ -9,6 +9,7 @@
 #ifndef ___SHIPS_H
 #define ___SHIPS_H
 
+#include "tiPlatform.h"
 #include "AdvanceSupportFrigate.h"
 #include "Carrier.h"
 #include "CloakGenerator.h"

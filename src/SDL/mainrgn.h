@@ -9,6 +9,7 @@
 #ifndef ___MAINRGN_H
 #define ___MAINRGN_H
 
+#include "tiPlatform.h"
 #include "Camera.h"
 #include "FEFlow.h"
 #include "SpaceObj.h"

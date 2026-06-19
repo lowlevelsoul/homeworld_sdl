@@ -8,6 +8,7 @@
 #ifndef ___GAMECHAT_H
 #define ___GAMECHAT_H
 
+#include "tiPlatform.h"
 #include "MultiplayerGame.h"
 
 #define GC_NORMALMESSAGE        1

@@ -8,6 +8,7 @@
 #ifndef ___P2MULTIBEAMFRIGATE_H
 #define ___P2MULTIBEAMFRIGATE_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader P2MultiBeamFrigateHeader;

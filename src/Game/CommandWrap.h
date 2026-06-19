@@ -8,6 +8,7 @@
 #ifndef ___COMMANDWRAP_H
 #define ___COMMANDWRAP_H
 
+#include "tiPlatform.h"
 #include "CommandLayer.h"
 #include "Globals.h"
 

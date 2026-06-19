@@ -1,6 +1,7 @@
 #ifndef ___VOLUME_H
 #define ___VOLUME_H
 
+#include "tiPlatform.h"
 #include "Vector.h"
 
 typedef enum {

@@ -2,6 +2,7 @@
 #ifndef ___TWEAK_H
 #define ___TWEAK_H
 
+#include "tiPlatform.h"
 #include "ClassDefs.h"
 #include "Color.h"
 #include "ObjTypes.h"

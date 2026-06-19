@@ -8,6 +8,7 @@
 #ifndef ___SALCAPCORVETTE_H
 #define ___SALCAPCORVETTE_H
 
+#include "tiPlatform.h"
 #include "Attack.h"
 #include "ShipSelect.h"
 #include "render.h"

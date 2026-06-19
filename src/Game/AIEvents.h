@@ -7,6 +7,7 @@
 #ifndef ___AIEVENTS_H
 #define ___AIEVENTS_H
 
+#include "tiPlatform.h"
 #include "ShipSelect.h"
 #include "SpaceObj.h"
 

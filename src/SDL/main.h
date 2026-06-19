@@ -7,6 +7,7 @@
 #ifndef ___MAIN_H
 #define ___MAIN_H
 
+#include "tiPlatform.h"
 #include "SDL.h"
 
 #include "mainswitches.h"

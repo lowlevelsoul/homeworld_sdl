@@ -8,6 +8,7 @@
 #ifndef ___UNDO_H
 #define ___UNDO_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 // INTERFACE -------------------------------------------------------------------

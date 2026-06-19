@@ -9,6 +9,7 @@
 #ifndef ___SHIPSELECT_H
 #define ___SHIPSELECT_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 /*=============================================================================

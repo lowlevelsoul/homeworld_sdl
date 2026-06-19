@@ -9,6 +9,7 @@
 #ifndef ___SENSORS_H
 #define ___SENSORS_H
 
+#include "tiPlatform.h"
 #include "FEFlow.h"
 #include "Matrix.h"
 #include "ShipDefs.h"

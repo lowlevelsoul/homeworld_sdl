@@ -8,6 +8,7 @@
 #ifndef ___CLAMP_H
 #define ___CLAMP_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 // to expand clamping to others than just ships, must modify line

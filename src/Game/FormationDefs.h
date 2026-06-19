@@ -1,5 +1,6 @@
 #ifndef ___FORMATIONDEFS_H
 #define ___FORMATIONDEFS_H
+#include "tiPlatform.h"
 
 // -----------------------------------------------------------------------------
 // preserve order: index into formationtypeinfo (Formation.c)

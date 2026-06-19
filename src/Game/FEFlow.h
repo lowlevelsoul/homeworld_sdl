@@ -9,6 +9,7 @@
 #ifndef ___FEFLOW_H
 #define ___FEFLOW_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "Region.h"
 

@@ -77,6 +77,7 @@ typedef enum
 } ShipType_enum;
 
 #ifdef _X86_64   //Capture this first, and make sure it's correctly sized.
+#include "tiPlatform.h"
 #include "Types.h"
 typedef smemsize  ShipType;
 #else

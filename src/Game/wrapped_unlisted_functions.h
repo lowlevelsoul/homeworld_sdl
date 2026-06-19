@@ -1,3 +1,4 @@
+#include "tiPlatform.h"
 #define get_arg(n) do_get_arg(effect, stat, opcode, n)
 
 void partSetTrHandle(trhandle t, udword u0, udword v0, udword u1, udword v1);

@@ -9,6 +9,7 @@
 #ifndef ___RENDER_H
 #define ___RENDER_H
 
+#include "tiPlatform.h"
 #include "Camera.h"
 #include "Color.h"
 #include "Matrix.h"

@@ -8,6 +8,7 @@
 #ifndef ___COLPICK_H
 #define ___COLPICK_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "ObjTypes.h"
 #include "texreg.h"

@@ -1,6 +1,7 @@
 #ifndef ___PROFILETIMERS_H
 #define ___PROFILETIMERS_H
 
+#include "tiPlatform.h"
 #include "Types.h"
 
 #ifdef HW_BUILD_FOR_DEBUGGING

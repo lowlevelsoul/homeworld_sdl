@@ -8,6 +8,7 @@
 #ifndef ___MINELAYERCORVETTE_H
 #define ___MINELAYERCORVETTE_H
 
+#include "tiPlatform.h"
 #include "Attack.h"
 
 #define MINE_DROP_ATTACK            0

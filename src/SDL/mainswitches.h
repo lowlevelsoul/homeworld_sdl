@@ -2,6 +2,7 @@
 #ifndef ___MAINSWITCHES_H
 #define ___MAINSWITCHES_H
 
+#include "tiPlatform.h"
 #include "MaxMultiplayer.h"
 #include "Types.h"
 

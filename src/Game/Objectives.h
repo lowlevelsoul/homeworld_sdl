@@ -5,6 +5,7 @@
 #ifndef ___OBJECTIVES_H
 #define ___OBJECTIVES_H
 
+#include "tiPlatform.h"
 #include "FEFlow.h"
 #include "LinkedList.h"
 

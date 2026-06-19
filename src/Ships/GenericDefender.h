@@ -8,6 +8,7 @@
 #ifndef ___GENERICDEFENDER_H
 #define ___GENERICDEFENDER_H
 
+#include "tiPlatform.h"
 #include "SpaceObj.h"
 
 extern CustShipHeader GenericDefenderHeader;

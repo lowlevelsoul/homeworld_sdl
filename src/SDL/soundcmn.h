@@ -1,6 +1,7 @@
 #ifndef ___SOUNDCMN_H
 #define ___SOUNDCMN_H
 
+#include "tiPlatform.h"
 #include "SDL.h"
 
 #include "File.h"

@@ -9,6 +9,7 @@
 #ifndef ___FONT_H
 #define ___FONT_H
 
+#include "tiPlatform.h"
 #include "Color.h"
 #include "prim2d.h"
 
